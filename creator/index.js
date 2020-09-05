@@ -7,10 +7,7 @@ module.exports = class Creator {
 	}
 
 	/**
-	 * Fetch videos from a creator.
-	 * @param {number} creatorGUID Creator GUID id to fetch videos for.
-	 * @param {number} fetchAfter Number of videos from the latest to fetch from.
-	 * @returns {AsyncIterator<{
+	 * @typedef {{
 		id: string,
 		guid: string,
 		title: string,
@@ -34,15 +31,30 @@ module.exports = class Creator {
 		hasAccess: boolean,
 		private: boolean,
 		subscriptionPermissions: Array<string>
-	}>} Async iterator that yeilds video objects
+	}} Video
+	 */
+
+	/**
+	 * Fetch videos from a creator, returns a Async Iterator.
+	 * @param {number} creatorGUID Creator GUID id to fetch videos for.
+	 * @param {number} fetchAfter Number of videos from the latest to fetch from.
+	 * @returns {AsyncIterator<Video>} Async iterator that yeilds video objects
 	*/
-	async * videos(creatorGUID, fetchAfter=0) {
+	async * videosIterable(creatorGUID, fetchAfter=0) {
 		let videos = [null]
 		let i = 0;
 		while (videos.length > 0) {
-			videos = JSON.parse((await this.got(this.endpoints.videos.replace('%creatorGUID%', creatorGUID).replace('%fetchAfter%', fetchAfter+i))).body)
+			videos = await this.videos(creatorGUID, fetchAfter)
 			yield* videos
 			i += 20
 		}
 	}
+
+	/**
+	 * Fetch videos from a creator.
+	 * @param {string} creatorGUID Creator GUID id to fetch videos for.
+	 * @param {number} fetchAfter Number of videos from the latest to fetch from.
+	 * @returns {Array<Video>}
+	 */
+	videos = async (creatorGUID, fetchAfter=0) => JSON.parse((await this.got(this.endpoints.videos.replace('%creatorGUID%', creatorGUID).replace('%fetchAfter%', fetchAfter+i))).body)
 }

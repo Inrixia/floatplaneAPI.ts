@@ -4,7 +4,7 @@ const Api = require('./api')
 const Creator = require('./creator')
 const Video = require('./video')
 
-module.exports = class fAPI {
+module.exports = class Floatplane {
 	constructor() {
 		this.got = require('got').extend({ // Sets the global requestMethod to be used, this maintains headers
 			headers: {
@@ -29,7 +29,7 @@ module.exports = class fAPI {
 	 * @param {string} options.password Password to login with
 	 * @param {string} options.token 2 Factor token to login with
 	 * @returns {Promise<{ 
-		needs2FA: boolean
+		needs2FA: boolean,
 		user: {
 			id: string,
 			username: string,
