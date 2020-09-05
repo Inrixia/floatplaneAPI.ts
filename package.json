@@ -1,5 +1,5 @@
 {
-  "name": "floatplaneapi",
+  "name": "floatplane",
   "version": "1.0.0",
   "description": "Library for interfacing with the LMG Floatplane.com api",
   "main": "index.js",
@@ -9,7 +9,9 @@
   "dependencies": {
     "got": "^11.6.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@inrixia/helpers": "^1.5.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
