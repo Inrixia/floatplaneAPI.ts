@@ -4,7 +4,7 @@ This library is not in any way related to LMG or Floatplane Media Inc.
 Features/Endpoints are added as needed so if something is missing please make a [Issue](https://github.com/Inrixia/floatplaneAPI.js/issues/new) or [Pull Request](https://github.com/Inrixia/floatplaneAPI.js/pulls)
 
 # Install
-```$ npm install got```
+```$ npm install floatplane```
 
 Individual classes can be imported seperately:
 ```js 
