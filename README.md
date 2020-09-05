@@ -17,7 +17,7 @@ require('floatplane/auth')
 ```js
 const Floatplane = require("floatplane");
 
-const fApi = new fApi(); // Create a new API instance.
+const fapi = new Floatplane(); // Create a new API instance.
 
 ;(async () => { // Run with async/await
 	const login = await fapi.login({
@@ -36,3 +36,8 @@ const fApi = new fApi(); // Create a new API instance.
 ## Classes
 
 TODO
+
+## Projects
+The following projects use this library:
+
+### [Floatplane Downloader](https://github.com/Inrixia/Floatplane-Downloader)
