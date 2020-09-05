@@ -1,0 +1,26 @@
+{
+  "name": "floatplaneapi",
+  "version": "1.0.0",
+  "description": "Library for interfacing with the LMG Floatplane.com api",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "got": "^11.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inrixia/floatplaneAPI.js.git"
+  },
+  "author": "Inrix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Inrixia/floatplaneAPI.js/issues"
+  },
+  "homepage": "https://github.com/Inrixia/floatplaneAPI.js#readme"
+}
