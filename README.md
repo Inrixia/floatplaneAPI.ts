@@ -34,17 +34,17 @@ const floatplane = new Floatplane(); // Create a new API instance.
 # Floatplane API
 #### [Login](#login)
 
-### [Auth](#auth)
+### [Auth](#_auth)
 > [login](#auth_login)<br>
 > [factor](#auth_factor)
-### [Api](#api)
+### [Api](#_api)
 > [edges](#api_edges)
-### [Creator](#creator)
+### [Creator](#_creator)
 > [videos](#creator_videos)<br>
 > [videosIterable](#creator_videosIterable)
-### [User](#user)
+### [User](#_user)
 > [subscriptions](#user_subscriptions)
-### [video](#video)
+### [Video](#_video)
 > [downloadURL](#video_downloadURL)<br>
 > [download](#video_download)
 <br>
@@ -79,9 +79,9 @@ const user = await floatplane.login({
 <br>
 <br>
 
-## <a name="auth">Auth</a>
+## <a name="_auth">Auth</a>
 ---
-### floatplane.[auth](#auth).<a name="auth_login">login</a>([username](#username), [password](#password)): Promise\<[User](#user_type)>
+### floatplane.[auth](#_auth).<a name="auth_login">login</a>([username](#username), [password](#password)): Promise\<[User](#user_type)>
 Login to floatplane. If user requires 2 factor authentication then only `{ needs2FA: true }` will be returned.<br>
 
 #### <a name="username">username</a>:`string` 
@@ -95,7 +95,7 @@ const user = await floatplane.auth.login("yourUsername", "yourPassword")
 ```
 <br>
 
-### floatplane.[auth](#auth).<a name="auth_factor">factor</a>([token](#token)): Promise\<[User](#user_type)>
+### floatplane.[auth](#_auth).<a name="auth_factor">factor</a>([token](#token)): Promise\<[User](#user_type)>
 Complete login to floatplane with 2 factor authentication token.<br>
 
 <a name="token">token</a>:`string`
@@ -103,14 +103,14 @@ Complete login to floatplane with 2 factor authentication token.<br>
 
 ### Example:
 ```js
-const user = await floatplane.auth.login("yourUsername", "yourPassword")
+const user = await floatplane.auth.factor("your2FactorToken")
 ```
 <br>
 <br>
 
-## <a name="api">Api</a>
+## <a name="_api">Api</a>
 ---
-### floatplane.[api](#api).<a name="api_edges">edges</a>(): Promise\<[Edges](#edges_type)>
+### floatplane.[api](#_api).<a name="api_edges">edges</a>(): Promise\<[Edges](#edges_type)>
 Fetch floatplane api server edges.<br>
 
 ### Example:
@@ -120,9 +120,9 @@ const user = await floatplane.api.edges()
 <br>
 <br>
 
-## <a name="creator">Creator</a>
+## <a name="_creator">Creator</a>
 ---
-### floatplane.[creator](#creator).<a name="creator_videos">videos</a>([creatorGUID](#creatorGUID), [fetchAfter](#fetchAfter)?): Promise<Array\<[Video](#video_type)>>
+### floatplane.[creator](#_creator).<a name="creator_videos">videos</a>([creatorGUID](#creatorGUID), [fetchAfter](#fetchAfter)?): Promise<Array\<[Video](#video_type)>>
 Fetch creator videos starting from `fetchAfter` number of videos if specified. Returns an array of 20 videos.<br>
 If you want to fetch more than 20 videos its best to use [videosIterable()](creator_videosIterable) instead.<br>
 
@@ -138,7 +138,7 @@ const videos2 = await floatplane.creator.videos("creatorGUID", 20) // Array of n
 ```
 <br>
 
-### floatplane.[creator](#creator).<a name="creator_videosIterable">videosIterable</a>([creatorGUID](#creatorGUID), [fetchAfter](#fetchAfter)?): Promise<AsyncIterator\<[Video](#video_type)>>
+### floatplane.[creator](#_creator).<a name="creator_videosIterable">videosIterable</a>([creatorGUID](#creatorGUID), [fetchAfter](#fetchAfter)?): AsyncIterator\<[Video](#video_type)>
 Fetch creator videos. Returns a async iterator that will return all videos from the specified creator.<br>
 Videos are fetched in batches of 20.<br>
 
@@ -161,9 +161,9 @@ for await (const video of videos) {
 <br>
 <br>
 
-## <a name="user">User</a>
+## <a name="_user">User</a>
 ---
-### floatplane.[user](#user).<a name="user_subscriptions">subscriptions</a>(): Promise\<Array<[Subscription](#subscription)>>
+### floatplane.[user](#_user).<a name="user_subscriptions">subscriptions</a>(): Promise\<Array<[Subscription](#subscription)>>
 Fetches subscriptions for current user.<br>
 
 ### Example:
@@ -173,9 +173,9 @@ const subscriptions = await floatplane.user.subscriptions()
 <br>
 <br>
 
-## <a name="video">Video</a>
+## <a name="_video">Video</a>
 ---
-### floatplane.[video](#video).<a name="video_downloadURL">downloadURL</a>([videoGUID](#videoGUID), [videoQuality](#videoQuality)?): Promise\<string>
+### floatplane.[video](#_video).<a name="video_downloadURL">downloadURL</a>([videoGUID](#videoGUID), [videoQuality](#videoQuality)?): Promise\<string>
 Fetches download URL for specified videoGUID.<br>
 
 #### <a name="videoGUID">videoGUID</a>:`string`
@@ -185,11 +185,11 @@ Quality download url should be at, defaults to 360p.<br>
 
 ### Example:
 ```js
-const videoDownloadURL = await floatplane.video.downloadURL("videoGuid", "720")
+const videoDownloadURL = await floatplane.video.downloadURL("videoGUID", "720")
 ```
 <br>
 
-### floatplane.[video](#video).<a name="video_download">download</a>([videoGUID](#videoGUID), [videoQuality](#videoQuality)?): Promise\<[DuplexStream](https://www.npmjs.com/package/got#streams-1)>
+### floatplane.[video](#_video).<a name="video_download">download</a>([videoGUID](#videoGUID), [videoQuality](#videoQuality)?): Promise\<[DuplexStream](https://www.npmjs.com/package/got#streams-1)>
 Starts downloading specified videoGUID and returns a [got duplex stream](https://www.npmjs.com/package/got#streams-1).<br>
 
 #### <a name="videoGUID">videoGUID</a>:`string`
@@ -200,7 +200,7 @@ Quality download url should be at, defaults to 360p.<br>
 ### Example:
 ```js
 const fs = require('fs')
-const videoDownloadStream = await floatplane.video.downloadURL("videoGuid", "720")
+const videoDownloadStream = await floatplane.video.download("videoGUID", "720")
 
 videoDownloadStream.pipe(fs.createWriteStream('video.mp4')) // Pipe video download to file
 videoDownloadStream.on('downloadProgress', console.log) // Log process to console
