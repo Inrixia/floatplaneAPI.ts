@@ -36,7 +36,8 @@ const floatplane = new Floatplane(); // Create a new API instance.
 
 ### [Auth](#_auth)
 > [login](#auth_login)<br>
-> [factor](#auth_factor)
+> [factor](#auth_factor)<br>
+> [cookie](#auth_cookie)
 ### [Api](#_api)
 > [edges](#api_edges)
 ### [Creator](#_creator)
@@ -105,6 +106,10 @@ Complete login to floatplane with 2 factor authentication token.<br>
 ```js
 const user = await floatplane.auth.factor("your2FactorToken")
 ```
+<br>
+
+### floatplane.[auth](#_auth).<a name="auth_cookie">coookie</a>:Array\<string>
+Cookies from `got` session. Can be used to persist login/session.<br>
 <br>
 <br>
 
