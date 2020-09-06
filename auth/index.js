@@ -8,7 +8,7 @@ module.exports = class Auth extends Core {
 
 	/**
 	 * @typedef {{ 
-		needs2FA: boolean
+		needs2FA: boolean,
 		user: {
 			id: string,
 			username: string,
