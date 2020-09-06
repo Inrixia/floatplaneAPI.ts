@@ -12,7 +12,7 @@ module.exports = class Video {
 	 * @param {string} videoQuality Quality wanted
 	 * @returns {string} Video download URL
 	 */
-	downloadURL = async (videoGUID, videoQuality="360") => JSON.parse((await this.got(this.endpoints.url.replace('%guid%', videoGUID).replace('%quality%', videoQuality))).body).replace(/\/chunk.m3u8/, '')
+	url = async (videoGUID, videoQuality="360") => JSON.parse((await this.got(this.endpoints.url.replace('%guid%', videoGUID).replace('%quality%', videoQuality))).body).replace(/\/chunk.m3u8/, '')
 
 	/**
 	 * Downloads a video
@@ -24,5 +24,5 @@ module.exports = class Video {
 	 * const stream = await download("jImMbJ2pbE", "360")
 	 * stream.pipe(fs.createWriteStream('video.mp4')) // Saves video to 'video.mp4'
 	 */
-	download = async (videoGUID, videoQuality="360") => this.got.stream(await this.downloadURL(videoGUID, videoQuality))
+	download = async (videoGUID, videoQuality="360") => this.got.stream(await this.url(videoGUID, videoQuality))
 }
