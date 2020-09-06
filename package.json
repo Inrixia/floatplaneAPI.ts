@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@inrixia/db": "^1.0.1",
-    "@inrixia/helpers": "^1.7.0",
+    "@inrixia/helpers": "^1.7.5",
     "jest": "^26.4.2"
   },
   "scripts": {
