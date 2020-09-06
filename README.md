@@ -34,6 +34,11 @@ const floatplane = new Floatplane(); // Create a new API instance.
 # Floatplane API
 #### [Login](#login)
 
+## Modules
+Each module has an `endpoints` property which is a object containing url strings for each avalible api function.<br>
+Eg: floatplane.[auth](#_auth).endpoints.`login` is the url of the `login` endpoint.
+
+
 ### [Auth](#_auth)
 > [login](#auth_login)<br>
 > [factor](#auth_factor)<br>
@@ -48,7 +53,6 @@ const floatplane = new Floatplane(); // Create a new API instance.
 ### [Video](#_video)
 > [downloadURL](#video_downloadURL)<br>
 > [download](#video_download)
-<br>
 
 ## Types
 >### [User](#user_type)
