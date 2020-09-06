@@ -1,4 +1,5 @@
 # Unofficial Floatplane API
+![GitHub issues](https://img.shields.io/github/issues/inrixia/floatplaneAPI.js)<br>
 This library is not in any way related to LMG or Floatplane Media Inc.
 
 Features/Endpoints are added as needed so if something is missing please make a [Issue](https://github.com/Inrixia/floatplaneAPI.js/issues/new) or [Pull Request](https://github.com/Inrixia/floatplaneAPI.js/pulls)
