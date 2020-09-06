@@ -108,7 +108,7 @@ const user = await floatplane.auth.factor("your2FactorToken")
 ```
 <br>
 
-### floatplane.[auth](#_auth).<a name="auth_cookie">coookie</a>:Array\<string>
+### floatplane.[auth](#_auth).<a name="auth_cookie">cookie</a>:Array\<string>
 Cookies from `got` session. Can be used to persist login/session.<br>
 <br>
 <br>
