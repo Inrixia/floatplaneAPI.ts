@@ -1,9 +1,8 @@
-module.exports = class User {
+const Core = require('../core.js')
+
+module.exports = class User extends Core {
 	endpoints = {
 		subscriptions: "https://www.floatplane.com/api/user/subscriptions"
-	}	
-	constructor(got) {
-		this.got = got
 	}
 
 	/**
@@ -19,9 +18,9 @@ module.exports = class User {
 			title: string,
 			description: string,
 			price: string,
-			priceYearly: string,
+			priceYearly: (string|null),
 			currency: string,
-			logo: string,
+			logo: (string|null),
 			interval: string,
 			featured: boolean,
 			allowGrandfatheredAccess: boolean
@@ -29,5 +28,5 @@ module.exports = class User {
 		creator: string
 	}>} Array of subscription objects.
 	*/
-	subscriptions = async () => JSON.parse((await this.got(this.endpoints.subscriptions)).body)
+	subscriptions = async () => this._middleware(await this.got(this.endpoints.subscriptions))
 }

@@ -1,9 +1,8 @@
-module.exports = class Video {
+const Core = require('../core.js')
+
+module.exports = class Video extends Core{
 	endpoints = {
 		url: "https://www.floatplane.com/api/video/url?guid=%guid%&quality=%quality%"
-	}
-	constructor(got) {
-		this.got = got
 	}
 
 	/**
@@ -12,7 +11,7 @@ module.exports = class Video {
 	 * @param {string} videoQuality Quality wanted
 	 * @returns {string} Video download URL
 	 */
-	url = async (videoGUID, videoQuality="360") => JSON.parse((await this.got(this.endpoints.url.replace('%guid%', videoGUID).replace('%quality%', videoQuality))).body).replace(/\/chunk.m3u8/, '')
+	url = async (videoGUID, videoQuality="360") => this._middleware(await this.got(this.endpoints.url.replace('%guid%', videoGUID).replace('%quality%', videoQuality))).replace(/\/chunk.m3u8/, '')
 
 	/**
 	 * Downloads a video

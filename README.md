@@ -35,30 +35,39 @@ const floatplane = new Floatplane(); // Create a new API instance.
 #### [Login](#login)
 
 ## Modules
-Each module has an `endpoints` property which is a object containing url strings for each avalible api function.<br>
-Eg: floatplane.[auth](#_auth).endpoints.`login` is the url of the `login` endpoint.
+Each module has the following properties:
+- [endpoints](#endpoints)
+- [cookie](#cookie)
+<br>
+
+#### <a name="cookie">cookie</a>:Array\<string>
+Cookies from `got` session. Can be used to persist login/session.<br>
+
+#### <a name="endpoints">endpoints</a>:Array\<string>
+Object containing url strings for each avalible api function.
+Ex: floatplane.[endpoints](#endpoints).login is the url of the `login` endpoint.
+<br>
 
 
 ### [Auth](#_auth)
-> [login](#auth_login)<br>
-> [factor](#auth_factor)<br>
-> [cookie](#auth_cookie)
+- [login](#auth_login)<br>
+- [factor](#auth_factor)<br>
 ### [Api](#_api)
-> [edges](#api_edges)
+- [edges](#api_edges)
 ### [Creator](#_creator)
-> [videos](#creator_videos)<br>
-> [videosIterable](#creator_videosIterable)
+- [videos](#creator_videos)<br>
+- [videosIterable](#creator_videosIterable)
 ### [User](#_user)
-> [subscriptions](#user_subscriptions)
+- [subscriptions](#user_subscriptions)
 ### [Video](#_video)
-> [downloadURL](#video_downloadURL)<br>
-> [download](#video_download)
+- [downloadURL](#video_downloadURL)<br>
+- [download](#video_download)
 
 ## Types
->### [User](#user_type)
->### [Video](#video_type)
->### [Edges](#edges_type)
->### [Subscription](#subscription_type)
+- ### [User](#user_type)
+- ### [Video](#video_type)
+- ### [Edges](#edges_type)
+- ### [Subscription](#subscription_type)
 <br>
 <br>
 
@@ -110,10 +119,6 @@ Complete login to floatplane with 2 factor authentication token.<br>
 ```js
 const user = await floatplane.auth.factor("your2FactorToken")
 ```
-<br>
-
-### floatplane.[auth](#_auth).<a name="auth_cookie">cookie</a>:Array\<string>
-Cookies from `got` session. Can be used to persist login/session.<br>
 <br>
 <br>
 
@@ -332,9 +337,9 @@ const user = new User(got)
 		title: string,
 		description: string,
 		price: string,
-		priceYearly: string,
+		priceYearly: (string|null),
 		currency: string,
-		logo: string,
+		logo: (string|null),
 		interval: string,
 		featured: boolean,
 		allowGrandfatheredAccess: boolean

@@ -4,9 +4,11 @@ const Api = require('./api')
 const Creator = require('./creator')
 const Video = require('./video')
 
-module.exports = class Floatplane {
+const Core = require('./core.js')
+
+module.exports = class Floatplane extends Core {
 	constructor() {
-		this.got = require('got').extend({ // Sets the global requestMethod to be used, this maintains headers
+		super(require('got').extend({ // Sets the global requestMethod to be used, this maintains headers
 			headers: {
 				'User-Agent': `FloatplaneAPI/${require('./package.json').version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.js)`,
 				'accept': 'application/json'
@@ -14,7 +16,7 @@ module.exports = class Floatplane {
 			jar: true, // Use the same cookies globally
 			followAllRedirects: true,
 			mutableDefaults: true
-		})
+		}))
 		this.auth = new Auth(this.got)
 		this.user = new User(this.got)
 		this.api = new Api(this.got)

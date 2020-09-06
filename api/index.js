@@ -1,9 +1,8 @@
-module.exports = class Api {
+const Core = require('../core.js')
+
+module.exports = class Api extends Core {
 	endpoints = {
 		edges: "https://www.floatplane.com/api/edges"
-	}
-	constructor(got) {
-		this.got = got
 	}
 
 	/**
@@ -37,5 +36,5 @@ module.exports = class Api {
 		}
 	}>}
 	 */
-	edges = async () => JSON.parse((await this.got(this.endpoints.edges)).body)
+	edges = async () => this._middleware(await this.got(this.endpoints.edges))
 }

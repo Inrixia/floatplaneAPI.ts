@@ -1,9 +1,8 @@
-module.exports = class Creator {
+const Core = require('../core.js')
+
+module.exports = class Creator extends Core {
 	endpoints = {
 		videos: "https://www.floatplane.com/api/creator/videos?creatorGUID=%creatorGUID%&fetchAfter=%fetchAfter%"
-	}
-	constructor(got) {
-		this.got = got
 	}
 
 	/**
@@ -44,7 +43,7 @@ module.exports = class Creator {
 		let videos = [null]
 		let i = 0;
 		while (videos.length > 0) {
-			videos = await this.videos(creatorGUID, fetchAfter)
+			videos = await this.videos(creatorGUID, fetchAfter+i)
 			yield* videos
 			i += 20
 		}
@@ -56,5 +55,5 @@ module.exports = class Creator {
 	 * @param {number} fetchAfter Number of videos from the latest to fetch from.
 	 * @returns {Array<Video>}
 	 */
-	videos = async (creatorGUID, fetchAfter=0) => JSON.parse((await this.got(this.endpoints.videos.replace('%creatorGUID%', creatorGUID).replace('%fetchAfter%', fetchAfter+i))).body)
+	videos = async (creatorGUID, fetchAfter=0) => this._middleware(await this.got(this.endpoints.videos.replace('%creatorGUID%', creatorGUID).replace('%fetchAfter%', fetchAfter)))
 }
