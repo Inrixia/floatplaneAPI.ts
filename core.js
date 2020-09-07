@@ -16,6 +16,16 @@ module.exports = class Core {
 	}
 
 	/**
+	 * `got` session headers used for requests.
+	 */
+	get headers() {
+		return this.got.defaults.options.headers
+	}
+	set headers(headers) {
+		this.got.defaults.options.headers = headers
+	}
+
+	/**
 	 * `got` session cookies. Use to persist login.
 	 */
 	get cookie() {

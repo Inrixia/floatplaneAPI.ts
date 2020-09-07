@@ -38,17 +38,20 @@ const floatplane = new Floatplane(); // Create a new API instance.
 ## Modules
 Each module has the following properties:
 - [endpoints](#endpoints)
+- [headers](#headers)
 - [cookie](#cookie)
 <br>
+
+#### <a name="endpoints">endpoints</a>:Array\<string>
+Object containing url strings for each avalible api function.
+Ex: floatplane.[endpoints](#endpoints).login is the url of the `login` endpoint.<br>
 
 #### <a name="cookie">cookie</a>:Array\<string>
 Cookies from `got` session. Can be used to persist login/session.<br>
 
-#### <a name="endpoints">endpoints</a>:Array\<string>
-Object containing url strings for each avalible api function.
-Ex: floatplane.[endpoints](#endpoints).login is the url of the `login` endpoint.
+#### <a name="headers">headers</a>:Object\<string:string>
+Headers from `got` session, used for requests.
 <br>
-
 
 ### [Auth](#_auth)
 - [login](#auth_login)<br>
