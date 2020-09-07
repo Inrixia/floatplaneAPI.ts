@@ -32,6 +32,7 @@ module.exports = class Core {
 		return this.got.defaults.options.headers.cookie
 	}
 	set cookie(cookies) {
+		if (!Array.isArray(cookies)) throw new Error(`typeof cookie is ${typeof cookies} must be Array!`)
 		const reducer = (cookieStore, cookie) => ({ ...cookieStore, [cookie.split("=", 1)[0]]: cookie })
 		this.got.defaults.options.headers.cookie = Object.values({ ...cookies.reduce(reducer, {}), ...this.cookie.reduce(reducer, {}) })
 	}
