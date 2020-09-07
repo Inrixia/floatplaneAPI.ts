@@ -34,4 +34,4 @@ const edgesFormat = {
 
 expect.extend({ toMatchFormat });
 
-test('subscriptions', () => expect(api.edges()).resolves.toMatchFormat(edgesFormat));
+test('edges', () => expect(api.edges()).resolves.toMatchFormat(edgesFormat));

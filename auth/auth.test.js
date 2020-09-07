@@ -23,4 +23,4 @@ const loginFormat = {
 
 expect.extend({ toMatchFormat });
 
-test('subscriptions', () => expect(auth.login(username, password)).resolves.toMatchFormat(loginFormat));
+test('login', () => expect(auth.login(username, password)).resolves.toMatchFormat(loginFormat));

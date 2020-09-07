@@ -39,4 +39,4 @@ const videoFormat = {
 
 expect.extend({ childrenToMatchFormat });
 
-test('subscriptions', () => expect(creator.videos("59f94c0bdd241b70349eb72b")).resolves.childrenToMatchFormat(videoFormat));
+test('videos', () => expect(creator.videos("59f94c0bdd241b70349eb72b")).resolves.childrenToMatchFormat(videoFormat));
