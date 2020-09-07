@@ -2,7 +2,6 @@ module.exports = class Core {
 	constructor(got) {
 		if (!got.defaults.options.mutableDefaults) throw new Error('got must be extended with mutableDefaults set true! Please pass got.extend({ mutableDefaults: true })...')
 		this.got = got
-		this._cookie = {}
 	}
 
 	/**
@@ -11,7 +10,9 @@ module.exports = class Core {
 	 * @returns {object} JSON.parsed response body
 	 */
 	_middleware = response => {
-		if (response.headers['set-cookie']) this.cookie = response.headers['set-cookie']
+		if (response.headers['set-cookie']) for (cookie in response.headers['set-cookie']) {
+			this.cookie[cookie] = response.headers['set-cookie'][cookie]
+		}
 		return JSON.parse(response.body)
 	}
 
