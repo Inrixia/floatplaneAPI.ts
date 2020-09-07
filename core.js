@@ -2,6 +2,7 @@ module.exports = class Core {
 	constructor(got) {
 		if (!got.defaults.options.mutableDefaults) throw new Error('got must be extended with mutableDefaults set true! Please pass got.extend({ mutableDefaults: true })...')
 		this.got = got
+		if (this.got.defaults.options.headers.cookie === undefined) this.got.defaults.options.headers.cookie = []
 	}
 
 	/**
@@ -10,9 +11,7 @@ module.exports = class Core {
 	 * @returns {object} JSON.parsed response body
 	 */
 	_middleware = response => {
-		if (response.headers['set-cookie']) for (cookie in response.headers['set-cookie']) {
-			this.cookie[cookie] = response.headers['set-cookie'][cookie]
-		}
+		if (response.headers['set-cookie']) this.cookie = response.headers['set-cookie']
 		return JSON.parse(response.body)
 	}
 
@@ -32,7 +31,8 @@ module.exports = class Core {
 	get cookie() {
 		return this.got.defaults.options.headers.cookie
 	}
-	set cookie(cookie) {
-		this.got.defaults.options.headers.cookie = cookie
+	set cookie(cookies) {
+		const reducer = (cookieStore, cookie) => ({ ...cookieStore, [cookie.split("=", 1)[0]]: cookie })
+		this.got.defaults.options.headers.cookie = Object.values({ ...cookies.reduce(reducer, {}), ...this.cookie.reduce(reducer, {}) })
 	}
 }
