@@ -1,6 +1,6 @@
 {
   "name": "floatplane",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "description": "Library for interfacing with the LMG Floatplane.com api",
   "main": "index.js",
   "types": "index.d.ts",
@@ -27,7 +27,7 @@
   "scripts": {
     "test": "jest auth.test && jest api.test creator.test user.test video.test",
     "tsc": "copy /Y package.json dist && copy /Y package.json src && tsc",
-    "up": "npm run tsc && cd ./dist && npm publish"
+    "send": "npm run tsc && cd ./dist && npm publish"
   },
   "repository": {
     "type": "git",
