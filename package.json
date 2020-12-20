@@ -26,7 +26,7 @@
   },
   "scripts": {
     "test": "jest auth.test && jest api.test creator.test user.test video.test",
-    "tsc": "copy /Y package.json dist && copy /Y package.json src && tsc",
+    "tsc": "copy /Y package.json dist && copy /Y README.md dist && copy /Y package.json src && tsc",
     "send": "npm run tsc && cd ./dist && npm publish"
   },
   "repository": {
