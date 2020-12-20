@@ -1,15 +1,16 @@
 import Core from "../Core";
 import type { Image } from "../types";
 
-export type User = { 
-	needs2FA: boolean,
+export type LoginSuccessResponse = { 
 	user: {
 		id: string,
 		username: string,
 		profileImage: Image
-	}
+	},
+	needs2FA: false
 }
-export type LoginResponse = Promise<User|{ needs2FA: true }>
+export type Needs2FA = { needs2FA: true }
+export type LoginResponse = Promise<LoginSuccessResponse|Needs2FA>
 
 export default class Auth extends Core {
 	endpoints = {
@@ -36,7 +37,7 @@ export default class Auth extends Core {
 	* @param {string} token
 	* @returns {Promise<User>} User object
 	*/
-	factor = async (token: string): Promise<User> => JSON.parse(
+	factor = async (token: string): Promise<LoginSuccessResponse> => JSON.parse(
 		(await this.got.post(this.endpoints.factor, {
 			method: "POST",
 			json: { token: token.toString() }
