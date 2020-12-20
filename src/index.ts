@@ -1,0 +1,66 @@
+import got from "got";
+
+import { CookieJar } from "tough-cookie";
+
+import Auth from "./auth";
+import User from "./user";
+import Api from "./api";
+import Creator from "./creator";
+import Video from "./video";
+
+import type { LoginSuccessResponse } from "./auth";
+
+export type LoginOptions = {
+	username: string,
+	password: string,
+	token: string
+}
+export default class Floatplane {
+	protected got: typeof got;
+
+	public auth: Auth
+	public user: User
+	public api: Api
+	public creator: Creator
+	public video: Video
+
+
+	constructor(cookieJar?: CookieJar) {
+		cookieJar ??= new CookieJar();
+		this.got = got.extend({ // Sets the global requestMethod to be used, this maintains headers
+			cookieJar,
+			headers: {
+				// eslint-disable-next-line @typescript-eslint/no-var-requires
+				"User-Agent": `FloatplaneAPI/${require("./package.json").version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts)`,
+				"accept": "application/json"
+			}
+		});
+		this.auth = new Auth(this.got);
+		this.user = new User(this.got);
+		this.api = new Api(this.got);
+		this.creator = new Creator(this.got);
+		this.video = new Video(this.got);
+	}
+
+	/**
+	 * Login to floatplane so future requests are authenticated
+	 * @param {LoginOptions} options Login options
+	 * @param {string} options.username Username to login with
+	 * @param {string} options.password Password to login with
+	 * @param {string} options.token 2 Factor token to login with
+	 * @returns {Promise<LoginSuccessResponse>} User object OR `{ needs2FA: true }` if user requires 2 Factor authentication.
+	*/
+	login = async (options: LoginOptions): Promise<LoginSuccessResponse> => {
+		if (typeof options.username !== "string") throw new Error("Username must be a string!");
+		if (typeof options.password !== "string") throw new Error("Password must be a string!");
+		
+		let result = await this.auth.login(options.username, options.password);
+
+		if (result.needs2FA === true) {
+			if (typeof options.token !== "string") throw new Error("Token must be a string!");
+			result = await this.auth.factor(options.token);
+		}
+
+		return result;
+	}
+}

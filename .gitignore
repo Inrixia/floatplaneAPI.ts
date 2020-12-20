@@ -1,3 +1,5 @@
 node_modules/
 credentials.json
-t.js
+cookieStore.json
+src/package.json
+dist/
