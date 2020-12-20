@@ -1,40 +1,40 @@
-import { toMatchFormat } from "@inrixia/helpers/jest";
-
 import got from "got";
-import FloatplaneAPI from "./";
+import API from "./";
+import { prepCookieJar } from "../lib/testHelpers";
 
-const api = new FloatplaneAPI(got.extend({ cookieJar:  }));
-api.cookie = (new (require("@inrixia/db"))("credentials", "./credentials.json", false)).cookie;
-
-const edgesFormat = {
-	edges: [{
-		hostname: "string",
-		queryPort: "number",
-		bandwidth: "number",
-		allowDownload: "boolean",
-		allowStreaming: "boolean",
-		datacenter: {
-			countryCode: "string",
-			regionCode: "string",
-			latitude: "number",
-			longitude: "number"
-		}
-	}],
-	client: {
-		ip: "string",
-		country_code: "string",
-		country_name: "string",
-		region_code: "string",
-		region_name: "string",
-		city: "string",
-		zip_code: "string",
-		time_zone: "string",
-		latitude: "number",
-		longitude: "number",
-		metro_code: "number"
+import type { EdgesResponse, Edge, Client } from "./";
+export const clientFormat: Client = {
+	ip: expect.any(String),
+	country_code: expect.any(String),
+	country_name: expect.any(String),
+	region_code: expect.any(String),
+	region_name: expect.any(String),
+	city: expect.any(String),
+	zip_code: expect.any(String),
+	time_zone: expect.any(String),
+	latitude: expect.any(Number),
+	longitude: expect.any(Number),
+	metro_code: expect.any(Number)
+};
+export const edgeFormat: Edge = {
+	hostname: expect.any(String),
+	queryPort: expect.any(Number),
+	bandwidth: expect.any(Number),
+	allowDownload: expect.any(Boolean),
+	allowStreaming: expect.any(Boolean),
+	datacenter: {
+		countryCode: expect.any(String),
+		regionCode: expect.any(String),
+		latitude: expect.any(Number),
+		longitude: expect.any(Number)
 	}
 };
+export const edgesResponseFormat: EdgesResponse = {
+	edges: expect.arrayContaining<Edge>([edgeFormat]),
+	client: clientFormat
+};
 
-expect.extend({ toMatchFormat });
-
-test("edges", () => expect(api.edges()).resolves.toMatchFormat(edgesFormat));
+test("Api.edges()", async () => {
+	const api = new API(got.extend({ cookieJar: await prepCookieJar() }));
+	return expect(api.edges()).resolves.toStrictEqual<EdgesResponse>(edgesResponseFormat);
+});

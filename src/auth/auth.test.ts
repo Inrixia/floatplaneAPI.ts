@@ -1,19 +1,12 @@
-import { toMatchFormat } from "@inrixia/helpers/jest";
-expect.extend({ toMatchFormat });
-
 import got from "got";
-import { CookieJar } from "tough-cookie";
 
 import Auth from ".";
-import type { LoginSuccessResponse, Needs2FA } from "./";
-
 import { username, password, token } from "../lib/credentials.json";
 
-
-
+import type { LoginSuccessResponse, Needs2FA } from "./";
 export const factorFormat: Needs2FA = { needs2FA: true };
 
-import { imageFormat } from "../lib/testHelpers";
+import { imageFormat, prepCookieJar } from "../lib/testHelpers";
 export const loginSuccessResponse: LoginSuccessResponse = {
 	user: {
 		id: expect.any(String),
@@ -23,13 +16,14 @@ export const loginSuccessResponse: LoginSuccessResponse = {
 	needs2FA: false
 };
 
-const auth = new Auth(got.extend({ cookieJar: new CookieJar() }));
-
+let auth: Auth;
+beforeAll(async () => auth = new Auth(got.extend({ cookieJar: await prepCookieJar() })));
+	
 // NOTE: This test assumes that the account used for testing has 2Factor authentication enabled!
 test("Auth.login(username, password)", () => {
-	return expect(auth.login(username, password)).resolves.toMatchObject<Needs2FA>(factorFormat);
+	return expect(auth.login(username, password)).resolves.toStrictEqual<Needs2FA>(factorFormat);
 });
 
 test("Auth.factor(token)", () => {
-	return expect(auth.factor(token)).resolves.toMatchObject<LoginSuccessResponse>(loginSuccessResponse);
+	return expect(auth.factor(token)).resolves.toStrictEqual<LoginSuccessResponse>(loginSuccessResponse);
 });

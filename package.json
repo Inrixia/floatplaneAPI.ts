@@ -12,21 +12,22 @@
     "tough-cookie": "^4.0.0"
   },
   "devDependencies": {
-    "tough-cookie-file-store": "^2.0.2",
-    "@types/tough-cookie-file-store": "^2.0.0",
     "@inrixia/helpers": "^1.14.3",
     "@types/jest": "^26.0.19",
     "@types/tough-cookie": "^4.0.0",
+    "@types/tough-cookie-file-store": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
     "eslint": "^7.16.0",
     "jest": "^26.6.3",
+    "tough-cookie-file-store": "^2.0.2",
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3"
   },
   "scripts": {
+    "test": "jest auth.test && jest api.test creator.test user.test video.test",
     "tsc": "copy /Y package.json dist && copy /Y package.json src && tsc",
-    "pub": "npm run tsc && cd ./dist && npm publish"
+    "up": "npm run tsc && cd ./dist && npm publish"
   },
   "repository": {
     "type": "git",
