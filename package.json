@@ -7,24 +7,32 @@
     "lib": "lib"
   },
   "dependencies": {
-    "got": "^11.6.0"
+    "got": "^11.6.0",
+    "tough-cookie": "^3.0.1"
   },
   "devDependencies": {
-    "@inrixia/db": "^1.0.1",
-    "@inrixia/helpers": "^1.7.6",
-    "jest": "^26.4.2"
+    "@inrixia/db": "^1.3.0",
+    "@inrixia/helpers": "^1.14.0",
+    "@types/tough-cookie": "^4.0.0",
+    "@types/tough-cookie-file-store": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.16.0",
+    "jest": "^26.4.2",
+    "tough-cookie-file-store": "^2.0.2"
   },
   "scripts": {
-    "test": "jest"
+    "prepare": "npm run tsc",
+    "tsc": "copy /Y package.json dist && tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Inrixia/floatplaneAPI.js.git"
+    "url": "git+https://github.com/Inrixia/floatplaneAPI.ts.git"
   },
   "author": "Inrix",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Inrixia/floatplaneAPI.js/issues"
+    "url": "https://github.com/Inrixia/floatplaneAPI.ts/issues"
   },
-  "homepage": "https://github.com/Inrixia/floatplaneAPI.js#readme"
+  "homepage": "https://github.com/Inrixia/floatplaneAPI.ts#readme"
 }
