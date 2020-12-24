@@ -13,7 +13,7 @@ export default class Video extends Core {
 	 * @param videoQuality Quality wanted
 	 * @returns Video download URL
 	 */
-	url = async (videoGUID: string, videoQuality="360"): Promise<string> => (await this.got(this.endpoints.url.replace("%guid%", videoGUID).replace("%quality%", videoQuality))).body.replace(/\/chunk.m3u8/, "")
+	url = async (videoGUID: string, videoQuality="360"): Promise<string> => (await this.got(this.endpoints.url.replace("%guid%", videoGUID).replace("%quality%", videoQuality), { resolveBodyOnly: true })).replace(/\/chunk.m3u8/, "")
 
 	/**
 	 * Downloads a video
@@ -25,5 +25,5 @@ export default class Video extends Core {
 	 * const stream = await download("jImMbJ2pbE", "360")
 	 * stream.pipe(fs.createWriteStream('video.mp4')) // Saves video to 'video.mp4'
 	 */
-	download = async (videoGUID: string, videoQuality="360"): Promise<Request> => this.got.stream(await this.url(videoGUID, videoQuality))
+	download = async (videoGUID: string, videoQuality="360", headers = {}): Promise<Request> => this.got.stream(await this.url(videoGUID, videoQuality), { headers })
 }

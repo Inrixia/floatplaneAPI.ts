@@ -32,7 +32,5 @@ export default class User extends Core {
 	 * Fetch subscriptions for the logged in user.
 	 * @returns {Promise<Array<Subscription>>} Array of subscription objects.
 	*/
-	subscriptions = async (): Promise<Array<Subscription>> => JSON.parse(
-		(await this.got(this.endpoints.subscriptions)).body
-	)
+	subscriptions = async (): Promise<Array<Subscription>> => JSON.parse(await this.got(this.endpoints.subscriptions, { resolveBodyOnly: true }))
 }

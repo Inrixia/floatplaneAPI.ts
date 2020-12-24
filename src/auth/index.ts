@@ -25,10 +25,11 @@ export default class Auth extends Core {
 	 * @returns {LoginResponse} User object OR `{ needs2FA: true }` if user requires 2 Factor authentication.
 	*/
 	login = async (username: string, password: string): Promise<LoginResponse> => JSON.parse(
-		(await this.got.post(this.endpoints.login, { 
+		await this.got.post(this.endpoints.login, { 
 			method: "POST", 
-			json: { username, password }
-		})).body
+			json: { username, password },
+			resolveBodyOnly: true
+		})
 	)
 
 
@@ -38,9 +39,10 @@ export default class Auth extends Core {
 	* @returns {Promise<User>} User object
 	*/
 	factor = async (token: string): Promise<LoginSuccessResponse> => JSON.parse(
-		(await this.got.post(this.endpoints.factor, {
+		await this.got.post(this.endpoints.factor, {
 			method: "POST",
-			json: { token: token.toString() }
-		})).body
+			json: { token: token.toString() },
+			resolveBodyOnly: true
+		})
 	)
 }

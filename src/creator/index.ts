@@ -48,6 +48,6 @@ export default class Creator extends Core {
 	 * @param fetchAfter Number of videos from the latest to fetch from.
 	 */
 	videos = async (creatorGUID: string, fetchAfter=0): Promise<Array<Video>> => JSON.parse(
-		(await this.got(this.endpoints.videos.replace("%creatorGUID%", creatorGUID).replace("%fetchAfter%", fetchAfter.toString()))).body
+		await this.got(this.endpoints.videos.replace("%creatorGUID%", creatorGUID).replace("%fetchAfter%", fetchAfter.toString()), { resolveBodyOnly: true})
 	)
 }
