@@ -30,9 +30,9 @@ export default class Creator extends Core {
 	 * Fetch videos from a creator, returns a Async Iterator.
 	 * @param {string} creatorGUID Creator GUID id to fetch videos for.
 	 * @param fetchAfter Number of videos from the latest to fetch from.
-	 * @returns {AsyncIterator<Video>} Async iterator that yeilds video objects
+	 * @returns {AsyncIterable<Video>} Async iterable that yeilds video objects
 	*/
-	async * videosIterable(creatorGUID: string, fetchAfter=0): AsyncIterator<Video> {
+	async * videosIterable(creatorGUID: string, fetchAfter=0): AsyncIterable<Video> {
 		let i = 0;
 		let videos = await this.videos(creatorGUID, fetchAfter+i);
 		while (videos.length > 0) {
