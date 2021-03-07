@@ -16,7 +16,7 @@ export type LoginOptions = {
 	token: string
 }
 export default class Floatplane {
-	protected got: typeof got;
+	public got: typeof got;
 
 	public auth: Auth
 	public user: User
