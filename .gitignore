@@ -3,3 +3,5 @@ credentials.json
 cookieStore.json
 src/package.json
 dist/
+src/test.ts
+.vscode/
