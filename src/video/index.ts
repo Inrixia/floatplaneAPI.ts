@@ -28,5 +28,5 @@ export default class Video extends Core {
 	 * const stream = await download("jImMbJ2pbE", "360")
 	 * stream.pipe(fs.createWriteStream('video.mp4')) // Saves video to 'video.mp4'
 	 */
-	download = async (videoGUID: string, videoQuality="360", gotOptions: GotOptions = { isStream: true }): Promise<Request> => this.got.stream(await this.url(videoGUID, videoQuality), gotOptions)
+	download = async (videoGUID: string, videoQuality="360", gotOptions: GotOptions | undefined = { isStream: true }): Promise<Request> => this.got.stream(await this.url(videoGUID, videoQuality), gotOptions)
 }
