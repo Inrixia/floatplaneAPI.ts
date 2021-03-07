@@ -2,6 +2,8 @@ import Core from "../Core";
 
 import type Request from "got/dist/source/core";
 
+import type { Options } from "got/dist/source/core";
+
 export default class Video extends Core {
 	endpoints = {
 		url: "https://www.floatplane.com/api/video/url?guid=%guid%&quality=%quality%"
@@ -25,5 +27,5 @@ export default class Video extends Core {
 	 * const stream = await download("jImMbJ2pbE", "360")
 	 * stream.pipe(fs.createWriteStream('video.mp4')) // Saves video to 'video.mp4'
 	 */
-	download = async (videoGUID: string, videoQuality="360", headers = {}): Promise<Request> => this.got.stream(await this.url(videoGUID, videoQuality), { headers })
+	download = async (videoGUID: string, videoQuality="360", gotOptions: Options & { isStream: true } = { isStream: true }): Promise<Request> => this.got.stream(await this.url(videoGUID, videoQuality), gotOptions)
 }

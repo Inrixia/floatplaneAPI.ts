@@ -199,13 +199,17 @@ const videoDownloadURL = await floatplane.video.downloadURL("videoGUID", "720")
 ```
 <br>
 
-### floatplane.[video](#_video).<a name="video_download">download</a>([videoGUID](#videoGUID), [videoQuality](#videoQuality)?): Promise\<[DuplexStream](https://www.npmjs.com/package/got#streams-1)>
+### floatplane.[video](#_video).<a name="video_download">download</a>([videoGUID](#videoGUID), [videoQuality](#videoQuality)?, gotOptions?): Promise\<[DuplexStream](https://www.npmjs.com/package/got#streams-1)>
 Starts downloading specified videoGUID and returns a [got duplex stream](https://www.npmjs.com/package/got#streams-1).<br>
 
 #### <a name="videoGUID">videoGUID</a>:`string`
 Creator GUID to fetch videos from.
 #### <a name="videoQuality">videoQuality</a>:`string`? = `"360"`
 Quality download url should be at, defaults to 360p.<br>
+
+#### gotOptions:`gotOptions`? = `{ isStream: true }`
+Got stream options.
+You can set the request options/headers here.<br>
 
 ### Example:
 ```js
