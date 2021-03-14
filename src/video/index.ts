@@ -16,7 +16,7 @@ export default class Video extends Core {
 	 * @param videoQuality Quality wanted
 	 * @returns Video download URL
 	 */
-	url = async (videoGUID: string, videoQuality="360"): Promise<string> => JSON.parse(await this.got(this.endpoints.url.replace("%guid%", videoGUID).replace("%quality%", videoQuality), { resolveBodyOnly: true })).replace(/\/chunk.m3u8/, "")
+	url = async (videoGUID: string, videoQuality="360"): Promise<string> => JSON.parse(await this.got(this.endpoints.url.replace("%guid%", videoGUID).replace("%quality%", "1080"), { resolveBodyOnly: true })).replace(/\/chunk.m3u8/, "").replace("1080", videoQuality)
 
 	/**
 	 * Downloads a video
