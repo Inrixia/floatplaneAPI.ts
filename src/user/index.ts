@@ -25,7 +25,7 @@ export type Subscription = {
 }
 export default class User extends Core {
 	endpoints = {
-		subscriptions: "https://www.floatplane.com/api/user/subscriptions"
+		subscriptions: "https://www.floatplane.com/api/v2/user/subscriptions"
 	}
 
 	/**
