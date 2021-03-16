@@ -9,7 +9,7 @@ import Creator from "./creator";
 import CDN from "./cdn";
 import Sails from "./sails";
 
-import type { LoginSuccessResponse } from "./auth";
+import type { LoginSuccess } from "./auth";
 
 export type LoginOptions = {
 	username: string,
@@ -52,9 +52,9 @@ export default class Floatplane {
 	 * @param {string} options.username Username to login with
 	 * @param {string} options.password Password to login with
 	 * @param {string} options.token 2 Factor token to login with
-	 * @returns {Promise<LoginSuccessResponse>} User object OR `{ needs2FA: true }` if user requires 2 Factor authentication.
+	 * @returns {Promise<LoginSuccess>} User object OR `{ needs2FA: true }` if user requires 2 Factor authentication.
 	*/
-	login = async (options: LoginOptions): Promise<LoginSuccessResponse> => {
+	login = async (options: LoginOptions): Promise<LoginSuccess> => {
 		if (typeof options.username !== "string") throw new Error("Username must be a string!");
 		if (typeof options.password !== "string") throw new Error("Password must be a string!");
 		

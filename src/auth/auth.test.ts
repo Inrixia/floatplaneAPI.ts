@@ -3,11 +3,11 @@ import got from "got";
 import Auth from ".";
 import { username, password, token } from "../lib/credentials.json";
 
-import type { LoginSuccessResponse, Needs2FA } from "./";
+import type { LoginSuccess, Needs2FA } from "./";
 export const factorFormat: Needs2FA = { needs2FA: true };
 
 import { imageFormat, prepCookieJar } from "../lib/testHelpers";
-export const loginSuccessResponse: LoginSuccessResponse = {
+export const loginSuccessResponse: LoginSuccess = {
 	user: {
 		id: expect.any(String),
 		username: expect.any(String),
@@ -25,5 +25,5 @@ test("Auth.login(username, password)", () => {
 });
 
 test("Auth.factor(token)", () => {
-	return expect(auth.factor(token)).resolves.toStrictEqual<LoginSuccessResponse>(loginSuccessResponse);
+	return expect(auth.factor(token)).resolves.toStrictEqual<LoginSuccess>(loginSuccessResponse);
 });

@@ -2,7 +2,7 @@ export type Image = {
 	width: number;
 	height: number;
 	path: string;
-	childImages: ChildImage[];
+	childImages: Array<ChildImage>;
 };
 
 export type ChildImage = { width: number; height: number; path: string };
