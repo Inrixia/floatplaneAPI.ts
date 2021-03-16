@@ -7,6 +7,20 @@ export type Image = {
 
 export type ChildImage = { width: number; height: number; path: string };
 
+export type Metadata = {
+	hasVideo: boolean;
+	videoCount: number;
+	videoDuration: number;
+	hasAudio: boolean;
+	audioCount: number;
+	audioDuration: number;
+	hasPicture: boolean;
+	pictureCount: number;
+	hasGallery: boolean;
+	galleryCount: number;
+	isFeatured: boolean;
+}
+
 export type SubscriptionPlan = {
 	id: string;
 	title: string;

@@ -3,7 +3,7 @@ import { CookieJar } from "tough-cookie";
 
 export const prepCookieJar = async (): Promise<CookieJar> => new CookieJar(new FileCookieStore("./cookieStore.json"));
 
-import type { Image, ChildImage, CreatorObj, SubscriptionPlan } from "./types";
+import type { Image, ChildImage, CreatorObj, SubscriptionPlan, Metadata } from "./types";
 
 // Cheat for custom matchers in typescript
 export const eExpect: any = Object.assign(expect);
@@ -21,6 +21,20 @@ eExpect.extend({
 		};
 	}
 });
+
+export const metadataFormat: Metadata = {
+	hasVideo: expect.any(Boolean),
+	videoCount: expect.any(Number),
+	videoDuration: expect.any(Number),
+	hasAudio: expect.any(Boolean),
+	audioCount: expect.any(Number),
+	audioDuration: expect.any(Number),
+	hasPicture: expect.any(Boolean),
+	pictureCount: expect.any(Number),
+	hasGallery: expect.any(Boolean),
+	galleryCount: expect.any(Number),
+	isFeatured: expect.any(Boolean),
+};
 
 export const imageFormat: Image = {
 	width: expect.any(Number),

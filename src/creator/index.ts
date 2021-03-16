@@ -1,5 +1,5 @@
 import Core from "../Core";
-import type { CreatorObj, Image } from "../lib/types";
+import type { CreatorObj, Image, Metadata } from "../lib/types";
 
 export type BlogPost = {
 	id: string;
@@ -8,19 +8,7 @@ export type BlogPost = {
 	text: string;
 	type: string;
 	attachmentOrder: Array<string>;
-	metadata: {
-		hasVideo: boolean;
-		videoCount: number;
-		videoDuration: number;
-		hasAudio: boolean;
-		audioCount: number;
-		audioDuration: number;
-		hasPicture: boolean;
-		pictureCount: number;
-		hasGallery: boolean;
-		galleryCount: number;
-		isFeatured: boolean;
-	};
+	metadata: Metadata;
 	releaseDate: string;
 	likes: number;
 	dislikes: number;

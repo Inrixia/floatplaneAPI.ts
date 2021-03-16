@@ -1,6 +1,6 @@
 import got from "got";
 import Creator from ".";
-import { imageFormat, prepCookieJar, creatorObjFormat, eExpect } from "../lib/testHelpers";
+import { imageFormat, prepCookieJar, creatorObjFormat, eExpect, metadataFormat } from "../lib/testHelpers";
 
 import type { BlogPost } from ".";
 export const blogPostFormat: BlogPost = {
@@ -10,19 +10,7 @@ export const blogPostFormat: BlogPost = {
 	text: expect.any(String),
 	type: expect.any(String),
 	attachmentOrder: expect.arrayContaining<string>([expect.any(String)]),
-	metadata: {
-		hasVideo: expect.any(Boolean),
-		videoCount: expect.any(Number),
-		videoDuration: expect.any(Number),
-		hasAudio: expect.any(Boolean),
-		audioCount: expect.any(Number),
-		audioDuration: expect.any(Number),
-		hasPicture: expect.any(Boolean),
-		pictureCount: expect.any(Number),
-		hasGallery: expect.any(Boolean),
-		galleryCount: expect.any(Number),
-		isFeatured: expect.any(Boolean),
-	},
+	metadata: metadataFormat,
 	releaseDate: expect.any(String),
 	likes: expect.any(Number),
 	dislikes: expect.any(Number),
