@@ -2,8 +2,8 @@ import got from "got";
 import Creator from ".";
 import { imageFormat, prepCookieJar, creatorObjFormat, eExpect } from "../lib/testHelpers";
 
-import type { Content } from ".";
-export const contentFormat: Content = {
+import type { BlogPost } from ".";
+export const blogPostFormat: BlogPost = {
 	id: expect.any(String),
 	guid: expect.any(String),
 	title: expect.any(String),
@@ -39,8 +39,8 @@ export const contentFormat: Content = {
 
 test("Creator.videos(creatorGUID)", async () => {
 	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
-	// return expect((await creator.content("59f94c0bdd241b70349eb72b"))[0]).toStrictEqual(contentFormat);
-	return expect(creator.content("59f94c0bdd241b70349eb72b")).resolves.toStrictEqual(
-		expect.arrayContaining<Content>([contentFormat])
+	// return expect((await creator.blogPosts("59f94c0bdd241b70349eb72b"))[0]).toStrictEqual(blogPostFormat);
+	return expect(creator.blogPosts("59f94c0bdd241b70349eb72b")).resolves.toStrictEqual(
+		expect.arrayContaining<BlogPost>([blogPostFormat])
 	);
 });

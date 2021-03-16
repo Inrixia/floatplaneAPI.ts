@@ -1,7 +1,7 @@
 import Core from "../Core";
 import type { CreatorObj, Image } from "../lib/types";
 
-export type Content = {
+export type BlogPost = {
 	id: string;
 	guid: string;
 	title: string;
@@ -36,29 +36,50 @@ export type Content = {
 };
 export default class Creator extends Core {
 	endpoints = {
-		videos: "https://www.floatplane.com/api/v3/content/creator?id=%creatorGUID%&fetchAfter=%fetchAfter%",
+		videos: "https://www.floatplane.com/api/v3/content/creator",
 	};
 
 	/**
-	 * Fetch content from a creator, returns a Async Iterator.
+	 * Fetch blogPosts from a creator, returns a Async Iterator.
 	 * @param {string} creatorGUID Creator GUID id to fetch videos for.
 	 * @param fetchAfter Number of items from the latest to fetch from.
-	 * @returns {AsyncIterable<Video>} Async iterable that yeilds content objects
+	 * @returns {AsyncIterable<BlogPost>} Async iterable that yeilds blogPost objects
 	 */
-	async *contentIterable(creatorGUID: string, fetchAfter = 0): AsyncIterable<Content> {
+	async *blogPostsIterable(creatorGUID: string, fetchAfter = 0): AsyncIterable<BlogPost> {
 		let i = 0;
-		let videos = await this.content(creatorGUID, fetchAfter + i);
-		while (videos.length > 0) {
-			yield* videos;
+		let blogPosts = await this.blogPosts(creatorGUID, { fetchAfter: fetchAfter + i });
+		while (blogPosts.length > 0) {
+			yield* blogPosts;
 			i += 20;
-			videos = await this.content(creatorGUID, fetchAfter + i);
+			blogPosts = await this.blogPosts(creatorGUID, { fetchAfter: fetchAfter + i });
 		}
 	}
 
 	/**
-	 * Fetch content from a creator.
-	 * @param {string} creatorGUID Creator GUID id to fetch videos for.
-	 * @param fetchAfter Number of videos from the latest to fetch from.
+	 * Fetch blogPosts from a creator.
+	 * @param creatorGUID Creator GUID to fetch content for.
+	 * @param options.fetchAfter Number of videos from the latest to fetch from.
+	 * @param options.type Filter BlogPosts by attachment types. Can be "audio", "video", "picture" or "gallery".
+	 * @param options.sort Sort by releaseDate. Can be "DESC" or "ASC".
+	 * @param options.search Filter BlogPosts by search term.
+	 * @param options.limit Max amount of BlogPosts to return. Must be in range 1-20.
+	 * @returns {Promise<Array<BlogPost>>}
 	 */
-	content = async (creatorGUID: string, fetchAfter = 0): Promise<Array<Content>> => JSON.parse(await this.got(this.endpoints.videos.replace("%creatorGUID%", creatorGUID).replace("%fetchAfter%", fetchAfter.toString()), { resolveBodyOnly: true }));
+	blogPosts = async (creatorGUID: string, options?: {
+		fetchAfter?: number,
+		type?: "audio"|"video"|"picture"|"gallery", 
+		sort?: "ASC"|"DESC", 
+		search?: string, 
+		limit?: number 
+	}): Promise<Array<BlogPost>> => JSON.parse(await this.got(
+		this.endpoints.videos
+			+ `?id=${creatorGUID}`
+			+ (options?.fetchAfter  ? `&fetchAfter=${options?.fetchAfter}`  : "")
+			+ (options?.type   		? `&type=${options?.type}` 	 			: "")
+			+ (options?.sort   		? `&sort=${options?.sort}` 	 			: "")
+			+ (options?.search 		? `&search=${options?.search}` 			: "")
+			+ (options?.limit  		? `&type=${options?.limit}` 	 		: ""),
+		{ resolveBodyOnly: true }
+	));
 }
+

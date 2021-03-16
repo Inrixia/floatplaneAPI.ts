@@ -1,7 +1,6 @@
 import { FileCookieStore } from "tough-cookie-file-store";
 import { CookieJar } from "tough-cookie";
 
-// TODO: Remove type fix once types are updated for "tough-cookie-file-store"
 export const prepCookieJar = async (): Promise<CookieJar> => new CookieJar(new FileCookieStore("./cookieStore.json"));
 
 import type { Image, ChildImage, CreatorObj, SubscriptionPlan } from "./types";
