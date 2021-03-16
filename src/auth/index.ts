@@ -1,5 +1,5 @@
 import Core from "../Core";
-import type { Image } from "../types";
+import type { Image } from "../lib/types";
 
 export type LoginSuccessResponse = { 
 	user: {

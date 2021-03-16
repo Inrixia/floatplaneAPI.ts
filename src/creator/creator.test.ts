@@ -1,32 +1,46 @@
 import got from "got";
 import Creator from ".";
-import { imageFormat, prepCookieJar } from "../lib/testHelpers";
+import { imageFormat, prepCookieJar, creatorObjFormat, eExpect } from "../lib/testHelpers";
 
-import type { Video } from ".";
-export const videoFormat: Video = {
+import type { Content } from ".";
+export const contentFormat: Content = {
 	id: expect.any(String),
 	guid: expect.any(String),
 	title: expect.any(String),
+	text: expect.any(String),
 	type: expect.any(String),
-	description: expect.any(String),
+	attachmentOrder: expect.arrayContaining<string>([expect.any(String)]),
+	metadata: {
+		hasVideo: expect.any(Boolean),
+		videoCount: expect.any(Number),
+		videoDuration: expect.any(Number),
+		hasAudio: expect.any(Boolean),
+		audioCount: expect.any(Number),
+		audioDuration: expect.any(Number),
+		hasPicture: expect.any(Boolean),
+		pictureCount: expect.any(Number),
+		hasGallery: expect.any(Boolean),
+		galleryCount: expect.any(Number),
+		isFeatured: expect.any(Boolean),
+	},
 	releaseDate: expect.any(String),
-	duration: expect.any(Number),
-	creator: expect.any(String),
 	likes: expect.any(Number),
 	dislikes: expect.any(Number),
 	score: expect.any(Number),
-	isProcessing: expect.any(Boolean),
-	primaryBlogPost: expect.any(String),
-	thumbnail: imageFormat,
+	comments: expect.any(Number),
+	creator: creatorObjFormat,
 	isAccessible: expect.any(Boolean),
-	hasAccess: expect.any(Boolean),
-	private: expect.any(Boolean),
-	subscriptionPermissions: expect.arrayContaining<string>([expect.any(String)])
+	thumbnail: imageFormat,
+	videoAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
+	audioAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
+	pictureAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
+	galleryAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
 };
-
-
 
 test("Creator.videos(creatorGUID)", async () => {
 	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
-	return expect(creator.videos("59f94c0bdd241b70349eb72b")).resolves.toStrictEqual(expect.arrayContaining<Video>([videoFormat]));
+	// return expect((await creator.content("59f94c0bdd241b70349eb72b"))[0]).toStrictEqual(contentFormat);
+	return expect(creator.content("59f94c0bdd241b70349eb72b")).resolves.toStrictEqual(
+		expect.arrayContaining<Content>([contentFormat])
+	);
 });
