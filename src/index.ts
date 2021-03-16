@@ -6,7 +6,7 @@ import Auth from "./auth";
 import User from "./user";
 import Api from "./api";
 import Creator from "./creator";
-import Video from "./video";
+import CDN from "./cdn";
 import Sails from "./sails";
 
 import type { LoginSuccessResponse } from "./auth";
@@ -23,7 +23,7 @@ export default class Floatplane {
 	public user: User
 	public api: Api
 	public creator: Creator
-	public video: Video
+	public cdn: CDN
 	public sails: Sails
 
 
@@ -42,7 +42,7 @@ export default class Floatplane {
 		this.user = new User(this.got);
 		this.api = new Api(this.got);
 		this.creator = new Creator(this.got);
-		this.video = new Video(this.got);
+		this.cdn = new CDN(this.got);
 		this.sails = new Sails(cookieJar);
 	}
 

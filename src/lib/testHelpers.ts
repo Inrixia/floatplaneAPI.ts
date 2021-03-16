@@ -3,13 +3,19 @@ import { CookieJar } from "tough-cookie";
 
 export const prepCookieJar = async (): Promise<CookieJar> => new CookieJar(new FileCookieStore("./cookieStore.json"));
 
-import type { Image, ChildImage, CreatorObj, SubscriptionPlan, Metadata } from "./types";
+import type { Image, ChildImage, CreatorObj, SubscriptionPlan, Metadata, Client, Edge } from "./types";
 
 // Cheat for custom matchers in typescript
 export const eExpect: any = Object.assign(expect);
 eExpect.extend({
 	toBeTypeOrNull(received: any, argument: any) {
 		if (received === null || expect(received).toEqual(expect.any(argument)) === undefined) return {
+			message: () => "Ok",
+			pass: true,
+		};
+	},
+	toBeObjectTypeOrEmpty(received: any, argument: any) {
+		if (Object.keys(received).length === 0 || expect(received).toEqual(expect.any(argument)) === undefined) return {
 			message: () => "Ok",
 			pass: true,
 		};
@@ -21,6 +27,33 @@ eExpect.extend({
 		};
 	}
 });
+
+export const clientFormat: Client = eExpect.toBeObjectTypeOrEmpty({
+	ip: expect.any(String),
+	country_code: expect.any(String),
+	country_name: expect.any(String),
+	region_code: expect.any(String),
+	region_name: expect.any(String),
+	city: expect.any(String),
+	zip_code: expect.any(String),
+	time_zone: expect.any(String),
+	latitude: expect.any(Number),
+	longitude: expect.any(Number),
+	metro_code: expect.any(Number)
+});
+export const edgeFormat: Edge = {
+	hostname: expect.any(String),
+	queryPort: expect.any(Number),
+	bandwidth: expect.any(Number),
+	allowDownload: expect.any(Boolean),
+	allowStreaming: expect.any(Boolean),
+	datacenter: {
+		countryCode: expect.any(String),
+		regionCode: expect.any(String),
+		latitude: expect.any(Number),
+		longitude: expect.any(Number)
+	}
+};
 
 export const metadataFormat: Metadata = {
 	hasVideo: expect.any(Boolean),

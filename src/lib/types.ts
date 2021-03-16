@@ -21,6 +21,34 @@ export type Metadata = {
 	isFeatured: boolean;
 }
 
+export type Edge = {
+	hostname: string,
+	queryPort: number,
+	bandwidth: number,
+	allowDownload: boolean,
+	allowStreaming: boolean,
+	datacenter: {
+		countryCode: string,
+		regionCode: string,
+		latitude: number,
+		longitude: number
+	}
+}
+
+export type Client = {
+	ip?: string,
+	country_code?: string,
+	country_name?: string,
+	region_code?: string,
+	region_name?: string,
+	city?: string,
+	zip_code?: string,
+	time_zone?: string,
+	latitude?: number,
+	longitude?: number,
+	metro_code?: number
+}
+
 export type SubscriptionPlan = {
 	id: string;
 	title: string;
