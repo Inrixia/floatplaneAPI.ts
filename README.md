@@ -56,6 +56,7 @@ Ex: floatplane.<a name="auth">auth</a>.endpoints.login is the url of the `login`
 - [.connect()](#sails_connect)<br>
 - [.on("syncEvent")](#sails_syncEvent)<br>
 <br>
+
 ## [Types](#types)
 <br>
 
@@ -421,7 +422,7 @@ Types Used: <a name="image_type">Image</a>, <a name="subscriptionplan_type">Subs
 <br>
 
 ## <a name="blogPost_type">BlogPost</a>
-Types Used: <a name="metadata_type">Metadata</a>, <a name="creatorobj_type">CreatorObj</a>
+Types Used: <a name="metadata_type">Metadata</a>, <a name="creatorobj_type">CreatorObj</a>, <a name="image_type">Image</a>
 ```ts
 {
 	id: string;
@@ -532,7 +533,7 @@ Types Used: <a name="qualitylevel_type">QualityLevel</a>
 <br>
 
 ## <a name="DownloadDeliveryResponseDeliveryResponse_type">DownloadDeliveryResponseDeliveryResponse</a>
-Types Used: <a name="qualitylevel_type">QualityLevel</a>, <a name="edge_type">Edge</a>
+Types Used: <a name="client_type">Client</a>, <a name="qualitylevel_type">QualityLevel</a>, <a name="edge_type">Edge</a>
 ```ts
 {
 	client?: Client;
