@@ -25,10 +25,14 @@ export const blogPostFormat: BlogPost = {
 	galleryAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
 };
 
-test("Creator.videos(creatorGUID)", async () => {
+test("Creator.blogPosts(creatorGUID)", async () => {
 	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
-	// return expect((await creator.blogPosts("59f94c0bdd241b70349eb72b"))[0]).toStrictEqual(blogPostFormat);
 	return expect(creator.blogPosts("59f94c0bdd241b70349eb72b")).resolves.toStrictEqual(
 		expect.arrayContaining<BlogPost>([blogPostFormat])
 	);
+});
+
+test("Creator.blogPostsIterator(creatorGUID)", async () => {
+	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
+	return expect((await creator.blogPostsIterator("59f94c0bdd241b70349eb72b").next()).value).toStrictEqual(blogPostFormat);
 });

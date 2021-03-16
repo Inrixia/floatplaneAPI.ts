@@ -29,17 +29,23 @@ export default class Creator extends Core {
 
 	/**
 	 * Fetch blogPosts from a creator, returns a Async Iterator.
-	 * @param {string} creatorGUID Creator GUID id to fetch videos for.
-	 * @param fetchAfter Number of items from the latest to fetch from.
-	 * @returns {AsyncIterable<BlogPost>} Async iterable that yeilds blogPost objects
+	 * @param creatorGUID Creator GUID to fetch content for.
+	 * @param options.type Filter BlogPosts by attachment types. Can be "audio", "video", "picture" or "gallery".
+	 * @param options.sort Sort by releaseDate. Can be "DESC" or "ASC".
+	 * @param options.search Filter BlogPosts by search term.
+	 * @returns {AsyncIterator<BlogPost>} Async iterable that yeilds blogPost objects
 	 */
-	async *blogPostsIterable(creatorGUID: string, fetchAfter = 0): AsyncIterable<BlogPost> {
-		let i = 0;
-		let blogPosts = await this.blogPosts(creatorGUID, { fetchAfter: fetchAfter + i });
+	async *blogPostsIterator(creatorGUID: string, options?: {
+		type?: "audio"|"video"|"picture"|"gallery", 
+		sort?: "ASC"|"DESC", 
+		search?: string
+	}): AsyncIterator<BlogPost> {
+		let fetchAfter = 0;
+		let blogPosts = await this.blogPosts(creatorGUID, { ...options, fetchAfter });
 		while (blogPosts.length > 0) {
 			yield* blogPosts;
-			i += 20;
-			blogPosts = await this.blogPosts(creatorGUID, { fetchAfter: fetchAfter + i });
+			fetchAfter += 20;
+			blogPosts = await this.blogPosts(creatorGUID, { ...options, fetchAfter });
 		}
 	}
 
