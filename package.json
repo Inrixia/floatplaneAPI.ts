@@ -1,6 +1,6 @@
 {
   "name": "floatplane",
-  "version": "2.1.7",
+  "version": "3.0.0",
   "description": "Library for interfacing with the LMG Floatplane.com api",
   "main": "index.js",
   "types": "index.d.ts",
