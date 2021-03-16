@@ -7,6 +7,7 @@ import User from "./user";
 import Api from "./api";
 import Creator from "./creator";
 import Video from "./video";
+import Sails from "./sails";
 
 import type { LoginSuccessResponse } from "./auth";
 
@@ -23,6 +24,7 @@ export default class Floatplane {
 	public api: Api
 	public creator: Creator
 	public video: Video
+	public sails: Sails
 
 
 	constructor(cookieJar?: CookieJar) {
@@ -32,7 +34,8 @@ export default class Floatplane {
 			headers: {
 				// eslint-disable-next-line @typescript-eslint/no-var-requires
 				"User-Agent": `FloatplaneAPI/${require("./package.json").version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts)`,
-				"accept": "application/json"
+				"accept": "application/json",
+				"connection": "keep-alive"
 			}
 		});
 		this.auth = new Auth(this.got);
@@ -40,6 +43,7 @@ export default class Floatplane {
 		this.api = new Api(this.got);
 		this.creator = new Creator(this.got);
 		this.video = new Video(this.got);
+		this.sails = new Sails(cookieJar);
 	}
 
 	/**
