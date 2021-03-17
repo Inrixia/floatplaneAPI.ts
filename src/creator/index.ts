@@ -39,7 +39,7 @@ export default class Creator extends Core {
 		type?: "audio"|"video"|"picture"|"gallery", 
 		sort?: "ASC"|"DESC", 
 		search?: string
-	}): AsyncIterator<BlogPost> {
+	}): AsyncIterableIterator<BlogPost> {
 		let fetchAfter = 0;
 		let blogPosts = await this.blogPosts(creatorGUID, { ...options, fetchAfter });
 		while (blogPosts.length > 0) {

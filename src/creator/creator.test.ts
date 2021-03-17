@@ -32,7 +32,14 @@ test("Creator.blogPosts(creatorGUID)", async () => {
 	);
 });
 
-test("Creator.blogPostsIterable(creatorGUID)", async () => {
+test("Creator.blogPostsIterable(creatorGUID).next()", async () => {
 	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
 	return expect((await creator.blogPostsIterable("59f94c0bdd241b70349eb72b").next()).value).toStrictEqual(blogPostFormat);
+});
+
+test("for await (const blogPost of Creator.blogPostsIterable(creatorGUID))", async () => {
+	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
+	for await (const blogPost of creator.blogPostsIterable("59f94c0bdd241b70349eb72b")) {
+		return expect(blogPost).toStrictEqual(blogPostFormat);
+	}
 });
