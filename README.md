@@ -46,7 +46,7 @@ Ex: floatplane.<a name="auth">auth</a>.endpoints.login is the url of the `login`
 - [.edges()](#api_edges)
 ### [Creator](#_creator)
 - [.blogPosts(creatorGUID, options)](#creator_blogPosts)<br>
-- [.blogPostsIterator(creatorGUID, options)](#creator_blogPostsIterator)
+- [.blogPostsIterable(creatorGUID, options)](#creator_blogPostsIterable)
 ### [User](#_user)
 - [.subscriptions()](#user_subscriptions)
 ### [CDN](#_cdn)
@@ -139,7 +139,7 @@ const user = await floatplane.api.edges()
 ---
 ### <b>floatplane.[creator](#_creator).<a name="creator_blogPosts">blogPosts</a></b>(creatorGUID, options?): Promise<Array\<[BlogPost](#blogpost_type)>>
 Fetch creator blogPosts, returns a promise of an array of 20 blogPosts.<br>
-If you want to easily fetch more than 20 blogPosts check out [blogPostsIterator()](creator_blogPostsIterator) instead.
+If you want to easily fetch more than 20 blogPosts check out [blogPostsIterable()](creator_blogPostsIterable) instead.
 <br><br>
 <b>creatorGUID</b>: `string`<br>
 Creator GUID to fetch videos from.
@@ -166,7 +166,7 @@ const videos = await floatplane.creator.blogPosts("creatorGUID", { type: "video"
 ```
 <br>
 
-### <b>floatplane.[creator](#_creator).<a name="creator_blogPostsIterator">blogPostsIterator</a></b>(creatorGUID, options?): AsyncIterator\<[Video](#video_type)>
+### <b>floatplane.[creator](#_creator).<a name="creator_blogPostsIterable">blogPostsIterable</a></b>(creatorGUID, options?): AsyncIterator\<[Video](#video_type)>
 Fetch creator videos. Returns a async iterator that will return all blogPosts from the specified creator.<br>
 BlogPosts are fetched in batches of 20 but returned individually.<br><br>
 Creator GUID to fetch videos from.<br>
@@ -184,11 +184,11 @@ Filter BlogPosts by search term.<br>
 <br><br>
 ### Examples:
 ```js
-const videos = floatplane.creator.blogPostsIterator("creatorGUID", { type: "video"})
+const videos = floatplane.creator.blogPostsIterable("creatorGUID", { type: "video"})
 const firstVideo = await videos.next().value // Fetch one video
 ```
 ```js
-for await (const video of floatplane.creator.blogPostsIterator("creatorGUID", { type: "video"})) {
+for await (const video of floatplane.creator.blogPostsIterable("creatorGUID", { type: "video"})) {
 	// Loops over every video from the creator.
 }
 ```

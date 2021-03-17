@@ -60,6 +60,6 @@ class Sails extends EventEmitter {
 				else reject(data);
 			});
 		});
-	};
+	}
 }
 export default Sails;

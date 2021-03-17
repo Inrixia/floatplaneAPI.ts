@@ -33,9 +33,9 @@ export default class Creator extends Core {
 	 * @param options.type Filter BlogPosts by attachment types. Can be "audio", "video", "picture" or "gallery".
 	 * @param options.sort Sort by releaseDate. Can be "DESC" or "ASC".
 	 * @param options.search Filter BlogPosts by search term.
-	 * @returns {AsyncIterator<BlogPost>} Async iterable that yeilds blogPost objects
+	 * @returns {AsyncIterable<BlogPost>} Async iterable that yeilds blogPost objects
 	 */
-	async *blogPostsIterator(creatorGUID: string, options?: {
+	async *blogPostsIterable(creatorGUID: string, options?: {
 		type?: "audio"|"video"|"picture"|"gallery", 
 		sort?: "ASC"|"DESC", 
 		search?: string
