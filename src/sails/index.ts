@@ -10,6 +10,7 @@ import { EventEmitter } from "events";
 import type { Image, Metadata } from "../lib/types";
 
 export type ConnectResponse = { message: string };
+
 export type CreatorMenuUpdate = {
 	event: "creatorMenuUpdate";
 	id: string;
@@ -27,11 +28,20 @@ export type CreatorMenuUpdate = {
 	creator: string;
 	thumbnail: Image;
 };
-export type SyncEvent = CreatorMenuUpdate | { event: string; [key: string]: unknown };
+
+// This is a terrible way to handle this...
+// Until not types exist in TS the only decent way I have found.
+type UnknownUpdate = {
+	event: undefined,
+	[key: string]: unknown
+}
+
+export type SyncEvent = CreatorMenuUpdate | UnknownUpdate;
 
 declare interface Sails {
 	on(event: "syncEvent", listener: (syncEvent: SyncEvent) => void): this;
 }
+
 class Sails extends EventEmitter {
 	private cookieJar: CookieJar;
 	private io: SailsIOJS.Client;
