@@ -11,9 +11,9 @@
   },
   "devDependencies": {
     "@inrixia/helpers": "^1.15.1",
+    "@types/jest": "^26.0.19",
     "@types/sails.io.js": "^1.0.2",
     "@types/socket.io-client": "^1.4.36",
-    "@types/jest": "^26.0.19",
     "@types/tough-cookie": "^4.0.0",
     "@types/tough-cookie-file-store": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
