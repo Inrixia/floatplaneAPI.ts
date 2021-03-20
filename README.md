@@ -571,8 +571,7 @@ Types Used: <a name="image_type">Image</a>
 	creator: string;
 	thumbnail: Image;
 } | { 
-	event: string; 
-	[key: string]: unknown 
+	event: "thisIsHereToForceEventTypeChecks...";
 }
 ```
 <br><br>
