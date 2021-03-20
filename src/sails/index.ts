@@ -31,10 +31,7 @@ export type CreatorMenuUpdate = {
 
 // This is a terrible way to handle this...
 // Until not types exist in TS the only decent way I have found.
-type UnknownUpdate = {
-	event: undefined,
-	[key: string]: unknown
-}
+type UnknownUpdate = { event: "thisIsHereToForceEventchecks..." }
 
 export type SyncEvent = CreatorMenuUpdate | UnknownUpdate;
 
