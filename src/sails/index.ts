@@ -96,7 +96,14 @@ class Sails extends EventEmitter {
 	constructor(cookieJar: CookieJar) {
 		super();
 		this.cookieJar = cookieJar;
+
 		this.io = sailsIOClient(socketIOClient);
+		this.io.sails.initialConnectionHeaders = {
+			Origin: "https://www.floatplane.com",
+			cookie: this.cookie,
+		};
+		this.io.sails.url = "https://www.floatplane.com";	
+
 		this.io.socket.on("syncEvent", data => this.emit("syncEvent", data));
 	}
 
@@ -104,18 +111,11 @@ class Sails extends EventEmitter {
 		return this.cookieJar.toJSON().cookies.reduce((cookies, cookie) => `${cookies}${cookie.key}=${cookie.value}; `, "");
 	}
 
-	connect(): Promise<ConnectResponse> {
-		this.io.sails.initialConnectionHeaders = {
-			Origin: "https://www.floatplane.com",
-			cookie: this.cookie,
-		};
-		this.io.sails.url = "https://www.floatplane.com";	
-		return new Promise((resolve, reject) => {
-			this.io.socket.post("/api/sync/connect", {}, (data, res) => {
-				if (res.statusCode === 200) resolve(data);
-				else reject(data);
-			});
+	connect = (): Promise<ConnectResponse> => new Promise((resolve, reject) => {
+		this.io.socket.post("/api/sync/connect", {}, (data, res) => {
+			if (res.statusCode === 200) resolve(data);
+			else reject(data);
 		});
-	}
+	});
 }
 export default Sails;
