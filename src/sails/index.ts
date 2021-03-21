@@ -29,11 +29,65 @@ export type CreatorMenuUpdate = {
 	thumbnail: Image;
 };
 
-// This is a terrible way to handle this...
-// Until not types exist in TS the only decent way I have found.
-type UnknownUpdate = { event: "thisIsHereToForceEventTypeChecks..." }
+export type PostRelease = {
+	event: "postRelease";
+	data: {
+		id: string;
+		message: string;
+		url: string;
+		title: string;
+		post: {
+			id: string;
+			guid: string;
+			title: string;
+			text: string;
+			type: string;
+			attachmentOrder: Array<string>;
+			metadata: Metadata;
+			releaseDate: string | null;
+			likes: number;
+			dislikes: number;
+			score: number;
+			comments: number;
+			creator: string;
+			thumbnail: Image;
+		};
+		video: {
+			id: string;
+			guid: string;
+			creator: {
+				createdAt: string;
+				updatedAt: string;
+				id: string;
+				urlname: string;
+				title: string;
+				description: string;
+				about: string;
+				visibility: string;
+				subscriberCountDisplay: string;
+				incomeDisplay: boolean;
+				discoverable: boolean;
+				creatorWarehouseShopName: string;
+				creatorWarehouseApiKey: string;
+				creatorWarehousePassword: string;
+				creatorWarehouseShopUrl: string;
+				transcodingPriority: string;
+				owner: string;
+				category: string;
+				iconImage: string;
+				coverImage: string;
+				cardImage: string;
+				liveStream: string;
+				customCreatorAgreement: string;
+				profileImageUrl: string;
+			};
+			description: string;
+		};
+		icon: string;
+	};
+};
 
-export type SyncEvent = CreatorMenuUpdate | UnknownUpdate;
+export type SyncEvent = CreatorMenuUpdate | PostRelease;
 
 declare interface Sails {
 	on(event: "syncEvent", listener: (syncEvent: SyncEvent) => void): this;
