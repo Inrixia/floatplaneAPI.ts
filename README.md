@@ -49,6 +49,7 @@ Ex: floatplane.<a name="auth">auth</a>.endpoints.login is the url of the `login`
 - [.blogPostsIterable(creatorGUID, options)](#creator_blogPostsIterable)
 ### [User](#_user)
 - [.subscriptions()](#user_subscriptions)
+- [.self()](#user_self)
 ### [CDN](#_cdn)
 - [.delivery(type, id)](#cdn_delivery)<br>
 
@@ -205,6 +206,15 @@ Fetches subscriptions for current user.<br>
 const subscriptions = await floatplane.user.subscriptions()
 ```
 <br>
+
+### <b>floatplane.[user](#_user).<a name="user_self">self</a></b>(): Promise\<FloatplaneUser(#FloatplaneUser)>
+Fetch information about the logged in user.<br>
+
+### Example:
+```js
+const subscriptions = await floatplane.user.subscriptions()
+```
+<br>
 <br>
 
 ## <a name="_cdn">CDN</a>
@@ -267,7 +277,7 @@ const user = new User(got)
 <br>
 
 ## <a name="LoginSuccess_type">LoginSuccess</a>
-Types Used: <a name="image_type">Image</a>
+Types Used: <a name="Image_type">Image</a>
 ```ts
 type LoginSuccess = { 
 	user: {
@@ -289,8 +299,8 @@ type Needs2fa = {
 ```
 <br>
 
-## <a name="image_type">Image</a>
-Types Used: <a name="childimage_type">ChildImage</a>
+## <a name="Image_type">Image</a>
+Types Used: <a name="childImage_type">ChildImage</a>
 ```ts
 type ChildImage = {
 	width: number;
@@ -301,7 +311,7 @@ type ChildImage = {
 ```
 <br>
 
-## <a name="childimage_type">ChildImage</a>
+## <a name="childImage_type">ChildImage</a>
 ```ts
 type ChildImage = { 
 	width: number; 
@@ -312,7 +322,7 @@ type ChildImage = {
 <br>
 
 ## <a name="user_type">User</a>
-Types Used: <a name="image_type">Image</a>
+Types Used: <a name="Image_type">Image</a>
 ```ts
 type Image = { 
 	needs2FA: boolean,
@@ -331,7 +341,7 @@ type Image = {
 <br>
 
 ## <a name="subscriptionplan_type">SubscriptionPlan</a>
-Types Used: <a name="image_type">Image</a>
+Types Used: <a name="Image_type">Image</a>
 ```ts
 type SubscriptionPlan = {
 	id: string;
@@ -365,8 +375,8 @@ type Subscription = {
 ```
 <br>
 
-## <a name="creatorobj_type">CreatorObj</a>
-Types Used: <a name="image_type">Image</a>, <a name="subscriptionplan_type">SubscriptionPlan</a>
+## <a name="CreatorObj_type">CreatorObj</a>
+Types Used: <a name="Image_type">Image</a>, <a name="subscriptionplan_type">SubscriptionPlan</a>
 ```ts
 type CreatorObj = {
 	id: string;
@@ -424,7 +434,7 @@ type Metadata = {
 <br>
 
 ## <a name="blogPost_type">BlogPost</a>
-Types Used: <a name="metadata_type">Metadata</a>, <a name="creatorobj_type">CreatorObj</a>, <a name="image_type">Image</a>
+Types Used: <a name="metadata_type">Metadata</a>, <a name="CreatorObj_type">CreatorObj</a>, <a name="Image_type">Image</a>
 ```ts
 type BlogPost = {
 	id: string;
@@ -553,8 +563,22 @@ type DownloadDeliveryResponseDeliveryResponse = {
 ```
 <br>
 
+## <a name="FloatplaneUser_type">FloatplaneUser</a>
+Types Used: <a name="CreatorObj_type">CreatorObj</a>, <a name="Image_type">Image</a>
+```ts
+export type FloatplaneUser = {
+	id: string;
+	username: string;
+	profileImage: Image;
+	email: string;
+	displayName: string;
+	creators: CreatorObj[];
+};
+```
+<br>
+
 ## <a name="SyncEvent_type">SyncEvent</a>
-Types Used: <a name="image_type">Image</a>
+Types Used: <a name="Image_type">Image</a>
 ```ts
 type SyncEvent = CreatorMenuUpdate | PostRelease;
 

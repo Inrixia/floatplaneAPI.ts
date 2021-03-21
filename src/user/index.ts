@@ -1,5 +1,5 @@
 import Core from "../Core";
-import { SubscriptionPlan } from "../lib/types";
+import { SubscriptionPlan, Image } from "../lib/types";
 
 export type Subscription = {
 	startDate: string,
@@ -11,14 +11,28 @@ export type Subscription = {
 	creator: string
 }
 
+export type FloatplaneUser = {
+	id: string;
+	username: string;
+	profileImage: Image;
+	email: string;
+	displayName: string;
+	creators: string[];
+};
+
 export default class User extends Core {
 	endpoints = {
-		subscriptions: "https://www.floatplane.com/api/v2/user/subscriptions"
+		subscriptions: "https://www.floatplane.com/api/v3/user/subscriptions",
+		self: "https://www.floatplane.com/api/v3/user/self"
 	}
 
 	/**
 	 * Fetch subscriptions for the logged in user.
-	 * @returns {Promise<Array<Subscription>>} Array of subscription objects.
 	*/
 	subscriptions = async (): Promise<Array<Subscription>> => JSON.parse(await this.got(this.endpoints.subscriptions, { resolveBodyOnly: true }))
+
+	/**
+	 * Fetch information about the logged in user.
+	*/
+	self = async (): Promise<FloatplaneUser> => JSON.parse(await this.got(this.endpoints.self, { resolveBodyOnly: true }))
 }

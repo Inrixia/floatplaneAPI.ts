@@ -111,6 +111,9 @@ class Sails extends EventEmitter {
 		return this.cookieJar.toJSON().cookies.reduce((cookies, cookie) => `${cookies}${cookie.key}=${cookie.value}; `, "");
 	}
 
+	/**
+	 * Subscribe to syncEvents
+	 */
 	connect = (): Promise<ConnectResponse> => new Promise((resolve, reject) => {
 		this.io.socket.post("/api/sync/connect", {}, (data, res) => {
 			if (res.statusCode === 200) resolve(data);
