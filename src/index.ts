@@ -67,4 +67,9 @@ export default class Floatplane {
 
 		return result;
 	}
+
+	/**
+	 * Returns true if authenticated or Error if not.
+	 */
+	isAuthenticated = async (): Promise<Error | true> => this.user.self().catch((err: Error) => err).then(() => true);
 }

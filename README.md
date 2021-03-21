@@ -33,6 +33,7 @@ const floatplane = new Floatplane(); // Create a new API instance.
 
 # Floatplane API
 ### [Login](#floatplane_login)
+### [isAuthenticated](#floatplane_isAuthenticated)
 
 ## Modules
 Each module has a object containing endpoints used. Purely<br>
@@ -85,6 +86,10 @@ const user = await floatplane.login({
 	token: "yourTokenIfYouUse2Factor"
 })
 ```
+<br>
+
+### <b>floatplane.[isAuthenticated](#floatplane_isAuthenticated)</b>(): Promise\<`true` | `Error`>
+Returns promise of true if authenticated or Error if not.<br>
 <br>
 <br>
 
