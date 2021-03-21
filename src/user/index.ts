@@ -1,5 +1,5 @@
 import Core from "../Core";
-import { SubscriptionPlan, Image } from "../lib/types";
+import { FloatplaneUser, SubscriptionPlan } from "../lib/types";
 
 export type Subscription = {
 	startDate: string,
@@ -10,15 +10,6 @@ export type Subscription = {
 	plan: SubscriptionPlan,
 	creator: string
 }
-
-export type FloatplaneUser = {
-	id: string;
-	username: string;
-	profileImage: Image;
-	email: string;
-	displayName: string;
-	creators: string[];
-};
 
 export default class User extends Core {
 	endpoints = {

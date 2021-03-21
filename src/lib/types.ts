@@ -7,6 +7,20 @@ export type Image = {
 
 export type ChildImage = { width: number; height: number; path: string };
 
+export type FloatplaneUser = {
+	id: string;
+	username: string;
+	profileImage: Image;
+	email: string;
+	displayName: string;
+	creators: string[];
+	isSpoofed?: boolean,
+	isAdministrator?: boolean,
+	isModerator?: boolean,
+	isGlobalModerator?: boolean,
+	moderatorCreators?: string[]
+};
+
 export type Metadata = {
 	hasVideo: boolean;
 	videoCount: number;

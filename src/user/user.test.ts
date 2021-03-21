@@ -1,6 +1,6 @@
 import got from "got";
 import User from ".";
-import { prepCookieJar, subscriptionPlan } from "../lib/testHelpers";
+import { floatplaneUserFormat, prepCookieJar, subscriptionPlan } from "../lib/testHelpers";
 
 import type { Subscription } from "./";
 
@@ -17,4 +17,9 @@ export const subscriptionFormat: Subscription = {
 test("User.subscriptions()", async () => {
 	const user = new User(got.extend({ cookieJar: await prepCookieJar() }));
 	return expect(user.subscriptions()).resolves.toStrictEqual(expect.arrayContaining<Subscription>([subscriptionFormat]));
+});
+
+test("User.self()", async () => {
+	const user = new User(got.extend({ cookieJar: await prepCookieJar() }));
+	return expect(user.self()).resolves.toStrictEqual(floatplaneUserFormat);
 });
