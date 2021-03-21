@@ -269,50 +269,52 @@ const user = new User(got)
 ## <a name="LoginSuccess_type">LoginSuccess</a>
 Types Used: <a name="image_type">Image</a>
 ```ts
-{ 
+type LoginSuccess = { 
 	user: {
 		id: string,
 		username: string,
 		profileImage: Image
 	},
 	needs2FA: false
-}
+};
 ```
 <br>
 
 ## <a name="needs2fa">Needs2fa</a>
 Types Used: <a name="needs2fa_type">Needs2fa</a>
 ```ts
-{ needs2fa: true }
+type Needs2fa = { 
+	needs2fa: true 
+};
 ```
 <br>
 
 ## <a name="image_type">Image</a>
 Types Used: <a name="childimage_type">ChildImage</a>
 ```ts
-{
+type ChildImage = {
 	width: number;
 	height: number;
 	path: string;
 	childImages: Array<ChildImage>;
-}
+};
 ```
 <br>
 
 ## <a name="childimage_type">ChildImage</a>
 ```ts
-{ 
+type ChildImage = { 
 	width: number; 
 	height: number; 
 	path: string 
-}
+};
 ```
 <br>
 
 ## <a name="user_type">User</a>
 Types Used: <a name="image_type">Image</a>
 ```ts
-{ 
+type Image = { 
 	needs2FA: boolean,
 	user: {
 		id: string,
@@ -324,14 +326,14 @@ Types Used: <a name="image_type">Image</a>
 			childImages: Array<Image>
 		}
 	}
-}
+};
 ```
 <br>
 
 ## <a name="subscriptionplan_type">SubscriptionPlan</a>
 Types Used: <a name="image_type">Image</a>
 ```ts
-{
+type SubscriptionPlan = {
 	id: string;
 	title: string;
 	description: string;
@@ -344,14 +346,14 @@ Types Used: <a name="image_type">Image</a>
 	allowGrandfatheredAccess: boolean;
 	discordServers: Array<string>;
 	discordRoles: Array<string>;
-}
+};
 ```
 <br>
 
 ## <a name="subscription_type">Subscription</a>
 Types Used: <a name="subscriptionplan_type">SubscriptionPlan</a>
 ```ts
-{
+type Subscription = {
 	startDate: string,
 	endDate: string,
 	paymentID: number,
@@ -359,14 +361,14 @@ Types Used: <a name="subscriptionplan_type">SubscriptionPlan</a>
 	paymentCancelled: boolean,
 	plan: SubscriptionPlan,
 	creator: string
-}
+};
 ```
 <br>
 
 ## <a name="creatorobj_type">CreatorObj</a>
 Types Used: <a name="image_type">Image</a>, <a name="subscriptionplan_type">SubscriptionPlan</a>
 ```ts
-{
+type CreatorObj = {
 	id: string;
 	owner: {
 		id: string;
@@ -399,13 +401,13 @@ Types Used: <a name="image_type">Image</a>, <a name="subscriptionplan_type">Subs
 	subscriberCountDisplay: string;
 	incomeDisplay: boolean;
 	card: Image;
-}
+};
 ```
 <br>
 
 ## <a name="metadata_type">Metadata</a>
 ```ts
-{
+type Metadata = {
 	hasVideo: boolean;
 	videoCount: number;
 	videoDuration: number;
@@ -417,14 +419,14 @@ Types Used: <a name="image_type">Image</a>, <a name="subscriptionplan_type">Subs
 	hasGallery: boolean;
 	galleryCount: number;
 	isFeatured: boolean;
-}
+};
 ```
 <br>
 
 ## <a name="blogPost_type">BlogPost</a>
 Types Used: <a name="metadata_type">Metadata</a>, <a name="creatorobj_type">CreatorObj</a>, <a name="image_type">Image</a>
 ```ts
-{
+type BlogPost = {
 	id: string;
 	guid: string;
 	title: string;
@@ -444,13 +446,13 @@ Types Used: <a name="metadata_type">Metadata</a>, <a name="creatorobj_type">Crea
 	audioAttachments: Array<string>;
 	pictureAttachments: Array<string>;
 	galleryAttachments: Array<string>;
-}
+};
 ```
 <br>
 
 ## <a name="edge_type">Edge</a>
 ```ts
-{
+type Edge = {
 	hostname: string,
 	queryPort: number,
 	bandwidth: number,
@@ -462,13 +464,13 @@ Types Used: <a name="metadata_type">Metadata</a>, <a name="creatorobj_type">Crea
 		latitude: number,
 		longitude: number
 	}
-}
+};
 ```
 <br>
 
 ## <a name="client_type">Client</a>
 ```ts
-{
+type Client = {
 	ip?: string,
 	country_code?: string,
 	country_name?: string,
@@ -480,25 +482,25 @@ Types Used: <a name="metadata_type">Metadata</a>, <a name="creatorobj_type">Crea
 	latitude?: number,
 	longitude?: number,
 	metro_code?: number
-}
+};
 ```
 <br>
 
 ## <a name="qualitylevel_type">QualityLevel</a>
 ```ts
-{
+type QualityLevel = {
 	name: string;
 	width: number;
 	height: number;
 	label: string;
 	order: number;
-}
+};
 ```
 <br>
 
 ## <a name="LiveDeliveryResponse_type">LiveDeliveryResponse</a>
 ```ts
-{
+type LiveDeliveryResponse = {
 	cdn: string;
 	strategy: string;
 	resource: {
@@ -508,14 +510,14 @@ Types Used: <a name="metadata_type">Metadata</a>, <a name="creatorobj_type">Crea
 			token: string;
 		};
 	};
-}
+};
 ```
 <br>
 
 ## <a name="VodDeliveryResponse_type">VodDeliveryResponse</a>
 Types Used: <a name="qualitylevel_type">QualityLevel</a>
 ```ts
-{
+type VodDeliveryResponse = {
 	cdn: string;
 	strategy: string;
 	resource: {
@@ -528,14 +530,14 @@ Types Used: <a name="qualitylevel_type">QualityLevel</a>
 			};
 		};
 	};
-}
+};
 ```
 <br>
 
 ## <a name="DownloadDeliveryResponseDeliveryResponse_type">DownloadDeliveryResponseDeliveryResponse</a>
 Types Used: <a name="client_type">Client</a>, <a name="qualitylevel_type">QualityLevel</a>, <a name="edge_type">Edge</a>
 ```ts
-{
+type DownloadDeliveryResponseDeliveryResponse = {
 	client?: Client;
 	edges: Array<Edge>;
 	strategy: string;
@@ -547,14 +549,17 @@ Types Used: <a name="client_type">Client</a>, <a name="qualitylevel_type">Qualit
 			token: string;
 		};
 	};
-}
+};
 ```
 <br>
 
 ## <a name="SyncEvent_type">SyncEvent</a>
 Types Used: <a name="image_type">Image</a>
 ```ts
-{
+type SyncEvent = CreatorMenuUpdate | PostRelease;
+
+
+type CreatorMenuUpdate = {
 	event: "creatorMenuUpdate";
 	id: string;
 	guid: string;
@@ -570,9 +575,60 @@ Types Used: <a name="image_type">Image</a>
 	comments: number;
 	creator: string;
 	thumbnail: Image;
-} | { 
-	event: "thisIsHereToForceEventTypeChecks...";
-}
+};
+type PostRelease = {
+	event: "postRelease";
+	data: {
+		id: string;
+		message: string;
+		url: string;
+		title: string;
+		post: {
+			id: string;
+			guid: string;
+			title: string;
+			text: string;
+			type: string;
+			attachmentOrder: Array<string>;
+			metadata: Metadata;
+			releaseDate: string | null;
+			likes: number;
+			dislikes: number;
+			score: number;
+			comments: number;
+			creator: string;
+			thumbnail: Image;
+		};
+		video: {
+			id: string;
+			guid: string;
+			creator: {
+				createdAt: string;
+				updatedAt: string;
+				id: string;
+				urlname: string;
+				title: string;
+				description: string;
+				about: string;
+				visibility: string;
+				subscriberCountDisplay: string;
+				incomeDisplay: boolean;
+				discoverable: boolean;
+				transcodingPriority: string;
+				owner: string;
+				category: string;
+				iconImage: string;
+				coverImage: string;
+				cardImage: string;
+				liveStream: string;
+				customCreatorAgreement: string;
+				profileImageUrl: string;
+			};
+			description: string;
+		};
+		icon: string;
+	};
+};
 ```
 <br><br>
 ## Projects

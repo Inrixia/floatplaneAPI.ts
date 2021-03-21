@@ -67,10 +67,6 @@ export type PostRelease = {
 				subscriberCountDisplay: string;
 				incomeDisplay: boolean;
 				discoverable: boolean;
-				creatorWarehouseShopName: string;
-				creatorWarehouseApiKey: string;
-				creatorWarehousePassword: string;
-				creatorWarehouseShopUrl: string;
 				transcodingPriority: string;
 				owner: string;
 				category: string;
