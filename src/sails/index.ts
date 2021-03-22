@@ -105,6 +105,9 @@ class Sails extends EventEmitter {
 		this.io.sails.url = "https://www.floatplane.com";	
 
 		this.io.socket.on("syncEvent", data => this.emit("syncEvent", data));
+
+		// Attempt to reconnect if socket disconnects
+		this.io.socket.on("disconnect", () => setTimeout(this.connect, 1000));
 	}
 
 	get cookie(): string {
@@ -115,6 +118,7 @@ class Sails extends EventEmitter {
 	 * Subscribe to syncEvents
 	 */
 	connect = (): Promise<ConnectResponse> => new Promise((resolve, reject) => {
+		if (!this.io.socket.isConnecting() && !this.io.socket.isConnected() && !this.io.socket.mightBeAboutToAutoConnect()) this.io.socket.reconnect();
 		this.io.socket.post("/api/sync/connect", {}, (data, res) => {
 			if (res.statusCode === 200) resolve(data);
 			else reject(data);
