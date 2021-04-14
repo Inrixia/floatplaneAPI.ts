@@ -1,7 +1,5 @@
 import Core from "../Core";
 
-import type Request from "got/dist/source/core";
-
 import type { Options } from "got/dist/source/core";
 import { Client, Edge } from "../lib/types";
 export type GotOptions = Options & { isStream: true };

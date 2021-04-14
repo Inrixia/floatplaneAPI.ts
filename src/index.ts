@@ -64,7 +64,6 @@ export default class Floatplane {
 			if (typeof options.token !== "string") throw new Error("Token must be a string!");
 			result = await this.auth.factor(options.token);
 		}
-
 		return result;
 	}
 
