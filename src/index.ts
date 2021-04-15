@@ -14,6 +14,7 @@ import type { LoginSuccess } from "./auth";
 export type LoginOptions = {
 	username: string,
 	password: string,
+	captchaToken: string,
 	token: string
 }
 export default class Floatplane {
@@ -49,16 +50,23 @@ export default class Floatplane {
 	/**
 	 * Login to floatplane so future requests are authenticated
 	 * @param {LoginOptions} options Login options
-	 * @param {string} options.username Username to login with
-	 * @param {string} options.password Password to login with
-	 * @param {string} options.token 2 Factor token to login with
-	 * @returns {Promise<LoginSuccess>} User object OR `{ needs2FA: true }` if user requires 2 Factor authentication.
+	 * @param {string} options.username Username
+	 * @param {string} options.password Password
+	 * @param {string} options.captchaToken Recaptcha token (single use)
+	 * @param {string} options.token 2 Factor Authentication token (single use)
+	 * @returns {Promise<LoginSuccess>} User object.
+	 * 
+	 * @example
+	 * // Get a single use captchaToken by going to floatplane.com/login and running 
+	 * grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validate_captcha' }).then(console.log)
+	 * // in console.
 	*/
 	login = async (options: LoginOptions): Promise<LoginSuccess> => {
 		if (typeof options.username !== "string") throw new Error("Username must be a string!");
 		if (typeof options.password !== "string") throw new Error("Password must be a string!");
+		if (typeof options.captchaToken !== "string") throw new Error("Recaptcha Token must be a string!");
 		
-		let result = await this.auth.login(options.username, options.password);
+		let result = await this.auth.login(options.username, options.password, options.captchaToken);
 
 		if (result.needs2FA === true) {
 			if (typeof options.token !== "string") throw new Error("Token must be a string!");

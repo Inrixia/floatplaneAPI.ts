@@ -74,6 +74,13 @@ Username to use when logging in.
 <b>options.password</b>: `string`<br>
 Password to use when logging in.
 
+<b>captchaToken</b>: `string`<br>
+Recaptcha token.
+Get a single use captchaToken by going to floatplane.com/login and running this in console:
+```js
+grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validate_captcha' }).then(console.log)
+```
+
 <b>options.token</b>: `string` | `undefined`<br>
 2 Factor authentication token to use when logging in. Only needed if your account has 2 factor enabled.
 <br>
@@ -83,6 +90,7 @@ Password to use when logging in.
 const user = await floatplane.login({
 	username: "yourUsername",
 	password: "yourPassword",
+	captchaToken: "captchaToken",
 	token: "yourTokenIfYouUse2Factor"
 })
 ```
@@ -95,7 +103,7 @@ Returns promise of true if authenticated or Error if not.<br>
 
 ## <a name="_auth">Auth</a>
 ---
-### <b>floatplane.[auth](#_auth).<a name="auth_login">login</a></b>(username, password): Promise\<[User](#user_type) | [Needs2fa](#needs2fa_type)>
+### <b>floatplane.[auth](#_auth).<a name="auth_login">login</a></b>(username, password, captchaToken): Promise\<[User](#user_type) | [Needs2fa](#needs2fa_type)>
 Login to floatplane. If user requires 2 factor authentication then only `{ needs2FA: true }` will be returned.<br>
 <br>
 
@@ -104,12 +112,19 @@ Username to use.
 
 <b>password</b>: `string`<br>
 Password to use.
+
+<b>captchaToken</b>: `string`<br>
+Recaptcha token.
+Get a single use captchaToken by going to floatplane.com/login and running this in console:
+```js
+grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validate_captcha' }).then(console.log)
+```
 <br>
 <br>
 
 ### Example:
 ```js
-const user = await floatplane.auth.login("yourUsername", "yourPassword")
+const user = await floatplane.auth.login("yourUsername", "yourPassword", "captchaToken")
 ```
 <br>
 
