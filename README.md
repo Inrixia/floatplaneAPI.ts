@@ -81,7 +81,7 @@ Get a single use captchaToken by going to floatplane.com/login and running this 
 grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validate_captcha' }).then(console.log)
 ```
 
-<b>options.token</b>: `string` | `undefined`<br>
+<b>options.token</b>?: `string` | `undefined`<br>
 2 Factor authentication token to use when logging in. Only needed if your account has 2 factor enabled.
 <br>
 <br>

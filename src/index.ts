@@ -15,7 +15,7 @@ export type LoginOptions = {
 	username: string,
 	password: string,
 	captchaToken: string,
-	token: string
+	token?: string
 }
 export default class Floatplane {
 	public got: typeof got;
@@ -69,7 +69,7 @@ export default class Floatplane {
 		let result = await this.auth.login(options.username, options.password, options.captchaToken);
 
 		if (result.needs2FA === true) {
-			if (typeof options.token !== "string") throw new Error("Token must be a string!");
+			if (typeof options.token !== "string") throw new Error("2FA Token must be a string!");
 			result = await this.auth.factor(options.token);
 		}
 		return result;
