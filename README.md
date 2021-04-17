@@ -74,11 +74,11 @@ Username to use when logging in.
 <b>options.password</b>: `string`<br>
 Password to use when logging in.
 
-<b>captchaToken</b>: `string`<br>
-Recaptcha token.
+<b>captchaToken</b>?: `string`<br>
+Recaptcha token. Not required.
 Get a single use captchaToken by going to floatplane.com/login and running this in console:
 ```js
-grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validate_captcha' }).then(console.log)
+grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
 ```
 
 <b>options.token</b>?: `string` | `undefined`<br>
@@ -90,7 +90,6 @@ grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validat
 const user = await floatplane.login({
 	username: "yourUsername",
 	password: "yourPassword",
-	captchaToken: "captchaToken",
 	token: "yourTokenIfYouUse2Factor"
 })
 ```
@@ -113,11 +112,11 @@ Username to use.
 <b>password</b>: `string`<br>
 Password to use.
 
-<b>captchaToken</b>: `string`<br>
-Recaptcha token.
+<b>captchaToken</b>?: `string`<br>
+Recaptcha token. Not required.
 Get a single use captchaToken by going to floatplane.com/login and running this in console:
 ```js
-grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validate_captcha' }).then(console.log)
+grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
 ```
 <br>
 <br>

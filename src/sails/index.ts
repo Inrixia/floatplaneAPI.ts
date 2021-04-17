@@ -9,7 +9,18 @@ import { EventEmitter } from "events";
 
 import type { Image, Metadata } from "../lib/types";
 
-export type ConnectResponse = { message: string };
+export type NotLoggedInError = {
+	id: string;
+	name: "notLoggedInError";
+	message: "You must be logged-in to access this resource.";
+}
+export type ConnectResponse =
+	| { message: string }
+	| {
+			id: string;
+			errors: NotLoggedInError;
+			message: NotLoggedInError["message"];
+	};
 
 export type CreatorMenuUpdate = {
 	event: "creatorMenuUpdate";
@@ -91,18 +102,25 @@ declare interface Sails {
 
 class Sails extends EventEmitter {
 	private cookieJar: CookieJar;
-	private io: SailsIOJS.Client;
+	private io?: SailsIOJS.Client;
 
 	constructor(cookieJar: CookieJar) {
 		super();
 		this.cookieJar = cookieJar;
+	}
 
+	private get cookie(): string {
+		return this.cookieJar.toJSON().cookies.reduce((cookies, cookie) => `${cookies}${cookie.key}=${cookie.value}; `, "");
+	}
+
+	private login = (): void => {
 		this.io = sailsIOClient(socketIOClient);
+
 		this.io.sails.initialConnectionHeaders = {
 			Origin: "https://www.floatplane.com",
 			cookie: this.cookie,
 		};
-		this.io.sails.url = "https://www.floatplane.com";	
+		this.io.sails.url = "https://www.floatplane.com";
 
 		this.io.socket.on("syncEvent", data => this.emit("syncEvent", data));
 
@@ -110,14 +128,13 @@ class Sails extends EventEmitter {
 		this.io.socket.on("disconnect", () => setTimeout(this.connect, 1000));
 	}
 
-	get cookie(): string {
-		return this.cookieJar.toJSON().cookies.reduce((cookies, cookie) => `${cookies}${cookie.key}=${cookie.value}; `, "");
-	}
-
 	/**
 	 * Subscribe to syncEvents
 	 */
 	connect = (): Promise<ConnectResponse> => new Promise((resolve, reject) => {
+		if (this.io === undefined) this.login();
+		if (this.io === undefined) throw new Error("Unable to login to floatplane sails!");
+
 		if (!this.io.socket.isConnecting() && !this.io.socket.isConnected() && !this.io.socket.mightBeAboutToAutoConnect()) this.io.socket.reconnect();
 		this.io.socket.post("/api/sync/connect", {}, (data, res) => {
 			if (res.statusCode === 200) resolve(data);

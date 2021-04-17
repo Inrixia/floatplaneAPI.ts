@@ -34,7 +34,7 @@ export default class Floatplane {
 			cookieJar,
 			headers: {
 				// eslint-disable-next-line @typescript-eslint/no-var-requires
-				"User-Agent": `FloatplaneAPI/${require("./package.json").version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts)`,
+				"User-Agent": `FloatplaneAPI/${require("./package.json").version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
 				"accept": "application/json",
 				"connection": "keep-alive"
 			}
@@ -52,19 +52,20 @@ export default class Floatplane {
 	 * @param {LoginOptions} options Login options
 	 * @param {string} options.username Username
 	 * @param {string} options.password Password
-	 * @param {string} options.captchaToken Recaptcha token (single use)
+	 * @param {string} options.captchaToken Recaptcha token (single use). Not required
 	 * @param {string} options.token 2 Factor Authentication token (single use)
 	 * @returns {Promise<LoginSuccess>} User object.
 	 * 
 	 * @example
+	 * // captchaToken is not required for login.
 	 * // Get a single use captchaToken by going to floatplane.com/login and running 
-	 * grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validate_captcha' }).then(console.log)
+	 * grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
 	 * // in console.
 	*/
 	login = async (options: LoginOptions): Promise<LoginSuccess> => {
 		if (typeof options.username !== "string") throw new Error("Username must be a string!");
 		if (typeof options.password !== "string") throw new Error("Password must be a string!");
-		if (typeof options.captchaToken !== "string") throw new Error("Recaptcha Token must be a string!");
+		if (typeof options.captchaToken !== "string" && options.captchaToken !== undefined) throw new Error("Recaptcha Token must be a string or undefined!");
 		
 		let result = await this.auth.login(options.username, options.password, options.captchaToken);
 
@@ -78,5 +79,5 @@ export default class Floatplane {
 	/**
 	 * Returns true if authenticated or Error if not.
 	 */
-	isAuthenticated = async (): Promise<Error | true> => this.user.self().catch((err: Error) => err).then(() => true);
+	isAuthenticated = async (): Promise<Error | true> => this.user.self().then((): true => true).catch((err: Error) => err);
 }

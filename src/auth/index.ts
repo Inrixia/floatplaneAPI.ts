@@ -22,15 +22,16 @@ export default class Auth extends Core {
 	 * Login to floatplane using provided credentials.
 	 * @param {string} username Username/Email
 	 * @param {string} password Password
-	 * @param {string} captchaToken Recaptcha token (single use)
+	 * @param {string} captchaToken Recaptcha token (single use). Not required.
 	 * @returns {LoginResponse} User object OR `{ needs2FA: true }` if user requires 2 Factor authentication.
 	 * 
 	 * @example
+	 * // captchaToken is not required for login.
 	 * // Get a single use captchaToken by going to floatplane.com/login and running 
-	 * grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'validate_captcha' }).then(console.log)
+	 * grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
 	 * // in console.
 	*/
-	login = async (username: string, password: string, captchaToken: string): Promise<LoginResponse> => JSON.parse(
+	login = async (username: string, password: string, captchaToken?: string): Promise<LoginResponse> => JSON.parse(
 		await this.got.post(this.endpoints.login, {
 			method: "POST",
 			json: { username, password, captchaToken },
