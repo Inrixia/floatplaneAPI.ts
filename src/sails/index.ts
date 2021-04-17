@@ -14,13 +14,17 @@ export type NotLoggedInError = {
 	name: "notLoggedInError";
 	message: "You must be logged-in to access this resource.";
 }
-export type ConnectResponse =
-	| { message: string }
-	| {
-			id: string;
-			errors: NotLoggedInError;
-			message: NotLoggedInError["message"];
-	};
+export type ConnectSuccess = {
+	id: undefined,
+	message: string,
+	errors: undefined
+};
+export type ConnectNotLoggedIn = {
+	id: string;
+	errors: NotLoggedInError;
+	message: NotLoggedInError["message"];
+}
+export type ConnectResponse = ConnectSuccess | ConnectNotLoggedIn;
 
 export type CreatorMenuUpdate = {
 	event: "creatorMenuUpdate";
@@ -136,9 +140,9 @@ class Sails extends EventEmitter {
 		if (this.io === undefined) throw new Error("Unable to login to floatplane sails!");
 
 		if (!this.io.socket.isConnecting() && !this.io.socket.isConnected() && !this.io.socket.mightBeAboutToAutoConnect()) this.io.socket.reconnect();
-		this.io.socket.post("/api/sync/connect", {}, (data, res) => {
-			if (res.statusCode === 200) resolve(data);
-			else reject(data);
+		this.io.socket.post("/api/sync/connect", {}, (data: ConnectResponse, res) => {
+			if (res.statusCode === 200 && data.errors === undefined) resolve(data);
+			reject(data);
 		});
 	});
 }
