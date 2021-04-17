@@ -65,7 +65,7 @@ export default class Creator extends Core {
 		sort?: "ASC"|"DESC", 
 		search?: string, 
 		limit?: number 
-	}): Promise<Array<BlogPost>> => JSON.parse(await this.got(
+	}): Promise<Array<BlogPost>> => await this.got(
 		this.endpoints.videos
 			+ `?id=${creatorGUID}`
 			+ (options?.fetchAfter  ? `&fetchAfter=${options?.fetchAfter}`  : "")
@@ -74,6 +74,6 @@ export default class Creator extends Core {
 			+ (options?.search 		? `&search=${options?.search}` 			: "")
 			+ (options?.limit  		? `&type=${options?.limit}` 	 		: ""),
 		{ resolveBodyOnly: true }
-	));
+	).then(JSON.parse);
 }
 

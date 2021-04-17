@@ -14,5 +14,5 @@ export default class Api extends Core {
 	/**
 	 * Fetch edges from the floatplane api
 	 */
-	edges = async (): Promise<EdgesResponse> => JSON.parse((await this.got(this.endpoints.edges, { resolveBodyOnly: true })))
+	edges = async (): Promise<EdgesResponse> => await this.got(this.endpoints.edges, { resolveBodyOnly: true }).then(JSON.parse)
 }

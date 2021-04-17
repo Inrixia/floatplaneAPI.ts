@@ -1,6 +1,6 @@
 import got from "got";
 import CDN, { LiveDeliveryResponse, QualityLevel, QualityLevelParam, DownloadDeliveryResponse, VodDeliveryResponse } from ".";
-import { clientFormat, edgeFormat, prepCookieJar } from "../lib/testHelpers";
+import { clientFormat, edgeFormat, gotExtends } from "../lib/testHelpers";
 import { Edge } from "../lib/types";
 
 import "jest-extended";
@@ -50,17 +50,16 @@ const downloadDeliveryResponseFormat: DownloadDeliveryResponse = {
 	},
 };
 
-test("CDN.delivery(\"live\", creator)", async () => {
-	const cdn = new CDN(got.extend({ cookieJar: await prepCookieJar() }));
+const cdn = new CDN(got.extend(gotExtends()));
+
+test("CDN.delivery(\"live\", creator)", () => {
 	return expect(cdn.delivery("live", "59f94c0bdd241b70349eb72b")).resolves.toStrictEqual<LiveDeliveryResponse>(liveDeliveryResponseFormat);
 });
 
 test("CDN.delivery(\"vod\", guid)", async () => {
-	const cdn = new CDN(got.extend({ cookieJar: await prepCookieJar() }));
 	return expect(cdn.delivery("vod", "InwhyES1dt")).resolves.toStrictEqual<VodDeliveryResponse>(vodDeliveryResponseFormat);
 });
 
 test("CDN.delivery(\"download\", guid)", async () => {
-	const cdn = new CDN(got.extend({ cookieJar: await prepCookieJar() }));
 	return expect(cdn.delivery("download", "InwhyES1dt")).resolves.toStrictEqual<DownloadDeliveryResponse>(downloadDeliveryResponseFormat);
 });

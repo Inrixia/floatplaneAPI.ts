@@ -17,6 +17,24 @@ export type LoginOptions = {
 	captchaToken: string,
 	token?: string
 }
+
+// Shitty fix now that im using these headers in tests
+let version;
+try {
+	// eslint-disable-next-line @typescript-eslint/no-var-requires
+	version = require("./package.json").version;
+} catch {
+	// eslint-disable-next-line @typescript-eslint/no-var-requires
+	version = require("../package.json").version;
+}
+
+export const headers = {
+	// eslint-disable-next-line @typescript-eslint/no-var-requires
+	"User-Agent": `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
+	"accept": "application/json",
+	"connection": "keep-alive"
+};
+
 export default class Floatplane {
 	public got: typeof got;
 
@@ -32,12 +50,7 @@ export default class Floatplane {
 		cookieJar ??= new CookieJar();
 		this.got = got.extend({ // Sets the global requestMethod to be used, this maintains headers
 			cookieJar,
-			headers: {
-				// eslint-disable-next-line @typescript-eslint/no-var-requires
-				"User-Agent": `FloatplaneAPI/${require("./package.json").version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
-				"accept": "application/json",
-				"connection": "keep-alive"
-			}
+			headers 
 		});
 		this.auth = new Auth(this.got);
 		this.user = new User(this.got);

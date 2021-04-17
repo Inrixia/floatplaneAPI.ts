@@ -69,6 +69,6 @@ export default class CDN extends Core {
 	async delivery(type: "vod", guid: string): Promise<VodDeliveryResponse>;
 	async delivery(type: "download", guid: string): Promise<DownloadDeliveryResponse>;
 	async delivery(type: DeliveryTypes, id: string): Promise<DeliveryResponse> {
-		return JSON.parse(await this.got(this.endpoints.url + `?type=${type}` + (type === "live" ? `&creator=${id}` : `&guid=${id}`), { resolveBodyOnly: true }));
+		return await this.got(this.endpoints.url + `?type=${type}` + (type === "live" ? `&creator=${id}` : `&guid=${id}`), { resolveBodyOnly: true }).then(JSON.parse);
 	}
 }

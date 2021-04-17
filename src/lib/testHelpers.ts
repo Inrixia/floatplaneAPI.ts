@@ -2,9 +2,15 @@
 import { FileCookieStore } from "tough-cookie-file-store";
 import { CookieJar } from "tough-cookie";
 
-export const prepCookieJar = async (): Promise<CookieJar> => new CookieJar(new FileCookieStore("./cookieStore.json"));
+import { headers } from "../";
 
-import type { Image, ChildImage, CreatorObj, SubscriptionPlan, Metadata, Client, Edge, FloatplaneUser } from "./types";
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const gotExtends = () => ({ 
+	cookieJar: new CookieJar(new FileCookieStore("./cookieStore.json")),
+	headers
+});
+
+import type { Image, ChildImage, CreatorObj, SubscriptionPlan, Metadata, Client, Edge } from "./types";
 
 // Cheat for custom matchers in typescript
 export const eExpect: any = Object.assign(expect);

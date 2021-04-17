@@ -1,6 +1,6 @@
 import got from "got";
 import User from ".";
-import { floatplaneUserFormat, prepCookieJar, subscriptionPlan } from "../lib/testHelpers";
+import { floatplaneUserFormat, gotExtends, subscriptionPlan } from "../lib/testHelpers";
 
 import type { Subscription } from "./";
 
@@ -14,12 +14,11 @@ export const subscriptionFormat: Subscription = {
 	creator: expect.any(String)
 };
 
-test("User.subscriptions()", async () => {
-	const user = new User(got.extend({ cookieJar: await prepCookieJar() }));
+const user = new User(got.extend(gotExtends()));
+test("User.subscriptions()", () => {
 	return expect(user.subscriptions()).resolves.toStrictEqual(expect.arrayContaining<Subscription>([subscriptionFormat]));
 });
 
-test("User.self()", async () => {
-	const user = new User(got.extend({ cookieJar: await prepCookieJar() }));
+test("User.self()", () => {
 	return expect(user.self()).resolves.toStrictEqual(floatplaneUserFormat);
 });

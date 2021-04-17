@@ -20,10 +20,10 @@ export default class User extends Core {
 	/**
 	 * Fetch subscriptions for the logged in user.
 	*/
-	subscriptions = async (): Promise<Array<Subscription>> => JSON.parse(await this.got(this.endpoints.subscriptions, { resolveBodyOnly: true }))
+	subscriptions = async (): Promise<Array<Subscription>> => await this.got(this.endpoints.subscriptions, { resolveBodyOnly: true }).then(JSON.parse)
 
 	/**
 	 * Fetch information about the logged in user.
 	*/
-	self = async (): Promise<FloatplaneUser> => JSON.parse(await this.got(this.endpoints.self, { resolveBodyOnly: true }))
+	self = async (): Promise<FloatplaneUser> => await this.got(this.endpoints.self, { resolveBodyOnly: true }).then(JSON.parse)
 }

@@ -7,8 +7,8 @@ const { username, password, captchaToken, token } = require("../../credentials.j
 import type { LoginSuccess, Needs2FA } from "./";
 export const factorFormat: Needs2FA = { needs2FA: true };
 
-import { imageFormat, prepCookieJar } from "../lib/testHelpers";
-export const loginSuccessResponse: LoginSuccess = {
+import { imageFormat, gotExtends } from "../lib/testHelpers";
+export const loginSuccessFormat: LoginSuccess = {
 	user: {
 		id: expect.any(String),
 		username: expect.any(String),
@@ -17,14 +17,13 @@ export const loginSuccessResponse: LoginSuccess = {
 	needs2FA: false
 };
 
-let auth: Auth;
-beforeAll(async () => auth = new Auth(got.extend({ cookieJar: await prepCookieJar() })));
+const auth = new Auth(got.extend(gotExtends()));
 	
 // NOTE: This test assumes that the account used for testing has 2Factor authentication enabled!
 test("Auth.login(username, password)", () => {
-	return expect(auth.login(username, password, captchaToken)).resolves.toStrictEqual<Needs2FA>(factorFormat);
+	return expect(auth.login(username, password)).resolves.toStrictEqual<Needs2FA>(factorFormat);
 });
 
 test("Auth.factor(token)", () => {
-	return expect(auth.factor(token)).resolves.toStrictEqual<LoginSuccess>(loginSuccessResponse);
+	return expect(auth.factor(token)).resolves.toStrictEqual<LoginSuccess>(loginSuccessFormat);
 });

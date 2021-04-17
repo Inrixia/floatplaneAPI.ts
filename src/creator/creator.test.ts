@@ -1,6 +1,6 @@
 import got from "got";
 import Creator from ".";
-import { imageFormat, prepCookieJar, creatorObjFormat, eExpect, metadataFormat } from "../lib/testHelpers";
+import { imageFormat, gotExtends, creatorObjFormat, eExpect, metadataFormat } from "../lib/testHelpers";
 
 import type { BlogPost } from ".";
 export const blogPostFormat: BlogPost = {
@@ -25,20 +25,20 @@ export const blogPostFormat: BlogPost = {
 	galleryAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
 };
 
-test("Creator.blogPosts(creatorGUID)", async () => {
-	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
+const creator = new Creator(got.extend(gotExtends()));
+
+test("Creator.blogPosts(creatorGUID)", () => {
+	
 	return expect(creator.blogPosts("59f94c0bdd241b70349eb72b")).resolves.toStrictEqual(
 		expect.arrayContaining<BlogPost>([blogPostFormat])
 	);
 });
 
 test("Creator.blogPostsIterable(creatorGUID).next()", async () => {
-	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
 	return expect((await creator.blogPostsIterable("59f94c0bdd241b70349eb72b").next()).value).toStrictEqual(blogPostFormat);
 });
 
 test("for await (const blogPost of Creator.blogPostsIterable(creatorGUID))", async () => {
-	const creator = new Creator(got.extend({ cookieJar: await prepCookieJar() }));
 	for await (const blogPost of creator.blogPostsIterable("59f94c0bdd241b70349eb72b")) {
 		return expect(blogPost).toStrictEqual(blogPostFormat);
 	}
