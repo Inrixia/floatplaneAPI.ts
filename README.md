@@ -7,7 +7,7 @@ Features/Endpoints are added as needed so if something is missing please make a 
 ```$ npm install floatplane```
 
 Individual classes can be imported seperately:
-```js 
+```ts
 import { Auth } from "floatplane/auth"
 ``` 
 
@@ -79,7 +79,7 @@ Password to use when logging in.
 <b>captchaToken</b>?: `string`<br>
 Recaptcha token. Not required.
 Get a single use captchaToken by going to floatplane.com/login and running this in console:
-```js
+```ts
 grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
 ```
 
@@ -88,7 +88,7 @@ grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' 
 <br>
 <br>
 ### Example:
-```js
+```ts
 const user = await floatplane.login({
 	username: "yourUsername",
 	password: "yourPassword",
@@ -117,14 +117,14 @@ Password to use.
 <b>captchaToken</b>?: `string`<br>
 Recaptcha token. Not required.
 Get a single use captchaToken by going to floatplane.com/login and running this in console:
-```js
+```ts
 grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
 ```
 <br>
 <br>
 
 ### Example:
-```js
+```ts
 const user = await floatplane.auth.login("yourUsername", "yourPassword", "captchaToken")
 ```
 <br>
@@ -139,7 +139,7 @@ Complete login to floatplane with 2 factor authentication token.<br>
 
 
 ### Example:
-```js
+```ts
 const user = await floatplane.auth.factor("your2FactorToken")
 ```
 <br>
@@ -151,7 +151,7 @@ const user = await floatplane.auth.factor("your2FactorToken")
 Fetch floatplane api server edges. (Depricated)<br>
 
 ### Example:
-```js
+```ts
 const user = await floatplane.api.edges()
 ```
 <br>
@@ -183,7 +183,7 @@ Filter BlogPosts by search term.
 Max amount of BlogPosts to return. Must be in range 1-20.
 <br><br>
 ### Examples:
-```js
+```ts
 const videos = await floatplane.creator.blogPosts("creatorGUID", { type: "video" }) // Array of 20 videos
 ```
 <br>
@@ -205,11 +205,11 @@ Filter BlogPosts by search term.<br>
 <b>options.search</b>: `"ASC" | "DESC"`
 <br><br>
 ### Examples:
-```js
+```ts
 const videos = floatplane.creator.blogPostsIterable("creatorGUID", { type: "video"})
 const firstVideo = await videos.next().value // Fetch one video
 ```
-```js
+```ts
 for await (const video of floatplane.creator.blogPostsIterable("creatorGUID", { type: "video"})) {
 	// Loops over every video from the creator.
 }
@@ -223,7 +223,7 @@ for await (const video of floatplane.creator.blogPostsIterable("creatorGUID", { 
 Fetches subscriptions for current user.<br>
 
 ### Example:
-```js
+```ts
 const subscriptions = await floatplane.user.subscriptions()
 ```
 <br>
@@ -232,7 +232,7 @@ const subscriptions = await floatplane.user.subscriptions()
 Fetch information about the logged in user.<br>
 
 ### Example:
-```js
+```ts
 const subscriptions = await floatplane.user.subscriptions()
 ```
 <br>
@@ -251,7 +251,7 @@ ID of resource.
 <br><br>
 
 ### Example:
-```js
+```ts
 const liveInfo = await floatplane.cdn.delivery("live", "59f94c0bdd241b70349eb72b");
 const vodInfo = await floatplane.cdn.delivery("vod", "InwhyES1dt");
 const downloadInfo = await floatplane.cdn.delivery("download", "InwhyES1dt");
@@ -267,7 +267,7 @@ Connect to the sails socket and subscribe to events.<br>
 ### <b>floatplane.[Sails](#_sails).on</b>("<a name="sails_syncEvent">syncEvent</a>", [syncEvent](#syncEvent_type) => `void`): ```this```
 Event fired when a notification is received.
 ### Example:
-```js
+```ts
 	// Note: This event will most likely not fire until a new video releases so dont expect any output immedately.
 	floatplane.sails.on("syncEvent", syncEvent => {
 		if (syncEvent.event === "creatorMenuUpdate") {
@@ -283,7 +283,7 @@ https://www.npmjs.com/package/got<br>
 Got is the http/https library used for handling requests sent to floatplane.<br>
 When importing individual classes a `got` instance is required to be passed to their constructor.<br>
 In order for requests to be authenticated a single instance of `got` should be used for all classes and got should be extended with `mutableDefaults: true`.
-```js
+```ts
 // You can set default headers here too, check the got docs for more info
 import got from "got"
 import { Auth } from "floatplane/auth"
