@@ -50,18 +50,18 @@ export const metadataFormat: Metadata = {
 	isFeatured: expect.any(Boolean),
 };
 
-export const imageFormat: Image = {
+export const imageFormat: Image = expect.objectContaining<Image>({
 	width: expect.any(Number),
 	height: expect.any(Number),
 	path: expect.any(String),
-	childImages: expect.arrayContaining<ChildImage>([
+	childImages: eExpect.arrayContainingOrEmpty([
 		expect.objectContaining<ChildImage>({
 			width: expect.any(Number),
 			height: expect.any(Number),
 			path: expect.any(String),
 		}),
 	]),
-};
+});
 
 export const floatplaneUserFormat: any = {
 	id: expect.any(String),

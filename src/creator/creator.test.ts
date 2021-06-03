@@ -28,7 +28,6 @@ export const blogPostFormat: BlogPost = {
 const creator = new Creator(got.extend(gotExtends()));
 
 test("Creator.blogPosts(creatorGUID)", () => {
-	
 	return expect(creator.blogPosts("59f94c0bdd241b70349eb72b")).resolves.toStrictEqual(
 		expect.arrayContaining<BlogPost>([blogPostFormat])
 	);
