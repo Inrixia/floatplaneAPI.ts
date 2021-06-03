@@ -8,7 +8,7 @@ Features/Endpoints are added as needed so if something is missing please make a 
 
 Individual classes can be imported seperately:
 ```js 
-require('floatplane/auth')
+import { Auth } from "floatplane/auth"
 ``` 
 
 # Usage
@@ -285,9 +285,9 @@ When importing individual classes a `got` instance is required to be passed to t
 In order for requests to be authenticated a single instance of `got` should be used for all classes and got should be extended with `mutableDefaults: true`.
 ```js
 // You can set default headers here too, check the got docs for more info
-const got = require('got').extend({ mutableDefaults: true }) 
-const Auth = require('floatplane/auth')
-const User = require('floatplane/user')
+import got from "got"
+import { Auth } from "floatplane/auth"
+import { User } from "floatplane/user"
 
 // Same instance of got used for both constructors so that cookies are shared
 const auth = new Auth(got)
