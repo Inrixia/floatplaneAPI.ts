@@ -1,4 +1,4 @@
-import Core from "../Core";
+import { Core } from "../Core";
 import type { Image } from "../lib/types";
 
 export type LoginSuccess = { 
@@ -12,7 +12,7 @@ export type LoginSuccess = {
 export type Needs2FA = { needs2FA: true }
 export type LoginResponse = Promise<LoginSuccess|Needs2FA>
 
-export default class Auth extends Core {
+export class Auth extends Core {
 	endpoints = {
 		login: "https://www.floatplane.com/api/auth/login",
 		factor: "https://www.floatplane.com/api/auth/checkFor2faLogin"

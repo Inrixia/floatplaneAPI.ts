@@ -100,11 +100,11 @@ export type PostRelease = {
 
 export type SyncEvent = CreatorMenuUpdate | PostRelease;
 
-declare interface Sails {
+export declare interface Sails {
 	on(event: "syncEvent", listener: (syncEvent: SyncEvent) => void): this;
 }
 
-class Sails extends EventEmitter {
+export class Sails extends EventEmitter {
 	private cookieJar: CookieJar;
 	private io?: SailsIOJS.Client;
 
@@ -146,4 +146,3 @@ class Sails extends EventEmitter {
 		});
 	});
 }
-export default Sails;

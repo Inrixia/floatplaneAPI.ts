@@ -1,5 +1,5 @@
 import got from "got";
-import User from ".";
+import { User } from ".";
 import { floatplaneUserFormat, gotExtends, subscriptionPlan } from "../lib/testHelpers";
 
 import type { Subscription } from "./";

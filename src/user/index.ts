@@ -1,4 +1,4 @@
-import Core from "../Core";
+import { Core } from "../Core";
 import { FloatplaneUser, SubscriptionPlan } from "../lib/types";
 
 export type Subscription = {
@@ -11,7 +11,7 @@ export type Subscription = {
 	creator: string
 }
 
-export default class User extends Core {
+export class User extends Core {
 	endpoints = {
 		subscriptions: "https://www.floatplane.com/api/v3/user/subscriptions",
 		self: "https://www.floatplane.com/api/v3/user/self"

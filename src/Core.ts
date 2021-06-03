@@ -1,6 +1,6 @@
 import type { Got } from "got/dist/source/types";
 
-export default class Core {
+export class Core {
 	protected got: Got
 	constructor(got: Got) {
 		this.got = got;

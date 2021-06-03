@@ -1,4 +1,4 @@
-import Core from "../Core";
+import { Core } from "../Core";
 import { Client, Edge } from "../lib/types";
 
 export type EdgesResponse = {
@@ -6,7 +6,7 @@ export type EdgesResponse = {
 	client: Client
 }
 
-export default class Api extends Core {
+export class Api extends Core {
 	endpoints = {
 		edges: "https://www.floatplane.com/api/edges"
 	}

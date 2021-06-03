@@ -2,19 +2,19 @@ import got from "got";
 
 import { CookieJar } from "tough-cookie";
 
-import Auth from "./auth";
-import User from "./user";
-import Api from "./api";
-import Creator from "./creator";
-import CDN from "./cdn";
-import Sails from "./sails";
+import { Auth } from "./auth";
+import { User } from "./user";
+import { Api } from "./api";
+import { Creator } from "./creator";
+import { CDN } from "./cdn";
+import { Sails } from "./sails";
 
 import type { LoginSuccess } from "./auth";
 
 export type LoginOptions = {
 	username: string,
 	password: string,
-	captchaToken: string,
+	captchaToken?: string,
 	token?: string
 }
 
@@ -35,7 +35,7 @@ export const headers = {
 	"connection": "keep-alive"
 };
 
-export default class Floatplane {
+export class Floatplane {
 	public got: typeof got;
 
 	public auth: Auth

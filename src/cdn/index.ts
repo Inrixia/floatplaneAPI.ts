@@ -1,4 +1,4 @@
-import Core from "../Core";
+import { Core } from "../Core";
 
 import type { Options } from "got/dist/source/core";
 import { Client, Edge } from "../lib/types";
@@ -55,7 +55,7 @@ export type DownloadDeliveryResponse = {
 	};
 };
 
-export default class CDN extends Core {
+export class CDN extends Core {
 	endpoints = {
 		url: "https://www.floatplane.com/api/v2/cdn/delivery",
 	};

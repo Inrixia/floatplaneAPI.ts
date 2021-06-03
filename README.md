@@ -12,23 +12,25 @@ require('floatplane/auth')
 ``` 
 
 # Usage
-```js
-const Floatplane = require("floatplane");
+```ts
+import { Floatplane } from "floatplane";
 
 const floatplane = new Floatplane(); // Create a new API instance.
 
-;(async () => { // Run with async/await
+(async () => { // Run with async/await
 	const login = await floatplane.login({
 		username: "yourUsername",
 		password: "yourPassword",
 		token: "yourTokenIfYouUse2Factor"
-	})
+	});
 	// login -> User object
-	const subs = await floatplane.user.subscriptions()
+	const subs = await floatplane.user.subscriptions();
 	// subs -> User subscriptions
-	const videos = await floatplane.creator.blogPosts(subs[0].creator, { type: "video" })
+	const videos = await floatplane.creator.blogPosts(subs[0].creator, { type: "video" });
 	// videos -> 20 Latest videos from first subscription
-})().catch(console.log) // Errors are logged to console
+
+	console.log(videos);
+})().catch(console.log); // Errors are logged to console
 ```
 
 # Floatplane API

@@ -1,5 +1,5 @@
 import got from "got";
-import CDN, { LiveDeliveryResponse, QualityLevel, QualityLevelParam, DownloadDeliveryResponse, VodDeliveryResponse } from ".";
+import { CDN, LiveDeliveryResponse, QualityLevel, QualityLevelParam, DownloadDeliveryResponse, VodDeliveryResponse } from ".";
 import { clientFormat, edgeFormat, gotExtends } from "../lib/testHelpers";
 import { Edge } from "../lib/types";
 

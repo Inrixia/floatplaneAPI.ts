@@ -1,4 +1,4 @@
-import Core from "../Core";
+import { Core } from "../Core";
 import type { CreatorObj, Image, Metadata } from "../lib/types";
 
 export type BlogPost = {
@@ -22,7 +22,7 @@ export type BlogPost = {
 	pictureAttachments: Array<string>;
 	galleryAttachments: Array<string>;
 };
-export default class Creator extends Core {
+export class Creator extends Core {
 	endpoints = {
 		videos: "https://www.floatplane.com/api/v3/content/creator",
 	};

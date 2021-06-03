@@ -1,5 +1,5 @@
 import got from "got";
-import Creator from ".";
+import { Creator } from ".";
 import { imageFormat, gotExtends, creatorObjFormat, eExpect, metadataFormat } from "../lib/testHelpers";
 
 import type { BlogPost } from ".";

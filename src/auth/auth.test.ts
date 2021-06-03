@@ -1,6 +1,6 @@
 import got from "got";
 
-import Auth from ".";
+import { Auth } from ".";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { username, password, captchaToken, token } = require("../../credentials.json");
 

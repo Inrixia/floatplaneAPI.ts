@@ -1,5 +1,5 @@
 import got from "got";
-import API from "./";
+import { Api } from "./";
 import { clientFormat, edgeFormat, gotExtends } from "../lib/testHelpers";
 
 import type { EdgesResponse} from "./";
@@ -10,7 +10,7 @@ export const edgesResponseFormat: EdgesResponse = {
 	client: clientFormat
 };
 
-const api = new API(got.extend(gotExtends()));
+const api = new Api(got.extend(gotExtends()));
 
 test("Api.edges()", () => {
 	return expect(api.edges()).resolves.toStrictEqual<EdgesResponse>(edgesResponseFormat);
