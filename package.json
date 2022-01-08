@@ -5,22 +5,23 @@
 	"main": "index.js",
 	"types": "index.d.ts",
 	"dependencies": {
+		"cross-env": "^7.0.3",
 		"got": "^11.8.2",
 		"tough-cookie": "^4.0.0"
 	},
 	"devDependencies": {
-		"@inrixia/helpers": "^1.20.2",
-		"@types/jest": "^26.0.23",
-		"@types/tough-cookie": "^4.0.0",
+		"@inrixia/helpers": "^1.23.1",
+		"@types/jest": "^27.4.0",
+		"@types/tough-cookie": "^4.0.1",
 		"@types/tough-cookie-file-store": "^2.0.1",
-		"@typescript-eslint/eslint-plugin": "^4.27.0",
-		"@typescript-eslint/parser": "^4.27.0",
-		"eslint": "^7.29.0",
-		"jest": "^27.0.4",
-		"jest-extended": "^0.11.5",
-		"tough-cookie-file-store": "^2.0.2",
-		"ts-jest": "^27.0.3",
-		"typescript": "^4.3.4"
+		"@typescript-eslint/eslint-plugin": "^5.9.0",
+		"@typescript-eslint/parser": "^5.9.0",
+		"eslint": "^8.6.0",
+		"jest": "^27.4.7",
+		"jest-extended": "^1.2.0",
+		"tough-cookie-file-store": "^2.0.3",
+		"ts-jest": "^27.1.2",
+		"typescript": "^4.5.4"
 	},
 	"scripts": {
 		"test-all": "jest auth.test --runInBand && jest api.test creator.test user.test video.test",
