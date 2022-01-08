@@ -52,14 +52,14 @@ const downloadDeliveryResponseFormat: DownloadDeliveryResponse = {
 
 const cdn = new CDN(got.extend(gotExtends()));
 
-test("CDN.delivery(\"live\", creator)", () => {
+test('CDN.delivery("live", creator)', () => {
 	return expect(cdn.delivery("live", "59f94c0bdd241b70349eb72b")).resolves.toStrictEqual<LiveDeliveryResponse>(liveDeliveryResponseFormat);
 });
 
-test("CDN.delivery(\"vod\", guid)", async () => {
+test('CDN.delivery("vod", guid)', async () => {
 	return expect(cdn.delivery("vod", "InwhyES1dt")).resolves.toStrictEqual<VodDeliveryResponse>(vodDeliveryResponseFormat);
 });
 
-test("CDN.delivery(\"download\", guid)", async () => {
+test('CDN.delivery("download", guid)', async () => {
 	return expect(cdn.delivery("download", "InwhyES1dt")).resolves.toStrictEqual<DownloadDeliveryResponse>(downloadDeliveryResponseFormat);
 });

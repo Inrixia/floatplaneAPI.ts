@@ -5,9 +5,9 @@ import { CookieJar } from "tough-cookie";
 import { headers } from "../";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const gotExtends = () => ({ 
+export const gotExtends = () => ({
 	cookieJar: new CookieJar(new FileCookieStore("./cookieStore.json")),
-	headers
+	headers,
 });
 
 import type { Image, ChildImage, CreatorObj, SubscriptionPlan, Metadata, Client, Edge } from "./types";
@@ -33,7 +33,7 @@ eExpect.extend({
 	},
 	arrayContainingOrEmptyOrUndefined<T>(received: any, argument: Array<T>) {
 		if (received === undefined || received.length === 0 || expect(received).toEqual(expect.arrayContaining(argument)) === undefined) return OK;
-	}
+	},
 });
 
 export const metadataFormat: Metadata = {
@@ -69,7 +69,7 @@ export const floatplaneUserFormat: any = {
 	profileImage: imageFormat,
 	email: expect.any(String),
 	displayName: expect.any(String),
-	creators: eExpect.arrayContainingOrEmpty([String])
+	creators: eExpect.arrayContainingOrEmpty([String]),
 };
 
 export const clientFormat: Client = eExpect.toBeObjectTypeOrEmpty({
@@ -83,7 +83,7 @@ export const clientFormat: Client = eExpect.toBeObjectTypeOrEmpty({
 	time_zone: expect.any(String),
 	latitude: expect.any(Number),
 	longitude: expect.any(Number),
-	metro_code: expect.any(Number)
+	metro_code: expect.any(Number),
 });
 export const edgeFormat: Edge = {
 	hostname: expect.any(String),
@@ -95,15 +95,15 @@ export const edgeFormat: Edge = {
 		countryCode: expect.any(String),
 		regionCode: expect.any(String),
 		latitude: expect.any(Number),
-		longitude: expect.any(Number)
-	}
+		longitude: expect.any(Number),
+	},
 };
 
 export const subscriptionPlan: SubscriptionPlan = {
 	id: expect.any(String),
 	title: expect.any(String),
 	description: expect.any(String),
-	discordRoles: expect.any(Array), 
+	discordRoles: expect.any(Array),
 	discordServers: expect.any(Array),
 	featured: expect.any(Boolean),
 	price: expect.any(String),
@@ -111,7 +111,7 @@ export const subscriptionPlan: SubscriptionPlan = {
 	currency: expect.any(String),
 	logo: eExpect.toBeTypeOrNull(imageFormat),
 	interval: expect.any(String),
-	allowGrandfatheredAccess: expect.any(Boolean)
+	allowGrandfatheredAccess: expect.any(Boolean),
 };
 
 export const creatorObjFormat: CreatorObj = {

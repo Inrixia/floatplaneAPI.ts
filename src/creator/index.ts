@@ -5,10 +5,10 @@ export type BlogPost = {
 	id: string;
 	guid: string;
 	title: string;
-	tags: Array<string>;
+	tags: string[];
 	text: string;
 	type: string;
-	attachmentOrder: Array<string>;
+	attachmentOrder: string[];
 	metadata: Metadata;
 	releaseDate: string;
 	likes: number;
@@ -18,10 +18,10 @@ export type BlogPost = {
 	creator: CreatorObj;
 	thumbnail: Image;
 	isAccessible: boolean;
-	videoAttachments: Array<string>;
-	audioAttachments: Array<string>;
-	pictureAttachments: Array<string>;
-	galleryAttachments: Array<string>;
+	videoAttachments: string[];
+	audioAttachments: string[];
+	pictureAttachments: string[];
+	galleryAttachments: string[];
 	wasReleasedSilently: boolean;
 };
 export class Creator extends Core {
@@ -62,7 +62,7 @@ export class Creator extends Core {
 	 * @param options.sort Sort by releaseDate. Can be "DESC" or "ASC".
 	 * @param options.search Filter BlogPosts by search term.
 	 * @param options.limit Max amount of BlogPosts to return. Must be in range 1-20.
-	 * @returns {Promise<Array<BlogPost>>}
+	 * @returns {Promise<BlogPost[]>}
 	 */
 	blogPosts = async (
 		creatorGUID: string,
@@ -73,7 +73,7 @@ export class Creator extends Core {
 			search?: string;
 			limit?: number;
 		}
-	): Promise<Array<BlogPost>> =>
+	): Promise<BlogPost[]> =>
 		await this.got(
 			this.endpoints.videos +
 				`?id=${creatorGUID}` +

@@ -2,7 +2,7 @@ export type Image = {
 	width: number;
 	height: number;
 	path: string;
-	childImages: Array<ChildImage>;
+	childImages: ChildImage[];
 };
 
 export type ChildImage = { width: number; height: number; path: string };
@@ -14,11 +14,11 @@ export type FloatplaneUser = {
 	email: string;
 	displayName: string;
 	creators: string[];
-	isSpoofed?: boolean,
-	isAdministrator?: boolean,
-	isModerator?: boolean,
-	isGlobalModerator?: boolean,
-	moderatorCreators?: string[]
+	isSpoofed?: boolean;
+	isAdministrator?: boolean;
+	isModerator?: boolean;
+	isGlobalModerator?: boolean;
+	moderatorCreators?: string[];
 };
 
 export type Metadata = {
@@ -33,35 +33,35 @@ export type Metadata = {
 	hasGallery: boolean;
 	galleryCount: number;
 	isFeatured: boolean;
-}
+};
 
 export type Edge = {
-	hostname: string,
-	queryPort: number,
-	bandwidth: number,
-	allowDownload: boolean,
-	allowStreaming: boolean,
+	hostname: string;
+	queryPort: number;
+	bandwidth: number;
+	allowDownload: boolean;
+	allowStreaming: boolean;
 	datacenter: {
-		countryCode: string,
-		regionCode: string,
-		latitude: number,
-		longitude: number
-	}
-}
+		countryCode: string;
+		regionCode: string;
+		latitude: number;
+		longitude: number;
+	};
+};
 
 export type Client = {
-	ip?: string,
-	country_code?: string,
-	country_name?: string,
-	region_code?: string,
-	region_name?: string,
-	city?: string,
-	zip_code?: string,
-	time_zone?: string,
-	latitude?: number,
-	longitude?: number,
-	metro_code?: number
-}
+	ip?: string;
+	country_code?: string;
+	country_name?: string;
+	region_code?: string;
+	region_name?: string;
+	city?: string;
+	zip_code?: string;
+	time_zone?: string;
+	latitude?: number;
+	longitude?: number;
+	metro_code?: number;
+};
 
 export type SubscriptionPlan = {
 	id: string;
@@ -74,9 +74,9 @@ export type SubscriptionPlan = {
 	interval: string;
 	featured: boolean;
 	allowGrandfatheredAccess: boolean;
-	discordServers: Array<string>;
-	discordRoles: Array<string>;
-}
+	discordServers: string[];
+	discordRoles: string[];
+};
 
 export type CreatorObj = {
 	id: string;
@@ -106,7 +106,7 @@ export type CreatorObj = {
 			thumbnail: Image;
 		};
 	};
-	subscriptionPlans: Array<SubscriptionPlan>;
+	subscriptionPlans: SubscriptionPlan[];
 	discoverable: boolean;
 	subscriberCountDisplay: string;
 	incomeDisplay: boolean;

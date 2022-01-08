@@ -379,7 +379,7 @@ type ChildImage = {
 	width: number;
 	height: number;
 	path: string;
-	childImages: Array<ChildImage>;
+	childImages: ChildImage[];
 };
 ```
 
@@ -411,7 +411,7 @@ type Image = {
 			width: number;
 			height: number;
 			path: string;
-			childImages: Array<Image>;
+			childImages: Image[];
 		};
 	};
 };
@@ -435,8 +435,8 @@ type SubscriptionPlan = {
 	interval: string;
 	featured: boolean;
 	allowGrandfatheredAccess: boolean;
-	discordServers: Array<string>;
-	discordRoles: Array<string>;
+	discordServers: string[];
+	discordRoles: string[];
 };
 ```
 
@@ -493,7 +493,7 @@ type CreatorObj = {
 			thumbnail: Image;
 		};
 	};
-	subscriptionPlans: Array<SubscriptionPlan>;
+	subscriptionPlans: SubscriptionPlan[];
 	discoverable: boolean;
 	subscriberCountDisplay: string;
 	incomeDisplay: boolean;
@@ -532,10 +532,10 @@ type BlogPost = {
 	id: string;
 	guid: string;
 	title: string;
-	tags: Array<string>;
+	tags: string[];
 	text: string;
 	type: string;
-	attachmentOrder: Array<string>;
+	attachmentOrder: string[];
 	metadata: Metadata;
 	releaseDate: string;
 	likes: number;
@@ -545,10 +545,10 @@ type BlogPost = {
 	creator: CreatorObj;
 	thumbnail: Image;
 	isAccessible: boolean;
-	videoAttachments: Array<string>;
-	audioAttachments: Array<string>;
-	pictureAttachments: Array<string>;
-	galleryAttachments: Array<string>;
+	videoAttachments: string[];
+	audioAttachments: string[];
+	pictureAttachments: string[];
+	galleryAttachments: string[];
 	wasReleasedSilently: boolean;
 };
 ```
@@ -639,7 +639,7 @@ type VodDeliveryResponse = {
 		// "/Videos/~~/{data.qualityLevel.name}.mp4/chunk.m3u8?token={data.qualityLevelParam.token}"
 		uri: string;
 		data: {
-			qualityLevels: Array<QualityLevel>;
+			qualityLevels: QualityLevel[];
 			qualityLevelParams: {
 				[key: string]: { token: string };
 			};
@@ -663,7 +663,7 @@ type DownloadDeliveryResponseDeliveryResponse = {
 		// "/Videos/{videoGUID}/{data.qualityLevel.name}.mp4?wmsAuthSign={data.token}"
 		uri: string;
 		data: {
-			qualityLevels: Array<QualityLevel>;
+			qualityLevels: QualityLevel[];
 			token: string;
 		};
 	};
@@ -703,7 +703,7 @@ type CreatorMenuUpdate = {
 	title: string;
 	text: string;
 	type: string;
-	attachmentOrder: Array<string>;
+	attachmentOrder: string[];
 	metadata: Metadata;
 	releaseDate: string;
 	likes: number;
@@ -726,7 +726,7 @@ type PostRelease = {
 			title: string;
 			text: string;
 			type: string;
-			attachmentOrder: Array<string>;
+			attachmentOrder: string[];
 			metadata: Metadata;
 			releaseDate: string | null;
 			likes: number;

@@ -34,22 +34,20 @@ export type VodDeliveryResponse = {
 		// "/Videos/~~/{data.qualityLevel.name}.mp4/chunk.m3u8?token={data.qualityLevelParam.token}"
 		uri: string;
 		data: {
-			qualityLevels: Array<QualityLevel>;
-			qualityLevelParams: {
-				[key: string]: QualityLevelParam;
-			};
+			qualityLevels: QualityLevel[];
+			qualityLevelParams: Record<string, QualityLevelParam>;
 		};
 	};
 };
 export type DownloadDeliveryResponse = {
 	client?: Client;
-	edges: Array<Edge>;
+	edges: Edge[];
 	strategy: string;
 	resource: {
 		// "/Videos/{videoGUID}/{data.qualityLevel.name}.mp4?wmsAuthSign={data.token}"
 		uri: string;
 		data: {
-			qualityLevels: Array<QualityLevel>;
+			qualityLevels: QualityLevel[];
 			token: string;
 		};
 	};
