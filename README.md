@@ -532,6 +532,7 @@ type BlogPost = {
 	id: string;
 	guid: string;
 	title: string;
+	tags: Array<string>;
 	text: string;
 	type: string;
 	attachmentOrder: Array<string>;
@@ -548,6 +549,7 @@ type BlogPost = {
 	audioAttachments: Array<string>;
 	pictureAttachments: Array<string>;
 	galleryAttachments: Array<string>;
+	wasReleasedSilently: boolean;
 };
 ```
 

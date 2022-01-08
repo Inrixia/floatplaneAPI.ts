@@ -5,6 +5,7 @@ export type BlogPost = {
 	id: string;
 	guid: string;
 	title: string;
+	tags: Array<string>;
 	text: string;
 	type: string;
 	attachmentOrder: Array<string>;
@@ -21,6 +22,7 @@ export type BlogPost = {
 	audioAttachments: Array<string>;
 	pictureAttachments: Array<string>;
 	galleryAttachments: Array<string>;
+	wasReleasedSilently: boolean;
 };
 export class Creator extends Core {
 	endpoints = {
@@ -35,11 +37,14 @@ export class Creator extends Core {
 	 * @param options.search Filter BlogPosts by search term.
 	 * @returns {AsyncIterable<BlogPost>} Async iterable that yeilds blogPost objects
 	 */
-	async *blogPostsIterable(creatorGUID: string, options?: {
-		type?: "audio"|"video"|"picture"|"gallery", 
-		sort?: "ASC"|"DESC", 
-		search?: string
-	}): AsyncIterableIterator<BlogPost> {
+	async *blogPostsIterable(
+		creatorGUID: string,
+		options?: {
+			type?: "audio" | "video" | "picture" | "gallery";
+			sort?: "ASC" | "DESC";
+			search?: string;
+		}
+	): AsyncIterableIterator<BlogPost> {
 		let fetchAfter = 0;
 		let blogPosts = await this.blogPosts(creatorGUID, { ...options, fetchAfter });
 		while (blogPosts.length > 0) {
@@ -59,21 +64,24 @@ export class Creator extends Core {
 	 * @param options.limit Max amount of BlogPosts to return. Must be in range 1-20.
 	 * @returns {Promise<Array<BlogPost>>}
 	 */
-	blogPosts = async (creatorGUID: string, options?: {
-		fetchAfter?: number,
-		type?: "audio"|"video"|"picture"|"gallery", 
-		sort?: "ASC"|"DESC", 
-		search?: string, 
-		limit?: number 
-	}): Promise<Array<BlogPost>> => await this.got(
-		this.endpoints.videos
-			+ `?id=${creatorGUID}`
-			+ (options?.fetchAfter  ? `&fetchAfter=${options?.fetchAfter}`  : "")
-			+ (options?.type   		? `&type=${options?.type}` 	 			: "")
-			+ (options?.sort   		? `&sort=${options?.sort}` 	 			: "")
-			+ (options?.search 		? `&search=${options?.search}` 			: "")
-			+ (options?.limit  		? `&type=${options?.limit}` 	 		: ""),
-		{ resolveBodyOnly: true }
-	).then(JSON.parse);
+	blogPosts = async (
+		creatorGUID: string,
+		options?: {
+			fetchAfter?: number;
+			type?: "audio" | "video" | "picture" | "gallery";
+			sort?: "ASC" | "DESC";
+			search?: string;
+			limit?: number;
+		}
+	): Promise<Array<BlogPost>> =>
+		await this.got(
+			this.endpoints.videos +
+				`?id=${creatorGUID}` +
+				(options?.fetchAfter ? `&fetchAfter=${options?.fetchAfter}` : "") +
+				(options?.type ? `&type=${options?.type}` : "") +
+				(options?.sort ? `&sort=${options?.sort}` : "") +
+				(options?.search ? `&search=${options?.search}` : "") +
+				(options?.limit ? `&type=${options?.limit}` : ""),
+			{ resolveBodyOnly: true }
+		).then(JSON.parse);
 }
-
