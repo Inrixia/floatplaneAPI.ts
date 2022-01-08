@@ -1,27 +1,32 @@
 # Unofficial Floatplane API
+
 This library is not in any way related to LMG or Floatplane Media Inc.
 
 Features/Endpoints are added as needed so if something is missing please make a [Issue](https://github.com/Inrixia/floatplaneAPI.ts/issues/new) or [Pull Request](https://github.com/Inrixia/floatplaneAPI.ts/pulls)
 
 # Install
-```$ npm install floatplane```
+
+`$ npm install floatplane`
 
 Individual classes can be imported seperately:
+
 ```ts
-import { Auth } from "floatplane/auth"
-``` 
+import { Auth } from "floatplane/auth";
+```
 
 # Usage
+
 ```ts
 import { Floatplane } from "floatplane";
 
 const floatplane = new Floatplane(); // Create a new API instance.
 
-(async () => { // Run with async/await
+(async () => {
+	// Run with async/await
 	const login = await floatplane.login({
 		username: "yourUsername",
 		password: "yourPassword",
-		token: "yourTokenIfYouUse2Factor"
+		token: "yourTokenIfYouUse2Factor",
 	});
 	// login -> User object
 	const subs = await floatplane.user.subscriptions();
@@ -34,40 +39,48 @@ const floatplane = new Floatplane(); // Create a new API instance.
 ```
 
 # Floatplane API
+
 ### [Login](#floatplane_login)
+
 ### [isAuthenticated](#floatplane_isAuthenticated)
 
 ## Modules
+
 Each module has a object containing endpoints used. Purely<br>
 Ex: floatplane.<a name="auth">auth</a>.endpoints.login is the url of the `login` endpoint.<br>
 <br>
 
 ### [Auth](#_auth)
+
 - [.login(username, password)](#auth_login)<br>
 - [.factor(token)](#auth_factor)<br>
+
 ### [Api](#_api)
+
 - [.edges()](#api_edges)
+
 ### [Creator](#_creator)
+
 - [.blogPosts(creatorGUID, options)](#creator_blogPosts)<br>
 - [.blogPostsIterable(creatorGUID, options)](#creator_blogPostsIterable)
+
 ### [User](#_user)
+
 - [.subscriptions()](#user_subscriptions)
 - [.self()](#user_self)
+
 ### [CDN](#_cdn)
+
 - [.delivery(type, id)](#cdn_delivery)<br>
 
-### [Sails](#_sails)
-- [.connect()](#sails_connect)<br>
-- [.on("syncEvent")](#sails_syncEvent)<br>
-<br>
-
 ## [Types](#types)
+
 <br>
-
-
 
 # General Use
+
 ### <b>floatplane.<a name="floatplane_login">login</a></b>(options): Promise\<[User](#user_type)>
+
 Login to floatplane so future requests are authenticated. Purely a wrapper around Floatplane.auth.login & Floatplane.auth.factor to simplify things.<br><br>
 
 <b>options.username</b>: `string`<br>
@@ -79,32 +92,40 @@ Password to use when logging in.
 <b>captchaToken</b>?: `string`<br>
 Recaptcha token. Not required.
 Get a single use captchaToken by going to floatplane.com/login and running this in console:
+
 ```ts
-grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
+grecaptcha.execute("6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr", { action: "login" }).then(console.log);
 ```
 
 <b>options.token</b>?: `string` | `undefined`<br>
 2 Factor authentication token to use when logging in. Only needed if your account has 2 factor enabled.
 <br>
 <br>
+
 ### Example:
+
 ```ts
 const user = await floatplane.login({
 	username: "yourUsername",
 	password: "yourPassword",
-	token: "yourTokenIfYouUse2Factor"
-})
+	token: "yourTokenIfYouUse2Factor",
+});
 ```
+
 <br>
 
 ### <b>floatplane.[isAuthenticated](#floatplane_isAuthenticated)</b>(): Promise\<`true` | `Error`>
+
 Returns promise of true if authenticated or Error if not.<br>
 <br>
 <br>
 
 ## <a name="_auth">Auth</a>
+
 ---
+
 ### <b>floatplane.[auth](#_auth).<a name="auth_login">login</a></b>(username, password, captchaToken): Promise\<[User](#user_type) | [Needs2fa](#needs2fa_type)>
+
 Login to floatplane. If user requires 2 factor authentication then only `{ needs2FA: true }` will be returned.<br>
 <br>
 
@@ -117,56 +138,71 @@ Password to use.
 <b>captchaToken</b>?: `string`<br>
 Recaptcha token. Not required.
 Get a single use captchaToken by going to floatplane.com/login and running this in console:
+
 ```ts
-grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
+grecaptcha.execute("6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr", { action: "login" }).then(console.log);
 ```
+
 <br>
 <br>
 
 ### Example:
+
 ```ts
-const user = await floatplane.auth.login("yourUsername", "yourPassword", "captchaToken")
+const user = await floatplane.auth.login("yourUsername", "yourPassword", "captchaToken");
 ```
+
 <br>
 
 ### <b>floatplane.[auth](#_auth).<a name="auth_factor">factor</a></b>(token): Promise\<[User](#user_type)>
+
 Complete login to floatplane with 2 factor authentication token.<br>
 <br>
-
 
 <b>token</b>: `string`<br>
 2 Factor authentication token to use.
 
-
 ### Example:
+
 ```ts
-const user = await floatplane.auth.factor("your2FactorToken")
+const user = await floatplane.auth.factor("your2FactorToken");
 ```
+
 <br>
 <br>
 
 ## <a name="_api">Api</a>
+
 ---
+
 ### <b>floatplane.[api](#_api).<a name="api_edges">edges</a></b>(): Promise\<{ edges: Array<[Edge](#edge_type)>, client: [Client](#client_type) }>
+
 Fetch floatplane api server edges. (Depricated)<br>
 
 ### Example:
+
 ```ts
-const user = await floatplane.api.edges()
+const user = await floatplane.api.edges();
 ```
+
 <br>
 <br>
 
 ## <a name="_creator">Creator</a>
+
 ---
+
 ### <b>floatplane.[creator](#_creator).<a name="creator_blogPosts">blogPosts</a></b>(creatorGUID, options?): Promise<Array\<[BlogPost](#blogpost_type)>>
+
 Fetch creator blogPosts, returns a promise of an array of 20 blogPosts.<br>
 If you want to easily fetch more than 20 blogPosts check out [blogPostsIterable()](creator_blogPostsIterable) instead.
 <br><br>
 <b>creatorGUID</b>: `string`<br>
 Creator GUID to fetch videos from.
 <br><br>
+
 ### Options:
+
 <b>options.fetchAfter</b>: `number`<br>
 Number of videos from the latest to fetch from.
 
@@ -182,19 +218,25 @@ Filter BlogPosts by search term.
 <b>options.limit</b>: `number`<br>
 Max amount of BlogPosts to return. Must be in range 1-20.
 <br><br>
+
 ### Examples:
+
 ```ts
-const videos = await floatplane.creator.blogPosts("creatorGUID", { type: "video" }) // Array of 20 videos
+const videos = await floatplane.creator.blogPosts("creatorGUID", { type: "video" }); // Array of 20 videos
 ```
+
 <br>
 
 ### <b>floatplane.[creator](#_creator).<a name="creator_blogPostsIterable">blogPostsIterable</a></b>(creatorGUID, options?): AsyncIterator\<[Video](#video_type)>
+
 Fetch creator videos. Returns a async iterator that will return all blogPosts from the specified creator.<br>
 BlogPosts are fetched in batches of 20 but returned individually.<br><br>
 Creator GUID to fetch videos from.<br>
 <b>creatorGUID</b>: `string`
 <br><br>
+
 ### Options:
+
 Filter BlogPosts by attachment types. Can be "audio", "video", "picture" or "gallery".<br>
 <b>options.type</b>: `"audio" | "video" | "picture" | "gallery"`
 
@@ -204,43 +246,58 @@ Sort by releaseDate. Can be "DESC" or "ASC".<br>
 Filter BlogPosts by search term.<br>
 <b>options.search</b>: `"ASC" | "DESC"`
 <br><br>
+
 ### Examples:
+
 ```ts
-const videos = floatplane.creator.blogPostsIterable("creatorGUID", { type: "video"})
-const firstVideo = await videos.next().value // Fetch one video
+const videos = floatplane.creator.blogPostsIterable("creatorGUID", { type: "video" });
+const firstVideo = await videos.next().value; // Fetch one video
 ```
+
 ```ts
-for await (const video of floatplane.creator.blogPostsIterable("creatorGUID", { type: "video"})) {
+for await (const video of floatplane.creator.blogPostsIterable("creatorGUID", { type: "video" })) {
 	// Loops over every video from the creator.
 }
 ```
+
 <br>
 <br>
 
 ## <a name="_user">User</a>
+
 ---
+
 ### <b>floatplane.[user](#_user).<a name="user_subscriptions">subscriptions</a></b>(): Promise\<Array<[Subscription](#subscription)>>
+
 Fetches subscriptions for current user.<br>
 
 ### Example:
+
 ```ts
-const subscriptions = await floatplane.user.subscriptions()
+const subscriptions = await floatplane.user.subscriptions();
 ```
+
 <br>
 
 ### <b>floatplane.[user](#_user).<a name="user_self">self</a></b>(): Promise\<FloatplaneUser(#FloatplaneUser)>
+
 Fetch information about the logged in user.<br>
 
 ### Example:
+
 ```ts
-const subscriptions = await floatplane.user.subscriptions()
+const subscriptions = await floatplane.user.subscriptions();
 ```
+
 <br>
 <br>
 
 ## <a name="_cdn">CDN</a>
+
 ---
+
 ### <b>floatplane.[video](#_video).<a name="cdn_delivery">delivery</a></b>(type, id): Promise\<[LiveDeliveryResponse](#LiveDeliveryResponse_type) | [VodDeliveryResponse](#VodDeliveryResponse_type) | [DownloadDeliveryResponse](#DownloadDeliveryResponse_type)>
+
 Fetches resource information from cdn.<br>
 
 <b>type</b>: `"live" | "vod" | "download"`<br>
@@ -251,77 +308,72 @@ ID of resource.
 <br><br>
 
 ### Example:
+
 ```ts
 const liveInfo = await floatplane.cdn.delivery("live", "59f94c0bdd241b70349eb72b");
 const vodInfo = await floatplane.cdn.delivery("vod", "InwhyES1dt");
 const downloadInfo = await floatplane.cdn.delivery("download", "InwhyES1dt");
 ```
-<br>
 
-## <a name="_sails">Sails</a>
-### Sails is a class for subscribing to notification events.
----
-### <b>floatplane.[Sails](#_sails).<a name="sails_connect">connect</a>()</b>: Promise\<{ message: `string` }>
-Connect to the sails socket and subscribe to events.<br>
-<br>
-### <b>floatplane.[Sails](#_sails).on</b>("<a name="sails_syncEvent">syncEvent</a>", [syncEvent](#syncEvent_type) => `void`): ```this```
-Event fired when a notification is received.
-### Example:
-```ts
-	// Note: This event will most likely not fire until a new video releases so dont expect any output immedately.
-	floatplane.sails.on("syncEvent", syncEvent => {
-		if (syncEvent.event === "creatorMenuUpdate") {
-			// This is a new video event
-		}
-	});
-	await floatplane.sails.connect();
-```
 <br>
 
 ## <a name="_got">Got</a>
+
 https://www.npmjs.com/package/got<br>
 Got is the http/https library used for handling requests sent to floatplane.<br>
 When importing individual classes a `got` instance is required to be passed to their constructor.<br>
 In order for requests to be authenticated a single instance of `got` should be used for all classes and got should be extended with `mutableDefaults: true`.
+
 ```ts
 // You can set default headers here too, check the got docs for more info
-import got from "got"
-import { Auth } from "floatplane/auth"
-import { User } from "floatplane/user"
+import got from "got";
+import { Auth } from "floatplane/auth";
+import { User } from "floatplane/user";
 
 // Same instance of got used for both constructors so that cookies are shared
-const auth = new Auth(got)
-const user = new User(got)
+const auth = new Auth(got);
+const user = new User(got);
 ```
+
 <br><br>
+
 # <a name="types">Types</a>
+
 <br>
 
 ## <a name="LoginSuccess_type">LoginSuccess</a>
+
 Types Used: <a name="Image_type">Image</a>
+
 ```ts
-type LoginSuccess = { 
+type LoginSuccess = {
 	user: {
-		id: string,
-		username: string,
-		profileImage: Image
-	},
-	needs2FA: false
+		id: string;
+		username: string;
+		profileImage: Image;
+	};
+	needs2FA: false;
 };
 ```
+
 <br>
 
 ## <a name="needs2fa">Needs2fa</a>
+
 Types Used: <a name="needs2fa_type">Needs2fa</a>
+
 ```ts
-type Needs2fa = { 
-	needs2fa: true 
+type Needs2fa = {
+	needs2fa: true;
 };
 ```
+
 <br>
 
 ## <a name="Image_type">Image</a>
+
 Types Used: <a name="childImage_type">ChildImage</a>
+
 ```ts
 type ChildImage = {
 	width: number;
@@ -330,39 +382,47 @@ type ChildImage = {
 	childImages: Array<ChildImage>;
 };
 ```
+
 <br>
 
 ## <a name="childImage_type">ChildImage</a>
+
 ```ts
-type ChildImage = { 
-	width: number; 
-	height: number; 
-	path: string 
+type ChildImage = {
+	width: number;
+	height: number;
+	path: string;
 };
 ```
+
 <br>
 
 ## <a name="user_type">User</a>
+
 Types Used: <a name="Image_type">Image</a>
+
 ```ts
-type Image = { 
-	needs2FA: boolean,
+type Image = {
+	needs2FA: boolean;
 	user: {
-		id: string,
-		username: string,
+		id: string;
+		username: string;
 		profileImage: {
-			width: number,
-			height: number,
-			path: string,
-			childImages: Array<Image>
-		}
-	}
+			width: number;
+			height: number;
+			path: string;
+			childImages: Array<Image>;
+		};
+	};
 };
 ```
+
 <br>
 
 ## <a name="subscriptionplan_type">SubscriptionPlan</a>
+
 Types Used: <a name="Image_type">Image</a>
+
 ```ts
 type SubscriptionPlan = {
 	id: string;
@@ -379,25 +439,31 @@ type SubscriptionPlan = {
 	discordRoles: Array<string>;
 };
 ```
+
 <br>
 
 ## <a name="subscription_type">Subscription</a>
+
 Types Used: <a name="subscriptionplan_type">SubscriptionPlan</a>
+
 ```ts
 type Subscription = {
-	startDate: string,
-	endDate: string,
-	paymentID: number,
-	interval: string,
-	paymentCancelled: boolean,
-	plan: SubscriptionPlan,
-	creator: string
+	startDate: string;
+	endDate: string;
+	paymentID: number;
+	interval: string;
+	paymentCancelled: boolean;
+	plan: SubscriptionPlan;
+	creator: string;
 };
 ```
+
 <br>
 
 ## <a name="CreatorObj_type">CreatorObj</a>
+
 Types Used: <a name="Image_type">Image</a>, <a name="subscriptionplan_type">SubscriptionPlan</a>
+
 ```ts
 type CreatorObj = {
 	id: string;
@@ -434,9 +500,11 @@ type CreatorObj = {
 	card: Image;
 };
 ```
+
 <br>
 
 ## <a name="metadata_type">Metadata</a>
+
 ```ts
 type Metadata = {
 	hasVideo: boolean;
@@ -452,10 +520,13 @@ type Metadata = {
 	isFeatured: boolean;
 };
 ```
+
 <br>
 
 ## <a name="blogPost_type">BlogPost</a>
+
 Types Used: <a name="metadata_type">Metadata</a>, <a name="CreatorObj_type">CreatorObj</a>, <a name="Image_type">Image</a>
+
 ```ts
 type BlogPost = {
 	id: string;
@@ -479,45 +550,51 @@ type BlogPost = {
 	galleryAttachments: Array<string>;
 };
 ```
+
 <br>
 
 ## <a name="edge_type">Edge</a>
+
 ```ts
 type Edge = {
-	hostname: string,
-	queryPort: number,
-	bandwidth: number,
-	allowDownload: boolean,
-	allowStreaming: boolean,
+	hostname: string;
+	queryPort: number;
+	bandwidth: number;
+	allowDownload: boolean;
+	allowStreaming: boolean;
 	datacenter: {
-		countryCode: string,
-		regionCode: string,
-		latitude: number,
-		longitude: number
-	}
+		countryCode: string;
+		regionCode: string;
+		latitude: number;
+		longitude: number;
+	};
 };
 ```
+
 <br>
 
 ## <a name="client_type">Client</a>
+
 ```ts
 type Client = {
-	ip?: string,
-	country_code?: string,
-	country_name?: string,
-	region_code?: string,
-	region_name?: string,
-	city?: string,
-	zip_code?: string,
-	time_zone?: string,
-	latitude?: number,
-	longitude?: number,
-	metro_code?: number
+	ip?: string;
+	country_code?: string;
+	country_name?: string;
+	region_code?: string;
+	region_name?: string;
+	city?: string;
+	zip_code?: string;
+	time_zone?: string;
+	latitude?: number;
+	longitude?: number;
+	metro_code?: number;
 };
 ```
+
 <br>
 
 ## <a name="qualitylevel_type">QualityLevel</a>
+
 ```ts
 type QualityLevel = {
 	name: string;
@@ -527,9 +604,11 @@ type QualityLevel = {
 	order: number;
 };
 ```
+
 <br>
 
 ## <a name="LiveDeliveryResponse_type">LiveDeliveryResponse</a>
+
 ```ts
 type LiveDeliveryResponse = {
 	cdn: string;
@@ -543,10 +622,13 @@ type LiveDeliveryResponse = {
 	};
 };
 ```
+
 <br>
 
 ## <a name="VodDeliveryResponse_type">VodDeliveryResponse</a>
+
 Types Used: <a name="qualitylevel_type">QualityLevel</a>
+
 ```ts
 type VodDeliveryResponse = {
 	cdn: string;
@@ -556,17 +638,20 @@ type VodDeliveryResponse = {
 		uri: string;
 		data: {
 			qualityLevels: Array<QualityLevel>;
-			qualityLevelParams: { 
-				[key: string]: { token: string } 
+			qualityLevelParams: {
+				[key: string]: { token: string };
 			};
 		};
 	};
 };
 ```
+
 <br>
 
 ## <a name="DownloadDeliveryResponseDeliveryResponse_type">DownloadDeliveryResponseDeliveryResponse</a>
+
 Types Used: <a name="client_type">Client</a>, <a name="qualitylevel_type">QualityLevel</a>, <a name="edge_type">Edge</a>
+
 ```ts
 type DownloadDeliveryResponseDeliveryResponse = {
 	client?: Client;
@@ -582,10 +667,13 @@ type DownloadDeliveryResponseDeliveryResponse = {
 	};
 };
 ```
+
 <br>
 
 ## <a name="FloatplaneUser_type">FloatplaneUser</a>
+
 Types Used: <a name="CreatorObj_type">CreatorObj</a>, <a name="Image_type">Image</a>
+
 ```ts
 export type FloatplaneUser = {
 	id: string;
@@ -596,13 +684,15 @@ export type FloatplaneUser = {
 	creators: CreatorObj[];
 };
 ```
+
 <br>
 
 ## <a name="SyncEvent_type">SyncEvent</a>
+
 Types Used: <a name="Image_type">Image</a>
+
 ```ts
 type SyncEvent = CreatorMenuUpdate | PostRelease;
-
 
 type CreatorMenuUpdate = {
 	event: "creatorMenuUpdate";
@@ -675,8 +765,11 @@ type PostRelease = {
 	};
 };
 ```
+
 <br><br>
+
 ## Projects
+
 The following projects use this library:
 
 ### [Floatplane Downloader](https://github.com/Inrixia/Floatplane-Downloader)

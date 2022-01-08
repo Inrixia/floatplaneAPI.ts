@@ -1,6 +1,6 @@
 import { Core } from "../Core";
 
-import type { Options } from "got/dist/source/core";
+import type { Options } from "got";
 import { Client, Edge } from "../lib/types";
 export type GotOptions = Options & { isStream: true };
 
@@ -35,8 +35,8 @@ export type VodDeliveryResponse = {
 		uri: string;
 		data: {
 			qualityLevels: Array<QualityLevel>;
-			qualityLevelParams: { 
-				[key: string]: QualityLevelParam 
+			qualityLevelParams: {
+				[key: string]: QualityLevelParam;
 			};
 		};
 	};
@@ -69,6 +69,8 @@ export class CDN extends Core {
 	async delivery(type: "vod", guid: string): Promise<VodDeliveryResponse>;
 	async delivery(type: "download", guid: string): Promise<DownloadDeliveryResponse>;
 	async delivery(type: DeliveryTypes, id: string): Promise<DeliveryResponse> {
-		return await this.got(this.endpoints.url + `?type=${type}` + (type === "live" ? `&creator=${id}` : `&guid=${id}`), { resolveBodyOnly: true }).then(JSON.parse);
+		return await this.got(this.endpoints.url + `?type=${type}` + (type === "live" ? `&creator=${id}` : `&guid=${id}`), { resolveBodyOnly: true }).then(
+			JSON.parse
+		);
 	}
 }

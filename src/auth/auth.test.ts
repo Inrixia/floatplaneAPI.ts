@@ -12,13 +12,13 @@ export const loginSuccessFormat: LoginSuccess = {
 	user: {
 		id: expect.any(String),
 		username: expect.any(String),
-		profileImage: imageFormat
+		profileImage: imageFormat,
 	},
-	needs2FA: false
+	needs2FA: false,
 };
 
 const auth = new Auth(got.extend(gotExtends()));
-	
+
 // NOTE: This test assumes that the account used for testing has 2Factor authentication enabled!
 test("Auth.login(username, password)", () => {
 	return expect(auth.login(username, password)).resolves.toStrictEqual<Needs2FA>(factorFormat);
