@@ -1,5 +1,4 @@
 import { Core } from "../Core.js";
-import { BaseUrl } from "../lib/testHelpers.js";
 
 import { type components, ApiPaths } from "../lib/apiSchema.js";
 
@@ -22,7 +21,7 @@ export class Auth extends Core {
 	 */
 	login = (username: string, password: string, captchaToken?: string): Promise<LoginResponse> =>
 		this.got
-			.post(BaseUrl + ApiPaths.login, {
+			.post(this.BaseUrl + ApiPaths.login, {
 				method: "POST",
 				json: <LoginRequest>{ username, password, captchaToken },
 			})
@@ -33,7 +32,7 @@ export class Auth extends Core {
 	 */
 	factor = (token: string): Promise<LoginSuccess> =>
 		this.got
-			.post(BaseUrl + ApiPaths.checkFor2faLogin, {
+			.post(this.BaseUrl + ApiPaths.checkFor2faLogin, {
 				method: "POST",
 				json: <CheckFor2faLoginRequest>{ token: token.toString() },
 			})

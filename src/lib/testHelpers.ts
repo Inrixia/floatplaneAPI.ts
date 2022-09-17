@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FileCookieStore } from "tough-cookie-file-store";
 import { CookieJar } from "tough-cookie";
 import { expect } from "vitest";
@@ -12,7 +11,6 @@ export const gotExtends = () => ({
 	cookieJar: new CookieJar(new FileCookieStore("./cookieStore.json")),
 	headers,
 });
-export const BaseUrl = "https://www.floatplane.com";
 
 // // Cheat for custom matchers in typescript
 export const matchers: Record<keyof Matchers, Function> = {

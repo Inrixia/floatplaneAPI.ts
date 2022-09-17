@@ -1,5 +1,4 @@
 import { Core } from "../Core.js";
-import { BaseUrl } from "../lib/testHelpers.js";
 
 import { type operations, ApiPaths } from "../lib/apiSchema.js";
 
@@ -9,5 +8,5 @@ export class Api extends Core {
 	/**
 	 * Fetch edges from the floatplane api
 	 */
-	edges = (): Promise<EdgesResponse> => this.got(BaseUrl + ApiPaths.getEdges).json();
+	edges = (): Promise<EdgesResponse> => this.got(this.BaseUrl + ApiPaths.getEdges).json();
 }

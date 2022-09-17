@@ -1,7 +1,6 @@
 import { Core } from "../Core.js";
 
 import type { Options } from "got";
-import { BaseUrl } from "../lib/testHelpers.js";
 
 import { type components, type operations, ApiPaths } from "../lib/apiSchema.js";
 
@@ -22,7 +21,7 @@ export class CDN extends Core {
 	delivery(type: "vod", guid: string): Promise<VodDeliveryResponse>;
 	delivery(type: "download", guid: string): Promise<DownloadDeliveryResponse>;
 	delivery(type: QueryParams["type"], id: string): Promise<DeliveryResponse> {
-		const url = new URL(BaseUrl + ApiPaths.getDeliveryInfo);
+		const url = new URL(this.BaseUrl + ApiPaths.getDeliveryInfo);
 
 		url.searchParams.set("type", type);
 

@@ -1,5 +1,4 @@
 import { Core } from "../Core.js";
-import { BaseUrl } from "../lib/testHelpers.js";
 
 import { type components, type operations, ApiPaths } from "../lib/apiSchema.js";
 import type { OptionalOnly } from "@inrixia/helpers/ts";
@@ -25,7 +24,7 @@ export class Creator extends Core {
 	 *	Fetch blogPosts from a creator.
 	 */
 	blogPosts = (creatorGUID: QueryParams["id"], options?: OptionalOnly<QueryParams>): Promise<BlogPost[]> => {
-		const url = new URL(BaseUrl + ApiPaths.getCreatorBlogPosts);
+		const url = new URL(this.BaseUrl + ApiPaths.getCreatorBlogPosts);
 		url.searchParams.append("id", creatorGUID);
 		if (options !== undefined) {
 			const { limit, fetchAfter, search, tags, hasVideo, hasAudio, hasPicture, hasText, sort, fromDuration, toDuration, fromDate, toDate } = options;
