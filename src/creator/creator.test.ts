@@ -1,16 +1,18 @@
-import got from "got";
-import { Creator } from ".";
-import { imageFormat, gotExtends, creatorObjFormat, eExpect, metadataFormat } from "../lib/testHelpers";
+import { expect, test } from "vitest";
 
-import type { BlogPost } from ".";
+import got from "got";
+import { Creator } from "./index.js";
+import { imageFormat, gotExtends, creatorObjFormat, eExpect, metadataFormat } from "../lib/testHelpers.js";
+
+import type { BlogPost } from "./index.js";
 export const blogPostFormat: BlogPost = {
 	id: expect.any(String),
 	guid: expect.any(String),
 	title: expect.any(String),
 	tags: eExpect.arrayContainingOrEmpty([expect.any(String)]),
 	text: expect.any(String),
-	type: expect.any(String),
-	attachmentOrder: expect.arrayContaining<string>([expect.any(String)]),
+	type: expect.stringMatching("blogPost"),
+	attachmentOrder: expect.arrayContaining([expect.any(String)]),
 	metadata: metadataFormat,
 	releaseDate: expect.any(String),
 	likes: expect.any(Number),

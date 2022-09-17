@@ -2,13 +2,13 @@ import got from "got";
 
 import { CookieJar } from "tough-cookie";
 
-import { Auth } from "./auth";
-import { User } from "./user";
-import { Api } from "./api";
-import { Creator } from "./creator";
-import { CDN } from "./cdn";
+import { Auth } from "./auth/index.js";
+import { User } from "./user/index.js";
+import { Api } from "./api/index.js";
+import { Creator } from "./creator/index.js";
+import { CDN } from "./cdn/index.js";
 
-import type { LoginSuccess } from "./auth";
+import type { LoginSuccess } from "./auth/index.js";
 
 export type LoginOptions = {
 	username: string;
@@ -48,6 +48,7 @@ export class Floatplane {
 			// Sets the global requestMethod to be used, this maintains headers
 			cookieJar,
 			headers,
+			// prefixUrl: "https://www.floatplane.com",
 		});
 		this.auth = new Auth(this.got);
 		this.user = new User(this.got);

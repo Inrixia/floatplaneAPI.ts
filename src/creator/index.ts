@@ -1,50 +1,17 @@
-import { Core } from "../Core";
-import type { CreatorObj, Image, Metadata } from "../lib/types";
+import { Core } from "../Core.js";
+import { BaseUrl } from "../lib/testHelpers.js";
 
-export type BlogPost = {
-	id: string;
-	guid: string;
-	title: string;
-	tags: string[];
-	text: string;
-	type: string;
-	attachmentOrder: string[];
-	metadata: Metadata;
-	releaseDate: string;
-	likes: number;
-	dislikes: number;
-	score: number;
-	comments: number;
-	creator: CreatorObj;
-	thumbnail: Image;
-	isAccessible: boolean;
-	videoAttachments: string[];
-	audioAttachments: string[];
-	pictureAttachments: string[];
-	galleryAttachments: string[];
-	wasReleasedSilently: boolean;
-};
+import { type components, type operations, ApiPaths } from "../lib/apiSchema.js";
+import type { OptionalOnly } from "@inrixia/helpers/ts";
+
+export type BlogPost = components["schemas"]["BlogPostModelV3"];
+type QueryParams = operations["getCreatorBlogPosts"]["parameters"]["query"];
+
 export class Creator extends Core {
-	endpoints = {
-		videos: "https://www.floatplane.com/api/v3/content/creator",
-	};
-
 	/**
 	 * Fetch blogPosts from a creator, returns a Async Iterator.
-	 * @param creatorGUID Creator GUID to fetch content for.
-	 * @param options.type Filter BlogPosts by attachment types. Can be "audio", "video", "picture" or "gallery".
-	 * @param options.sort Sort by releaseDate. Can be "DESC" or "ASC".
-	 * @param options.search Filter BlogPosts by search term.
-	 * @returns {AsyncIterable<BlogPost>} Async iterable that yeilds blogPost objects
 	 */
-	async *blogPostsIterable(
-		creatorGUID: string,
-		options?: {
-			type?: "audio" | "video" | "picture" | "gallery";
-			sort?: "ASC" | "DESC";
-			search?: string;
-		}
-	): AsyncIterableIterator<BlogPost> {
+	async *blogPostsIterable(creatorGUID: string, options?: Omit<OptionalOnly<QueryParams>, "fetchAfter">): AsyncIterableIterator<BlogPost> {
 		let fetchAfter = 0;
 		let blogPosts = await this.blogPosts(creatorGUID, { ...options, fetchAfter });
 		while (blogPosts.length > 0) {
@@ -55,33 +22,42 @@ export class Creator extends Core {
 	}
 
 	/**
-	 * Fetch blogPosts from a creator.
-	 * @param creatorGUID Creator GUID to fetch content for.
-	 * @param options.fetchAfter Number of videos from the latest to fetch from.
-	 * @param options.type Filter BlogPosts by attachment types. Can be "audio", "video", "picture" or "gallery".
-	 * @param options.sort Sort by releaseDate. Can be "DESC" or "ASC".
-	 * @param options.search Filter BlogPosts by search term.
-	 * @param options.limit Max amount of BlogPosts to return. Must be in range 1-20.
-	 * @returns {Promise<BlogPost[]>}
+	 *	Fetch blogPosts from a creator.
 	 */
-	blogPosts = async (
-		creatorGUID: string,
-		options?: {
-			fetchAfter?: number;
-			type?: "audio" | "video" | "picture" | "gallery";
-			sort?: "ASC" | "DESC";
-			search?: string;
-			limit?: number;
+	blogPosts = (creatorGUID: QueryParams["id"], options?: OptionalOnly<QueryParams>): Promise<BlogPost[]> => {
+		const url = new URL(BaseUrl + ApiPaths.getCreatorBlogPosts);
+		url.searchParams.append("id", creatorGUID);
+		if (options !== undefined) {
+			const { limit, fetchAfter, search, tags, hasVideo, hasAudio, hasPicture, hasText, sort, fromDuration, toDuration, fromDate, toDate } = options;
+			if (limit !== undefined) url.searchParams.append("limit", limit.toString());
+			if (fetchAfter !== undefined) url.searchParams.append("fetchAfter", fetchAfter.toString());
+			if (search !== undefined) url.searchParams.append("search", search);
+			if (tags !== undefined) url.searchParams.append("tags", tags.join(","));
+
+			if (hasVideo !== undefined) url.searchParams.append("hasVideo", hasVideo.toString());
+			if (hasAudio !== undefined) url.searchParams.append("hasAudio", hasAudio.toString());
+			if (hasPicture !== undefined) url.searchParams.append("hasPicture", hasPicture.toString());
+			if (hasText !== undefined) {
+				if (hasVideo === true) throw new Error("hasVideo cannot be true if hasText is true");
+				if (hasAudio === true) throw new Error("hasAudio cannot be true if hasText is true");
+				if (hasPicture === true) throw new Error("hasPicture cannot be true if hasText is true");
+				url.searchParams.append("hasText", hasText.toString());
+			}
+
+			if (sort !== undefined) url.searchParams.append("sort", sort);
+
+			if (fromDuration !== undefined) {
+				if (hasVideo !== true) throw new Error("hasVideo must be true if fromDuration is set");
+				url.searchParams.append("fromDuration", fromDuration.toString());
+			}
+			if (toDuration !== undefined) {
+				if (hasVideo !== true) throw new Error("hasVideo must be true if toDuration is set");
+				url.searchParams.append("toDuration", toDuration.toString());
+			}
+
+			if (fromDate !== undefined) url.searchParams.append("fromDate", fromDate.toString());
+			if (toDate !== undefined) url.searchParams.append("toDate", toDate.toString());
 		}
-	): Promise<BlogPost[]> =>
-		await this.got(
-			this.endpoints.videos +
-				`?id=${creatorGUID}` +
-				(options?.fetchAfter ? `&fetchAfter=${options?.fetchAfter}` : "") +
-				(options?.type ? `&type=${options?.type}` : "") +
-				(options?.sort ? `&sort=${options?.sort}` : "") +
-				(options?.search ? `&search=${options?.search}` : "") +
-				(options?.limit ? `&type=${options?.limit}` : ""),
-			{ resolveBodyOnly: true }
-		).then(JSON.parse);
+		return this.got(url.href).json();
+	};
 }

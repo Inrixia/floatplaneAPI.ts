@@ -1,18 +1,13 @@
-import { Core } from "../Core";
-import { Client, Edge } from "../lib/types";
+import { Core } from "../Core.js";
+import { BaseUrl } from "../lib/testHelpers.js";
 
-export type EdgesResponse = {
-	edges: Edge[];
-	client: Client;
-};
+import { type operations, ApiPaths } from "../lib/apiSchema.js";
+
+export type EdgesResponse = operations["getEdges"]["responses"][200]["content"]["application/json"];
 
 export class Api extends Core {
-	endpoints = {
-		edges: "https://www.floatplane.com/api/edges",
-	};
-
 	/**
 	 * Fetch edges from the floatplane api
 	 */
-	edges = async (): Promise<EdgesResponse> => await this.got(this.endpoints.edges, { resolveBodyOnly: true }).then(JSON.parse);
+	edges = (): Promise<EdgesResponse> => this.got(BaseUrl + ApiPaths.getEdges).json();
 }

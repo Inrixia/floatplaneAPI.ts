@@ -1,13 +1,15 @@
+import { expect, test } from "vitest";
 import got from "got";
 
-import { Auth } from ".";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { username, password, captchaToken, token } = require("../../credentials.json");
+import { Auth } from "./index.js";
 
-import type { LoginSuccess, Needs2FA } from "./";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { username, password, token } = require("../../credentials.json");
+
+import type { LoginSuccess, Needs2FA } from "./index.js";
 export const factorFormat: Needs2FA = { needs2FA: true };
 
-import { imageFormat, gotExtends } from "../lib/testHelpers";
+import { imageFormat, gotExtends } from "../lib/testHelpers.js";
 export const loginSuccessFormat: LoginSuccess = {
 	user: {
 		id: expect.any(String),
@@ -20,10 +22,10 @@ export const loginSuccessFormat: LoginSuccess = {
 const auth = new Auth(got.extend(gotExtends()));
 
 // NOTE: This test assumes that the account used for testing has 2Factor authentication enabled!
-test("Auth.login(username, password)", () => {
-	return expect(auth.login(username, password)).resolves.toStrictEqual<Needs2FA>(factorFormat);
+test("Auth.login(username, password)", async () => {
+	return expect(await auth.login(username, password)).toStrictEqual<Needs2FA>(factorFormat);
 });
 
-test("Auth.factor(token)", () => {
-	return expect(auth.factor(token)).resolves.toStrictEqual<LoginSuccess>(loginSuccessFormat);
+test("Auth.factor(token)", async () => {
+	return expect(await auth.factor(token)).toStrictEqual<LoginSuccess>(loginSuccessFormat);
 });

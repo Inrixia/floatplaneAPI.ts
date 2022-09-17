@@ -4,30 +4,33 @@
 	"description": "Library for interfacing with the LMG Floatplane.com api",
 	"main": "index.js",
 	"types": "index.d.ts",
+	"type": "module",
 	"dependencies": {
 		"cross-env": "^7.0.3",
-		"got": "^11.8.2",
-		"tough-cookie": "^4.0.0"
+		"got": "^12.4.1",
+		"tough-cookie": "^4.1.2"
 	},
 	"devDependencies": {
-		"@inrixia/helpers": "^1.23.1",
-		"@types/jest": "^27.4.0",
-		"@types/tough-cookie": "^4.0.1",
+		"@inrixia/helpers": "^1.23.4",
+		"@types/tough-cookie": "^4.0.2",
 		"@types/tough-cookie-file-store": "^2.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.9.0",
-		"@typescript-eslint/parser": "^5.9.0",
-		"eslint": "^8.6.0",
-		"jest": "^27.4.7",
-		"jest-extended": "^1.2.0",
+		"@typescript-eslint/eslint-plugin": "^5.37.0",
+		"@typescript-eslint/parser": "^5.37.0",
+		"@vitest/ui": "^0.23.2",
+		"eslint": "^8.23.1",
+		"openapi-typescript": "^5.4.1",
 		"tough-cookie-file-store": "^2.0.3",
-		"ts-jest": "^27.1.2",
-		"typescript": "^4.5.4"
+		"typescript": "^4.8.3",
+		"vitest": "^0.23.2"
 	},
 	"scripts": {
-		"test-all": "jest auth.test --runInBand && jest api.test creator.test user.test video.test",
+		"test-all": "vitest auth && vitest api creator user video",
+		"test-auth": "vitest auth",
+		"test-nologin": "vitest api creator user video",
 		"tsc": "tsc && copy /Y package.json dist && copy /Y README.md dist && copy /Y .npmignore dist",
 		"send": "npm run tsc && cd ./dist && npm publish",
-		"send-dry": "npm run tsc && cd ./dist && npm publish --dry-run"
+		"send-dry": "npm run tsc && cd ./dist && npm publish --dry-run",
+		"fetchSchema": "./node_modules/.bin/openapi-typescript https://raw.githubusercontent.com/Jman012/FloatplaneAPI/main/floatplane-openapi-specification.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
 	"repository": {
 		"type": "git",

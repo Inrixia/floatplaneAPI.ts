@@ -1,29 +1,18 @@
-import { Core } from "../Core";
-import { FloatplaneUser, SubscriptionPlan } from "../lib/types";
+import { Core } from "../Core.js";
+import { ApiPaths, components } from "../lib/apiSchema.js";
+import { BaseUrl } from "../lib/testHelpers.js";
 
-export type Subscription = {
-	startDate: string;
-	endDate: string;
-	paymentID: number;
-	interval: string;
-	paymentCancelled: boolean;
-	plan: SubscriptionPlan;
-	creator: string;
-};
+export type UserSubscription = components["schemas"]["UserSubscriptionModel"];
+export type Self = components["schemas"]["UserSelfV3Response"];
 
 export class User extends Core {
-	endpoints = {
-		subscriptions: "https://www.floatplane.com/api/v3/user/subscriptions",
-		self: "https://www.floatplane.com/api/v3/user/self",
-	};
-
 	/**
 	 * Fetch subscriptions for the logged in user.
 	 */
-	subscriptions = async (): Promise<Subscription[]> => await this.got(this.endpoints.subscriptions, { resolveBodyOnly: true }).then(JSON.parse);
+	subscriptions = (): Promise<UserSubscription[]> => this.got(BaseUrl + ApiPaths.listUserSubscriptionsV3).json<UserSubscription[]>();
 
 	/**
 	 * Fetch information about the logged in user.
 	 */
-	self = async (): Promise<FloatplaneUser> => await this.got(this.endpoints.self, { resolveBodyOnly: true }).then(JSON.parse);
+	self = (): Promise<Self> => this.got(BaseUrl + ApiPaths.getSelf).json<Self>();
 }

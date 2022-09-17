@@ -1,21 +1,24 @@
+import { expect, test } from "vitest";
+
 import got from "got";
-import { CDN, LiveDeliveryResponse, QualityLevel, QualityLevelParam, DownloadDeliveryResponse, VodDeliveryResponse } from ".";
-import { clientFormat, edgeFormat, gotExtends } from "../lib/testHelpers";
-import { Edge } from "../lib/types";
+import { CDN, LiveDeliveryResponse, DownloadDeliveryResponse, VodDeliveryResponse } from "./index.js";
+import { clientFormat, edgeFormat, eExpect, gotExtends } from "../lib/testHelpers.js";
 
-import "jest-extended";
+import type { components } from "../lib/apiSchema.js";
 
-const qualityLevelFormat: QualityLevel = {
+import type { ValueOf } from "@inrixia/helpers/ts";
+
+const qualityLevelFormat: components["schemas"]["CdnDeliveryV2QualityLevelModel"] = {
 	name: expect.any(String),
 	width: expect.any(Number),
 	height: expect.any(Number),
 	label: expect.any(String),
 	order: expect.any(Number),
 };
-
+const Strategy = ["cdn", "client"] as const;
 const liveDeliveryResponseFormat: LiveDeliveryResponse = {
 	cdn: expect.any(String),
-	strategy: expect.any(String),
+	strategy: eExpect.enum(Strategy),
 	resource: {
 		uri: expect.any(String),
 		data: {
@@ -23,28 +26,31 @@ const liveDeliveryResponseFormat: LiveDeliveryResponse = {
 		},
 	},
 };
+
+type QualityLevelParam = ValueOf<VodDeliveryResponse["resource"]["data"]["qualityLevelParams"]>;
+
 const qualityLevelParamFormat: QualityLevelParam = {
 	token: expect.any(String),
 };
 const vodDeliveryResponseFormat: VodDeliveryResponse = {
 	cdn: expect.any(String),
-	strategy: expect.any(String),
+	strategy: eExpect.enum(Strategy),
 	resource: {
 		uri: expect.any(String),
 		data: {
-			qualityLevels: expect.arrayContaining<QualityLevel>([qualityLevelFormat]),
-			qualityLevelParams: expect.toContainValues([qualityLevelParamFormat]),
+			qualityLevels: expect.arrayContaining<components["schemas"]["CdnDeliveryV2QualityLevelModel"]>([qualityLevelFormat]),
+			qualityLevelParams: eExpect.keylessObjectContaining(qualityLevelParamFormat),
 		},
 	},
 };
 const downloadDeliveryResponseFormat: DownloadDeliveryResponse = {
+	edges: eExpect.arrayContainingOrEmpty([edgeFormat]),
 	client: clientFormat,
-	edges: expect.arrayContaining<Edge>([edgeFormat]),
-	strategy: expect.any(String),
+	strategy: eExpect.enum(Strategy),
 	resource: {
 		uri: expect.any(String),
 		data: {
-			qualityLevels: expect.arrayContaining<QualityLevel>([qualityLevelFormat]),
+			qualityLevels: expect.arrayContaining<components["schemas"]["CdnDeliveryV2QualityLevelModel"]>([qualityLevelFormat]),
 			token: expect.any(String),
 		},
 	},
@@ -53,13 +59,13 @@ const downloadDeliveryResponseFormat: DownloadDeliveryResponse = {
 const cdn = new CDN(got.extend(gotExtends()));
 
 test('CDN.delivery("live", creator)', () => {
-	return expect(cdn.delivery("live", "59f94c0bdd241b70349eb72b")).resolves.toStrictEqual<LiveDeliveryResponse>(liveDeliveryResponseFormat);
+	return expect(cdn.delivery("live", "59f94c0bdd241b70349eb72b")).resolves.toStrictEqual(liveDeliveryResponseFormat);
 });
 
 test('CDN.delivery("vod", guid)', async () => {
-	return expect(cdn.delivery("vod", "InwhyES1dt")).resolves.toStrictEqual<VodDeliveryResponse>(vodDeliveryResponseFormat);
+	return expect(cdn.delivery("vod", "InwhyES1dt")).resolves.toStrictEqual(vodDeliveryResponseFormat);
 });
 
 test('CDN.delivery("download", guid)', async () => {
-	return expect(cdn.delivery("download", "InwhyES1dt")).resolves.toStrictEqual<DownloadDeliveryResponse>(downloadDeliveryResponseFormat);
+	return expect(cdn.delivery("download", "InwhyES1dt")).resolves.toStrictEqual(downloadDeliveryResponseFormat);
 });

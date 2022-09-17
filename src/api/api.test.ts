@@ -1,9 +1,11 @@
-import got from "got";
-import { Api } from "./";
-import { clientFormat, edgeFormat, gotExtends } from "../lib/testHelpers";
+import { expect, test } from "vitest";
 
-import type { EdgesResponse } from "./";
-import { Edge } from "../lib/types";
+import got from "got";
+import { Api } from "./index.js";
+
+import { clientFormat, edgeFormat, gotExtends, type Edge } from "../lib/testHelpers.js";
+
+import type { EdgesResponse } from "./index.js";
 
 export const edgesResponseFormat: EdgesResponse = {
 	edges: expect.arrayContaining<Edge>([edgeFormat]),
@@ -13,5 +15,5 @@ export const edgesResponseFormat: EdgesResponse = {
 const api = new Api(got.extend(gotExtends()));
 
 test("Api.edges()", () => {
-	return expect(api.edges()).resolves.toStrictEqual<EdgesResponse>(edgesResponseFormat);
+	return expect(api.edges()).resolves.toStrictEqual(edgesResponseFormat);
 });
