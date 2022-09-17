@@ -17,18 +17,11 @@ export type LoginOptions = {
 	token?: string;
 };
 
-// Shitty fix now that im using these headers in tests
-let version;
-try {
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	version = require("./package.json").version;
-} catch {
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
-	version = require("../package.json").version;
-}
+import { readFileSync } from "fs";
+
+const version = JSON.parse(readFileSync("./package.json").toString()).version;
 
 export const headers = {
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
 	"User-Agent": `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
 	accept: "application/json",
 	connection: "keep-alive",
