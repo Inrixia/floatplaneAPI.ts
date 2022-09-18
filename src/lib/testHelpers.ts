@@ -34,6 +34,11 @@ export const matchers: Record<keyof Matchers, Function> = {
 		expect(received).toStrictEqual(expect.objectContaining(argument));
 		return OK;
 	},
+	objectContainingOrNull(received: any, argument: any) {
+		if (received === null) return OK;
+		expect(received).toStrictEqual(expect.objectContaining(argument));
+		return OK;
+	},
 	objectContainingOrEmptyOrUndefined(received: any, argument: any) {
 		if (received === undefined || Object.keys(received).length === 0) return OK;
 		expect(received).toStrictEqual(expect.objectContaining(argument));
@@ -66,6 +71,7 @@ type Matchers = {
 	typeOrUndefined: <T extends Primitives>(matcher: T) => Primitive<T> | undefined;
 	objectContainingOrEmpty: <T>(matcher: T) => T | {};
 	objectContainingOrUndefined: <T>(matcher: T) => T | undefined;
+	objectContainingOrNull: <T>(matcher: T) => T | null;
 	objectContainingOrEmptyOrUndefined: <T>(matcher: T) => T | {} | undefined;
 	keylessObjectContaining: <T>(matcher: T) => Record<string, T>;
 	arrayContainingOrEmpty: <T>(matcher: [T]) => T[] | [];
@@ -207,5 +213,5 @@ export const creatorObjFormat: components["schemas"]["BlogPostModelV3"]["creator
 	discoverable: expect.any(Boolean),
 	subscriberCountDisplay: expect.any(String),
 	incomeDisplay: expect.any(Boolean),
-	card: eExpect.objectContainingOrUndefined(imageFormat),
+	card: eExpect.objectContainingOrNull(imageFormat),
 };

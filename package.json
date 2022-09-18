@@ -26,7 +26,7 @@
 	"scripts": {
 		"test-all": "vitest auth && vitest api creator user video",
 		"test-auth": "vitest auth",
-		"test-nologin": "vitest api creator user video",
+		"test-noLogin": "vitest api creator user video",
 		"tsc": "tsc && copy /Y package.json dist && copy /Y README.md dist && copy /Y .npmignore dist",
 		"send": "npm run tsc && cd ./dist && npm publish",
 		"send-dry": "npm run tsc && cd ./dist && npm publish --dry-run",

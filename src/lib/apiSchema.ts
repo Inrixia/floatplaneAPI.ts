@@ -1386,16 +1386,17 @@ export interface components {
       username: string;
       password: string;
       /** @description The Google Recaptcha v2/v3 token to verify the request. On web browsers, this is required. For mobile or TV applications, this is not required only if the User-Agent indicates so (e.g., if the User-Agent contains "CFNetwork" in its value). Otherwise, the application would have to supply a valid captcha token, which can be difficult to obtain dynamically in some scenarios. */
-      captchaToken?: string;
+      captchaToken: string | null;
     };
     AuthLoginV2Response: {
+      /** @description Identifying information about the new-logged-in user upon success. May be undefined when `needs2FA` is `true`. */
       user?: components["schemas"]["UserModel"];
       /** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
       needs2FA: boolean;
     };
     CheckFor2faLoginRequest: {
       /** @description The two-factor authentication token that the user inputs to complete the login process. */
-      token?: string;
+      token: string;
     };
     /** @description Represents a quality of video to download/stream. */
     CdnDeliveryV2QualityLevelModel: {
@@ -1483,7 +1484,7 @@ export interface components {
         /** Format: date-time */
         date: string;
         /** Format: date-time */
-        dateDue?: string | null;
+        dateDue: string | null;
         /** Format: date-time */
         periodStart: string;
         /** Format: date-time */
@@ -1494,63 +1495,50 @@ export interface components {
         forgiven: boolean;
         refunded: boolean;
         /** @description The subscriptions this invoice is in reference to. */
-        subscriptions?: {
-          id: number;
-          subscription: number;
-          /** Format: date-time */
-          periodStart: string | null;
-          /** Format: date-time */
-          periodEnd: string | null;
-          value: number;
-          amountSubtotal: number;
-          amountTotal: number;
-          amountTax: number;
-          plan: {
-            id: string;
-            title: string;
-            creator: {
-              id: string;
-              title: string;
-              urlname: string;
-              icon: components["schemas"]["ImageModel"];
-            };
-          };
-        }[];
+        subscriptions:
+          | {
+              id: number;
+              subscription: number;
+              /** Format: date-time */
+              periodStart: string | null;
+              /** Format: date-time */
+              periodEnd: string | null;
+              value: number;
+              amountSubtotal: number;
+              amountTotal: number;
+              amountTax: number;
+              plan: {
+                id: string;
+                title: string;
+                creator: {
+                  id: string;
+                  title: string;
+                  urlname: string;
+                  icon: components["schemas"]["ImageModel"];
+                };
+              };
+            }[]
+          | null;
       }[];
     };
     PlanInfoV2Response: {
       /** @description The total number of subscribers for this creator. */
-      totalSubscriberCount?: number;
+      totalSubscriberCount: number;
       /** @description The total amount of monthly income for this creator. This field tends to always be $0 for regular users. */
-      totalIncome?: string;
-      plans: {
-        /** @description The available roles for the associated Discord servers that are available with this plan. */
-        discordRoles: components["schemas"]["DiscordRoleModel"][];
+      totalIncome: string | null;
+      plans: (components["schemas"]["SubscriptionPlanModel"] & {
         /** Format: date-time */
         createdAt: string;
         /** Format: date-time */
         updatedAt: string | null;
-        id: string;
-        title: string;
         enabled: boolean;
-        featured: boolean;
-        description: string;
-        price: string;
-        priceYearly?: string;
         paymentID: number;
-        currency: string;
         trialPeriod: number;
-        allowGrandfatheredAccess?: boolean;
-        logo: string;
         creator: string;
-        discordServers: components["schemas"]["DiscordServerModel"][];
         userIsSubscribed: boolean;
         userIsGrandfathered: boolean;
         enabledGlobal: boolean;
-        interval: string;
-      }[];
-    } & {
-      totalSuscriberCount: unknown;
+      })[];
     };
     UserInfoV2Response: {
       users: {
@@ -1563,7 +1551,9 @@ export interface components {
     UserNamedV2Response: {
       users: {
         id: string;
-        user: components["schemas"]["UserSelfModel"];
+        user:
+          | components["schemas"]["UserModel"]
+          | components["schemas"]["UserSelfModel"];
       }[];
     };
     UserSecurityV2Response: {
@@ -1608,14 +1598,14 @@ export interface components {
     ContentCreatorListLastItems: {
       creatorId: string;
       /** @description This may be returned as `null` if no blog posts for this creator appeared yet on this page of blog posts. However, Floatplane will complain if this is sent with a `null` value. */
-      blogPostId?: string;
+      blogPostId: string | null;
       moreFetchable: boolean;
     };
     ContentPostV3Response: {
       id: string;
       guid: string;
       title: string;
-      /** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML.. */
+      /** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML. */
       text: string;
       /** @enum {string} */
       type: "blogPost";
@@ -1630,13 +1620,17 @@ export interface components {
       comments: number;
       creator: components["schemas"]["CreatorModelV2"];
       wasReleasedSilently: boolean;
-      thumbnail?: components["schemas"]["ImageModel"];
+      thumbnail: components["schemas"]["ImageModel"] | null;
       /** @description If false, the post should be marked as locked and not viewable by the user. */
       isAccessible: boolean;
-      userInteraction?: components["schemas"]["UserInteractionModel"];
+      userInteraction: components["schemas"]["UserInteractionModel"] | null;
+      /** @description May be undefined when the post is locked. */
       videoAttachments?: components["schemas"]["VideoAttachmentModel"][];
+      /** @description May be undefined when the post is locked. */
       audioAttachments?: components["schemas"]["AudioAttachmentModel"][];
+      /** @description May be undefined when the post is locked. */
       pictureAttachments?: components["schemas"]["PictureAttachmentModel"][];
+      /** @description May be undefined when the post is locked. */
       galleryAttachments?: unknown[];
     };
     ContentVideoV3Response: {
@@ -1646,7 +1640,7 @@ export interface components {
       type: string;
       description: string;
       /** Format: date-time */
-      releaseDate?: string | null;
+      releaseDate: string | null;
       /** @description Unit: seconds. */
       duration: number;
       creator: string;
@@ -1660,7 +1654,7 @@ export interface components {
       isAccessible: boolean;
       blogPosts: string[];
       timelineSprite: components["schemas"]["ImageModel"];
-      userInteraction?: components["schemas"]["UserInteractionModel"];
+      userInteraction: components["schemas"]["UserInteractionModel"] | null;
       levels: {
         name: string;
         width: number;
@@ -1681,24 +1675,22 @@ export interface components {
       isProcessing: boolean;
       creator: string;
       primaryBlogPost: string;
-      userInteraction?: components["schemas"]["UserInteractionModel"];
+      userInteraction: components["schemas"]["UserInteractionModel"] | null;
       thumbnail: components["schemas"]["ImageModel"];
       /** @description If false, the post should be marked as locked and not viewable by the user. */
       isAccessible: boolean;
       imageFiles: components["schemas"]["ImageFileModel"][];
     };
     UserActivityV3Response: {
-      activity: ({
+      activity: {
         /** Format: date-time */
         time: string;
         comment: string;
-        postTitle?: string;
+        postTitle: string;
         postId: string;
         creatorTitle: string;
         creatorUrl: string;
-      } & {
-        posttitle: unknown;
-      })[];
+      }[];
       visibility: string;
     };
     UserLinksV3Response: {
@@ -1707,14 +1699,14 @@ export interface components {
          * Format: uri
          * @description The URL the user has configured for this link.
          */
-        url?: string;
-        type?: {
+        url: string;
+        type: {
           /** @description The code name of this link type. */
-          name?: string;
+          name: string;
           /** @description The display-friendly name of this link type. */
-          displayName?: string;
+          displayName: string;
           /** @description The hostname that should be a part of the URL. */
-          hostName?: string;
+          hostName: string;
         };
       };
     };
@@ -1731,10 +1723,11 @@ export interface components {
       id: string;
       username: string;
       profileImage: components["schemas"]["ImageModel"];
-      email?: string;
-      displayName?: string;
-      creators?: unknown[];
-      scheduledDeletionDate?: string;
+      email: string;
+      displayName: string;
+      creators: unknown[];
+      /** Format: date-time */
+      scheduledDeletionDate: string | null;
     };
     ContentLikeV3Request: {
       /** @enum {string} */
@@ -1768,9 +1761,12 @@ export interface components {
       errors: {
         id: string;
         name: string;
-        message?: string;
-        data?: { [key: string]: unknown };
+        /** @description May be undefined. */
+        message?: string | null;
+        /** @description May be undefined. */
+        data?: { [key: string]: unknown } | null;
       }[];
+      /** @description May be undefined. */
       message?: string;
     };
     PaymentAddressModel: {
@@ -1803,10 +1799,10 @@ export interface components {
       description: string;
       about: string;
       category: string;
-      cover?: components["schemas"]["ImageModel"];
+      cover: components["schemas"]["ImageModel"] | null;
       icon: components["schemas"]["ImageModel"];
-      liveStream?: components["schemas"]["LiveStreamModel"];
-      subscriptionPlans?: { [key: string]: unknown }[];
+      liveStream: components["schemas"]["LiveStreamModel"] | null;
+      subscriptionPlans: { [key: string]: unknown }[] | null;
       discoverable: boolean;
       subscriberCountDisplay: string;
       incomeDisplay: boolean;
@@ -1825,10 +1821,12 @@ export interface components {
       category: {
         title: string;
       };
-      cover: components["schemas"]["ImageModel"];
+      cover: components["schemas"]["ImageModel"] | null;
       icon: components["schemas"]["ImageModel"];
-      liveStream?: components["schemas"]["LiveStreamModel"];
-      subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][];
+      liveStream: components["schemas"]["LiveStreamModel"] | null;
+      subscriptionPlans:
+        | components["schemas"]["SubscriptionPlanModel"][]
+        | null;
       discoverable: boolean;
       subscriberCountDisplay: string;
       incomeDisplay: boolean;
@@ -1862,19 +1860,19 @@ export interface components {
         description: string;
         about: string;
         category: {
-          title?: string;
+          title: string;
         };
         cover: components["schemas"]["ImageModel"];
         icon: components["schemas"]["ImageModel"];
-        liveStream?: components["schemas"]["LiveStreamModel"];
+        liveStream: components["schemas"]["LiveStreamModel"] | null;
         subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][];
         discoverable: boolean;
         subscriberCountDisplay: string;
         incomeDisplay: boolean;
-        card?: components["schemas"]["ImageModel"];
+        card: components["schemas"]["ImageModel"] | null;
       };
       wasReleasedSilently: boolean;
-      thumbnail?: components["schemas"]["ImageModel"];
+      thumbnail: components["schemas"]["ImageModel"] | null;
       /** @description If false, the post should be marked as locked and not viewable by the user. */
       isAccessible: boolean;
     };
@@ -1894,7 +1892,7 @@ export interface components {
       logo: string | null;
       interval: string;
       featured: boolean;
-      allowGrandfatheredAccess?: boolean;
+      allowGrandfatheredAccess: boolean | null;
       discordServers: components["schemas"]["DiscordServerModel"][];
       discordRoles: components["schemas"]["DiscordRoleModel"][];
     };
@@ -1918,7 +1916,7 @@ export interface components {
       type: string;
       description: string;
       /** Format: date-time */
-      releaseDate?: string | null;
+      releaseDate: string | null;
       duration: number;
       creator: string;
       likes: number;
@@ -1973,7 +1971,7 @@ export interface components {
       height: number;
       /** Format: uri */
       path: string;
-      childImages?: components["schemas"]["ChildImageModel"][];
+      childImages: components["schemas"]["ChildImageModel"][] | null;
     };
     ChildImageModel: {
       width: number;
@@ -1992,13 +1990,13 @@ export interface components {
       id: string;
       title: string;
       description: string;
-      thumbnail?: components["schemas"]["ImageModel"];
+      thumbnail: components["schemas"]["ImageModel"] | null;
       owner: string;
       streamPath: string;
       offline: {
-        title?: string;
-        description?: string;
-        thumbnail?: components["schemas"]["ImageModel"];
+        title: string;
+        description: string;
+        thumbnail: components["schemas"]["ImageModel"];
       };
     };
     SocialLinksModel: { [key: string]: string };
@@ -2024,8 +2022,8 @@ export interface components {
       id: string;
       username: string;
       profileImage: components["schemas"]["ImageModel"];
-      email?: string;
-      displayName?: string;
+      email: string;
+      displayName: string;
     };
     ConnectedAccountModel: {
       /** @description Unique identifier for the account type. */
@@ -2040,7 +2038,7 @@ export interface components {
         remoteUserId: string;
         remoteUserName: string;
         data: {
-          canJoinGuilds?: boolean;
+          canJoinGuilds: boolean;
         };
       };
       /** @description If true, the user is connected and the `connectedAccount` will have data about the account. */
@@ -2061,12 +2059,12 @@ export interface components {
       dislikes: number;
       score: number;
       interactionCounts: {
-        like?: number;
-        dislike?: number;
+        like: number;
+        dislike: number;
       };
       totalReplies: number;
       replies: components["schemas"]["CommentReplyModel"][];
-      userInteraction?: components["schemas"]["UserInteractionModel"];
+      userInteraction: components["schemas"]["UserInteractionModel"] | null;
     };
     CommentReplyModel: {
       id: string;
@@ -2084,10 +2082,10 @@ export interface components {
       dislikes: number;
       score: number;
       interactionCounts: {
-        like?: number;
-        dislike?: number;
+        like: number;
+        dislike: number;
       };
-      userInteraction?: components["schemas"]["UserInteractionModel"];
+      userInteraction: components["schemas"]["UserInteractionModel"] | null;
     };
     UserNotificationModel: {
       creator: components["schemas"]["CreatorModelV2"];
@@ -2144,21 +2142,21 @@ export interface components {
     };
     UserInteractionModel: ("like" | "dislike")[];
     EdgesModel: {
-      edges?: components["schemas"]["EdgeModel"][];
-      client?: { [key: string]: unknown };
+      edges: components["schemas"]["EdgeModel"][];
+      client: { [key: string]: unknown };
     };
     EdgeModel: {
-      hostname?: string;
-      queryPort?: number;
+      hostname: string;
+      queryPort: number;
       /** Format: int64 */
-      bandwidth?: number;
-      allowDownload?: boolean;
-      allowStreaming?: boolean;
-      datacenter?: {
-        countryCode?: string;
-        regionCode?: string;
-        latitude?: number;
-        longitude?: number;
+      bandwidth: number;
+      allowDownload: boolean;
+      allowStreaming: boolean;
+      datacenter: {
+        countryCode: string;
+        regionCode: string;
+        latitude: number;
+        longitude: number;
       };
     };
   };
@@ -8199,9 +8197,9 @@ export interface operations {
       content: {
         "application/json": {
           /** @description The id of the poll to vote on. */
-          pollId?: string;
+          pollId: string;
           /** @description The index of the options of the poll for which to vote. This should not be outside the bounds of the poll options. */
-          optionIndex?: number;
+          optionIndex: number;
         };
       };
     };
@@ -8225,10 +8223,10 @@ export interface operations {
     requestBody: {
       content: {
         "application/json": {
-          creatorId?: string;
-          skip?: number;
-          limit?: number;
-          activeOnly?: boolean;
+          creatorId: string;
+          skip: number;
+          limit: number;
+          activeOnly: boolean;
         };
       };
     };
@@ -8252,11 +8250,11 @@ export interface operations {
     requestBody: {
       content: {
         "application/json": {
-          creatorId?: string;
-          type?: string;
-          title?: string;
-          options?: string[];
-          duration?: string;
+          creatorId: string;
+          type: string;
+          title: string;
+          options: string[];
+          duration: string;
         };
       };
     };
@@ -8280,7 +8278,7 @@ export interface operations {
     requestBody: {
       content: {
         "application/json": {
-          pollId?: string;
+          pollId: string;
         };
       };
     };
