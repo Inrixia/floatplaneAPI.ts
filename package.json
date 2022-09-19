@@ -8,12 +8,10 @@
 	"dependencies": {
 		"cross-env": "^7.0.3",
 		"got": "^12.4.1",
-		"pkginfo": "^0.4.1",
 		"tough-cookie": "^4.1.2"
 	},
 	"devDependencies": {
 		"@inrixia/helpers": "^2.0.2",
-		"@types/pkginfo": "^0.4.0",
 		"@types/tough-cookie": "^4.0.2",
 		"@types/tough-cookie-file-store": "^2.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.37.0",
