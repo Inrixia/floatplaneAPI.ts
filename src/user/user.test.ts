@@ -2,7 +2,7 @@ import { expect, test } from "vitest";
 
 import got from "got";
 import { User } from "./index.js";
-import { imageFormat, eExpect, gotExtends, subscriptionPlan } from "../lib/testHelpers.js";
+import { imageFormat, gotExtends, subscriptionPlan, eExpect } from "../lib/testHelpers.js";
 
 import type { UserSubscription } from "./index.js";
 

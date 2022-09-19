@@ -1,7 +1,7 @@
 import { Core } from "../Core.js";
 
 import { type components, type operations, ApiPaths } from "../lib/apiSchema.js";
-import type { OptionalOnly } from "@inrixia/helpers/ts";
+import type { OptionalOnly } from "@inrixia/helpers/ts.js";
 
 export type BlogPost = components["schemas"]["BlogPostModelV3"];
 type QueryParams = operations["getCreatorBlogPosts"]["parameters"]["query"];

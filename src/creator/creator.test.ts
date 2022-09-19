@@ -2,7 +2,7 @@ import { expect, test } from "vitest";
 
 import got from "got";
 import { Creator } from "./index.js";
-import { imageFormat, gotExtends, creatorObjFormat, eExpect, metadataFormat } from "../lib/testHelpers.js";
+import { imageFormat, gotExtends, creatorObjFormat, metadataFormat, eExpect } from "../lib/testHelpers.js";
 
 import type { BlogPost } from "./index.js";
 export const blogPostFormat: BlogPost = {
@@ -21,7 +21,7 @@ export const blogPostFormat: BlogPost = {
 	comments: expect.any(Number),
 	creator: creatorObjFormat,
 	isAccessible: expect.any(Boolean),
-	thumbnail: imageFormat,
+	thumbnail: eExpect.objectContainingOrNull(imageFormat),
 	videoAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
 	audioAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
 	pictureAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),

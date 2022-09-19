@@ -2,11 +2,11 @@ import { expect, test } from "vitest";
 
 import got from "got";
 import { CDN, LiveDeliveryResponse, DownloadDeliveryResponse, VodDeliveryResponse } from "./index.js";
-import { clientFormat, edgeFormat, eExpect, gotExtends } from "../lib/testHelpers.js";
+import { clientFormat, edgeFormat, gotExtends, eExpect } from "../lib/testHelpers.js";
 
 import type { components } from "../lib/apiSchema.js";
 
-import type { ValueOf } from "@inrixia/helpers/ts";
+import type { ValueOf } from "@inrixia/helpers/ts.js";
 
 const qualityLevelFormat: components["schemas"]["CdnDeliveryV2QualityLevelModel"] = {
 	name: expect.any(String),

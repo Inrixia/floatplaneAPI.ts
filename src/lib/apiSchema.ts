@@ -4,8772 +4,8766 @@
  */
 
 export interface paths {
-  "/api/v2/activation/email/confirm": {
-    /** TODO */
-    post: operations["confirmEmail"];
-  };
-  "/api/v2/activation/email/request": {
-    /** TODO */
-    post: operations["requestActivationEmail"];
-  };
-  "/api/acp/v2/creatoragreement/list": {
-    /** TODO */
-    get: operations["listCreatorAgreement"];
-  };
-  "/api/acp/v2/creatoragreement": {
-    /** TODO */
-    get: operations["getCreatorAgreement"];
-  };
-  "/api/acp/v2/creatoragreement/edit": {
-    /** TODO */
-    get: operations["editCreatorAgreement"];
-  };
-  "/api/acp/v2/creator/list": {
-    /** TODO */
-    get: operations["getCreatorList"];
-  };
-  "/api/acp/v2/creator/": {
-    /** TODO */
-    get: operations["getCreatorDetails"];
-  };
-  "/api/acp/v2/creator/subscriptionplans/list": {
-    /** TODO */
-    get: operations["getSubscriptionPlanList"];
-  };
-  "/api/acp/v2/creator/urlname/availability": {
-    /** TODO */
-    get: operations["checkCreatorURLAvailable"];
-  };
-  "/api/acp/v2/creator/category/list": {
-    /** TODO */
-    get: operations["getCreatorCategories"];
-  };
-  "/api/acp/v2/creator/create": {
-    /** TODO */
-    post: operations["createCreator"];
-  };
-  "/api/acp/v2/creator/cover/upload": {
-    /** TODO */
-    post: operations["uploadCover"];
-  };
-  "/api/acp/v2/creator/titles": {
-    /** TODO */
-    get: operations["getCreatorsTitles"];
-  };
-  "/api/acp/v2/creator/update": {
-    /** TODO */
-    post: operations["updateCreator"];
-  };
-  "/api/acp/v2/creator/subscriptionplan/update": {
-    /** TODO */
-    post: operations["updateCreatorSubscriptionPlan"];
-  };
-  "/api/acp/v2/creator/card/upload": {
-    /** TODO */
-    post: operations["uploadCard"];
-  };
-  "/api/acp/v2/creator/icon/upload": {
-    /** TODO */
-    post: operations["uploadIcon"];
-  };
-  "/api/acp/v3/creator/invite/list": {
-    /** TODO */
-    get: operations["getCreatorInviteCodeList"];
-  };
-  "/api/acp/v3/creator/invite/create": {
-    /** TODO */
-    post: operations["createCreatorInviteCode"];
-  };
-  "/api/acp/v2/dashboard/job/status/": {
-    /** TODO */
-    get: operations["getJobStatus"];
-  };
-  "/api/acp/v2/dashboard/job/start/": {
-    /** TODO */
-    post: operations["startJob"];
-  };
-  "/api/acp/v2/dashboard/job/stop/": {
-    /** TODO */
-    post: operations["stopJob"];
-  };
-  "/api/acp/v2/section/list": {
-    /** TODO */
-    get: operations["getFaqSectionsACP"];
-  };
-  "/api/acp/v2/section/edit": {
-    /** TODO */
-    post: operations["updateFaqSection"];
-  };
-  "/api/acp/v2/section/": {
-    /** TODO */
-    get: operations["getFaqSectionDetails"];
-  };
-  "/api/acp/v2/article/": {
-    /** TODO */
-    get: operations["getFaqArticleDetails"];
-  };
-  "/api/acp/v2/article/edit": {
-    /** TODO */
-    post: operations["updateFaqArticle"];
-  };
-  "/api/acp/v2/image/upload": {
-    /** TODO */
-    post: operations["uploadFaqImage"];
-  };
-  "/api/acp/v2/image/list": {
-    /** TODO */
-    post: operations["getFaqImages"];
-  };
-  "/api/acp/v2/section/create": {
-    /** TODO */
-    post: operations["createFaqSection"];
-  };
-  "/api/acp/v2/article/create": {
-    /** TODO */
-    post: operations["createFaqArticle"];
-  };
-  "/api/acp/v2/feature/configs": {
-    /** TODO */
-    get: operations["getFeatureConfigs"];
-  };
-  "/api/acp/v2/feature/save": {
-    /** TODO */
-    post: operations["saveFeature"];
-  };
-  "/api/acp/v2/feature/dependencies/save": {
-    /** TODO */
-    post: operations["saveFeatureDependencies"];
-  };
-  "/api/acp/v2/feature/category/save": {
-    /** TODO */
-    post: operations["saveFeatureCategory"];
-  };
-  "/api/acp/v2/feature/type/save": {
-    /** TODO */
-    post: operations["saveFeatureType"];
-  };
-  "/api/acp/v2/feature/resolution/save": {
-    /** TODO */
-    post: operations["saveFeatureResolution"];
-  };
-  "/api/v2/administration/moderators/global/add": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["addGlobalModerator"];
-  };
-  "/api/v2/administration/moderators/global/remove": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["removeGlobalModerator"];
-  };
-  "/api/v2/administration/moderators/remove": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["removeModerator"];
-  };
-  "/api/v2/administration/moderators/get/{user}": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getModerator"];
-  };
-  "/api/v2/administration/moderators/list": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["listModeratorsAdmin"];
-  };
-  "/api/acp/v2/moderator/list": {
-    /** TODO */
-    get: operations["getModeratorList"];
-  };
-  "/api/acp/v2/moderator/create": {
-    /** TODO */
-    post: operations["createModerator"];
-  };
-  "/api/acp/v2/moderator/update/global": {
-    /** TODO */
-    post: operations["updateGlobalModerator"];
-  };
-  "/api/acp/v2/moderator/creator/remove": {
-    /** TODO */
-    post: operations["removeCreatorModeratorACP"];
-  };
-  "/api/acp/v2/moderator/creator/add/": {
-    /** TODO */
-    post: operations["addCreatorModeratorACP"];
-  };
-  "/api/acp/v2/moderator/creator/available": {
-    /** TODO */
-    get: operations["getModeratorAvailableCreators"];
-  };
-  "/api/acp/v2/moderator/creator/list/": {
-    /** TODO */
-    get: operations["getModeratorCreators"];
-  };
-  "/api/acp/v2/user/list": {
-    /** TODO */
-    get: operations["getUserList"];
-  };
-  "/api/acp/v2/user/": {
-    /** TODO */
-    get: operations["getUserDetails"];
-  };
-  "/api/acp/v2/user/list/notmoderator": {
-    /** TODO */
-    get: operations["searchUserForModeration"];
-  };
-  "/api/acp/v2/user/find": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["findUser"];
-  };
-  "/api/acp/v2/user/admin/create": {
-    /** TODO */
-    post: operations["createAdmin"];
-  };
-  "/api/acp/v2/user/subscription/add": {
-    /** TODO */
-    post: operations["addUserSubscriptions"];
-  };
-  "/api/acp/v2/user/username/availability": {
-    /** TODO */
-    get: operations["checkUsernameAvailable"];
-  };
-  "/api/acp/v2/user/email/availability": {
-    /** TODO */
-    get: operations["checkEmailAvailable"];
-  };
-  "/api/acp/v2/user/avatar/upload": {
-    /** TODO */
-    post: operations["uploadAvatarACP"];
-  };
-  "/api/acp/v2/user/edit": {
-    /** TODO */
-    post: operations["updateUser"];
-  };
-  "/api/acp/v2/user/usersubscription/list": {
-    /** TODO */
-    get: operations["getUserSubscriptions"];
-  };
-  "/api/acp/v2/user/usersubscription/delete": {
-    /** TODO */
-    post: operations["removeUserSubscription"];
-  };
-  "/api/acp/v2/user/administrator/update": {
-    /** TODO */
-    post: operations["updateAdministrator"];
-  };
-  "/api/acp/v2/user/delete": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["deleteUser"];
-  };
-  "/api/acp/v2/user/create": {
-    /** TODO */
-    post: operations["signupACP"];
-  };
-  "/api/acp/v2/user/payment/invoice/list": {
-    /** TODO */
-    get: operations["listUserInvoices"];
-  };
-  "/api/acp/v2/user/payment/processor/data": {
-    /** TODO */
-    get: operations["getPaymentProcessorData"];
-  };
-  "/api/acp/v3/user/delete": {
-    /** TODO */
-    post: operations["scheduleDeletionACP"];
-  };
-  "/api/acp/v3/user/undelete": {
-    /** TODO */
-    post: operations["unscheduleDeletionACP"];
-  };
-  "/api/acp/v3/user/sar": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getSubjectAccessData"];
-  };
-  "/api/v2/auth/login": {
-    /** Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests. */
-    post: operations["login"];
-  };
-  "/api/v2/auth/logout": {
-    /** Log out of Floatplane, invalidating the authentication/authorization cookie. */
-    post: operations["logout"];
-  };
-  "/api/v2/auth/spoof/begin": {
-    /** TODO */
-    post: operations["beginSpoofing"];
-  };
-  "/api/v2/auth/spoof/end": {
-    /** TODO */
-    post: operations["endSpoofing"];
-  };
-  "/api/v2/auth/signup": {
-    /** TODO */
-    post: operations["signup"];
-  };
-  "/api/v2/auth/checkFor2faLogin": {
-    /** Complete the login process if a two-factor authentication token is required from the beginning of the login process. */
-    post: operations["checkFor2faLogin"];
-  };
-  "/api/v3/auth/captcha/info": {
-    /** Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up. */
-    get: operations["getCaptchaInfo"];
-  };
-  "/api/v2/payment/braintree/token": {
-    /** TODO */
-    get: operations["generateClientToken"];
-  };
-  "/api/v2/cdn/delivery": {
-    /** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
-    get: operations["getDeliveryInfo"];
-  };
-  "/api/v2/connect/{site}": {
-    /** TODO */
-    get: operations["getAccountConnect"];
-  };
-  "/api/v2/connect/{site}/callback": {
-    /** TODO */
-    get: operations["callback"];
-  };
-  "/api/v2/connect/complete": {
-    /** TODO */
-    post: operations["complete"];
-  };
-  "/api/v2/connect/refresh": {
-    /** TODO */
-    post: operations["refresh"];
-  };
-  "/api/v2/connect/dissociate": {
-    /** TODO */
-    post: operations["dissociate"];
-  };
-  "/api/v2/connect/list": {
-    /** List the available 3rd party accounts for the user's profile. */
-    get: operations["listConnections"];
-  };
-  "/api/v2/creator/administration/moderators/add": {
-    /** TODO */
-    post: operations["addCreatorModeratorAdmin"];
-  };
-  "/api/v2/creators/{creator}/administration/moderators/add": {
-    /** TODO */
-    post: operations["addCreatorModeratorByPath"];
-  };
-  "/api/v2/creator/administration/moderators/remove": {
-    /** TODO */
-    post: operations["removeCreatorModeratorAdmin"];
-  };
-  "/api/v2/creators/{creator}/administration/moderators/remove": {
-    /** TODO */
-    post: operations["removeCreatorModeratorByPath"];
-  };
-  "/api/v2/creator/administration/moderators/list": {
-    /** TODO */
-    get: operations["listModerators"];
-  };
-  "/api/v2/creators/{creator}/administration/moderators/list": {
-    /** TODO */
-    get: operations["listModeratorsByPath"];
-  };
-  "/api/v2/creator/info": {
-    /** Retrieve detailed information on one or more creators on Floatplane. */
-    get: operations["getInfo"];
-  };
-  "/api/v2/creator/named": {
-    /** Retrieve detailed information on one or more creators on Floatplane. */
-    get: operations["getCreatorInfoByName"];
-  };
-  "/api/v2/creator/videos": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["listVideos"];
-  };
-  "/api/v2/creator/playlists": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["listPlaylists"];
-  };
-  "/api/v2/creator/list": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["listCreators"];
-  };
-  "/api/v2/creator/discover": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["discoverCreatorsV2"];
-  };
-  "/api/v2/creatorcategory/list": {
-    /** TODO */
-    get: operations["listCreatorCategoriesV2"];
-  };
-  "/api/v2/creator/social/update": {
-    /** TODO */
-    post: operations["updateSocialLinks"];
-  };
-  "/api/v2/creator/social/get": {
-    /** TODO */
-    get: operations["getSocialLinks"];
-  };
-  "/api/v2/creator/image/update": {
-    /** TODO */
-    post: operations["updateChannelImage"];
-  };
-  "/api/v2/creator/info/update": {
-    /** TODO */
-    post: operations["updateChannelInfo"];
-  };
-  "/api/v2/creator/info/get": {
-    /** TODO */
-    get: operations["getChannelInfo"];
-  };
-  "/api/v3/creator/info": {
-    /** Retrieve detailed information about a specific creator. */
-    get: operations["getCreator"];
-  };
-  "/api/v3/creator/list": {
-    /** Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering. */
-    get: operations["getCreators"];
-  };
-  "/api/v3/creator/named": {
-    /** TODO */
-    get: operations["getCreatorByName"];
-  };
-  "/api/v3/creator/discover": {
-    /** TODO */
-    get: operations["discoverCreatorsV3"];
-  };
-  "/api/v3/creator/category/list": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["listCreatorCategoriesV3"];
-  };
-  "/api/v3/creator/invite/bind": {
-    /** TODO */
-    post: operations["bindCreatorInviteCode"];
-  };
-  "/api/v3/creator/invite/info": {
-    /** TODO */
-    get: operations["getCreatorInviteCodeInfo"];
-  };
-  "/api/v3/creator/invite/claim": {
-    /** TODO */
-    post: operations["claimCreatorInviteCode"];
-  };
-  "/api/v2/api/creator/agreement/": {
-    /** TODO */
-    get: operations["getAgreement"];
-  };
-  "/api/v2/api/creator/agreement/confirm": {
-    /** TODO */
-    post: operations["confirmAgreement"];
-  };
-  "/api/v2/creatorplanfeaturelevel/list": {
-    /** TODO */
-    get: operations["listCreatorPlanFeatureLevels"];
-  };
-  "/api/v2/creatorplanfeaturelevel/cost": {
-    /** TODO */
-    get: operations["calculateCreatorPlanFeatureCosts"];
-  };
-  "/api/v2/plan/feature/list": {
-    /** TODO */
-    get: operations["planFeatureLevels"];
-  };
-  "/api/v2/plan/publish": {
-    /** TODO */
-    post: operations["publishSubscriptionPlan"];
-  };
-  "/api/v2/plan/update": {
-    /** TODO */
-    post: operations["updateSubscriptionPlans"];
-  };
-  "/api/v2/plan/list": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["listSubscriptionPlans"];
-  };
-  "/api/v2/plan/info": {
-    /** Retrieve detailed information about a creator's subscription plans and their subscriber count. */
-    get: operations["getCreatorSubInfoPublic"];
-  };
-  "/api/v3/plan/content": {
-    /** TODO */
-    get: operations["getPlansForContent"];
-  };
-  "/api/v2/discord/bot/link": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["link"];
-  };
-  "/api/v2/discord/bot/link/callback": {
-    /** TODO */
-    get: operations["linkCallback"];
-  };
-  "/api/v2/discord/bot/list": {
-    /** TODO */
-    get: operations["listDiscordBotConnections"];
-  };
-  "/api/v2/discord/bot/unlink": {
-    /** TODO */
-    post: operations["unlink"];
-  };
-  "/api/v2/discord/bot/info": {
-    /** TODO */
-    get: operations["getDiscordBotInfo"];
-  };
-  "/api/v2/discord/bot/invite/generate": {
-    /** TODO */
-    get: operations["generateInviteLink"];
-  };
-  "/api/v2/discord/bot/update": {
-    /** TODO */
-    post: operations["updateLink"];
-  };
-  "/api/v2/discord/server/join": {
-    /** TODO */
-    post: operations["joinDiscordServers"];
-  };
-  "/api/v2/edges": {
-    /** Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement. */
-    get: operations["getEdges"];
-  };
-  "/api/v2/video/url": {
-    /** TODO */
-    get: operations["getVideoUrl"];
-  };
-  "/api/v2/faq/list": {
-    /** Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML. */
-    get: operations["getFaqSections"];
-  };
-  "/api/v2/get/player/{guid}": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getVideoPlayer"];
-  };
-  "/api/v2/image/optimizations/": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getOptimizationsV3"];
-  };
-  "/api/v3/image/optimizations/": {
-    /** TODO */
-    get: operations["getOptimizationsV2"];
-  };
-  "/v2/live/popout": {
-    /** TODO */
-    get: operations["renderLivePopout"];
-  };
-  "/api/v2/live/config/update": {
-    /** TODO */
-    post: operations["updateConfig"];
-  };
-  "/api/v2/live/thumbnail/upload": {
-    /** TODO */
-    post: operations["uploadLiveThumbnail"];
-  };
-  "/api/v2/moderation/user/ban": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["banUserV2"];
-  };
-  "/api/v2/moderation/user/unban": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["unbanUserV2"];
-  };
-  "/api/v2/moderation/user/ban/list": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["listBanV2"];
-  };
-  "/api/v2/moderation/comment/hide": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["hideCommentV2"];
-  };
-  "/api/v2/moderation/comment/unhide": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["unhideCommentV2"];
-  };
-  "/api/v2/comment/moderate/": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["moderateVideoComment"];
-  };
-  "/api/v2/moderator/userBanStatus": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["userBanStatusV2"];
-  };
-  "/api/v2/moderator/user/unban": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["userUnbanV2"];
-  };
-  "/api/v2/moderation/user/info": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["userInfoV2"];
-  };
-  "/api/v3/moderation/user/ban": {
-    /** TODO */
-    post: operations["banUserV3"];
-  };
-  "/api/v3/moderation/user/unban": {
-    /** TODO */
-    post: operations["unbanUserV3"];
-  };
-  "/api/v3/moderation/user/ban/list": {
-    /** TODO */
-    get: operations["listBanV3"];
-  };
-  "/api/v3/moderation/comment/hide": {
-    /** TODO */
-    post: operations["hideCommentV3"];
-  };
-  "/api/v3/moderation/comment/unhide": {
-    /** TODO */
-    post: operations["unhideCommentV3"];
-  };
-  "/api/v3/comment/moderate/": {
-    /** TODO */
-    post: operations["moderateComment"];
-  };
-  "/api/v3/moderator/userBanStatus": {
-    /** TODO */
-    get: operations["userBanStatusV3"];
-  };
-  "/api/v3/moderator/user/unban": {
-    /** TODO */
-    post: operations["userUnbanV3"];
-  };
-  "/api/v3/moderation/user/info": {
-    /** TODO */
-    get: operations["userInfoV3"];
-  };
-  "/api/v2/user/password/reset/request": {
-    /** TODO */
-    post: operations["sendPasswordReset"];
-  };
-  "/api/v2/user/password/reset": {
-    /** TODO */
-    post: operations["resetPassword"];
-  };
-  "/api/v2/user/password/reset/validate": {
-    /** TODO */
-    post: operations["validateKey"];
-  };
-  "/api/v2/payment/method/list": {
-    /** Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform. */
-    get: operations["listPaymentMethods"];
-  };
-  "/api/v2/payment/method/add": {
-    /** TODO */
-    post: operations["addPaymentMethod"];
-  };
-  "/api/v2/payment/method/delete": {
-    /** TODO */
-    post: operations["deletePaymentMethod"];
-  };
-  "/api/v2/payment/method/set": {
-    /** TODO */
-    post: operations["setPrimaryPaymentMethod"];
-  };
-  "/api/v2/payment/tax/estimate": {
-    /** TODO */
-    get: operations["estimateTaxes"];
-  };
-  "/api/v2/payment/subscription/purchase": {
-    /** TODO */
-    post: operations["purchaseSubscription"];
-  };
-  "/api/v2/payment/subscription/cancel": {
-    /** TODO */
-    post: operations["cancelSubscription"];
-  };
-  "/api/v2/payment/address/list": {
-    /** Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators. */
-    get: operations["listAddresses"];
-  };
-  "/api/v2/payment/address/add": {
-    /** TODO */
-    post: operations["addAddress"];
-  };
-  "/api/v2/payment/address/update": {
-    /** TODO */
-    post: operations["updateAddress"];
-  };
-  "/api/v2/payment/address/delete": {
-    /** TODO */
-    post: operations["deleteAddress"];
-  };
-  "/api/v2/payment/address/set": {
-    /** TODO */
-    post: operations["setPrimaryAddress"];
-  };
-  "/api/v2/payment/webhook/{paymentProcessor}": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["webhook"];
-  };
-  "/api/v2/payment/webhook/{paymentProcessor}/{subPaymentProcessor}": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["webhookWithSubprocessor"];
-  };
-  "/api/v2/payment/invoice/list": {
-    /** Retrieve a list of paid or unpaid subscription invoices for the user. */
-    get: operations["listInvoices"];
-  };
-  "/api/v2/socket/subscribe/user": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["subscribeUser"];
-  };
-  "/api/v2/socket/subscribe/user/{id}": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["subscribeUserById"];
-  };
-  "/api/v3/socket/connect": {
-    /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["socketConnect"];
-  };
-  "/api/v3/socket/disconnect": {
-    /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["disconnectSocket"];
-  };
-  "/api/v2/payment/stripe/pk": {
-    /** TODO */
-    get: operations["retrievePublicKey"];
-  };
-  "/api/v2/user/subscriptions": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["listUserSubscriptionsV2"];
-  };
-  "/api/v2/user/subscribed": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["doesUserHaveSubV2"];
-  };
-  "/api/v3/user/subscriptions": {
-    /** Retrieve a list of all active subscriptions for the user. */
-    get: operations["listUserSubscriptionsV3"];
-  };
-  "/api/v3/user/subscribed": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["doesUserHaveSubV3"];
-  };
-  "/api/v2/support/": {
-    /** TODO */
-    post: operations["submitSupport"];
-  };
-  "/api/v2/support/ticket/types": {
-    /** TODO */
-    get: operations["getTicketTypes"];
-  };
-  "/api/v2/sync/connect": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["syncConnect"];
-  };
-  "/api/v2/sync/disconnect": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["disconnectSync"];
-  };
-  "/api/v2/video/transcode/progress": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getTranscodeProgress"];
-  };
-  "/api/v2/video/transcode/progress/subscribe": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["progressSubscribe"];
-  };
-  "/api/v2/video/transcode/progress/unsubscribe": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["progressUnsubscribe"];
-  };
-  "/api/cms/v3/processing/active": {
-    /** TODO */
-    get: operations["getActiveProcesses"];
-  };
-  "/api/cms/v3/transcode/subscribe": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["progressSubscribeCMS"];
-  };
-  "/api/cms/v3/transcode/unsubscribe": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["progressUnsubscribeCMS"];
-  };
-  "/api/v2/user/info": {
-    /** Retrieve more detailed information about one or more users from their identifiers. */
-    get: operations["getUserInfo"];
-  };
-  "/api/v2/user/self": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["self"];
-  };
-  "/api/v2/user/named": {
-    /** Retrieve more detailed information about one or more users from their usernames. */
-    get: operations["getUserInfoByName"];
-  };
-  "/api/v2/user/update": {
-    /** TODO */
-    post: operations["updateInfo"];
-  };
-  "/api/v2/user/email/update": {
-    /** TODO */
-    post: operations["updateEmail"];
-  };
-  "/api/v2/user/email/update/complete": {
-    /** TODO */
-    post: operations["completeEmailChange"];
-  };
-  "/api/v2/user/avatar": {
-    /** TODO */
-    post: operations["uploadAvatar"];
-  };
-  "/api/v2/user/password/change": {
-    /** TODO */
-    post: operations["changePassword"];
-  };
-  "/api/v2/user/creator": {
-    /** TODO */
-    get: operations["getUserCreator"];
-  };
-  "/api/v2/user/activity": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getActivityFeedV2"];
-  };
-  "/api/v2/user/links": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getExternalLinksV2"];
-    /** TODO - Not used in Floatplane code. */
-    post: operations["updateExternalLinksV2"];
-  };
-  "/api/v2/user/administrator": {
-    /** TODO */
-    get: operations["getAdministrator"];
-  };
-  "/api/v2/user/security": {
-    /** Retrieve information about the current security configuration for the user. */
-    get: operations["getSecurity"];
-  };
-  "/api/v2/user/security/2fa": {
-    /** TODO */
-    post: operations["generateTwoFactorSecret"];
-  };
-  "/api/v2/user/security/2fa/activate": {
-    /** TODO */
-    post: operations["activateTwoFactorAuthentication"];
-  };
-  "/api/v2/user/security/2fa/deactivate": {
-    /** TODO */
-    post: operations["deactivateTwoFactorAuthentication"];
-  };
-  "/api/v2/user/security/backupcode/activate": {
-    /** TODO */
-    post: operations["activateBackupCode"];
-  };
-  "/api/v2/user/security/backupcode/deactivate": {
-    /** TODO */
-    post: operations["deactivateBackupCode"];
-  };
-  "/api/v2/user/security/backupcode": {
-    /** TODO */
-    post: operations["generateBackupCode"];
-  };
-  "/api/v2/user/notificationsetting": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getUserNotificationSettingsV2"];
-    /** TODO - Not used in Floatplane code. */
-    post: operations["updateUserNotificationSettingsV2"];
-  };
-  "/api/v2/user/ban/status": {
-    /** Determine whether or not the user is banned for a given creator. */
-    get: operations["userCreatorBanStatus"];
-  };
-  "/api/v3/user/activity": {
-    /** Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators. */
-    get: operations["getActivityFeedV3"];
-  };
-  "/api/v3/user/links": {
-    /** Retrieve configured social media links from a user's profile. */
-    get: operations["getExternalLinksV3"];
-    /** TODO */
-    post: operations["updateExternalLinksV3"];
-  };
-  "/api/v3/user/self": {
-    /** Retrieve more detailed information about the user, including their name and email. */
-    get: operations["getSelf"];
-  };
-  "/api/v3/user/delete": {
-    /** TODO */
-    post: operations["scheduleDeletion"];
-  };
-  "/api/v3/user/undelete": {
-    /** TODO */
-    post: operations["unscheduleDeletion"];
-  };
-  "/api/v3/user/achievement/perks": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getAchievementPerks"];
-  };
-  "/api/v3/user/notification/list": {
-    /** Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator. */
-    get: operations["getUserNotificationSettingsV3"];
-  };
-  "/api/v3/user/notification/update": {
-    /** Enable or disable email or push notifications for a specific creator. */
-    post: operations["updateUserNotificationSettingsV3"];
-  };
-  "/api/v2/video/comments": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getVideoComments"];
-  };
-  "/api/v2/video/comment": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["addVideoComment"];
-  };
-  "/api/v2/video/comment/replies": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getVideoCommentReplies"];
-  };
-  "/api/v2/video/comment/interaction/clear": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["clearInteraction"];
-  };
-  "/api/v2/video/comment/interaction/set": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["setInteraction"];
-  };
-  "/api/v2/video/watchkey": {
-    /** TODO. This seems to originate from the `.m3u8` file captured from the CDN endpoint, and is not usually called directly from code. */
-    get: operations["watchKey"];
-  };
-  "/api/v2/video/info": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getVideo"];
-  };
-  "/api/v2/video/related": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getRelatedVideos"];
-  };
-  "/api/v2/video/update": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["updateVideo"];
-  };
-  "/api/v2/video/delete": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["deleteVideo"];
-  };
-  "/api/v2/video/list": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getList"];
-  };
-  "/api/v2/video/dash/watchkey": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getDashClearKeys"];
-    /** TODO - Not used in Floatplane code. */
-    post: operations["getDashClearKeysOverPost"];
-  };
-  "/api/v2/video/dash/chunk/signed": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getDashSignedChunkUrl"];
-  };
-  "/api/v2/playlist/videos": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["listPlaylistVideos"];
-  };
-  "/api/v2/video/upload/s3/multipart": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getUploadedPartsV2"];
-    /** TODO - Not used in Floatplane code. */
-    post: operations["createMultipartUploadV2"];
-  };
-  "/api/v2/video/upload/s3/multipart/sign": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["signPartUploadVideo"];
-  };
-  "/api/v2/video/upload/s3/multipart/abort": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["abortMultipartUploadV2"];
-  };
-  "/api/v2/video/upload/s3/multipart/complete": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["completeMultipartUploadVideo"];
-  };
-  "/api/v2/video/upload/thumbnail": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["uploadThumbnailV2"];
-  };
-  "/api/v2/webhooks/connectedAccount/{site}": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["connectedAccount"];
-  };
-  "/api/v3/webhooks/ivs/livestream": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["IVSlivestreamPublish"];
-  };
-  "/api/v3/webhooks/livestream": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["livestreamPublish"];
-  };
-  "/api/v2/push/web/info": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getAppInfoV2"];
-  };
-  "/api/v2/push/web/register": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["registerV2"];
-  };
-  "/api/v2/push/web/revoke": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["unregisterV2"];
-  };
-  "/api/v2/push/web/tokenInfo": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getTokenInfo"];
-  };
-  "/api/v3/push/web/info": {
-    /** TODO */
-    get: operations["getAppInfoV3"];
-  };
-  "/api/v3/push/web/register": {
-    /** TODO */
-    post: operations["registerV3"];
-  };
-  "/api/v3/push/web/revoke": {
-    /** TODO */
-    post: operations["unregisterV3"];
-  };
-  "/acp/v3/content/list": {
-    /** TODO */
-    get: operations["getContentList"];
-  };
-  "/acp/v3/content": {
-    /** TODO */
-    get: operations["getContentACP"];
-    /** TODO */
-    post: operations["postContent"];
-  };
-  "/acp/v3/order/list": {
-    /** TODO */
-    get: operations["getOrderList"];
-  };
-  "/acp/v3/order": {
-    /** TODO */
-    get: operations["getOrder"];
-    /** TODO */
-    post: operations["postOrder"];
-  };
-  "/acp/v3/manager": {
-    /** TODO */
-    post: operations["postManager"];
-  };
-  "/acp/v3/order/create": {
-    /** TODO */
-    post: operations["createOrder"];
-  };
-  "/acp/v3/order/augment": {
-    /** TODO */
-    post: operations["augmentOrder"];
-  };
-  "/acp/v3/upload/list": {
-    /** TODO */
-    get: operations["getUploadList"];
-  };
-  "/acp/v3/upload": {
-    /** TODO */
-    get: operations["getUpload"];
-    /** TODO */
-    post: operations["postUpload"];
-  };
-  "/acp/v3/job": {
-    /** TODO */
-    get: operations["getJob"];
-    /** TODO */
-    post: operations["postJob"];
-  };
-  "/acp/v3/task": {
-    /** TODO */
-    get: operations["getTask"];
-    /** TODO */
-    post: operations["postTask"];
-  };
-  "/api/cms/v3/blogPost/get": {
-    /** TODO */
-    get: operations["getBlogPostCMS"];
-  };
-  "/api/cms/v3/blogPost/list": {
-    /** TODO */
-    get: operations["listBlogPost"];
-  };
-  "/api/cms/v3/blogPost/create": {
-    /** TODO */
-    post: operations["createBlogPost"];
-  };
-  "/api/cms/v3/blogPost/edit": {
-    /** TODO */
-    post: operations["editBlogPost"];
-  };
-  "/api/cms/v3/blogPost/delete": {
-    /** TODO */
-    post: operations["deleteBlogPost"];
-  };
-  "/api/cms/v3/blogPost/attachments/update": {
-    /** TODO */
-    post: operations["updateNewAttachments"];
-  };
-  "/api/cms/v3/content/edit": {
-    /** TODO */
-    post: operations["editContent"];
-  };
-  "/api/cms/v3/content/video/list": {
-    /** TODO */
-    get: operations["listVideoContent"];
-  };
-  "/api/cms/v3/content/audio/list": {
-    /** TODO */
-    get: operations["listAudioContent"];
-  };
-  "/api/cms/v3/content/picture/list": {
-    /** TODO */
-    get: operations["listPictureContent"];
-  };
-  "/api/cms/v3/content/gallery/list": {
-    /** TODO */
-    get: operations["listGalleryContent"];
-  };
-  "/api/cms/v3/content/video/": {
-    /** TODO */
-    get: operations["getVideoContentCMS"];
-  };
-  "/api/cms/v3/content/audio/": {
-    /** TODO */
-    get: operations["getAudioContentCMS"];
-  };
-  "/api/cms/v3/content/picture/": {
-    /** TODO */
-    get: operations["getPictureContentCMS"];
-  };
-  "/api/cms/v3/content/gallery/": {
-    /** TODO */
-    get: operations["getGalleryContentCMS"];
-  };
-  "/api/cms/v3/content/": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getContentCMS"];
-  };
-  "/api/cms/v3/content/delete": {
-    /** TODO */
-    post: operations["deleteContent"];
-  };
-  "/api/cms/v3/creatorwarehouse": {
-    /** TODO */
-    get: operations["getCreatorWarehouse"];
-  };
-  "/api/cms/v3/creatorwarehouse/save": {
-    /** TODO */
-    post: operations["saveCreatorWarehouse"];
-  };
-  "/api/cms/v3/creatorwarehouse/pricerule/list": {
-    /** TODO */
-    post: operations["listPriceRules"];
-  };
-  "/api/cms/v3/creatorwarehouse/pricerule/": {
-    /** TODO */
-    post: operations["getPriceRule"];
-  };
-  "/api/cms/v3/creatorwarehouse/pricerule/create": {
-    /** TODO */
-    post: operations["createPriceRule"];
-  };
-  "/api/cms/v3/creatorwarehouse/pricerule/edit": {
-    /** TODO */
-    post: operations["editPriceRule"];
-  };
-  "/api/cms/v3/creatorwarehouse/pricerule/delete": {
-    /** TODO */
-    post: operations["deletePriceRule"];
-  };
-  "/api/cms/v3/creatorwarehouse/products/list": {
-    /** TODO */
-    post: operations["listProducts"];
-  };
-  "/api/cms/v3/creatorwarehouse/collections/list": {
-    /** TODO */
-    post: operations["listCollections"];
-  };
-  "/api/cms/v3/creatorwarehouse/shop/get": {
-    /** TODO */
-    post: operations["getShopInfo"];
-  };
-  "/api/cms/v3/creatorwarehouse/shop/shippingcountries/list": {
-    /** TODO */
-    post: operations["listShopShippingCountries"];
-  };
-  "/api/cms/v3/creatorwarehouse/products/get": {
-    /** TODO */
-    post: operations["getProducts"];
-  };
-  "/api/cms/v3/creatorwarehouse/collections/get": {
-    /** TODO */
-    post: operations["getCollections"];
-  };
-  "/api/cms/v3/creatorwarehouse/countries/get": {
-    /** TODO */
-    post: operations["getCountries"];
-  };
-  "/api/cms/v3/live/info": {
-    /** TODO */
-    get: operations["getLivestreamInfo"];
-  };
-  "/api/cms/v3/plan/list": {
-    /** TODO */
-    post: operations["listSubscriptionPlansCMS"];
-  };
-  "/api/cms/v3/subscribers/list": {
-    /** TODO */
-    get: operations["listSubscribers"];
-  };
-  "/api/cms/v3/subscribers/download": {
-    /** TODO */
-    get: operations["downloadSubscribers"];
-  };
-  "/api/v3/comment": {
-    /** Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded. */
-    get: operations["getComments"];
-    /** Post a new comment to a blog post object. */
-    post: operations["postComment"];
-  };
-  "/api/v3/comment/replies": {
-    /** Retrieve more replies from a comment. */
-    get: operations["getCommentReplies"];
-  };
-  "/api/v3/comment/like": {
-    /** Like a comment on a blog post. */
-    post: operations["likeComment"];
-  };
-  "/api/v3/comment/dislike": {
-    /** Dislike a comment on a blog post. */
-    post: operations["dislikeComment"];
-  };
-  "/api/v3/content/creator": {
-    /**
-     * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
-     *
-     * Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
-     */
-    get: operations["getCreatorBlogPosts"];
-  };
-  "/api/v3/content/creator/list": {
-    /**
-     * Retrieve paginated blog posts from multiple creators for the home page.
-     *
-     * Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
-     */
-    get: operations["getMultiCreatorBlogPosts"];
-  };
-  "/api/v3/content/tags": {
-    /** Retrieve all tags and the number of times the tags have been used for the specified creator(s). */
-    get: operations["getContentTags"];
-  };
-  "/api/v3/content/post": {
-    /** Retrieve more details on a specific blog post object for viewing. */
-    get: operations["getBlogPost"];
-  };
-  "/api/v3/content/related": {
-    /** Retrieve a list of blog posts that are related to the post being viewed. */
-    get: operations["getRelatedBlogPosts"];
-  };
-  "/api/v3/content/video": {
-    /** Retrieve more information on a video attachment from a blog post in order to consume the video content. */
-    get: operations["getVideoContent"];
-  };
-  "/api/v3/content/audio": {
-    /** TODO */
-    get: operations["getAudioContent"];
-  };
-  "/api/v3/content/picture": {
-    /** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
-    get: operations["getPictureContent"];
-  };
-  "/api/v3/content/gallery": {
-    /** TODO */
-    get: operations["getGalleryContent"];
-  };
-  "/api/v3/content/info": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getContent"];
-  };
-  "/api/v3/content/like": {
-    /** Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed. */
-    post: operations["likeContent"];
-  };
-  "/api/v3/content/dislike": {
-    /** Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed. */
-    post: operations["dislikeContent"];
-  };
-  "/api/v3/content/picture/url": {
-    /** TODO - Not used in Floatplane code. */
-    get: operations["getPictureUrl"];
-  };
-  "/api/v3/content/upload/s3/multipart": {
-    /** TODO */
-    get: operations["getUploadedPartsV3"];
-    /** TODO */
-    post: operations["createMultipartUploadV3"];
-  };
-  "/api/v3/content/upload/s3/multipart/sign": {
-    /** TODO */
-    get: operations["signPartUploadContent"];
-  };
-  "/api/v3/content/upload/s3/multipart/abort": {
-    /** TODO */
-    post: operations["abortMultipartUploadV3"];
-  };
-  "/api/v3/content/upload/s3/multipart/complete": {
-    /** TODO */
-    post: operations["completeMultipartUploadContent"];
-  };
-  "/api/v3/content/upload/thumbnail": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["uploadThumbnailV3"];
-  };
-  "/api/v3/content/thumbnail/subscribe": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["thumbnailUpdateSubscribe"];
-  };
-  "/api/v3/content/thumbnail/unsubscribe": {
-    /** TODO - Not used in Floatplane code. */
-    post: operations["thumbnailUpdateUnsubscribe"];
-  };
-  "/api/v3/poll/live/joinroom": {
-    /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["joinLiveRoom"];
-  };
-  "/api/v3/poll/live/joinLiveRoomModerator": {
-    /** TODO - Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["joinLiveRoomModerator"];
-  };
-  "/api/v3/poll/live/leaveLiveRoom": {
-    /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["leaveLiveRoom"];
-  };
-  "/api/v3/poll/live/leaveLiveRoomModerator": {
-    /** TODO - Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["leaveLiveRoomModerator"];
-  };
-  "/api/v3/poll/votePoll": {
-    /** Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error. */
-    post: operations["votePoll"];
-  };
-  "/api/v3/poll/cms/list": {
-    /** TODO */
-    get: operations["cmsListPolls"];
-  };
-  "/api/v3/poll/live/create": {
-    /** TODO */
-    post: operations["createLivePoll"];
-  };
-  "/api/v3/poll/close": {
-    /** TODO */
-    post: operations["closePoll"];
-  };
-  "/api/v3/redirect-yt-latest/{channelKey}": {
-    /** Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code. */
-    post: operations["redirectYTLatest"];
-  };
-  "/api/v3/user/loyaltyreward/list": {
-    /** Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown. */
-    post: operations["listCreatorLoyaltyReward"];
-  };
-  "/api/v3/user/loyaltyreward/claim": {
-    /** TODO */
-    post: operations["claimLoyaltyReward"];
-  };
-  "/api/v3/experiments/vpn/enabled": {
-    /** TODO */
-    get: operations["getEnabledState"];
-    /** TODO */
-    post: operations["updateEnabledState"];
-  };
-  "/api/v3/experiments/vpn/profile/download": {
-    /** TODO */
-    get: operations["downloadUserProfile"];
-  };
-  "/api/v3/experiments/vpn/profile/ephemeral": {
-    /** TODO - Not used in Floatplane code yet. */
-    get: operations["getUserProfileLinksEphemeral"];
-  };
-  "/api/v3/experiments/vpn/server/list": {
-    /** TODO */
-    get: operations["getServerList"];
-  };
+	"/api/v2/activation/email/confirm": {
+		/** TODO */
+		post: operations["confirmEmail"];
+	};
+	"/api/v2/activation/email/request": {
+		/** TODO */
+		post: operations["requestActivationEmail"];
+	};
+	"/api/acp/v2/creatoragreement/list": {
+		/** TODO */
+		get: operations["listCreatorAgreement"];
+	};
+	"/api/acp/v2/creatoragreement": {
+		/** TODO */
+		get: operations["getCreatorAgreement"];
+	};
+	"/api/acp/v2/creatoragreement/edit": {
+		/** TODO */
+		get: operations["editCreatorAgreement"];
+	};
+	"/api/acp/v2/creator/list": {
+		/** TODO */
+		get: operations["getCreatorList"];
+	};
+	"/api/acp/v2/creator/": {
+		/** TODO */
+		get: operations["getCreatorDetails"];
+	};
+	"/api/acp/v2/creator/subscriptionplans/list": {
+		/** TODO */
+		get: operations["getSubscriptionPlanList"];
+	};
+	"/api/acp/v2/creator/urlname/availability": {
+		/** TODO */
+		get: operations["checkCreatorURLAvailable"];
+	};
+	"/api/acp/v2/creator/category/list": {
+		/** TODO */
+		get: operations["getCreatorCategories"];
+	};
+	"/api/acp/v2/creator/create": {
+		/** TODO */
+		post: operations["createCreator"];
+	};
+	"/api/acp/v2/creator/cover/upload": {
+		/** TODO */
+		post: operations["uploadCover"];
+	};
+	"/api/acp/v2/creator/titles": {
+		/** TODO */
+		get: operations["getCreatorsTitles"];
+	};
+	"/api/acp/v2/creator/update": {
+		/** TODO */
+		post: operations["updateCreator"];
+	};
+	"/api/acp/v2/creator/subscriptionplan/update": {
+		/** TODO */
+		post: operations["updateCreatorSubscriptionPlan"];
+	};
+	"/api/acp/v2/creator/card/upload": {
+		/** TODO */
+		post: operations["uploadCard"];
+	};
+	"/api/acp/v2/creator/icon/upload": {
+		/** TODO */
+		post: operations["uploadIcon"];
+	};
+	"/api/acp/v3/creator/invite/list": {
+		/** TODO */
+		get: operations["getCreatorInviteCodeList"];
+	};
+	"/api/acp/v3/creator/invite/create": {
+		/** TODO */
+		post: operations["createCreatorInviteCode"];
+	};
+	"/api/acp/v2/dashboard/job/status/": {
+		/** TODO */
+		get: operations["getJobStatus"];
+	};
+	"/api/acp/v2/dashboard/job/start/": {
+		/** TODO */
+		post: operations["startJob"];
+	};
+	"/api/acp/v2/dashboard/job/stop/": {
+		/** TODO */
+		post: operations["stopJob"];
+	};
+	"/api/acp/v2/section/list": {
+		/** TODO */
+		get: operations["getFaqSectionsACP"];
+	};
+	"/api/acp/v2/section/edit": {
+		/** TODO */
+		post: operations["updateFaqSection"];
+	};
+	"/api/acp/v2/section/": {
+		/** TODO */
+		get: operations["getFaqSectionDetails"];
+	};
+	"/api/acp/v2/article/": {
+		/** TODO */
+		get: operations["getFaqArticleDetails"];
+	};
+	"/api/acp/v2/article/edit": {
+		/** TODO */
+		post: operations["updateFaqArticle"];
+	};
+	"/api/acp/v2/image/upload": {
+		/** TODO */
+		post: operations["uploadFaqImage"];
+	};
+	"/api/acp/v2/image/list": {
+		/** TODO */
+		post: operations["getFaqImages"];
+	};
+	"/api/acp/v2/section/create": {
+		/** TODO */
+		post: operations["createFaqSection"];
+	};
+	"/api/acp/v2/article/create": {
+		/** TODO */
+		post: operations["createFaqArticle"];
+	};
+	"/api/acp/v2/feature/configs": {
+		/** TODO */
+		get: operations["getFeatureConfigs"];
+	};
+	"/api/acp/v2/feature/save": {
+		/** TODO */
+		post: operations["saveFeature"];
+	};
+	"/api/acp/v2/feature/dependencies/save": {
+		/** TODO */
+		post: operations["saveFeatureDependencies"];
+	};
+	"/api/acp/v2/feature/category/save": {
+		/** TODO */
+		post: operations["saveFeatureCategory"];
+	};
+	"/api/acp/v2/feature/type/save": {
+		/** TODO */
+		post: operations["saveFeatureType"];
+	};
+	"/api/acp/v2/feature/resolution/save": {
+		/** TODO */
+		post: operations["saveFeatureResolution"];
+	};
+	"/api/v2/administration/moderators/global/add": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["addGlobalModerator"];
+	};
+	"/api/v2/administration/moderators/global/remove": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["removeGlobalModerator"];
+	};
+	"/api/v2/administration/moderators/remove": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["removeModerator"];
+	};
+	"/api/v2/administration/moderators/get/{user}": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getModerator"];
+	};
+	"/api/v2/administration/moderators/list": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["listModeratorsAdmin"];
+	};
+	"/api/acp/v2/moderator/list": {
+		/** TODO */
+		get: operations["getModeratorList"];
+	};
+	"/api/acp/v2/moderator/create": {
+		/** TODO */
+		post: operations["createModerator"];
+	};
+	"/api/acp/v2/moderator/update/global": {
+		/** TODO */
+		post: operations["updateGlobalModerator"];
+	};
+	"/api/acp/v2/moderator/creator/remove": {
+		/** TODO */
+		post: operations["removeCreatorModeratorACP"];
+	};
+	"/api/acp/v2/moderator/creator/add/": {
+		/** TODO */
+		post: operations["addCreatorModeratorACP"];
+	};
+	"/api/acp/v2/moderator/creator/available": {
+		/** TODO */
+		get: operations["getModeratorAvailableCreators"];
+	};
+	"/api/acp/v2/moderator/creator/list/": {
+		/** TODO */
+		get: operations["getModeratorCreators"];
+	};
+	"/api/acp/v2/user/list": {
+		/** TODO */
+		get: operations["getUserList"];
+	};
+	"/api/acp/v2/user/": {
+		/** TODO */
+		get: operations["getUserDetails"];
+	};
+	"/api/acp/v2/user/list/notmoderator": {
+		/** TODO */
+		get: operations["searchUserForModeration"];
+	};
+	"/api/acp/v2/user/find": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["findUser"];
+	};
+	"/api/acp/v2/user/admin/create": {
+		/** TODO */
+		post: operations["createAdmin"];
+	};
+	"/api/acp/v2/user/subscription/add": {
+		/** TODO */
+		post: operations["addUserSubscriptions"];
+	};
+	"/api/acp/v2/user/username/availability": {
+		/** TODO */
+		get: operations["checkUsernameAvailable"];
+	};
+	"/api/acp/v2/user/email/availability": {
+		/** TODO */
+		get: operations["checkEmailAvailable"];
+	};
+	"/api/acp/v2/user/avatar/upload": {
+		/** TODO */
+		post: operations["uploadAvatarACP"];
+	};
+	"/api/acp/v2/user/edit": {
+		/** TODO */
+		post: operations["updateUser"];
+	};
+	"/api/acp/v2/user/usersubscription/list": {
+		/** TODO */
+		get: operations["getUserSubscriptions"];
+	};
+	"/api/acp/v2/user/usersubscription/delete": {
+		/** TODO */
+		post: operations["removeUserSubscription"];
+	};
+	"/api/acp/v2/user/administrator/update": {
+		/** TODO */
+		post: operations["updateAdministrator"];
+	};
+	"/api/acp/v2/user/delete": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["deleteUser"];
+	};
+	"/api/acp/v2/user/create": {
+		/** TODO */
+		post: operations["signupACP"];
+	};
+	"/api/acp/v2/user/payment/invoice/list": {
+		/** TODO */
+		get: operations["listUserInvoices"];
+	};
+	"/api/acp/v2/user/payment/processor/data": {
+		/** TODO */
+		get: operations["getPaymentProcessorData"];
+	};
+	"/api/acp/v3/user/delete": {
+		/** TODO */
+		post: operations["scheduleDeletionACP"];
+	};
+	"/api/acp/v3/user/undelete": {
+		/** TODO */
+		post: operations["unscheduleDeletionACP"];
+	};
+	"/api/acp/v3/user/sar": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getSubjectAccessData"];
+	};
+	"/api/v2/auth/login": {
+		/** Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests. */
+		post: operations["login"];
+	};
+	"/api/v2/auth/logout": {
+		/** Log out of Floatplane, invalidating the authentication/authorization cookie. */
+		post: operations["logout"];
+	};
+	"/api/v2/auth/spoof/begin": {
+		/** TODO */
+		post: operations["beginSpoofing"];
+	};
+	"/api/v2/auth/spoof/end": {
+		/** TODO */
+		post: operations["endSpoofing"];
+	};
+	"/api/v2/auth/signup": {
+		/** TODO */
+		post: operations["signup"];
+	};
+	"/api/v2/auth/checkFor2faLogin": {
+		/** Complete the login process if a two-factor authentication token is required from the beginning of the login process. */
+		post: operations["checkFor2faLogin"];
+	};
+	"/api/v3/auth/captcha/info": {
+		/** Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up. */
+		get: operations["getCaptchaInfo"];
+	};
+	"/api/v2/payment/braintree/token": {
+		/** TODO */
+		get: operations["generateClientToken"];
+	};
+	"/api/v2/cdn/delivery": {
+		/** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
+		get: operations["getDeliveryInfo"];
+	};
+	"/api/v2/connect/{site}": {
+		/** TODO */
+		get: operations["getAccountConnect"];
+	};
+	"/api/v2/connect/{site}/callback": {
+		/** TODO */
+		get: operations["callback"];
+	};
+	"/api/v2/connect/complete": {
+		/** TODO */
+		post: operations["complete"];
+	};
+	"/api/v2/connect/refresh": {
+		/** TODO */
+		post: operations["refresh"];
+	};
+	"/api/v2/connect/dissociate": {
+		/** TODO */
+		post: operations["dissociate"];
+	};
+	"/api/v2/connect/list": {
+		/** List the available 3rd party accounts for the user's profile. */
+		get: operations["listConnections"];
+	};
+	"/api/v2/creator/administration/moderators/add": {
+		/** TODO */
+		post: operations["addCreatorModeratorAdmin"];
+	};
+	"/api/v2/creators/{creator}/administration/moderators/add": {
+		/** TODO */
+		post: operations["addCreatorModeratorByPath"];
+	};
+	"/api/v2/creator/administration/moderators/remove": {
+		/** TODO */
+		post: operations["removeCreatorModeratorAdmin"];
+	};
+	"/api/v2/creators/{creator}/administration/moderators/remove": {
+		/** TODO */
+		post: operations["removeCreatorModeratorByPath"];
+	};
+	"/api/v2/creator/administration/moderators/list": {
+		/** TODO */
+		get: operations["listModerators"];
+	};
+	"/api/v2/creators/{creator}/administration/moderators/list": {
+		/** TODO */
+		get: operations["listModeratorsByPath"];
+	};
+	"/api/v2/creator/info": {
+		/** Retrieve detailed information on one or more creators on Floatplane. */
+		get: operations["getInfo"];
+	};
+	"/api/v2/creator/named": {
+		/** Retrieve detailed information on one or more creators on Floatplane. */
+		get: operations["getCreatorInfoByName"];
+	};
+	"/api/v2/creator/videos": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["listVideos"];
+	};
+	"/api/v2/creator/playlists": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["listPlaylists"];
+	};
+	"/api/v2/creator/list": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["listCreators"];
+	};
+	"/api/v2/creator/discover": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["discoverCreatorsV2"];
+	};
+	"/api/v2/creatorcategory/list": {
+		/** TODO */
+		get: operations["listCreatorCategoriesV2"];
+	};
+	"/api/v2/creator/social/update": {
+		/** TODO */
+		post: operations["updateSocialLinks"];
+	};
+	"/api/v2/creator/social/get": {
+		/** TODO */
+		get: operations["getSocialLinks"];
+	};
+	"/api/v2/creator/image/update": {
+		/** TODO */
+		post: operations["updateChannelImage"];
+	};
+	"/api/v2/creator/info/update": {
+		/** TODO */
+		post: operations["updateChannelInfo"];
+	};
+	"/api/v2/creator/info/get": {
+		/** TODO */
+		get: operations["getChannelInfo"];
+	};
+	"/api/v3/creator/info": {
+		/** Retrieve detailed information about a specific creator. */
+		get: operations["getCreator"];
+	};
+	"/api/v3/creator/list": {
+		/** Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering. */
+		get: operations["getCreators"];
+	};
+	"/api/v3/creator/named": {
+		/** TODO */
+		get: operations["getCreatorByName"];
+	};
+	"/api/v3/creator/discover": {
+		/** TODO */
+		get: operations["discoverCreatorsV3"];
+	};
+	"/api/v3/creator/category/list": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["listCreatorCategoriesV3"];
+	};
+	"/api/v3/creator/invite/bind": {
+		/** TODO */
+		post: operations["bindCreatorInviteCode"];
+	};
+	"/api/v3/creator/invite/info": {
+		/** TODO */
+		get: operations["getCreatorInviteCodeInfo"];
+	};
+	"/api/v3/creator/invite/claim": {
+		/** TODO */
+		post: operations["claimCreatorInviteCode"];
+	};
+	"/api/v2/api/creator/agreement/": {
+		/** TODO */
+		get: operations["getAgreement"];
+	};
+	"/api/v2/api/creator/agreement/confirm": {
+		/** TODO */
+		post: operations["confirmAgreement"];
+	};
+	"/api/v2/creatorplanfeaturelevel/list": {
+		/** TODO */
+		get: operations["listCreatorPlanFeatureLevels"];
+	};
+	"/api/v2/creatorplanfeaturelevel/cost": {
+		/** TODO */
+		get: operations["calculateCreatorPlanFeatureCosts"];
+	};
+	"/api/v2/plan/feature/list": {
+		/** TODO */
+		get: operations["planFeatureLevels"];
+	};
+	"/api/v2/plan/publish": {
+		/** TODO */
+		post: operations["publishSubscriptionPlan"];
+	};
+	"/api/v2/plan/update": {
+		/** TODO */
+		post: operations["updateSubscriptionPlans"];
+	};
+	"/api/v2/plan/list": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["listSubscriptionPlans"];
+	};
+	"/api/v2/plan/info": {
+		/** Retrieve detailed information about a creator's subscription plans and their subscriber count. */
+		get: operations["getCreatorSubInfoPublic"];
+	};
+	"/api/v3/plan/content": {
+		/** TODO */
+		get: operations["getPlansForContent"];
+	};
+	"/api/v2/discord/bot/link": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["link"];
+	};
+	"/api/v2/discord/bot/link/callback": {
+		/** TODO */
+		get: operations["linkCallback"];
+	};
+	"/api/v2/discord/bot/list": {
+		/** TODO */
+		get: operations["listDiscordBotConnections"];
+	};
+	"/api/v2/discord/bot/unlink": {
+		/** TODO */
+		post: operations["unlink"];
+	};
+	"/api/v2/discord/bot/info": {
+		/** TODO */
+		get: operations["getDiscordBotInfo"];
+	};
+	"/api/v2/discord/bot/invite/generate": {
+		/** TODO */
+		get: operations["generateInviteLink"];
+	};
+	"/api/v2/discord/bot/update": {
+		/** TODO */
+		post: operations["updateLink"];
+	};
+	"/api/v2/discord/server/join": {
+		/** TODO */
+		post: operations["joinDiscordServers"];
+	};
+	"/api/v2/edges": {
+		/** Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement. */
+		get: operations["getEdges"];
+	};
+	"/api/v2/video/url": {
+		/** TODO */
+		get: operations["getVideoUrl"];
+	};
+	"/api/v2/faq/list": {
+		/** Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML. */
+		get: operations["getFaqSections"];
+	};
+	"/api/v2/get/player/{guid}": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getVideoPlayer"];
+	};
+	"/api/v2/image/optimizations/": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getOptimizationsV3"];
+	};
+	"/api/v3/image/optimizations/": {
+		/** TODO */
+		get: operations["getOptimizationsV2"];
+	};
+	"/v2/live/popout": {
+		/** TODO */
+		get: operations["renderLivePopout"];
+	};
+	"/api/v2/live/config/update": {
+		/** TODO */
+		post: operations["updateConfig"];
+	};
+	"/api/v2/live/thumbnail/upload": {
+		/** TODO */
+		post: operations["uploadLiveThumbnail"];
+	};
+	"/api/v2/moderation/user/ban": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["banUserV2"];
+	};
+	"/api/v2/moderation/user/unban": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["unbanUserV2"];
+	};
+	"/api/v2/moderation/user/ban/list": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["listBanV2"];
+	};
+	"/api/v2/moderation/comment/hide": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["hideCommentV2"];
+	};
+	"/api/v2/moderation/comment/unhide": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["unhideCommentV2"];
+	};
+	"/api/v2/comment/moderate/": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["moderateVideoComment"];
+	};
+	"/api/v2/moderator/userBanStatus": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["userBanStatusV2"];
+	};
+	"/api/v2/moderator/user/unban": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["userUnbanV2"];
+	};
+	"/api/v2/moderation/user/info": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["userInfoV2"];
+	};
+	"/api/v3/moderation/user/ban": {
+		/** TODO */
+		post: operations["banUserV3"];
+	};
+	"/api/v3/moderation/user/unban": {
+		/** TODO */
+		post: operations["unbanUserV3"];
+	};
+	"/api/v3/moderation/user/ban/list": {
+		/** TODO */
+		get: operations["listBanV3"];
+	};
+	"/api/v3/moderation/comment/hide": {
+		/** TODO */
+		post: operations["hideCommentV3"];
+	};
+	"/api/v3/moderation/comment/unhide": {
+		/** TODO */
+		post: operations["unhideCommentV3"];
+	};
+	"/api/v3/comment/moderate/": {
+		/** TODO */
+		post: operations["moderateComment"];
+	};
+	"/api/v3/moderator/userBanStatus": {
+		/** TODO */
+		get: operations["userBanStatusV3"];
+	};
+	"/api/v3/moderator/user/unban": {
+		/** TODO */
+		post: operations["userUnbanV3"];
+	};
+	"/api/v3/moderation/user/info": {
+		/** TODO */
+		get: operations["userInfoV3"];
+	};
+	"/api/v2/user/password/reset/request": {
+		/** TODO */
+		post: operations["sendPasswordReset"];
+	};
+	"/api/v2/user/password/reset": {
+		/** TODO */
+		post: operations["resetPassword"];
+	};
+	"/api/v2/user/password/reset/validate": {
+		/** TODO */
+		post: operations["validateKey"];
+	};
+	"/api/v2/payment/method/list": {
+		/** Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform. */
+		get: operations["listPaymentMethods"];
+	};
+	"/api/v2/payment/method/add": {
+		/** TODO */
+		post: operations["addPaymentMethod"];
+	};
+	"/api/v2/payment/method/delete": {
+		/** TODO */
+		post: operations["deletePaymentMethod"];
+	};
+	"/api/v2/payment/method/set": {
+		/** TODO */
+		post: operations["setPrimaryPaymentMethod"];
+	};
+	"/api/v2/payment/tax/estimate": {
+		/** TODO */
+		get: operations["estimateTaxes"];
+	};
+	"/api/v2/payment/subscription/purchase": {
+		/** TODO */
+		post: operations["purchaseSubscription"];
+	};
+	"/api/v2/payment/subscription/cancel": {
+		/** TODO */
+		post: operations["cancelSubscription"];
+	};
+	"/api/v2/payment/address/list": {
+		/** Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators. */
+		get: operations["listAddresses"];
+	};
+	"/api/v2/payment/address/add": {
+		/** TODO */
+		post: operations["addAddress"];
+	};
+	"/api/v2/payment/address/update": {
+		/** TODO */
+		post: operations["updateAddress"];
+	};
+	"/api/v2/payment/address/delete": {
+		/** TODO */
+		post: operations["deleteAddress"];
+	};
+	"/api/v2/payment/address/set": {
+		/** TODO */
+		post: operations["setPrimaryAddress"];
+	};
+	"/api/v2/payment/webhook/{paymentProcessor}": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["webhook"];
+	};
+	"/api/v2/payment/webhook/{paymentProcessor}/{subPaymentProcessor}": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["webhookWithSubprocessor"];
+	};
+	"/api/v2/payment/invoice/list": {
+		/** Retrieve a list of paid or unpaid subscription invoices for the user. */
+		get: operations["listInvoices"];
+	};
+	"/api/v2/socket/subscribe/user": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["subscribeUser"];
+	};
+	"/api/v2/socket/subscribe/user/{id}": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["subscribeUserById"];
+	};
+	"/api/v3/socket/connect": {
+		/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["socketConnect"];
+	};
+	"/api/v3/socket/disconnect": {
+		/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["disconnectSocket"];
+	};
+	"/api/v2/payment/stripe/pk": {
+		/** TODO */
+		get: operations["retrievePublicKey"];
+	};
+	"/api/v2/user/subscriptions": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["listUserSubscriptionsV2"];
+	};
+	"/api/v2/user/subscribed": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["doesUserHaveSubV2"];
+	};
+	"/api/v3/user/subscriptions": {
+		/** Retrieve a list of all active subscriptions for the user. */
+		get: operations["listUserSubscriptionsV3"];
+	};
+	"/api/v3/user/subscribed": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["doesUserHaveSubV3"];
+	};
+	"/api/v2/support/": {
+		/** TODO */
+		post: operations["submitSupport"];
+	};
+	"/api/v2/support/ticket/types": {
+		/** TODO */
+		get: operations["getTicketTypes"];
+	};
+	"/api/v2/sync/connect": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["syncConnect"];
+	};
+	"/api/v2/sync/disconnect": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["disconnectSync"];
+	};
+	"/api/v2/video/transcode/progress": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getTranscodeProgress"];
+	};
+	"/api/v2/video/transcode/progress/subscribe": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["progressSubscribe"];
+	};
+	"/api/v2/video/transcode/progress/unsubscribe": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["progressUnsubscribe"];
+	};
+	"/api/cms/v3/processing/active": {
+		/** TODO */
+		get: operations["getActiveProcesses"];
+	};
+	"/api/cms/v3/transcode/subscribe": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["progressSubscribeCMS"];
+	};
+	"/api/cms/v3/transcode/unsubscribe": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["progressUnsubscribeCMS"];
+	};
+	"/api/v2/user/info": {
+		/** Retrieve more detailed information about one or more users from their identifiers. */
+		get: operations["getUserInfo"];
+	};
+	"/api/v2/user/self": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["self"];
+	};
+	"/api/v2/user/named": {
+		/** Retrieve more detailed information about one or more users from their usernames. */
+		get: operations["getUserInfoByName"];
+	};
+	"/api/v2/user/update": {
+		/** TODO */
+		post: operations["updateInfo"];
+	};
+	"/api/v2/user/email/update": {
+		/** TODO */
+		post: operations["updateEmail"];
+	};
+	"/api/v2/user/email/update/complete": {
+		/** TODO */
+		post: operations["completeEmailChange"];
+	};
+	"/api/v2/user/avatar": {
+		/** TODO */
+		post: operations["uploadAvatar"];
+	};
+	"/api/v2/user/password/change": {
+		/** TODO */
+		post: operations["changePassword"];
+	};
+	"/api/v2/user/creator": {
+		/** TODO */
+		get: operations["getUserCreator"];
+	};
+	"/api/v2/user/activity": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getActivityFeedV2"];
+	};
+	"/api/v2/user/links": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getExternalLinksV2"];
+		/** TODO - Not used in Floatplane code. */
+		post: operations["updateExternalLinksV2"];
+	};
+	"/api/v2/user/administrator": {
+		/** TODO */
+		get: operations["getAdministrator"];
+	};
+	"/api/v2/user/security": {
+		/** Retrieve information about the current security configuration for the user. */
+		get: operations["getSecurity"];
+	};
+	"/api/v2/user/security/2fa": {
+		/** TODO */
+		post: operations["generateTwoFactorSecret"];
+	};
+	"/api/v2/user/security/2fa/activate": {
+		/** TODO */
+		post: operations["activateTwoFactorAuthentication"];
+	};
+	"/api/v2/user/security/2fa/deactivate": {
+		/** TODO */
+		post: operations["deactivateTwoFactorAuthentication"];
+	};
+	"/api/v2/user/security/backupcode/activate": {
+		/** TODO */
+		post: operations["activateBackupCode"];
+	};
+	"/api/v2/user/security/backupcode/deactivate": {
+		/** TODO */
+		post: operations["deactivateBackupCode"];
+	};
+	"/api/v2/user/security/backupcode": {
+		/** TODO */
+		post: operations["generateBackupCode"];
+	};
+	"/api/v2/user/notificationsetting": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getUserNotificationSettingsV2"];
+		/** TODO - Not used in Floatplane code. */
+		post: operations["updateUserNotificationSettingsV2"];
+	};
+	"/api/v2/user/ban/status": {
+		/** Determine whether or not the user is banned for a given creator. */
+		get: operations["userCreatorBanStatus"];
+	};
+	"/api/v3/user/activity": {
+		/** Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators. */
+		get: operations["getActivityFeedV3"];
+	};
+	"/api/v3/user/links": {
+		/** Retrieve configured social media links from a user's profile. */
+		get: operations["getExternalLinksV3"];
+		/** TODO */
+		post: operations["updateExternalLinksV3"];
+	};
+	"/api/v3/user/self": {
+		/** Retrieve more detailed information about the user, including their name and email. */
+		get: operations["getSelf"];
+	};
+	"/api/v3/user/delete": {
+		/** TODO */
+		post: operations["scheduleDeletion"];
+	};
+	"/api/v3/user/undelete": {
+		/** TODO */
+		post: operations["unscheduleDeletion"];
+	};
+	"/api/v3/user/achievement/perks": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getAchievementPerks"];
+	};
+	"/api/v3/user/notification/list": {
+		/** Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator. */
+		get: operations["getUserNotificationSettingsV3"];
+	};
+	"/api/v3/user/notification/update": {
+		/** Enable or disable email or push notifications for a specific creator. */
+		post: operations["updateUserNotificationSettingsV3"];
+	};
+	"/api/v2/video/comments": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getVideoComments"];
+	};
+	"/api/v2/video/comment": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["addVideoComment"];
+	};
+	"/api/v2/video/comment/replies": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getVideoCommentReplies"];
+	};
+	"/api/v2/video/comment/interaction/clear": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["clearInteraction"];
+	};
+	"/api/v2/video/comment/interaction/set": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["setInteraction"];
+	};
+	"/api/v2/video/watchkey": {
+		/** TODO. This seems to originate from the `.m3u8` file captured from the CDN endpoint, and is not usually called directly from code. */
+		get: operations["watchKey"];
+	};
+	"/api/v2/video/info": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getVideo"];
+	};
+	"/api/v2/video/related": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getRelatedVideos"];
+	};
+	"/api/v2/video/update": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["updateVideo"];
+	};
+	"/api/v2/video/delete": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["deleteVideo"];
+	};
+	"/api/v2/video/list": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getList"];
+	};
+	"/api/v2/video/dash/watchkey": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getDashClearKeys"];
+		/** TODO - Not used in Floatplane code. */
+		post: operations["getDashClearKeysOverPost"];
+	};
+	"/api/v2/video/dash/chunk/signed": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getDashSignedChunkUrl"];
+	};
+	"/api/v2/playlist/videos": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["listPlaylistVideos"];
+	};
+	"/api/v2/video/upload/s3/multipart": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getUploadedPartsV2"];
+		/** TODO - Not used in Floatplane code. */
+		post: operations["createMultipartUploadV2"];
+	};
+	"/api/v2/video/upload/s3/multipart/sign": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["signPartUploadVideo"];
+	};
+	"/api/v2/video/upload/s3/multipart/abort": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["abortMultipartUploadV2"];
+	};
+	"/api/v2/video/upload/s3/multipart/complete": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["completeMultipartUploadVideo"];
+	};
+	"/api/v2/video/upload/thumbnail": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["uploadThumbnailV2"];
+	};
+	"/api/v2/webhooks/connectedAccount/{site}": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["connectedAccount"];
+	};
+	"/api/v3/webhooks/ivs/livestream": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["IVSlivestreamPublish"];
+	};
+	"/api/v3/webhooks/livestream": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["livestreamPublish"];
+	};
+	"/api/v2/push/web/info": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getAppInfoV2"];
+	};
+	"/api/v2/push/web/register": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["registerV2"];
+	};
+	"/api/v2/push/web/revoke": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["unregisterV2"];
+	};
+	"/api/v2/push/web/tokenInfo": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getTokenInfo"];
+	};
+	"/api/v3/push/web/info": {
+		/** TODO */
+		get: operations["getAppInfoV3"];
+	};
+	"/api/v3/push/web/register": {
+		/** TODO */
+		post: operations["registerV3"];
+	};
+	"/api/v3/push/web/revoke": {
+		/** TODO */
+		post: operations["unregisterV3"];
+	};
+	"/acp/v3/content/list": {
+		/** TODO */
+		get: operations["getContentList"];
+	};
+	"/acp/v3/content": {
+		/** TODO */
+		get: operations["getContentACP"];
+		/** TODO */
+		post: operations["postContent"];
+	};
+	"/acp/v3/order/list": {
+		/** TODO */
+		get: operations["getOrderList"];
+	};
+	"/acp/v3/order": {
+		/** TODO */
+		get: operations["getOrder"];
+		/** TODO */
+		post: operations["postOrder"];
+	};
+	"/acp/v3/manager": {
+		/** TODO */
+		post: operations["postManager"];
+	};
+	"/acp/v3/order/create": {
+		/** TODO */
+		post: operations["createOrder"];
+	};
+	"/acp/v3/order/augment": {
+		/** TODO */
+		post: operations["augmentOrder"];
+	};
+	"/acp/v3/upload/list": {
+		/** TODO */
+		get: operations["getUploadList"];
+	};
+	"/acp/v3/upload": {
+		/** TODO */
+		get: operations["getUpload"];
+		/** TODO */
+		post: operations["postUpload"];
+	};
+	"/acp/v3/job": {
+		/** TODO */
+		get: operations["getJob"];
+		/** TODO */
+		post: operations["postJob"];
+	};
+	"/acp/v3/task": {
+		/** TODO */
+		get: operations["getTask"];
+		/** TODO */
+		post: operations["postTask"];
+	};
+	"/api/cms/v3/blogPost/get": {
+		/** TODO */
+		get: operations["getBlogPostCMS"];
+	};
+	"/api/cms/v3/blogPost/list": {
+		/** TODO */
+		get: operations["listBlogPost"];
+	};
+	"/api/cms/v3/blogPost/create": {
+		/** TODO */
+		post: operations["createBlogPost"];
+	};
+	"/api/cms/v3/blogPost/edit": {
+		/** TODO */
+		post: operations["editBlogPost"];
+	};
+	"/api/cms/v3/blogPost/delete": {
+		/** TODO */
+		post: operations["deleteBlogPost"];
+	};
+	"/api/cms/v3/blogPost/attachments/update": {
+		/** TODO */
+		post: operations["updateNewAttachments"];
+	};
+	"/api/cms/v3/content/edit": {
+		/** TODO */
+		post: operations["editContent"];
+	};
+	"/api/cms/v3/content/video/list": {
+		/** TODO */
+		get: operations["listVideoContent"];
+	};
+	"/api/cms/v3/content/audio/list": {
+		/** TODO */
+		get: operations["listAudioContent"];
+	};
+	"/api/cms/v3/content/picture/list": {
+		/** TODO */
+		get: operations["listPictureContent"];
+	};
+	"/api/cms/v3/content/gallery/list": {
+		/** TODO */
+		get: operations["listGalleryContent"];
+	};
+	"/api/cms/v3/content/video/": {
+		/** TODO */
+		get: operations["getVideoContentCMS"];
+	};
+	"/api/cms/v3/content/audio/": {
+		/** TODO */
+		get: operations["getAudioContentCMS"];
+	};
+	"/api/cms/v3/content/picture/": {
+		/** TODO */
+		get: operations["getPictureContentCMS"];
+	};
+	"/api/cms/v3/content/gallery/": {
+		/** TODO */
+		get: operations["getGalleryContentCMS"];
+	};
+	"/api/cms/v3/content/": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getContentCMS"];
+	};
+	"/api/cms/v3/content/delete": {
+		/** TODO */
+		post: operations["deleteContent"];
+	};
+	"/api/cms/v3/creatorwarehouse": {
+		/** TODO */
+		get: operations["getCreatorWarehouse"];
+	};
+	"/api/cms/v3/creatorwarehouse/save": {
+		/** TODO */
+		post: operations["saveCreatorWarehouse"];
+	};
+	"/api/cms/v3/creatorwarehouse/pricerule/list": {
+		/** TODO */
+		post: operations["listPriceRules"];
+	};
+	"/api/cms/v3/creatorwarehouse/pricerule/": {
+		/** TODO */
+		post: operations["getPriceRule"];
+	};
+	"/api/cms/v3/creatorwarehouse/pricerule/create": {
+		/** TODO */
+		post: operations["createPriceRule"];
+	};
+	"/api/cms/v3/creatorwarehouse/pricerule/edit": {
+		/** TODO */
+		post: operations["editPriceRule"];
+	};
+	"/api/cms/v3/creatorwarehouse/pricerule/delete": {
+		/** TODO */
+		post: operations["deletePriceRule"];
+	};
+	"/api/cms/v3/creatorwarehouse/products/list": {
+		/** TODO */
+		post: operations["listProducts"];
+	};
+	"/api/cms/v3/creatorwarehouse/collections/list": {
+		/** TODO */
+		post: operations["listCollections"];
+	};
+	"/api/cms/v3/creatorwarehouse/shop/get": {
+		/** TODO */
+		post: operations["getShopInfo"];
+	};
+	"/api/cms/v3/creatorwarehouse/shop/shippingcountries/list": {
+		/** TODO */
+		post: operations["listShopShippingCountries"];
+	};
+	"/api/cms/v3/creatorwarehouse/products/get": {
+		/** TODO */
+		post: operations["getProducts"];
+	};
+	"/api/cms/v3/creatorwarehouse/collections/get": {
+		/** TODO */
+		post: operations["getCollections"];
+	};
+	"/api/cms/v3/creatorwarehouse/countries/get": {
+		/** TODO */
+		post: operations["getCountries"];
+	};
+	"/api/cms/v3/live/info": {
+		/** TODO */
+		get: operations["getLivestreamInfo"];
+	};
+	"/api/cms/v3/plan/list": {
+		/** TODO */
+		post: operations["listSubscriptionPlansCMS"];
+	};
+	"/api/cms/v3/subscribers/list": {
+		/** TODO */
+		get: operations["listSubscribers"];
+	};
+	"/api/cms/v3/subscribers/download": {
+		/** TODO */
+		get: operations["downloadSubscribers"];
+	};
+	"/api/v3/comment": {
+		/** Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded. */
+		get: operations["getComments"];
+		/** Post a new comment to a blog post object. */
+		post: operations["postComment"];
+	};
+	"/api/v3/comment/replies": {
+		/** Retrieve more replies from a comment. */
+		get: operations["getCommentReplies"];
+	};
+	"/api/v3/comment/like": {
+		/** Like a comment on a blog post. */
+		post: operations["likeComment"];
+	};
+	"/api/v3/comment/dislike": {
+		/** Dislike a comment on a blog post. */
+		post: operations["dislikeComment"];
+	};
+	"/api/v3/content/creator": {
+		/**
+		 * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
+		 *
+		 * Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
+		 */
+		get: operations["getCreatorBlogPosts"];
+	};
+	"/api/v3/content/creator/list": {
+		/**
+		 * Retrieve paginated blog posts from multiple creators for the home page.
+		 *
+		 * Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
+		 */
+		get: operations["getMultiCreatorBlogPosts"];
+	};
+	"/api/v3/content/tags": {
+		/** Retrieve all tags and the number of times the tags have been used for the specified creator(s). */
+		get: operations["getContentTags"];
+	};
+	"/api/v3/content/post": {
+		/** Retrieve more details on a specific blog post object for viewing. */
+		get: operations["getBlogPost"];
+	};
+	"/api/v3/content/related": {
+		/** Retrieve a list of blog posts that are related to the post being viewed. */
+		get: operations["getRelatedBlogPosts"];
+	};
+	"/api/v3/content/video": {
+		/** Retrieve more information on a video attachment from a blog post in order to consume the video content. */
+		get: operations["getVideoContent"];
+	};
+	"/api/v3/content/audio": {
+		/** TODO */
+		get: operations["getAudioContent"];
+	};
+	"/api/v3/content/picture": {
+		/** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
+		get: operations["getPictureContent"];
+	};
+	"/api/v3/content/gallery": {
+		/** TODO */
+		get: operations["getGalleryContent"];
+	};
+	"/api/v3/content/info": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getContent"];
+	};
+	"/api/v3/content/like": {
+		/** Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed. */
+		post: operations["likeContent"];
+	};
+	"/api/v3/content/dislike": {
+		/** Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed. */
+		post: operations["dislikeContent"];
+	};
+	"/api/v3/content/picture/url": {
+		/** TODO - Not used in Floatplane code. */
+		get: operations["getPictureUrl"];
+	};
+	"/api/v3/content/upload/s3/multipart": {
+		/** TODO */
+		get: operations["getUploadedPartsV3"];
+		/** TODO */
+		post: operations["createMultipartUploadV3"];
+	};
+	"/api/v3/content/upload/s3/multipart/sign": {
+		/** TODO */
+		get: operations["signPartUploadContent"];
+	};
+	"/api/v3/content/upload/s3/multipart/abort": {
+		/** TODO */
+		post: operations["abortMultipartUploadV3"];
+	};
+	"/api/v3/content/upload/s3/multipart/complete": {
+		/** TODO */
+		post: operations["completeMultipartUploadContent"];
+	};
+	"/api/v3/content/upload/thumbnail": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["uploadThumbnailV3"];
+	};
+	"/api/v3/content/thumbnail/subscribe": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["thumbnailUpdateSubscribe"];
+	};
+	"/api/v3/content/thumbnail/unsubscribe": {
+		/** TODO - Not used in Floatplane code. */
+		post: operations["thumbnailUpdateUnsubscribe"];
+	};
+	"/api/v3/poll/live/joinroom": {
+		/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["joinLiveRoom"];
+	};
+	"/api/v3/poll/live/joinLiveRoomModerator": {
+		/** TODO - Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["joinLiveRoomModerator"];
+	};
+	"/api/v3/poll/live/leaveLiveRoom": {
+		/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["leaveLiveRoom"];
+	};
+	"/api/v3/poll/live/leaveLiveRoomModerator": {
+		/** TODO - Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["leaveLiveRoomModerator"];
+	};
+	"/api/v3/poll/votePoll": {
+		/** Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error. */
+		post: operations["votePoll"];
+	};
+	"/api/v3/poll/cms/list": {
+		/** TODO */
+		get: operations["cmsListPolls"];
+	};
+	"/api/v3/poll/live/create": {
+		/** TODO */
+		post: operations["createLivePoll"];
+	};
+	"/api/v3/poll/close": {
+		/** TODO */
+		post: operations["closePoll"];
+	};
+	"/api/v3/redirect-yt-latest/{channelKey}": {
+		/** Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code. */
+		post: operations["redirectYTLatest"];
+	};
+	"/api/v3/user/loyaltyreward/list": {
+		/** Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown. */
+		post: operations["listCreatorLoyaltyReward"];
+	};
+	"/api/v3/user/loyaltyreward/claim": {
+		/** TODO */
+		post: operations["claimLoyaltyReward"];
+	};
+	"/api/v3/experiments/vpn/enabled": {
+		/** TODO */
+		get: operations["getEnabledState"];
+		/** TODO */
+		post: operations["updateEnabledState"];
+	};
+	"/api/v3/experiments/vpn/profile/download": {
+		/** TODO */
+		get: operations["downloadUserProfile"];
+	};
+	"/api/v3/experiments/vpn/profile/ephemeral": {
+		/** TODO - Not used in Floatplane code yet. */
+		get: operations["getUserProfileLinksEphemeral"];
+	};
+	"/api/v3/experiments/vpn/server/list": {
+		/** TODO */
+		get: operations["getServerList"];
+	};
 }
 
 export interface components {
-  schemas: {
-    AuthLoginV2Request: {
-      username: string;
-      password: string;
-      /** @description The Google Recaptcha v2/v3 token to verify the request. On web browsers, this is required. For mobile or TV applications, this is not required only if the User-Agent indicates so (e.g., if the User-Agent contains "CFNetwork" in its value). Otherwise, the application would have to supply a valid captcha token, which can be difficult to obtain dynamically in some scenarios. */
-      captchaToken: string | null;
-    };
-    AuthLoginV2Response: {
-      /** @description Identifying information about the new-logged-in user upon success. May be undefined when `needs2FA` is `true`. */
-      user?: components["schemas"]["UserModel"];
-      /** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
-      needs2FA: boolean;
-    };
-    CheckFor2faLoginRequest: {
-      /** @description The two-factor authentication token that the user inputs to complete the login process. */
-      token: string;
-    };
-    /** @description Represents a quality of video to download/stream. */
-    CdnDeliveryV2QualityLevelModel: {
-      /** @description Used to identify this level of quality, and to refer to the `qualityLevelParams` object below by the property key. */
-      name: string;
-      /** @description The video quality's resolution's width in pixels. */
-      width: number;
-      /** @description The video quality resolution's height in pixels. */
-      height: number;
-      /** @description The display-friendly version of `name`. */
-      label: string;
-      /** @description The display order to be shown to the user. */
-      order: number;
-    };
-    CdnDeliveryV2VodResponse: {
-      /**
-       * Format: uri
-       * @description The domain of the CDN server to use. Combine with data from the `resource` object to create a full URL.
-       */
-      cdn: string;
-      /**
-       * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
-       * @enum {string}
-       */
-      strategy: "cdn" | "client";
-      resource: {
-        /** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property, depending on chosen resolution. First, choose the `qualityLevel`, then use the given token from the `qualityLevelParam` for that `qualityLevel`'s `name`. */
-        uri: string;
-        data: {
-          qualityLevels: components["schemas"]["CdnDeliveryV2QualityLevelModel"][];
-          /** @description For each `qualityLevel` above, there will be an entry in this map where the property name matches the `qulityLevel[].name` containing a token to apply to the URL. */
-          qualityLevelParams: {
-            [key: string]: {
-              token: string;
-            };
-          };
-        };
-      };
-    };
-    CdnDeliveryV2DownloadResponse: components["schemas"]["EdgesModel"] & {
-      /**
-       * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
-       * @enum {string}
-       */
-      strategy: "cdn" | "client";
-      resource: {
-        /** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property, depending on chosen resolution. First, choose the `qualityLevel`, then use the given token from the `qualityLevelParam` for that `qualityLevel`'s `name`. */
-        uri: string;
-        data: {
-          qualityLevels: components["schemas"]["CdnDeliveryV2QualityLevelModel"][];
-          token: string;
-        };
-      };
-    };
-    CdnDeliveryV2LivestreamResponse: {
-      /**
-       * Format: uri
-       * @description The domain of the CDN server to use. Combine with data from the `resource` object to create a full URL.
-       */
-      cdn: string;
-      /**
-       * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
-       * @enum {string}
-       */
-      strategy: "cdn" | "client";
-      resource: {
-        /** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property. */
-        uri: string;
-        data: {
-          token: string;
-        };
-      };
-    };
-    CdnDeliveryV2Response:
-      | components["schemas"]["CdnDeliveryV2VodResponse"]
-      | components["schemas"]["CdnDeliveryV2DownloadResponse"]
-      | components["schemas"]["CdnDeliveryV2LivestreamResponse"];
-    PaymentInvoiceListV2Response: {
-      invoices: {
-        id: number;
-        amountDue: number;
-        amountTax: number;
-        attemptCount: number;
-        currency: string;
-        /** Format: date-time */
-        date: string;
-        /** Format: date-time */
-        dateDue: string | null;
-        /** Format: date-time */
-        periodStart: string;
-        /** Format: date-time */
-        periodEnd: string;
-        /** Format: date-time */
-        nextPaymentAttempt: string | null;
-        paid: boolean;
-        forgiven: boolean;
-        refunded: boolean;
-        /** @description The subscriptions this invoice is in reference to. */
-        subscriptions:
-          | {
-              id: number;
-              subscription: number;
-              /** Format: date-time */
-              periodStart: string | null;
-              /** Format: date-time */
-              periodEnd: string | null;
-              value: number;
-              amountSubtotal: number;
-              amountTotal: number;
-              amountTax: number;
-              plan: {
-                id: string;
-                title: string;
-                creator: {
-                  id: string;
-                  title: string;
-                  urlname: string;
-                  icon: components["schemas"]["ImageModel"];
-                };
-              };
-            }[]
-          | null;
-      }[];
-    };
-    PlanInfoV2Response: {
-      /** @description The total number of subscribers for this creator. */
-      totalSubscriberCount: number;
-      /** @description The total amount of monthly income for this creator. This field tends to always be $0 for regular users. */
-      totalIncome: string | null;
-      plans: (components["schemas"]["SubscriptionPlanModel"] & {
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string | null;
-        enabled: boolean;
-        paymentID: number;
-        trialPeriod: number;
-        creator: string;
-        userIsSubscribed: boolean;
-        userIsGrandfathered: boolean;
-        enabledGlobal: boolean;
-      })[];
-    };
-    UserInfoV2Response: {
-      users: {
-        id: string;
-        user:
-          | components["schemas"]["UserModel"]
-          | components["schemas"]["UserSelfModel"];
-      }[];
-    };
-    UserNamedV2Response: {
-      users: {
-        id: string;
-        user:
-          | components["schemas"]["UserModel"]
-          | components["schemas"]["UserSelfModel"];
-      }[];
-    };
-    UserSecurityV2Response: {
-      twofactorEnabled: boolean;
-      twofactorBackupCodeEnabled: boolean;
-    };
-    CommentV3PostRequest: {
-      /** @description The GUID of the blogPost the comment should be posted to. */
-      blogPost: string;
-      /** @description The text of the comment being posted. */
-      text: string;
-    };
-    CommentV3PostResponse: {
-      id: string;
-      blogPost: string;
-      user: components["schemas"]["UserModel"];
-      contentReference: string;
-      contentReferenceType: string;
-      text: string;
-      replying: string;
-      postDate: string;
-      editDate: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      interactionCounts: {
-        like: number;
-        dislike: number;
-      };
-    };
-    CommentLikeV3PostRequest: {
-      /** @description The GUID of the comment being liked. */
-      comment: string;
-      /** @description The GUID of the post the comment is on. */
-      blogPost: string;
-    };
-    ContentCreatorListV3Response: {
-      blogPosts: components["schemas"]["BlogPostModelV3"][];
-      /** @description Information about paging: what the last ID retrieve is and if more posts can be retrieved afterward for subsequent requests. */
-      lastElements: components["schemas"]["ContentCreatorListLastItems"][];
-    };
-    ContentCreatorListLastItems: {
-      creatorId: string;
-      /** @description This may be returned as `null` if no blog posts for this creator appeared yet on this page of blog posts. However, Floatplane will complain if this is sent with a `null` value. */
-      blogPostId: string | null;
-      moreFetchable: boolean;
-    };
-    ContentPostV3Response: {
-      id: string;
-      guid: string;
-      title: string;
-      /** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML. */
-      text: string;
-      /** @enum {string} */
-      type: "blogPost";
-      tags: string[];
-      attachmentOrder: string[];
-      metadata: components["schemas"]["PostMetadataModel"];
-      /** Format: date-time */
-      releaseDate: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      comments: number;
-      creator: components["schemas"]["CreatorModelV2"];
-      wasReleasedSilently: boolean;
-      thumbnail: components["schemas"]["ImageModel"] | null;
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-      userInteraction: components["schemas"]["UserInteractionModel"] | null;
-      /** @description May be undefined when the post is locked. */
-      videoAttachments?: components["schemas"]["VideoAttachmentModel"][];
-      /** @description May be undefined when the post is locked. */
-      audioAttachments?: components["schemas"]["AudioAttachmentModel"][];
-      /** @description May be undefined when the post is locked. */
-      pictureAttachments?: components["schemas"]["PictureAttachmentModel"][];
-      /** @description May be undefined when the post is locked. */
-      galleryAttachments?: unknown[];
-    };
-    ContentVideoV3Response: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      /** Format: date-time */
-      releaseDate: string | null;
-      /** @description Unit: seconds. */
-      duration: number;
-      creator: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      primaryBlogPost: string;
-      thumbnail: components["schemas"]["ImageModel"];
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-      blogPosts: string[];
-      timelineSprite: components["schemas"]["ImageModel"];
-      userInteraction: components["schemas"]["UserInteractionModel"] | null;
-      levels: {
-        name: string;
-        width: number;
-        height: number;
-        label: string;
-        order: number;
-      }[];
-    };
-    ContentPictureV3Response: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      creator: string;
-      primaryBlogPost: string;
-      userInteraction: components["schemas"]["UserInteractionModel"] | null;
-      thumbnail: components["schemas"]["ImageModel"];
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-      imageFiles: components["schemas"]["ImageFileModel"][];
-    };
-    UserActivityV3Response: {
-      activity: {
-        /** Format: date-time */
-        time: string;
-        comment: string;
-        postTitle: string;
-        postId: string;
-        creatorTitle: string;
-        creatorUrl: string;
-      }[];
-      visibility: string;
-    };
-    UserLinksV3Response: {
-      [key: string]: {
-        /**
-         * Format: uri
-         * @description The URL the user has configured for this link.
-         */
-        url: string;
-        type: {
-          /** @description The code name of this link type. */
-          name: string;
-          /** @description The display-friendly name of this link type. */
-          displayName: string;
-          /** @description The hostname that should be a part of the URL. */
-          hostName: string;
-        };
-      };
-    };
-    UserNotificationUpdateV3PostRequest: {
-      creator: string;
-      /**
-       * @description Use `contentEmail` for email notifications, and `contentFirebase` for push notifications.
-       * @enum {string}
-       */
-      property: "contentEmail" | "contentFirebase";
-      newValue: boolean;
-    };
-    UserSelfV3Response: {
-      id: string;
-      username: string;
-      profileImage: components["schemas"]["ImageModel"];
-      email: string;
-      displayName: string;
-      creators: unknown[];
-      /** Format: date-time */
-      scheduledDeletionDate: string | null;
-    };
-    ContentLikeV3Request: {
-      /** @enum {string} */
-      contentType: "blogPost";
-      id: string;
-    };
-    GetCaptchaInfoResponse: {
-      v2: {
-        variants: {
-          android: {
-            siteKey: string;
-          };
-          checkbox: {
-            siteKey: string;
-          };
-          invisible: {
-            siteKey: string;
-          };
-        };
-      };
-      v3: {
-        variants: {
-          invisible: {
-            siteKey: string;
-          };
-        };
-      };
-    };
-    ErrorModel: {
-      id: string;
-      errors: {
-        id: string;
-        name: string;
-        /** @description May be undefined. */
-        message?: string | null;
-        /** @description May be undefined. */
-        data?: { [key: string]: unknown } | null;
-      }[];
-      /** @description May be undefined. */
-      message?: string;
-    };
-    PaymentAddressModel: {
-      id: number;
-      customerName: string;
-      postalCode: string;
-      line1: string;
-      city: string;
-      region: string;
-      country: string;
-      default: boolean;
-    };
-    PaymentMethodModel: {
-      id: number;
-      payment_processor: number;
-      default: boolean;
-      card: {
-        brand: string;
-        last4: string;
-        exp_month: number;
-        exp_year: number;
-        name: string;
-      };
-    };
-    CreatorModelV2: {
-      id: string;
-      owner: string;
-      title: string;
-      urlname: string;
-      description: string;
-      about: string;
-      category: string;
-      cover: components["schemas"]["ImageModel"] | null;
-      icon: components["schemas"]["ImageModel"];
-      liveStream: components["schemas"]["LiveStreamModel"] | null;
-      subscriptionPlans: { [key: string]: unknown }[] | null;
-      discoverable: boolean;
-      subscriberCountDisplay: string;
-      incomeDisplay: boolean;
-    };
-    CreatorModelV2Extended: components["schemas"]["CreatorModelV2"] & {
-      socialLinks: components["schemas"]["SocialLinksModel"];
-      discordServers: components["schemas"]["DiscordServerModel"][];
-    };
-    CreatorModelV3: {
-      id: string;
-      owner: string;
-      title: string;
-      urlname: string;
-      description: string;
-      about: string;
-      category: {
-        title: string;
-      };
-      cover: components["schemas"]["ImageModel"] | null;
-      icon: components["schemas"]["ImageModel"];
-      liveStream: components["schemas"]["LiveStreamModel"] | null;
-      subscriptionPlans:
-        | components["schemas"]["SubscriptionPlanModel"][]
-        | null;
-      discoverable: boolean;
-      subscriberCountDisplay: string;
-      incomeDisplay: boolean;
-      socialLinks: components["schemas"]["SocialLinksModel"];
-    };
-    BlogPostModelV3Base: {
-      id: string;
-      guid: string;
-      title: string;
-      /** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML.. */
-      text: string;
-      /** @enum {string} */
-      type: "blogPost";
-      tags: string[];
-      attachmentOrder: string[];
-      metadata: components["schemas"]["PostMetadataModel"];
-      /** Format: date-time */
-      releaseDate: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      comments: number;
-      creator: {
-        id: string;
-        owner: {
-          id: string;
-          username: string;
-        };
-        title: string;
-        urlname: string;
-        description: string;
-        about: string;
-        category: {
-          title: string;
-        };
-        cover: components["schemas"]["ImageModel"];
-        icon: components["schemas"]["ImageModel"];
-        liveStream: components["schemas"]["LiveStreamModel"] | null;
-        subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][];
-        discoverable: boolean;
-        subscriberCountDisplay: string;
-        incomeDisplay: boolean;
-        card: components["schemas"]["ImageModel"] | null;
-      };
-      wasReleasedSilently: boolean;
-      thumbnail: components["schemas"]["ImageModel"] | null;
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-    };
-    BlogPostModelV3: components["schemas"]["BlogPostModelV3Base"] & {
-      videoAttachments: string[];
-      audioAttachments: string[];
-      pictureAttachments: string[];
-      galleryAttachments: string[];
-    };
-    SubscriptionPlanModel: {
-      id: string;
-      title: string;
-      description: string;
-      price: string | null;
-      priceYearly: string | null;
-      currency: string;
-      logo: string | null;
-      interval: string;
-      featured: boolean;
-      allowGrandfatheredAccess: boolean | null;
-      discordServers: components["schemas"]["DiscordServerModel"][];
-      discordRoles: components["schemas"]["DiscordRoleModel"][];
-    };
-    PostMetadataModel: {
-      hasVideo: boolean;
-      videoCount: number;
-      videoDuration: number;
-      hasAudio: boolean;
-      audioCount: number;
-      audioDuration: number;
-      hasPicture: boolean;
-      pictureCount: number;
-      hasGallery: boolean;
-      galleryCount: number;
-      isFeatured: boolean;
-    };
-    VideoAttachmentModel: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      /** Format: date-time */
-      releaseDate: string | null;
-      duration: number;
-      creator: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      primaryBlogPost: string;
-      thumbnail: components["schemas"]["ImageModel"];
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-    };
-    PictureAttachmentModel: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      creator: string;
-      primaryBlogPost: string;
-      thumbnail: components["schemas"]["ImageModel"];
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-    };
-    AudioAttachmentModel: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      duration: number;
-      waveform: {
-        dataSetLength: number;
-        highestValue: number;
-        lowestValue: number;
-        data: number[];
-      };
-      creator: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      primaryBlogPost: string;
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-    };
-    ImageModel: {
-      width: number;
-      height: number;
-      /** Format: uri */
-      path: string;
-      childImages: components["schemas"]["ChildImageModel"][] | null;
-    };
-    ChildImageModel: {
-      width: number;
-      height: number;
-      /** Format: uri */
-      path: string;
-    };
-    ImageFileModel: {
-      /** Format: uri */
-      path: string;
-      width: number;
-      height: number;
-      size: number;
-    };
-    LiveStreamModel: {
-      id: string;
-      title: string;
-      description: string;
-      thumbnail: components["schemas"]["ImageModel"] | null;
-      owner: string;
-      streamPath: string;
-      offline: {
-        title: string;
-        description: string;
-        thumbnail: components["schemas"]["ImageModel"];
-      };
-    };
-    SocialLinksModel: { [key: string]: string };
-    DiscordServerModel: {
-      id: string;
-      guildName: string;
-      guildIcon: string;
-      /** Format: uri */
-      inviteLink: string;
-      inviteMode: string;
-    };
-    DiscordRoleModel: {
-      server: string;
-      roleName: string;
-    };
-    /** @description Represents some basic information of a user (id, username, and profile image). */
-    UserModel: {
-      id: string;
-      username: string;
-      profileImage: components["schemas"]["ImageModel"];
-    };
-    UserSelfModel: {
-      id: string;
-      username: string;
-      profileImage: components["schemas"]["ImageModel"];
-      email: string;
-      displayName: string;
-    };
-    ConnectedAccountModel: {
-      /** @description Unique identifier for the account type. */
-      key: string;
-      /** @description Display-friendly label for the `key`. */
-      name: string;
-      /** @description Determines if the system allows this account to be connected to. */
-      enabled: boolean;
-      iconWhite: string;
-      connectedAccount: {
-        id: string;
-        remoteUserId: string;
-        remoteUserName: string;
-        data: {
-          canJoinGuilds: boolean;
-        };
-      };
-      /** @description If true, the user is connected and the `connectedAccount` will have data about the account. */
-      connected: boolean;
-      isAccountProvider: boolean;
-    };
-    CommentModel: {
-      id: string;
-      blogPost: string;
-      user: components["schemas"]["UserModel"];
-      contentReference: string;
-      contentReferenceType: string;
-      text: string;
-      replying: string;
-      postDate: string;
-      editDate: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      interactionCounts: {
-        like: number;
-        dislike: number;
-      };
-      totalReplies: number;
-      replies: components["schemas"]["CommentReplyModel"][];
-      userInteraction: components["schemas"]["UserInteractionModel"] | null;
-    };
-    CommentReplyModel: {
-      id: string;
-      blogPost: string;
-      user: components["schemas"]["UserModel"];
-      contentReference: string;
-      contentReferenceType: string;
-      text: string;
-      replying: string;
-      /** Format: date-time */
-      postDate: string;
-      /** Format: date-time */
-      editDate: string | null;
-      likes: number;
-      dislikes: number;
-      score: number;
-      interactionCounts: {
-        like: number;
-        dislike: number;
-      };
-      userInteraction: components["schemas"]["UserInteractionModel"] | null;
-    };
-    UserNotificationModel: {
-      creator: components["schemas"]["CreatorModelV2"];
-      userNotificationSetting: {
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string | null;
-        id: string;
-        contentEmail: boolean;
-        contentFirebase: boolean;
-        creatorMessageEmail: boolean;
-        user: string;
-        creator: string;
-      };
-    };
-    UserSubscriptionModel: {
-      /** Format: date-time */
-      startDate: string;
-      /** Format: date-time */
-      endDate: string | null;
-      paymentID: number;
-      interval: string;
-      paymentCancelled: boolean;
-      plan: components["schemas"]["SubscriptionPlanModel"];
-      creator: string;
-    };
-    FaqSectionModel: {
-      faqs: {
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string | null;
-        id: string;
-        question: string;
-        /** @description This field may contain HTML that should be rendered. */
-        answer: string;
-        /** @enum {string} */
-        status: "public";
-        link: string;
-        order: number;
-        faqSection: string;
-      }[];
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: date-time */
-      updatedAt: string | null;
-      id: string;
-      name: string;
-      description: string;
-      /** @enum {string} */
-      status: "public";
-      order: number;
-    };
-    UserInteractionModel: ("like" | "dislike")[];
-    EdgesModel: {
-      edges: components["schemas"]["EdgeModel"][];
-      client: { [key: string]: unknown };
-    };
-    EdgeModel: {
-      hostname: string;
-      queryPort: number;
-      /** Format: int64 */
-      bandwidth: number;
-      allowDownload: boolean;
-      allowStreaming: boolean;
-      datacenter: {
-        countryCode: string;
-        regionCode: string;
-        latitude: number;
-        longitude: number;
-      };
-    };
-  };
-  responses: {
-    /** Bad Request - The request has errors and the server did not process it. */
-    "400BadRequest": {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-    /** Unauthenticated - The request was not authenticated to make the request. */
-    "401Unauthenticated": {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-    /** Forbidden - The request was not authenticated to make the request. */
-    "403Forbidden": {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-    /** Not Found - The resource was not found. */
-    "404NotFound": {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-    /** Unexpected response code */
-    Unexpected: {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-  };
+	schemas: {
+		AuthLoginV2Request: {
+			username: string;
+			password: string;
+			/** @description The Google Recaptcha v2/v3 token to verify the request. On web browsers, this is required. For mobile or TV applications, this is not required only if the User-Agent indicates so (e.g., if the User-Agent contains "CFNetwork" in its value). Otherwise, the application would have to supply a valid captcha token, which can be difficult to obtain dynamically in some scenarios. */
+			captchaToken: string | null;
+		};
+		AuthLoginV2Response: {
+			/** @description Identifying information about the new-logged-in user upon success. May be undefined when `needs2FA` is `true`. */
+			user?: components["schemas"]["UserModel"];
+			/** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
+			needs2FA: boolean;
+		};
+		CheckFor2faLoginRequest: {
+			/** @description The two-factor authentication token that the user inputs to complete the login process. */
+			token: string;
+		};
+		/** @description Represents a quality of video to download/stream. */
+		CdnDeliveryV2QualityLevelModel: {
+			/** @description Used to identify this level of quality, and to refer to the `qualityLevelParams` object below by the property key. */
+			name: string;
+			/** @description The video quality's resolution's width in pixels. */
+			width: number;
+			/** @description The video quality resolution's height in pixels. */
+			height: number;
+			/** @description The display-friendly version of `name`. */
+			label: string;
+			/** @description The display order to be shown to the user. */
+			order: number;
+		};
+		CdnDeliveryV2VodResponse: {
+			/**
+			 * Format: uri
+			 * @description The domain of the CDN server to use. Combine with data from the `resource` object to create a full URL.
+			 */
+			cdn: string;
+			/**
+			 * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
+			 * @enum {string}
+			 */
+			strategy: "cdn" | "client";
+			resource: {
+				/** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property, depending on chosen resolution. First, choose the `qualityLevel`, then use the given token from the `qualityLevelParam` for that `qualityLevel`'s `name`. */
+				uri: string;
+				data: {
+					qualityLevels: components["schemas"]["CdnDeliveryV2QualityLevelModel"][];
+					/** @description For each `qualityLevel` above, there will be an entry in this map where the property name matches the `qulityLevel[].name` containing a token to apply to the URL. */
+					qualityLevelParams: {
+						[key: string]: {
+							token: string;
+						};
+					};
+				};
+			};
+		};
+		CdnDeliveryV2DownloadResponse: components["schemas"]["EdgesModel"] & {
+			/**
+			 * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
+			 * @enum {string}
+			 */
+			strategy: "cdn" | "client";
+			resource: {
+				/** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property, depending on chosen resolution. First, choose the `qualityLevel`, then use the given token from the `qualityLevelParam` for that `qualityLevel`'s `name`. */
+				uri: string;
+				data: {
+					qualityLevels: components["schemas"]["CdnDeliveryV2QualityLevelModel"][];
+					token: string;
+				};
+			};
+		};
+		CdnDeliveryV2LivestreamResponse: {
+			/**
+			 * Format: uri
+			 * @description The domain of the CDN server to use. Combine with data from the `resource` object to create a full URL.
+			 */
+			cdn: string;
+			/**
+			 * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
+			 * @enum {string}
+			 */
+			strategy: "cdn" | "client";
+			resource: {
+				/** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property. */
+				uri: string;
+				data: {
+					token: string;
+				};
+			};
+		};
+		CdnDeliveryV2Response:
+			| components["schemas"]["CdnDeliveryV2VodResponse"]
+			| components["schemas"]["CdnDeliveryV2DownloadResponse"]
+			| components["schemas"]["CdnDeliveryV2LivestreamResponse"];
+		PaymentInvoiceListV2Response: {
+			invoices: {
+				id: number;
+				amountDue: number;
+				amountTax: number;
+				attemptCount: number;
+				currency: string;
+				/** Format: date-time */
+				date: string;
+				/** Format: date-time */
+				dateDue: string | null;
+				/** Format: date-time */
+				periodStart: string;
+				/** Format: date-time */
+				periodEnd: string;
+				/** Format: date-time */
+				nextPaymentAttempt: string | null;
+				paid: boolean;
+				forgiven: boolean;
+				refunded: boolean;
+				/** @description The subscriptions this invoice is in reference to. */
+				subscriptions:
+					| {
+							id: number;
+							subscription: number;
+							/** Format: date-time */
+							periodStart: string | null;
+							/** Format: date-time */
+							periodEnd: string | null;
+							value: number;
+							amountSubtotal: number;
+							amountTotal: number;
+							amountTax: number;
+							plan: {
+								id: string;
+								title: string;
+								creator: {
+									id: string;
+									title: string;
+									urlname: string;
+									icon: components["schemas"]["ImageModel"];
+								};
+							};
+					  }[]
+					| null;
+			}[];
+		};
+		PlanInfoV2Response: {
+			/** @description The total number of subscribers for this creator. */
+			totalSubscriberCount: number;
+			/** @description The total amount of monthly income for this creator. This field tends to always be $0 for regular users. */
+			totalIncome: string | null;
+			plans: (components["schemas"]["SubscriptionPlanModel"] & {
+				/** Format: date-time */
+				createdAt: string;
+				/** Format: date-time */
+				updatedAt: string | null;
+				enabled: boolean;
+				paymentID: number;
+				trialPeriod: number;
+				creator: string;
+				userIsSubscribed: boolean;
+				userIsGrandfathered: boolean;
+				enabledGlobal: boolean;
+			})[];
+		};
+		UserInfoV2Response: {
+			users: {
+				id: string;
+				user: components["schemas"]["UserModel"] | components["schemas"]["UserSelfModel"];
+			}[];
+		};
+		UserNamedV2Response: {
+			users: {
+				id: string;
+				user: components["schemas"]["UserModel"] | components["schemas"]["UserSelfModel"];
+			}[];
+		};
+		UserSecurityV2Response: {
+			twofactorEnabled: boolean;
+			twofactorBackupCodeEnabled: boolean;
+		};
+		CommentV3PostRequest: {
+			/** @description The GUID of the blogPost the comment should be posted to. */
+			blogPost: string;
+			/** @description The text of the comment being posted. */
+			text: string;
+		};
+		CommentV3PostResponse: {
+			id: string;
+			blogPost: string;
+			user: components["schemas"]["UserModel"];
+			contentReference: string;
+			contentReferenceType: string;
+			text: string;
+			replying: string;
+			postDate: string;
+			editDate: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			interactionCounts: {
+				like: number;
+				dislike: number;
+			};
+		};
+		CommentLikeV3PostRequest: {
+			/** @description The GUID of the comment being liked. */
+			comment: string;
+			/** @description The GUID of the post the comment is on. */
+			blogPost: string;
+		};
+		ContentCreatorListV3Response: {
+			blogPosts: components["schemas"]["BlogPostModelV3"][];
+			/** @description Information about paging: what the last ID retrieve is and if more posts can be retrieved afterward for subsequent requests. */
+			lastElements: components["schemas"]["ContentCreatorListLastItems"][];
+		};
+		ContentCreatorListLastItems: {
+			creatorId: string;
+			/** @description This may be returned as `null` if no blog posts for this creator appeared yet on this page of blog posts. However, Floatplane will complain if this is sent with a `null` value. */
+			blogPostId: string | null;
+			moreFetchable: boolean;
+		};
+		ContentPostV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			/** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML. */
+			text: string;
+			/** @enum {string} */
+			type: "blogPost";
+			tags: string[];
+			attachmentOrder: string[];
+			metadata: components["schemas"]["PostMetadataModel"];
+			/** Format: date-time */
+			releaseDate: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			comments: number;
+			creator: components["schemas"]["CreatorModelV2"];
+			wasReleasedSilently: boolean;
+			thumbnail: components["schemas"]["ImageModel"] | null;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			userInteraction: components["schemas"]["UserInteractionModel"] | null;
+			/** @description May be undefined when the post is locked. */
+			videoAttachments?: components["schemas"]["VideoAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			audioAttachments?: components["schemas"]["AudioAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			pictureAttachments?: components["schemas"]["PictureAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			galleryAttachments?: unknown[];
+		};
+		ContentVideoV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			/** Format: date-time */
+			releaseDate: string | null;
+			/** @description Unit: seconds. */
+			duration: number;
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			blogPosts: string[];
+			timelineSprite: components["schemas"]["ImageModel"];
+			userInteraction: components["schemas"]["UserInteractionModel"] | null;
+			levels: {
+				name: string;
+				width: number;
+				height: number;
+				label: string;
+				order: number;
+			}[];
+		};
+		ContentPictureV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			creator: string;
+			primaryBlogPost: string;
+			userInteraction: components["schemas"]["UserInteractionModel"] | null;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			imageFiles: components["schemas"]["ImageFileModel"][];
+		};
+		UserActivityV3Response: {
+			activity: {
+				/** Format: date-time */
+				time: string;
+				comment: string;
+				postTitle: string;
+				postId: string;
+				creatorTitle: string;
+				creatorUrl: string;
+			}[];
+			visibility: string;
+		};
+		UserLinksV3Response: {
+			[key: string]: {
+				/**
+				 * Format: uri
+				 * @description The URL the user has configured for this link.
+				 */
+				url: string;
+				type: {
+					/** @description The code name of this link type. */
+					name: string;
+					/** @description The display-friendly name of this link type. */
+					displayName: string;
+					/** @description The hostname that should be a part of the URL. */
+					hostName: string;
+				};
+			};
+		};
+		UserNotificationUpdateV3PostRequest: {
+			creator: string;
+			/**
+			 * @description Use `contentEmail` for email notifications, and `contentFirebase` for push notifications.
+			 * @enum {string}
+			 */
+			property: "contentEmail" | "contentFirebase";
+			newValue: boolean;
+		};
+		UserSelfV3Response: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+			email: string;
+			displayName: string;
+			creators: unknown[];
+			/** Format: date-time */
+			scheduledDeletionDate: string | null;
+		};
+		ContentLikeV3Request: {
+			/** @enum {string} */
+			contentType: "blogPost";
+			id: string;
+		};
+		GetCaptchaInfoResponse: {
+			v2: {
+				variants: {
+					android: {
+						siteKey: string;
+					};
+					checkbox: {
+						siteKey: string;
+					};
+					invisible: {
+						siteKey: string;
+					};
+				};
+			};
+			v3: {
+				variants: {
+					invisible: {
+						siteKey: string;
+					};
+				};
+			};
+		};
+		ErrorModel: {
+			id: string;
+			errors: {
+				id: string;
+				name: string;
+				/** @description May be undefined. */
+				message?: string | null;
+				/** @description May be undefined. */
+				data?: { [key: string]: unknown } | null;
+			}[];
+			/** @description May be undefined. */
+			message?: string;
+		};
+		PaymentAddressModel: {
+			id: number;
+			customerName: string;
+			postalCode: string;
+			line1: string;
+			city: string;
+			region: string;
+			country: string;
+			default: boolean;
+		};
+		PaymentMethodModel: {
+			id: number;
+			payment_processor: number;
+			default: boolean;
+			card: {
+				brand: string;
+				last4: string;
+				exp_month: number;
+				exp_year: number;
+				name: string;
+			};
+		};
+		CreatorModelV2: {
+			id: string;
+			owner: string;
+			title: string;
+			urlname: string;
+			description: string;
+			about: string;
+			category: string;
+			cover: components["schemas"]["ImageModel"] | null;
+			icon: components["schemas"]["ImageModel"];
+			liveStream: components["schemas"]["LiveStreamModel"] | null;
+			subscriptionPlans: { [key: string]: unknown }[] | null;
+			discoverable: boolean;
+			subscriberCountDisplay: string;
+			incomeDisplay: boolean;
+		};
+		CreatorModelV2Extended: components["schemas"]["CreatorModelV2"] & {
+			socialLinks: components["schemas"]["SocialLinksModel"];
+			discordServers: components["schemas"]["DiscordServerModel"][];
+		};
+		CreatorModelV3: {
+			id: string;
+			owner: string;
+			title: string;
+			urlname: string;
+			description: string;
+			about: string;
+			category: {
+				title: string;
+			};
+			cover: components["schemas"]["ImageModel"] | null;
+			icon: components["schemas"]["ImageModel"];
+			liveStream: components["schemas"]["LiveStreamModel"] | null;
+			subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][] | null;
+			discoverable: boolean;
+			subscriberCountDisplay: string;
+			incomeDisplay: boolean;
+			socialLinks: components["schemas"]["SocialLinksModel"];
+		};
+		BlogPostModelV3Base: {
+			id: string;
+			guid: string;
+			title: string;
+			/** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML.. */
+			text: string;
+			/** @enum {string} */
+			type: "blogPost";
+			tags: string[];
+			attachmentOrder: string[];
+			metadata: components["schemas"]["PostMetadataModel"];
+			/** Format: date-time */
+			releaseDate: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			comments: number;
+			creator: {
+				id: string;
+				owner: {
+					id: string;
+					username: string;
+				};
+				title: string;
+				urlname: string;
+				description: string;
+				about: string;
+				category: {
+					title: string;
+				};
+				cover: components["schemas"]["ImageModel"];
+				icon: components["schemas"]["ImageModel"];
+				liveStream: components["schemas"]["LiveStreamModel"] | null;
+				subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][];
+				discoverable: boolean;
+				subscriberCountDisplay: string;
+				incomeDisplay: boolean;
+				card: components["schemas"]["ImageModel"] | null;
+			};
+			wasReleasedSilently: boolean;
+			thumbnail: components["schemas"]["ImageModel"] | null;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		BlogPostModelV3: components["schemas"]["BlogPostModelV3Base"] & {
+			videoAttachments: string[];
+			audioAttachments: string[];
+			pictureAttachments: string[];
+			galleryAttachments: string[];
+		};
+		SubscriptionPlanModel: {
+			id: string;
+			title: string;
+			description: string;
+			price: string | null;
+			priceYearly: string | null;
+			currency: string;
+			logo: string | null;
+			interval: string;
+			featured: boolean;
+			allowGrandfatheredAccess: boolean | null;
+			discordServers: components["schemas"]["DiscordServerModel"][];
+			discordRoles: components["schemas"]["DiscordRoleModel"][];
+		};
+		PostMetadataModel: {
+			hasVideo: boolean;
+			videoCount: number;
+			videoDuration: number;
+			hasAudio: boolean;
+			audioCount: number;
+			audioDuration: number;
+			hasPicture: boolean;
+			pictureCount: number;
+			hasGallery: boolean;
+			galleryCount: number;
+			isFeatured: boolean;
+		};
+		VideoAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			/** Format: date-time */
+			releaseDate: string | null;
+			duration: number;
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		PictureAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			creator: string;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		AudioAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			duration: number;
+			waveform: {
+				dataSetLength: number;
+				highestValue: number;
+				lowestValue: number;
+				data: number[];
+			};
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		ImageModel: {
+			width: number;
+			height: number;
+			/** Format: uri */
+			path: string;
+			childImages: components["schemas"]["ChildImageModel"][] | null;
+		};
+		ChildImageModel: {
+			width: number;
+			height: number;
+			/** Format: uri */
+			path: string;
+		};
+		ImageFileModel: {
+			/** Format: uri */
+			path: string;
+			width: number;
+			height: number;
+			size: number;
+		};
+		LiveStreamModel: {
+			id: string;
+			title: string;
+			description: string;
+			thumbnail: components["schemas"]["ImageModel"] | null;
+			owner: string;
+			streamPath: string;
+			offline: {
+				title: string;
+				description: string;
+				thumbnail: components["schemas"]["ImageModel"];
+			};
+		};
+		SocialLinksModel: { [key: string]: string };
+		DiscordServerModel: {
+			id: string;
+			guildName: string;
+			guildIcon: string;
+			/** Format: uri */
+			inviteLink: string;
+			inviteMode: string;
+		};
+		DiscordRoleModel: {
+			server: string;
+			roleName: string;
+		};
+		/** @description Represents some basic information of a user (id, username, and profile image). */
+		UserModel: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+		};
+		UserSelfModel: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+			email: string;
+			displayName: string;
+		};
+		ConnectedAccountModel: {
+			/** @description Unique identifier for the account type. */
+			key: string;
+			/** @description Display-friendly label for the `key`. */
+			name: string;
+			/** @description Determines if the system allows this account to be connected to. */
+			enabled: boolean;
+			iconWhite: string;
+			connectedAccount: {
+				id: string;
+				remoteUserId: string;
+				remoteUserName: string;
+				data: {
+					canJoinGuilds: boolean;
+				};
+			};
+			/** @description If true, the user is connected and the `connectedAccount` will have data about the account. */
+			connected: boolean;
+			isAccountProvider: boolean;
+		};
+		CommentModel: {
+			id: string;
+			blogPost: string;
+			user: components["schemas"]["UserModel"];
+			contentReference: string;
+			contentReferenceType: string;
+			text: string;
+			replying: string;
+			postDate: string;
+			editDate: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			interactionCounts: {
+				like: number;
+				dislike: number;
+			};
+			totalReplies: number;
+			replies: components["schemas"]["CommentReplyModel"][];
+			userInteraction: components["schemas"]["UserInteractionModel"] | null;
+		};
+		CommentReplyModel: {
+			id: string;
+			blogPost: string;
+			user: components["schemas"]["UserModel"];
+			contentReference: string;
+			contentReferenceType: string;
+			text: string;
+			replying: string;
+			/** Format: date-time */
+			postDate: string;
+			/** Format: date-time */
+			editDate: string | null;
+			likes: number;
+			dislikes: number;
+			score: number;
+			interactionCounts: {
+				like: number;
+				dislike: number;
+			};
+			userInteraction: components["schemas"]["UserInteractionModel"] | null;
+		};
+		UserNotificationModel: {
+			creator: components["schemas"]["CreatorModelV2"];
+			userNotificationSetting: {
+				/** Format: date-time */
+				createdAt: string;
+				/** Format: date-time */
+				updatedAt: string | null;
+				id: string;
+				contentEmail: boolean;
+				contentFirebase: boolean;
+				creatorMessageEmail: boolean;
+				user: string;
+				creator: string;
+			};
+		};
+		UserSubscriptionModel: {
+			/** Format: date-time */
+			startDate: string;
+			/** Format: date-time */
+			endDate: string | null;
+			paymentID: number;
+			interval: string;
+			paymentCancelled: boolean;
+			plan: components["schemas"]["SubscriptionPlanModel"];
+			creator: string;
+		};
+		FaqSectionModel: {
+			faqs: {
+				/** Format: date-time */
+				createdAt: string;
+				/** Format: date-time */
+				updatedAt: string | null;
+				id: string;
+				question: string;
+				/** @description This field may contain HTML that should be rendered. */
+				answer: string;
+				/** @enum {string} */
+				status: "public";
+				link: string;
+				order: number;
+				faqSection: string;
+			}[];
+			/** Format: date-time */
+			createdAt: string;
+			/** Format: date-time */
+			updatedAt: string | null;
+			id: string;
+			name: string;
+			description: string;
+			/** @enum {string} */
+			status: "public";
+			order: number;
+		};
+		UserInteractionModel: ("like" | "dislike")[];
+		EdgesModel: {
+			edges: components["schemas"]["EdgeModel"][];
+			client: { [key: string]: unknown };
+		};
+		EdgeModel: {
+			hostname: string;
+			queryPort: number;
+			/** Format: int64 */
+			bandwidth: number;
+			allowDownload: boolean;
+			allowStreaming: boolean;
+			datacenter: {
+				countryCode: string;
+				regionCode: string;
+				latitude: number;
+				longitude: number;
+			};
+		};
+	};
+	responses: {
+		/** Bad Request - The request has errors and the server did not process it. */
+		"400BadRequest": {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** Unauthenticated - The request was not authenticated to make the request. */
+		"401Unauthenticated": {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** Forbidden - The request was not authenticated to make the request. */
+		"403Forbidden": {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** Not Found - The resource was not found. */
+		"404NotFound": {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** Unexpected response code */
+		Unexpected: {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+	};
 }
 
 export interface operations {
-  /** TODO */
-  confirmEmail: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  requestActivationEmail: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listCreatorAgreement: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorAgreement: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  editCreatorAgreement: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorDetails: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getSubscriptionPlanList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  checkCreatorURLAvailable: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorCategories: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createCreator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  uploadCover: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorsTitles: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateCreator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateCreatorSubscriptionPlan: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  uploadCard: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  uploadIcon: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorInviteCodeList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createCreatorInviteCode: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getJobStatus: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  startJob: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  stopJob: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getFaqSectionsACP: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateFaqSection: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getFaqSectionDetails: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getFaqArticleDetails: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateFaqArticle: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  uploadFaqImage: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getFaqImages: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createFaqSection: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createFaqArticle: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getFeatureConfigs: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  saveFeature: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  saveFeatureDependencies: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  saveFeatureCategory: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  saveFeatureType: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  saveFeatureResolution: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  addGlobalModerator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  removeGlobalModerator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  removeModerator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getModerator: {
-    parameters: {
-      path: {
-        user: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listModeratorsAdmin: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getModeratorList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createModerator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateGlobalModerator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  removeCreatorModeratorACP: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  addCreatorModeratorACP: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getModeratorAvailableCreators: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getModeratorCreators: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getUserList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getUserDetails: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  searchUserForModeration: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  findUser: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createAdmin: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  addUserSubscriptions: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  checkUsernameAvailable: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  checkEmailAvailable: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  uploadAvatarACP: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateUser: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getUserSubscriptions: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  removeUserSubscription: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateAdministrator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  deleteUser: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  signupACP: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listUserInvoices: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getPaymentProcessorData: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  scheduleDeletionACP: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  unscheduleDeletionACP: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getSubjectAccessData: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests. */
-  login: {
-    parameters: {};
-    responses: {
-      /** OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
-      200: {
-        headers: {
-          /** Contains the cookie used in subsequent authenticated requests. */
-          "Set-Cookie"?: string;
-        };
-        content: {
-          "application/json": components["schemas"]["AuthLoginV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      /** Unauthenticated - The login attempt failed, either due to a bad username or password. */
-      401: {
-        content: {
-          "application/json": components["schemas"]["ErrorModel"];
-        };
-      };
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["AuthLoginV2Request"];
-      };
-    };
-  };
-  /** Log out of Floatplane, invalidating the authentication/authorization cookie. */
-  logout: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        headers: {
-          /** Obtain a new authentication/authorization cookie after logging out. This new cookie will not be authenticated to perform subsequent requests. */
-          "Set-Cookie"?: string;
-        };
-        content: {
-          "text/plain": string;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  beginSpoofing: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  endSpoofing: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  signup: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Complete the login process if a two-factor authentication token is required from the beginning of the login process. */
-  checkFor2faLogin: {
-    parameters: {};
-    responses: {
-      /** OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
-      200: {
-        headers: {
-          /** Contains the cookie used in subsequent authenticated requests. */
-          "Set-Cookie"?: string;
-        };
-        content: {
-          "application/json": components["schemas"]["AuthLoginV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      /** Unauthenticated - The login attempt failed, either due to a bad username or password. */
-      401: {
-        content: {
-          "application/json": components["schemas"]["ErrorModel"];
-        };
-      };
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CheckFor2faLoginRequest"];
-      };
-    };
-  };
-  /** Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up. */
-  getCaptchaInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["GetCaptchaInfoResponse"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  generateClientToken: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
-  getDeliveryInfo: {
-    parameters: {
-      query: {
-        /**
-         * Used to determine which kind of retrieval method is requested for the video.
-         *
-         * - VOD = stream a Video On Demand
-         * - AOD = stream Audio On Demand
-         * - Live = Livestream the content
-         * - Download = Download the content for the user to play later.
-         */
-        type: "vod" | "aod" | "live" | "download";
-        /** The GUID of the attachment for a post, retrievable from the `videoAttachments` or `audioAttachments` object. Required when `type` is `vod`, `aod`, or `download`. Note: either this or `creator` must be supplied. */
-        guid?: string;
-        /** The GUID of the creator for a livestream, retrievable from `CreatorModelV2.id`. Required when `type` is `live`. Note: either this or `guid` must be supplied. */
-        creator?: string;
-      };
-    };
-    responses: {
-      /** OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CdnDeliveryV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getAccountConnect: {
-    parameters: {
-      path: {
-        site: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  callback: {
-    parameters: {
-      path: {
-        site: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  complete: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  refresh: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  dissociate: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** List the available 3rd party accounts for the user's profile. */
-  listConnections: {
-    parameters: {};
-    responses: {
-      /** OK - Returns the list of connected and available accounts. */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ConnectedAccountModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  addCreatorModeratorAdmin: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  addCreatorModeratorByPath: {
-    parameters: {
-      path: {
-        creator: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  removeCreatorModeratorAdmin: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  removeCreatorModeratorByPath: {
-    parameters: {
-      path: {
-        creator: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listModerators: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listModeratorsByPath: {
-    parameters: {
-      path: {
-        creator: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information on one or more creators on Floatplane. */
-  getInfo: {
-    parameters: {
-      query: {
-        /** The GUID identifer(s) of the creator(s) to be retrieved. */
-        creatorGUID: string[];
-      };
-    };
-    responses: {
-      /** OK - The creators are found from their identifiers and returned in an array */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV2"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information on one or more creators on Floatplane. */
-  getCreatorInfoByName: {
-    parameters: {
-      query: {
-        /** The string identifer(s) of the creator(s) to be retrieved. */
-        creatorURL: string[];
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV2Extended"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listVideos: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listPlaylists: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listCreators: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  discoverCreatorsV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listCreatorCategoriesV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateSocialLinks: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getSocialLinks: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateChannelImage: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateChannelInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getChannelInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information about a specific creator. */
-  getCreator: {
-    parameters: {
-      query: {
-        /** The GUID of the creator being searched. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Creator information returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV3"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering. */
-  getCreators: {
-    parameters: {
-      query: {
-        /** Optional search string for finding particular creators on the platform. */
-        search: string;
-      };
-    };
-    responses: {
-      /** OK - Creators returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV3"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorByName: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  discoverCreatorsV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listCreatorCategoriesV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  bindCreatorInviteCode: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorInviteCodeInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  claimCreatorInviteCode: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getAgreement: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  confirmAgreement: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listCreatorPlanFeatureLevels: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  calculateCreatorPlanFeatureCosts: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  planFeatureLevels: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  publishSubscriptionPlan: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateSubscriptionPlans: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listSubscriptionPlans: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information about a creator's subscription plans and their subscriber count. */
-  getCreatorSubInfoPublic: {
-    parameters: {
-      query: {
-        /** The GUID for the creator being search. */
-        creatorId: string;
-      };
-    };
-    responses: {
-      /** OK - Information about the plans for the creator */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PlanInfoV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getPlansForContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  link: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  linkCallback: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listDiscordBotConnections: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  unlink: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getDiscordBotInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  generateInviteLink: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateLink: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  joinDiscordServers: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement. */
-  getEdges: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["EdgesModel"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getVideoUrl: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML. */
-  getFaqSections: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["FaqSectionModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getVideoPlayer: {
-    parameters: {
-      path: {
-        guid: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getOptimizationsV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getOptimizationsV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  renderLivePopout: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateConfig: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  uploadLiveThumbnail: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  banUserV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  unbanUserV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listBanV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  hideCommentV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  unhideCommentV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  moderateVideoComment: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  userBanStatusV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  userUnbanV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  userInfoV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  banUserV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  unbanUserV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listBanV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  hideCommentV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  unhideCommentV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  moderateComment: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  userBanStatusV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  userUnbanV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  userInfoV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  sendPasswordReset: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  resetPassword: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  validateKey: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform. */
-  listPaymentMethods: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PaymentMethodModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  addPaymentMethod: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  deletePaymentMethod: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  setPrimaryPaymentMethod: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  estimateTaxes: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  purchaseSubscription: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  cancelSubscription: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators. */
-  listAddresses: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PaymentAddressModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  addAddress: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateAddress: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  deleteAddress: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  setPrimaryAddress: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  webhook: {
-    parameters: {
-      path: {
-        paymentProcessor: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  webhookWithSubprocessor: {
-    parameters: {
-      path: {
-        paymentProcessor: string;
-        subPaymentProcessor: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of paid or unpaid subscription invoices for the user. */
-  listInvoices: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PaymentInvoiceListV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  subscribeUser: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  subscribeUserById: {
-    parameters: {
-      path: {
-        id: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  socketConnect: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  disconnectSocket: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  retrievePublicKey: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listUserSubscriptionsV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  doesUserHaveSubV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of all active subscriptions for the user. */
-  listUserSubscriptionsV3: {
-    parameters: {};
-    responses: {
-      /** OK - Subscriptions returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserSubscriptionModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  doesUserHaveSubV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  submitSupport: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getTicketTypes: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  syncConnect: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  disconnectSync: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getTranscodeProgress: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  progressSubscribe: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  progressUnsubscribe: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getActiveProcesses: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  progressSubscribeCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  progressUnsubscribeCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more detailed information about one or more users from their identifiers. */
-  getUserInfo: {
-    parameters: {
-      query: {
-        /** The GUID identifer(s) of the user(s) to be retrieved. */
-        id: string[];
-      };
-    };
-    responses: {
-      /** OK - Results of the user search */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserInfoV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  self: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more detailed information about one or more users from their usernames. */
-  getUserInfoByName: {
-    parameters: {
-      query: {
-        /** The username(s) of the user(s) to be retrieved. */
-        username: string[];
-      };
-    };
-    responses: {
-      /** OK - Results of the user search */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserNamedV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateEmail: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  completeEmailChange: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  uploadAvatar: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  changePassword: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getUserCreator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getActivityFeedV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getExternalLinksV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  updateExternalLinksV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getAdministrator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve information about the current security configuration for the user. */
-  getSecurity: {
-    parameters: {};
-    responses: {
-      /** OK - Current security settings */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserSecurityV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  generateTwoFactorSecret: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  activateTwoFactorAuthentication: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  deactivateTwoFactorAuthentication: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  activateBackupCode: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  deactivateBackupCode: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  generateBackupCode: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getUserNotificationSettingsV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  updateUserNotificationSettingsV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Determine whether or not the user is banned for a given creator. */
-  userCreatorBanStatus: {
-    parameters: {
-      query: {
-        /** The GUID of the creator being queried. */
-        creator: string;
-      };
-    };
-    responses: {
-      /** OK - Whether the user is banned or not */
-      200: {
-        content: {
-          "application/json": boolean;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators. */
-  getActivityFeedV3: {
-    parameters: {
-      query: {
-        /** The GUID of the user being queried. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Activity returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserActivityV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve configured social media links from a user's profile. */
-  getExternalLinksV3: {
-    parameters: {
-      query: {
-        /** The GUID of the user being searched. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - User links returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserLinksV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateExternalLinksV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more detailed information about the user, including their name and email. */
-  getSelf: {
-    parameters: {};
-    responses: {
-      /** OK - Information returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserSelfV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  scheduleDeletion: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  unscheduleDeletion: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getAchievementPerks: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator. */
-  getUserNotificationSettingsV3: {
-    parameters: {};
-    responses: {
-      /** OK - Notifications returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserNotificationModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Enable or disable email or push notifications for a specific creator. */
-  updateUserNotificationSettingsV3: {
-    parameters: {};
-    responses: {
-      /** OK - Whether or not the update was successful */
-      200: {
-        content: {
-          "application/json": boolean;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["UserNotificationUpdateV3PostRequest"];
-      };
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getVideoComments: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  addVideoComment: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getVideoCommentReplies: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  clearInteraction: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  setInteraction: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO. This seems to originate from the `.m3u8` file captured from the CDN endpoint, and is not usually called directly from code. */
-  watchKey: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getVideo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getRelatedVideos: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  updateVideo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  deleteVideo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getDashClearKeys: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getDashClearKeysOverPost: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getDashSignedChunkUrl: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  listPlaylistVideos: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getUploadedPartsV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  createMultipartUploadV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  signPartUploadVideo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  abortMultipartUploadV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  completeMultipartUploadVideo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  uploadThumbnailV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  connectedAccount: {
-    parameters: {
-      path: {
-        site: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  IVSlivestreamPublish: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  livestreamPublish: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getAppInfoV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  registerV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  unregisterV2: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getTokenInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getAppInfoV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  registerV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  unregisterV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getContentList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getContentACP: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  postContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getOrderList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getOrder: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  postOrder: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  postManager: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createOrder: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  augmentOrder: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getUploadList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getUpload: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  postUpload: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getJob: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  postJob: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getTask: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  postTask: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getBlogPostCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listBlogPost: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createBlogPost: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  editBlogPost: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  deleteBlogPost: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateNewAttachments: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  editContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listVideoContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listAudioContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listPictureContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listGalleryContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getVideoContentCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getAudioContentCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getPictureContentCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getGalleryContentCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getContentCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  deleteContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCreatorWarehouse: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  saveCreatorWarehouse: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listPriceRules: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getPriceRule: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createPriceRule: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  editPriceRule: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  deletePriceRule: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listProducts: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listCollections: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getShopInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listShopShippingCountries: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getProducts: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCollections: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getCountries: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getLivestreamInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listSubscriptionPlansCMS: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  listSubscribers: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  downloadSubscribers: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded. */
-  getComments: {
-    parameters: {
-      query: {
-        /** Which blog post to retrieve comments for. */
-        blogPost: string;
-        /** The maximum number of comments to return. This should be set to 20 by default. */
-        limit: number;
-        /** When loading more comments on a blog post, this is used to determine which which comments to skip. This is a GUID of the last comment from the previous call to `getComments`. */
-        fetchAfter?: string;
-      };
-    };
-    responses: {
-      /** OK - All comments returned for the query parameters */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CommentModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Post a new comment to a blog post object. */
-  postComment: {
-    parameters: {};
-    responses: {
-      /** OK - Commented posted successfully, returning comment details */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CommentV3PostResponse"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CommentV3PostRequest"];
-      };
-    };
-  };
-  /** Retrieve more replies from a comment. */
-  getCommentReplies: {
-    parameters: {
-      query: {
-        /** The identifer of the comment from which to retrieve replies. */
-        comment: string;
-        /** The identifer of the blog post the `comment` belongs to. */
-        blogPost: string;
-        /** How many replies to retrieve. */
-        limit: number;
-        /** The identifer of the last reply in the reply chain. */
-        rid: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CommentReplyModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Like a comment on a blog post. */
-  likeComment: {
-    parameters: {};
-    responses: {
-      /** OK - Comment successfully liked */
-      200: {
-        content: {
-          "text/plain": string;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CommentLikeV3PostRequest"];
-      };
-    };
-  };
-  /** Dislike a comment on a blog post. */
-  dislikeComment: {
-    parameters: {};
-    responses: {
-      /** OK - Comment successfully disliked */
-      200: {
-        content: {
-          "text/plain": string;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CommentLikeV3PostRequest"];
-      };
-    };
-  };
-  /**
-   * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
-   *
-   * Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
-   */
-  getCreatorBlogPosts: {
-    parameters: {
-      query: {
-        /** The GUID of the creator to retrieve posts from. */
-        id: string;
-        /** The maximum number of posts to return. */
-        limit?: number;
-        /** The number of posts to skip. Usually a multiple of `limit`, to get the next "page" of results. */
-        fetchAfter?: number;
-        /** Search filter to look for specific posts. */
-        search?: string;
-        /** An array of tags to search against, possibly in addition to `search`. */
-        tags?: string[];
-        /** If true, include blog posts with video attachments. */
-        hasVideo?: boolean;
-        /** If true, include blog posts with audio attachments. */
-        hasAudio?: boolean;
-        /** If true, include blog posts with picture attachments. */
-        hasPicture?: boolean;
-        /**
-         * If true, only include blog posts that are text-only. Text-only posts are ones without any attachments, such as video, audio, picture, and gallery.
-         *
-         * This filter and `hasVideo`, `hasAudio`, and `hasPicture` should be mutually exclusive. That is, if `hasText` is true then the other three should all be false. Conversely, if any of the other three are true, then `hasText` should be false. Otherwise, the filter would produce no results.
-         */
-        hasText?: boolean;
-        /** `DESC` = Newest First. `ASC` = Oldest First. */
-        sort?: "ASC" | "DESC";
-        /** Include video posts where the duration of the video is at minimum `fromDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
-        fromDuration?: number;
-        /** Include video posts where the duration of the video is at maximum `toDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
-        toDuration?: number;
-        /** Include posts where the publication date is on or after this filter date. */
-        fromDate?: string;
-        /** Include posts where the publication date is on or before this filter date. */
-        toDate?: string;
-      };
-    };
-    responses: {
-      /** OK - Creator posted returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["BlogPostModelV3"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /**
-   * Retrieve paginated blog posts from multiple creators for the home page.
-   *
-   * Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
-   */
-  getMultiCreatorBlogPosts: {
-    parameters: {
-      query: {
-        /** The GUID(s) of the creator(s) to retrieve posts from. */
-        ids: string[];
-        /** The maximum number of posts to retrieve. */
-        limit: number;
-        /** For pagination, this is used to determine which posts to skip. There should be one `fetchAfter` object for each creator in `ids`. The `moreFetchable` in the request, and all of the data, comes from the `ContentCreatorListV3Response`. */
-        fetchAfter?: components["schemas"]["ContentCreatorListLastItems"][];
-      };
-    };
-    responses: {
-      /** OK - Posts returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ContentCreatorListV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve all tags and the number of times the tags have been used for the specified creator(s). */
-  getContentTags: {
-    parameters: {
-      query: {
-        /** The creator(s) to search by. */
-        creatorIds: string[];
-      };
-    };
-    responses: {
-      /** OK - Creator tag information */
-      200: {
-        content: {
-          "application/json": { [key: string]: number };
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more details on a specific blog post object for viewing. */
-  getBlogPost: {
-    parameters: {
-      query: {
-        /** The ID of the post to be retrieved. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Detailed post information */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ContentPostV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of blog posts that are related to the post being viewed. */
-  getRelatedBlogPosts: {
-    parameters: {
-      query: {
-        /** The ID of the originating post. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Related post details */
-      200: {
-        content: {
-          "application/json": components["schemas"]["BlogPostModelV3Base"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more information on a video attachment from a blog post in order to consume the video content. */
-  getVideoContent: {
-    parameters: {
-      query: {
-        /** The ID of the video attachment object, from the `BlogPostModelV3`. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Video details returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ContentVideoV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getAudioContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
-  getPictureContent: {
-    parameters: {
-      query: {
-        /** The ID of the picture attachment object, from the `BlogPostModelV3`. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ContentPictureV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getGalleryContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed. */
-  likeContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserInteractionModel"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["ContentLikeV3Request"];
-      };
-    };
-  };
-  /** Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed. */
-  dislikeContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserInteractionModel"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["ContentLikeV3Request"];
-      };
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  getPictureUrl: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getUploadedPartsV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  createMultipartUploadV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  signPartUploadContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  abortMultipartUploadV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  completeMultipartUploadContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  uploadThumbnailV3: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  thumbnailUpdateSubscribe: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code. */
-  thumbnailUpdateUnsubscribe: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  joinLiveRoom: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  joinLiveRoomModerator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  leaveLiveRoom: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  leaveLiveRoomModerator: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error. */
-  votePoll: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": {
-          /** @description The id of the poll to vote on. */
-          pollId: string;
-          /** @description The index of the options of the poll for which to vote. This should not be outside the bounds of the poll options. */
-          optionIndex: number;
-        };
-      };
-    };
-  };
-  /** TODO */
-  cmsListPolls: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": {
-          creatorId: string;
-          skip: number;
-          limit: number;
-          activeOnly: boolean;
-        };
-      };
-    };
-  };
-  /** TODO */
-  createLivePoll: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": {
-          creatorId: string;
-          type: string;
-          title: string;
-          options: string[];
-          duration: string;
-        };
-      };
-    };
-  };
-  /** TODO */
-  closePoll: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": {
-          pollId: string;
-        };
-      };
-    };
-  };
-  /** Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code. */
-  redirectYTLatest: {
-    parameters: {
-      path: {
-        channelKey: string;
-      };
-    };
-    responses: {
-      /** Found */
-      302: never;
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown. */
-  listCreatorLoyaltyReward: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": { [key: string]: unknown }[];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  claimLoyaltyReward: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getEnabledState: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  updateEnabledState: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  downloadUserProfile: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO - Not used in Floatplane code yet. */
-  getUserProfileLinksEphemeral: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getServerList: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
+	/** TODO */
+	confirmEmail: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	requestActivationEmail: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listCreatorAgreement: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorAgreement: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	editCreatorAgreement: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorDetails: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getSubscriptionPlanList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	checkCreatorURLAvailable: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorCategories: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createCreator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	uploadCover: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorsTitles: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateCreator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateCreatorSubscriptionPlan: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	uploadCard: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	uploadIcon: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorInviteCodeList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createCreatorInviteCode: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getJobStatus: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	startJob: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	stopJob: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getFaqSectionsACP: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateFaqSection: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getFaqSectionDetails: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getFaqArticleDetails: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateFaqArticle: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	uploadFaqImage: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getFaqImages: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createFaqSection: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createFaqArticle: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getFeatureConfigs: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	saveFeature: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	saveFeatureDependencies: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	saveFeatureCategory: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	saveFeatureType: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	saveFeatureResolution: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	addGlobalModerator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	removeGlobalModerator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	removeModerator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getModerator: {
+		parameters: {
+			path: {
+				user: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listModeratorsAdmin: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getModeratorList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createModerator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateGlobalModerator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	removeCreatorModeratorACP: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	addCreatorModeratorACP: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getModeratorAvailableCreators: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getModeratorCreators: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getUserList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getUserDetails: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	searchUserForModeration: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	findUser: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createAdmin: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	addUserSubscriptions: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	checkUsernameAvailable: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	checkEmailAvailable: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	uploadAvatarACP: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateUser: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getUserSubscriptions: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	removeUserSubscription: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateAdministrator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	deleteUser: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	signupACP: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listUserInvoices: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getPaymentProcessorData: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	scheduleDeletionACP: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	unscheduleDeletionACP: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getSubjectAccessData: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests. */
+	login: {
+		parameters: {};
+		responses: {
+			/** OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
+			200: {
+				headers: {
+					/** Contains the cookie used in subsequent authenticated requests. */
+					"Set-Cookie"?: string;
+				};
+				content: {
+					"application/json": components["schemas"]["AuthLoginV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			/** Unauthenticated - The login attempt failed, either due to a bad username or password. */
+			401: {
+				content: {
+					"application/json": components["schemas"]["ErrorModel"];
+				};
+			};
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["AuthLoginV2Request"];
+			};
+		};
+	};
+	/** Log out of Floatplane, invalidating the authentication/authorization cookie. */
+	logout: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				headers: {
+					/** Obtain a new authentication/authorization cookie after logging out. This new cookie will not be authenticated to perform subsequent requests. */
+					"Set-Cookie"?: string;
+				};
+				content: {
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	beginSpoofing: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	endSpoofing: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	signup: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Complete the login process if a two-factor authentication token is required from the beginning of the login process. */
+	checkFor2faLogin: {
+		parameters: {};
+		responses: {
+			/** OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
+			200: {
+				headers: {
+					/** Contains the cookie used in subsequent authenticated requests. */
+					"Set-Cookie"?: string;
+				};
+				content: {
+					"application/json": components["schemas"]["AuthLoginV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			/** Unauthenticated - The login attempt failed, either due to a bad username or password. */
+			401: {
+				content: {
+					"application/json": components["schemas"]["ErrorModel"];
+				};
+			};
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CheckFor2faLoginRequest"];
+			};
+		};
+	};
+	/** Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up. */
+	getCaptchaInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["GetCaptchaInfoResponse"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	generateClientToken: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
+	getDeliveryInfo: {
+		parameters: {
+			query: {
+				/**
+				 * Used to determine which kind of retrieval method is requested for the video.
+				 *
+				 * - VOD = stream a Video On Demand
+				 * - AOD = stream Audio On Demand
+				 * - Live = Livestream the content
+				 * - Download = Download the content for the user to play later.
+				 */
+				type: "vod" | "aod" | "live" | "download";
+				/** The GUID of the attachment for a post, retrievable from the `videoAttachments` or `audioAttachments` object. Required when `type` is `vod`, `aod`, or `download`. Note: either this or `creator` must be supplied. */
+				guid?: string;
+				/** The GUID of the creator for a livestream, retrievable from `CreatorModelV2.id`. Required when `type` is `live`. Note: either this or `guid` must be supplied. */
+				creator?: string;
+			};
+		};
+		responses: {
+			/** OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CdnDeliveryV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getAccountConnect: {
+		parameters: {
+			path: {
+				site: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	callback: {
+		parameters: {
+			path: {
+				site: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	complete: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	refresh: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	dissociate: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** List the available 3rd party accounts for the user's profile. */
+	listConnections: {
+		parameters: {};
+		responses: {
+			/** OK - Returns the list of connected and available accounts. */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ConnectedAccountModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	addCreatorModeratorAdmin: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	addCreatorModeratorByPath: {
+		parameters: {
+			path: {
+				creator: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	removeCreatorModeratorAdmin: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	removeCreatorModeratorByPath: {
+		parameters: {
+			path: {
+				creator: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listModerators: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listModeratorsByPath: {
+		parameters: {
+			path: {
+				creator: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information on one or more creators on Floatplane. */
+	getInfo: {
+		parameters: {
+			query: {
+				/** The GUID identifer(s) of the creator(s) to be retrieved. */
+				creatorGUID: string[];
+			};
+		};
+		responses: {
+			/** OK - The creators are found from their identifiers and returned in an array */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV2"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information on one or more creators on Floatplane. */
+	getCreatorInfoByName: {
+		parameters: {
+			query: {
+				/** The string identifer(s) of the creator(s) to be retrieved. */
+				creatorURL: string[];
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV2Extended"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listVideos: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listPlaylists: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listCreators: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	discoverCreatorsV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listCreatorCategoriesV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateSocialLinks: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getSocialLinks: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateChannelImage: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateChannelInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getChannelInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information about a specific creator. */
+	getCreator: {
+		parameters: {
+			query: {
+				/** The GUID of the creator being searched. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Creator information returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV3"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering. */
+	getCreators: {
+		parameters: {
+			query: {
+				/** Optional search string for finding particular creators on the platform. */
+				search: string;
+			};
+		};
+		responses: {
+			/** OK - Creators returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorByName: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	discoverCreatorsV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listCreatorCategoriesV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	bindCreatorInviteCode: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorInviteCodeInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	claimCreatorInviteCode: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getAgreement: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	confirmAgreement: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listCreatorPlanFeatureLevels: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	calculateCreatorPlanFeatureCosts: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	planFeatureLevels: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	publishSubscriptionPlan: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateSubscriptionPlans: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listSubscriptionPlans: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information about a creator's subscription plans and their subscriber count. */
+	getCreatorSubInfoPublic: {
+		parameters: {
+			query: {
+				/** The GUID for the creator being search. */
+				creatorId: string;
+			};
+		};
+		responses: {
+			/** OK - Information about the plans for the creator */
+			200: {
+				content: {
+					"application/json": components["schemas"]["PlanInfoV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getPlansForContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	link: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	linkCallback: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listDiscordBotConnections: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	unlink: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getDiscordBotInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	generateInviteLink: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateLink: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	joinDiscordServers: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement. */
+	getEdges: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["EdgesModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getVideoUrl: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML. */
+	getFaqSections: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["FaqSectionModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getVideoPlayer: {
+		parameters: {
+			path: {
+				guid: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getOptimizationsV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getOptimizationsV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	renderLivePopout: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateConfig: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	uploadLiveThumbnail: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	banUserV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	unbanUserV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listBanV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	hideCommentV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	unhideCommentV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	moderateVideoComment: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	userBanStatusV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	userUnbanV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	userInfoV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	banUserV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	unbanUserV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listBanV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	hideCommentV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	unhideCommentV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	moderateComment: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	userBanStatusV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	userUnbanV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	userInfoV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	sendPasswordReset: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	resetPassword: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	validateKey: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform. */
+	listPaymentMethods: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["PaymentMethodModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	addPaymentMethod: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	deletePaymentMethod: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	setPrimaryPaymentMethod: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	estimateTaxes: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	purchaseSubscription: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	cancelSubscription: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators. */
+	listAddresses: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["PaymentAddressModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	addAddress: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateAddress: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	deleteAddress: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	setPrimaryAddress: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	webhook: {
+		parameters: {
+			path: {
+				paymentProcessor: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	webhookWithSubprocessor: {
+		parameters: {
+			path: {
+				paymentProcessor: string;
+				subPaymentProcessor: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of paid or unpaid subscription invoices for the user. */
+	listInvoices: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["PaymentInvoiceListV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	subscribeUser: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	subscribeUserById: {
+		parameters: {
+			path: {
+				id: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	socketConnect: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	disconnectSocket: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	retrievePublicKey: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listUserSubscriptionsV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	doesUserHaveSubV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of all active subscriptions for the user. */
+	listUserSubscriptionsV3: {
+		parameters: {};
+		responses: {
+			/** OK - Subscriptions returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserSubscriptionModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	doesUserHaveSubV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	submitSupport: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getTicketTypes: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	syncConnect: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	disconnectSync: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getTranscodeProgress: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	progressSubscribe: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	progressUnsubscribe: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getActiveProcesses: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	progressSubscribeCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	progressUnsubscribeCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more detailed information about one or more users from their identifiers. */
+	getUserInfo: {
+		parameters: {
+			query: {
+				/** The GUID identifer(s) of the user(s) to be retrieved. */
+				id: string[];
+			};
+		};
+		responses: {
+			/** OK - Results of the user search */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserInfoV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	self: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more detailed information about one or more users from their usernames. */
+	getUserInfoByName: {
+		parameters: {
+			query: {
+				/** The username(s) of the user(s) to be retrieved. */
+				username: string[];
+			};
+		};
+		responses: {
+			/** OK - Results of the user search */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserNamedV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateEmail: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	completeEmailChange: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	uploadAvatar: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	changePassword: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getUserCreator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getActivityFeedV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getExternalLinksV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	updateExternalLinksV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getAdministrator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve information about the current security configuration for the user. */
+	getSecurity: {
+		parameters: {};
+		responses: {
+			/** OK - Current security settings */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserSecurityV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	generateTwoFactorSecret: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	activateTwoFactorAuthentication: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	deactivateTwoFactorAuthentication: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	activateBackupCode: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	deactivateBackupCode: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	generateBackupCode: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getUserNotificationSettingsV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	updateUserNotificationSettingsV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Determine whether or not the user is banned for a given creator. */
+	userCreatorBanStatus: {
+		parameters: {
+			query: {
+				/** The GUID of the creator being queried. */
+				creator: string;
+			};
+		};
+		responses: {
+			/** OK - Whether the user is banned or not */
+			200: {
+				content: {
+					"application/json": boolean;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators. */
+	getActivityFeedV3: {
+		parameters: {
+			query: {
+				/** The GUID of the user being queried. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Activity returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserActivityV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve configured social media links from a user's profile. */
+	getExternalLinksV3: {
+		parameters: {
+			query: {
+				/** The GUID of the user being searched. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - User links returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserLinksV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateExternalLinksV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more detailed information about the user, including their name and email. */
+	getSelf: {
+		parameters: {};
+		responses: {
+			/** OK - Information returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserSelfV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	scheduleDeletion: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	unscheduleDeletion: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getAchievementPerks: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator. */
+	getUserNotificationSettingsV3: {
+		parameters: {};
+		responses: {
+			/** OK - Notifications returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserNotificationModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Enable or disable email or push notifications for a specific creator. */
+	updateUserNotificationSettingsV3: {
+		parameters: {};
+		responses: {
+			/** OK - Whether or not the update was successful */
+			200: {
+				content: {
+					"application/json": boolean;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["UserNotificationUpdateV3PostRequest"];
+			};
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getVideoComments: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	addVideoComment: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getVideoCommentReplies: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	clearInteraction: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	setInteraction: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO. This seems to originate from the `.m3u8` file captured from the CDN endpoint, and is not usually called directly from code. */
+	watchKey: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getVideo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getRelatedVideos: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	updateVideo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	deleteVideo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getDashClearKeys: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getDashClearKeysOverPost: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getDashSignedChunkUrl: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	listPlaylistVideos: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getUploadedPartsV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	createMultipartUploadV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	signPartUploadVideo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	abortMultipartUploadV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	completeMultipartUploadVideo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	uploadThumbnailV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	connectedAccount: {
+		parameters: {
+			path: {
+				site: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	IVSlivestreamPublish: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	livestreamPublish: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getAppInfoV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	registerV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	unregisterV2: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getTokenInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getAppInfoV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	registerV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	unregisterV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getContentList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getContentACP: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	postContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getOrderList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getOrder: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	postOrder: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	postManager: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createOrder: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	augmentOrder: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getUploadList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getUpload: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	postUpload: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getJob: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	postJob: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getTask: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	postTask: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getBlogPostCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listBlogPost: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createBlogPost: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	editBlogPost: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	deleteBlogPost: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateNewAttachments: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	editContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listVideoContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listAudioContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listPictureContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listGalleryContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getVideoContentCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getAudioContentCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getPictureContentCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getGalleryContentCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getContentCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	deleteContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCreatorWarehouse: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	saveCreatorWarehouse: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listPriceRules: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getPriceRule: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createPriceRule: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	editPriceRule: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	deletePriceRule: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listProducts: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listCollections: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getShopInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listShopShippingCountries: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getProducts: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCollections: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getCountries: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getLivestreamInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listSubscriptionPlansCMS: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	listSubscribers: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	downloadSubscribers: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded. */
+	getComments: {
+		parameters: {
+			query: {
+				/** Which blog post to retrieve comments for. */
+				blogPost: string;
+				/** The maximum number of comments to return. This should be set to 20 by default. */
+				limit: number;
+				/** When loading more comments on a blog post, this is used to determine which which comments to skip. This is a GUID of the last comment from the previous call to `getComments`. */
+				fetchAfter?: string;
+			};
+		};
+		responses: {
+			/** OK - All comments returned for the query parameters */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CommentModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Post a new comment to a blog post object. */
+	postComment: {
+		parameters: {};
+		responses: {
+			/** OK - Commented posted successfully, returning comment details */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CommentV3PostResponse"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CommentV3PostRequest"];
+			};
+		};
+	};
+	/** Retrieve more replies from a comment. */
+	getCommentReplies: {
+		parameters: {
+			query: {
+				/** The identifer of the comment from which to retrieve replies. */
+				comment: string;
+				/** The identifer of the blog post the `comment` belongs to. */
+				blogPost: string;
+				/** How many replies to retrieve. */
+				limit: number;
+				/** The identifer of the last reply in the reply chain. */
+				rid: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CommentReplyModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Like a comment on a blog post. */
+	likeComment: {
+		parameters: {};
+		responses: {
+			/** OK - Comment successfully liked */
+			200: {
+				content: {
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CommentLikeV3PostRequest"];
+			};
+		};
+	};
+	/** Dislike a comment on a blog post. */
+	dislikeComment: {
+		parameters: {};
+		responses: {
+			/** OK - Comment successfully disliked */
+			200: {
+				content: {
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CommentLikeV3PostRequest"];
+			};
+		};
+	};
+	/**
+	 * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
+	 *
+	 * Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
+	 */
+	getCreatorBlogPosts: {
+		parameters: {
+			query: {
+				/** The GUID of the creator to retrieve posts from. */
+				id: string;
+				/** The maximum number of posts to return. */
+				limit?: number;
+				/** The number of posts to skip. Usually a multiple of `limit`, to get the next "page" of results. */
+				fetchAfter?: number;
+				/** Search filter to look for specific posts. */
+				search?: string;
+				/** An array of tags to search against, possibly in addition to `search`. */
+				tags?: string[];
+				/** If true, include blog posts with video attachments. */
+				hasVideo?: boolean;
+				/** If true, include blog posts with audio attachments. */
+				hasAudio?: boolean;
+				/** If true, include blog posts with picture attachments. */
+				hasPicture?: boolean;
+				/**
+				 * If true, only include blog posts that are text-only. Text-only posts are ones without any attachments, such as video, audio, picture, and gallery.
+				 *
+				 * This filter and `hasVideo`, `hasAudio`, and `hasPicture` should be mutually exclusive. That is, if `hasText` is true then the other three should all be false. Conversely, if any of the other three are true, then `hasText` should be false. Otherwise, the filter would produce no results.
+				 */
+				hasText?: boolean;
+				/** `DESC` = Newest First. `ASC` = Oldest First. */
+				sort?: "ASC" | "DESC";
+				/** Include video posts where the duration of the video is at minimum `fromDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
+				fromDuration?: number;
+				/** Include video posts where the duration of the video is at maximum `toDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
+				toDuration?: number;
+				/** Include posts where the publication date is on or after this filter date. */
+				fromDate?: string;
+				/** Include posts where the publication date is on or before this filter date. */
+				toDate?: string;
+			};
+		};
+		responses: {
+			/** OK - Creator posted returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["BlogPostModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/**
+	 * Retrieve paginated blog posts from multiple creators for the home page.
+	 *
+	 * Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
+	 */
+	getMultiCreatorBlogPosts: {
+		parameters: {
+			query: {
+				/** The GUID(s) of the creator(s) to retrieve posts from. */
+				ids: string[];
+				/** The maximum number of posts to retrieve. */
+				limit: number;
+				/** For pagination, this is used to determine which posts to skip. There should be one `fetchAfter` object for each creator in `ids`. The `moreFetchable` in the request, and all of the data, comes from the `ContentCreatorListV3Response`. */
+				fetchAfter?: components["schemas"]["ContentCreatorListLastItems"][];
+			};
+		};
+		responses: {
+			/** OK - Posts returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ContentCreatorListV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve all tags and the number of times the tags have been used for the specified creator(s). */
+	getContentTags: {
+		parameters: {
+			query: {
+				/** The creator(s) to search by. */
+				creatorIds: string[];
+			};
+		};
+		responses: {
+			/** OK - Creator tag information */
+			200: {
+				content: {
+					"application/json": { [key: string]: number };
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more details on a specific blog post object for viewing. */
+	getBlogPost: {
+		parameters: {
+			query: {
+				/** The ID of the post to be retrieved. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Detailed post information */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ContentPostV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of blog posts that are related to the post being viewed. */
+	getRelatedBlogPosts: {
+		parameters: {
+			query: {
+				/** The ID of the originating post. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Related post details */
+			200: {
+				content: {
+					"application/json": components["schemas"]["BlogPostModelV3Base"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more information on a video attachment from a blog post in order to consume the video content. */
+	getVideoContent: {
+		parameters: {
+			query: {
+				/** The ID of the video attachment object, from the `BlogPostModelV3`. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Video details returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ContentVideoV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getAudioContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
+	getPictureContent: {
+		parameters: {
+			query: {
+				/** The ID of the picture attachment object, from the `BlogPostModelV3`. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ContentPictureV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getGalleryContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed. */
+	likeContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserInteractionModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["ContentLikeV3Request"];
+			};
+		};
+	};
+	/** Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed. */
+	dislikeContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserInteractionModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["ContentLikeV3Request"];
+			};
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	getPictureUrl: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getUploadedPartsV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	createMultipartUploadV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	signPartUploadContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	abortMultipartUploadV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	completeMultipartUploadContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	uploadThumbnailV3: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	thumbnailUpdateSubscribe: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code. */
+	thumbnailUpdateUnsubscribe: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	joinLiveRoom: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	joinLiveRoomModerator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	leaveLiveRoom: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	leaveLiveRoomModerator: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error. */
+	votePoll: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": {
+					/** @description The id of the poll to vote on. */
+					pollId: string;
+					/** @description The index of the options of the poll for which to vote. This should not be outside the bounds of the poll options. */
+					optionIndex: number;
+				};
+			};
+		};
+	};
+	/** TODO */
+	cmsListPolls: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": {
+					creatorId: string;
+					skip: number;
+					limit: number;
+					activeOnly: boolean;
+				};
+			};
+		};
+	};
+	/** TODO */
+	createLivePoll: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": {
+					creatorId: string;
+					type: string;
+					title: string;
+					options: string[];
+					duration: string;
+				};
+			};
+		};
+	};
+	/** TODO */
+	closePoll: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": {
+					pollId: string;
+				};
+			};
+		};
+	};
+	/** Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code. */
+	redirectYTLatest: {
+		parameters: {
+			path: {
+				channelKey: string;
+			};
+		};
+		responses: {
+			/** Found */
+			302: never;
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown. */
+	listCreatorLoyaltyReward: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": { [key: string]: unknown }[];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	claimLoyaltyReward: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getEnabledState: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	updateEnabledState: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	downloadUserProfile: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO - Not used in Floatplane code yet. */
+	getUserProfileLinksEphemeral: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** TODO */
+	getServerList: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
 }
 
 export interface external {}
 
 export enum ApiPaths {
-  confirmEmail = "/api/v2/activation/email/confirm",
-  requestActivationEmail = "/api/v2/activation/email/request",
-  listCreatorAgreement = "/api/acp/v2/creatoragreement/list",
-  getCreatorAgreement = "/api/acp/v2/creatoragreement",
-  editCreatorAgreement = "/api/acp/v2/creatoragreement/edit",
-  getCreatorList = "/api/acp/v2/creator/list",
-  getCreatorDetails = "/api/acp/v2/creator/",
-  getSubscriptionPlanList = "/api/acp/v2/creator/subscriptionplans/list",
-  checkCreatorURLAvailable = "/api/acp/v2/creator/urlname/availability",
-  getCreatorCategories = "/api/acp/v2/creator/category/list",
-  createCreator = "/api/acp/v2/creator/create",
-  uploadCover = "/api/acp/v2/creator/cover/upload",
-  getCreatorsTitles = "/api/acp/v2/creator/titles",
-  updateCreator = "/api/acp/v2/creator/update",
-  updateCreatorSubscriptionPlan = "/api/acp/v2/creator/subscriptionplan/update",
-  uploadCard = "/api/acp/v2/creator/card/upload",
-  uploadIcon = "/api/acp/v2/creator/icon/upload",
-  getCreatorInviteCodeList = "/api/acp/v3/creator/invite/list",
-  createCreatorInviteCode = "/api/acp/v3/creator/invite/create",
-  getJobStatus = "/api/acp/v2/dashboard/job/status/",
-  startJob = "/api/acp/v2/dashboard/job/start/",
-  stopJob = "/api/acp/v2/dashboard/job/stop/",
-  getFaqSectionsACP = "/api/acp/v2/section/list",
-  updateFaqSection = "/api/acp/v2/section/edit",
-  getFaqSectionDetails = "/api/acp/v2/section/",
-  getFaqArticleDetails = "/api/acp/v2/article/",
-  updateFaqArticle = "/api/acp/v2/article/edit",
-  uploadFaqImage = "/api/acp/v2/image/upload",
-  getFaqImages = "/api/acp/v2/image/list",
-  createFaqSection = "/api/acp/v2/section/create",
-  createFaqArticle = "/api/acp/v2/article/create",
-  getFeatureConfigs = "/api/acp/v2/feature/configs",
-  saveFeature = "/api/acp/v2/feature/save",
-  saveFeatureDependencies = "/api/acp/v2/feature/dependencies/save",
-  saveFeatureCategory = "/api/acp/v2/feature/category/save",
-  saveFeatureType = "/api/acp/v2/feature/type/save",
-  saveFeatureResolution = "/api/acp/v2/feature/resolution/save",
-  addGlobalModerator = "/api/v2/administration/moderators/global/add",
-  removeGlobalModerator = "/api/v2/administration/moderators/global/remove",
-  removeModerator = "/api/v2/administration/moderators/remove",
-  getModerator = "/api/v2/administration/moderators/get/:user",
-  listModeratorsAdmin = "/api/v2/administration/moderators/list",
-  getModeratorList = "/api/acp/v2/moderator/list",
-  createModerator = "/api/acp/v2/moderator/create",
-  updateGlobalModerator = "/api/acp/v2/moderator/update/global",
-  removeCreatorModeratorACP = "/api/acp/v2/moderator/creator/remove",
-  addCreatorModeratorACP = "/api/acp/v2/moderator/creator/add/",
-  getModeratorAvailableCreators = "/api/acp/v2/moderator/creator/available",
-  getModeratorCreators = "/api/acp/v2/moderator/creator/list/",
-  getUserList = "/api/acp/v2/user/list",
-  getUserDetails = "/api/acp/v2/user/",
-  searchUserForModeration = "/api/acp/v2/user/list/notmoderator",
-  findUser = "/api/acp/v2/user/find",
-  createAdmin = "/api/acp/v2/user/admin/create",
-  addUserSubscriptions = "/api/acp/v2/user/subscription/add",
-  checkUsernameAvailable = "/api/acp/v2/user/username/availability",
-  checkEmailAvailable = "/api/acp/v2/user/email/availability",
-  uploadAvatarACP = "/api/acp/v2/user/avatar/upload",
-  updateUser = "/api/acp/v2/user/edit",
-  getUserSubscriptions = "/api/acp/v2/user/usersubscription/list",
-  removeUserSubscription = "/api/acp/v2/user/usersubscription/delete",
-  updateAdministrator = "/api/acp/v2/user/administrator/update",
-  deleteUser = "/api/acp/v2/user/delete",
-  signupACP = "/api/acp/v2/user/create",
-  listUserInvoices = "/api/acp/v2/user/payment/invoice/list",
-  getPaymentProcessorData = "/api/acp/v2/user/payment/processor/data",
-  scheduleDeletionACP = "/api/acp/v3/user/delete",
-  unscheduleDeletionACP = "/api/acp/v3/user/undelete",
-  getSubjectAccessData = "/api/acp/v3/user/sar",
-  login = "/api/v2/auth/login",
-  logout = "/api/v2/auth/logout",
-  beginSpoofing = "/api/v2/auth/spoof/begin",
-  endSpoofing = "/api/v2/auth/spoof/end",
-  signup = "/api/v2/auth/signup",
-  checkFor2faLogin = "/api/v2/auth/checkFor2faLogin",
-  getCaptchaInfo = "/api/v3/auth/captcha/info",
-  generateClientToken = "/api/v2/payment/braintree/token",
-  getDeliveryInfo = "/api/v2/cdn/delivery",
-  getAccountConnect = "/api/v2/connect/:site",
-  callback = "/api/v2/connect/:site/callback",
-  complete = "/api/v2/connect/complete",
-  refresh = "/api/v2/connect/refresh",
-  dissociate = "/api/v2/connect/dissociate",
-  listConnections = "/api/v2/connect/list",
-  addCreatorModeratorAdmin = "/api/v2/creator/administration/moderators/add",
-  addCreatorModeratorByPath = "/api/v2/creators/:creator/administration/moderators/add",
-  removeCreatorModeratorAdmin = "/api/v2/creator/administration/moderators/remove",
-  removeCreatorModeratorByPath = "/api/v2/creators/:creator/administration/moderators/remove",
-  listModerators = "/api/v2/creator/administration/moderators/list",
-  listModeratorsByPath = "/api/v2/creators/:creator/administration/moderators/list",
-  getInfo = "/api/v2/creator/info",
-  getCreatorInfoByName = "/api/v2/creator/named",
-  listVideos = "/api/v2/creator/videos",
-  listPlaylists = "/api/v2/creator/playlists",
-  listCreators = "/api/v2/creator/list",
-  discoverCreatorsV2 = "/api/v2/creator/discover",
-  listCreatorCategoriesV2 = "/api/v2/creatorcategory/list",
-  updateSocialLinks = "/api/v2/creator/social/update",
-  getSocialLinks = "/api/v2/creator/social/get",
-  updateChannelImage = "/api/v2/creator/image/update",
-  updateChannelInfo = "/api/v2/creator/info/update",
-  getChannelInfo = "/api/v2/creator/info/get",
-  getCreator = "/api/v3/creator/info",
-  getCreators = "/api/v3/creator/list",
-  getCreatorByName = "/api/v3/creator/named",
-  discoverCreatorsV3 = "/api/v3/creator/discover",
-  listCreatorCategoriesV3 = "/api/v3/creator/category/list",
-  bindCreatorInviteCode = "/api/v3/creator/invite/bind",
-  getCreatorInviteCodeInfo = "/api/v3/creator/invite/info",
-  claimCreatorInviteCode = "/api/v3/creator/invite/claim",
-  getAgreement = "/api/v2/api/creator/agreement/",
-  confirmAgreement = "/api/v2/api/creator/agreement/confirm",
-  listCreatorPlanFeatureLevels = "/api/v2/creatorplanfeaturelevel/list",
-  calculateCreatorPlanFeatureCosts = "/api/v2/creatorplanfeaturelevel/cost",
-  planFeatureLevels = "/api/v2/plan/feature/list",
-  publishSubscriptionPlan = "/api/v2/plan/publish",
-  updateSubscriptionPlans = "/api/v2/plan/update",
-  listSubscriptionPlans = "/api/v2/plan/list",
-  getCreatorSubInfoPublic = "/api/v2/plan/info",
-  getPlansForContent = "/api/v3/plan/content",
-  link = "/api/v2/discord/bot/link",
-  linkCallback = "/api/v2/discord/bot/link/callback",
-  listDiscordBotConnections = "/api/v2/discord/bot/list",
-  unlink = "/api/v2/discord/bot/unlink",
-  getDiscordBotInfo = "/api/v2/discord/bot/info",
-  generateInviteLink = "/api/v2/discord/bot/invite/generate",
-  updateLink = "/api/v2/discord/bot/update",
-  joinDiscordServers = "/api/v2/discord/server/join",
-  getEdges = "/api/v2/edges",
-  getVideoUrl = "/api/v2/video/url",
-  getFaqSections = "/api/v2/faq/list",
-  getVideoPlayer = "/api/v2/get/player/:guid",
-  getOptimizationsV3 = "/api/v2/image/optimizations/",
-  getOptimizationsV2 = "/api/v3/image/optimizations/",
-  renderLivePopout = "/v2/live/popout",
-  updateConfig = "/api/v2/live/config/update",
-  uploadLiveThumbnail = "/api/v2/live/thumbnail/upload",
-  banUserV2 = "/api/v2/moderation/user/ban",
-  unbanUserV2 = "/api/v2/moderation/user/unban",
-  listBanV2 = "/api/v2/moderation/user/ban/list",
-  hideCommentV2 = "/api/v2/moderation/comment/hide",
-  unhideCommentV2 = "/api/v2/moderation/comment/unhide",
-  moderateVideoComment = "/api/v2/comment/moderate/",
-  userBanStatusV2 = "/api/v2/moderator/userBanStatus",
-  userUnbanV2 = "/api/v2/moderator/user/unban",
-  userInfoV2 = "/api/v2/moderation/user/info",
-  banUserV3 = "/api/v3/moderation/user/ban",
-  unbanUserV3 = "/api/v3/moderation/user/unban",
-  listBanV3 = "/api/v3/moderation/user/ban/list",
-  hideCommentV3 = "/api/v3/moderation/comment/hide",
-  unhideCommentV3 = "/api/v3/moderation/comment/unhide",
-  moderateComment = "/api/v3/comment/moderate/",
-  userBanStatusV3 = "/api/v3/moderator/userBanStatus",
-  userUnbanV3 = "/api/v3/moderator/user/unban",
-  userInfoV3 = "/api/v3/moderation/user/info",
-  sendPasswordReset = "/api/v2/user/password/reset/request",
-  resetPassword = "/api/v2/user/password/reset",
-  validateKey = "/api/v2/user/password/reset/validate",
-  listPaymentMethods = "/api/v2/payment/method/list",
-  addPaymentMethod = "/api/v2/payment/method/add",
-  deletePaymentMethod = "/api/v2/payment/method/delete",
-  setPrimaryPaymentMethod = "/api/v2/payment/method/set",
-  estimateTaxes = "/api/v2/payment/tax/estimate",
-  purchaseSubscription = "/api/v2/payment/subscription/purchase",
-  cancelSubscription = "/api/v2/payment/subscription/cancel",
-  listAddresses = "/api/v2/payment/address/list",
-  addAddress = "/api/v2/payment/address/add",
-  updateAddress = "/api/v2/payment/address/update",
-  deleteAddress = "/api/v2/payment/address/delete",
-  setPrimaryAddress = "/api/v2/payment/address/set",
-  webhook = "/api/v2/payment/webhook/:paymentProcessor",
-  webhookWithSubprocessor = "/api/v2/payment/webhook/:paymentProcessor/:subPaymentProcessor",
-  listInvoices = "/api/v2/payment/invoice/list",
-  subscribeUser = "/api/v2/socket/subscribe/user",
-  subscribeUserById = "/api/v2/socket/subscribe/user/:id",
-  socketConnect = "/api/v3/socket/connect",
-  disconnectSocket = "/api/v3/socket/disconnect",
-  retrievePublicKey = "/api/v2/payment/stripe/pk",
-  listUserSubscriptionsV2 = "/api/v2/user/subscriptions",
-  doesUserHaveSubV2 = "/api/v2/user/subscribed",
-  listUserSubscriptionsV3 = "/api/v3/user/subscriptions",
-  doesUserHaveSubV3 = "/api/v3/user/subscribed",
-  submitSupport = "/api/v2/support/",
-  getTicketTypes = "/api/v2/support/ticket/types",
-  syncConnect = "/api/v2/sync/connect",
-  disconnectSync = "/api/v2/sync/disconnect",
-  getTranscodeProgress = "/api/v2/video/transcode/progress",
-  progressSubscribe = "/api/v2/video/transcode/progress/subscribe",
-  progressUnsubscribe = "/api/v2/video/transcode/progress/unsubscribe",
-  getActiveProcesses = "/api/cms/v3/processing/active",
-  progressSubscribeCMS = "/api/cms/v3/transcode/subscribe",
-  progressUnsubscribeCMS = "/api/cms/v3/transcode/unsubscribe",
-  getUserInfo = "/api/v2/user/info",
-  self = "/api/v2/user/self",
-  getUserInfoByName = "/api/v2/user/named",
-  updateInfo = "/api/v2/user/update",
-  updateEmail = "/api/v2/user/email/update",
-  completeEmailChange = "/api/v2/user/email/update/complete",
-  uploadAvatar = "/api/v2/user/avatar",
-  changePassword = "/api/v2/user/password/change",
-  getUserCreator = "/api/v2/user/creator",
-  getActivityFeedV2 = "/api/v2/user/activity",
-  getExternalLinksV2 = "/api/v2/user/links",
-  updateExternalLinksV2 = "/api/v2/user/links",
-  getAdministrator = "/api/v2/user/administrator",
-  getSecurity = "/api/v2/user/security",
-  generateTwoFactorSecret = "/api/v2/user/security/2fa",
-  activateTwoFactorAuthentication = "/api/v2/user/security/2fa/activate",
-  deactivateTwoFactorAuthentication = "/api/v2/user/security/2fa/deactivate",
-  activateBackupCode = "/api/v2/user/security/backupcode/activate",
-  deactivateBackupCode = "/api/v2/user/security/backupcode/deactivate",
-  generateBackupCode = "/api/v2/user/security/backupcode",
-  getUserNotificationSettingsV2 = "/api/v2/user/notificationsetting",
-  updateUserNotificationSettingsV2 = "/api/v2/user/notificationsetting",
-  userCreatorBanStatus = "/api/v2/user/ban/status",
-  getActivityFeedV3 = "/api/v3/user/activity",
-  getExternalLinksV3 = "/api/v3/user/links",
-  updateExternalLinksV3 = "/api/v3/user/links",
-  getSelf = "/api/v3/user/self",
-  scheduleDeletion = "/api/v3/user/delete",
-  unscheduleDeletion = "/api/v3/user/undelete",
-  getAchievementPerks = "/api/v3/user/achievement/perks",
-  getUserNotificationSettingsV3 = "/api/v3/user/notification/list",
-  updateUserNotificationSettingsV3 = "/api/v3/user/notification/update",
-  getVideoComments = "/api/v2/video/comments",
-  addVideoComment = "/api/v2/video/comment",
-  getVideoCommentReplies = "/api/v2/video/comment/replies",
-  clearInteraction = "/api/v2/video/comment/interaction/clear",
-  setInteraction = "/api/v2/video/comment/interaction/set",
-  watchKey = "/api/v2/video/watchkey",
-  getVideo = "/api/v2/video/info",
-  getRelatedVideos = "/api/v2/video/related",
-  updateVideo = "/api/v2/video/update",
-  deleteVideo = "/api/v2/video/delete",
-  getList = "/api/v2/video/list",
-  getDashClearKeys = "/api/v2/video/dash/watchkey",
-  getDashClearKeysOverPost = "/api/v2/video/dash/watchkey",
-  getDashSignedChunkUrl = "/api/v2/video/dash/chunk/signed",
-  listPlaylistVideos = "/api/v2/playlist/videos",
-  createMultipartUploadV2 = "/api/v2/video/upload/s3/multipart",
-  getUploadedPartsV2 = "/api/v2/video/upload/s3/multipart",
-  signPartUploadVideo = "/api/v2/video/upload/s3/multipart/sign",
-  abortMultipartUploadV2 = "/api/v2/video/upload/s3/multipart/abort",
-  completeMultipartUploadVideo = "/api/v2/video/upload/s3/multipart/complete",
-  uploadThumbnailV2 = "/api/v2/video/upload/thumbnail",
-  connectedAccount = "/api/v2/webhooks/connectedAccount/:site",
-  IVSlivestreamPublish = "/api/v3/webhooks/ivs/livestream",
-  livestreamPublish = "/api/v3/webhooks/livestream",
-  getAppInfoV2 = "/api/v2/push/web/info",
-  registerV2 = "/api/v2/push/web/register",
-  unregisterV2 = "/api/v2/push/web/revoke",
-  getTokenInfo = "/api/v2/push/web/tokenInfo",
-  getAppInfoV3 = "/api/v3/push/web/info",
-  registerV3 = "/api/v3/push/web/register",
-  unregisterV3 = "/api/v3/push/web/revoke",
-  getContentList = "/acp/v3/content/list",
-  getContentACP = "/acp/v3/content",
-  postContent = "/acp/v3/content",
-  getOrderList = "/acp/v3/order/list",
-  getOrder = "/acp/v3/order",
-  postOrder = "/acp/v3/order",
-  postManager = "/acp/v3/manager",
-  createOrder = "/acp/v3/order/create",
-  augmentOrder = "/acp/v3/order/augment",
-  getUploadList = "/acp/v3/upload/list",
-  getUpload = "/acp/v3/upload",
-  postUpload = "/acp/v3/upload",
-  getJob = "/acp/v3/job",
-  postJob = "/acp/v3/job",
-  getTask = "/acp/v3/task",
-  postTask = "/acp/v3/task",
-  getBlogPostCMS = "/api/cms/v3/blogPost/get",
-  listBlogPost = "/api/cms/v3/blogPost/list",
-  createBlogPost = "/api/cms/v3/blogPost/create",
-  editBlogPost = "/api/cms/v3/blogPost/edit",
-  deleteBlogPost = "/api/cms/v3/blogPost/delete",
-  updateNewAttachments = "/api/cms/v3/blogPost/attachments/update",
-  editContent = "/api/cms/v3/content/edit",
-  listVideoContent = "/api/cms/v3/content/video/list",
-  listAudioContent = "/api/cms/v3/content/audio/list",
-  listPictureContent = "/api/cms/v3/content/picture/list",
-  listGalleryContent = "/api/cms/v3/content/gallery/list",
-  getVideoContentCMS = "/api/cms/v3/content/video/",
-  getAudioContentCMS = "/api/cms/v3/content/audio/",
-  getPictureContentCMS = "/api/cms/v3/content/picture/",
-  getGalleryContentCMS = "/api/cms/v3/content/gallery/",
-  getContentCMS = "/api/cms/v3/content/",
-  deleteContent = "/api/cms/v3/content/delete",
-  getCreatorWarehouse = "/api/cms/v3/creatorwarehouse",
-  saveCreatorWarehouse = "/api/cms/v3/creatorwarehouse/save",
-  listPriceRules = "/api/cms/v3/creatorwarehouse/pricerule/list",
-  getPriceRule = "/api/cms/v3/creatorwarehouse/pricerule/",
-  createPriceRule = "/api/cms/v3/creatorwarehouse/pricerule/create",
-  editPriceRule = "/api/cms/v3/creatorwarehouse/pricerule/edit",
-  deletePriceRule = "/api/cms/v3/creatorwarehouse/pricerule/delete",
-  listProducts = "/api/cms/v3/creatorwarehouse/products/list",
-  listCollections = "/api/cms/v3/creatorwarehouse/collections/list",
-  getShopInfo = "/api/cms/v3/creatorwarehouse/shop/get",
-  listShopShippingCountries = "/api/cms/v3/creatorwarehouse/shop/shippingcountries/list",
-  getProducts = "/api/cms/v3/creatorwarehouse/products/get",
-  getCollections = "/api/cms/v3/creatorwarehouse/collections/get",
-  getCountries = "/api/cms/v3/creatorwarehouse/countries/get",
-  getLivestreamInfo = "/api/cms/v3/live/info",
-  listSubscriptionPlansCMS = "/api/cms/v3/plan/list",
-  listSubscribers = "/api/cms/v3/subscribers/list",
-  downloadSubscribers = "/api/cms/v3/subscribers/download",
-  postComment = "/api/v3/comment",
-  getComments = "/api/v3/comment",
-  getCommentReplies = "/api/v3/comment/replies",
-  likeComment = "/api/v3/comment/like",
-  dislikeComment = "/api/v3/comment/dislike",
-  getCreatorBlogPosts = "/api/v3/content/creator",
-  getMultiCreatorBlogPosts = "/api/v3/content/creator/list",
-  getContentTags = "/api/v3/content/tags",
-  getBlogPost = "/api/v3/content/post",
-  getRelatedBlogPosts = "/api/v3/content/related",
-  getVideoContent = "/api/v3/content/video",
-  getAudioContent = "/api/v3/content/audio",
-  getPictureContent = "/api/v3/content/picture",
-  getGalleryContent = "/api/v3/content/gallery",
-  getContent = "/api/v3/content/info",
-  likeContent = "/api/v3/content/like",
-  dislikeContent = "/api/v3/content/dislike",
-  getPictureUrl = "/api/v3/content/picture/url",
-  createMultipartUploadV3 = "/api/v3/content/upload/s3/multipart",
-  getUploadedPartsV3 = "/api/v3/content/upload/s3/multipart",
-  signPartUploadContent = "/api/v3/content/upload/s3/multipart/sign",
-  abortMultipartUploadV3 = "/api/v3/content/upload/s3/multipart/abort",
-  completeMultipartUploadContent = "/api/v3/content/upload/s3/multipart/complete",
-  uploadThumbnailV3 = "/api/v3/content/upload/thumbnail",
-  thumbnailUpdateSubscribe = "/api/v3/content/thumbnail/subscribe",
-  thumbnailUpdateUnsubscribe = "/api/v3/content/thumbnail/unsubscribe",
-  joinLiveRoom = "/api/v3/poll/live/joinroom",
-  joinLiveRoomModerator = "/api/v3/poll/live/joinLiveRoomModerator",
-  leaveLiveRoom = "/api/v3/poll/live/leaveLiveRoom",
-  leaveLiveRoomModerator = "/api/v3/poll/live/leaveLiveRoomModerator",
-  votePoll = "/api/v3/poll/votePoll",
-  cmsListPolls = "/api/v3/poll/cms/list",
-  createLivePoll = "/api/v3/poll/live/create",
-  closePoll = "/api/v3/poll/close",
-  redirectYTLatest = "/api/v3/redirect-yt-latest/:channelKey",
-  listCreatorLoyaltyReward = "/api/v3/user/loyaltyreward/list",
-  claimLoyaltyReward = "/api/v3/user/loyaltyreward/claim",
-  getEnabledState = "/api/v3/experiments/vpn/enabled",
-  updateEnabledState = "/api/v3/experiments/vpn/enabled",
-  downloadUserProfile = "/api/v3/experiments/vpn/profile/download",
-  getUserProfileLinksEphemeral = "/api/v3/experiments/vpn/profile/ephemeral",
-  getServerList = "/api/v3/experiments/vpn/server/list",
+	confirmEmail = "/api/v2/activation/email/confirm",
+	requestActivationEmail = "/api/v2/activation/email/request",
+	listCreatorAgreement = "/api/acp/v2/creatoragreement/list",
+	getCreatorAgreement = "/api/acp/v2/creatoragreement",
+	editCreatorAgreement = "/api/acp/v2/creatoragreement/edit",
+	getCreatorList = "/api/acp/v2/creator/list",
+	getCreatorDetails = "/api/acp/v2/creator/",
+	getSubscriptionPlanList = "/api/acp/v2/creator/subscriptionplans/list",
+	checkCreatorURLAvailable = "/api/acp/v2/creator/urlname/availability",
+	getCreatorCategories = "/api/acp/v2/creator/category/list",
+	createCreator = "/api/acp/v2/creator/create",
+	uploadCover = "/api/acp/v2/creator/cover/upload",
+	getCreatorsTitles = "/api/acp/v2/creator/titles",
+	updateCreator = "/api/acp/v2/creator/update",
+	updateCreatorSubscriptionPlan = "/api/acp/v2/creator/subscriptionplan/update",
+	uploadCard = "/api/acp/v2/creator/card/upload",
+	uploadIcon = "/api/acp/v2/creator/icon/upload",
+	getCreatorInviteCodeList = "/api/acp/v3/creator/invite/list",
+	createCreatorInviteCode = "/api/acp/v3/creator/invite/create",
+	getJobStatus = "/api/acp/v2/dashboard/job/status/",
+	startJob = "/api/acp/v2/dashboard/job/start/",
+	stopJob = "/api/acp/v2/dashboard/job/stop/",
+	getFaqSectionsACP = "/api/acp/v2/section/list",
+	updateFaqSection = "/api/acp/v2/section/edit",
+	getFaqSectionDetails = "/api/acp/v2/section/",
+	getFaqArticleDetails = "/api/acp/v2/article/",
+	updateFaqArticle = "/api/acp/v2/article/edit",
+	uploadFaqImage = "/api/acp/v2/image/upload",
+	getFaqImages = "/api/acp/v2/image/list",
+	createFaqSection = "/api/acp/v2/section/create",
+	createFaqArticle = "/api/acp/v2/article/create",
+	getFeatureConfigs = "/api/acp/v2/feature/configs",
+	saveFeature = "/api/acp/v2/feature/save",
+	saveFeatureDependencies = "/api/acp/v2/feature/dependencies/save",
+	saveFeatureCategory = "/api/acp/v2/feature/category/save",
+	saveFeatureType = "/api/acp/v2/feature/type/save",
+	saveFeatureResolution = "/api/acp/v2/feature/resolution/save",
+	addGlobalModerator = "/api/v2/administration/moderators/global/add",
+	removeGlobalModerator = "/api/v2/administration/moderators/global/remove",
+	removeModerator = "/api/v2/administration/moderators/remove",
+	getModerator = "/api/v2/administration/moderators/get/:user",
+	listModeratorsAdmin = "/api/v2/administration/moderators/list",
+	getModeratorList = "/api/acp/v2/moderator/list",
+	createModerator = "/api/acp/v2/moderator/create",
+	updateGlobalModerator = "/api/acp/v2/moderator/update/global",
+	removeCreatorModeratorACP = "/api/acp/v2/moderator/creator/remove",
+	addCreatorModeratorACP = "/api/acp/v2/moderator/creator/add/",
+	getModeratorAvailableCreators = "/api/acp/v2/moderator/creator/available",
+	getModeratorCreators = "/api/acp/v2/moderator/creator/list/",
+	getUserList = "/api/acp/v2/user/list",
+	getUserDetails = "/api/acp/v2/user/",
+	searchUserForModeration = "/api/acp/v2/user/list/notmoderator",
+	findUser = "/api/acp/v2/user/find",
+	createAdmin = "/api/acp/v2/user/admin/create",
+	addUserSubscriptions = "/api/acp/v2/user/subscription/add",
+	checkUsernameAvailable = "/api/acp/v2/user/username/availability",
+	checkEmailAvailable = "/api/acp/v2/user/email/availability",
+	uploadAvatarACP = "/api/acp/v2/user/avatar/upload",
+	updateUser = "/api/acp/v2/user/edit",
+	getUserSubscriptions = "/api/acp/v2/user/usersubscription/list",
+	removeUserSubscription = "/api/acp/v2/user/usersubscription/delete",
+	updateAdministrator = "/api/acp/v2/user/administrator/update",
+	deleteUser = "/api/acp/v2/user/delete",
+	signupACP = "/api/acp/v2/user/create",
+	listUserInvoices = "/api/acp/v2/user/payment/invoice/list",
+	getPaymentProcessorData = "/api/acp/v2/user/payment/processor/data",
+	scheduleDeletionACP = "/api/acp/v3/user/delete",
+	unscheduleDeletionACP = "/api/acp/v3/user/undelete",
+	getSubjectAccessData = "/api/acp/v3/user/sar",
+	login = "/api/v2/auth/login",
+	logout = "/api/v2/auth/logout",
+	beginSpoofing = "/api/v2/auth/spoof/begin",
+	endSpoofing = "/api/v2/auth/spoof/end",
+	signup = "/api/v2/auth/signup",
+	checkFor2faLogin = "/api/v2/auth/checkFor2faLogin",
+	getCaptchaInfo = "/api/v3/auth/captcha/info",
+	generateClientToken = "/api/v2/payment/braintree/token",
+	getDeliveryInfo = "/api/v2/cdn/delivery",
+	getAccountConnect = "/api/v2/connect/:site",
+	callback = "/api/v2/connect/:site/callback",
+	complete = "/api/v2/connect/complete",
+	refresh = "/api/v2/connect/refresh",
+	dissociate = "/api/v2/connect/dissociate",
+	listConnections = "/api/v2/connect/list",
+	addCreatorModeratorAdmin = "/api/v2/creator/administration/moderators/add",
+	addCreatorModeratorByPath = "/api/v2/creators/:creator/administration/moderators/add",
+	removeCreatorModeratorAdmin = "/api/v2/creator/administration/moderators/remove",
+	removeCreatorModeratorByPath = "/api/v2/creators/:creator/administration/moderators/remove",
+	listModerators = "/api/v2/creator/administration/moderators/list",
+	listModeratorsByPath = "/api/v2/creators/:creator/administration/moderators/list",
+	getInfo = "/api/v2/creator/info",
+	getCreatorInfoByName = "/api/v2/creator/named",
+	listVideos = "/api/v2/creator/videos",
+	listPlaylists = "/api/v2/creator/playlists",
+	listCreators = "/api/v2/creator/list",
+	discoverCreatorsV2 = "/api/v2/creator/discover",
+	listCreatorCategoriesV2 = "/api/v2/creatorcategory/list",
+	updateSocialLinks = "/api/v2/creator/social/update",
+	getSocialLinks = "/api/v2/creator/social/get",
+	updateChannelImage = "/api/v2/creator/image/update",
+	updateChannelInfo = "/api/v2/creator/info/update",
+	getChannelInfo = "/api/v2/creator/info/get",
+	getCreator = "/api/v3/creator/info",
+	getCreators = "/api/v3/creator/list",
+	getCreatorByName = "/api/v3/creator/named",
+	discoverCreatorsV3 = "/api/v3/creator/discover",
+	listCreatorCategoriesV3 = "/api/v3/creator/category/list",
+	bindCreatorInviteCode = "/api/v3/creator/invite/bind",
+	getCreatorInviteCodeInfo = "/api/v3/creator/invite/info",
+	claimCreatorInviteCode = "/api/v3/creator/invite/claim",
+	getAgreement = "/api/v2/api/creator/agreement/",
+	confirmAgreement = "/api/v2/api/creator/agreement/confirm",
+	listCreatorPlanFeatureLevels = "/api/v2/creatorplanfeaturelevel/list",
+	calculateCreatorPlanFeatureCosts = "/api/v2/creatorplanfeaturelevel/cost",
+	planFeatureLevels = "/api/v2/plan/feature/list",
+	publishSubscriptionPlan = "/api/v2/plan/publish",
+	updateSubscriptionPlans = "/api/v2/plan/update",
+	listSubscriptionPlans = "/api/v2/plan/list",
+	getCreatorSubInfoPublic = "/api/v2/plan/info",
+	getPlansForContent = "/api/v3/plan/content",
+	link = "/api/v2/discord/bot/link",
+	linkCallback = "/api/v2/discord/bot/link/callback",
+	listDiscordBotConnections = "/api/v2/discord/bot/list",
+	unlink = "/api/v2/discord/bot/unlink",
+	getDiscordBotInfo = "/api/v2/discord/bot/info",
+	generateInviteLink = "/api/v2/discord/bot/invite/generate",
+	updateLink = "/api/v2/discord/bot/update",
+	joinDiscordServers = "/api/v2/discord/server/join",
+	getEdges = "/api/v2/edges",
+	getVideoUrl = "/api/v2/video/url",
+	getFaqSections = "/api/v2/faq/list",
+	getVideoPlayer = "/api/v2/get/player/:guid",
+	getOptimizationsV3 = "/api/v2/image/optimizations/",
+	getOptimizationsV2 = "/api/v3/image/optimizations/",
+	renderLivePopout = "/v2/live/popout",
+	updateConfig = "/api/v2/live/config/update",
+	uploadLiveThumbnail = "/api/v2/live/thumbnail/upload",
+	banUserV2 = "/api/v2/moderation/user/ban",
+	unbanUserV2 = "/api/v2/moderation/user/unban",
+	listBanV2 = "/api/v2/moderation/user/ban/list",
+	hideCommentV2 = "/api/v2/moderation/comment/hide",
+	unhideCommentV2 = "/api/v2/moderation/comment/unhide",
+	moderateVideoComment = "/api/v2/comment/moderate/",
+	userBanStatusV2 = "/api/v2/moderator/userBanStatus",
+	userUnbanV2 = "/api/v2/moderator/user/unban",
+	userInfoV2 = "/api/v2/moderation/user/info",
+	banUserV3 = "/api/v3/moderation/user/ban",
+	unbanUserV3 = "/api/v3/moderation/user/unban",
+	listBanV3 = "/api/v3/moderation/user/ban/list",
+	hideCommentV3 = "/api/v3/moderation/comment/hide",
+	unhideCommentV3 = "/api/v3/moderation/comment/unhide",
+	moderateComment = "/api/v3/comment/moderate/",
+	userBanStatusV3 = "/api/v3/moderator/userBanStatus",
+	userUnbanV3 = "/api/v3/moderator/user/unban",
+	userInfoV3 = "/api/v3/moderation/user/info",
+	sendPasswordReset = "/api/v2/user/password/reset/request",
+	resetPassword = "/api/v2/user/password/reset",
+	validateKey = "/api/v2/user/password/reset/validate",
+	listPaymentMethods = "/api/v2/payment/method/list",
+	addPaymentMethod = "/api/v2/payment/method/add",
+	deletePaymentMethod = "/api/v2/payment/method/delete",
+	setPrimaryPaymentMethod = "/api/v2/payment/method/set",
+	estimateTaxes = "/api/v2/payment/tax/estimate",
+	purchaseSubscription = "/api/v2/payment/subscription/purchase",
+	cancelSubscription = "/api/v2/payment/subscription/cancel",
+	listAddresses = "/api/v2/payment/address/list",
+	addAddress = "/api/v2/payment/address/add",
+	updateAddress = "/api/v2/payment/address/update",
+	deleteAddress = "/api/v2/payment/address/delete",
+	setPrimaryAddress = "/api/v2/payment/address/set",
+	webhook = "/api/v2/payment/webhook/:paymentProcessor",
+	webhookWithSubprocessor = "/api/v2/payment/webhook/:paymentProcessor/:subPaymentProcessor",
+	listInvoices = "/api/v2/payment/invoice/list",
+	subscribeUser = "/api/v2/socket/subscribe/user",
+	subscribeUserById = "/api/v2/socket/subscribe/user/:id",
+	socketConnect = "/api/v3/socket/connect",
+	disconnectSocket = "/api/v3/socket/disconnect",
+	retrievePublicKey = "/api/v2/payment/stripe/pk",
+	listUserSubscriptionsV2 = "/api/v2/user/subscriptions",
+	doesUserHaveSubV2 = "/api/v2/user/subscribed",
+	listUserSubscriptionsV3 = "/api/v3/user/subscriptions",
+	doesUserHaveSubV3 = "/api/v3/user/subscribed",
+	submitSupport = "/api/v2/support/",
+	getTicketTypes = "/api/v2/support/ticket/types",
+	syncConnect = "/api/v2/sync/connect",
+	disconnectSync = "/api/v2/sync/disconnect",
+	getTranscodeProgress = "/api/v2/video/transcode/progress",
+	progressSubscribe = "/api/v2/video/transcode/progress/subscribe",
+	progressUnsubscribe = "/api/v2/video/transcode/progress/unsubscribe",
+	getActiveProcesses = "/api/cms/v3/processing/active",
+	progressSubscribeCMS = "/api/cms/v3/transcode/subscribe",
+	progressUnsubscribeCMS = "/api/cms/v3/transcode/unsubscribe",
+	getUserInfo = "/api/v2/user/info",
+	self = "/api/v2/user/self",
+	getUserInfoByName = "/api/v2/user/named",
+	updateInfo = "/api/v2/user/update",
+	updateEmail = "/api/v2/user/email/update",
+	completeEmailChange = "/api/v2/user/email/update/complete",
+	uploadAvatar = "/api/v2/user/avatar",
+	changePassword = "/api/v2/user/password/change",
+	getUserCreator = "/api/v2/user/creator",
+	getActivityFeedV2 = "/api/v2/user/activity",
+	getExternalLinksV2 = "/api/v2/user/links",
+	updateExternalLinksV2 = "/api/v2/user/links",
+	getAdministrator = "/api/v2/user/administrator",
+	getSecurity = "/api/v2/user/security",
+	generateTwoFactorSecret = "/api/v2/user/security/2fa",
+	activateTwoFactorAuthentication = "/api/v2/user/security/2fa/activate",
+	deactivateTwoFactorAuthentication = "/api/v2/user/security/2fa/deactivate",
+	activateBackupCode = "/api/v2/user/security/backupcode/activate",
+	deactivateBackupCode = "/api/v2/user/security/backupcode/deactivate",
+	generateBackupCode = "/api/v2/user/security/backupcode",
+	getUserNotificationSettingsV2 = "/api/v2/user/notificationsetting",
+	updateUserNotificationSettingsV2 = "/api/v2/user/notificationsetting",
+	userCreatorBanStatus = "/api/v2/user/ban/status",
+	getActivityFeedV3 = "/api/v3/user/activity",
+	getExternalLinksV3 = "/api/v3/user/links",
+	updateExternalLinksV3 = "/api/v3/user/links",
+	getSelf = "/api/v3/user/self",
+	scheduleDeletion = "/api/v3/user/delete",
+	unscheduleDeletion = "/api/v3/user/undelete",
+	getAchievementPerks = "/api/v3/user/achievement/perks",
+	getUserNotificationSettingsV3 = "/api/v3/user/notification/list",
+	updateUserNotificationSettingsV3 = "/api/v3/user/notification/update",
+	getVideoComments = "/api/v2/video/comments",
+	addVideoComment = "/api/v2/video/comment",
+	getVideoCommentReplies = "/api/v2/video/comment/replies",
+	clearInteraction = "/api/v2/video/comment/interaction/clear",
+	setInteraction = "/api/v2/video/comment/interaction/set",
+	watchKey = "/api/v2/video/watchkey",
+	getVideo = "/api/v2/video/info",
+	getRelatedVideos = "/api/v2/video/related",
+	updateVideo = "/api/v2/video/update",
+	deleteVideo = "/api/v2/video/delete",
+	getList = "/api/v2/video/list",
+	getDashClearKeys = "/api/v2/video/dash/watchkey",
+	getDashClearKeysOverPost = "/api/v2/video/dash/watchkey",
+	getDashSignedChunkUrl = "/api/v2/video/dash/chunk/signed",
+	listPlaylistVideos = "/api/v2/playlist/videos",
+	createMultipartUploadV2 = "/api/v2/video/upload/s3/multipart",
+	getUploadedPartsV2 = "/api/v2/video/upload/s3/multipart",
+	signPartUploadVideo = "/api/v2/video/upload/s3/multipart/sign",
+	abortMultipartUploadV2 = "/api/v2/video/upload/s3/multipart/abort",
+	completeMultipartUploadVideo = "/api/v2/video/upload/s3/multipart/complete",
+	uploadThumbnailV2 = "/api/v2/video/upload/thumbnail",
+	connectedAccount = "/api/v2/webhooks/connectedAccount/:site",
+	IVSlivestreamPublish = "/api/v3/webhooks/ivs/livestream",
+	livestreamPublish = "/api/v3/webhooks/livestream",
+	getAppInfoV2 = "/api/v2/push/web/info",
+	registerV2 = "/api/v2/push/web/register",
+	unregisterV2 = "/api/v2/push/web/revoke",
+	getTokenInfo = "/api/v2/push/web/tokenInfo",
+	getAppInfoV3 = "/api/v3/push/web/info",
+	registerV3 = "/api/v3/push/web/register",
+	unregisterV3 = "/api/v3/push/web/revoke",
+	getContentList = "/acp/v3/content/list",
+	getContentACP = "/acp/v3/content",
+	postContent = "/acp/v3/content",
+	getOrderList = "/acp/v3/order/list",
+	getOrder = "/acp/v3/order",
+	postOrder = "/acp/v3/order",
+	postManager = "/acp/v3/manager",
+	createOrder = "/acp/v3/order/create",
+	augmentOrder = "/acp/v3/order/augment",
+	getUploadList = "/acp/v3/upload/list",
+	getUpload = "/acp/v3/upload",
+	postUpload = "/acp/v3/upload",
+	getJob = "/acp/v3/job",
+	postJob = "/acp/v3/job",
+	getTask = "/acp/v3/task",
+	postTask = "/acp/v3/task",
+	getBlogPostCMS = "/api/cms/v3/blogPost/get",
+	listBlogPost = "/api/cms/v3/blogPost/list",
+	createBlogPost = "/api/cms/v3/blogPost/create",
+	editBlogPost = "/api/cms/v3/blogPost/edit",
+	deleteBlogPost = "/api/cms/v3/blogPost/delete",
+	updateNewAttachments = "/api/cms/v3/blogPost/attachments/update",
+	editContent = "/api/cms/v3/content/edit",
+	listVideoContent = "/api/cms/v3/content/video/list",
+	listAudioContent = "/api/cms/v3/content/audio/list",
+	listPictureContent = "/api/cms/v3/content/picture/list",
+	listGalleryContent = "/api/cms/v3/content/gallery/list",
+	getVideoContentCMS = "/api/cms/v3/content/video/",
+	getAudioContentCMS = "/api/cms/v3/content/audio/",
+	getPictureContentCMS = "/api/cms/v3/content/picture/",
+	getGalleryContentCMS = "/api/cms/v3/content/gallery/",
+	getContentCMS = "/api/cms/v3/content/",
+	deleteContent = "/api/cms/v3/content/delete",
+	getCreatorWarehouse = "/api/cms/v3/creatorwarehouse",
+	saveCreatorWarehouse = "/api/cms/v3/creatorwarehouse/save",
+	listPriceRules = "/api/cms/v3/creatorwarehouse/pricerule/list",
+	getPriceRule = "/api/cms/v3/creatorwarehouse/pricerule/",
+	createPriceRule = "/api/cms/v3/creatorwarehouse/pricerule/create",
+	editPriceRule = "/api/cms/v3/creatorwarehouse/pricerule/edit",
+	deletePriceRule = "/api/cms/v3/creatorwarehouse/pricerule/delete",
+	listProducts = "/api/cms/v3/creatorwarehouse/products/list",
+	listCollections = "/api/cms/v3/creatorwarehouse/collections/list",
+	getShopInfo = "/api/cms/v3/creatorwarehouse/shop/get",
+	listShopShippingCountries = "/api/cms/v3/creatorwarehouse/shop/shippingcountries/list",
+	getProducts = "/api/cms/v3/creatorwarehouse/products/get",
+	getCollections = "/api/cms/v3/creatorwarehouse/collections/get",
+	getCountries = "/api/cms/v3/creatorwarehouse/countries/get",
+	getLivestreamInfo = "/api/cms/v3/live/info",
+	listSubscriptionPlansCMS = "/api/cms/v3/plan/list",
+	listSubscribers = "/api/cms/v3/subscribers/list",
+	downloadSubscribers = "/api/cms/v3/subscribers/download",
+	postComment = "/api/v3/comment",
+	getComments = "/api/v3/comment",
+	getCommentReplies = "/api/v3/comment/replies",
+	likeComment = "/api/v3/comment/like",
+	dislikeComment = "/api/v3/comment/dislike",
+	getCreatorBlogPosts = "/api/v3/content/creator",
+	getMultiCreatorBlogPosts = "/api/v3/content/creator/list",
+	getContentTags = "/api/v3/content/tags",
+	getBlogPost = "/api/v3/content/post",
+	getRelatedBlogPosts = "/api/v3/content/related",
+	getVideoContent = "/api/v3/content/video",
+	getAudioContent = "/api/v3/content/audio",
+	getPictureContent = "/api/v3/content/picture",
+	getGalleryContent = "/api/v3/content/gallery",
+	getContent = "/api/v3/content/info",
+	likeContent = "/api/v3/content/like",
+	dislikeContent = "/api/v3/content/dislike",
+	getPictureUrl = "/api/v3/content/picture/url",
+	createMultipartUploadV3 = "/api/v3/content/upload/s3/multipart",
+	getUploadedPartsV3 = "/api/v3/content/upload/s3/multipart",
+	signPartUploadContent = "/api/v3/content/upload/s3/multipart/sign",
+	abortMultipartUploadV3 = "/api/v3/content/upload/s3/multipart/abort",
+	completeMultipartUploadContent = "/api/v3/content/upload/s3/multipart/complete",
+	uploadThumbnailV3 = "/api/v3/content/upload/thumbnail",
+	thumbnailUpdateSubscribe = "/api/v3/content/thumbnail/subscribe",
+	thumbnailUpdateUnsubscribe = "/api/v3/content/thumbnail/unsubscribe",
+	joinLiveRoom = "/api/v3/poll/live/joinroom",
+	joinLiveRoomModerator = "/api/v3/poll/live/joinLiveRoomModerator",
+	leaveLiveRoom = "/api/v3/poll/live/leaveLiveRoom",
+	leaveLiveRoomModerator = "/api/v3/poll/live/leaveLiveRoomModerator",
+	votePoll = "/api/v3/poll/votePoll",
+	cmsListPolls = "/api/v3/poll/cms/list",
+	createLivePoll = "/api/v3/poll/live/create",
+	closePoll = "/api/v3/poll/close",
+	redirectYTLatest = "/api/v3/redirect-yt-latest/:channelKey",
+	listCreatorLoyaltyReward = "/api/v3/user/loyaltyreward/list",
+	claimLoyaltyReward = "/api/v3/user/loyaltyreward/claim",
+	getEnabledState = "/api/v3/experiments/vpn/enabled",
+	updateEnabledState = "/api/v3/experiments/vpn/enabled",
+	downloadUserProfile = "/api/v3/experiments/vpn/profile/download",
+	getUserProfileLinksEphemeral = "/api/v3/experiments/vpn/profile/ephemeral",
+	getServerList = "/api/v3/experiments/vpn/server/list",
 }
