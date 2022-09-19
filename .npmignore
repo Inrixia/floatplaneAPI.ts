@@ -1,2 +1,7 @@
 *test*
 *.test*
+dist/
+.eslintrc.cjs
+credentials.json
+cookieStore.json
+.vscode/
