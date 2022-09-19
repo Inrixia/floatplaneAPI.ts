@@ -23,8 +23,7 @@
 		"test-all": "vitest auth && vitest api creator user video",
 		"test-auth": "vitest auth",
 		"test-noLogin": "vitest api creator user video",
-		"postinstall": "tsc",
-		"prepublish": "tsc",
+		"prepare": "tsc",
 		"fetchSchema": "./node_modules/.bin/openapi-typescript https://raw.githubusercontent.com/Jman012/FloatplaneAPI/main/floatplane-openapi-specification.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
 	"exports": {
