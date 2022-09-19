@@ -1,10 +1,10 @@
 import { expect, test } from "vitest";
 
 import got from "got";
-import { Creator } from "./index.js";
-import { imageFormat, gotExtends, creatorObjFormat, metadataFormat, eExpect } from "../lib/testHelpers.js";
+import { Creator } from "./creator.js";
+import { imageFormat, gotExtends, creatorObjFormat, metadataFormat, eExpect } from "./lib/testHelpers.js";
 
-import type { BlogPost } from "./index.js";
+import type { BlogPost } from "./creator.js";
 export const blogPostFormat: BlogPost = {
 	id: expect.any(String),
 	guid: expect.any(String),

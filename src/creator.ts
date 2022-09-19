@@ -1,6 +1,6 @@
-import { Core } from "../Core.js";
+import { Core } from "./Core.js";
 
-import { type components, type operations, ApiPaths } from "../lib/apiSchema.js";
+import { type components, type operations, ApiPaths } from "./lib/apiSchema.js";
 import type { OptionalOnly } from "@inrixia/helpers/ts.js";
 
 export type BlogPost = components["schemas"]["BlogPostModelV3"];

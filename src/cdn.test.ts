@@ -1,10 +1,10 @@
 import { expect, test } from "vitest";
 
 import got from "got";
-import { CDN, LiveDeliveryResponse, DownloadDeliveryResponse, VodDeliveryResponse } from "./index.js";
-import { clientFormat, edgeFormat, gotExtends, eExpect } from "../lib/testHelpers.js";
+import { CDN, LiveDeliveryResponse, DownloadDeliveryResponse, VodDeliveryResponse } from "./cdn.js";
+import { clientFormat, edgeFormat, gotExtends, eExpect } from "./lib/testHelpers.js";
 
-import type { components } from "../lib/apiSchema.js";
+import type { components } from "./lib/apiSchema.js";
 
 import type { ValueOf } from "@inrixia/helpers/ts.js";
 

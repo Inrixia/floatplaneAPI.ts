@@ -1,15 +1,15 @@
 import { expect, test } from "vitest";
 import got from "got";
 
-import { Auth } from "./index.js";
+import { Auth } from "./auth.js";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { username, password, token } = require("../../credentials.json");
 
-import type { LoginSuccess, Needs2FA } from "./index.js";
+import type { LoginSuccess, Needs2FA } from "./auth.js";
 export const factorFormat: Needs2FA = { needs2FA: true };
 
-import { imageFormat, gotExtends } from "../lib/testHelpers.js";
+import { imageFormat, gotExtends } from "./lib/testHelpers.js";
 export const loginSuccessFormat: LoginSuccess = {
 	user: {
 		id: expect.any(String),

@@ -2,13 +2,13 @@ import got from "got";
 
 import { CookieJar } from "tough-cookie";
 
-import { Auth } from "./auth/index.js";
-import { User } from "./user/index.js";
-import { Api } from "./api/index.js";
-import { Creator } from "./creator/index.js";
-import { CDN } from "./cdn/index.js";
+import { Auth } from "./auth.js";
+import { User } from "./user.js";
+import { Api } from "./api.js";
+import { Creator } from "./creator.js";
+import { CDN } from "./cdn.js";
 
-import type { LoginSuccess } from "./auth/index.js";
+import type { LoginSuccess } from "./auth.js";
 
 export type LoginOptions = {
 	username: string;
@@ -18,10 +18,7 @@ export type LoginOptions = {
 };
 
 import fs from "fs";
-
-let version = "";
-if (fs.existsSync("./package.json")) version = JSON.parse(fs.readFileSync("./package.json").toString()).version;
-else if (fs.existsSync("../package.json")) version = JSON.parse(fs.readFileSync("./package.json").toString()).version;
+const { version } = JSON.parse(fs.readFileSync("../package.json").toString());
 
 export const headers = {
 	"User-Agent": `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,

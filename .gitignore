@@ -6,3 +6,4 @@ dist/
 
 .vscode/
 src/test.ts
+src/package.json

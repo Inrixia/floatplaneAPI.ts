@@ -1,6 +1,6 @@
-import { Core } from "../Core.js";
+import { Core } from "./Core.js";
 
-import { type operations, ApiPaths } from "../lib/apiSchema.js";
+import { type operations, ApiPaths } from "./lib/apiSchema.js";
 
 export type EdgesResponse = operations["getEdges"]["responses"][200]["content"]["application/json"];
 

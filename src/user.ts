@@ -1,5 +1,5 @@
-import { Core } from "../Core.js";
-import { ApiPaths, components } from "../lib/apiSchema.js";
+import { Core } from "./Core.js";
+import { ApiPaths, components } from "./lib/apiSchema.js";
 
 export type UserSubscription = components["schemas"]["UserSubscriptionModel"];
 export type Self = components["schemas"]["UserSelfV3Response"];

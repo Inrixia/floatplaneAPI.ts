@@ -1,8 +1,8 @@
-import { Core } from "../Core.js";
+import { Core } from "./Core.js";
 
 import type { Options } from "got";
 
-import { type components, type operations, ApiPaths } from "../lib/apiSchema.js";
+import { type components, type operations, ApiPaths } from "./lib/apiSchema.js";
 
 export type GotOptions = Options & { isStream: true };
 

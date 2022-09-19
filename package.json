@@ -1,6 +1,6 @@
 {
 	"name": "floatplane",
-	"version": "4.0.5",
+	"version": "4.0.6",
 	"description": "Library for interfacing with the LMG Floatplane.com api",
 	"main": "index.js",
 	"types": "index.d.ts",
@@ -8,10 +8,12 @@
 	"dependencies": {
 		"cross-env": "^7.0.3",
 		"got": "^12.4.1",
+		"pkginfo": "^0.4.1",
 		"tough-cookie": "^4.1.2"
 	},
 	"devDependencies": {
 		"@inrixia/helpers": "^2.0.2",
+		"@types/pkginfo": "^0.4.0",
 		"@types/tough-cookie": "^4.0.2",
 		"@types/tough-cookie-file-store": "^2.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.37.0",
@@ -28,10 +30,34 @@
 		"test-all": "vitest auth && vitest api creator user video",
 		"test-auth": "vitest auth",
 		"test-noLogin": "vitest api creator user video",
-		"tsc": "tsc && copy /Y package.json dist && copy /Y README.md dist && copy /Y .npmignore dist",
-		"send": "npm run tsc && cd ./dist && npm publish",
-		"send-dry": "npm run tsc && cd ./dist && npm publish --dry-run",
+		"postinstall": "tsc",
 		"fetchSchema": "./node_modules/.bin/openapi-typescript https://raw.githubusercontent.com/Jman012/FloatplaneAPI/main/floatplane-openapi-specification.json --make-paths-enum --output ./src/lib/apiSchema.ts"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./api": {
+			"types": "./dist/api.d.ts",
+			"import": "./dist/api.js"
+		},
+		"./auth": {
+			"types": "./dist/auth.d.ts",
+			"import": "./dist/auth.js"
+		},
+		"./creator": {
+			"types": "./dist/creator.d.ts",
+			"import": "./dist/creator.js"
+		},
+		"./user": {
+			"types": "./dist/user.d.ts",
+			"import": "./dist/user.js"
+		},
+		"./cdn": {
+			"types": "./dist/cdn.d.ts",
+			"import": "./dist/cdn.js"
+		}
 	},
 	"repository": {
 		"type": "git",

@@ -1,6 +1,6 @@
-import { Core } from "../Core.js";
+import { Core } from "./Core.js";
 
-import { type components, ApiPaths } from "../lib/apiSchema.js";
+import { type components, ApiPaths } from "./lib/apiSchema.js";
 
 type Login = components["schemas"]["AuthLoginV2Response"];
 type LoginRequest = components["schemas"]["AuthLoginV2Request"];

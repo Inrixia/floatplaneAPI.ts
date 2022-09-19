@@ -1,11 +1,11 @@
 import { expect, test } from "vitest";
 
 import got from "got";
-import { Api } from "./index.js";
+import { Api } from "./api.js";
 
-import { clientFormat, edgeFormat, gotExtends, type Edge } from "../lib/testHelpers.js";
+import { clientFormat, edgeFormat, gotExtends, type Edge } from "./lib/testHelpers.js";
 
-import type { EdgesResponse } from "./index.js";
+import type { EdgesResponse } from "./api.js";
 
 export const edgesResponseFormat: EdgesResponse = {
 	edges: expect.arrayContaining<Edge>([edgeFormat]),
