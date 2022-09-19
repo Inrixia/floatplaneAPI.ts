@@ -1,15 +1,15 @@
-import { expect, test } from "vitest";
+import { test } from "vitest";
 
 import got from "got";
 import { Creator } from "./creator.js";
-import { imageFormat, gotExtends, creatorObjFormat, metadataFormat, eExpect } from "./lib/testHelpers.js";
+import { imageFormat, gotExtends, creatorObjFormat, metadataFormat, expect } from "./lib/testHelpers.js";
 
 import type { BlogPost } from "./creator.js";
 export const blogPostFormat: BlogPost = {
 	id: expect.any(String),
 	guid: expect.any(String),
 	title: expect.any(String),
-	tags: eExpect.arrayContainingOrEmpty([expect.any(String)]),
+	tags: expect.arrayContainingOrEmpty([expect.any(String)]),
 	text: expect.any(String),
 	type: expect.stringMatching("blogPost"),
 	attachmentOrder: expect.arrayContaining([expect.any(String)]),
@@ -21,11 +21,11 @@ export const blogPostFormat: BlogPost = {
 	comments: expect.any(Number),
 	creator: creatorObjFormat,
 	isAccessible: expect.any(Boolean),
-	thumbnail: eExpect.objectContainingOrNull(imageFormat),
-	videoAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
-	audioAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
-	pictureAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
-	galleryAttachments: eExpect.arrayContainingOrEmpty([expect.any(String)]),
+	thumbnail: expect.objectContainingOrNull(imageFormat),
+	videoAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
+	audioAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
+	pictureAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
+	galleryAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
 	wasReleasedSilently: expect.any(Boolean),
 };
 

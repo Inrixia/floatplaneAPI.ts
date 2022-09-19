@@ -1,12 +1,12 @@
-import { expect, test } from "vitest";
+import { test } from "vitest";
 
 import got from "got";
 import { CDN, LiveDeliveryResponse, DownloadDeliveryResponse, VodDeliveryResponse } from "./cdn.js";
-import { clientFormat, edgeFormat, gotExtends, eExpect } from "./lib/testHelpers.js";
+import { clientFormat, edgeFormat, gotExtends, expect } from "./lib/testHelpers.js";
 
 import type { components } from "./lib/apiSchema.js";
 
-import type { ValueOf } from "@inrixia/helpers/ts.js";
+import type { ValueOf } from "@inrixia/helpers/ts";
 
 const qualityLevelFormat: components["schemas"]["CdnDeliveryV2QualityLevelModel"] = {
 	name: expect.any(String),
@@ -18,7 +18,7 @@ const qualityLevelFormat: components["schemas"]["CdnDeliveryV2QualityLevelModel"
 const Strategy = ["cdn", "client"] as const;
 const liveDeliveryResponseFormat: LiveDeliveryResponse = {
 	cdn: expect.any(String),
-	strategy: eExpect.enum(Strategy),
+	strategy: expect.enum(Strategy),
 	resource: {
 		uri: expect.any(String),
 		data: {
@@ -34,19 +34,19 @@ const qualityLevelParamFormat: QualityLevelParam = {
 };
 const vodDeliveryResponseFormat: VodDeliveryResponse = {
 	cdn: expect.any(String),
-	strategy: eExpect.enum(Strategy),
+	strategy: expect.enum(Strategy),
 	resource: {
 		uri: expect.any(String),
 		data: {
 			qualityLevels: expect.arrayContaining<components["schemas"]["CdnDeliveryV2QualityLevelModel"]>([qualityLevelFormat]),
-			qualityLevelParams: eExpect.keylessObjectContaining(qualityLevelParamFormat),
+			qualityLevelParams: expect.keylessObjectContaining(qualityLevelParamFormat),
 		},
 	},
 };
 const downloadDeliveryResponseFormat: DownloadDeliveryResponse = {
-	edges: eExpect.arrayContainingOrEmpty([edgeFormat]),
+	edges: expect.arrayContainingOrEmpty([edgeFormat]),
 	client: clientFormat,
-	strategy: eExpect.enum(Strategy),
+	strategy: expect.enum(Strategy),
 	resource: {
 		uri: expect.any(String),
 		data: {

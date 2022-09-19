@@ -1,8 +1,8 @@
-import { expect, test } from "vitest";
+import { test } from "vitest";
 
 import got from "got";
 import { User } from "./user.js";
-import { imageFormat, gotExtends, subscriptionPlan, eExpect } from "./lib/testHelpers.js";
+import { imageFormat, gotExtends, subscriptionPlan, expect } from "./lib/testHelpers.js";
 
 import type { UserSubscription } from "./user.js";
 
@@ -22,7 +22,7 @@ export const floatplaneUserSelfFormat = {
 	profileImage: imageFormat,
 	email: expect.any(String),
 	displayName: expect.any(String),
-	creators: eExpect.arrayContainingOrEmpty([String]),
+	creators: expect.arrayContainingOrEmpty([String]),
 };
 
 const user = new User(got.extend(gotExtends()));

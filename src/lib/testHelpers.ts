@@ -1,9 +1,10 @@
 import { FileCookieStore } from "tough-cookie-file-store";
 import { CookieJar } from "tough-cookie";
-import { expect } from "vitest";
-import { getExpect } from "@inrixia/helpers/test.js";
+import { expect as exp } from "vitest";
 
-export const eExpect = getExpect(expect);
+import { getExpect, type EExpect } from "@inrixia/helpers/test";
+
+export const expect: EExpect<Vi.ExpectStatic> = getExpect(exp);
 
 import { headers } from "../index.js";
 
@@ -40,12 +41,12 @@ export const imageFormat: Image = {
 	width: expect.any(Number),
 	height: expect.any(Number),
 	path: expect.any(String),
-	childImages: eExpect.arrayContainingOrEmpty([childImage]),
+	childImages: expect.arrayContainingOrEmpty([childImage]),
 };
 
 type Client = components["schemas"]["EdgesModel"]["client"];
 
-export const clientFormat: Client = eExpect.objectContainingOrEmpty({
+export const clientFormat: Client = expect.objectContainingOrEmpty({
 	ip: expect.any(String),
 	country_code: expect.any(String),
 	country_name: expect.any(String),
@@ -88,13 +89,13 @@ export const subscriptionPlan: components["schemas"]["SubscriptionPlanModel"] = 
 	id: expect.any(String),
 	title: expect.any(String),
 	description: expect.any(String),
-	discordRoles: eExpect.arrayContainingOrEmpty([discordRole]),
-	discordServers: eExpect.arrayContainingOrEmpty([discordServer]),
+	discordRoles: expect.arrayContainingOrEmpty([discordRole]),
+	discordServers: expect.arrayContainingOrEmpty([discordServer]),
 	featured: expect.any(Boolean),
 	price: expect.any(String),
-	priceYearly: eExpect.typeOrNull(String),
+	priceYearly: expect.typeOrNull(String),
 	currency: expect.any(String),
-	logo: eExpect.typeOrNull(String),
+	logo: expect.typeOrNull(String),
 	interval: expect.any(String),
 	allowGrandfatheredAccess: expect.any(Boolean),
 };
@@ -126,7 +127,7 @@ export const creatorObjFormat: components["schemas"]["BlogPostModelV3"]["creator
 		id: expect.any(String),
 		title: expect.any(String),
 		description: expect.any(String),
-		thumbnail: eExpect.objectContainingOrNull(imageFormat),
+		thumbnail: expect.objectContainingOrNull(imageFormat),
 		owner: expect.any(String),
 		streamPath: expect.any(String),
 		offline: {
@@ -139,5 +140,5 @@ export const creatorObjFormat: components["schemas"]["BlogPostModelV3"]["creator
 	discoverable: expect.any(Boolean),
 	subscriberCountDisplay: expect.any(String),
 	incomeDisplay: expect.any(Boolean),
-	card: eExpect.objectContainingOrNull(imageFormat),
+	card: expect.objectContainingOrNull(imageFormat),
 };

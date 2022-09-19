@@ -2,8 +2,6 @@
 	"name": "floatplane",
 	"version": "4.1.2",
 	"description": "Library for interfacing with the LMG Floatplane.com api",
-	"main": "index.js",
-	"types": "index.d.ts",
 	"type": "module",
 	"dependencies": {
 		"cross-env": "^7.0.3",
@@ -11,7 +9,7 @@
 		"tough-cookie": "^4.1.2"
 	},
 	"devDependencies": {
-		"@inrixia/helpers": "^2.0.2",
+		"@inrixia/helpers": "file:../helpers.ts",
 		"@types/tough-cookie": "^4.0.2",
 		"@types/tough-cookie-file-store": "^2.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.37.0",
@@ -26,6 +24,7 @@
 		"test-auth": "vitest auth",
 		"test-noLogin": "vitest api creator user video",
 		"postinstall": "tsc",
+		"prepublish": "tsc",
 		"fetchSchema": "./node_modules/.bin/openapi-typescript https://raw.githubusercontent.com/Jman012/FloatplaneAPI/main/floatplane-openapi-specification.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
 	"exports": {
