@@ -1,6 +1,6 @@
 {
 	"name": "floatplane",
-	"version": "4.1.4",
+	"version": "4.1.5",
 	"description": "Library for interfacing with the LMG Floatplane.com api",
 	"type": "module",
 	"dependencies": {
