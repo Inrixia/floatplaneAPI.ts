@@ -17,8 +17,8 @@ export type LoginOptions = {
 	token?: string;
 };
 
-import fs from "fs";
-const { version } = JSON.parse(fs.readFileSync("../package.json").toString());
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { version } = require("../package.json");
 
 export const headers = {
 	"User-Agent": `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
