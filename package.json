@@ -5,11 +5,11 @@
 	"type": "module",
 	"dependencies": {
 		"cross-env": "^7.0.3",
-		"got": "^12.4.1",
+		"got": "^12.5.0",
 		"tough-cookie": "^4.1.2"
 	},
 	"devDependencies": {
-		"@inrixia/helpers": "file:../helpers.ts",
+		"@inrixia/helpers": "^2.0.6",
 		"@types/tough-cookie": "^4.0.2",
 		"@types/tough-cookie-file-store": "^2.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.37.0",

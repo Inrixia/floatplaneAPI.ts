@@ -1,8 +1,9 @@
 *test*
 *.test*
-dist/
+src/
 .eslintrc.*
 .prettierrc
 credentials.json
 cookieStore.json
 .vscode/
+tsconfig.json
