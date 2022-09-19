@@ -1,7 +1,8 @@
 *test*
 *.test*
 dist/
-.eslintrc.cjs
+.eslintrc.*
+.prettierrc
 credentials.json
 cookieStore.json
 .vscode/
