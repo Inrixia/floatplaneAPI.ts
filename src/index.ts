@@ -21,7 +21,7 @@ import { fileURLToPath } from "url";
 import { readFileSync } from "fs";
 import { join } from "path";
 
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
+if (import.meta.url !== undefined) __dirname = fileURLToPath(new URL(".", import.meta.url));
 const { version } = JSON.parse(readFileSync(join(__dirname, "../package.json")).toString());
 
 export const headers = {
