@@ -20,9 +20,10 @@
 		"vitest": "^0.23.4"
 	},
 	"scripts": {
-		"test-all": "vitest auth && vitest api creator user video",
-		"test-auth": "vitest auth",
-		"test-noLogin": "vitest api creator user video",
+		"test-all": "npm run sanityCheck && vitest auth && vitest api creator user video",
+		"test-auth": "npm run sanityCheck && vitest auth",
+		"test-noLogin": "npm run sanityCheck && vitest api creator user video",
+		"sanityCheck": "tsc && node ./dist/sanityCheck.js",
 		"prepare": "tsc",
 		"fetchSchema": "./node_modules/.bin/openapi-typescript https://raw.githubusercontent.com/Jman012/FloatplaneAPI/main/floatplane-openapi-specification.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
