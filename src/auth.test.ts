@@ -4,7 +4,7 @@ import got from "got";
 import { Auth } from "./auth.js";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { username, password, token } = require("../../credentials.json");
+const { username, password, token } = require("../credentials.json");
 
 import type { LoginSuccess, Needs2FA } from "./auth.js";
 export const factorFormat: Needs2FA = { needs2FA: true };
