@@ -1,7 +1,7 @@
 import { test } from "vitest";
 
 import got from "got";
-import { CDN, LiveDeliveryResponse, DownloadDeliveryResponse } from "./cdn.js";
+import { CDN, VodLiveDeliveryResponse, DownloadDeliveryResponse } from "./cdn.js";
 import { clientFormat, edgeFormat, gotExtends, expect } from "./lib/testHelpers.js";
 
 import type { components } from "./lib/apiSchema.js";
@@ -16,7 +16,7 @@ const qualityLevelFormat: components["schemas"]["CdnDeliveryV2QualityLevelModel"
 	codecs: expect.typeOrNull(String),
 };
 const Strategy = ["cdn", "client"] as const;
-const liveDeliveryResponseFormat: LiveDeliveryResponse = {
+const liveDeliveryResponseFormat: VodLiveDeliveryResponse = {
 	cdn: expect.any(String),
 	strategy: expect.enum(Strategy),
 	resource: {

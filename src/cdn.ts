@@ -7,7 +7,7 @@ import { fillTemplate } from "@inrixia/helpers/object";
 
 export type GotOptions = Options & { isStream: true };
 
-export type LiveDeliveryResponse = components["schemas"]["CdnDeliveryV2VodLivestreamResponse"];
+export type VodLiveDeliveryResponse = components["schemas"]["CdnDeliveryV2VodLivestreamResponse"];
 export type DownloadDeliveryResponse = components["schemas"]["CdnDeliveryV2DownloadResponse"];
 
 export type DeliveryResponse = components["schemas"]["CdnDeliveryV2Response"];
@@ -17,8 +17,10 @@ export class CDN extends Core {
 	/**
 	 * Fetches resource information from cdn.
 	 */
-	delivery(type: "live", creator: string): Promise<LiveDeliveryResponse>;
+	delivery(type: "live", creator: string): Promise<VodLiveDeliveryResponse>;
 	delivery(type: "download", guid: string): Promise<DownloadDeliveryResponse>;
+	delivery(type: "vod", guid: string): Promise<VodLiveDeliveryResponse>;
+	delivery(type: "aod", guid: string): Promise<VodLiveDeliveryResponse>;
 	delivery(type: QueryParams["type"], id: string): Promise<DeliveryResponse> {
 		const url = new URL(this.BaseUrl + ApiPaths.getDeliveryInfo);
 

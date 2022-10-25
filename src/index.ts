@@ -17,12 +17,10 @@ export type LoginOptions = {
 	token?: string;
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore Yes, package.json isnt under src, this is fine
-import pkg from "../package.json" assert { type: "json" };
+export const version = "4.2.1";
 
 export const headers = {
-	"User-Agent": `FloatplaneAPI/${pkg.version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
+	"User-Agent": `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
 	accept: "application/json",
 	connection: "keep-alive",
 };

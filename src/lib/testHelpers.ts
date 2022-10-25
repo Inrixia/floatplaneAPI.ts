@@ -1,19 +1,11 @@
-import { FileCookieStore } from "tough-cookie-file-store";
-import { CookieJar } from "tough-cookie";
 import { expect as exp } from "vitest";
 
 import { getExpect, type EExpect } from "@inrixia/helpers/test";
 
 export const expect: EExpect<Vi.ExpectStatic> = getExpect(exp);
 
-import { headers } from "../index.js";
-
 import type { components } from "./apiSchema.js";
-
-export const gotExtends = () => ({
-	cookieJar: new CookieJar(new FileCookieStore("./cookieStore.json")),
-	headers,
-});
+export * from "./helpers.js";
 
 export const metadataFormat: components["schemas"]["PostMetadataModel"] = {
 	hasVideo: expect.any(Boolean),
