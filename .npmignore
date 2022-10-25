@@ -7,3 +7,4 @@ credentials.json
 cookieStore.json
 .vscode/
 tsconfig.json
+*sanity*

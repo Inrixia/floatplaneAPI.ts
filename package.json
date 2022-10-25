@@ -15,6 +15,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.38.1",
 		"eslint": "^8.24.0",
 		"openapi-typescript": "^5.4.1",
+		"rimraf": "^3.0.2",
 		"tough-cookie-file-store": "^2.0.3",
 		"typescript": "^4.8.4",
 		"vitest": "^0.23.4"
@@ -23,9 +24,10 @@
 		"test-all": "npm run sanity && vitest auth && vitest api creator user video",
 		"test-auth": "npm run sanity && vitest auth",
 		"test-noLogin": "npm run sanity && vitest api creator user video",
-		"sanity": "tsc && node ./dist/sanity.js",
+		"sanity": "npm run build && node ./dist/sanity.js",
 		"prepare": "npm run sanity",
-		"devTest": "tsc && node ./dist/test.js",
+		"devTest": "npm run build && node ./dist/test.js",
+		"build": "rimraf dist && tsc",
 		"fetchSchema": "openapi-typescript https://raw.githubusercontent.com/Jman012/FloatplaneAPI/main/floatplane-openapi-specification.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
 	"exports": {
