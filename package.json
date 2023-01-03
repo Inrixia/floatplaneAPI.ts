@@ -5,25 +5,25 @@
 	"type": "module",
 	"dependencies": {
 		"cross-env": "^7.0.3",
-		"got": "^12.5.1",
+		"got": "^12.5.3",
 		"tough-cookie": "^4.1.2"
 	},
 	"devDependencies": {
-		"@inrixia/helpers": "^2.0.7",
+		"@inrixia/helpers": "^2.0.10",
 		"@types/tough-cookie": "^4.0.2",
 		"@types/tough-cookie-file-store": "^2.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.38.1",
-		"eslint": "^8.24.0",
-		"openapi-typescript": "^5.4.1",
+		"@typescript-eslint/eslint-plugin": "^5.48.0",
+		"eslint": "^8.31.0",
+		"openapi-typescript": "^6.1.0",
 		"rimraf": "^3.0.2",
 		"tough-cookie-file-store": "^2.0.3",
-		"typescript": "^4.8.4",
-		"vitest": "^0.23.4"
+		"typescript": "^4.9.4",
+		"vitest": "^0.26.3"
 	},
 	"scripts": {
-		"test-all": "npm run sanity && vitest auth && vitest api creator user video",
+		"test-all": "npm run sanity && vitest auth && vitest api creator user video content",
 		"test-auth": "npm run sanity && vitest auth",
-		"test-noLogin": "npm run sanity && vitest api creator user video",
+		"test-noLogin": "npm run sanity && vitest api creator user video content",
 		"sanity": "npm run build && node ./dist/sanity.js",
 		"prepare": "npm run sanity",
 		"devTest": "npm run build && node ./dist/test.js",
