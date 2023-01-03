@@ -54,6 +54,10 @@
 		"./cdn": {
 			"types": "./dist/cdn.d.ts",
 			"import": "./dist/cdn.js"
+		},
+		"./content": {
+			"types": "./dist/content.d.ts",
+			"import": "./dist/content.js"
 		}
 	},
 	"repository": {
