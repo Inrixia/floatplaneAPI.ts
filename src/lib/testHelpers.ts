@@ -5,6 +5,8 @@ import { getExpect, type EExpect } from "@inrixia/helpers/test";
 export const expect: EExpect<Vi.ExpectStatic> = getExpect(exp);
 
 import type { components } from "./apiSchema.js";
+import type { BlogPost } from "../creator.js";
+
 export * from "./helpers.js";
 
 export const metadataFormat: components["schemas"]["PostMetadataModel"] = {
@@ -100,7 +102,21 @@ export const socialLinks: components["schemas"]["SocialLinksModel"] = {
 	youtube: expect.any(String),
 };
 
-export const creatorObjFormat: components["schemas"]["BlogPostModelV3"]["creator"] = {
+export const liveStreamModelFormat: components["schemas"]["LiveStreamModel"] = {
+	id: expect.any(String),
+	title: expect.any(String),
+	description: expect.any(String),
+	thumbnail: expect.objectContainingOrNull(imageFormat),
+	owner: expect.any(String),
+	streamPath: expect.any(String),
+	offline: {
+		title: expect.any(String),
+		description: expect.any(String),
+		thumbnail: imageFormat,
+	},
+};
+
+export const creatorModelV3Format: components["schemas"]["BlogPostModelV3"]["creator"] = {
 	id: expect.any(String),
 	owner: expect.objectContaining({
 		id: expect.any(String),
@@ -115,22 +131,113 @@ export const creatorObjFormat: components["schemas"]["BlogPostModelV3"]["creator
 	},
 	cover: imageFormat,
 	icon: imageFormat,
-	liveStream: {
-		id: expect.any(String),
-		title: expect.any(String),
-		description: expect.any(String),
-		thumbnail: expect.objectContainingOrNull(imageFormat),
-		owner: expect.any(String),
-		streamPath: expect.any(String),
-		offline: {
-			title: expect.any(String),
-			description: expect.any(String),
-			thumbnail: imageFormat,
-		},
-	},
+	liveStream: liveStreamModelFormat,
 	subscriptionPlans: expect.arrayContaining([subscriptionPlan]),
 	discoverable: expect.any(Boolean),
 	subscriberCountDisplay: expect.any(String),
 	incomeDisplay: expect.any(Boolean),
 	card: expect.objectContainingOrNull(imageFormat),
+};
+export const blogPostFormat: BlogPost = {
+	id: expect.any(String),
+	guid: expect.any(String),
+	title: expect.any(String),
+	tags: expect.arrayContainingOrEmpty([expect.any(String)]),
+	text: expect.any(String),
+	type: expect.stringMatching("blogPost"),
+	attachmentOrder: expect.arrayContaining([expect.any(String)]),
+	metadata: metadataFormat,
+	releaseDate: expect.any(String),
+	likes: expect.any(Number),
+	dislikes: expect.any(Number),
+	score: expect.any(Number),
+	comments: expect.any(Number),
+	creator: creatorModelV3Format,
+	isAccessible: expect.any(Boolean),
+	thumbnail: expect.objectContainingOrNull(imageFormat),
+	videoAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
+	audioAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
+	pictureAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
+	galleryAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
+	wasReleasedSilently: expect.any(Boolean),
+};
+
+export const creatorModelV2Format: components["schemas"]["CreatorModelV2"] = {
+	id: expect.any(String),
+	owner: expect.any(String),
+	title: expect.any(String),
+	urlname: expect.any(String),
+	description: expect.any(String),
+	about: expect.any(String),
+	category: expect.any(String),
+	cover: expect.typeOrNull(imageFormat),
+	icon: imageFormat,
+	liveStream: expect.typeOrNull(liveStreamModelFormat),
+	subscriptionPlans: expect.typeOrNull(expect.arrayContaining([subscriptionPlan])),
+	discoverable: expect.any(Boolean),
+	subscriberCountDisplay: expect.any(String),
+	incomeDisplay: expect.any(Boolean),
+};
+
+export const videoAttachmentModelFormat: components["schemas"]["VideoAttachmentModel"] = {
+	id: expect.any(String),
+	guid: expect.any(String),
+	title: expect.any(String),
+	type: expect.any(String),
+	description: expect.any(String),
+	releaseDate: expect.typeOrNull(String),
+	duration: expect.any(Number),
+	creator: expect.any(String),
+	likes: expect.any(Number),
+	dislikes: expect.any(Number),
+	score: expect.any(Number),
+	isProcessing: expect.any(Boolean),
+	primaryBlogPost: expect.any(String),
+	thumbnail: imageFormat,
+	isAccessible: expect.any(Boolean),
+};
+export const pictureAttachmentModelFormat: components["schemas"]["PictureAttachmentModel"] = {
+	id: expect.any(String),
+	guid: expect.any(String),
+	title: expect.any(String),
+	type: expect.any(String),
+	description: expect.any(String),
+	likes: expect.any(Number),
+	dislikes: expect.any(Number),
+	score: expect.any(Number),
+	isProcessing: expect.any(Boolean),
+	creator: expect.any(String),
+	primaryBlogPost: expect.any(String),
+	thumbnail: imageFormat,
+	isAccessible: expect.any(Boolean),
+};
+export const audioAttachmentModelFormat: components["schemas"]["AudioAttachmentModel"] = {
+	id: expect.any(String),
+	guid: expect.any(String),
+	title: expect.any(String),
+	type: expect.any(String),
+	description: expect.any(String),
+	duration: expect.any(Number),
+	waveform: {
+		dataSetLength: expect.any(Number),
+		highestValue: expect.any(Number),
+		lowestValue: expect.any(Number),
+		data: expect.arrayContaining([expect.any(Number)]),
+	},
+	creator: expect.any(String),
+	likes: expect.any(Number),
+	dislikes: expect.any(Number),
+	score: expect.any(Number),
+	isProcessing: expect.any(Boolean),
+	primaryBlogPost: expect.any(String),
+	isAccessible: expect.any(Boolean),
+};
+
+export const contentPostFormat: components["schemas"]["ContentPostV3Response"] = {
+	...blogPostFormat,
+	userInteraction: expect.arrayContainingOrEmpty([expect.stringMatching(/like|dislike/)]),
+	creator: creatorModelV2Format,
+	videoAttachments: expect.arrayContainingOrEmpty([videoAttachmentModelFormat]),
+	audioAttachments: expect.arrayContainingOrEmpty([audioAttachmentModelFormat]),
+	pictureAttachments: expect.arrayContainingOrEmpty([pictureAttachmentModelFormat]),
 };

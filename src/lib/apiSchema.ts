@@ -316,6 +316,10 @@ export interface paths {
     /** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
     get: operations["getDeliveryInfo"];
   };
+  "/api/v3/delivery/info": {
+    /** Given an video/audio attachment or livestream identifier, retrieves the information necessary to play, download, or livestream the media at various quality levels. */
+    get: operations["getDeliveryInfoV3"];
+  };
   "/api/v2/connect/{site}": {
     /** TODO */
     get: operations["getAccountConnect"];
@@ -1226,6 +1230,22 @@ export interface paths {
     /** Dislike a comment on a blog post. */
     post: operations["dislikeComment"];
   };
+  "/api/v3/comment/edit": {
+    /** TODO */
+    post: operations["editComment"];
+  };
+  "/api/v3/comment/delete": {
+    /** TODO */
+    post: operations["deleteComment"];
+  };
+  "/api/v3/comment/pin": {
+    /** TODO */
+    post: operations["pinComment"];
+  };
+  "/api/v3/comment/history": {
+    /** TODO */
+    post: operations["getCommentHistory"];
+  };
   "/api/v3/content/creator": {
     /**
      * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
@@ -1285,6 +1305,18 @@ export interface paths {
   "/api/v3/content/picture/url": {
     /** TODO - Not used in Floatplane code. */
     get: operations["getPictureUrl"];
+  };
+  "/api/v3/content/progress": {
+    /** Update the watch progress on a piece of media (usually video or audio), stored as the number of seconds in the media. */
+    post: operations["updateProgress"];
+  };
+  "/api/v3/content/get/progress": {
+    /**
+     * Batch retrieval of watch progress values for blog posts. This API is useful for showing progress of a list of blog posts shown on the screen to the user. When retrieving a list of blog posts, the media attachments only include the identifier; when retrieving full details of a blog post, the attachments include more information, but still fail to return the progress of the media. Only when pulling the full video/audio content does the progress get included in the response. Thus, the recommended approach is to pull paginated results of blog posts first, as usual, and then to call this endpoint to retrieve progress values for each blog post to show in some capacity, usually on the thumbnail as a progress bar on the bottom.
+     *
+     * Note that the progress values returned in this endpoint are different from the update progress endpoint and the values returned in video/audio attachments. While the latter are measured in seconds, this endpoint returns progress as a percentage of the media's total duration. It is presumed that the progress returned is from the first attachment in the blog post's `attachmentOrder` that is either a video or audio attachment. Because this returns progress as an integer percentage (0 to 100), it is not recommended to use this particular value for jumping to a timestamp in the media when resuming playback, as the rounded number may be off by plus/minus several seconds in actual playback. Use the actual attachment progress, measured in seconds, instead.
+     */
+    post: operations["getProgress"];
   };
   "/api/v3/content/upload/s3/multipart": {
     /** TODO */
@@ -1446,6 +1478,125 @@ export interface components {
     CdnDeliveryV2Response:
       | components["schemas"]["CdnDeliveryV2VodLivestreamResponse"]
       | components["schemas"]["CdnDeliveryV2DownloadResponse"];
+    CdnDeliveryV3Response: {
+      /** @description `groups` may consist of zero or more elements. */
+      groups: components["schemas"]["CdnDeliveryV3Group"][];
+    };
+    /** @description A group is a logical grouping/separation of variants. At this time, there are no examples of more than one group in a response. */
+    CdnDeliveryV3Group: {
+      /** @description If `origins` is present, it will consist of one or more elements. */
+      origins?: components["schemas"]["CdnDeliveryV3Origin"][];
+      /** @description `variants` may consist of zero or more elements. */
+      variants: components["schemas"]["CdnDeliveryV3Variant"][];
+    };
+    /** @description An `origin`, if present, is a choice of base URL or server from which to load a `variant`'s content. If origin(s) exists in a group or variant, then one must be chosen in combination with the variant's `url`. */
+    CdnDeliveryV3Origin: {
+      /**
+       * Format: uri
+       * @description An absolute URL (possibly with trailing slash) which acts as the base of a delivery resource URI. This is always present.
+       */
+      url: string;
+      /**
+       * Format: uri
+       * @description An absolute URL (possibly with trailing slash) which the client can use to query if the origin is active/working. This field may not be present. Perform an HTTP GET on this URL and expect an HTTP 200 in order to trust this origin.
+       */
+      queryUrl?: string;
+      datacenter?: components["schemas"]["EdgeDataCenter"];
+    };
+    /** @description A `variant` represents one variant of a source of media. The most common differenitating factor between variants is video resolution, but there may be more variations based on `isHdr`, codecs, FPS, etc. It's possible that groups of variants may be divided into separate `groups` elements. */
+    CdnDeliveryV3Variant: {
+      /** @description A programmatic name for this variant, for use with uniquely identifying this variant. */
+      name: string;
+      /** @description A display-friendly label for this variant, for use in the UI. */
+      label: string;
+      /**
+       * @description A relative *or* absolute URL containing resource information for this variant. Compared to the V2 API, this URL does not contain template information and will not need to be modified before use, other than optionally combining with an origin. This value may contain a trailing slash.
+       *
+       * If this URL is absolute, it may be used as-is in order to load the media content. If this URL is relative, then it should be combined with an origin base URL. In order of preference: 1) use an origin from this variant object, 2) use an origin from this variant's group object, 3) use `https://floatplane.com`.
+       *
+       * Do not use an origin from a different group, or from a different variant, as this may result in errors.
+       */
+      url: string;
+      /** @description If `origins` is present, it will consist of one or more elements. */
+      origins?: components["schemas"]["CdnDeliveryV3Origin"][];
+      /**
+       * Format: int64
+       * @description An optional field prescribing this variant's order in relation to other variants. No guarantees other than being greater than or less than the order of other variants within this group (e.g., order may not be consecutive).
+       */
+      order?: number;
+      /** @description An optional field indicating if this variant is enabled. If this is not enabled, it may be visible to the user, but not selectable. If this field is not present, assume a default value of `false`, for safety. */
+      enabled?: boolean;
+      /** @description An optional field indicating if this variant should be hidden. If hidden, it should not be shown to the user nor considered in any code logic. If this field is not present, assume a default value of `false`. Only truthy values should hide a variant. */
+      hidden?: boolean;
+      meta?: components["schemas"]["CdnDeliveryV3Meta"];
+      /** @description An optional string describing the MIME Type of this media source. */
+      mimeType?: string;
+    };
+    /** @description Metadata information for this variant. Note that most/all child and grandchild properties are not required on purpose. */
+    CdnDeliveryV3Meta: {
+      common?: {
+        /** @description Size of the corresponding media file, measured in bytes. */
+        size?: number;
+        access?: {
+          /**
+           * @description - `isMissingPermission`: Indicates that the requester is lacking a required plan or other form of permission entitling on to access the corresponding resource.
+           * - `isProcessing`: Indicates that the corresponding resource is processing. Clients may choose to periodically refetch an asset's info when it has reported this state.
+           * - `isBroken`: Indicates that the corresponding resource is defective in some manner which has rendered it currently inaccessible. It is possible that the asset will be repaired at some later point in time. Clients may choose to periodically refetch an asset's info when it has reported this state.
+           * @enum {string}
+           */
+          deniedReason?: "isMissingPermission" | "isProcessing" | "isBroken";
+          /** @description Message describing in human-readable terms why access has been witheld for a resource. */
+          deniedMessage?: string;
+        };
+      };
+      video?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] &
+        components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"] & {
+          /** @description Maximum count of frames presented per second for the video. */
+          fps?: number;
+        } & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
+      audio?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & {
+        /** @description Count of channels carried by the audio stream. */
+        channelCount?: number;
+        /** @description Count of samples recorded per second. */
+        samplerate?: number;
+      } & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
+      image?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] &
+        components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"];
+      live?: {
+        /**
+         * @description - `llhls`: 🍎-backed low-latency HLS extension.
+         * - `clhls`: Community-backed low-latency HLS extension.
+         * - `ivshls`: IVS custom low-latency HLS extension.
+         * - `lldash`: DASH-IF-backed low-Latency DASH extension.
+         * @enum {string}
+         */
+        lowLatencyExtension?: "llhls" | "clhls" | "ivshls" | "lldash";
+      };
+    };
+    CdnDeliveryV3MediaIdentityCharacteristics: {
+      /** @description RFC 6381 codec string indicating stream data chunk format. */
+      codec?: string;
+      /** @description RFC 6381 codec string indicating stream format on the most basic level, without the addition of profile/level/etc. information. */
+      codecSimple?: string;
+      /** @description MIME-type for individual stream data chunks (as opposed to a containing playlist). */
+      mimeType?: string;
+    };
+    CdnDeliveryV3ImagePresentationCharacteristics: {
+      /** @description Count of horizontal pixels presented. */
+      width?: number;
+      /** @description Count of vertical pixels presented. */
+      height?: number;
+      /** @description Whether or not this data stream carries HDR content. */
+      isHdr?: boolean;
+    };
+    CdnDeliveryV3MediaBitrateInfo: {
+      bitrate?: {
+        /** @description Maximum bitrate observed for the data stream. */
+        maximum?: number;
+        /** @description Average bitrate observed for the data stream. */
+        average?: number;
+      };
+    };
     PaymentInvoiceListV2Response: {
       invoices: {
         id: number;
@@ -1542,12 +1693,12 @@ export interface components {
       id: string;
       blogPost: string;
       user: components["schemas"]["UserModel"];
-      contentReference: string;
-      contentReferenceType: string;
       text: string;
       replying: string;
       postDate: string;
       editDate: string;
+      editCount: number;
+      isEdited: boolean;
       likes: number;
       dislikes: number;
       score: number;
@@ -1626,6 +1777,8 @@ export interface components {
       isAccessible: boolean;
       blogPosts: string[];
       timelineSprite: components["schemas"]["ImageModel"];
+      /** @description The watch progress of the video, in seconds. If no progress has yet been posted to the video, then this field may not appear. */
+      progress?: number;
       userInteraction: components["schemas"]["UserInteractionModel"];
       levels: {
         name: string;
@@ -1879,8 +2032,8 @@ export interface components {
       audioDuration: number;
       hasPicture: boolean;
       pictureCount: number;
-      hasGallery: boolean;
-      galleryCount: number;
+      hasGallery?: boolean;
+      galleryCount?: number;
       isFeatured: boolean;
     };
     VideoAttachmentModel: {
@@ -2023,12 +2176,12 @@ export interface components {
       id: string;
       blogPost: string;
       user: components["schemas"]["UserModel"];
-      contentReference: string;
-      contentReferenceType: string;
       text: string;
       replying: string;
       postDate: string;
       editDate: string;
+      editCount: number;
+      isEdited: boolean;
       likes: number;
       dislikes: number;
       score: number;
@@ -2044,14 +2197,14 @@ export interface components {
       id: string;
       blogPost: string;
       user: components["schemas"]["UserModel"];
-      contentReference: string;
-      contentReferenceType: string;
       text: string;
       replying: string;
       /** Format: date-time */
       postDate: string;
       /** Format: date-time */
       editDate: string | null;
+      editCount: number;
+      isEdited: boolean;
       likes: number;
       dislikes: number;
       score: number;
@@ -2126,13 +2279,41 @@ export interface components {
       bandwidth: number;
       allowDownload: boolean;
       allowStreaming: boolean;
-      datacenter: {
-        countryCode: string;
-        regionCode: string;
-        latitude: number;
-        longitude: number;
-      };
+      datacenter: components["schemas"]["EdgeDataCenter"];
     };
+    /** @description Location information for a datacenter. Not required. */
+    EdgeDataCenter: {
+      countryCode: string;
+      regionCode: string;
+      latitude: number;
+      longitude: number;
+    };
+    UpdateProgressRequest: {
+      /** @description The video or audio attachment identifier for the piece of media that is being updated. Note: this is *not* the blogPost identifier. */
+      id: string;
+      /**
+       * @description Which type of media the corresponding identifier is.
+       * @enum {string}
+       */
+      contentType: "video" | "audio";
+      /** @description The progress through the media that has been consumed by the user, in seconds. */
+      progress: number;
+    };
+    GetProgressRequest: {
+      /** @description The identifiers of the blog posts from which progress should be retrieved. */
+      ids: string[];
+      /**
+       * @description The type of the corresponding identifiers. The only value currently is `blogPost`.
+       * @enum {string}
+       */
+      contentType: "blogPost";
+    };
+    /** @description A list of objects containing progress values for the requested identifiers. If no progress has been posted to an identifier, it may either not appear in the resulting list, or appear with a progress of `0`. */
+    GetProgressResponse: {
+      id: string;
+      /** @description Percentage of the blog post's media that has been consumed so far. Ranges from 0 to 100. */
+      progress: number;
+    }[];
   };
   responses: {
     /** Bad Request - The request has errors and the server did not process it. */
@@ -3538,6 +3719,43 @@ export interface operations {
       200: {
         content: {
           "application/json": components["schemas"]["CdnDeliveryV2Response"];
+        };
+      };
+      400: components["responses"]["400BadRequest"];
+      401: components["responses"]["401Unauthenticated"];
+      403: components["responses"]["403Forbidden"];
+      404: components["responses"]["404NotFound"];
+      default: components["responses"]["Unexpected"];
+    };
+  };
+  /** Given an video/audio attachment or livestream identifier, retrieves the information necessary to play, download, or livestream the media at various quality levels. */
+  getDeliveryInfoV3: {
+    parameters: {
+      query: {
+        /**
+         * Used to determine the scenario in which to consume the media.
+         *
+         * - `onDemand` = stream a Video/Audio On Demand
+         * - `download` = Download the content for the user to play later.
+         * - `live` = Livestream the content
+         */
+        scenario: "onDemand" | "download" | "live";
+        /** The attachment or livestream identifier for the requested media. For video and audio, this would be from the `videoAttachments` or `audioAttachments` objects. For livestreams, this is the `liveStream.id` from the creator object. */
+        entityId: string;
+        /** Use `outputKind` to ensure the right vehicle is used for your client, e.g. `outputKind=hls.fmp4` is optimal for tvOS 10+. */
+        outputKind?:
+          | "hls.mpegts"
+          | "hls.fmp4"
+          | "dash.mpegts"
+          | "dash.m4s"
+          | "flat";
+      };
+    };
+    responses: {
+      /** OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
+      200: {
+        content: {
+          "application/json": components["schemas"]["CdnDeliveryV3Response"];
         };
       };
       400: components["responses"]["400BadRequest"];
@@ -7639,6 +7857,74 @@ export interface operations {
       };
     };
   };
+  /** TODO */
+  editComment: {
+    parameters: {};
+    responses: {
+      /** OK */
+      200: {
+        content: {
+          "application/json": unknown;
+        };
+      };
+      400: components["responses"]["400BadRequest"];
+      401: components["responses"]["401Unauthenticated"];
+      403: components["responses"]["403Forbidden"];
+      404: components["responses"]["404NotFound"];
+      default: components["responses"]["Unexpected"];
+    };
+  };
+  /** TODO */
+  deleteComment: {
+    parameters: {};
+    responses: {
+      /** OK */
+      200: {
+        content: {
+          "application/json": unknown;
+        };
+      };
+      400: components["responses"]["400BadRequest"];
+      401: components["responses"]["401Unauthenticated"];
+      403: components["responses"]["403Forbidden"];
+      404: components["responses"]["404NotFound"];
+      default: components["responses"]["Unexpected"];
+    };
+  };
+  /** TODO */
+  pinComment: {
+    parameters: {};
+    responses: {
+      /** OK */
+      200: {
+        content: {
+          "application/json": unknown;
+        };
+      };
+      400: components["responses"]["400BadRequest"];
+      401: components["responses"]["401Unauthenticated"];
+      403: components["responses"]["403Forbidden"];
+      404: components["responses"]["404NotFound"];
+      default: components["responses"]["Unexpected"];
+    };
+  };
+  /** TODO */
+  getCommentHistory: {
+    parameters: {};
+    responses: {
+      /** OK */
+      200: {
+        content: {
+          "application/json": unknown;
+        };
+      };
+      400: components["responses"]["400BadRequest"];
+      401: components["responses"]["401Unauthenticated"];
+      403: components["responses"]["403Forbidden"];
+      404: components["responses"]["404NotFound"];
+      default: components["responses"]["Unexpected"];
+    };
+  };
   /**
    * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
    *
@@ -7945,6 +8231,54 @@ export interface operations {
       403: components["responses"]["403Forbidden"];
       404: components["responses"]["404NotFound"];
       default: components["responses"]["Unexpected"];
+    };
+  };
+  /** Update the watch progress on a piece of media (usually video or audio), stored as the number of seconds in the media. */
+  updateProgress: {
+    parameters: {};
+    responses: {
+      /** OK */
+      200: {
+        content: {
+          "text/plain": string;
+        };
+      };
+      400: components["responses"]["400BadRequest"];
+      401: components["responses"]["401Unauthenticated"];
+      403: components["responses"]["403Forbidden"];
+      404: components["responses"]["404NotFound"];
+      default: components["responses"]["Unexpected"];
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["UpdateProgressRequest"];
+      };
+    };
+  };
+  /**
+   * Batch retrieval of watch progress values for blog posts. This API is useful for showing progress of a list of blog posts shown on the screen to the user. When retrieving a list of blog posts, the media attachments only include the identifier; when retrieving full details of a blog post, the attachments include more information, but still fail to return the progress of the media. Only when pulling the full video/audio content does the progress get included in the response. Thus, the recommended approach is to pull paginated results of blog posts first, as usual, and then to call this endpoint to retrieve progress values for each blog post to show in some capacity, usually on the thumbnail as a progress bar on the bottom.
+   *
+   * Note that the progress values returned in this endpoint are different from the update progress endpoint and the values returned in video/audio attachments. While the latter are measured in seconds, this endpoint returns progress as a percentage of the media's total duration. It is presumed that the progress returned is from the first attachment in the blog post's `attachmentOrder` that is either a video or audio attachment. Because this returns progress as an integer percentage (0 to 100), it is not recommended to use this particular value for jumping to a timestamp in the media when resuming playback, as the rounded number may be off by plus/minus several seconds in actual playback. Use the actual attachment progress, measured in seconds, instead.
+   */
+  getProgress: {
+    parameters: {};
+    responses: {
+      /** OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["GetProgressResponse"];
+        };
+      };
+      400: components["responses"]["400BadRequest"];
+      401: components["responses"]["401Unauthenticated"];
+      403: components["responses"]["403Forbidden"];
+      404: components["responses"]["404NotFound"];
+      default: components["responses"]["Unexpected"];
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["GetProgressRequest"];
+      };
     };
   };
   /** TODO */
@@ -8476,6 +8810,7 @@ export enum ApiPaths {
   getCaptchaInfo = "/api/v3/auth/captcha/info",
   generateClientToken = "/api/v2/payment/braintree/token",
   getDeliveryInfo = "/api/v2/cdn/delivery",
+  getDeliveryInfoV3 = "/api/v3/delivery/info",
   getAccountConnect = "/api/v2/connect/:site",
   callback = "/api/v2/connect/:site/callback",
   complete = "/api/v2/connect/complete",
@@ -8709,6 +9044,10 @@ export enum ApiPaths {
   getCommentReplies = "/api/v3/comment/replies",
   likeComment = "/api/v3/comment/like",
   dislikeComment = "/api/v3/comment/dislike",
+  editComment = "/api/v3/comment/edit",
+  deleteComment = "/api/v3/comment/delete",
+  pinComment = "/api/v3/comment/pin",
+  getCommentHistory = "/api/v3/comment/history",
   getCreatorBlogPosts = "/api/v3/content/creator",
   getMultiCreatorBlogPosts = "/api/v3/content/creator/list",
   getContentTags = "/api/v3/content/tags",
@@ -8722,6 +9061,8 @@ export enum ApiPaths {
   likeContent = "/api/v3/content/like",
   dislikeContent = "/api/v3/content/dislike",
   getPictureUrl = "/api/v3/content/picture/url",
+  updateProgress = "/api/v3/content/progress",
+  getProgress = "/api/v3/content/get/progress",
   createMultipartUploadV3 = "/api/v3/content/upload/s3/multipart",
   getUploadedPartsV3 = "/api/v3/content/upload/s3/multipart",
   signPartUploadContent = "/api/v3/content/upload/s3/multipart/sign",

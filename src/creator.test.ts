@@ -2,32 +2,9 @@ import { test } from "vitest";
 
 import got from "got";
 import { Creator } from "./creator.js";
-import { imageFormat, gotExtends, creatorObjFormat, metadataFormat, expect } from "./lib/testHelpers.js";
+import { blogPostFormat, gotExtends, expect } from "./lib/testHelpers.js";
 
 import type { BlogPost } from "./creator.js";
-export const blogPostFormat: BlogPost = {
-	id: expect.any(String),
-	guid: expect.any(String),
-	title: expect.any(String),
-	tags: expect.arrayContainingOrEmpty([expect.any(String)]),
-	text: expect.any(String),
-	type: expect.stringMatching("blogPost"),
-	attachmentOrder: expect.arrayContaining([expect.any(String)]),
-	metadata: metadataFormat,
-	releaseDate: expect.any(String),
-	likes: expect.any(Number),
-	dislikes: expect.any(Number),
-	score: expect.any(Number),
-	comments: expect.any(Number),
-	creator: creatorObjFormat,
-	isAccessible: expect.any(Boolean),
-	thumbnail: expect.objectContainingOrNull(imageFormat),
-	videoAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
-	audioAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
-	pictureAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
-	galleryAttachments: expect.arrayContainingOrEmpty([expect.any(String)]),
-	wasReleasedSilently: expect.any(Boolean),
-};
 
 const creator = new Creator(got.extend(gotExtends()));
 
