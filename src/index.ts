@@ -9,6 +9,7 @@ import { Creator } from "./creator.js";
 import { CDN } from "./cdn.js";
 
 import type { LoginSuccess } from "./auth.js";
+import { Content } from "./content.js";
 
 export type LoginOptions = {
 	username: string;
@@ -33,6 +34,7 @@ export class Floatplane {
 	public api: Api;
 	public creator: Creator;
 	public cdn: CDN;
+	public content: Content;
 	constructor(cookieJar?: CookieJar) {
 		cookieJar ??= new CookieJar();
 		this.got = got.extend({
@@ -46,6 +48,7 @@ export class Floatplane {
 		this.api = new Api(this.got);
 		this.creator = new Creator(this.got);
 		this.cdn = new CDN(this.got);
+		this.content = new Content(this.got);
 	}
 
 	/**
