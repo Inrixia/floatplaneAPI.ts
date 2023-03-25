@@ -45,6 +45,8 @@ export class Floatplane {
 			retry: {
 				limit: 5, // Maximum number of retries
 				calculateDelay: ({ attemptCount, error }) => {
+					// Fix for this not handling response errors
+					if (error.response?.statusCode !== 429) throw error;
 					// Retry after the number of seconds specified in the "retry-after" header
 					const retryAfter: string = (<any>error.response)?.headers?.["retry-after"];
 					if (retryAfter !== undefined) return parseInt(retryAfter) * 1000; // Convert to milliseconds
