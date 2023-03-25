@@ -41,7 +41,17 @@ export class Floatplane {
 			// Sets the global requestMethod to be used, this maintains headers
 			cookieJar,
 			headers,
-			// prefixUrl: "https://www.floatplane.com",
+			retry: {
+				limit: 5, // Maximum number of retries
+				calculateDelay: ({ attemptCount, error }) => {
+					// Retry after the number of seconds specified in the "retry-after" header
+					const retryAfter = error.response?.headers["retry-after"];
+					if (retryAfter !== undefined) return parseInt(retryAfter) * 1000; // Convert to milliseconds
+					// Default retry delay
+					return 1000 * attemptCount;
+				},
+				statusCodes: [429], // Retry on 429 status code
+			},
 		});
 		this.auth = new Auth(this.got);
 		this.user = new User(this.got);
