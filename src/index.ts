@@ -35,8 +35,9 @@ export class Floatplane {
 	public creator: Creator;
 	public cdn: CDN;
 	public content: Content;
-	constructor(cookieJar?: CookieJar) {
+	constructor(cookieJar?: CookieJar, userAgent?: string) {
 		cookieJar ??= new CookieJar();
+		if (userAgent !== undefined) headers["User-Agent"] = userAgent;
 		this.got = got.extend({
 			// Sets the global requestMethod to be used, this maintains headers
 			cookieJar,
