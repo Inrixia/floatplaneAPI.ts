@@ -9,6 +9,8 @@ type BlogPostQueryParams = operations["getCreatorBlogPosts"]["parameters"]["quer
 export type CreatorInfo = components["schemas"]["CreatorModelV2"];
 type CreatorQueryParams = operations["getInfo"]["parameters"]["query"];
 
+export type CreatorChannel = components["schemas"]["ChannelModel"][];
+type CreatorChannelsQueryParams = operations["listCreatorChannelsV3"]["parameters"]["query"];
 export class Creator extends Core {
 	/**
 	 * Fetch blogPosts from a creator, returns a Async Iterator.
@@ -63,6 +65,9 @@ export class Creator extends Core {
 		return this.got(url.href).json();
 	};
 
-	info = (creatorGGUID: CreatorQueryParams["creatorGUID"]): Promise<CreatorInfo[]> =>
-		this.got(`${this.BaseUrl}${ApiPaths.getInfo}?creatorGUID=${creatorGGUID}`).json();
+	info = (creatorGUID: CreatorQueryParams["creatorGUID"]): Promise<CreatorInfo[]> =>
+		this.got(`${this.BaseUrl}${ApiPaths.getInfo}?creatorGUID=${creatorGUID}`).json();
+
+	channels = (creatorGUID: CreatorChannelsQueryParams["ids"]): Promise<CreatorChannel[]> =>
+		this.got(`${this.BaseUrl}${ApiPaths.listCreatorChannelsV3}?ids=${creatorGUID}`).json();
 }
