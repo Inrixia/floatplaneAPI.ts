@@ -5,29 +5,29 @@
 	"type": "module",
 	"dependencies": {
 		"cross-env": "^7.0.3",
-		"got": "^12.5.3",
+		"got": "^12.6.0",
 		"tough-cookie": "^4.1.2"
 	},
 	"devDependencies": {
 		"@inrixia/helpers": "^2.0.10",
 		"@types/tough-cookie": "^4.0.2",
 		"@types/tough-cookie-file-store": "^2.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.48.0",
-		"eslint": "^8.31.0",
-		"openapi-typescript": "^6.1.0",
-		"rimraf": "^3.0.2",
+		"@typescript-eslint/eslint-plugin": "^5.56.0",
+		"eslint": "^8.36.0",
+		"openapi-typescript": "^5.4.1",
+		"rimraf": "^4.4.1",
 		"tough-cookie-file-store": "^2.0.3",
-		"typescript": "^4.9.4",
-		"vitest": "^0.26.3"
+		"typescript": "^5.0.2",
+		"vitest": "^0.29.7"
 	},
 	"scripts": {
 		"test-all": "npm run sanity && vitest auth && vitest api creator user video content",
 		"test-auth": "npm run sanity && vitest auth",
 		"test-noLogin": "npm run sanity && vitest api creator user video content",
 		"sanity": "npm run build && node ./dist/sanity.js",
-		"prepare": "npm run sanity",
 		"devTest": "npm run build && node ./dist/test.js",
 		"build": "rimraf dist && tsc",
+		"prepare": "npm run sanity",
 		"fetchSchema": "openapi-typescript https://raw.githubusercontent.com/Jman012/FloatplaneAPI/main/floatplane-openapi-specification.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
 	"exports": {
