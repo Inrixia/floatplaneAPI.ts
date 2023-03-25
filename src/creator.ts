@@ -9,7 +9,7 @@ type BlogPostQueryParams = operations["getCreatorBlogPosts"]["parameters"]["quer
 export type CreatorInfo = components["schemas"]["CreatorModelV2"];
 type CreatorQueryParams = operations["getInfo"]["parameters"]["query"];
 
-export type CreatorChannel = components["schemas"]["ChannelModel"][];
+export type CreatorChannel = components["schemas"]["ChannelModel"];
 type CreatorChannelsQueryParams = operations["listCreatorChannelsV3"]["parameters"]["query"];
 export class Creator extends Core {
 	/**
