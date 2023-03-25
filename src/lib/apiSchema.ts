@@ -425,12 +425,16 @@ export interface paths {
     get: operations["getCreators"];
   };
   "/api/v3/creator/named": {
-    /** TODO */
+    /** Retrieve detailed information on one or more creators on Floatplane. */
     get: operations["getCreatorByName"];
   };
   "/api/v3/creator/discover": {
     /** TODO */
     get: operations["discoverCreatorsV3"];
+  };
+  "/api/v3/creator/channels/list": {
+    /** Retrieves a list of channels within the given creator(s). */
+    get: operations["listCreatorChannelsV3"];
   };
   "/api/v3/creator/category/list": {
     /** TODO - Not used in Floatplane code. */
@@ -1286,10 +1290,6 @@ export interface paths {
     /** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
     get: operations["getPictureContent"];
   };
-  "/api/v3/content/gallery": {
-    /** TODO */
-    get: operations["getGalleryContent"];
-  };
   "/api/v3/content/info": {
     /** TODO - Not used in Floatplane code. */
     get: operations["getContent"];
@@ -1646,20 +1646,20 @@ export interface components {
     };
     PlanInfoV2Response: {
       /** @description The total number of subscribers for this creator. */
-      totalSubscriberCount: number;
+      totalSubscriberCount: number | null;
       /** @description The total amount of monthly income for this creator. This field tends to always be $0 for regular users. */
-      totalIncome: string | null;
+      totalIncome: number | null;
       plans: (components["schemas"]["SubscriptionPlanModel"] & {
         /** Format: date-time */
         createdAt: string;
         /** Format: date-time */
         updatedAt: string | null;
         enabled: boolean;
-        paymentID: number;
+        paymentID: number | null;
         trialPeriod: number;
         creator: string;
         userIsSubscribed: boolean;
-        userIsGrandfathered: boolean;
+        userIsGrandfathered?: boolean;
         enabledGlobal: boolean;
       })[];
     };
@@ -1732,6 +1732,7 @@ export interface components {
       text: string;
       /** @enum {string} */
       type: "blogPost";
+      channel: components["schemas"]["ChannelModel"];
       tags: string[];
       attachmentOrder: string[];
       metadata: components["schemas"]["PostMetadataModel"];
@@ -1920,6 +1921,7 @@ export interface components {
       id: string;
       owner: string;
       title: string;
+      /** @description Shown in the browser URL, and used in `/creator/named` queries. */
       urlname: string;
       description: string;
       about: string;
@@ -1931,6 +1933,7 @@ export interface components {
       discoverable: boolean;
       subscriberCountDisplay: string;
       incomeDisplay: boolean;
+      defaultChannel?: string;
     };
     CreatorModelV2Extended: components["schemas"]["CreatorModelV2"] & {
       socialLinks: components["schemas"]["SocialLinksModel"];
@@ -1938,12 +1941,19 @@ export interface components {
     };
     CreatorModelV3: {
       id: string;
-      owner: string;
+      owner:
+        | string
+        | {
+            id?: string;
+            username?: string;
+          };
       title: string;
+      /** @description Shown in the browser URL, and used in `/creator/named` queries. */
       urlname: string;
       description: string;
       about: string;
       category: {
+        id: string;
         title: string;
       };
       cover: components["schemas"]["ImageModel"] | null;
@@ -1955,7 +1965,25 @@ export interface components {
       discoverable: boolean;
       subscriberCountDisplay: string;
       incomeDisplay: boolean;
+      defaultChannel: string;
       socialLinks: components["schemas"]["SocialLinksModel"];
+      channels: components["schemas"]["ChannelModel"][];
+      /** @description Present in `/creator/named` queries */
+      discordServers?: components["schemas"]["DiscordServerModel"][];
+      card?: components["schemas"]["ImageModel"];
+    };
+    ChannelModel: {
+      id: string;
+      creator: string;
+      title: string;
+      /** @description Shown in the browser URL. */
+      urlname: string;
+      about: string;
+      order?: number;
+      cover: components["schemas"]["ImageModel"] | null;
+      card: components["schemas"]["ImageModel"] | null;
+      icon: components["schemas"]["ImageModel"];
+      socialLinks?: components["schemas"]["SocialLinksModel"];
     };
     BlogPostModelV3: {
       id: string;
@@ -1965,6 +1993,7 @@ export interface components {
       text: string;
       /** @enum {string} */
       type: "blogPost";
+      channel: components["schemas"]["ChannelModel"];
       tags: string[];
       attachmentOrder: string[];
       metadata: components["schemas"]["PostMetadataModel"];
@@ -1981,10 +2010,12 @@ export interface components {
           username: string;
         };
         title: string;
+        /** @description Shown in the browser URL, and used in `/creator/named` queries. */
         urlname: string;
         description: string;
         about: string;
         category: {
+          id: string;
           title: string;
         };
         cover: components["schemas"]["ImageModel"];
@@ -1994,6 +2025,8 @@ export interface components {
         discoverable: boolean;
         subscriberCountDisplay: string;
         incomeDisplay: boolean;
+        defaultChannel?: string;
+        channels?: string[];
         card: components["schemas"]["ImageModel"] | null;
       };
       wasReleasedSilently: boolean;
@@ -2019,7 +2052,7 @@ export interface components {
       logo: string | null;
       interval: string;
       featured: boolean;
-      allowGrandfatheredAccess: boolean | null;
+      allowGrandfatheredAccess?: boolean | null;
       discordServers: components["schemas"]["DiscordServerModel"][];
       discordRoles: components["schemas"]["DiscordRoleModel"][];
     };
@@ -2119,6 +2152,8 @@ export interface components {
       description: string;
       thumbnail: components["schemas"]["ImageModel"] | null;
       owner: string;
+      /** @description The creator channel this livestream belongs to. */
+      channel?: string;
       streamPath: string;
       offline: {
         title: string | null;
@@ -2132,7 +2167,7 @@ export interface components {
       guildName: string;
       guildIcon: string;
       /** Format: uri */
-      inviteLink: string;
+      inviteLink: string | null;
       inviteMode: string;
     };
     DiscordRoleModel: {
@@ -2177,32 +2212,13 @@ export interface components {
       blogPost: string;
       user: components["schemas"]["UserModel"];
       text: string;
-      replying: string;
-      postDate: string;
-      editDate: string;
-      editCount: number;
-      isEdited: boolean;
-      likes: number;
-      dislikes: number;
-      score: number;
-      interactionCounts: {
-        like: number;
-        dislike: number;
-      };
-      totalReplies: number;
-      replies: components["schemas"]["CommentReplyModel"][];
-      userInteraction: components["schemas"]["UserInteractionModel"];
-    };
-    CommentReplyModel: {
-      id: string;
-      blogPost: string;
-      user: components["schemas"]["UserModel"];
-      text: string;
-      replying: string;
+      replying: string | null;
       /** Format: date-time */
       postDate: string;
       /** Format: date-time */
       editDate: string | null;
+      /** Format: date-time */
+      pinDate?: string | null;
       editCount: number;
       isEdited: boolean;
       likes: number;
@@ -2212,6 +2228,9 @@ export interface components {
         like: number;
         dislike: number;
       };
+      totalReplies?: number;
+      /** @description This is present (but possibly empty) for top-level comments. This is never present for reply comments. */
+      replies?: components["schemas"]["CommentModel"][];
       userInteraction: components["schemas"]["UserInteractionModel"];
     };
     UserNotificationModel: {
@@ -2231,12 +2250,12 @@ export interface components {
     };
     UserSubscriptionModel: {
       /** Format: date-time */
-      startDate: string;
+      startDate: string | null;
       /** Format: date-time */
       endDate: string | null;
-      paymentID: number;
+      paymentID: number | null;
       interval: string;
-      paymentCancelled: boolean;
+      paymentCancelled?: boolean;
       plan: components["schemas"]["SubscriptionPlanModel"];
       creator: string;
     };
@@ -4247,14 +4266,19 @@ export interface operations {
       default: components["responses"]["Unexpected"];
     };
   };
-  /** TODO */
+  /** Retrieve detailed information on one or more creators on Floatplane. */
   getCreatorByName: {
-    parameters: {};
+    parameters: {
+      query: {
+        /** The `urlname`(s) of the creator(s) to be retrieved. See `CreatorModelV3`. */
+        creatorURL: string[];
+      };
+    };
     responses: {
       /** OK */
       200: {
         content: {
-          "application/json": unknown;
+          "application/json": components["schemas"]["CreatorModelV3"][];
         };
       };
       400: components["responses"]["400BadRequest"];
@@ -4272,6 +4296,28 @@ export interface operations {
       200: {
         content: {
           "application/json": unknown;
+        };
+      };
+      400: components["responses"]["400BadRequest"];
+      401: components["responses"]["401Unauthenticated"];
+      403: components["responses"]["403Forbidden"];
+      404: components["responses"]["404NotFound"];
+      default: components["responses"]["Unexpected"];
+    };
+  };
+  /** Retrieves a list of channels within the given creator(s). */
+  listCreatorChannelsV3: {
+    parameters: {
+      query: {
+        /** The ids of the creator(s) from which to search for channels. */
+        ids: string[];
+      };
+    };
+    responses: {
+      /** OK */
+      200: {
+        content: {
+          "application/json": components["schemas"]["ChannelModel"][];
         };
       };
       400: components["responses"]["400BadRequest"];
@@ -7803,7 +7849,7 @@ export interface operations {
       /** OK */
       200: {
         content: {
-          "application/json": components["schemas"]["CommentReplyModel"][];
+          "application/json": components["schemas"]["CommentModel"][];
         };
       };
       400: components["responses"]["400BadRequest"];
@@ -7935,6 +7981,8 @@ export interface operations {
       query: {
         /** The GUID of the creator to retrieve posts from. */
         id: string;
+        /** The id of a creator's specific channel from which to retrieve posts. */
+        channel?: string;
         /** The maximum number of posts to return. */
         limit?: number;
         /** The number of posts to skip. Usually a multiple of `limit`, to get the next "page" of results. */
@@ -8129,23 +8177,6 @@ export interface operations {
       200: {
         content: {
           "application/json": components["schemas"]["ContentPictureV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** TODO */
-  getGalleryContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
         };
       };
       400: components["responses"]["400BadRequest"];
@@ -8839,6 +8870,7 @@ export enum ApiPaths {
   getCreators = "/api/v3/creator/list",
   getCreatorByName = "/api/v3/creator/named",
   discoverCreatorsV3 = "/api/v3/creator/discover",
+  listCreatorChannelsV3 = "/api/v3/creator/channels/list",
   listCreatorCategoriesV3 = "/api/v3/creator/category/list",
   bindCreatorInviteCode = "/api/v3/creator/invite/bind",
   getCreatorInviteCodeInfo = "/api/v3/creator/invite/info",
@@ -9056,7 +9088,6 @@ export enum ApiPaths {
   getVideoContent = "/api/v3/content/video",
   getAudioContent = "/api/v3/content/audio",
   getPictureContent = "/api/v3/content/picture",
-  getGalleryContent = "/api/v3/content/gallery",
   getContent = "/api/v3/content/info",
   likeContent = "/api/v3/content/like",
   dislikeContent = "/api/v3/content/dislike",

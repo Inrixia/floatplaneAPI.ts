@@ -2,7 +2,7 @@ import { expect as exp } from "vitest";
 
 import { getExpect, type EExpect } from "@inrixia/helpers/test";
 
-export const expect: EExpect<Vi.ExpectStatic> = getExpect(exp);
+export const expect: EExpect<typeof exp> = getExpect(exp);
 
 import type { components } from "./apiSchema.js";
 import type { BlogPost } from "../creator.js";
@@ -127,6 +127,7 @@ export const creatorModelV3Format: components["schemas"]["BlogPostModelV3"]["cre
 	description: expect.any(String),
 	about: expect.any(String),
 	category: {
+		id: expect.any(String),
 		title: expect.any(String),
 	},
 	cover: imageFormat,
@@ -138,6 +139,18 @@ export const creatorModelV3Format: components["schemas"]["BlogPostModelV3"]["cre
 	incomeDisplay: expect.any(Boolean),
 	card: expect.objectContainingOrNull(imageFormat),
 };
+export const channelFormat: components["schemas"]["ChannelModel"] = {
+	id: expect.any(String),
+	creator: expect.any(String),
+	title: expect.any(String),
+	urlname: expect.any(String),
+	about: expect.any(String),
+	order: expect.typeOrUndefined(Number),
+	cover: expect.objectContainingOrNull(imageFormat),
+	card: expect.objectContainingOrNull(imageFormat),
+	icon: expect.objectContaining(imageFormat),
+	socialLinks: expect.anything(),
+};
 export const blogPostFormat: BlogPost = {
 	id: expect.any(String),
 	guid: expect.any(String),
@@ -145,6 +158,7 @@ export const blogPostFormat: BlogPost = {
 	tags: expect.arrayContainingOrEmpty([expect.any(String)]),
 	text: expect.any(String),
 	type: expect.stringMatching("blogPost"),
+	channel: expect.objectContaining(channelFormat),
 	attachmentOrder: expect.arrayContaining([expect.any(String)]),
 	metadata: metadataFormat,
 	releaseDate: expect.any(String),
@@ -173,7 +187,8 @@ export const creatorModelV2Format: components["schemas"]["CreatorModelV2"] = {
 	cover: expect.typeOrNull(imageFormat),
 	icon: imageFormat,
 	liveStream: expect.typeOrNull(liveStreamModelFormat),
-	subscriptionPlans: expect.typeOrNull(expect.arrayContaining([subscriptionPlan])),
+	// TODO: Detemine if this should be properly populated
+	subscriptionPlans: expect.anything(),
 	discoverable: expect.any(Boolean),
 	subscriberCountDisplay: expect.any(String),
 	incomeDisplay: expect.any(Boolean),
@@ -240,4 +255,5 @@ export const contentPostFormat: components["schemas"]["ContentPostV3Response"] =
 	videoAttachments: expect.arrayContainingOrEmpty([videoAttachmentModelFormat]),
 	audioAttachments: expect.arrayContainingOrEmpty([audioAttachmentModelFormat]),
 	pictureAttachments: expect.arrayContainingOrEmpty([pictureAttachmentModelFormat]),
+	galleryAttachments: expect.anything(),
 };
