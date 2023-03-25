@@ -4,13 +4,16 @@ import { type components, type operations, ApiPaths } from "./lib/apiSchema.js";
 import type { OptionalOnly } from "@inrixia/helpers/ts";
 
 export type BlogPost = components["schemas"]["BlogPostModelV3"];
-type QueryParams = operations["getCreatorBlogPosts"]["parameters"]["query"];
+type BlogPostQueryParams = operations["getCreatorBlogPosts"]["parameters"]["query"];
+
+export type CreatorInfo = components["schemas"]["CreatorModelV2"];
+type CreatorQueryParams = operations["getInfo"]["parameters"]["query"];
 
 export class Creator extends Core {
 	/**
 	 * Fetch blogPosts from a creator, returns a Async Iterator.
 	 */
-	async *blogPostsIterable(creatorGUID: string, options?: Omit<OptionalOnly<QueryParams>, "fetchAfter">): AsyncIterableIterator<BlogPost> {
+	async *blogPostsIterable(creatorGUID: string, options?: Omit<OptionalOnly<BlogPostQueryParams>, "fetchAfter">): AsyncIterableIterator<BlogPost> {
 		let fetchAfter = 0;
 		let blogPosts = await this.blogPosts(creatorGUID, { ...options, fetchAfter });
 		while (blogPosts.length > 0) {
@@ -23,7 +26,7 @@ export class Creator extends Core {
 	/**
 	 *	Fetch blogPosts from a creator.
 	 */
-	blogPosts = (creatorGUID: QueryParams["id"], options?: OptionalOnly<QueryParams>): Promise<BlogPost[]> => {
+	blogPosts = (creatorGUID: BlogPostQueryParams["id"], options?: OptionalOnly<BlogPostQueryParams>): Promise<BlogPost[]> => {
 		const url = new URL(this.BaseUrl + ApiPaths.getCreatorBlogPosts);
 		url.searchParams.append("id", creatorGUID);
 		if (options !== undefined) {
@@ -59,4 +62,7 @@ export class Creator extends Core {
 		}
 		return this.got(url.href).json();
 	};
+
+	info = (creatorGGUID: CreatorQueryParams["creatorGUID"]): Promise<CreatorInfo> =>
+		this.got(`${this.BaseUrl}${ApiPaths.getInfo}?creatorGUID=${creatorGGUID}`).json();
 }
