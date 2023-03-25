@@ -17,13 +17,9 @@
 		"openapi-typescript": "^5.4.1",
 		"rimraf": "^4.4.1",
 		"tough-cookie-file-store": "^2.0.3",
-		"typescript": "^5.0.2",
-		"vitest": "^0.29.7"
+		"typescript": "^5.0.2"
 	},
 	"scripts": {
-		"test-all": "npm run sanity && vitest auth && vitest api creator user video content",
-		"test-auth": "npm run sanity && vitest auth",
-		"test-noLogin": "npm run sanity && vitest api creator user video content",
 		"sanity": "npm run build && node ./dist/sanity.js",
 		"devTest": "npm run build && node ./dist/test.js",
 		"build": "rimraf dist && tsc",

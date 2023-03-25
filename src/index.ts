@@ -45,7 +45,7 @@ export class Floatplane {
 				limit: 5, // Maximum number of retries
 				calculateDelay: ({ attemptCount, error }) => {
 					// Retry after the number of seconds specified in the "retry-after" header
-					const retryAfter = error.response?.headers["retry-after"];
+					const retryAfter: string = (<any>error.response)?.["retry-after"];
 					if (retryAfter !== undefined) return parseInt(retryAfter) * 1000; // Convert to milliseconds
 					// Default retry delay
 					return 1000 * attemptCount;
