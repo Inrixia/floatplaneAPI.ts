@@ -63,6 +63,6 @@ export class Creator extends Core {
 		return this.got(url.href).json();
 	};
 
-	info = (creatorGGUID: CreatorQueryParams["creatorGUID"]): Promise<CreatorInfo> =>
+	info = (creatorGGUID: CreatorQueryParams["creatorGUID"]): Promise<CreatorInfo[]> =>
 		this.got(`${this.BaseUrl}${ApiPaths.getInfo}?creatorGUID=${creatorGGUID}`).json();
 }
