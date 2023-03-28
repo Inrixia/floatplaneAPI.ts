@@ -18,7 +18,7 @@ export type LoginOptions = {
 	token?: string;
 };
 
-export const version = "4.4.5";
+export const version = "4.4.6";
 
 export const headers = {
 	"User-Agent": `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
@@ -46,7 +46,7 @@ export class Floatplane {
 				limit: 5, // Maximum number of retries
 				calculateDelay: ({ attemptCount, error }) => {
 					// Fix for this not handling response errors
-					if (error.response?.statusCode !== 429) throw error;
+					if (error.response?.statusCode !== 429) return 0;
 					// Retry after the number of seconds specified in the "retry-after" header
 					const retryAfter: string = (<any>error.response)?.headers?.["retry-after"];
 					if (retryAfter !== undefined) return parseInt(retryAfter) * 1000; // Convert to milliseconds
