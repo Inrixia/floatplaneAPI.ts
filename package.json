@@ -12,12 +12,12 @@
 		"@inrixia/helpers": "^2.0.10",
 		"@types/tough-cookie": "^4.0.2",
 		"@types/tough-cookie-file-store": "^2.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.56.0",
-		"eslint": "^8.36.0",
+		"@typescript-eslint/eslint-plugin": "^5.59.1",
+		"eslint": "^8.39.0",
 		"openapi-typescript": "^5.4.1",
-		"rimraf": "^4.4.1",
+		"rimraf": "^5.0.0",
 		"tough-cookie-file-store": "^2.0.3",
-		"typescript": "^5.0.2"
+		"typescript": "^5.0.4"
 	},
 	"scripts": {
 		"sanity": "npm run build && node ./dist/sanity.js",
