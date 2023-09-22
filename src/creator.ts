@@ -33,6 +33,7 @@ export class Creator extends Core {
 		url.searchParams.append("id", creatorGUID);
 		if (options !== undefined) {
 			const { limit, fetchAfter, search, tags, hasVideo, hasAudio, hasPicture, hasText, sort, fromDuration, toDuration, fromDate, toDate } = options;
+			if (channel !== undefined) url.searchParams.append("channel", channel.toString());
 			if (limit !== undefined) url.searchParams.append("limit", limit.toString());
 			if (fetchAfter !== undefined) url.searchParams.append("fetchAfter", fetchAfter.toString());
 			if (search !== undefined) url.searchParams.append("search", search);
