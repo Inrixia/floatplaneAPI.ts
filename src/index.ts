@@ -64,6 +64,16 @@ export class Floatplane {
 		this.content = new Content(this.got);
 	}
 
+	public extend(...params: Parameters<typeof got.extend>) {
+		this.got = this.got.extend(...params);
+		this.auth.got = this.got;
+		this.user.got = this.got;
+		this.api.got = this.got;
+		this.creator.got = this.got;
+		this.cdn.got = this.got;
+		this.content.got = this.got;
+	}
+
 	/**
 	 * Login to floatplane so future requests are authenticated
 	 * @param {LoginOptions} options Login options
