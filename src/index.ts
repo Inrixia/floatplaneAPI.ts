@@ -18,7 +18,7 @@ export type LoginOptions = {
 	token?: string;
 };
 
-export const version = "4.5.0";
+export const version = "4.5.1";
 
 export const headers = {
 	"User-Agent": `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
