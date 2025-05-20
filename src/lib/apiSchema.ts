@@ -586,6 +586,7 @@ export interface components {
 			/** @description The watch progress of the video, in seconds. If no progress has yet been posted to the video, then this field may not appear. */
 			progress?: number;
 			userInteraction: components["schemas"]["UserInteractionModel"];
+			textTracks: components["schemas"]["TextTracks"][];
 			levels: {
 				name: string;
 				width: number;
@@ -1136,6 +1137,14 @@ export interface components {
 			/** @description Percentage of the blog post's media that has been consumed so far. Ranges from 0 to 100. */
 			progress: number;
 		}[];
+		TextTracks: {
+			id: string;
+			src: string;
+			kind: string;
+			language: string;
+			generated: boolean;
+			processing: boolean;
+		};
 	};
 	responses: {
 		/** Bad Request - The request has errors and the server did not process it. */
