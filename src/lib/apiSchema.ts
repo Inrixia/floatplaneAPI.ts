@@ -4,2460 +4,2453 @@
  */
 
 export interface paths {
-  "/api/v2/auth/login": {
-    /** Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests. */
-    post: operations["login"];
-  };
-  "/api/v2/auth/logout": {
-    /** Log out of Floatplane, invalidating the authentication/authorization cookie. */
-    post: operations["logout"];
-  };
-  "/api/v2/auth/checkFor2faLogin": {
-    /** Complete the login process if a two-factor authentication token is required from the beginning of the login process. */
-    post: operations["checkFor2faLogin"];
-  };
-  "/api/v3/auth/captcha/info": {
-    /** Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up. */
-    get: operations["getCaptchaInfo"];
-  };
-  "/api/v2/cdn/delivery": {
-    /** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
-    get: operations["getDeliveryInfo"];
-  };
-  "/api/v3/delivery/info": {
-    /** Given an video/audio attachment or livestream identifier, retrieves the information necessary to play, download, or livestream the media at various quality levels. */
-    get: operations["getDeliveryInfoV3"];
-  };
-  "/api/v2/connect/list": {
-    /** List the available 3rd party accounts for the user's profile. */
-    get: operations["listConnections"];
-  };
-  "/api/v2/creator/info": {
-    /** Retrieve detailed information on one or more creators on Floatplane. */
-    get: operations["getInfo"];
-  };
-  "/api/v2/creator/named": {
-    /** Retrieve detailed information on one or more creators on Floatplane. */
-    get: operations["getCreatorInfoByName"];
-  };
-  "/api/v3/creator/info": {
-    /** Retrieve detailed information about a specific creator. */
-    get: operations["getCreator"];
-  };
-  "/api/v3/creator/list": {
-    /** Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering. */
-    get: operations["getCreators"];
-  };
-  "/api/v3/creator/named": {
-    /** Retrieve detailed information on one or more creators on Floatplane. */
-    get: operations["getCreatorByName"];
-  };
-  "/api/v3/creator/channels/list": {
-    /** Retrieves a list of channels within the given creator(s). */
-    get: operations["listCreatorChannelsV3"];
-  };
-  "/api/v2/plan/info": {
-    /** Retrieve detailed information about a creator's subscription plans and their subscriber count. */
-    get: operations["getCreatorSubInfoPublic"];
-  };
-  "/api/v2/edges": {
-    /** Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement. */
-    get: operations["getEdges"];
-  };
-  "/api/v2/faq/list": {
-    /** Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML. */
-    get: operations["getFaqSections"];
-  };
-  "/api/v2/payment/method/list": {
-    /** Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform. */
-    get: operations["listPaymentMethods"];
-  };
-  "/api/v2/payment/address/list": {
-    /** Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators. */
-    get: operations["listAddresses"];
-  };
-  "/api/v2/payment/invoice/list": {
-    /** Retrieve a list of paid or unpaid subscription invoices for the user. */
-    get: operations["listInvoices"];
-  };
-  "/api/v3/socket/connect": {
-    /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["socketConnect"];
-  };
-  "/api/v3/socket/disconnect": {
-    /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["disconnectSocket"];
-  };
-  "/api/v3/user/subscriptions": {
-    /** Retrieve a list of all active subscriptions for the user. */
-    get: operations["listUserSubscriptionsV3"];
-  };
-  "/api/v2/user/info": {
-    /** Retrieve more detailed information about one or more users from their identifiers. */
-    get: operations["getUserInfo"];
-  };
-  "/api/v2/user/named": {
-    /** Retrieve more detailed information about one or more users from their usernames. */
-    get: operations["getUserInfoByName"];
-  };
-  "/api/v2/user/security": {
-    /** Retrieve information about the current security configuration for the user. */
-    get: operations["getSecurity"];
-  };
-  "/api/v2/user/ban/status": {
-    /** Determine whether or not the user is banned for a given creator. */
-    get: operations["userCreatorBanStatus"];
-  };
-  "/api/v3/user/activity": {
-    /** Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators. */
-    get: operations["getActivityFeedV3"];
-  };
-  "/api/v3/user/links": {
-    /** Retrieve configured social media links from a user's profile. */
-    get: operations["getExternalLinksV3"];
-  };
-  "/api/v3/user/self": {
-    /** Retrieve more detailed information about the user, including their name and email. */
-    get: operations["getSelf"];
-  };
-  "/api/v3/user/notification/list": {
-    /** Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator. */
-    get: operations["getUserNotificationSettingsV3"];
-  };
-  "/api/v3/user/notification/update": {
-    /** Enable or disable email or push notifications for a specific creator. */
-    post: operations["updateUserNotificationSettingsV3"];
-  };
-  "/api/v3/comment": {
-    /** Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded. */
-    get: operations["getComments"];
-    /** Post a new comment to a blog post object. */
-    post: operations["postComment"];
-  };
-  "/api/v3/comment/replies": {
-    /** Retrieve more replies from a comment. */
-    get: operations["getCommentReplies"];
-  };
-  "/api/v3/comment/like": {
-    /** Like a comment on a blog post. */
-    post: operations["likeComment"];
-  };
-  "/api/v3/comment/dislike": {
-    /** Dislike a comment on a blog post. */
-    post: operations["dislikeComment"];
-  };
-  "/api/v3/content/creator": {
-    /**
-     * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
-     *
-     * Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
-     */
-    get: operations["getCreatorBlogPosts"];
-  };
-  "/api/v3/content/creator/list": {
-    /**
-     * Retrieve paginated blog posts from multiple creators for the home page.
-     *
-     * Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
-     */
-    get: operations["getMultiCreatorBlogPosts"];
-  };
-  "/api/v3/content/tags": {
-    /** Retrieve all tags and the number of times the tags have been used for the specified creator(s). */
-    get: operations["getContentTags"];
-  };
-  "/api/v3/content/post": {
-    /** Retrieve more details on a specific blog post object for viewing. */
-    get: operations["getBlogPost"];
-  };
-  "/api/v3/content/related": {
-    /** Retrieve a list of blog posts that are related to the post being viewed. */
-    get: operations["getRelatedBlogPosts"];
-  };
-  "/api/v3/content/video": {
-    /** Retrieve more information on a video attachment from a blog post in order to consume the video content. */
-    get: operations["getVideoContent"];
-  };
-  "/api/v3/content/picture": {
-    /** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
-    get: operations["getPictureContent"];
-  };
-  "/api/v3/content/like": {
-    /** Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed. */
-    post: operations["likeContent"];
-  };
-  "/api/v3/content/dislike": {
-    /** Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed. */
-    post: operations["dislikeContent"];
-  };
-  "/api/v3/content/progress": {
-    /** Update the watch progress on a piece of media (usually video or audio), stored as the number of seconds in the media. */
-    post: operations["updateProgress"];
-  };
-  "/api/v3/content/get/progress": {
-    /**
-     * Batch retrieval of watch progress values for blog posts. This API is useful for showing progress of a list of blog posts shown on the screen to the user. When retrieving a list of blog posts, the media attachments only include the identifier; when retrieving full details of a blog post, the attachments include more information, but still fail to return the progress of the media. Only when pulling the full video/audio content does the progress get included in the response. Thus, the recommended approach is to pull paginated results of blog posts first, as usual, and then to call this endpoint to retrieve progress values for each blog post to show in some capacity, usually on the thumbnail as a progress bar on the bottom.
-     *
-     * Note that the progress values returned in this endpoint are different from the update progress endpoint and the values returned in video/audio attachments. While the latter are measured in seconds, this endpoint returns progress as a percentage of the media's total duration. It is presumed that the progress returned is from the first attachment in the blog post's `attachmentOrder` that is either a video or audio attachment. Because this returns progress as an integer percentage (0 to 100), it is not recommended to use this particular value for jumping to a timestamp in the media when resuming playback, as the rounded number may be off by plus/minus several seconds in actual playback. Use the actual attachment progress, measured in seconds, instead.
-     */
-    post: operations["getProgress"];
-  };
-  "/api/v3/poll/live/joinroom": {
-    /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["joinLiveRoom"];
-  };
-  "/api/v3/poll/live/leaveLiveRoom": {
-    /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-    post: operations["leaveLiveRoom"];
-  };
-  "/api/v3/poll/votePoll": {
-    /** Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error. */
-    post: operations["votePoll"];
-  };
-  "/api/v3/redirect-yt-latest/{channelKey}": {
-    /** Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code. */
-    post: operations["redirectYTLatest"];
-  };
-  "/api/v3/user/loyaltyreward/list": {
-    /** Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown. */
-    post: operations["listCreatorLoyaltyReward"];
-  };
+	"/api/v2/auth/login": {
+		/** Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests. */
+		post: operations["login"];
+	};
+	"/api/v2/auth/logout": {
+		/** Log out of Floatplane, invalidating the authentication/authorization cookie. */
+		post: operations["logout"];
+	};
+	"/api/v2/auth/checkFor2faLogin": {
+		/** Complete the login process if a two-factor authentication token is required from the beginning of the login process. */
+		post: operations["checkFor2faLogin"];
+	};
+	"/api/v3/auth/captcha/info": {
+		/** Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up. */
+		get: operations["getCaptchaInfo"];
+	};
+	"/api/v2/cdn/delivery": {
+		/** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
+		get: operations["getDeliveryInfo"];
+	};
+	"/api/v3/delivery/info": {
+		/** Given an video/audio attachment or livestream identifier, retrieves the information necessary to play, download, or livestream the media at various quality levels. */
+		get: operations["getDeliveryInfoV3"];
+	};
+	"/api/v2/connect/list": {
+		/** List the available 3rd party accounts for the user's profile. */
+		get: operations["listConnections"];
+	};
+	"/api/v2/creator/info": {
+		/** Retrieve detailed information on one or more creators on Floatplane. */
+		get: operations["getInfo"];
+	};
+	"/api/v2/creator/named": {
+		/** Retrieve detailed information on one or more creators on Floatplane. */
+		get: operations["getCreatorInfoByName"];
+	};
+	"/api/v3/creator/info": {
+		/** Retrieve detailed information about a specific creator. */
+		get: operations["getCreator"];
+	};
+	"/api/v3/creator/list": {
+		/** Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering. */
+		get: operations["getCreators"];
+	};
+	"/api/v3/creator/named": {
+		/** Retrieve detailed information on one or more creators on Floatplane. */
+		get: operations["getCreatorByName"];
+	};
+	"/api/v3/creator/channels/list": {
+		/** Retrieves a list of channels within the given creator(s). */
+		get: operations["listCreatorChannelsV3"];
+	};
+	"/api/v2/plan/info": {
+		/** Retrieve detailed information about a creator's subscription plans and their subscriber count. */
+		get: operations["getCreatorSubInfoPublic"];
+	};
+	"/api/v2/edges": {
+		/** Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement. */
+		get: operations["getEdges"];
+	};
+	"/api/v2/faq/list": {
+		/** Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML. */
+		get: operations["getFaqSections"];
+	};
+	"/api/v2/payment/method/list": {
+		/** Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform. */
+		get: operations["listPaymentMethods"];
+	};
+	"/api/v2/payment/address/list": {
+		/** Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators. */
+		get: operations["listAddresses"];
+	};
+	"/api/v2/payment/invoice/list": {
+		/** Retrieve a list of paid or unpaid subscription invoices for the user. */
+		get: operations["listInvoices"];
+	};
+	"/api/v3/socket/connect": {
+		/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["socketConnect"];
+	};
+	"/api/v3/socket/disconnect": {
+		/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["disconnectSocket"];
+	};
+	"/api/v3/user/subscriptions": {
+		/** Retrieve a list of all active subscriptions for the user. */
+		get: operations["listUserSubscriptionsV3"];
+	};
+	"/api/v2/user/info": {
+		/** Retrieve more detailed information about one or more users from their identifiers. */
+		get: operations["getUserInfo"];
+	};
+	"/api/v2/user/named": {
+		/** Retrieve more detailed information about one or more users from their usernames. */
+		get: operations["getUserInfoByName"];
+	};
+	"/api/v2/user/security": {
+		/** Retrieve information about the current security configuration for the user. */
+		get: operations["getSecurity"];
+	};
+	"/api/v2/user/ban/status": {
+		/** Determine whether or not the user is banned for a given creator. */
+		get: operations["userCreatorBanStatus"];
+	};
+	"/api/v3/user/activity": {
+		/** Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators. */
+		get: operations["getActivityFeedV3"];
+	};
+	"/api/v3/user/links": {
+		/** Retrieve configured social media links from a user's profile. */
+		get: operations["getExternalLinksV3"];
+	};
+	"/api/v3/user/self": {
+		/** Retrieve more detailed information about the user, including their name and email. */
+		get: operations["getSelf"];
+	};
+	"/api/v3/user/notification/list": {
+		/** Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator. */
+		get: operations["getUserNotificationSettingsV3"];
+	};
+	"/api/v3/user/notification/update": {
+		/** Enable or disable email or push notifications for a specific creator. */
+		post: operations["updateUserNotificationSettingsV3"];
+	};
+	"/api/v3/comment": {
+		/** Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded. */
+		get: operations["getComments"];
+		/** Post a new comment to a blog post object. */
+		post: operations["postComment"];
+	};
+	"/api/v3/comment/replies": {
+		/** Retrieve more replies from a comment. */
+		get: operations["getCommentReplies"];
+	};
+	"/api/v3/comment/like": {
+		/** Like a comment on a blog post. */
+		post: operations["likeComment"];
+	};
+	"/api/v3/comment/dislike": {
+		/** Dislike a comment on a blog post. */
+		post: operations["dislikeComment"];
+	};
+	"/api/v3/content/creator": {
+		/**
+		 * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
+		 *
+		 * Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
+		 */
+		get: operations["getCreatorBlogPosts"];
+	};
+	"/api/v3/content/creator/list": {
+		/**
+		 * Retrieve paginated blog posts from multiple creators for the home page.
+		 *
+		 * Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
+		 */
+		get: operations["getMultiCreatorBlogPosts"];
+	};
+	"/api/v3/content/tags": {
+		/** Retrieve all tags and the number of times the tags have been used for the specified creator(s). */
+		get: operations["getContentTags"];
+	};
+	"/api/v3/content/post": {
+		/** Retrieve more details on a specific blog post object for viewing. */
+		get: operations["getBlogPost"];
+	};
+	"/api/v3/content/related": {
+		/** Retrieve a list of blog posts that are related to the post being viewed. */
+		get: operations["getRelatedBlogPosts"];
+	};
+	"/api/v3/content/video": {
+		/** Retrieve more information on a video attachment from a blog post in order to consume the video content. */
+		get: operations["getVideoContent"];
+	};
+	"/api/v3/content/picture": {
+		/** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
+		get: operations["getPictureContent"];
+	};
+	"/api/v3/content/like": {
+		/** Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed. */
+		post: operations["likeContent"];
+	};
+	"/api/v3/content/dislike": {
+		/** Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed. */
+		post: operations["dislikeContent"];
+	};
+	"/api/v3/content/progress": {
+		/** Update the watch progress on a piece of media (usually video or audio), stored as the number of seconds in the media. */
+		post: operations["updateProgress"];
+	};
+	"/api/v3/content/get/progress": {
+		/**
+		 * Batch retrieval of watch progress values for blog posts. This API is useful for showing progress of a list of blog posts shown on the screen to the user. When retrieving a list of blog posts, the media attachments only include the identifier; when retrieving full details of a blog post, the attachments include more information, but still fail to return the progress of the media. Only when pulling the full video/audio content does the progress get included in the response. Thus, the recommended approach is to pull paginated results of blog posts first, as usual, and then to call this endpoint to retrieve progress values for each blog post to show in some capacity, usually on the thumbnail as a progress bar on the bottom.
+		 *
+		 * Note that the progress values returned in this endpoint are different from the update progress endpoint and the values returned in video/audio attachments. While the latter are measured in seconds, this endpoint returns progress as a percentage of the media's total duration. It is presumed that the progress returned is from the first attachment in the blog post's `attachmentOrder` that is either a video or audio attachment. Because this returns progress as an integer percentage (0 to 100), it is not recommended to use this particular value for jumping to a timestamp in the media when resuming playback, as the rounded number may be off by plus/minus several seconds in actual playback. Use the actual attachment progress, measured in seconds, instead.
+		 */
+		post: operations["getProgress"];
+	};
+	"/api/v3/poll/live/joinroom": {
+		/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["joinLiveRoom"];
+	};
+	"/api/v3/poll/live/leaveLiveRoom": {
+		/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+		post: operations["leaveLiveRoom"];
+	};
+	"/api/v3/poll/votePoll": {
+		/** Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error. */
+		post: operations["votePoll"];
+	};
+	"/api/v3/redirect-yt-latest/{channelKey}": {
+		/** Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code. */
+		post: operations["redirectYTLatest"];
+	};
+	"/api/v3/user/loyaltyreward/list": {
+		/** Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown. */
+		post: operations["listCreatorLoyaltyReward"];
+	};
 }
 
 export interface components {
-  schemas: {
-    AuthLoginV2Request: {
-      username: string;
-      password: string;
-      /** @description The Google Recaptcha v2/v3 token to verify the request. On web browsers, this is required. For mobile or TV applications, this is not required only if the User-Agent indicates so (e.g., if the User-Agent contains "CFNetwork" in its value). Otherwise, the application would have to supply a valid captcha token, which can be difficult to obtain dynamically in some scenarios. In this case, this should be undefined (no key), not null. */
-      captchaToken?: string;
-    };
-    AuthLoginV2Response: {
-      /** @description Identifying information about the new-logged-in user upon success. May be undefined when `needs2FA` is `true`. */
-      user?: components["schemas"]["UserModel"];
-      /** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
-      needs2FA: boolean;
-    };
-    CheckFor2faLoginRequest: {
-      /** @description The two-factor authentication token that the user inputs to complete the login process. */
-      token: string;
-    };
-    /** @description Represents a quality of video to download/stream. */
-    CdnDeliveryV2QualityLevelModel: {
-      /** @description Used to identify this level of quality, and to refer to the `qualityLevelParams` object below by the property key. */
-      name: string;
-      /** @description The video quality's resolution's width in pixels. */
-      width?: number | null;
-      /** @description The video quality resolution's height in pixels. */
-      height?: number | null;
-      /** @description The display-friendly version of `name`. */
-      label: string;
-      /** @description The display order to be shown to the user. */
-      order: number;
-      mimeType?: string | null;
-      codecs?: string | null;
-    };
-    CdnDeliveryV2ResourceModel: {
-      /** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property, depending on chosen resolution. First, choose the `qualityLevel`, then use the given token from the `qualityLevelParam` for that `qualityLevel`'s `name`. */
-      uri: string;
-      data: {
-        qualityLevels?: components["schemas"]["CdnDeliveryV2QualityLevelModel"][];
-        /** @description For each `qualityLevel` above, there will be an entry in this map where the property name matches the `qulityLevel[].name` containing a token to apply to the URL. */
-        qualityLevelParams?: { [key: string]: unknown } | null;
-      } & { [key: string]: unknown };
-    };
-    CdnDeliveryV2VodLivestreamResponse: {
-      /**
-       * Format: uri
-       * @description The domain of the CDN server to use. Combine with data from the `resource` object to create a full URL.
-       */
-      cdn: string;
-      /**
-       * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
-       * @enum {string}
-       */
-      strategy: "cdn" | "client";
-      resource: components["schemas"]["CdnDeliveryV2ResourceModel"];
-    };
-    CdnDeliveryV2DownloadResponse: components["schemas"]["EdgesModel"] & {
-      /**
-       * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
-       * @enum {string}
-       */
-      strategy: "cdn" | "client";
-      resource: components["schemas"]["CdnDeliveryV2ResourceModel"];
-    };
-    CdnDeliveryV2Response:
-      | components["schemas"]["CdnDeliveryV2VodLivestreamResponse"]
-      | components["schemas"]["CdnDeliveryV2DownloadResponse"];
-    CdnDeliveryV3Response: {
-      /** @description `groups` may consist of zero or more elements. */
-      groups: components["schemas"]["CdnDeliveryV3Group"][];
-    };
-    /** @description A group is a logical grouping/separation of variants. At this time, there are no examples of more than one group in a response. */
-    CdnDeliveryV3Group: {
-      /** @description If `origins` is present, it will consist of one or more elements. */
-      origins?: components["schemas"]["CdnDeliveryV3Origin"][];
-      /** @description `variants` may consist of zero or more elements. */
-      variants: components["schemas"]["CdnDeliveryV3Variant"][];
-    };
-    /** @description An `origin`, if present, is a choice of base URL or server from which to load a `variant`'s content. If origin(s) exists in a group or variant, then one must be chosen in combination with the variant's `url`. */
-    CdnDeliveryV3Origin: {
-      /**
-       * Format: uri
-       * @description An absolute URL (possibly with trailing slash) which acts as the base of a delivery resource URI. This is always present.
-       */
-      url: string;
-      /**
-       * Format: uri
-       * @description An absolute URL (possibly with trailing slash) which the client can use to query if the origin is active/working. This field may not be present. Perform an HTTP GET on this URL and expect an HTTP 200 in order to trust this origin.
-       */
-      queryUrl?: string;
-      datacenter?: components["schemas"]["EdgeDataCenter"];
-    };
-    /** @description A `variant` represents one variant of a source of media. The most common differenitating factor between variants is video resolution, but there may be more variations based on `isHdr`, codecs, FPS, etc. It's possible that groups of variants may be divided into separate `groups` elements. */
-    CdnDeliveryV3Variant: {
-      /** @description A programmatic name for this variant, for use with uniquely identifying this variant. */
-      name: string;
-      /** @description A display-friendly label for this variant, for use in the UI. */
-      label: string;
-      /**
-       * @description A relative *or* absolute URL containing resource information for this variant. Compared to the V2 API, this URL does not contain template information and will not need to be modified before use, other than optionally combining with an origin. This value may contain a trailing slash.
-       *
-       * If this URL is absolute, it may be used as-is in order to load the media content. If this URL is relative, then it should be combined with an origin base URL. In order of preference: 1) use an origin from this variant object, 2) use an origin from this variant's group object, 3) use `https://floatplane.com`.
-       *
-       * Do not use an origin from a different group, or from a different variant, as this may result in errors.
-       */
-      url: string;
-      /** @description If `origins` is present, it will consist of one or more elements. */
-      origins?: components["schemas"]["CdnDeliveryV3Origin"][];
-      /**
-       * Format: int64
-       * @description An optional field prescribing this variant's order in relation to other variants. No guarantees other than being greater than or less than the order of other variants within this group (e.g., order may not be consecutive).
-       */
-      order?: number;
-      /** @description An optional field indicating if this variant is enabled. If this is not enabled, it may be visible to the user, but not selectable. If this field is not present, assume a default value of `false`, for safety. */
-      enabled?: boolean;
-      /** @description An optional field indicating if this variant should be hidden. If hidden, it should not be shown to the user nor considered in any code logic. If this field is not present, assume a default value of `false`. Only truthy values should hide a variant. */
-      hidden?: boolean;
-      meta?: components["schemas"]["CdnDeliveryV3Meta"];
-      /** @description An optional string describing the MIME Type of this media source. */
-      mimeType?: string;
-    };
-    /** @description Metadata information for this variant. Note that most/all child and grandchild properties are not required on purpose. */
-    CdnDeliveryV3Meta: {
-      common?: {
-        /** @description Size of the corresponding media file, measured in bytes. */
-        size?: number;
-        access?: {
-          /**
-           * @description - `isMissingPermission`: Indicates that the requester is lacking a required plan or other form of permission entitling on to access the corresponding resource.
-           * - `isProcessing`: Indicates that the corresponding resource is processing. Clients may choose to periodically refetch an asset's info when it has reported this state.
-           * - `isBroken`: Indicates that the corresponding resource is defective in some manner which has rendered it currently inaccessible. It is possible that the asset will be repaired at some later point in time. Clients may choose to periodically refetch an asset's info when it has reported this state.
-           * @enum {string}
-           */
-          deniedReason?: "isMissingPermission" | "isProcessing" | "isBroken";
-          /** @description Message describing in human-readable terms why access has been witheld for a resource. */
-          deniedMessage?: string;
-        };
-      };
-      video?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] &
-        components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"] & {
-          /** @description Maximum count of frames presented per second for the video. */
-          fps?: number;
-        } & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
-      audio?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & {
-        /** @description Count of channels carried by the audio stream. */
-        channelCount?: number;
-        /** @description Count of samples recorded per second. */
-        samplerate?: number;
-      } & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
-      image?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] &
-        components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"];
-      live?: {
-        /**
-         * @description - `llhls`: 🍎-backed low-latency HLS extension.
-         * - `clhls`: Community-backed low-latency HLS extension.
-         * - `ivshls`: IVS custom low-latency HLS extension.
-         * - `lldash`: DASH-IF-backed low-Latency DASH extension.
-         * @enum {string}
-         */
-        lowLatencyExtension?: "llhls" | "clhls" | "ivshls" | "lldash";
-      };
-    };
-    CdnDeliveryV3MediaIdentityCharacteristics: {
-      /** @description RFC 6381 codec string indicating stream data chunk format. */
-      codec?: string;
-      /** @description RFC 6381 codec string indicating stream format on the most basic level, without the addition of profile/level/etc. information. */
-      codecSimple?: string;
-      /** @description MIME-type for individual stream data chunks (as opposed to a containing playlist). */
-      mimeType?: string;
-    };
-    CdnDeliveryV3ImagePresentationCharacteristics: {
-      /** @description Count of horizontal pixels presented. */
-      width?: number;
-      /** @description Count of vertical pixels presented. */
-      height?: number;
-      /** @description Whether or not this data stream carries HDR content. */
-      isHdr?: boolean;
-    };
-    CdnDeliveryV3MediaBitrateInfo: {
-      bitrate?: {
-        /** @description Maximum bitrate observed for the data stream. */
-        maximum?: number;
-        /** @description Average bitrate observed for the data stream. */
-        average?: number;
-      };
-    };
-    PaymentInvoiceListV2Response: {
-      invoices: {
-        id: number;
-        amountDue: number;
-        amountTax: number;
-        attemptCount: number;
-        currency: string;
-        /** Format: date-time */
-        date: string;
-        /** Format: date-time */
-        dateDue: string | null;
-        /** Format: date-time */
-        periodStart: string;
-        /** Format: date-time */
-        periodEnd: string;
-        /** Format: date-time */
-        nextPaymentAttempt: string | null;
-        paid: boolean;
-        forgiven: boolean;
-        refunded: boolean;
-        /** @description The subscriptions this invoice is in reference to. */
-        subscriptions:
-          | {
-              id: number;
-              subscription: number;
-              /** Format: date-time */
-              periodStart: string | null;
-              /** Format: date-time */
-              periodEnd: string | null;
-              value: number;
-              amountSubtotal: number;
-              amountTotal: number;
-              amountTax: number;
-              plan: {
-                id: string;
-                title: string;
-                creator: {
-                  id: string;
-                  title: string;
-                  urlname: string;
-                  icon: components["schemas"]["ImageModel"];
-                };
-              };
-            }[]
-          | null;
-      }[];
-    };
-    PlanInfoV2Response: {
-      /** @description The total number of subscribers for this creator. */
-      totalSubscriberCount: number | null;
-      /** @description The total amount of monthly income for this creator. This field tends to always be $0 for regular users. */
-      totalIncome: number | null;
-      plans: (components["schemas"]["SubscriptionPlanModel"] & {
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string | null;
-        enabled: boolean;
-        paymentID: number | null;
-        trialPeriod: number;
-        creator: string;
-        userIsSubscribed: boolean;
-        userIsGrandfathered?: boolean;
-        enabledGlobal: boolean;
-      })[];
-    };
-    UserInfoV2Response: {
-      users: {
-        id: string;
-        user:
-          | components["schemas"]["UserModel"]
-          | components["schemas"]["UserSelfModel"];
-      }[];
-    };
-    UserNamedV2Response: {
-      users: {
-        id: string;
-        user:
-          | components["schemas"]["UserModel"]
-          | components["schemas"]["UserSelfModel"];
-      }[];
-    };
-    UserSecurityV2Response: {
-      twofactorEnabled: boolean;
-      twofactorBackupCodeEnabled: boolean;
-    };
-    CommentV3PostRequest: {
-      /** @description The GUID of the blogPost the comment should be posted to. */
-      blogPost: string;
-      /** @description The text of the comment being posted. */
-      text: string;
-    };
-    CommentV3PostResponse: {
-      id: string;
-      blogPost: string;
-      user: components["schemas"]["UserModel"];
-      text: string;
-      replying: string;
-      postDate: string;
-      editDate: string;
-      editCount: number;
-      isEdited: boolean;
-      likes: number;
-      dislikes: number;
-      score: number;
-      interactionCounts: {
-        like: number;
-        dislike: number;
-      };
-    };
-    CommentLikeV3PostRequest: {
-      /** @description The GUID of the comment being liked. */
-      comment: string;
-      /** @description The GUID of the post the comment is on. */
-      blogPost: string;
-    };
-    ContentCreatorListV3Response: {
-      blogPosts: components["schemas"]["BlogPostModelV3"][];
-      /** @description Information about paging: what the last ID retrieve is and if more posts can be retrieved afterward for subsequent requests. */
-      lastElements: components["schemas"]["ContentCreatorListLastItems"][];
-    };
-    ContentCreatorListLastItems: {
-      creatorId: string;
-      /** @description This may be returned as `null` if no blog posts for this creator appeared yet on this page of blog posts. However, Floatplane will complain if this is sent with a `null` value. */
-      blogPostId: string | null;
-      moreFetchable: boolean;
-    };
-    ContentPostV3Response: {
-      id: string;
-      guid: string;
-      title: string;
-      /** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML. */
-      text: string;
-      /** @enum {string} */
-      type: "blogPost";
-      channel: components["schemas"]["ChannelModel"];
-      tags: string[];
-      attachmentOrder: string[];
-      metadata: components["schemas"]["PostMetadataModel"];
-      /** Format: date-time */
-      releaseDate: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      comments: number;
-      creator: components["schemas"]["CreatorModelV2"];
-      wasReleasedSilently: boolean;
-      thumbnail?: components["schemas"]["ImageModel"] | null;
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-      userInteraction: components["schemas"]["UserInteractionModel"];
-      /** @description May be undefined when the post is locked. */
-      videoAttachments?: components["schemas"]["VideoAttachmentModel"][];
-      /** @description May be undefined when the post is locked. */
-      audioAttachments?: components["schemas"]["AudioAttachmentModel"][];
-      /** @description May be undefined when the post is locked. */
-      pictureAttachments?: components["schemas"]["PictureAttachmentModel"][];
-      /** @description May be undefined when the post is locked. */
-      galleryAttachments?: unknown[];
-    };
-    ContentVideoV3Response: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      /** Format: date-time */
-      releaseDate: string | null;
-      /** @description Unit: seconds. */
-      duration: number;
-      creator: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      primaryBlogPost: string;
-      thumbnail: components["schemas"]["ImageModel"];
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-      blogPosts: string[];
-      timelineSprite: components["schemas"]["ImageModel"];
-      /** @description The watch progress of the video, in seconds. If no progress has yet been posted to the video, then this field may not appear. */
-      progress?: number;
-      userInteraction: components["schemas"]["UserInteractionModel"];
-      levels: {
-        name: string;
-        width: number;
-        height: number;
-        label: string;
-        order: number;
-      }[];
-    };
-    ContentPictureV3Response: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      creator: string;
-      primaryBlogPost: string;
-      userInteraction: components["schemas"]["UserInteractionModel"];
-      thumbnail: components["schemas"]["ImageModel"];
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-      imageFiles: components["schemas"]["ImageFileModel"][];
-    };
-    UserActivityV3Response: {
-      activity: {
-        /** Format: date-time */
-        time: string;
-        comment: string;
-        postTitle: string;
-        postId: string;
-        creatorTitle: string;
-        creatorUrl: string;
-      }[];
-      visibility: string;
-    };
-    UserLinksV3Response: {
-      [key: string]: {
-        /**
-         * Format: uri
-         * @description The URL the user has configured for this link.
-         */
-        url: string;
-        type: {
-          /** @description The code name of this link type. */
-          name: string;
-          /** @description The display-friendly name of this link type. */
-          displayName: string;
-          /** @description The hostname that should be a part of the URL. */
-          hostName: string;
-        };
-      };
-    };
-    UserNotificationUpdateV3PostRequest: {
-      creator: string;
-      /**
-       * @description Use `contentEmail` for email notifications, and `contentFirebase` for push notifications.
-       * @enum {string}
-       */
-      property: "contentEmail" | "contentFirebase";
-      newValue: boolean;
-    };
-    UserSelfV3Response: {
-      id: string;
-      username: string;
-      profileImage: components["schemas"]["ImageModel"];
-      email: string;
-      displayName: string;
-      creators: unknown[];
-      /** Format: date-time */
-      scheduledDeletionDate: string | null;
-    };
-    ContentLikeV3Request: {
-      /** @enum {string} */
-      contentType: "blogPost";
-      id: string;
-    };
-    GetCaptchaInfoResponse: {
-      v2: {
-        variants: {
-          android: {
-            siteKey: string;
-          };
-          checkbox: {
-            siteKey: string;
-          };
-          invisible: {
-            siteKey: string;
-          };
-        };
-      };
-      v3: {
-        variants: {
-          invisible: {
-            siteKey: string;
-          };
-        };
-      };
-    };
-    ErrorModel: {
-      id: string;
-      errors: {
-        id: string;
-        name: string;
-        /** @description May be undefined. */
-        message?: string | null;
-        /** @description May be undefined. */
-        data?: { [key: string]: unknown } | null;
-      }[];
-      /** @description May be undefined. */
-      message?: string;
-    };
-    PaymentAddressModel: {
-      id: number;
-      customerName: string;
-      postalCode: string;
-      line1: string;
-      city: string;
-      region: string;
-      country: string;
-      default: boolean;
-    };
-    PaymentMethodModel: {
-      id: number;
-      payment_processor: number;
-      default: boolean;
-      card: {
-        brand: string;
-        last4: string;
-        exp_month: number;
-        exp_year: number;
-        name: string;
-      };
-    };
-    CreatorModelV2: {
-      id: string;
-      owner: string;
-      title: string;
-      /** @description Shown in the browser URL, and used in `/creator/named` queries. */
-      urlname: string;
-      description: string;
-      about: string;
-      category: string;
-      cover: components["schemas"]["ImageModel"] | null;
-      icon: components["schemas"]["ImageModel"];
-      liveStream: components["schemas"]["LiveStreamModel"] | null;
-      subscriptionPlans:
-        | components["schemas"]["SubscriptionPlanModel"][]
-        | null;
-      discoverable: boolean;
-      subscriberCountDisplay: string;
-      incomeDisplay: boolean;
-      defaultChannel?: string;
-    };
-    CreatorModelV2Extended: components["schemas"]["CreatorModelV2"] & {
-      socialLinks: components["schemas"]["SocialLinksModel"];
-      discordServers: components["schemas"]["DiscordServerModel"][];
-    };
-    CreatorModelV3: {
-      id: string;
-      owner:
-        | string
-        | {
-            id: string;
-            username: string;
-          };
-      title: string;
-      /** @description Shown in the browser URL, and used in `/creator/named` queries. */
-      urlname: string;
-      description: string;
-      about: string;
-      category: {
-        id: string;
-        title: string;
-      };
-      cover: components["schemas"]["ImageModel"] | null;
-      icon: components["schemas"]["ImageModel"];
-      liveStream: components["schemas"]["LiveStreamModel"] | null;
-      subscriptionPlans:
-        | components["schemas"]["SubscriptionPlanModel"][]
-        | null;
-      discoverable: boolean;
-      subscriberCountDisplay: string;
-      incomeDisplay: boolean;
-      defaultChannel: string;
-      socialLinks: components["schemas"]["SocialLinksModel"];
-      channels: components["schemas"]["ChannelModel"][];
-      /** @description Present in `/creator/named` queries */
-      discordServers?: components["schemas"]["DiscordServerModel"][];
-      card?: components["schemas"]["ImageModel"];
-    };
-    ChannelModel: {
-      id: string;
-      creator: string;
-      title: string;
-      /** @description Shown in the browser URL. */
-      urlname: string;
-      about: string;
-      order?: number;
-      cover: components["schemas"]["ImageModel"] | null;
-      card: components["schemas"]["ImageModel"] | null;
-      icon: components["schemas"]["ImageModel"];
-      socialLinks?: components["schemas"]["SocialLinksModel"];
-    };
-    BlogPostModelV3: {
-      id: string;
-      guid: string;
-      title: string;
-      /** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML.. */
-      text: string;
-      /** @enum {string} */
-      type: "blogPost";
-      channel: components["schemas"]["ChannelModel"] | string;
-      tags: string[];
-      attachmentOrder: string[];
-      metadata: components["schemas"]["PostMetadataModel"];
-      /** Format: date-time */
-      releaseDate: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      comments: number;
-      creator: {
-        id: string;
-        owner: {
-          id: string;
-          username: string;
-        };
-        title: string;
-        /** @description Shown in the browser URL, and used in `/creator/named` queries. */
-        urlname: string;
-        description: string;
-        about: string;
-        category: {
-          id: string;
-          title: string;
-        };
-        cover: components["schemas"]["ImageModel"] | null;
-        icon: components["schemas"]["ImageModel"];
-        liveStream: components["schemas"]["LiveStreamModel"] | null;
-        subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][];
-        discoverable: boolean;
-        subscriberCountDisplay: string;
-        incomeDisplay: boolean;
-        defaultChannel?: string;
-        channels?: string[];
-        card?: components["schemas"]["ImageModel"] | null;
-      };
-      wasReleasedSilently: boolean;
-      thumbnail?: components["schemas"]["ImageModel"] | null;
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-      /** @description May be undefined, usually when `isAccessible` is `false`. */
-      videoAttachments?: string[];
-      /** @description May be undefined, usually when `isAccessible` is `false`. */
-      audioAttachments?: string[];
-      /** @description May be undefined, usually when `isAccessible` is `false`. */
-      pictureAttachments?: string[];
-      /** @description May be undefined, usually when `isAccessible` is `false`. */
-      galleryAttachments?: string[];
-    };
-    SubscriptionPlanModel: {
-      id: string;
-      title: string;
-      description: string;
-      price: string | null;
-      priceYearly: string | null;
-      currency: string;
-      logo: string | null;
-      interval: string;
-      featured: boolean;
-      allowGrandfatheredAccess?: boolean | null;
-      discordServers: components["schemas"]["DiscordServerModel"][];
-      discordRoles: components["schemas"]["DiscordRoleModel"][];
-    };
-    PostMetadataModel: {
-      hasVideo: boolean;
-      videoCount?: number;
-      videoDuration: number;
-      hasAudio: boolean;
-      audioCount?: number;
-      audioDuration: number;
-      hasPicture: boolean;
-      pictureCount?: number;
-      hasGallery?: boolean;
-      galleryCount?: number;
-      isFeatured: boolean;
-    };
-    VideoAttachmentModel: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      /** Format: date-time */
-      releaseDate: string | null;
-      duration: number;
-      creator: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      primaryBlogPost: string;
-      thumbnail: components["schemas"]["ImageModel"];
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-    };
-    PictureAttachmentModel: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      creator: string;
-      primaryBlogPost: string;
-      thumbnail: components["schemas"]["ImageModel"];
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-    };
-    AudioAttachmentModel: {
-      id: string;
-      guid: string;
-      title: string;
-      type: string;
-      description: string;
-      duration: number;
-      waveform: {
-        dataSetLength: number;
-        highestValue: number;
-        lowestValue: number;
-        data: number[];
-      };
-      creator: string;
-      likes: number;
-      dislikes: number;
-      score: number;
-      isProcessing: boolean;
-      primaryBlogPost: string;
-      /** @description If false, the post should be marked as locked and not viewable by the user. */
-      isAccessible: boolean;
-    };
-    ImageModel: {
-      width: number;
-      height: number;
-      /** Format: uri */
-      path: string;
-      childImages: components["schemas"]["ChildImageModel"][] | null;
-    };
-    ChildImageModel: {
-      width: number;
-      height: number;
-      /** Format: uri */
-      path: string;
-    };
-    ImageFileModel: {
-      /** Format: uri */
-      path: string;
-      width: number;
-      height: number;
-      size: number;
-    };
-    LiveStreamModel: {
-      id: string;
-      title: string;
-      description: string;
-      thumbnail: components["schemas"]["ImageModel"] | null;
-      owner: string;
-      /** @description The creator channel this livestream belongs to. */
-      channel?: string;
-      streamPath: string;
-      offline: {
-        title: string | null;
-        description: string | null;
-        thumbnail: components["schemas"]["ImageModel"] | null;
-      };
-    };
-    SocialLinksModel: { [key: string]: string };
-    DiscordServerModel: {
-      id: string;
-      guildName: string;
-      guildIcon: string;
-      /** Format: uri */
-      inviteLink: string | null;
-      inviteMode: string;
-    };
-    DiscordRoleModel: {
-      server: string;
-      roleName: string;
-    };
-    /** @description Represents some basic information of a user (id, username, and profile image). */
-    UserModel: {
-      id: string;
-      username: string;
-      profileImage: components["schemas"]["ImageModel"];
-    };
-    UserSelfModel: {
-      id: string;
-      username: string;
-      profileImage: components["schemas"]["ImageModel"];
-      email: string;
-      displayName: string;
-    };
-    ConnectedAccountModel: {
-      /** @description Unique identifier for the account type. */
-      key: string;
-      /** @description Display-friendly label for the `key`. */
-      name: string;
-      /** @description Determines if the system allows this account to be connected to. */
-      enabled: boolean;
-      iconWhite: string;
-      connectedAccount: {
-        id: string;
-        remoteUserId: string;
-        remoteUserName: string;
-        data: {
-          canJoinGuilds: boolean;
-        } | null;
-      } | null;
-      /** @description If true, the user is connected and the `connectedAccount` will have data about the account. */
-      connected: boolean;
-      isAccountProvider: boolean;
-    };
-    CommentModel: {
-      id: string;
-      blogPost: string;
-      user: components["schemas"]["UserModel"];
-      text: string;
-      replying: string | null;
-      /** Format: date-time */
-      postDate: string;
-      /** Format: date-time */
-      editDate: string | null;
-      /** Format: date-time */
-      pinDate?: string | null;
-      editCount: number;
-      isEdited: boolean;
-      likes: number;
-      dislikes: number;
-      score: number;
-      interactionCounts: {
-        like: number;
-        dislike: number;
-      };
-      totalReplies?: number;
-      /** @description This is present (but possibly empty) for top-level comments. This is never present for reply comments. */
-      replies?: components["schemas"]["CommentModel"][];
-      userInteraction: components["schemas"]["UserInteractionModel"];
-    };
-    UserNotificationModel: {
-      creator: components["schemas"]["CreatorModelV2"];
-      userNotificationSetting: {
-        /** Format: date-time */
-        createdAt?: string;
-        /** Format: date-time */
-        updatedAt?: string | null;
-        id?: string;
-        contentEmail: boolean;
-        contentFirebase: boolean;
-        creatorMessageEmail: boolean;
-        user: string;
-        creator: string;
-      };
-    };
-    UserSubscriptionModel: {
-      /** Format: date-time */
-      startDate: string | null;
-      /** Format: date-time */
-      endDate: string | null;
-      paymentID: number | null;
-      interval: string;
-      paymentCancelled?: boolean;
-      plan: components["schemas"]["SubscriptionPlanModel"];
-      creator: string;
-    };
-    FaqSectionModel: {
-      faqs: {
-        /** Format: date-time */
-        createdAt: string;
-        /** Format: date-time */
-        updatedAt: string | null;
-        id: string;
-        question: string;
-        /** @description This field may contain HTML that should be rendered. */
-        answer: string;
-        /** @enum {string} */
-        status: "public";
-        link: string;
-        order: number;
-        faqSection: string;
-      }[];
-      /** Format: date-time */
-      createdAt: string;
-      /** Format: date-time */
-      updatedAt: string | null;
-      id: string;
-      name: string;
-      description: string;
-      /** @enum {string} */
-      status: "public";
-      order: number;
-    };
-    UserInteractionModel: ("like" | "dislike")[] | null;
-    EdgesModel: {
-      edges: components["schemas"]["EdgeModel"][];
-      client: { [key: string]: unknown };
-    };
-    EdgeModel: {
-      hostname: string;
-      queryPort: number;
-      /** Format: int64 */
-      bandwidth: number;
-      allowDownload: boolean;
-      allowStreaming: boolean;
-      datacenter: components["schemas"]["EdgeDataCenter"];
-    };
-    /** @description Location information for a datacenter. Not required. */
-    EdgeDataCenter: {
-      countryCode: string;
-      regionCode: string;
-      latitude: number;
-      longitude: number;
-    };
-    UpdateProgressRequest: {
-      /** @description The video or audio attachment identifier for the piece of media that is being updated. Note: this is *not* the blogPost identifier. */
-      id: string;
-      /**
-       * @description Which type of media the corresponding identifier is.
-       * @enum {string}
-       */
-      contentType: "video" | "audio";
-      /** @description The progress through the media that has been consumed by the user, in seconds. */
-      progress: number;
-    };
-    GetProgressRequest: {
-      /** @description The identifiers of the blog posts from which progress should be retrieved. */
-      ids: string[];
-      /**
-       * @description The type of the corresponding identifiers. The only value currently is `blogPost`.
-       * @enum {string}
-       */
-      contentType: "blogPost";
-    };
-    /** @description A list of objects containing progress values for the requested identifiers. If no progress has been posted to an identifier, it may either not appear in the resulting list, or appear with a progress of `0`. */
-    GetProgressResponse: {
-      id: string;
-      /** @description Percentage of the blog post's media that has been consumed so far. Ranges from 0 to 100. */
-      progress: number;
-    }[];
-  };
-  responses: {
-    /** Bad Request - The request has errors and the server did not process it. */
-    "400BadRequest": {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-    /** Unauthenticated - The request was not authenticated to make the request. */
-    "401Unauthenticated": {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-    /** Forbidden - The request was not authenticated to make the request. */
-    "403Forbidden": {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-        "text/html": string;
-      };
-    };
-    /** Not Found - The resource was not found. */
-    "404NotFound": {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-    /** Too Many Requests - The resource was requested too many times */
-    "429TooManyRequests": unknown;
-    /** Unexpected response code */
-    Unexpected: {
-      content: {
-        "application/json": components["schemas"]["ErrorModel"];
-      };
-    };
-  };
+	schemas: {
+		AuthLoginV2Request: {
+			username: string;
+			password: string;
+			/** @description The Google Recaptcha v2/v3 token to verify the request. On web browsers, this is required. For mobile or TV applications, this is not required only if the User-Agent indicates so (e.g., if the User-Agent contains "CFNetwork" in its value). Otherwise, the application would have to supply a valid captcha token, which can be difficult to obtain dynamically in some scenarios. In this case, this should be undefined (no key), not null. */
+			captchaToken?: string;
+		};
+		AuthLoginV2Response: {
+			/** @description Identifying information about the new-logged-in user upon success. May be undefined when `needs2FA` is `true`. */
+			user?: components["schemas"]["UserModel"];
+			/** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
+			needs2FA: boolean;
+		};
+		CheckFor2faLoginRequest: {
+			/** @description The two-factor authentication token that the user inputs to complete the login process. */
+			token: string;
+		};
+		/** @description Represents a quality of video to download/stream. */
+		CdnDeliveryV2QualityLevelModel: {
+			/** @description Used to identify this level of quality, and to refer to the `qualityLevelParams` object below by the property key. */
+			name: string;
+			/** @description The video quality's resolution's width in pixels. */
+			width?: number | null;
+			/** @description The video quality resolution's height in pixels. */
+			height?: number | null;
+			/** @description The display-friendly version of `name`. */
+			label: string;
+			/** @description The display order to be shown to the user. */
+			order: number;
+			mimeType?: string | null;
+			codecs?: string | null;
+		};
+		CdnDeliveryV2ResourceModel: {
+			/** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property, depending on chosen resolution. First, choose the `qualityLevel`, then use the given token from the `qualityLevelParam` for that `qualityLevel`'s `name`. */
+			uri: string;
+			data: {
+				qualityLevels?: components["schemas"]["CdnDeliveryV2QualityLevelModel"][];
+				/** @description For each `qualityLevel` above, there will be an entry in this map where the property name matches the `qulityLevel[].name` containing a token to apply to the URL. */
+				qualityLevelParams?: { [key: string]: unknown } | null;
+			} & { [key: string]: unknown };
+		};
+		CdnDeliveryV2VodLivestreamResponse: {
+			/**
+			 * Format: uri
+			 * @description The domain of the CDN server to use. Combine with data from the `resource` object to create a full URL.
+			 */
+			cdn: string;
+			/**
+			 * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
+			 * @enum {string}
+			 */
+			strategy: "cdn" | "client";
+			resource: components["schemas"]["CdnDeliveryV2ResourceModel"];
+		};
+		CdnDeliveryV2DownloadResponse: components["schemas"]["EdgesModel"] & {
+			/**
+			 * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
+			 * @enum {string}
+			 */
+			strategy: "cdn" | "client";
+			resource: components["schemas"]["CdnDeliveryV2ResourceModel"];
+		};
+		CdnDeliveryV2Response: components["schemas"]["CdnDeliveryV2VodLivestreamResponse"] | components["schemas"]["CdnDeliveryV2DownloadResponse"];
+		CdnDeliveryV3Response: {
+			/** @description `groups` may consist of zero or more elements. */
+			groups: components["schemas"]["CdnDeliveryV3Group"][];
+		};
+		/** @description A group is a logical grouping/separation of variants. At this time, there are no examples of more than one group in a response. */
+		CdnDeliveryV3Group: {
+			/** @description If `origins` is present, it will consist of one or more elements. */
+			origins?: components["schemas"]["CdnDeliveryV3Origin"][];
+			/** @description `variants` may consist of zero or more elements. */
+			variants: components["schemas"]["CdnDeliveryV3Variant"][];
+		};
+		/** @description An `origin`, if present, is a choice of base URL or server from which to load a `variant`'s content. If origin(s) exists in a group or variant, then one must be chosen in combination with the variant's `url`. */
+		CdnDeliveryV3Origin: {
+			/**
+			 * Format: uri
+			 * @description An absolute URL (possibly with trailing slash) which acts as the base of a delivery resource URI. This is always present.
+			 */
+			url: string;
+			/**
+			 * Format: uri
+			 * @description An absolute URL (possibly with trailing slash) which the client can use to query if the origin is active/working. This field may not be present. Perform an HTTP GET on this URL and expect an HTTP 200 in order to trust this origin.
+			 */
+			queryUrl?: string;
+			datacenter?: components["schemas"]["EdgeDataCenter"];
+		};
+		/** @description A `variant` represents one variant of a source of media. The most common differenitating factor between variants is video resolution, but there may be more variations based on `isHdr`, codecs, FPS, etc. It's possible that groups of variants may be divided into separate `groups` elements. */
+		CdnDeliveryV3Variant: {
+			/** @description A programmatic name for this variant, for use with uniquely identifying this variant. */
+			name: string;
+			/** @description A display-friendly label for this variant, for use in the UI. */
+			label: string;
+			/**
+			 * @description A relative *or* absolute URL containing resource information for this variant. Compared to the V2 API, this URL does not contain template information and will not need to be modified before use, other than optionally combining with an origin. This value may contain a trailing slash.
+			 *
+			 * If this URL is absolute, it may be used as-is in order to load the media content. If this URL is relative, then it should be combined with an origin base URL. In order of preference: 1) use an origin from this variant object, 2) use an origin from this variant's group object, 3) use `https://floatplane.com`.
+			 *
+			 * Do not use an origin from a different group, or from a different variant, as this may result in errors.
+			 */
+			url: string;
+			/** @description If `origins` is present, it will consist of one or more elements. */
+			origins?: components["schemas"]["CdnDeliveryV3Origin"][];
+			/**
+			 * Format: int64
+			 * @description An optional field prescribing this variant's order in relation to other variants. No guarantees other than being greater than or less than the order of other variants within this group (e.g., order may not be consecutive).
+			 */
+			order?: number;
+			/** @description An optional field indicating if this variant is enabled. If this is not enabled, it may be visible to the user, but not selectable. If this field is not present, assume a default value of `false`, for safety. */
+			enabled?: boolean;
+			/** @description An optional field indicating if this variant should be hidden. If hidden, it should not be shown to the user nor considered in any code logic. If this field is not present, assume a default value of `false`. Only truthy values should hide a variant. */
+			hidden?: boolean;
+			meta?: components["schemas"]["CdnDeliveryV3Meta"];
+			/** @description An optional string describing the MIME Type of this media source. */
+			mimeType?: string;
+		};
+		/** @description Metadata information for this variant. Note that most/all child and grandchild properties are not required on purpose. */
+		CdnDeliveryV3Meta: {
+			common?: {
+				/** @description Size of the corresponding media file, measured in bytes. */
+				size?: number;
+				access?: {
+					/**
+					 * @description - `isMissingPermission`: Indicates that the requester is lacking a required plan or other form of permission entitling on to access the corresponding resource.
+					 * - `isProcessing`: Indicates that the corresponding resource is processing. Clients may choose to periodically refetch an asset's info when it has reported this state.
+					 * - `isBroken`: Indicates that the corresponding resource is defective in some manner which has rendered it currently inaccessible. It is possible that the asset will be repaired at some later point in time. Clients may choose to periodically refetch an asset's info when it has reported this state.
+					 * @enum {string}
+					 */
+					deniedReason?: "isMissingPermission" | "isProcessing" | "isBroken";
+					/** @description Message describing in human-readable terms why access has been witheld for a resource. */
+					deniedMessage?: string;
+				};
+			};
+			video?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] &
+				components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"] & {
+					/** @description Maximum count of frames presented per second for the video. */
+					fps?: number;
+				} & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
+			audio?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & {
+				/** @description Count of channels carried by the audio stream. */
+				channelCount?: number;
+				/** @description Count of samples recorded per second. */
+				samplerate?: number;
+			} & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
+			image?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"];
+			live?: {
+				/**
+				 * @description - `llhls`: 🍎-backed low-latency HLS extension.
+				 * - `clhls`: Community-backed low-latency HLS extension.
+				 * - `ivshls`: IVS custom low-latency HLS extension.
+				 * - `lldash`: DASH-IF-backed low-Latency DASH extension.
+				 * @enum {string}
+				 */
+				lowLatencyExtension?: "llhls" | "clhls" | "ivshls" | "lldash";
+			};
+		};
+		CdnDeliveryV3MediaIdentityCharacteristics: {
+			/** @description RFC 6381 codec string indicating stream data chunk format. */
+			codec?: string;
+			/** @description RFC 6381 codec string indicating stream format on the most basic level, without the addition of profile/level/etc. information. */
+			codecSimple?: string;
+			/** @description MIME-type for individual stream data chunks (as opposed to a containing playlist). */
+			mimeType?: string;
+		};
+		CdnDeliveryV3ImagePresentationCharacteristics: {
+			/** @description Count of horizontal pixels presented. */
+			width?: number;
+			/** @description Count of vertical pixels presented. */
+			height?: number;
+			/** @description Whether or not this data stream carries HDR content. */
+			isHdr?: boolean;
+		};
+		CdnDeliveryV3MediaBitrateInfo: {
+			bitrate?: {
+				/** @description Maximum bitrate observed for the data stream. */
+				maximum?: number;
+				/** @description Average bitrate observed for the data stream. */
+				average?: number;
+			};
+		};
+		PaymentInvoiceListV2Response: {
+			invoices: {
+				id: number;
+				amountDue: number;
+				amountTax: number;
+				attemptCount: number;
+				currency: string;
+				/** Format: date-time */
+				date: string;
+				/** Format: date-time */
+				dateDue: string | null;
+				/** Format: date-time */
+				periodStart: string;
+				/** Format: date-time */
+				periodEnd: string;
+				/** Format: date-time */
+				nextPaymentAttempt: string | null;
+				paid: boolean;
+				forgiven: boolean;
+				refunded: boolean;
+				/** @description The subscriptions this invoice is in reference to. */
+				subscriptions:
+					| {
+							id: number;
+							subscription: number;
+							/** Format: date-time */
+							periodStart: string | null;
+							/** Format: date-time */
+							periodEnd: string | null;
+							value: number;
+							amountSubtotal: number;
+							amountTotal: number;
+							amountTax: number;
+							plan: {
+								id: string;
+								title: string;
+								creator: {
+									id: string;
+									title: string;
+									urlname: string;
+									icon: components["schemas"]["ImageModel"];
+								};
+							};
+					  }[]
+					| null;
+			}[];
+		};
+		PlanInfoV2Response: {
+			/** @description The total number of subscribers for this creator. */
+			totalSubscriberCount: number | null;
+			/** @description The total amount of monthly income for this creator. This field tends to always be $0 for regular users. */
+			totalIncome: number | null;
+			plans: (components["schemas"]["SubscriptionPlanModel"] & {
+				/** Format: date-time */
+				createdAt: string;
+				/** Format: date-time */
+				updatedAt: string | null;
+				enabled: boolean;
+				paymentID: number | null;
+				trialPeriod: number;
+				creator: string;
+				userIsSubscribed: boolean;
+				userIsGrandfathered?: boolean;
+				enabledGlobal: boolean;
+			})[];
+		};
+		UserInfoV2Response: {
+			users: {
+				id: string;
+				user: components["schemas"]["UserModel"] | components["schemas"]["UserSelfModel"];
+			}[];
+		};
+		UserNamedV2Response: {
+			users: {
+				id: string;
+				user: components["schemas"]["UserModel"] | components["schemas"]["UserSelfModel"];
+			}[];
+		};
+		UserSecurityV2Response: {
+			twofactorEnabled: boolean;
+			twofactorBackupCodeEnabled: boolean;
+		};
+		CommentV3PostRequest: {
+			/** @description The GUID of the blogPost the comment should be posted to. */
+			blogPost: string;
+			/** @description The text of the comment being posted. */
+			text: string;
+		};
+		CommentV3PostResponse: {
+			id: string;
+			blogPost: string;
+			user: components["schemas"]["UserModel"];
+			text: string;
+			replying: string;
+			postDate: string;
+			editDate: string;
+			editCount: number;
+			isEdited: boolean;
+			likes: number;
+			dislikes: number;
+			score: number;
+			interactionCounts: {
+				like: number;
+				dislike: number;
+			};
+		};
+		CommentLikeV3PostRequest: {
+			/** @description The GUID of the comment being liked. */
+			comment: string;
+			/** @description The GUID of the post the comment is on. */
+			blogPost: string;
+		};
+		ContentCreatorListV3Response: {
+			blogPosts: components["schemas"]["BlogPostModelV3"][];
+			/** @description Information about paging: what the last ID retrieve is and if more posts can be retrieved afterward for subsequent requests. */
+			lastElements: components["schemas"]["ContentCreatorListLastItems"][];
+		};
+		ContentCreatorListLastItems: {
+			creatorId: string;
+			/** @description This may be returned as `null` if no blog posts for this creator appeared yet on this page of blog posts. However, Floatplane will complain if this is sent with a `null` value. */
+			blogPostId: string | null;
+			moreFetchable: boolean;
+		};
+		ContentPostV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			/** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML. */
+			text: string;
+			/** @enum {string} */
+			type: "blogPost";
+			channel: components["schemas"]["ChannelModel"];
+			tags: string[];
+			attachmentOrder: string[];
+			metadata: components["schemas"]["PostMetadataModel"];
+			/** Format: date-time */
+			releaseDate: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			comments: number;
+			creator: components["schemas"]["CreatorModelV2"];
+			wasReleasedSilently: boolean;
+			thumbnail?: components["schemas"]["ImageModel"] | null;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			userInteraction: components["schemas"]["UserInteractionModel"];
+			/** @description May be undefined when the post is locked. */
+			videoAttachments?: components["schemas"]["VideoAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			audioAttachments?: components["schemas"]["AudioAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			pictureAttachments?: components["schemas"]["PictureAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			galleryAttachments?: unknown[];
+		};
+		ContentVideoV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			/** Format: date-time */
+			releaseDate: string | null;
+			/** @description Unit: seconds. */
+			duration: number;
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			blogPosts: string[];
+			timelineSprite: components["schemas"]["ImageModel"];
+			/** @description The watch progress of the video, in seconds. If no progress has yet been posted to the video, then this field may not appear. */
+			progress?: number;
+			userInteraction: components["schemas"]["UserInteractionModel"];
+			textTracks: components["schemas"]["TextTracks"][];
+			levels: {
+				name: string;
+				width: number;
+				height: number;
+				label: string;
+				order: number;
+			}[];
+		};
+		ContentPictureV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			creator: string;
+			primaryBlogPost: string;
+			userInteraction: components["schemas"]["UserInteractionModel"];
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			imageFiles: components["schemas"]["ImageFileModel"][];
+		};
+		UserActivityV3Response: {
+			activity: {
+				/** Format: date-time */
+				time: string;
+				comment: string;
+				postTitle: string;
+				postId: string;
+				creatorTitle: string;
+				creatorUrl: string;
+			}[];
+			visibility: string;
+		};
+		UserLinksV3Response: {
+			[key: string]: {
+				/**
+				 * Format: uri
+				 * @description The URL the user has configured for this link.
+				 */
+				url: string;
+				type: {
+					/** @description The code name of this link type. */
+					name: string;
+					/** @description The display-friendly name of this link type. */
+					displayName: string;
+					/** @description The hostname that should be a part of the URL. */
+					hostName: string;
+				};
+			};
+		};
+		UserNotificationUpdateV3PostRequest: {
+			creator: string;
+			/**
+			 * @description Use `contentEmail` for email notifications, and `contentFirebase` for push notifications.
+			 * @enum {string}
+			 */
+			property: "contentEmail" | "contentFirebase";
+			newValue: boolean;
+		};
+		UserSelfV3Response: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+			email: string;
+			displayName: string;
+			creators: unknown[];
+			/** Format: date-time */
+			scheduledDeletionDate: string | null;
+		};
+		ContentLikeV3Request: {
+			/** @enum {string} */
+			contentType: "blogPost";
+			id: string;
+		};
+		GetCaptchaInfoResponse: {
+			v2: {
+				variants: {
+					android: {
+						siteKey: string;
+					};
+					checkbox: {
+						siteKey: string;
+					};
+					invisible: {
+						siteKey: string;
+					};
+				};
+			};
+			v3: {
+				variants: {
+					invisible: {
+						siteKey: string;
+					};
+				};
+			};
+		};
+		ErrorModel: {
+			id: string;
+			errors: {
+				id: string;
+				name: string;
+				/** @description May be undefined. */
+				message?: string | null;
+				/** @description May be undefined. */
+				data?: { [key: string]: unknown } | null;
+			}[];
+			/** @description May be undefined. */
+			message?: string;
+		};
+		PaymentAddressModel: {
+			id: number;
+			customerName: string;
+			postalCode: string;
+			line1: string;
+			city: string;
+			region: string;
+			country: string;
+			default: boolean;
+		};
+		PaymentMethodModel: {
+			id: number;
+			payment_processor: number;
+			default: boolean;
+			card: {
+				brand: string;
+				last4: string;
+				exp_month: number;
+				exp_year: number;
+				name: string;
+			};
+		};
+		CreatorModelV2: {
+			id: string;
+			owner: string;
+			title: string;
+			/** @description Shown in the browser URL, and used in `/creator/named` queries. */
+			urlname: string;
+			description: string;
+			about: string;
+			category: string;
+			cover: components["schemas"]["ImageModel"] | null;
+			icon: components["schemas"]["ImageModel"];
+			liveStream: components["schemas"]["LiveStreamModel"] | null;
+			subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][] | null;
+			discoverable: boolean;
+			subscriberCountDisplay: string;
+			incomeDisplay: boolean;
+			defaultChannel?: string;
+		};
+		CreatorModelV2Extended: components["schemas"]["CreatorModelV2"] & {
+			socialLinks: components["schemas"]["SocialLinksModel"];
+			discordServers: components["schemas"]["DiscordServerModel"][];
+		};
+		CreatorModelV3: {
+			id: string;
+			owner:
+				| string
+				| {
+						id: string;
+						username: string;
+				  };
+			title: string;
+			/** @description Shown in the browser URL, and used in `/creator/named` queries. */
+			urlname: string;
+			description: string;
+			about: string;
+			category: {
+				id: string;
+				title: string;
+			};
+			cover: components["schemas"]["ImageModel"] | null;
+			icon: components["schemas"]["ImageModel"];
+			liveStream: components["schemas"]["LiveStreamModel"] | null;
+			subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][] | null;
+			discoverable: boolean;
+			subscriberCountDisplay: string;
+			incomeDisplay: boolean;
+			defaultChannel: string;
+			socialLinks: components["schemas"]["SocialLinksModel"];
+			channels: components["schemas"]["ChannelModel"][];
+			/** @description Present in `/creator/named` queries */
+			discordServers?: components["schemas"]["DiscordServerModel"][];
+			card?: components["schemas"]["ImageModel"];
+		};
+		ChannelModel: {
+			id: string;
+			creator: string;
+			title: string;
+			/** @description Shown in the browser URL. */
+			urlname: string;
+			about: string;
+			order?: number;
+			cover: components["schemas"]["ImageModel"] | null;
+			card: components["schemas"]["ImageModel"] | null;
+			icon: components["schemas"]["ImageModel"];
+			socialLinks?: components["schemas"]["SocialLinksModel"];
+		};
+		BlogPostModelV3: {
+			id: string;
+			guid: string;
+			title: string;
+			/** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML.. */
+			text: string;
+			/** @enum {string} */
+			type: "blogPost";
+			channel: components["schemas"]["ChannelModel"] | string;
+			tags: string[];
+			attachmentOrder: string[];
+			metadata: components["schemas"]["PostMetadataModel"];
+			/** Format: date-time */
+			releaseDate: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			comments: number;
+			creator: {
+				id: string;
+				owner: {
+					id: string;
+					username: string;
+				};
+				title: string;
+				/** @description Shown in the browser URL, and used in `/creator/named` queries. */
+				urlname: string;
+				description: string;
+				about: string;
+				category: {
+					id: string;
+					title: string;
+				};
+				cover: components["schemas"]["ImageModel"] | null;
+				icon: components["schemas"]["ImageModel"];
+				liveStream: components["schemas"]["LiveStreamModel"] | null;
+				subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][];
+				discoverable: boolean;
+				subscriberCountDisplay: string;
+				incomeDisplay: boolean;
+				defaultChannel?: string;
+				channels?: string[];
+				card?: components["schemas"]["ImageModel"] | null;
+			};
+			wasReleasedSilently: boolean;
+			thumbnail?: components["schemas"]["ImageModel"] | null;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			/** @description May be undefined, usually when `isAccessible` is `false`. */
+			videoAttachments?: string[];
+			/** @description May be undefined, usually when `isAccessible` is `false`. */
+			audioAttachments?: string[];
+			/** @description May be undefined, usually when `isAccessible` is `false`. */
+			pictureAttachments?: string[];
+			/** @description May be undefined, usually when `isAccessible` is `false`. */
+			galleryAttachments?: string[];
+		};
+		SubscriptionPlanModel: {
+			id: string;
+			title: string;
+			description: string;
+			price: string | null;
+			priceYearly: string | null;
+			currency: string;
+			logo: string | null;
+			interval: string;
+			featured: boolean;
+			allowGrandfatheredAccess?: boolean | null;
+			discordServers: components["schemas"]["DiscordServerModel"][];
+			discordRoles: components["schemas"]["DiscordRoleModel"][];
+		};
+		PostMetadataModel: {
+			hasVideo: boolean;
+			videoCount?: number;
+			videoDuration: number;
+			hasAudio: boolean;
+			audioCount?: number;
+			audioDuration: number;
+			hasPicture: boolean;
+			pictureCount?: number;
+			hasGallery?: boolean;
+			galleryCount?: number;
+			isFeatured: boolean;
+		};
+		VideoAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			/** Format: date-time */
+			releaseDate: string | null;
+			duration: number;
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		PictureAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			creator: string;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		AudioAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			duration: number;
+			waveform: {
+				dataSetLength: number;
+				highestValue: number;
+				lowestValue: number;
+				data: number[];
+			};
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		ImageModel: {
+			width: number;
+			height: number;
+			/** Format: uri */
+			path: string;
+			childImages: components["schemas"]["ChildImageModel"][] | null;
+		};
+		ChildImageModel: {
+			width: number;
+			height: number;
+			/** Format: uri */
+			path: string;
+		};
+		ImageFileModel: {
+			/** Format: uri */
+			path: string;
+			width: number;
+			height: number;
+			size: number;
+		};
+		LiveStreamModel: {
+			id: string;
+			title: string;
+			description: string;
+			thumbnail: components["schemas"]["ImageModel"] | null;
+			owner: string;
+			/** @description The creator channel this livestream belongs to. */
+			channel?: string;
+			streamPath: string;
+			offline: {
+				title: string | null;
+				description: string | null;
+				thumbnail: components["schemas"]["ImageModel"] | null;
+			};
+		};
+		SocialLinksModel: { [key: string]: string };
+		DiscordServerModel: {
+			id: string;
+			guildName: string;
+			guildIcon: string;
+			/** Format: uri */
+			inviteLink: string | null;
+			inviteMode: string;
+		};
+		DiscordRoleModel: {
+			server: string;
+			roleName: string;
+		};
+		/** @description Represents some basic information of a user (id, username, and profile image). */
+		UserModel: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+		};
+		UserSelfModel: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+			email: string;
+			displayName: string;
+		};
+		ConnectedAccountModel: {
+			/** @description Unique identifier for the account type. */
+			key: string;
+			/** @description Display-friendly label for the `key`. */
+			name: string;
+			/** @description Determines if the system allows this account to be connected to. */
+			enabled: boolean;
+			iconWhite: string;
+			connectedAccount: {
+				id: string;
+				remoteUserId: string;
+				remoteUserName: string;
+				data: {
+					canJoinGuilds: boolean;
+				} | null;
+			} | null;
+			/** @description If true, the user is connected and the `connectedAccount` will have data about the account. */
+			connected: boolean;
+			isAccountProvider: boolean;
+		};
+		CommentModel: {
+			id: string;
+			blogPost: string;
+			user: components["schemas"]["UserModel"];
+			text: string;
+			replying: string | null;
+			/** Format: date-time */
+			postDate: string;
+			/** Format: date-time */
+			editDate: string | null;
+			/** Format: date-time */
+			pinDate?: string | null;
+			editCount: number;
+			isEdited: boolean;
+			likes: number;
+			dislikes: number;
+			score: number;
+			interactionCounts: {
+				like: number;
+				dislike: number;
+			};
+			totalReplies?: number;
+			/** @description This is present (but possibly empty) for top-level comments. This is never present for reply comments. */
+			replies?: components["schemas"]["CommentModel"][];
+			userInteraction: components["schemas"]["UserInteractionModel"];
+		};
+		UserNotificationModel: {
+			creator: components["schemas"]["CreatorModelV2"];
+			userNotificationSetting: {
+				/** Format: date-time */
+				createdAt?: string;
+				/** Format: date-time */
+				updatedAt?: string | null;
+				id?: string;
+				contentEmail: boolean;
+				contentFirebase: boolean;
+				creatorMessageEmail: boolean;
+				user: string;
+				creator: string;
+			};
+		};
+		UserSubscriptionModel: {
+			/** Format: date-time */
+			startDate: string | null;
+			/** Format: date-time */
+			endDate: string | null;
+			paymentID: number | null;
+			interval: string;
+			paymentCancelled?: boolean;
+			plan: components["schemas"]["SubscriptionPlanModel"];
+			creator: string;
+		};
+		FaqSectionModel: {
+			faqs: {
+				/** Format: date-time */
+				createdAt: string;
+				/** Format: date-time */
+				updatedAt: string | null;
+				id: string;
+				question: string;
+				/** @description This field may contain HTML that should be rendered. */
+				answer: string;
+				/** @enum {string} */
+				status: "public";
+				link: string;
+				order: number;
+				faqSection: string;
+			}[];
+			/** Format: date-time */
+			createdAt: string;
+			/** Format: date-time */
+			updatedAt: string | null;
+			id: string;
+			name: string;
+			description: string;
+			/** @enum {string} */
+			status: "public";
+			order: number;
+		};
+		UserInteractionModel: ("like" | "dislike")[] | null;
+		EdgesModel: {
+			edges: components["schemas"]["EdgeModel"][];
+			client: { [key: string]: unknown };
+		};
+		EdgeModel: {
+			hostname: string;
+			queryPort: number;
+			/** Format: int64 */
+			bandwidth: number;
+			allowDownload: boolean;
+			allowStreaming: boolean;
+			datacenter: components["schemas"]["EdgeDataCenter"];
+		};
+		/** @description Location information for a datacenter. Not required. */
+		EdgeDataCenter: {
+			countryCode: string;
+			regionCode: string;
+			latitude: number;
+			longitude: number;
+		};
+		UpdateProgressRequest: {
+			/** @description The video or audio attachment identifier for the piece of media that is being updated. Note: this is *not* the blogPost identifier. */
+			id: string;
+			/**
+			 * @description Which type of media the corresponding identifier is.
+			 * @enum {string}
+			 */
+			contentType: "video" | "audio";
+			/** @description The progress through the media that has been consumed by the user, in seconds. */
+			progress: number;
+		};
+		GetProgressRequest: {
+			/** @description The identifiers of the blog posts from which progress should be retrieved. */
+			ids: string[];
+			/**
+			 * @description The type of the corresponding identifiers. The only value currently is `blogPost`.
+			 * @enum {string}
+			 */
+			contentType: "blogPost";
+		};
+		/** @description A list of objects containing progress values for the requested identifiers. If no progress has been posted to an identifier, it may either not appear in the resulting list, or appear with a progress of `0`. */
+		GetProgressResponse: {
+			id: string;
+			/** @description Percentage of the blog post's media that has been consumed so far. Ranges from 0 to 100. */
+			progress: number;
+		}[];
+		TextTracks: {
+			id: string;
+			src: string;
+			kind: string;
+			language: string;
+			generated: boolean;
+			processing: boolean;
+		};
+	};
+	responses: {
+		/** Bad Request - The request has errors and the server did not process it. */
+		"400BadRequest": {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** Unauthenticated - The request was not authenticated to make the request. */
+		"401Unauthenticated": {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** Forbidden - The request was not authenticated to make the request. */
+		"403Forbidden": {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+				"text/html": string;
+			};
+		};
+		/** Not Found - The resource was not found. */
+		"404NotFound": {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** Too Many Requests - The resource was requested too many times */
+		"429TooManyRequests": unknown;
+		/** Unexpected response code */
+		Unexpected: {
+			content: {
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+	};
 }
 
 export interface operations {
-  /** Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests. */
-  login: {
-    parameters: {};
-    responses: {
-      /** OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
-      200: {
-        headers: {
-          /** Contains the cookie used in subsequent authenticated requests. */
-          "Set-Cookie"?: string;
-        };
-        content: {
-          "application/json": components["schemas"]["AuthLoginV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      /** Unauthenticated - The login attempt failed, either due to a bad username or password. */
-      401: {
-        content: {
-          "application/json": components["schemas"]["ErrorModel"];
-        };
-      };
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["AuthLoginV2Request"];
-      };
-    };
-  };
-  /** Log out of Floatplane, invalidating the authentication/authorization cookie. */
-  logout: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        headers: {
-          /** Obtain a new authentication/authorization cookie after logging out. This new cookie will not be authenticated to perform subsequent requests. */
-          "Set-Cookie"?: string;
-        };
-        content: {
-          "text/plain": string;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Complete the login process if a two-factor authentication token is required from the beginning of the login process. */
-  checkFor2faLogin: {
-    parameters: {};
-    responses: {
-      /** OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
-      200: {
-        headers: {
-          /** Contains the cookie used in subsequent authenticated requests. */
-          "Set-Cookie"?: string;
-        };
-        content: {
-          "application/json": components["schemas"]["AuthLoginV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      /** Unauthenticated - The login attempt failed, either due to a bad username or password. */
-      401: {
-        content: {
-          "application/json": components["schemas"]["ErrorModel"];
-        };
-      };
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CheckFor2faLoginRequest"];
-      };
-    };
-  };
-  /** Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up. */
-  getCaptchaInfo: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["GetCaptchaInfoResponse"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
-  getDeliveryInfo: {
-    parameters: {
-      query: {
-        /**
-         * Used to determine which kind of retrieval method is requested for the video.
-         *
-         * - VOD = stream a Video On Demand
-         * - AOD = stream Audio On Demand
-         * - Live = Livestream the content
-         * - Download = Download the content for the user to play later.
-         */
-        type: "vod" | "aod" | "live" | "download";
-        /** The GUID of the attachment for a post, retrievable from the `videoAttachments` or `audioAttachments` object. Required when `type` is `vod`, `aod`, or `download`. Note: either this or `creator` must be supplied. */
-        guid?: string;
-        /** The GUID of the creator for a livestream, retrievable from `CreatorModelV2.id`. Required when `type` is `live`. Note: either this or `guid` must be supplied. Note: for `vod` and `download`, including this `creator` parameter *will* cause an error to be returned. */
-        creator?: string;
-      };
-    };
-    responses: {
-      /** OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CdnDeliveryV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Given an video/audio attachment or livestream identifier, retrieves the information necessary to play, download, or livestream the media at various quality levels. */
-  getDeliveryInfoV3: {
-    parameters: {
-      query: {
-        /**
-         * Used to determine the scenario in which to consume the media.
-         *
-         * - `onDemand` = stream a Video/Audio On Demand
-         * - `download` = Download the content for the user to play later.
-         * - `live` = Livestream the content
-         */
-        scenario: "onDemand" | "download" | "live";
-        /** The attachment or livestream identifier for the requested media. For video and audio, this would be from the `videoAttachments` or `audioAttachments` objects. For livestreams, this is the `liveStream.id` from the creator object. */
-        entityId: string;
-        /** Use `outputKind` to ensure the right vehicle is used for your client, e.g. `outputKind=hls.fmp4` is optimal for tvOS 10+. */
-        outputKind?:
-          | "hls.mpegts"
-          | "hls.fmp4"
-          | "dash.mpegts"
-          | "dash.m4s"
-          | "flat";
-      };
-    };
-    responses: {
-      /** OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CdnDeliveryV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** List the available 3rd party accounts for the user's profile. */
-  listConnections: {
-    parameters: {};
-    responses: {
-      /** OK - Returns the list of connected and available accounts. */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ConnectedAccountModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information on one or more creators on Floatplane. */
-  getInfo: {
-    parameters: {
-      query: {
-        /** The GUID identifer(s) of the creator(s) to be retrieved. */
-        creatorGUID: string[];
-      };
-    };
-    responses: {
-      /** OK - The creators are found from their identifiers and returned in an array */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV2"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information on one or more creators on Floatplane. */
-  getCreatorInfoByName: {
-    parameters: {
-      query: {
-        /** The string identifer(s) of the creator(s) to be retrieved. */
-        creatorURL: string[];
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV2Extended"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information about a specific creator. */
-  getCreator: {
-    parameters: {
-      query: {
-        /** The GUID of the creator being searched. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Creator information returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV3"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering. */
-  getCreators: {
-    parameters: {
-      query: {
-        /** Optional search string for finding particular creators on the platform. */
-        search: string;
-      };
-    };
-    responses: {
-      /** OK - Creators returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV3"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information on one or more creators on Floatplane. */
-  getCreatorByName: {
-    parameters: {
-      query: {
-        /** The `urlname`(s) of the creator(s) to be retrieved. See `CreatorModelV3`. */
-        creatorURL: string[];
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CreatorModelV3"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieves a list of channels within the given creator(s). */
-  listCreatorChannelsV3: {
-    parameters: {
-      query: {
-        /** The ids of the creator(s) from which to search for channels. */
-        ids: string[];
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ChannelModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve detailed information about a creator's subscription plans and their subscriber count. */
-  getCreatorSubInfoPublic: {
-    parameters: {
-      query: {
-        /** The GUID for the creator being search. */
-        creatorId: string;
-      };
-    };
-    responses: {
-      /** OK - Information about the plans for the creator */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PlanInfoV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement. */
-  getEdges: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["EdgesModel"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML. */
-  getFaqSections: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["FaqSectionModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform. */
-  listPaymentMethods: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PaymentMethodModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators. */
-  listAddresses: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PaymentAddressModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of paid or unpaid subscription invoices for the user. */
-  listInvoices: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PaymentInvoiceListV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  socketConnect: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  disconnectSocket: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of all active subscriptions for the user. */
-  listUserSubscriptionsV3: {
-    parameters: {};
-    responses: {
-      /** OK - Subscriptions returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserSubscriptionModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more detailed information about one or more users from their identifiers. */
-  getUserInfo: {
-    parameters: {
-      query: {
-        /** The GUID identifer(s) of the user(s) to be retrieved. */
-        id: string[];
-      };
-    };
-    responses: {
-      /** OK - Results of the user search */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserInfoV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more detailed information about one or more users from their usernames. */
-  getUserInfoByName: {
-    parameters: {
-      query: {
-        /** The username(s) of the user(s) to be retrieved. */
-        username: string[];
-      };
-    };
-    responses: {
-      /** OK - Results of the user search */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserNamedV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve information about the current security configuration for the user. */
-  getSecurity: {
-    parameters: {};
-    responses: {
-      /** OK - Current security settings */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserSecurityV2Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Determine whether or not the user is banned for a given creator. */
-  userCreatorBanStatus: {
-    parameters: {
-      query: {
-        /** The GUID of the creator being queried. */
-        creator: string;
-      };
-    };
-    responses: {
-      /** OK - Whether the user is banned or not */
-      200: {
-        content: {
-          "application/json": boolean;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators. */
-  getActivityFeedV3: {
-    parameters: {
-      query: {
-        /** The GUID of the user being queried. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Activity returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserActivityV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve configured social media links from a user's profile. */
-  getExternalLinksV3: {
-    parameters: {
-      query: {
-        /** The GUID of the user being searched. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - User links returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserLinksV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more detailed information about the user, including their name and email. */
-  getSelf: {
-    parameters: {};
-    responses: {
-      /** OK - Information returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserSelfV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator. */
-  getUserNotificationSettingsV3: {
-    parameters: {};
-    responses: {
-      /** OK - Notifications returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserNotificationModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Enable or disable email or push notifications for a specific creator. */
-  updateUserNotificationSettingsV3: {
-    parameters: {};
-    responses: {
-      /** OK - Whether or not the update was successful */
-      200: {
-        content: {
-          "application/json": boolean;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["UserNotificationUpdateV3PostRequest"];
-      };
-    };
-  };
-  /** Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded. */
-  getComments: {
-    parameters: {
-      query: {
-        /** Which blog post to retrieve comments for. */
-        blogPost: string;
-        /** The maximum number of comments to return. This should be set to 20 by default. */
-        limit: number;
-        /** When loading more comments on a blog post, this is used to determine which which comments to skip. This is a GUID of the last comment from the previous call to `getComments`. */
-        fetchAfter?: string;
-      };
-    };
-    responses: {
-      /** OK - All comments returned for the query parameters */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CommentModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Post a new comment to a blog post object. */
-  postComment: {
-    parameters: {};
-    responses: {
-      /** OK - Commented posted successfully, returning comment details */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CommentV3PostResponse"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CommentV3PostRequest"];
-      };
-    };
-  };
-  /** Retrieve more replies from a comment. */
-  getCommentReplies: {
-    parameters: {
-      query: {
-        /** The identifer of the comment from which to retrieve replies. */
-        comment: string;
-        /** The identifer of the blog post the `comment` belongs to. */
-        blogPost: string;
-        /** How many replies to retrieve. */
-        limit: number;
-        /** The identifer of the last reply in the reply chain. */
-        rid: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["CommentModel"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Like a comment on a blog post. */
-  likeComment: {
-    parameters: {};
-    responses: {
-      /** OK - Comment successfully liked */
-      200: {
-        content: {
-          "text/plain": string;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CommentLikeV3PostRequest"];
-      };
-    };
-  };
-  /** Dislike a comment on a blog post. */
-  dislikeComment: {
-    parameters: {};
-    responses: {
-      /** OK - Comment successfully disliked */
-      200: {
-        content: {
-          "text/plain": string;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["CommentLikeV3PostRequest"];
-      };
-    };
-  };
-  /**
-   * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
-   *
-   * Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
-   */
-  getCreatorBlogPosts: {
-    parameters: {
-      query: {
-        /** The GUID of the creator to retrieve posts from. */
-        id: string;
-        /** The id of a creator's specific channel from which to retrieve posts. */
-        channel?: string;
-        /** The maximum number of posts to return. */
-        limit?: number;
-        /** The number of posts to skip. Usually a multiple of `limit`, to get the next "page" of results. */
-        fetchAfter?: number;
-        /** Search filter to look for specific posts. */
-        search?: string;
-        /** An array of tags to search against, possibly in addition to `search`. */
-        tags?: string[];
-        /** If true, include blog posts with video attachments. */
-        hasVideo?: boolean;
-        /** If true, include blog posts with audio attachments. */
-        hasAudio?: boolean;
-        /** If true, include blog posts with picture attachments. */
-        hasPicture?: boolean;
-        /**
-         * If true, only include blog posts that are text-only. Text-only posts are ones without any attachments, such as video, audio, picture, and gallery.
-         *
-         * This filter and `hasVideo`, `hasAudio`, and `hasPicture` should be mutually exclusive. That is, if `hasText` is true then the other three should all be false. Conversely, if any of the other three are true, then `hasText` should be false. Otherwise, the filter would produce no results.
-         */
-        hasText?: boolean;
-        /** `DESC` = Newest First. `ASC` = Oldest First. */
-        sort?: "ASC" | "DESC";
-        /** Include video posts where the duration of the video is at minimum `fromDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
-        fromDuration?: number;
-        /** Include video posts where the duration of the video is at maximum `toDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
-        toDuration?: number;
-        /** Include posts where the publication date is on or after this filter date. */
-        fromDate?: string;
-        /** Include posts where the publication date is on or before this filter date. */
-        toDate?: string;
-      };
-    };
-    responses: {
-      /** OK - Creator posted returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["BlogPostModelV3"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /**
-   * Retrieve paginated blog posts from multiple creators for the home page.
-   *
-   * Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
-   */
-  getMultiCreatorBlogPosts: {
-    parameters: {
-      query: {
-        /** The GUID(s) of the creator(s) to retrieve posts from. */
-        ids: string[];
-        /** The maximum number of posts to retrieve. */
-        limit: number;
-        /** For pagination, this is used to determine which posts to skip. There should be one `fetchAfter` object for each creator in `ids`. The `moreFetchable` in the request, and all of the data, comes from the `ContentCreatorListV3Response`. */
-        fetchAfter?: components["schemas"]["ContentCreatorListLastItems"][];
-      };
-    };
-    responses: {
-      /** OK - Posts returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ContentCreatorListV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve all tags and the number of times the tags have been used for the specified creator(s). */
-  getContentTags: {
-    parameters: {
-      query: {
-        /** The creator(s) to search by. */
-        creatorIds: string[];
-      };
-    };
-    responses: {
-      /** OK - Creator tag information */
-      200: {
-        content: {
-          "application/json": { [key: string]: number };
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more details on a specific blog post object for viewing. */
-  getBlogPost: {
-    parameters: {
-      query: {
-        /** The ID of the post to be retrieved. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Detailed post information */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ContentPostV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of blog posts that are related to the post being viewed. */
-  getRelatedBlogPosts: {
-    parameters: {
-      query: {
-        /** The ID of the originating post. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Related post details */
-      200: {
-        content: {
-          "application/json": components["schemas"]["BlogPostModelV3"][];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more information on a video attachment from a blog post in order to consume the video content. */
-  getVideoContent: {
-    parameters: {
-      query: {
-        /** The ID of the video attachment object, from the `BlogPostModelV3`. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK - Video details returned */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ContentVideoV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
-  getPictureContent: {
-    parameters: {
-      query: {
-        /** The ID of the picture attachment object, from the `BlogPostModelV3`. */
-        id: string;
-      };
-    };
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["ContentPictureV3Response"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed. */
-  likeContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserInteractionModel"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["ContentLikeV3Request"];
-      };
-    };
-  };
-  /** Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed. */
-  dislikeContent: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserInteractionModel"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["ContentLikeV3Request"];
-      };
-    };
-  };
-  /** Update the watch progress on a piece of media (usually video or audio), stored as the number of seconds in the media. */
-  updateProgress: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "text/plain": string;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["UpdateProgressRequest"];
-      };
-    };
-  };
-  /**
-   * Batch retrieval of watch progress values for blog posts. This API is useful for showing progress of a list of blog posts shown on the screen to the user. When retrieving a list of blog posts, the media attachments only include the identifier; when retrieving full details of a blog post, the attachments include more information, but still fail to return the progress of the media. Only when pulling the full video/audio content does the progress get included in the response. Thus, the recommended approach is to pull paginated results of blog posts first, as usual, and then to call this endpoint to retrieve progress values for each blog post to show in some capacity, usually on the thumbnail as a progress bar on the bottom.
-   *
-   * Note that the progress values returned in this endpoint are different from the update progress endpoint and the values returned in video/audio attachments. While the latter are measured in seconds, this endpoint returns progress as a percentage of the media's total duration. It is presumed that the progress returned is from the first attachment in the blog post's `attachmentOrder` that is either a video or audio attachment. Because this returns progress as an integer percentage (0 to 100), it is not recommended to use this particular value for jumping to a timestamp in the media when resuming playback, as the rounded number may be off by plus/minus several seconds in actual playback. Use the actual attachment progress, measured in seconds, instead.
-   */
-  getProgress: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": components["schemas"]["GetProgressResponse"];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["GetProgressRequest"];
-      };
-    };
-  };
-  /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  joinLiveRoom: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
-  leaveLiveRoom: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error. */
-  votePoll: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": unknown;
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-    requestBody: {
-      content: {
-        "application/json": {
-          /** @description The id of the poll to vote on. */
-          pollId: string;
-          /** @description The index of the options of the poll for which to vote. This should not be outside the bounds of the poll options. */
-          optionIndex: number;
-        };
-      };
-    };
-  };
-  /** Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code. */
-  redirectYTLatest: {
-    parameters: {
-      path: {
-        channelKey: string;
-      };
-    };
-    responses: {
-      /** Found */
-      302: never;
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
-  /** Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown. */
-  listCreatorLoyaltyReward: {
-    parameters: {};
-    responses: {
-      /** OK */
-      200: {
-        content: {
-          "application/json": { [key: string]: unknown }[];
-        };
-      };
-      400: components["responses"]["400BadRequest"];
-      401: components["responses"]["401Unauthenticated"];
-      403: components["responses"]["403Forbidden"];
-      404: components["responses"]["404NotFound"];
-      429: components["responses"]["429TooManyRequests"];
-      default: components["responses"]["Unexpected"];
-    };
-  };
+	/** Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests. */
+	login: {
+		parameters: {};
+		responses: {
+			/** OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
+			200: {
+				headers: {
+					/** Contains the cookie used in subsequent authenticated requests. */
+					"Set-Cookie"?: string;
+				};
+				content: {
+					"application/json": components["schemas"]["AuthLoginV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			/** Unauthenticated - The login attempt failed, either due to a bad username or password. */
+			401: {
+				content: {
+					"application/json": components["schemas"]["ErrorModel"];
+				};
+			};
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["AuthLoginV2Request"];
+			};
+		};
+	};
+	/** Log out of Floatplane, invalidating the authentication/authorization cookie. */
+	logout: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				headers: {
+					/** Obtain a new authentication/authorization cookie after logging out. This new cookie will not be authenticated to perform subsequent requests. */
+					"Set-Cookie"?: string;
+				};
+				content: {
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Complete the login process if a two-factor authentication token is required from the beginning of the login process. */
+	checkFor2faLogin: {
+		parameters: {};
+		responses: {
+			/** OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
+			200: {
+				headers: {
+					/** Contains the cookie used in subsequent authenticated requests. */
+					"Set-Cookie"?: string;
+				};
+				content: {
+					"application/json": components["schemas"]["AuthLoginV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			/** Unauthenticated - The login attempt failed, either due to a bad username or password. */
+			401: {
+				content: {
+					"application/json": components["schemas"]["ErrorModel"];
+				};
+			};
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CheckFor2faLoginRequest"];
+			};
+		};
+	};
+	/** Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up. */
+	getCaptchaInfo: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["GetCaptchaInfoResponse"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels. */
+	getDeliveryInfo: {
+		parameters: {
+			query: {
+				/**
+				 * Used to determine which kind of retrieval method is requested for the video.
+				 *
+				 * - VOD = stream a Video On Demand
+				 * - AOD = stream Audio On Demand
+				 * - Live = Livestream the content
+				 * - Download = Download the content for the user to play later.
+				 */
+				type: "vod" | "aod" | "live" | "download";
+				/** The GUID of the attachment for a post, retrievable from the `videoAttachments` or `audioAttachments` object. Required when `type` is `vod`, `aod`, or `download`. Note: either this or `creator` must be supplied. */
+				guid?: string;
+				/** The GUID of the creator for a livestream, retrievable from `CreatorModelV2.id`. Required when `type` is `live`. Note: either this or `guid` must be supplied. Note: for `vod` and `download`, including this `creator` parameter *will* cause an error to be returned. */
+				creator?: string;
+			};
+		};
+		responses: {
+			/** OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CdnDeliveryV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Given an video/audio attachment or livestream identifier, retrieves the information necessary to play, download, or livestream the media at various quality levels. */
+	getDeliveryInfoV3: {
+		parameters: {
+			query: {
+				/**
+				 * Used to determine the scenario in which to consume the media.
+				 *
+				 * - `onDemand` = stream a Video/Audio On Demand
+				 * - `download` = Download the content for the user to play later.
+				 * - `live` = Livestream the content
+				 */
+				scenario: "onDemand" | "download" | "live";
+				/** The attachment or livestream identifier for the requested media. For video and audio, this would be from the `videoAttachments` or `audioAttachments` objects. For livestreams, this is the `liveStream.id` from the creator object. */
+				entityId: string;
+				/** Use `outputKind` to ensure the right vehicle is used for your client, e.g. `outputKind=hls.fmp4` is optimal for tvOS 10+. */
+				outputKind?: "hls.mpegts" | "hls.fmp4" | "dash.mpegts" | "dash.m4s" | "flat";
+			};
+		};
+		responses: {
+			/** OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CdnDeliveryV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** List the available 3rd party accounts for the user's profile. */
+	listConnections: {
+		parameters: {};
+		responses: {
+			/** OK - Returns the list of connected and available accounts. */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ConnectedAccountModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information on one or more creators on Floatplane. */
+	getInfo: {
+		parameters: {
+			query: {
+				/** The GUID identifer(s) of the creator(s) to be retrieved. */
+				creatorGUID: string[];
+			};
+		};
+		responses: {
+			/** OK - The creators are found from their identifiers and returned in an array */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV2"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information on one or more creators on Floatplane. */
+	getCreatorInfoByName: {
+		parameters: {
+			query: {
+				/** The string identifer(s) of the creator(s) to be retrieved. */
+				creatorURL: string[];
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV2Extended"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information about a specific creator. */
+	getCreator: {
+		parameters: {
+			query: {
+				/** The GUID of the creator being searched. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Creator information returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV3"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering. */
+	getCreators: {
+		parameters: {
+			query: {
+				/** Optional search string for finding particular creators on the platform. */
+				search: string;
+			};
+		};
+		responses: {
+			/** OK - Creators returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information on one or more creators on Floatplane. */
+	getCreatorByName: {
+		parameters: {
+			query: {
+				/** The `urlname`(s) of the creator(s) to be retrieved. See `CreatorModelV3`. */
+				creatorURL: string[];
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CreatorModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieves a list of channels within the given creator(s). */
+	listCreatorChannelsV3: {
+		parameters: {
+			query: {
+				/** The ids of the creator(s) from which to search for channels. */
+				ids: string[];
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ChannelModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve detailed information about a creator's subscription plans and their subscriber count. */
+	getCreatorSubInfoPublic: {
+		parameters: {
+			query: {
+				/** The GUID for the creator being search. */
+				creatorId: string;
+			};
+		};
+		responses: {
+			/** OK - Information about the plans for the creator */
+			200: {
+				content: {
+					"application/json": components["schemas"]["PlanInfoV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement. */
+	getEdges: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["EdgesModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML. */
+	getFaqSections: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["FaqSectionModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform. */
+	listPaymentMethods: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["PaymentMethodModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators. */
+	listAddresses: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["PaymentAddressModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of paid or unpaid subscription invoices for the user. */
+	listInvoices: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["PaymentInvoiceListV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	socketConnect: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	disconnectSocket: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of all active subscriptions for the user. */
+	listUserSubscriptionsV3: {
+		parameters: {};
+		responses: {
+			/** OK - Subscriptions returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserSubscriptionModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more detailed information about one or more users from their identifiers. */
+	getUserInfo: {
+		parameters: {
+			query: {
+				/** The GUID identifer(s) of the user(s) to be retrieved. */
+				id: string[];
+			};
+		};
+		responses: {
+			/** OK - Results of the user search */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserInfoV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more detailed information about one or more users from their usernames. */
+	getUserInfoByName: {
+		parameters: {
+			query: {
+				/** The username(s) of the user(s) to be retrieved. */
+				username: string[];
+			};
+		};
+		responses: {
+			/** OK - Results of the user search */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserNamedV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve information about the current security configuration for the user. */
+	getSecurity: {
+		parameters: {};
+		responses: {
+			/** OK - Current security settings */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserSecurityV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Determine whether or not the user is banned for a given creator. */
+	userCreatorBanStatus: {
+		parameters: {
+			query: {
+				/** The GUID of the creator being queried. */
+				creator: string;
+			};
+		};
+		responses: {
+			/** OK - Whether the user is banned or not */
+			200: {
+				content: {
+					"application/json": boolean;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators. */
+	getActivityFeedV3: {
+		parameters: {
+			query: {
+				/** The GUID of the user being queried. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Activity returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserActivityV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve configured social media links from a user's profile. */
+	getExternalLinksV3: {
+		parameters: {
+			query: {
+				/** The GUID of the user being searched. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - User links returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserLinksV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more detailed information about the user, including their name and email. */
+	getSelf: {
+		parameters: {};
+		responses: {
+			/** OK - Information returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserSelfV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator. */
+	getUserNotificationSettingsV3: {
+		parameters: {};
+		responses: {
+			/** OK - Notifications returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserNotificationModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Enable or disable email or push notifications for a specific creator. */
+	updateUserNotificationSettingsV3: {
+		parameters: {};
+		responses: {
+			/** OK - Whether or not the update was successful */
+			200: {
+				content: {
+					"application/json": boolean;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["UserNotificationUpdateV3PostRequest"];
+			};
+		};
+	};
+	/** Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded. */
+	getComments: {
+		parameters: {
+			query: {
+				/** Which blog post to retrieve comments for. */
+				blogPost: string;
+				/** The maximum number of comments to return. This should be set to 20 by default. */
+				limit: number;
+				/** When loading more comments on a blog post, this is used to determine which which comments to skip. This is a GUID of the last comment from the previous call to `getComments`. */
+				fetchAfter?: string;
+			};
+		};
+		responses: {
+			/** OK - All comments returned for the query parameters */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CommentModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Post a new comment to a blog post object. */
+	postComment: {
+		parameters: {};
+		responses: {
+			/** OK - Commented posted successfully, returning comment details */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CommentV3PostResponse"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CommentV3PostRequest"];
+			};
+		};
+	};
+	/** Retrieve more replies from a comment. */
+	getCommentReplies: {
+		parameters: {
+			query: {
+				/** The identifer of the comment from which to retrieve replies. */
+				comment: string;
+				/** The identifer of the blog post the `comment` belongs to. */
+				blogPost: string;
+				/** How many replies to retrieve. */
+				limit: number;
+				/** The identifer of the last reply in the reply chain. */
+				rid: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["CommentModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Like a comment on a blog post. */
+	likeComment: {
+		parameters: {};
+		responses: {
+			/** OK - Comment successfully liked */
+			200: {
+				content: {
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CommentLikeV3PostRequest"];
+			};
+		};
+	};
+	/** Dislike a comment on a blog post. */
+	dislikeComment: {
+		parameters: {};
+		responses: {
+			/** OK - Comment successfully disliked */
+			200: {
+				content: {
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CommentLikeV3PostRequest"];
+			};
+		};
+	};
+	/**
+	 * Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
+	 *
+	 * Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
+	 */
+	getCreatorBlogPosts: {
+		parameters: {
+			query: {
+				/** The GUID of the creator to retrieve posts from. */
+				id: string;
+				/** The id of a creator's specific channel from which to retrieve posts. */
+				channel?: string;
+				/** The maximum number of posts to return. */
+				limit?: number;
+				/** The number of posts to skip. Usually a multiple of `limit`, to get the next "page" of results. */
+				fetchAfter?: number;
+				/** Search filter to look for specific posts. */
+				search?: string;
+				/** An array of tags to search against, possibly in addition to `search`. */
+				tags?: string[];
+				/** If true, include blog posts with video attachments. */
+				hasVideo?: boolean;
+				/** If true, include blog posts with audio attachments. */
+				hasAudio?: boolean;
+				/** If true, include blog posts with picture attachments. */
+				hasPicture?: boolean;
+				/**
+				 * If true, only include blog posts that are text-only. Text-only posts are ones without any attachments, such as video, audio, picture, and gallery.
+				 *
+				 * This filter and `hasVideo`, `hasAudio`, and `hasPicture` should be mutually exclusive. That is, if `hasText` is true then the other three should all be false. Conversely, if any of the other three are true, then `hasText` should be false. Otherwise, the filter would produce no results.
+				 */
+				hasText?: boolean;
+				/** `DESC` = Newest First. `ASC` = Oldest First. */
+				sort?: "ASC" | "DESC";
+				/** Include video posts where the duration of the video is at minimum `fromDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
+				fromDuration?: number;
+				/** Include video posts where the duration of the video is at maximum `toDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
+				toDuration?: number;
+				/** Include posts where the publication date is on or after this filter date. */
+				fromDate?: string;
+				/** Include posts where the publication date is on or before this filter date. */
+				toDate?: string;
+			};
+		};
+		responses: {
+			/** OK - Creator posted returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["BlogPostModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/**
+	 * Retrieve paginated blog posts from multiple creators for the home page.
+	 *
+	 * Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
+	 */
+	getMultiCreatorBlogPosts: {
+		parameters: {
+			query: {
+				/** The GUID(s) of the creator(s) to retrieve posts from. */
+				ids: string[];
+				/** The maximum number of posts to retrieve. */
+				limit: number;
+				/** For pagination, this is used to determine which posts to skip. There should be one `fetchAfter` object for each creator in `ids`. The `moreFetchable` in the request, and all of the data, comes from the `ContentCreatorListV3Response`. */
+				fetchAfter?: components["schemas"]["ContentCreatorListLastItems"][];
+			};
+		};
+		responses: {
+			/** OK - Posts returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ContentCreatorListV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve all tags and the number of times the tags have been used for the specified creator(s). */
+	getContentTags: {
+		parameters: {
+			query: {
+				/** The creator(s) to search by. */
+				creatorIds: string[];
+			};
+		};
+		responses: {
+			/** OK - Creator tag information */
+			200: {
+				content: {
+					"application/json": { [key: string]: number };
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more details on a specific blog post object for viewing. */
+	getBlogPost: {
+		parameters: {
+			query: {
+				/** The ID of the post to be retrieved. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Detailed post information */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ContentPostV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of blog posts that are related to the post being viewed. */
+	getRelatedBlogPosts: {
+		parameters: {
+			query: {
+				/** The ID of the originating post. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Related post details */
+			200: {
+				content: {
+					"application/json": components["schemas"]["BlogPostModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more information on a video attachment from a blog post in order to consume the video content. */
+	getVideoContent: {
+		parameters: {
+			query: {
+				/** The ID of the video attachment object, from the `BlogPostModelV3`. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK - Video details returned */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ContentVideoV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve more information on a picture attachment from a blog post in order to consume the picture content. */
+	getPictureContent: {
+		parameters: {
+			query: {
+				/** The ID of the picture attachment object, from the `BlogPostModelV3`. */
+				id: string;
+			};
+		};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["ContentPictureV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed. */
+	likeContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserInteractionModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["ContentLikeV3Request"];
+			};
+		};
+	};
+	/** Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed. */
+	dislikeContent: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["UserInteractionModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["ContentLikeV3Request"];
+			};
+		};
+	};
+	/** Update the watch progress on a piece of media (usually video or audio), stored as the number of seconds in the media. */
+	updateProgress: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["UpdateProgressRequest"];
+			};
+		};
+	};
+	/**
+	 * Batch retrieval of watch progress values for blog posts. This API is useful for showing progress of a list of blog posts shown on the screen to the user. When retrieving a list of blog posts, the media attachments only include the identifier; when retrieving full details of a blog post, the attachments include more information, but still fail to return the progress of the media. Only when pulling the full video/audio content does the progress get included in the response. Thus, the recommended approach is to pull paginated results of blog posts first, as usual, and then to call this endpoint to retrieve progress values for each blog post to show in some capacity, usually on the thumbnail as a progress bar on the bottom.
+	 *
+	 * Note that the progress values returned in this endpoint are different from the update progress endpoint and the values returned in video/audio attachments. While the latter are measured in seconds, this endpoint returns progress as a percentage of the media's total duration. It is presumed that the progress returned is from the first attachment in the blog post's `attachmentOrder` that is either a video or audio attachment. Because this returns progress as an integer percentage (0 to 100), it is not recommended to use this particular value for jumping to a timestamp in the media when resuming playback, as the rounded number may be off by plus/minus several seconds in actual playback. Use the actual attachment progress, measured in seconds, instead.
+	 */
+	getProgress: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": components["schemas"]["GetProgressResponse"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["GetProgressRequest"];
+			};
+		};
+	};
+	/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	joinLiveRoom: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection. */
+	leaveLiveRoom: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error. */
+	votePoll: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+		requestBody: {
+			content: {
+				"application/json": {
+					/** @description The id of the poll to vote on. */
+					pollId: string;
+					/** @description The index of the options of the poll for which to vote. This should not be outside the bounds of the poll options. */
+					optionIndex: number;
+				};
+			};
+		};
+	};
+	/** Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code. */
+	redirectYTLatest: {
+		parameters: {
+			path: {
+				channelKey: string;
+			};
+		};
+		responses: {
+			/** Found */
+			302: never;
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	/** Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown. */
+	listCreatorLoyaltyReward: {
+		parameters: {};
+		responses: {
+			/** OK */
+			200: {
+				content: {
+					"application/json": { [key: string]: unknown }[];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
 }
 
 export interface external {}
 
 export enum ApiPaths {
-  login = "/api/v2/auth/login",
-  logout = "/api/v2/auth/logout",
-  checkFor2faLogin = "/api/v2/auth/checkFor2faLogin",
-  getCaptchaInfo = "/api/v3/auth/captcha/info",
-  getDeliveryInfo = "/api/v2/cdn/delivery",
-  getDeliveryInfoV3 = "/api/v3/delivery/info",
-  listConnections = "/api/v2/connect/list",
-  getInfo = "/api/v2/creator/info",
-  getCreatorInfoByName = "/api/v2/creator/named",
-  getCreator = "/api/v3/creator/info",
-  getCreators = "/api/v3/creator/list",
-  getCreatorByName = "/api/v3/creator/named",
-  listCreatorChannelsV3 = "/api/v3/creator/channels/list",
-  getCreatorSubInfoPublic = "/api/v2/plan/info",
-  getEdges = "/api/v2/edges",
-  getFaqSections = "/api/v2/faq/list",
-  listPaymentMethods = "/api/v2/payment/method/list",
-  listAddresses = "/api/v2/payment/address/list",
-  listInvoices = "/api/v2/payment/invoice/list",
-  socketConnect = "/api/v3/socket/connect",
-  disconnectSocket = "/api/v3/socket/disconnect",
-  listUserSubscriptionsV3 = "/api/v3/user/subscriptions",
-  getUserInfo = "/api/v2/user/info",
-  getUserInfoByName = "/api/v2/user/named",
-  getSecurity = "/api/v2/user/security",
-  userCreatorBanStatus = "/api/v2/user/ban/status",
-  getActivityFeedV3 = "/api/v3/user/activity",
-  getExternalLinksV3 = "/api/v3/user/links",
-  getSelf = "/api/v3/user/self",
-  getUserNotificationSettingsV3 = "/api/v3/user/notification/list",
-  updateUserNotificationSettingsV3 = "/api/v3/user/notification/update",
-  postComment = "/api/v3/comment",
-  getComments = "/api/v3/comment",
-  getCommentReplies = "/api/v3/comment/replies",
-  likeComment = "/api/v3/comment/like",
-  dislikeComment = "/api/v3/comment/dislike",
-  getCreatorBlogPosts = "/api/v3/content/creator",
-  getMultiCreatorBlogPosts = "/api/v3/content/creator/list",
-  getContentTags = "/api/v3/content/tags",
-  getBlogPost = "/api/v3/content/post",
-  getRelatedBlogPosts = "/api/v3/content/related",
-  getVideoContent = "/api/v3/content/video",
-  getPictureContent = "/api/v3/content/picture",
-  likeContent = "/api/v3/content/like",
-  dislikeContent = "/api/v3/content/dislike",
-  updateProgress = "/api/v3/content/progress",
-  getProgress = "/api/v3/content/get/progress",
-  joinLiveRoom = "/api/v3/poll/live/joinroom",
-  leaveLiveRoom = "/api/v3/poll/live/leaveLiveRoom",
-  votePoll = "/api/v3/poll/votePoll",
-  redirectYTLatest = "/api/v3/redirect-yt-latest/:channelKey",
-  listCreatorLoyaltyReward = "/api/v3/user/loyaltyreward/list",
+	login = "/api/v2/auth/login",
+	logout = "/api/v2/auth/logout",
+	checkFor2faLogin = "/api/v2/auth/checkFor2faLogin",
+	getCaptchaInfo = "/api/v3/auth/captcha/info",
+	getDeliveryInfo = "/api/v2/cdn/delivery",
+	getDeliveryInfoV3 = "/api/v3/delivery/info",
+	listConnections = "/api/v2/connect/list",
+	getInfo = "/api/v2/creator/info",
+	getCreatorInfoByName = "/api/v2/creator/named",
+	getCreator = "/api/v3/creator/info",
+	getCreators = "/api/v3/creator/list",
+	getCreatorByName = "/api/v3/creator/named",
+	listCreatorChannelsV3 = "/api/v3/creator/channels/list",
+	getCreatorSubInfoPublic = "/api/v2/plan/info",
+	getEdges = "/api/v2/edges",
+	getFaqSections = "/api/v2/faq/list",
+	listPaymentMethods = "/api/v2/payment/method/list",
+	listAddresses = "/api/v2/payment/address/list",
+	listInvoices = "/api/v2/payment/invoice/list",
+	socketConnect = "/api/v3/socket/connect",
+	disconnectSocket = "/api/v3/socket/disconnect",
+	listUserSubscriptionsV3 = "/api/v3/user/subscriptions",
+	getUserInfo = "/api/v2/user/info",
+	getUserInfoByName = "/api/v2/user/named",
+	getSecurity = "/api/v2/user/security",
+	userCreatorBanStatus = "/api/v2/user/ban/status",
+	getActivityFeedV3 = "/api/v3/user/activity",
+	getExternalLinksV3 = "/api/v3/user/links",
+	getSelf = "/api/v3/user/self",
+	getUserNotificationSettingsV3 = "/api/v3/user/notification/list",
+	updateUserNotificationSettingsV3 = "/api/v3/user/notification/update",
+	postComment = "/api/v3/comment",
+	getComments = "/api/v3/comment",
+	getCommentReplies = "/api/v3/comment/replies",
+	likeComment = "/api/v3/comment/like",
+	dislikeComment = "/api/v3/comment/dislike",
+	getCreatorBlogPosts = "/api/v3/content/creator",
+	getMultiCreatorBlogPosts = "/api/v3/content/creator/list",
+	getContentTags = "/api/v3/content/tags",
+	getBlogPost = "/api/v3/content/post",
+	getRelatedBlogPosts = "/api/v3/content/related",
+	getVideoContent = "/api/v3/content/video",
+	getPictureContent = "/api/v3/content/picture",
+	likeContent = "/api/v3/content/like",
+	dislikeContent = "/api/v3/content/dislike",
+	updateProgress = "/api/v3/content/progress",
+	getProgress = "/api/v3/content/get/progress",
+	joinLiveRoom = "/api/v3/poll/live/joinroom",
+	leaveLiveRoom = "/api/v3/poll/live/leaveLiveRoom",
+	votePoll = "/api/v3/poll/votePoll",
+	redirectYTLatest = "/api/v3/redirect-yt-latest/:channelKey",
+	listCreatorLoyaltyReward = "/api/v3/user/loyaltyreward/list",
 }
