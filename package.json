@@ -1,29 +1,28 @@
 {
 	"name": "floatplane",
-	"version": "4.5.2",
+	"version": "4.6.0",
 	"description": "Library for interfacing with the LMG Floatplane.com api",
 	"type": "module",
 	"dependencies": {
 		"cross-env": "^7.0.3",
-		"got": "^14.2.1",
-		"tough-cookie": "^4.1.3"
+		"got": "^14.4.7",
+		"tough-cookie": "^5.1.2"
 	},
 	"devDependencies": {
-		"@inrixia/helpers": "^2.0.10",
+		"@inrixia/helpers": "^3.20.0",
+		"@types/node": "^22.15.29",
 		"@types/tough-cookie": "^4.0.5",
 		"@types/tough-cookie-file-store": "^2.0.4",
-		"@typescript-eslint/eslint-plugin": "^7.4.0",
-		"eslint": "^8.57.0",
-		"openapi-typescript": "^5.4.1",
-		"rimraf": "^5.0.5",
-		"tough-cookie-file-store": "^2.0.3",
-		"typescript": "^5.4.3"
+		"@typescript-eslint/eslint-plugin": "^8.33.0",
+		"eslint": "^9.27.0",
+		"openapi-typescript": "^7.8.0",
+		"rimraf": "^6.0.1",
+		"tough-cookie-file-store": "^3.0.1",
+		"typescript": "^5.8.3"
 	},
 	"scripts": {
-		"sanity": "npm run build && node ./dist/sanity.js",
-		"devTest": "npm run build && node ./dist/test.js",
 		"build": "rimraf dist && tsc",
-		"prepare": "npm run sanity",
+		"prepare": "npm run build",
 		"fetchSchema": "openapi-typescript https://jman012.github.io/FloatplaneAPIDocs/floatplane-openapi-specification-trimmed.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
 	"exports": {
