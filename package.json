@@ -23,7 +23,7 @@
 	"scripts": {
 		"build": "rimraf dist && tsc",
 		"prepare": "npm run build",
-		"fetchSchema": "openapi-typescript https://jman012.github.io/FloatplaneAPIDocs/floatplane-openapi-specification-trimmed.json --make-paths-enum --output ./src/lib/apiSchema.ts"
+		"fetchSchema": "openapi-typescript https://jamamp.github.io/FloatplaneAPIDocs/floatplane-openapi-specification-trimmed.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
 	"exports": {
 		".": {
