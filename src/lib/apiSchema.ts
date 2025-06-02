@@ -1368,7 +1368,6 @@ export interface components {
 			/** @description If false, the post should be marked as locked and not viewable by the user. */
 			isAccessible: boolean;
 			userInteraction: components["schemas"]["UserInteractionModel"];
-			textTracks: components["schemas"]["TextTracks"][];
 			/** @description May be undefined when the post is locked. */
 			videoAttachments?: components["schemas"]["VideoAttachmentModel"][];
 			/** @description May be undefined when the post is locked. */
@@ -1402,6 +1401,7 @@ export interface components {
 			/** @description The watch progress of the video, in seconds. If no progress has yet been posted to the video, then this field may not appear. */
 			progress?: number;
 			userInteraction: components["schemas"]["UserInteractionModel"];
+			textTracks: components["schemas"]["TextTracks"][];
 			levels: {
 				name: string;
 				width: number;
