@@ -4,7269 +4,7283 @@
  */
 
 export interface paths {
-    "/api/v2/auth/login": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Login
-         * @description Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests.
-         */
-        post: operations["login"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/auth/logout": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Logout
-         * @description Log out of Floatplane, invalidating the authentication/authorization cookie.
-         */
-        post: operations["logout"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/auth/checkFor2faLogin": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Check For 2FA Login
-         * @description Complete the login process if a two-factor authentication token is required from the beginning of the login process.
-         */
-        post: operations["checkFor2faLogin"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/auth/captcha/info": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Captcha Info
-         * @description Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up.
-         */
-        get: operations["getCaptchaInfo"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/cdn/delivery": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Delivery Info
-         * @description Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels.
-         */
-        get: operations["getDeliveryInfo"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/delivery/info": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Delivery Info
-         * @description Given an video/audio attachment or livestream identifier, retrieves the information necessary to play, download, or livestream the media at various quality levels.
-         */
-        get: operations["getDeliveryInfoV3"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/connect/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * List Connections
-         * @description List the available 3rd party accounts for the user's profile.
-         */
-        get: operations["listConnections"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/creator/info": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Info
-         * @description Retrieve detailed information on one or more creators on Floatplane.
-         */
-        get: operations["getInfo"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/creator/named": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Info By Name
-         * @description Retrieve detailed information on one or more creators on Floatplane.
-         */
-        get: operations["getCreatorInfoByName"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/creator/info": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Creator
-         * @description Retrieve detailed information about a specific creator.
-         */
-        get: operations["getCreator"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/creator/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Creators
-         * @description Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering.
-         */
-        get: operations["getCreators"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/creator/named": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Creator By Name
-         * @description Retrieve detailed information on one or more creators on Floatplane.
-         */
-        get: operations["getCreatorByName"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/creator/channels/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * List Creator Channels
-         * @description Retrieves a list of channels within the given creator(s).
-         */
-        get: operations["listCreatorChannelsV3"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/plan/info": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Creator Sub Info Public
-         * @description Retrieve detailed information about a creator's subscription plans and their subscriber count.
-         */
-        get: operations["getCreatorSubInfoPublic"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/edges": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Edges
-         * @deprecated
-         * @description Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement.
-         */
-        get: operations["getEdges"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/faq/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Faq Sections
-         * @description Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML.
-         */
-        get: operations["getFaqSections"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/payment/method/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * List Payment Methods
-         * @description Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform.
-         */
-        get: operations["listPaymentMethods"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/payment/address/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * List Addresses
-         * @description Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators.
-         */
-        get: operations["listAddresses"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/payment/invoice/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * List Invoices
-         * @description Retrieve a list of paid or unpaid subscription invoices for the user.
-         */
-        get: operations["listInvoices"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/socket/connect": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Connect
-         * @description Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection.
-         */
-        post: operations["socketConnect"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/socket/disconnect": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Disconnect
-         * @description Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection.
-         */
-        post: operations["disconnectSocket"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/user/subscriptions": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * List User Subscriptions
-         * @description Retrieve a list of all active subscriptions for the user.
-         */
-        get: operations["listUserSubscriptionsV3"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/user/info": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Info
-         * @description Retrieve more detailed information about one or more users from their identifiers.
-         */
-        get: operations["getUserInfo"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/user/named": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Info By Name
-         * @description Retrieve more detailed information about one or more users from their usernames.
-         */
-        get: operations["getUserInfoByName"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/user/security": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Security
-         * @description Retrieve information about the current security configuration for the user.
-         */
-        get: operations["getSecurity"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/user/ban/status": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * User Creator Ban Status
-         * @description Determine whether or not the user is banned for a given creator.
-         */
-        get: operations["userCreatorBanStatus"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/user/activity": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Activity Feed
-         * @description Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators.
-         */
-        get: operations["getActivityFeedV3"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/user/links": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get External Links
-         * @description Retrieve configured social media links from a user's profile.
-         */
-        get: operations["getExternalLinksV3"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/user/self": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Self
-         * @description Retrieve more detailed information about the user, including their name and email.
-         */
-        get: operations["getSelf"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/user/notification/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get User Notification Settings
-         * @description Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator.
-         */
-        get: operations["getUserNotificationSettingsV3"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/user/notification/update": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Update User Notification Settings
-         * @description Enable or disable email or push notifications for a specific creator.
-         */
-        post: operations["updateUserNotificationSettingsV3"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/comment": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Comments
-         * @description Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded.
-         */
-        get: operations["getComments"];
-        put?: never;
-        /**
-         * Post Comment
-         * @description Post a new comment to a blog post object.
-         */
-        post: operations["postComment"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/comment/replies": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Comment Replies
-         * @description Retrieve more replies from a comment.
-         */
-        get: operations["getCommentReplies"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/comment/like": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Like Comment
-         * @description Like a comment on a blog post.
-         */
-        post: operations["likeComment"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/comment/dislike": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Dislike Comment
-         * @description Dislike a comment on a blog post.
-         */
-        post: operations["dislikeComment"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/creator": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Creator Blog Posts
-         * @description Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
-         *
-         *     Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
-         */
-        get: operations["getCreatorBlogPosts"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/creator/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Multi Creator Blog Posts
-         * @description Retrieve paginated blog posts from multiple creators for the home page.
-         *
-         *     Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
-         */
-        get: operations["getMultiCreatorBlogPosts"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/tags": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Content Tags
-         * @description Retrieve all tags and the number of times the tags have been used for the specified creator(s).
-         */
-        get: operations["getContentTags"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/post": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Blog Post
-         * @description Retrieve more details on a specific blog post object for viewing.
-         */
-        get: operations["getBlogPost"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/related": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Related Blog Posts
-         * @description Retrieve a list of blog posts that are related to the post being viewed.
-         */
-        get: operations["getRelatedBlogPosts"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/video": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Video Content
-         * @description Retrieve more information on a video attachment from a blog post in order to consume the video content.
-         */
-        get: operations["getVideoContent"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/picture": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get Picture Content
-         * @description Retrieve more information on a picture attachment from a blog post in order to consume the picture content.
-         */
-        get: operations["getPictureContent"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/like": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Like Content
-         * @description Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed.
-         */
-        post: operations["likeContent"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/dislike": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Dislike Content
-         * @description Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed.
-         */
-        post: operations["dislikeContent"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/progress": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Update Progress
-         * @description Update the watch progress on a piece of media (usually video or audio), stored as the number of seconds in the media.
-         */
-        post: operations["updateProgress"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/content/get/progress": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Get Progress
-         * @description Batch retrieval of watch progress values for blog posts. This API is useful for showing progress of a list of blog posts shown on the screen to the user. When retrieving a list of blog posts, the media attachments only include the identifier; when retrieving full details of a blog post, the attachments include more information, but still fail to return the progress of the media. Only when pulling the full video/audio content does the progress get included in the response. Thus, the recommended approach is to pull paginated results of blog posts first, as usual, and then to call this endpoint to retrieve progress values for each blog post to show in some capacity, usually on the thumbnail as a progress bar on the bottom.
-         *
-         *     Note that the progress values returned in this endpoint are different from the update progress endpoint and the values returned in video/audio attachments. While the latter are measured in seconds, this endpoint returns progress as a percentage of the media's total duration. It is presumed that the progress returned is from the first attachment in the blog post's `attachmentOrder` that is either a video or audio attachment. Because this returns progress as an integer percentage (0 to 100), it is not recommended to use this particular value for jumping to a timestamp in the media when resuming playback, as the rounded number may be off by plus/minus several seconds in actual playback. Use the actual attachment progress, measured in seconds, instead.
-         */
-        post: operations["getProgress"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/poll/live/joinroom": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Poll Join Live Room
-         * @description Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection.
-         */
-        post: operations["joinLiveRoom"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/poll/live/leaveLiveRoom": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Poll Leave Live Room
-         * @description Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection.
-         */
-        post: operations["leaveLiveRoom"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/poll/votePoll": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Vote Poll
-         * @description Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error.
-         */
-        post: operations["votePoll"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/redirect-yt-latest/{channelKey}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * Redirect to YouTube Latest Video
-         * @description Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code.
-         */
-        post: operations["redirectYTLatest"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v3/user/loyaltyreward/list": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /**
-         * List Creator Loyalty Reward
-         * @description Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown.
-         */
-        post: operations["listCreatorLoyaltyReward"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
+	"/api/v2/auth/login": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Login
+		 * @description Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests.
+		 */
+		post: operations["login"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/auth/logout": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Logout
+		 * @description Log out of Floatplane, invalidating the authentication/authorization cookie.
+		 */
+		post: operations["logout"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/auth/checkFor2faLogin": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Check For 2FA Login
+		 * @description Complete the login process if a two-factor authentication token is required from the beginning of the login process.
+		 */
+		post: operations["checkFor2faLogin"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/auth/captcha/info": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Captcha Info
+		 * @description Gets the site keys used for Google Recaptcha V2 and V3. These are useful when providing a captcha token when logging in or signing up.
+		 */
+		get: operations["getCaptchaInfo"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/cdn/delivery": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Delivery Info
+		 * @description Given an video/audio attachment identifier, retrieves the information necessary to play, download, or livestream the video/audio at various quality levels.
+		 */
+		get: operations["getDeliveryInfo"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/delivery/info": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Delivery Info
+		 * @description Given an video/audio attachment or livestream identifier, retrieves the information necessary to play, download, or livestream the media at various quality levels.
+		 */
+		get: operations["getDeliveryInfoV3"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/connect/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * List Connections
+		 * @description List the available 3rd party accounts for the user's profile.
+		 */
+		get: operations["listConnections"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/creator/info": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Info
+		 * @description Retrieve detailed information on one or more creators on Floatplane.
+		 */
+		get: operations["getInfo"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/creator/named": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Info By Name
+		 * @description Retrieve detailed information on one or more creators on Floatplane.
+		 */
+		get: operations["getCreatorInfoByName"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/creator/info": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Creator
+		 * @description Retrieve detailed information about a specific creator.
+		 */
+		get: operations["getCreator"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/creator/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Creators
+		 * @description Retrieve and search for all creators on Floatplane. Useful for creator discovery and filtering.
+		 */
+		get: operations["getCreators"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/creator/named": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Creator By Name
+		 * @description Retrieve detailed information on one or more creators on Floatplane.
+		 */
+		get: operations["getCreatorByName"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/creator/channels/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * List Creator Channels
+		 * @description Retrieves a list of channels within the given creator(s).
+		 */
+		get: operations["listCreatorChannelsV3"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/plan/info": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Creator Sub Info Public
+		 * @description Retrieve detailed information about a creator's subscription plans and their subscriber count.
+		 */
+		get: operations["getCreatorSubInfoPublic"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/edges": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Edges
+		 * @deprecated
+		 * @description Retrieve a list of edge servers from which to stream or download videos. This is deprecated, and using the CDN endpoint is recommended as a replacement.
+		 */
+		get: operations["getEdges"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/faq/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Faq Sections
+		 * @description Retrieve a list of FAQ sections to display to the user. Each section contains one or more FAQ items. This is normally accessible from https://www.floatplane.com/support. Note that the answers to the FAQs will contain HTML.
+		 */
+		get: operations["getFaqSections"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/payment/method/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * List Payment Methods
+		 * @description Retrieve a list of saved payment methods for the user's account. Payment methods are how the user can pay for their subscription to creators on the platform.
+		 */
+		get: operations["listPaymentMethods"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/payment/address/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * List Addresses
+		 * @description Retrieve a list of billing addresses saved to the user's account, to be used in conjunction with a payment method when purchasing subscriptions to creators.
+		 */
+		get: operations["listAddresses"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/payment/invoice/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * List Invoices
+		 * @description Retrieve a list of paid or unpaid subscription invoices for the user.
+		 */
+		get: operations["listInvoices"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/socket/connect": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Connect
+		 * @description Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection.
+		 */
+		post: operations["socketConnect"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/socket/disconnect": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Disconnect
+		 * @description Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection.
+		 */
+		post: operations["disconnectSocket"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/user/subscriptions": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * List User Subscriptions
+		 * @description Retrieve a list of all active subscriptions for the user.
+		 */
+		get: operations["listUserSubscriptionsV3"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/user/info": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Info
+		 * @description Retrieve more detailed information about one or more users from their identifiers.
+		 */
+		get: operations["getUserInfo"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/user/named": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Info By Name
+		 * @description Retrieve more detailed information about one or more users from their usernames.
+		 */
+		get: operations["getUserInfoByName"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/user/security": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Security
+		 * @description Retrieve information about the current security configuration for the user.
+		 */
+		get: operations["getSecurity"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v2/user/ban/status": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * User Creator Ban Status
+		 * @description Determine whether or not the user is banned for a given creator.
+		 */
+		get: operations["userCreatorBanStatus"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/user/activity": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Activity Feed
+		 * @description Retrieve recent activity for a user, such as comments and other interactions they have made on posts for creators.
+		 */
+		get: operations["getActivityFeedV3"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/user/links": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get External Links
+		 * @description Retrieve configured social media links from a user's profile.
+		 */
+		get: operations["getExternalLinksV3"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/user/self": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Self
+		 * @description Retrieve more detailed information about the user, including their name and email.
+		 */
+		get: operations["getSelf"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/user/notification/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get User Notification Settings
+		 * @description Retrieve notification details for a user. The details are split into seperate settings for each subscribed creator.
+		 */
+		get: operations["getUserNotificationSettingsV3"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/user/notification/update": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Update User Notification Settings
+		 * @description Enable or disable email or push notifications for a specific creator.
+		 */
+		post: operations["updateUserNotificationSettingsV3"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/comment": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Comments
+		 * @description Get comments for a blog post object. Note that replies to each comment tend to be limited to 3. The extra replies can be retrieved via `getCommentReplies`. The difference in `$response.body#/0/totalReplies` and `$response.body#/0/replies`'s length can determine if more comments need to be loaded.
+		 */
+		get: operations["getComments"];
+		put?: never;
+		/**
+		 * Post Comment
+		 * @description Post a new comment to a blog post object.
+		 */
+		post: operations["postComment"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/comment/replies": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Comment Replies
+		 * @description Retrieve more replies from a comment.
+		 */
+		get: operations["getCommentReplies"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/comment/like": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Like Comment
+		 * @description Like a comment on a blog post.
+		 */
+		post: operations["likeComment"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/comment/dislike": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Dislike Comment
+		 * @description Dislike a comment on a blog post.
+		 */
+		post: operations["dislikeComment"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/creator": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Creator Blog Posts
+		 * @description Retrieve a paginated list of blog posts from a creator. Or search for blog posts from a creator.
+		 *
+		 *     Example query: https://www.floatplane.com/api/v3/content/creator?id=59f94c0bdd241b70349eb72b&fromDate=2021-07-24T07:00:00.001Z&toDate=2022-07-27T06:59:59.099Z&hasVideo=true&hasAudio=true&hasPicture=false&hasText=false&fromDuration=1020&toDuration=9900&sort=DESC&search=thor&tags[0]=tjm
+		 */
+		get: operations["getCreatorBlogPosts"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/creator/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Multi Creator Blog Posts
+		 * @description Retrieve paginated blog posts from multiple creators for the home page.
+		 *
+		 *     Example query: https://www.floatplane.com/api/v3/content/creator/list?ids[0]=59f94c0bdd241b70349eb72b&limit=20&fetchAfter[0][creatorId]=59f94c0bdd241b70349eb72b&fetchAfter[0][blogPostId]=B4WsyLnybS&fetchAfter[0][moreFetchable]=true
+		 */
+		get: operations["getMultiCreatorBlogPosts"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/tags": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Content Tags
+		 * @description Retrieve all tags and the number of times the tags have been used for the specified creator(s).
+		 */
+		get: operations["getContentTags"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/post": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Blog Post
+		 * @description Retrieve more details on a specific blog post object for viewing.
+		 */
+		get: operations["getBlogPost"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/related": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Related Blog Posts
+		 * @description Retrieve a list of blog posts that are related to the post being viewed.
+		 */
+		get: operations["getRelatedBlogPosts"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/video": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Video Content
+		 * @description Retrieve more information on a video attachment from a blog post in order to consume the video content.
+		 */
+		get: operations["getVideoContent"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/picture": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		/**
+		 * Get Picture Content
+		 * @description Retrieve more information on a picture attachment from a blog post in order to consume the picture content.
+		 */
+		get: operations["getPictureContent"];
+		put?: never;
+		post?: never;
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/like": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Like Content
+		 * @description Toggles the like status on a piece of content. If disliked before, it will turn into a like. If liked before, the like will be removed.
+		 */
+		post: operations["likeContent"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/dislike": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Dislike Content
+		 * @description Toggles the dislike status on a piece of content. If liked before, it will turn into a dislike. If disliked before, the dislike will be removed.
+		 */
+		post: operations["dislikeContent"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/progress": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Update Progress
+		 * @description Update the watch progress on a piece of media (usually video or audio), stored as the number of seconds in the media.
+		 */
+		post: operations["updateProgress"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/content/get/progress": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Get Progress
+		 * @description Batch retrieval of watch progress values for blog posts. This API is useful for showing progress of a list of blog posts shown on the screen to the user. When retrieving a list of blog posts, the media attachments only include the identifier; when retrieving full details of a blog post, the attachments include more information, but still fail to return the progress of the media. Only when pulling the full video/audio content does the progress get included in the response. Thus, the recommended approach is to pull paginated results of blog posts first, as usual, and then to call this endpoint to retrieve progress values for each blog post to show in some capacity, usually on the thumbnail as a progress bar on the bottom.
+		 *
+		 *     Note that the progress values returned in this endpoint are different from the update progress endpoint and the values returned in video/audio attachments. While the latter are measured in seconds, this endpoint returns progress as a percentage of the media's total duration. It is presumed that the progress returned is from the first attachment in the blog post's `attachmentOrder` that is either a video or audio attachment. Because this returns progress as an integer percentage (0 to 100), it is not recommended to use this particular value for jumping to a timestamp in the media when resuming playback, as the rounded number may be off by plus/minus several seconds in actual playback. Use the actual attachment progress, measured in seconds, instead.
+		 */
+		post: operations["getProgress"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/poll/live/joinroom": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Poll Join Live Room
+		 * @description Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection.
+		 */
+		post: operations["joinLiveRoom"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/poll/live/leaveLiveRoom": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Poll Leave Live Room
+		 * @description Used in Socket.IO/WebSocket connections. See the AsyncAPI documentation for more information. This should not be used on a raw HTTP connection.
+		 */
+		post: operations["leaveLiveRoom"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/poll/votePoll": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Vote Poll
+		 * @description Vote on an option of a poll. Voting a second time or attempting to change a choice may result in an error.
+		 */
+		post: operations["votePoll"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/redirect-yt-latest/{channelKey}": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * Redirect to YouTube Latest Video
+		 * @description Redirects (HTTP 302) the user to the latest LMG video for a given LMG channel key. For example, visiting this URL with a `channelKey` of `sc`, it will take you directly to the latest Short Circuit video on YouTube. Unknown if this works for non-LMG creators for their channels. Not used in Floatplane code.
+		 */
+		post: operations["redirectYTLatest"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
+	"/api/v3/user/loyaltyreward/list": {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		get?: never;
+		put?: never;
+		/**
+		 * List Creator Loyalty Reward
+		 * @description Retrieve a list of loyalty rewards for the user. The reason for why this is a POST and not a GET is unknown.
+		 */
+		post: operations["listCreatorLoyaltyReward"];
+		delete?: never;
+		options?: never;
+		head?: never;
+		patch?: never;
+		trace?: never;
+	};
 }
 export type webhooks = Record<string, never>;
 export interface components {
-    schemas: {
-        AuthLoginV2Request: {
-            username: string;
-            password: string;
-            /** @description The Google Recaptcha v2/v3 token to verify the request. On web browsers, this is required. For mobile or TV applications, this is not required only if the User-Agent indicates so (e.g., if the User-Agent contains "CFNetwork" in its value). Otherwise, the application would have to supply a valid captcha token, which can be difficult to obtain dynamically in some scenarios. In this case, this should be undefined (no key), not null. */
-            captchaToken?: string;
-        };
-        AuthLoginV2Response: {
-            /** @description Identifying information about the new-logged-in user upon success. May be undefined when `needs2FA` is `true`. */
-            user?: components["schemas"]["UserModel"];
-            /** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
-            needs2FA: boolean;
-        };
-        CheckFor2faLoginRequest: {
-            /** @description The two-factor authentication token that the user inputs to complete the login process. */
-            token: string;
-        };
-        /** @description Represents a quality of video to download/stream. */
-        CdnDeliveryV2QualityLevelModel: {
-            /** @description Used to identify this level of quality, and to refer to the `qualityLevelParams` object below by the property key. */
-            name: string;
-            /** @description The video quality's resolution's width in pixels. */
-            width?: number | null;
-            /** @description The video quality resolution's height in pixels. */
-            height?: number | null;
-            /** @description The display-friendly version of `name`. */
-            label: string;
-            /** @description The display order to be shown to the user. */
-            order: number;
-            mimeType?: string | null;
-            codecs?: string | null;
-        };
-        CdnDeliveryV2ResourceModel: {
-            /** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property, depending on chosen resolution. First, choose the `qualityLevel`, then use the given token from the `qualityLevelParam` for that `qualityLevel`'s `name`. */
-            uri: string;
-            data: {
-                qualityLevels?: components["schemas"]["CdnDeliveryV2QualityLevelModel"][];
-                /** @description For each `qualityLevel` above, there will be an entry in this map where the property name matches the `qulityLevel[].name` containing a token to apply to the URL. */
-                qualityLevelParams?: {
-                    [key: string]: unknown;
-                } | null;
-            } & {
-                [key: string]: unknown;
-            };
-        };
-        CdnDeliveryV2VodLivestreamResponse: {
-            /**
-             * Format: uri
-             * @description The domain of the CDN server to use. Combine with data from the `resource` object to create a full URL.
-             */
-            cdn: string;
-            /**
-             * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
-             * @enum {string}
-             */
-            strategy: "cdn" | "client";
-            resource: components["schemas"]["CdnDeliveryV2ResourceModel"];
-        };
-        CdnDeliveryV2DownloadResponse: components["schemas"]["EdgesModel"] & {
-            /**
-             * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
-             * @enum {string}
-             */
-            strategy: "cdn" | "client";
-            resource: components["schemas"]["CdnDeliveryV2ResourceModel"];
-        };
-        CdnDeliveryV2Response: components["schemas"]["CdnDeliveryV2VodLivestreamResponse"] | components["schemas"]["CdnDeliveryV2DownloadResponse"];
-        CdnDeliveryV3Response: {
-            /** @description `groups` may consist of zero or more elements. */
-            groups: components["schemas"]["CdnDeliveryV3Group"][];
-        };
-        /** @description A group is a logical grouping/separation of variants. At this time, there are no examples of more than one group in a response. */
-        CdnDeliveryV3Group: {
-            /** @description If `origins` is present, it will consist of one or more elements. */
-            origins?: components["schemas"]["CdnDeliveryV3Origin"][];
-            /** @description `variants` may consist of zero or more elements. */
-            variants: components["schemas"]["CdnDeliveryV3Variant"][];
-        };
-        /** @description An `origin`, if present, is a choice of base URL or server from which to load a `variant`'s content. If origin(s) exists in a group or variant, then one must be chosen in combination with the variant's `url`. */
-        CdnDeliveryV3Origin: {
-            /**
-             * Format: uri
-             * @description An absolute URL (possibly with trailing slash) which acts as the base of a delivery resource URI. This is always present.
-             */
-            url: string;
-            /**
-             * Format: uri
-             * @description An absolute URL (possibly with trailing slash) which the client can use to query if the origin is active/working. This field may not be present. Perform an HTTP GET on this URL and expect an HTTP 200 in order to trust this origin.
-             */
-            queryUrl?: string;
-            datacenter?: components["schemas"]["EdgeDataCenter"];
-        };
-        /** @description A `variant` represents one variant of a source of media. The most common differenitating factor between variants is video resolution, but there may be more variations based on `isHdr`, codecs, FPS, etc. It's possible that groups of variants may be divided into separate `groups` elements. */
-        CdnDeliveryV3Variant: {
-            /** @description A programmatic name for this variant, for use with uniquely identifying this variant. */
-            name: string;
-            /** @description A display-friendly label for this variant, for use in the UI. */
-            label: string;
-            /** @description A relative *or* absolute URL containing resource information for this variant. Compared to the V2 API, this URL does not contain template information and will not need to be modified before use, other than optionally combining with an origin. This value may contain a trailing slash.
-             *
-             *     If this URL is absolute, it may be used as-is in order to load the media content. If this URL is relative, then it should be combined with an origin base URL. In order of preference: 1) use an origin from this variant object, 2) use an origin from this variant's group object, 3) use `https://floatplane.com`.
-             *
-             *     Do not use an origin from a different group, or from a different variant, as this may result in errors.  */
-            url: string;
-            /** @description If `origins` is present, it will consist of one or more elements. */
-            origins?: components["schemas"]["CdnDeliveryV3Origin"][];
-            /**
-             * Format: int64
-             * @description An optional field prescribing this variant's order in relation to other variants. No guarantees other than being greater than or less than the order of other variants within this group (e.g., order may not be consecutive).
-             */
-            order?: number;
-            /** @description An optional field indicating if this variant is enabled. If this is not enabled, it may be visible to the user, but not selectable. If this field is not present, assume a default value of `false`, for safety. */
-            enabled?: boolean;
-            /** @description An optional field indicating if this variant should be hidden. If hidden, it should not be shown to the user nor considered in any code logic. If this field is not present, assume a default value of `false`. Only truthy values should hide a variant. */
-            hidden?: boolean;
-            meta?: components["schemas"]["CdnDeliveryV3Meta"];
-            /** @description An optional string describing the MIME Type of this media source. */
-            mimeType?: string;
-        };
-        /** @description Metadata information for this variant. Note that most/all child and grandchild properties are not required on purpose. */
-        CdnDeliveryV3Meta: {
-            common?: {
-                /** @description Size of the corresponding media file, measured in bytes. */
-                size?: number;
-                access?: {
-                    /**
-                     * @description - `isMissingPermission`: Indicates that the requester is lacking a required plan or other form of permission entitling on to access the corresponding resource.
-                     *     - `isProcessing`: Indicates that the corresponding resource is processing. Clients may choose to periodically refetch an asset's info when it has reported this state.
-                     *     - `isBroken`: Indicates that the corresponding resource is defective in some manner which has rendered it currently inaccessible. It is possible that the asset will be repaired at some later point in time. Clients may choose to periodically refetch an asset's info when it has reported this state.
-                     * @enum {string}
-                     */
-                    deniedReason?: "isMissingPermission" | "isProcessing" | "isBroken";
-                    /** @description Message describing in human-readable terms why access has been witheld for a resource. */
-                    deniedMessage?: string;
-                };
-            };
-            video?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"] & {
-                /** @description Maximum count of frames presented per second for the video. */
-                fps?: number;
-            } & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
-            audio?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & {
-                /** @description Count of channels carried by the audio stream. */
-                channelCount?: number;
-                /** @description Count of samples recorded per second. */
-                samplerate?: number;
-            } & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
-            image?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"];
-            live?: {
-                /**
-                 * @description - `llhls`: 🍎-backed low-latency HLS extension.
-                 *     - `clhls`: Community-backed low-latency HLS extension.
-                 *     - `ivshls`: IVS custom low-latency HLS extension.
-                 *     - `lldash`: DASH-IF-backed low-Latency DASH extension.
-                 * @enum {string}
-                 */
-                lowLatencyExtension?: "llhls" | "clhls" | "ivshls" | "lldash";
-            };
-        };
-        CdnDeliveryV3MediaIdentityCharacteristics: {
-            /** @description RFC 6381 codec string indicating stream data chunk format. */
-            codec?: string;
-            /** @description RFC 6381 codec string indicating stream format on the most basic level, without the addition of profile/level/etc. information. */
-            codecSimple?: string;
-            /** @description MIME-type for individual stream data chunks (as opposed to a containing playlist). */
-            mimeType?: string;
-        };
-        CdnDeliveryV3ImagePresentationCharacteristics: {
-            /** @description Count of horizontal pixels presented. */
-            width?: number;
-            /** @description Count of vertical pixels presented. */
-            height?: number;
-            /** @description Whether or not this data stream carries HDR content. */
-            isHdr?: boolean;
-        };
-        CdnDeliveryV3MediaBitrateInfo: {
-            bitrate?: {
-                /** @description Maximum bitrate observed for the data stream. */
-                maximum?: number;
-                /** @description Average bitrate observed for the data stream. */
-                average?: number;
-            };
-        };
-        PaymentInvoiceListV2Response: {
-            invoices: {
-                id: number;
-                amountDue: number;
-                amountTax: number;
-                attemptCount: number;
-                currency: string;
-                /** Format: date-time */
-                date: string;
-                /** Format: date-time */
-                dateDue: string | null;
-                /** Format: date-time */
-                periodStart: string;
-                /** Format: date-time */
-                periodEnd: string;
-                /** Format: date-time */
-                nextPaymentAttempt: string | null;
-                paid: boolean;
-                forgiven: boolean;
-                refunded: boolean;
-                /** @description The subscriptions this invoice is in reference to. */
-                subscriptions: {
-                    id: number;
-                    subscription: number;
-                    /** Format: date-time */
-                    periodStart: string | null;
-                    /** Format: date-time */
-                    periodEnd: string | null;
-                    value: number;
-                    amountSubtotal: number;
-                    amountTotal: number;
-                    amountTax: number;
-                    plan: {
-                        id: string;
-                        title: string;
-                        creator: {
-                            id: string;
-                            title: string;
-                            urlname: string;
-                            icon: components["schemas"]["ImageModel"];
-                        };
-                    };
-                }[] | null;
-            }[];
-        };
-        PlanInfoV2Response: {
-            /** @description The total number of subscribers for this creator. */
-            totalSubscriberCount: number | null;
-            /** @description The total amount of monthly income for this creator. This field tends to always be $0 for regular users. */
-            totalIncome: number | null;
-            plans: (components["schemas"]["SubscriptionPlanModel"] & {
-                /** Format: date-time */
-                createdAt: string;
-                /** Format: date-time */
-                updatedAt: string | null;
-                enabled: boolean;
-                paymentID: number | null;
-                trialPeriod: number;
-                creator: string;
-                userIsSubscribed: boolean;
-                userIsGrandfathered?: boolean;
-                enabledGlobal: boolean;
-            })[];
-        };
-        UserInfoV2Response: {
-            users: {
-                id: string;
-                user: components["schemas"]["UserModel"] | components["schemas"]["UserSelfModel"];
-            }[];
-        };
-        UserNamedV2Response: {
-            users: {
-                id: string;
-                user: components["schemas"]["UserModel"] | components["schemas"]["UserSelfModel"];
-            }[];
-        };
-        UserSecurityV2Response: {
-            twofactorEnabled: boolean;
-            twofactorBackupCodeEnabled: boolean;
-        };
-        CommentV3PostRequest: {
-            /** @description The GUID of the blogPost the comment should be posted to. */
-            blogPost: string;
-            /** @description The text of the comment being posted. */
-            text: string;
-        };
-        CommentV3PostResponse: {
-            id: string;
-            blogPost: string;
-            user: components["schemas"]["UserModel"];
-            text: string;
-            replying: string;
-            postDate: string;
-            editDate: string;
-            editCount: number;
-            isEdited: boolean;
-            likes: number;
-            dislikes: number;
-            score: number;
-            interactionCounts: {
-                like: number;
-                dislike: number;
-            };
-        };
-        CommentLikeV3PostRequest: {
-            /** @description The GUID of the comment being liked. */
-            comment: string;
-            /** @description The GUID of the post the comment is on. */
-            blogPost: string;
-        };
-        ContentCreatorListV3Response: {
-            blogPosts: components["schemas"]["BlogPostModelV3"][];
-            /** @description Information about paging: what the last ID retrieve is and if more posts can be retrieved afterward for subsequent requests. */
-            lastElements: components["schemas"]["ContentCreatorListLastItems"][];
-        };
-        ContentCreatorListLastItems: {
-            creatorId: string;
-            /** @description This may be returned as `null` if no blog posts for this creator appeared yet on this page of blog posts. However, Floatplane will complain if this is sent with a `null` value. */
-            blogPostId: string | null;
-            moreFetchable: boolean;
-        };
-        ContentPostV3Response: {
-            id: string;
-            guid: string;
-            title: string;
-            /** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML. */
-            text: string;
-            /** @enum {string} */
-            type: "blogPost";
-            channel: components["schemas"]["ChannelModel"];
-            tags: string[];
-            attachmentOrder: string[];
-            metadata: components["schemas"]["PostMetadataModel"];
-            /** Format: date-time */
-            releaseDate: string;
-            likes: number;
-            dislikes: number;
-            score: number;
-            comments: number;
-            creator: components["schemas"]["CreatorModelV2"];
-            wasReleasedSilently: boolean;
-            thumbnail?: components["schemas"]["ImageModel"] | null;
-            /** @description If false, the post should be marked as locked and not viewable by the user. */
-            isAccessible: boolean;
-            userInteraction: components["schemas"]["UserInteractionModel"];
-            /** @description May be undefined when the post is locked. */
-            videoAttachments?: components["schemas"]["VideoAttachmentModel"][];
-            /** @description May be undefined when the post is locked. */
-            audioAttachments?: components["schemas"]["AudioAttachmentModel"][];
-            /** @description May be undefined when the post is locked. */
-            pictureAttachments?: components["schemas"]["PictureAttachmentModel"][];
-            /** @description May be undefined when the post is locked. */
-            galleryAttachments?: unknown[];
-        };
-        ContentVideoV3Response: {
-            id: string;
-            guid: string;
-            title: string;
-            type: string;
-            description: string;
-            /** Format: date-time */
-            releaseDate: string | null;
-            /** @description Unit: seconds. */
-            duration: number;
-            creator: string;
-            likes: number;
-            dislikes: number;
-            score: number;
-            isProcessing: boolean;
-            primaryBlogPost: string;
-            thumbnail: components["schemas"]["ImageModel"];
-            /** @description If false, the post should be marked as locked and not viewable by the user. */
-            isAccessible: boolean;
-            blogPosts: string[];
-            timelineSprite: components["schemas"]["ImageModel"];
-            /** @description The watch progress of the video, in seconds. If no progress has yet been posted to the video, then this field may not appear. */
-            progress?: number;
-            userInteraction: components["schemas"]["UserInteractionModel"];
-            levels: {
-                name: string;
-                width: number;
-                height: number;
-                label: string;
-                order: number;
-            }[];
-        };
-        ContentPictureV3Response: {
-            id: string;
-            guid: string;
-            title: string;
-            type: string;
-            description: string;
-            likes: number;
-            dislikes: number;
-            score: number;
-            isProcessing: boolean;
-            creator: string;
-            primaryBlogPost: string;
-            userInteraction: components["schemas"]["UserInteractionModel"];
-            thumbnail: components["schemas"]["ImageModel"];
-            /** @description If false, the post should be marked as locked and not viewable by the user. */
-            isAccessible: boolean;
-            imageFiles: components["schemas"]["ImageFileModel"][];
-        };
-        UserActivityV3Response: {
-            activity: {
-                /** Format: date-time */
-                time: string;
-                comment: string;
-                postTitle: string;
-                postId: string;
-                creatorTitle: string;
-                creatorUrl: string;
-            }[];
-            visibility: string;
-        };
-        UserLinksV3Response: {
-            [key: string]: {
-                /**
-                 * Format: uri
-                 * @description The URL the user has configured for this link.
-                 */
-                url: string;
-                type: {
-                    /** @description The code name of this link type. */
-                    name: string;
-                    /** @description The display-friendly name of this link type. */
-                    displayName: string;
-                    /** @description The hostname that should be a part of the URL. */
-                    hostName: string;
-                };
-            };
-        };
-        UserNotificationUpdateV3PostRequest: {
-            creator: string;
-            /**
-             * @description Use `contentEmail` for email notifications, and `contentFirebase` for push notifications.
-             * @enum {string}
-             */
-            property: "contentEmail" | "contentFirebase";
-            newValue: boolean;
-        };
-        UserSelfV3Response: {
-            id: string;
-            username: string;
-            profileImage: components["schemas"]["ImageModel"];
-            email: string;
-            displayName: string;
-            creators: unknown[];
-            /** Format: date-time */
-            scheduledDeletionDate: string | null;
-        };
-        ContentLikeV3Request: {
-            /** @enum {string} */
-            contentType: "blogPost";
-            id: string;
-        };
-        GetCaptchaInfoResponse: {
-            v2: {
-                variants: {
-                    android: {
-                        siteKey: string;
-                    };
-                    checkbox: {
-                        siteKey: string;
-                    };
-                    invisible: {
-                        siteKey: string;
-                    };
-                };
-            };
-            v3: {
-                variants: {
-                    invisible: {
-                        siteKey: string;
-                    };
-                };
-            };
-        };
-        ErrorModel: {
-            id: string;
-            errors: {
-                id: string;
-                name: string;
-                /** @description May be undefined. */
-                message?: string | null;
-                /** @description May be undefined. */
-                data?: {
-                    [key: string]: unknown;
-                } | null;
-            }[];
-            /** @description May be undefined. */
-            message?: string;
-        };
-        PaymentAddressModel: {
-            id: number;
-            customerName: string;
-            postalCode: string;
-            line1: string;
-            city: string;
-            region: string;
-            country: string;
-            default: boolean;
-        };
-        PaymentMethodModel: {
-            id: number;
-            payment_processor: number;
-            default: boolean;
-            card: {
-                brand: string;
-                last4: string;
-                exp_month: number;
-                exp_year: number;
-                name: string;
-            };
-        };
-        CreatorModelV2: {
-            id: string;
-            owner: string;
-            title: string;
-            /** @description Shown in the browser URL, and used in `/creator/named` queries. */
-            urlname: string;
-            description: string;
-            about: string;
-            category: string;
-            cover: components["schemas"]["ImageModel"] | null;
-            icon: components["schemas"]["ImageModel"];
-            liveStream: components["schemas"]["LiveStreamModel"] | null;
-            subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][] | null;
-            discoverable: boolean;
-            subscriberCountDisplay: string;
-            incomeDisplay: boolean;
-            defaultChannel?: string;
-        };
-        CreatorModelV2Extended: components["schemas"]["CreatorModelV2"] & {
-            socialLinks: components["schemas"]["SocialLinksModel"];
-            discordServers: components["schemas"]["DiscordServerModel"][];
-        };
-        CreatorModelV3: {
-            id: string;
-            owner: string | {
-                id: string;
-                username: string;
-            };
-            title: string;
-            /** @description Shown in the browser URL, and used in `/creator/named` queries. */
-            urlname: string;
-            description: string;
-            about: string;
-            category: {
-                id: string;
-                title: string;
-            };
-            cover: components["schemas"]["ImageModel"] | null;
-            icon: components["schemas"]["ImageModel"];
-            liveStream: components["schemas"]["LiveStreamModel"] | null;
-            subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][] | null;
-            discoverable: boolean;
-            subscriberCountDisplay: string;
-            incomeDisplay: boolean;
-            defaultChannel: string;
-            socialLinks: components["schemas"]["SocialLinksModel"];
-            channels: components["schemas"]["ChannelModel"][];
-            /** @description Present in `/creator/named` queries */
-            discordServers?: components["schemas"]["DiscordServerModel"][];
-            card?: components["schemas"]["ImageModel"];
-        };
-        ChannelModel: {
-            id: string;
-            creator: string;
-            title: string;
-            /** @description Shown in the browser URL. */
-            urlname: string;
-            about: string;
-            order?: number;
-            cover: components["schemas"]["ImageModel"] | null;
-            card: components["schemas"]["ImageModel"] | null;
-            icon: components["schemas"]["ImageModel"];
-            socialLinks?: components["schemas"]["SocialLinksModel"];
-        };
-        BlogPostModelV3: {
-            id: string;
-            guid: string;
-            title: string;
-            /** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML.. */
-            text: string;
-            /** @enum {string} */
-            type: "blogPost";
-            channel: components["schemas"]["ChannelModel"] | string;
-            tags: string[];
-            attachmentOrder: string[];
-            metadata: components["schemas"]["PostMetadataModel"];
-            /** Format: date-time */
-            releaseDate: string;
-            likes: number;
-            dislikes: number;
-            score: number;
-            comments: number;
-            creator: {
-                id: string;
-                owner: {
-                    id: string;
-                    username: string;
-                };
-                title: string;
-                /** @description Shown in the browser URL, and used in `/creator/named` queries. */
-                urlname: string;
-                description: string;
-                about: string;
-                category: {
-                    id: string;
-                    title: string;
-                };
-                cover: components["schemas"]["ImageModel"] | null;
-                icon: components["schemas"]["ImageModel"];
-                liveStream: components["schemas"]["LiveStreamModel"] | null;
-                subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][];
-                discoverable: boolean;
-                subscriberCountDisplay: string;
-                incomeDisplay: boolean;
-                defaultChannel?: string;
-                channels?: string[];
-                card?: components["schemas"]["ImageModel"] | null;
-            };
-            wasReleasedSilently: boolean;
-            thumbnail?: components["schemas"]["ImageModel"] | null;
-            /** @description If false, the post should be marked as locked and not viewable by the user. */
-            isAccessible: boolean;
-            /** @description May be undefined, usually when `isAccessible` is `false`. */
-            videoAttachments?: string[];
-            /** @description May be undefined, usually when `isAccessible` is `false`. */
-            audioAttachments?: string[];
-            /** @description May be undefined, usually when `isAccessible` is `false`. */
-            pictureAttachments?: string[];
-            /** @description May be undefined, usually when `isAccessible` is `false`. */
-            galleryAttachments?: string[];
-        };
-        SubscriptionPlanModel: {
-            id: string;
-            title: string;
-            description: string;
-            price: string | null;
-            priceYearly: string | null;
-            currency: string;
-            logo: string | null;
-            interval: string;
-            featured: boolean;
-            allowGrandfatheredAccess?: boolean | null;
-            discordServers: components["schemas"]["DiscordServerModel"][];
-            discordRoles: components["schemas"]["DiscordRoleModel"][];
-        };
-        PostMetadataModel: {
-            hasVideo: boolean;
-            videoCount?: number;
-            videoDuration: number;
-            hasAudio: boolean;
-            audioCount?: number;
-            audioDuration: number;
-            hasPicture: boolean;
-            pictureCount?: number;
-            hasGallery?: boolean;
-            galleryCount?: number;
-            isFeatured: boolean;
-        };
-        VideoAttachmentModel: {
-            id: string;
-            guid: string;
-            title: string;
-            type: string;
-            description: string;
-            /** Format: date-time */
-            releaseDate: string | null;
-            duration: number;
-            creator: string;
-            likes: number;
-            dislikes: number;
-            score: number;
-            isProcessing: boolean;
-            primaryBlogPost: string;
-            thumbnail: components["schemas"]["ImageModel"];
-            /** @description If false, the post should be marked as locked and not viewable by the user. */
-            isAccessible: boolean;
-        };
-        PictureAttachmentModel: {
-            id: string;
-            guid: string;
-            title: string;
-            type: string;
-            description: string;
-            likes: number;
-            dislikes: number;
-            score: number;
-            isProcessing: boolean;
-            creator: string;
-            primaryBlogPost: string;
-            thumbnail: components["schemas"]["ImageModel"];
-            /** @description If false, the post should be marked as locked and not viewable by the user. */
-            isAccessible: boolean;
-        };
-        AudioAttachmentModel: {
-            id: string;
-            guid: string;
-            title: string;
-            type: string;
-            description: string;
-            duration: number;
-            waveform: {
-                dataSetLength: number;
-                highestValue: number;
-                lowestValue: number;
-                data: number[];
-            };
-            creator: string;
-            likes: number;
-            dislikes: number;
-            score: number;
-            isProcessing: boolean;
-            primaryBlogPost: string;
-            /** @description If false, the post should be marked as locked and not viewable by the user. */
-            isAccessible: boolean;
-        };
-        ImageModel: {
-            width: number;
-            height: number;
-            /** Format: uri */
-            path: string;
-            childImages: components["schemas"]["ChildImageModel"][] | null;
-        };
-        ChildImageModel: {
-            width: number;
-            height: number;
-            /** Format: uri */
-            path: string;
-        };
-        ImageFileModel: {
-            /** Format: uri */
-            path: string;
-            width: number;
-            height: number;
-            size: number;
-        };
-        LiveStreamModel: {
-            id: string;
-            title: string;
-            description: string;
-            thumbnail: components["schemas"]["ImageModel"] | null;
-            owner: string;
-            /** @description The creator channel this livestream belongs to. */
-            channel?: string;
-            streamPath: string;
-            offline: {
-                title: string | null;
-                description: string | null;
-                thumbnail: components["schemas"]["ImageModel"] | null;
-            };
-        };
-        SocialLinksModel: {
-            [key: string]: string;
-        };
-        DiscordServerModel: {
-            id: string;
-            guildName: string;
-            guildIcon: string;
-            /** Format: uri */
-            inviteLink: string | null;
-            inviteMode: string;
-        };
-        DiscordRoleModel: {
-            server: string;
-            roleName: string;
-        };
-        /** @description Represents some basic information of a user (id, username, and profile image). */
-        UserModel: {
-            id: string;
-            username: string;
-            profileImage: components["schemas"]["ImageModel"];
-        };
-        UserSelfModel: {
-            id: string;
-            username: string;
-            profileImage: components["schemas"]["ImageModel"];
-            email: string;
-            displayName: string;
-        };
-        ConnectedAccountModel: {
-            /** @description Unique identifier for the account type. */
-            key: string;
-            /** @description Display-friendly label for the `key`. */
-            name: string;
-            /** @description Determines if the system allows this account to be connected to. */
-            enabled: boolean;
-            iconWhite: string;
-            connectedAccount: {
-                id: string;
-                remoteUserId: string;
-                remoteUserName: string;
-                data: {
-                    canJoinGuilds: boolean;
-                } | null;
-            } | null;
-            /** @description If true, the user is connected and the `connectedAccount` will have data about the account. */
-            connected: boolean;
-            isAccountProvider: boolean;
-        };
-        CommentModel: {
-            id: string;
-            blogPost: string;
-            user: components["schemas"]["UserModel"];
-            text: string;
-            replying: string | null;
-            /** Format: date-time */
-            postDate: string;
-            /** Format: date-time */
-            editDate: string | null;
-            /** Format: date-time */
-            pinDate?: string | null;
-            editCount: number;
-            isEdited: boolean;
-            likes: number;
-            dislikes: number;
-            score: number;
-            interactionCounts: {
-                like: number;
-                dislike: number;
-            };
-            totalReplies?: number;
-            /** @description This is present (but possibly empty) for top-level comments. This is never present for reply comments. */
-            replies?: components["schemas"]["CommentModel"][];
-            userInteraction: components["schemas"]["UserInteractionModel"];
-        };
-        UserNotificationModel: {
-            creator: components["schemas"]["CreatorModelV2"];
-            userNotificationSetting: {
-                /** Format: date-time */
-                createdAt?: string;
-                /** Format: date-time */
-                updatedAt?: string | null;
-                id?: string;
-                contentEmail: boolean;
-                contentFirebase: boolean;
-                creatorMessageEmail: boolean;
-                user: string;
-                creator: string;
-            };
-        };
-        UserSubscriptionModel: {
-            /** Format: date-time */
-            startDate: string | null;
-            /** Format: date-time */
-            endDate: string | null;
-            paymentID: number | null;
-            interval: string;
-            paymentCancelled?: boolean;
-            plan: components["schemas"]["SubscriptionPlanModel"];
-            creator: string;
-        };
-        FaqSectionModel: {
-            faqs: {
-                /** Format: date-time */
-                createdAt: string;
-                /** Format: date-time */
-                updatedAt: string | null;
-                id: string;
-                question: string;
-                /** @description This field may contain HTML that should be rendered. */
-                answer: string;
-                /** @enum {string} */
-                status: "public";
-                link: string;
-                order: number;
-                faqSection: string;
-            }[];
-            /** Format: date-time */
-            createdAt: string;
-            /** Format: date-time */
-            updatedAt: string | null;
-            id: string;
-            name: string;
-            description: string;
-            /** @enum {string} */
-            status: "public";
-            order: number;
-        };
-        UserInteractionModel: ("like" | "dislike")[] | null;
-        EdgesModel: {
-            edges: components["schemas"]["EdgeModel"][];
-            client: {
-                [key: string]: unknown;
-            };
-        };
-        EdgeModel: {
-            hostname: string;
-            queryPort: number;
-            /** Format: int64 */
-            bandwidth: number;
-            allowDownload: boolean;
-            allowStreaming: boolean;
-            datacenter: components["schemas"]["EdgeDataCenter"];
-        };
-        /** @description Location information for a datacenter. Not required. */
-        EdgeDataCenter: {
-            countryCode: string;
-            regionCode: string;
-            latitude: number;
-            longitude: number;
-        };
-        UpdateProgressRequest: {
-            /** @description The video or audio attachment identifier for the piece of media that is being updated. Note: this is *not* the blogPost identifier. */
-            id: string;
-            /**
-             * @description Which type of media the corresponding identifier is.
-             * @enum {string}
-             */
-            contentType: "video" | "audio";
-            /** @description The progress through the media that has been consumed by the user, in seconds. */
-            progress: number;
-        };
-        GetProgressRequest: {
-            /** @description The identifiers of the blog posts from which progress should be retrieved. */
-            ids: string[];
-            /**
-             * @description The type of the corresponding identifiers. The only value currently is `blogPost`.
-             * @enum {string}
-             */
-            contentType: "blogPost";
-        };
-        /** @description A list of objects containing progress values for the requested identifiers. If no progress has been posted to an identifier, it may either not appear in the resulting list, or appear with a progress of `0`. */
-        GetProgressResponse: {
-            id: string;
-            /** @description Percentage of the blog post's media that has been consumed so far. Ranges from 0 to 100. */
-            progress: number;
-        }[];
-    };
-    responses: {
-        /** @description Bad Request - The request has errors and the server did not process it. */
-        "400BadRequest": {
-            headers: {
-                [name: string]: unknown;
-            };
-            content: {
-                /** @example {
-                 *       "id": "awoz-3s5g-6amf",
-                 *       "errors": [
-                 *         {
-                 *           "id": "9edc-zejt-n3hb",
-                 *           "name": "paramValidationError",
-                 *           "message": "\"captchaToken\" must be an object",
-                 *           "data": {
-                 *             "rule": "object.base"
-                 *           }
-                 *         }
-                 *       ],
-                 *       "message": "\"captchaToken\" must be an object"
-                 *     } */
-                "application/json": components["schemas"]["ErrorModel"];
-            };
-        };
-        /** @description Unauthenticated - The request was not authenticated to make the request. */
-        "401Unauthenticated": {
-            headers: {
-                [name: string]: unknown;
-            };
-            content: {
-                /** @example {
-                 *       "id": "erng-ah8e-n0d3",
-                 *       "errors": [
-                 *         {
-                 *           "id": "erng-ah8e-n0d3",
-                 *           "name": "notLoggedInError",
-                 *           "message": "You must be logged-in to access this resource."
-                 *         }
-                 *       ],
-                 *       "message": "You must be logged-in to access this resource."
-                 *     } */
-                "application/json": components["schemas"]["ErrorModel"];
-            };
-        };
-        /** @description Forbidden - The request was not authenticated to make the request. */
-        "403Forbidden": {
-            headers: {
-                [name: string]: unknown;
-            };
-            content: {
-                /** @example {
-                 *       "id": "f4ec-orux-hds2",
-                 *       "errors": [
-                 *         {
-                 *           "id": "f4ec-orux-hds2",
-                 *           "name": "missingAchievementError",
-                 *           "message": "You lack one or more of the required achievements needed to access the requested resource.",
-                 *           "data": {
-                 *             "requiresAllOfAchievement": [
-                 *               {
-                 *                 "id": "6157853e479315db795f7296",
-                 *                 "title": "FloatVPN Alpha",
-                 *                 "startDate": null,
-                 *                 "endDate": null,
-                 *                 "icon": null
-                 *               }
-                 *             ]
-                 *           }
-                 *         }
-                 *       ],
-                 *       "message": "You lack one or more of the required achievements needed to access the requested resource."
-                 *     } */
-                "application/json": components["schemas"]["ErrorModel"];
-                "text/html": string;
-            };
-        };
-        /** @description Not Found - The resource was not found. */
-        "404NotFound": {
-            headers: {
-                [name: string]: unknown;
-            };
-            content: {
-                /** @example {
-                 *       "id": "f4ec-orux-hds2",
-                 *       "errors": [
-                 *         {
-                 *           "id": "f4ec-orux-hds2",
-                 *           "name": "notFoundError"
-                 *         }
-                 *       ]
-                 *     } */
-                "application/json": components["schemas"]["ErrorModel"];
-            };
-        };
-        /** @description Too Many Requests - The resource was requested too many times */
-        "429TooManyRequests": {
-            headers: {
-                /** @description The number of seconds the client must wait until future requests will respond normally. */
-                "Retry-After"?: number;
-                [name: string]: unknown;
-            };
-            content?: never;
-        };
-        /** @description Unexpected response code */
-        Unexpected: {
-            headers: {
-                [name: string]: unknown;
-            };
-            content: {
-                /** @example {
-                 *       "id": "awoz-3s5g-6amf",
-                 *       "errors": [
-                 *         {
-                 *           "id": "9edc-zejt-n3hb",
-                 *           "name": "paramValidationError",
-                 *           "message": "\"captchaToken\" must be an object",
-                 *           "data": {
-                 *             "rule": "object.base"
-                 *           }
-                 *         }
-                 *       ],
-                 *       "message": "\"captchaToken\" must be an object"
-                 *     } */
-                "application/json": components["schemas"]["ErrorModel"];
-            };
-        };
-    };
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
+	schemas: {
+		AuthLoginV2Request: {
+			username: string;
+			password: string;
+			/** @description The Google Recaptcha v2/v3 token to verify the request. On web browsers, this is required. For mobile or TV applications, this is not required only if the User-Agent indicates so (e.g., if the User-Agent contains "CFNetwork" in its value). Otherwise, the application would have to supply a valid captcha token, which can be difficult to obtain dynamically in some scenarios. In this case, this should be undefined (no key), not null. */
+			captchaToken?: string;
+		};
+		AuthLoginV2Response: {
+			/** @description Identifying information about the new-logged-in user upon success. May be undefined when `needs2FA` is `true`. */
+			user?: components["schemas"]["UserModel"];
+			/** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
+			needs2FA: boolean;
+		};
+		CheckFor2faLoginRequest: {
+			/** @description The two-factor authentication token that the user inputs to complete the login process. */
+			token: string;
+		};
+		/** @description Represents a quality of video to download/stream. */
+		CdnDeliveryV2QualityLevelModel: {
+			/** @description Used to identify this level of quality, and to refer to the `qualityLevelParams` object below by the property key. */
+			name: string;
+			/** @description The video quality's resolution's width in pixels. */
+			width?: number | null;
+			/** @description The video quality resolution's height in pixels. */
+			height?: number | null;
+			/** @description The display-friendly version of `name`. */
+			label: string;
+			/** @description The display order to be shown to the user. */
+			order: number;
+			mimeType?: string | null;
+			codecs?: string | null;
+		};
+		CdnDeliveryV2ResourceModel: {
+			/** @description The path to attach to the `cdn` property above. Replace the items surrounded by curly braces (`{`, `}`) with the appropriate values from the `data` property, depending on chosen resolution. First, choose the `qualityLevel`, then use the given token from the `qualityLevelParam` for that `qualityLevel`'s `name`. */
+			uri: string;
+			data: {
+				qualityLevels?: components["schemas"]["CdnDeliveryV2QualityLevelModel"][];
+				/** @description For each `qualityLevel` above, there will be an entry in this map where the property name matches the `qulityLevel[].name` containing a token to apply to the URL. */
+				qualityLevelParams?: {
+					[key: string]: unknown;
+				} | null;
+			} & {
+				[key: string]: unknown;
+			};
+		};
+		CdnDeliveryV2VodLivestreamResponse: {
+			/**
+			 * Format: uri
+			 * @description The domain of the CDN server to use. Combine with data from the `resource` object to create a full URL.
+			 */
+			cdn: string;
+			/**
+			 * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
+			 * @enum {string}
+			 */
+			strategy: "cdn" | "client";
+			resource: components["schemas"]["CdnDeliveryV2ResourceModel"];
+		};
+		CdnDeliveryV2DownloadResponse: components["schemas"]["EdgesModel"] & {
+			/**
+			 * @description Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream.
+			 * @enum {string}
+			 */
+			strategy: "cdn" | "client";
+			resource: components["schemas"]["CdnDeliveryV2ResourceModel"];
+		};
+		CdnDeliveryV2Response: components["schemas"]["CdnDeliveryV2VodLivestreamResponse"] | components["schemas"]["CdnDeliveryV2DownloadResponse"];
+		CdnDeliveryV3Response: {
+			/** @description `groups` may consist of zero or more elements. */
+			groups: components["schemas"]["CdnDeliveryV3Group"][];
+		};
+		/** @description A group is a logical grouping/separation of variants. At this time, there are no examples of more than one group in a response. */
+		CdnDeliveryV3Group: {
+			/** @description If `origins` is present, it will consist of one or more elements. */
+			origins?: components["schemas"]["CdnDeliveryV3Origin"][];
+			/** @description `variants` may consist of zero or more elements. */
+			variants: components["schemas"]["CdnDeliveryV3Variant"][];
+		};
+		/** @description An `origin`, if present, is a choice of base URL or server from which to load a `variant`'s content. If origin(s) exists in a group or variant, then one must be chosen in combination with the variant's `url`. */
+		CdnDeliveryV3Origin: {
+			/**
+			 * Format: uri
+			 * @description An absolute URL (possibly with trailing slash) which acts as the base of a delivery resource URI. This is always present.
+			 */
+			url: string;
+			/**
+			 * Format: uri
+			 * @description An absolute URL (possibly with trailing slash) which the client can use to query if the origin is active/working. This field may not be present. Perform an HTTP GET on this URL and expect an HTTP 200 in order to trust this origin.
+			 */
+			queryUrl?: string;
+			datacenter?: components["schemas"]["EdgeDataCenter"];
+		};
+		/** @description A `variant` represents one variant of a source of media. The most common differenitating factor between variants is video resolution, but there may be more variations based on `isHdr`, codecs, FPS, etc. It's possible that groups of variants may be divided into separate `groups` elements. */
+		CdnDeliveryV3Variant: {
+			/** @description A programmatic name for this variant, for use with uniquely identifying this variant. */
+			name: string;
+			/** @description A display-friendly label for this variant, for use in the UI. */
+			label: string;
+			/** @description A relative *or* absolute URL containing resource information for this variant. Compared to the V2 API, this URL does not contain template information and will not need to be modified before use, other than optionally combining with an origin. This value may contain a trailing slash.
+			 *
+			 *     If this URL is absolute, it may be used as-is in order to load the media content. If this URL is relative, then it should be combined with an origin base URL. In order of preference: 1) use an origin from this variant object, 2) use an origin from this variant's group object, 3) use `https://floatplane.com`.
+			 *
+			 *     Do not use an origin from a different group, or from a different variant, as this may result in errors.  */
+			url: string;
+			/** @description If `origins` is present, it will consist of one or more elements. */
+			origins?: components["schemas"]["CdnDeliveryV3Origin"][];
+			/**
+			 * Format: int64
+			 * @description An optional field prescribing this variant's order in relation to other variants. No guarantees other than being greater than or less than the order of other variants within this group (e.g., order may not be consecutive).
+			 */
+			order?: number;
+			/** @description An optional field indicating if this variant is enabled. If this is not enabled, it may be visible to the user, but not selectable. If this field is not present, assume a default value of `false`, for safety. */
+			enabled?: boolean;
+			/** @description An optional field indicating if this variant should be hidden. If hidden, it should not be shown to the user nor considered in any code logic. If this field is not present, assume a default value of `false`. Only truthy values should hide a variant. */
+			hidden?: boolean;
+			meta?: components["schemas"]["CdnDeliveryV3Meta"];
+			/** @description An optional string describing the MIME Type of this media source. */
+			mimeType?: string;
+		};
+		/** @description Metadata information for this variant. Note that most/all child and grandchild properties are not required on purpose. */
+		CdnDeliveryV3Meta: {
+			common?: {
+				/** @description Size of the corresponding media file, measured in bytes. */
+				size?: number;
+				access?: {
+					/**
+					 * @description - `isMissingPermission`: Indicates that the requester is lacking a required plan or other form of permission entitling on to access the corresponding resource.
+					 *     - `isProcessing`: Indicates that the corresponding resource is processing. Clients may choose to periodically refetch an asset's info when it has reported this state.
+					 *     - `isBroken`: Indicates that the corresponding resource is defective in some manner which has rendered it currently inaccessible. It is possible that the asset will be repaired at some later point in time. Clients may choose to periodically refetch an asset's info when it has reported this state.
+					 * @enum {string}
+					 */
+					deniedReason?: "isMissingPermission" | "isProcessing" | "isBroken";
+					/** @description Message describing in human-readable terms why access has been witheld for a resource. */
+					deniedMessage?: string;
+				};
+			};
+			video?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] &
+				components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"] & {
+					/** @description Maximum count of frames presented per second for the video. */
+					fps?: number;
+				} & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
+			audio?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & {
+				/** @description Count of channels carried by the audio stream. */
+				channelCount?: number;
+				/** @description Count of samples recorded per second. */
+				samplerate?: number;
+			} & components["schemas"]["CdnDeliveryV3MediaBitrateInfo"];
+			image?: components["schemas"]["CdnDeliveryV3MediaIdentityCharacteristics"] & components["schemas"]["CdnDeliveryV3ImagePresentationCharacteristics"];
+			live?: {
+				/**
+				 * @description - `llhls`: 🍎-backed low-latency HLS extension.
+				 *     - `clhls`: Community-backed low-latency HLS extension.
+				 *     - `ivshls`: IVS custom low-latency HLS extension.
+				 *     - `lldash`: DASH-IF-backed low-Latency DASH extension.
+				 * @enum {string}
+				 */
+				lowLatencyExtension?: "llhls" | "clhls" | "ivshls" | "lldash";
+			};
+		};
+		CdnDeliveryV3MediaIdentityCharacteristics: {
+			/** @description RFC 6381 codec string indicating stream data chunk format. */
+			codec?: string;
+			/** @description RFC 6381 codec string indicating stream format on the most basic level, without the addition of profile/level/etc. information. */
+			codecSimple?: string;
+			/** @description MIME-type for individual stream data chunks (as opposed to a containing playlist). */
+			mimeType?: string;
+		};
+		CdnDeliveryV3ImagePresentationCharacteristics: {
+			/** @description Count of horizontal pixels presented. */
+			width?: number;
+			/** @description Count of vertical pixels presented. */
+			height?: number;
+			/** @description Whether or not this data stream carries HDR content. */
+			isHdr?: boolean;
+		};
+		CdnDeliveryV3MediaBitrateInfo: {
+			bitrate?: {
+				/** @description Maximum bitrate observed for the data stream. */
+				maximum?: number;
+				/** @description Average bitrate observed for the data stream. */
+				average?: number;
+			};
+		};
+		PaymentInvoiceListV2Response: {
+			invoices: {
+				id: number;
+				amountDue: number;
+				amountTax: number;
+				attemptCount: number;
+				currency: string;
+				/** Format: date-time */
+				date: string;
+				/** Format: date-time */
+				dateDue: string | null;
+				/** Format: date-time */
+				periodStart: string;
+				/** Format: date-time */
+				periodEnd: string;
+				/** Format: date-time */
+				nextPaymentAttempt: string | null;
+				paid: boolean;
+				forgiven: boolean;
+				refunded: boolean;
+				/** @description The subscriptions this invoice is in reference to. */
+				subscriptions:
+					| {
+							id: number;
+							subscription: number;
+							/** Format: date-time */
+							periodStart: string | null;
+							/** Format: date-time */
+							periodEnd: string | null;
+							value: number;
+							amountSubtotal: number;
+							amountTotal: number;
+							amountTax: number;
+							plan: {
+								id: string;
+								title: string;
+								creator: {
+									id: string;
+									title: string;
+									urlname: string;
+									icon: components["schemas"]["ImageModel"];
+								};
+							};
+					  }[]
+					| null;
+			}[];
+		};
+		PlanInfoV2Response: {
+			/** @description The total number of subscribers for this creator. */
+			totalSubscriberCount: number | null;
+			/** @description The total amount of monthly income for this creator. This field tends to always be $0 for regular users. */
+			totalIncome: number | null;
+			plans: (components["schemas"]["SubscriptionPlanModel"] & {
+				/** Format: date-time */
+				createdAt: string;
+				/** Format: date-time */
+				updatedAt: string | null;
+				enabled: boolean;
+				paymentID: number | null;
+				trialPeriod: number;
+				creator: string;
+				userIsSubscribed: boolean;
+				userIsGrandfathered?: boolean;
+				enabledGlobal: boolean;
+			})[];
+		};
+		UserInfoV2Response: {
+			users: {
+				id: string;
+				user: components["schemas"]["UserModel"] | components["schemas"]["UserSelfModel"];
+			}[];
+		};
+		UserNamedV2Response: {
+			users: {
+				id: string;
+				user: components["schemas"]["UserModel"] | components["schemas"]["UserSelfModel"];
+			}[];
+		};
+		UserSecurityV2Response: {
+			twofactorEnabled: boolean;
+			twofactorBackupCodeEnabled: boolean;
+		};
+		CommentV3PostRequest: {
+			/** @description The GUID of the blogPost the comment should be posted to. */
+			blogPost: string;
+			/** @description The text of the comment being posted. */
+			text: string;
+		};
+		CommentV3PostResponse: {
+			id: string;
+			blogPost: string;
+			user: components["schemas"]["UserModel"];
+			text: string;
+			replying: string;
+			postDate: string;
+			editDate: string;
+			editCount: number;
+			isEdited: boolean;
+			likes: number;
+			dislikes: number;
+			score: number;
+			interactionCounts: {
+				like: number;
+				dislike: number;
+			};
+		};
+		CommentLikeV3PostRequest: {
+			/** @description The GUID of the comment being liked. */
+			comment: string;
+			/** @description The GUID of the post the comment is on. */
+			blogPost: string;
+		};
+		ContentCreatorListV3Response: {
+			blogPosts: components["schemas"]["BlogPostModelV3"][];
+			/** @description Information about paging: what the last ID retrieve is and if more posts can be retrieved afterward for subsequent requests. */
+			lastElements: components["schemas"]["ContentCreatorListLastItems"][];
+		};
+		ContentCreatorListLastItems: {
+			creatorId: string;
+			/** @description This may be returned as `null` if no blog posts for this creator appeared yet on this page of blog posts. However, Floatplane will complain if this is sent with a `null` value. */
+			blogPostId: string | null;
+			moreFetchable: boolean;
+		};
+		ContentPostV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			/** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML. */
+			text: string;
+			/** @enum {string} */
+			type: "blogPost";
+			channel: components["schemas"]["ChannelModel"];
+			tags: string[];
+			attachmentOrder: string[];
+			metadata: components["schemas"]["PostMetadataModel"];
+			/** Format: date-time */
+			releaseDate: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			comments: number;
+			creator: components["schemas"]["CreatorModelV2"];
+			wasReleasedSilently: boolean;
+			thumbnail?: components["schemas"]["ImageModel"] | null;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			userInteraction: components["schemas"]["UserInteractionModel"];
+			textTracks: components["schemas"]["TextTracks"][];
+			/** @description May be undefined when the post is locked. */
+			videoAttachments?: components["schemas"]["VideoAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			audioAttachments?: components["schemas"]["AudioAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			pictureAttachments?: components["schemas"]["PictureAttachmentModel"][];
+			/** @description May be undefined when the post is locked. */
+			galleryAttachments?: unknown[];
+		};
+		ContentVideoV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			/** Format: date-time */
+			releaseDate: string | null;
+			/** @description Unit: seconds. */
+			duration: number;
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			blogPosts: string[];
+			timelineSprite: components["schemas"]["ImageModel"];
+			/** @description The watch progress of the video, in seconds. If no progress has yet been posted to the video, then this field may not appear. */
+			progress?: number;
+			userInteraction: components["schemas"]["UserInteractionModel"];
+			levels: {
+				name: string;
+				width: number;
+				height: number;
+				label: string;
+				order: number;
+			}[];
+		};
+		ContentPictureV3Response: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			creator: string;
+			primaryBlogPost: string;
+			userInteraction: components["schemas"]["UserInteractionModel"];
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			imageFiles: components["schemas"]["ImageFileModel"][];
+		};
+		UserActivityV3Response: {
+			activity: {
+				/** Format: date-time */
+				time: string;
+				comment: string;
+				postTitle: string;
+				postId: string;
+				creatorTitle: string;
+				creatorUrl: string;
+			}[];
+			visibility: string;
+		};
+		UserLinksV3Response: {
+			[key: string]: {
+				/**
+				 * Format: uri
+				 * @description The URL the user has configured for this link.
+				 */
+				url: string;
+				type: {
+					/** @description The code name of this link type. */
+					name: string;
+					/** @description The display-friendly name of this link type. */
+					displayName: string;
+					/** @description The hostname that should be a part of the URL. */
+					hostName: string;
+				};
+			};
+		};
+		UserNotificationUpdateV3PostRequest: {
+			creator: string;
+			/**
+			 * @description Use `contentEmail` for email notifications, and `contentFirebase` for push notifications.
+			 * @enum {string}
+			 */
+			property: "contentEmail" | "contentFirebase";
+			newValue: boolean;
+		};
+		UserSelfV3Response: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+			email: string;
+			displayName: string;
+			creators: unknown[];
+			/** Format: date-time */
+			scheduledDeletionDate: string | null;
+		};
+		ContentLikeV3Request: {
+			/** @enum {string} */
+			contentType: "blogPost";
+			id: string;
+		};
+		GetCaptchaInfoResponse: {
+			v2: {
+				variants: {
+					android: {
+						siteKey: string;
+					};
+					checkbox: {
+						siteKey: string;
+					};
+					invisible: {
+						siteKey: string;
+					};
+				};
+			};
+			v3: {
+				variants: {
+					invisible: {
+						siteKey: string;
+					};
+				};
+			};
+		};
+		ErrorModel: {
+			id: string;
+			errors: {
+				id: string;
+				name: string;
+				/** @description May be undefined. */
+				message?: string | null;
+				/** @description May be undefined. */
+				data?: {
+					[key: string]: unknown;
+				} | null;
+			}[];
+			/** @description May be undefined. */
+			message?: string;
+		};
+		PaymentAddressModel: {
+			id: number;
+			customerName: string;
+			postalCode: string;
+			line1: string;
+			city: string;
+			region: string;
+			country: string;
+			default: boolean;
+		};
+		PaymentMethodModel: {
+			id: number;
+			payment_processor: number;
+			default: boolean;
+			card: {
+				brand: string;
+				last4: string;
+				exp_month: number;
+				exp_year: number;
+				name: string;
+			};
+		};
+		CreatorModelV2: {
+			id: string;
+			owner: string;
+			title: string;
+			/** @description Shown in the browser URL, and used in `/creator/named` queries. */
+			urlname: string;
+			description: string;
+			about: string;
+			category: string;
+			cover: components["schemas"]["ImageModel"] | null;
+			icon: components["schemas"]["ImageModel"];
+			liveStream: components["schemas"]["LiveStreamModel"] | null;
+			subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][] | null;
+			discoverable: boolean;
+			subscriberCountDisplay: string;
+			incomeDisplay: boolean;
+			defaultChannel?: string;
+		};
+		CreatorModelV2Extended: components["schemas"]["CreatorModelV2"] & {
+			socialLinks: components["schemas"]["SocialLinksModel"];
+			discordServers: components["schemas"]["DiscordServerModel"][];
+		};
+		CreatorModelV3: {
+			id: string;
+			owner:
+				| string
+				| {
+						id: string;
+						username: string;
+				  };
+			title: string;
+			/** @description Shown in the browser URL, and used in `/creator/named` queries. */
+			urlname: string;
+			description: string;
+			about: string;
+			category: {
+				id: string;
+				title: string;
+			};
+			cover: components["schemas"]["ImageModel"] | null;
+			icon: components["schemas"]["ImageModel"];
+			liveStream: components["schemas"]["LiveStreamModel"] | null;
+			subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][] | null;
+			discoverable: boolean;
+			subscriberCountDisplay: string;
+			incomeDisplay: boolean;
+			defaultChannel: string;
+			socialLinks: components["schemas"]["SocialLinksModel"];
+			channels: components["schemas"]["ChannelModel"][];
+			/** @description Present in `/creator/named` queries */
+			discordServers?: components["schemas"]["DiscordServerModel"][];
+			card?: components["schemas"]["ImageModel"];
+		};
+		ChannelModel: {
+			id: string;
+			creator: string;
+			title: string;
+			/** @description Shown in the browser URL. */
+			urlname: string;
+			about: string;
+			order?: number;
+			cover: components["schemas"]["ImageModel"] | null;
+			card: components["schemas"]["ImageModel"] | null;
+			icon: components["schemas"]["ImageModel"];
+			socialLinks?: components["schemas"]["SocialLinksModel"];
+		};
+		BlogPostModelV3: {
+			id: string;
+			guid: string;
+			title: string;
+			/** @description Text description of the post. May have HTML paragraph (`<p>`) tags surrounding it, along with other HTML.. */
+			text: string;
+			/** @enum {string} */
+			type: "blogPost";
+			channel: components["schemas"]["ChannelModel"] | string;
+			tags: string[];
+			attachmentOrder: string[];
+			metadata: components["schemas"]["PostMetadataModel"];
+			/** Format: date-time */
+			releaseDate: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			comments: number;
+			creator: {
+				id: string;
+				owner: {
+					id: string;
+					username: string;
+				};
+				title: string;
+				/** @description Shown in the browser URL, and used in `/creator/named` queries. */
+				urlname: string;
+				description: string;
+				about: string;
+				category: {
+					id: string;
+					title: string;
+				};
+				cover: components["schemas"]["ImageModel"] | null;
+				icon: components["schemas"]["ImageModel"];
+				liveStream: components["schemas"]["LiveStreamModel"] | null;
+				subscriptionPlans: components["schemas"]["SubscriptionPlanModel"][];
+				discoverable: boolean;
+				subscriberCountDisplay: string;
+				incomeDisplay: boolean;
+				defaultChannel?: string;
+				channels?: string[];
+				card?: components["schemas"]["ImageModel"] | null;
+			};
+			wasReleasedSilently: boolean;
+			thumbnail?: components["schemas"]["ImageModel"] | null;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+			/** @description May be undefined, usually when `isAccessible` is `false`. */
+			videoAttachments?: string[];
+			/** @description May be undefined, usually when `isAccessible` is `false`. */
+			audioAttachments?: string[];
+			/** @description May be undefined, usually when `isAccessible` is `false`. */
+			pictureAttachments?: string[];
+			/** @description May be undefined, usually when `isAccessible` is `false`. */
+			galleryAttachments?: string[];
+		};
+		SubscriptionPlanModel: {
+			id: string;
+			title: string;
+			description: string;
+			price: string | null;
+			priceYearly: string | null;
+			currency: string;
+			logo: string | null;
+			interval: string;
+			featured: boolean;
+			allowGrandfatheredAccess?: boolean | null;
+			discordServers: components["schemas"]["DiscordServerModel"][];
+			discordRoles: components["schemas"]["DiscordRoleModel"][];
+		};
+		PostMetadataModel: {
+			hasVideo: boolean;
+			videoCount?: number;
+			videoDuration: number;
+			hasAudio: boolean;
+			audioCount?: number;
+			audioDuration: number;
+			hasPicture: boolean;
+			pictureCount?: number;
+			hasGallery?: boolean;
+			galleryCount?: number;
+			isFeatured: boolean;
+		};
+		VideoAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			/** Format: date-time */
+			releaseDate: string | null;
+			duration: number;
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		PictureAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			creator: string;
+			primaryBlogPost: string;
+			thumbnail: components["schemas"]["ImageModel"];
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		AudioAttachmentModel: {
+			id: string;
+			guid: string;
+			title: string;
+			type: string;
+			description: string;
+			duration: number;
+			waveform: {
+				dataSetLength: number;
+				highestValue: number;
+				lowestValue: number;
+				data: number[];
+			};
+			creator: string;
+			likes: number;
+			dislikes: number;
+			score: number;
+			isProcessing: boolean;
+			primaryBlogPost: string;
+			/** @description If false, the post should be marked as locked and not viewable by the user. */
+			isAccessible: boolean;
+		};
+		ImageModel: {
+			width: number;
+			height: number;
+			/** Format: uri */
+			path: string;
+			childImages: components["schemas"]["ChildImageModel"][] | null;
+		};
+		ChildImageModel: {
+			width: number;
+			height: number;
+			/** Format: uri */
+			path: string;
+		};
+		ImageFileModel: {
+			/** Format: uri */
+			path: string;
+			width: number;
+			height: number;
+			size: number;
+		};
+		LiveStreamModel: {
+			id: string;
+			title: string;
+			description: string;
+			thumbnail: components["schemas"]["ImageModel"] | null;
+			owner: string;
+			/** @description The creator channel this livestream belongs to. */
+			channel?: string;
+			streamPath: string;
+			offline: {
+				title: string | null;
+				description: string | null;
+				thumbnail: components["schemas"]["ImageModel"] | null;
+			};
+		};
+		SocialLinksModel: {
+			[key: string]: string;
+		};
+		DiscordServerModel: {
+			id: string;
+			guildName: string;
+			guildIcon: string;
+			/** Format: uri */
+			inviteLink: string | null;
+			inviteMode: string;
+		};
+		DiscordRoleModel: {
+			server: string;
+			roleName: string;
+		};
+		/** @description Represents some basic information of a user (id, username, and profile image). */
+		UserModel: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+		};
+		UserSelfModel: {
+			id: string;
+			username: string;
+			profileImage: components["schemas"]["ImageModel"];
+			email: string;
+			displayName: string;
+		};
+		ConnectedAccountModel: {
+			/** @description Unique identifier for the account type. */
+			key: string;
+			/** @description Display-friendly label for the `key`. */
+			name: string;
+			/** @description Determines if the system allows this account to be connected to. */
+			enabled: boolean;
+			iconWhite: string;
+			connectedAccount: {
+				id: string;
+				remoteUserId: string;
+				remoteUserName: string;
+				data: {
+					canJoinGuilds: boolean;
+				} | null;
+			} | null;
+			/** @description If true, the user is connected and the `connectedAccount` will have data about the account. */
+			connected: boolean;
+			isAccountProvider: boolean;
+		};
+		CommentModel: {
+			id: string;
+			blogPost: string;
+			user: components["schemas"]["UserModel"];
+			text: string;
+			replying: string | null;
+			/** Format: date-time */
+			postDate: string;
+			/** Format: date-time */
+			editDate: string | null;
+			/** Format: date-time */
+			pinDate?: string | null;
+			editCount: number;
+			isEdited: boolean;
+			likes: number;
+			dislikes: number;
+			score: number;
+			interactionCounts: {
+				like: number;
+				dislike: number;
+			};
+			totalReplies?: number;
+			/** @description This is present (but possibly empty) for top-level comments. This is never present for reply comments. */
+			replies?: components["schemas"]["CommentModel"][];
+			userInteraction: components["schemas"]["UserInteractionModel"];
+		};
+		UserNotificationModel: {
+			creator: components["schemas"]["CreatorModelV2"];
+			userNotificationSetting: {
+				/** Format: date-time */
+				createdAt?: string;
+				/** Format: date-time */
+				updatedAt?: string | null;
+				id?: string;
+				contentEmail: boolean;
+				contentFirebase: boolean;
+				creatorMessageEmail: boolean;
+				user: string;
+				creator: string;
+			};
+		};
+		UserSubscriptionModel: {
+			/** Format: date-time */
+			startDate: string | null;
+			/** Format: date-time */
+			endDate: string | null;
+			paymentID: number | null;
+			interval: string;
+			paymentCancelled?: boolean;
+			plan: components["schemas"]["SubscriptionPlanModel"];
+			creator: string;
+		};
+		FaqSectionModel: {
+			faqs: {
+				/** Format: date-time */
+				createdAt: string;
+				/** Format: date-time */
+				updatedAt: string | null;
+				id: string;
+				question: string;
+				/** @description This field may contain HTML that should be rendered. */
+				answer: string;
+				/** @enum {string} */
+				status: "public";
+				link: string;
+				order: number;
+				faqSection: string;
+			}[];
+			/** Format: date-time */
+			createdAt: string;
+			/** Format: date-time */
+			updatedAt: string | null;
+			id: string;
+			name: string;
+			description: string;
+			/** @enum {string} */
+			status: "public";
+			order: number;
+		};
+		UserInteractionModel: ("like" | "dislike")[] | null;
+		EdgesModel: {
+			edges: components["schemas"]["EdgeModel"][];
+			client: {
+				[key: string]: unknown;
+			};
+		};
+		EdgeModel: {
+			hostname: string;
+			queryPort: number;
+			/** Format: int64 */
+			bandwidth: number;
+			allowDownload: boolean;
+			allowStreaming: boolean;
+			datacenter: components["schemas"]["EdgeDataCenter"];
+		};
+		/** @description Location information for a datacenter. Not required. */
+		EdgeDataCenter: {
+			countryCode: string;
+			regionCode: string;
+			latitude: number;
+			longitude: number;
+		};
+		UpdateProgressRequest: {
+			/** @description The video or audio attachment identifier for the piece of media that is being updated. Note: this is *not* the blogPost identifier. */
+			id: string;
+			/**
+			 * @description Which type of media the corresponding identifier is.
+			 * @enum {string}
+			 */
+			contentType: "video" | "audio";
+			/** @description The progress through the media that has been consumed by the user, in seconds. */
+			progress: number;
+		};
+		GetProgressRequest: {
+			/** @description The identifiers of the blog posts from which progress should be retrieved. */
+			ids: string[];
+			/**
+			 * @description The type of the corresponding identifiers. The only value currently is `blogPost`.
+			 * @enum {string}
+			 */
+			contentType: "blogPost";
+		};
+		/** @description A list of objects containing progress values for the requested identifiers. If no progress has been posted to an identifier, it may either not appear in the resulting list, or appear with a progress of `0`. */
+		GetProgressResponse: {
+			id: string;
+			/** @description Percentage of the blog post's media that has been consumed so far. Ranges from 0 to 100. */
+			progress: number;
+		}[];
+		TextTracks: {
+			id: string;
+			src: string;
+			kind: string;
+			language: string;
+			generated: boolean;
+			processing: boolean;
+		};
+	};
+	responses: {
+		/** @description Bad Request - The request has errors and the server did not process it. */
+		"400BadRequest": {
+			headers: {
+				[name: string]: unknown;
+			};
+			content: {
+				/** @example {
+				 *       "id": "awoz-3s5g-6amf",
+				 *       "errors": [
+				 *         {
+				 *           "id": "9edc-zejt-n3hb",
+				 *           "name": "paramValidationError",
+				 *           "message": "\"captchaToken\" must be an object",
+				 *           "data": {
+				 *             "rule": "object.base"
+				 *           }
+				 *         }
+				 *       ],
+				 *       "message": "\"captchaToken\" must be an object"
+				 *     } */
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** @description Unauthenticated - The request was not authenticated to make the request. */
+		"401Unauthenticated": {
+			headers: {
+				[name: string]: unknown;
+			};
+			content: {
+				/** @example {
+				 *       "id": "erng-ah8e-n0d3",
+				 *       "errors": [
+				 *         {
+				 *           "id": "erng-ah8e-n0d3",
+				 *           "name": "notLoggedInError",
+				 *           "message": "You must be logged-in to access this resource."
+				 *         }
+				 *       ],
+				 *       "message": "You must be logged-in to access this resource."
+				 *     } */
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** @description Forbidden - The request was not authenticated to make the request. */
+		"403Forbidden": {
+			headers: {
+				[name: string]: unknown;
+			};
+			content: {
+				/** @example {
+				 *       "id": "f4ec-orux-hds2",
+				 *       "errors": [
+				 *         {
+				 *           "id": "f4ec-orux-hds2",
+				 *           "name": "missingAchievementError",
+				 *           "message": "You lack one or more of the required achievements needed to access the requested resource.",
+				 *           "data": {
+				 *             "requiresAllOfAchievement": [
+				 *               {
+				 *                 "id": "6157853e479315db795f7296",
+				 *                 "title": "FloatVPN Alpha",
+				 *                 "startDate": null,
+				 *                 "endDate": null,
+				 *                 "icon": null
+				 *               }
+				 *             ]
+				 *           }
+				 *         }
+				 *       ],
+				 *       "message": "You lack one or more of the required achievements needed to access the requested resource."
+				 *     } */
+				"application/json": components["schemas"]["ErrorModel"];
+				"text/html": string;
+			};
+		};
+		/** @description Not Found - The resource was not found. */
+		"404NotFound": {
+			headers: {
+				[name: string]: unknown;
+			};
+			content: {
+				/** @example {
+				 *       "id": "f4ec-orux-hds2",
+				 *       "errors": [
+				 *         {
+				 *           "id": "f4ec-orux-hds2",
+				 *           "name": "notFoundError"
+				 *         }
+				 *       ]
+				 *     } */
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+		/** @description Too Many Requests - The resource was requested too many times */
+		"429TooManyRequests": {
+			headers: {
+				/** @description The number of seconds the client must wait until future requests will respond normally. */
+				"Retry-After"?: number;
+				[name: string]: unknown;
+			};
+			content?: never;
+		};
+		/** @description Unexpected response code */
+		Unexpected: {
+			headers: {
+				[name: string]: unknown;
+			};
+			content: {
+				/** @example {
+				 *       "id": "awoz-3s5g-6amf",
+				 *       "errors": [
+				 *         {
+				 *           "id": "9edc-zejt-n3hb",
+				 *           "name": "paramValidationError",
+				 *           "message": "\"captchaToken\" must be an object",
+				 *           "data": {
+				 *             "rule": "object.base"
+				 *           }
+				 *         }
+				 *       ],
+				 *       "message": "\"captchaToken\" must be an object"
+				 *     } */
+				"application/json": components["schemas"]["ErrorModel"];
+			};
+		};
+	};
+	parameters: never;
+	requestBodies: never;
+	headers: never;
+	pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    login: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "username": "my_username",
-                 *       "password": "my_password",
-                 *       "captchaToken": "..."
-                 *     } */
-                "application/json": components["schemas"]["AuthLoginV2Request"];
-            };
-        };
-        responses: {
-            /** @description OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
-            200: {
-                headers: {
-                    /** @description Contains the cookie used in subsequent authenticated requests. */
-                    "Set-Cookie"?: string;
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "user": {
-                     *         "id": "0123456789abcdef01234567",
-                     *         "username": "my_username",
-                     *         "profileImage": {
-                     *           "width": 512,
-                     *           "height": 512,
-                     *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
-                     *             }
-                     *           ]
-                     *         }
-                     *       },
-                     *       "needs2FA": false
-                     *     } */
-                    "application/json": components["schemas"]["AuthLoginV2Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            /** @description Unauthenticated - The login attempt failed, either due to a bad username or password. */
-            401: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ErrorModel"];
-                };
-            };
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    logout: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    /** @description Obtain a new authentication/authorization cookie after logging out. This new cookie will not be authenticated to perform subsequent requests. */
-                    "Set-Cookie"?: string;
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example OK */
-                    "text/plain": string;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    checkFor2faLogin: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "token": "123456"
-                 *     } */
-                "application/json": components["schemas"]["CheckFor2faLoginRequest"];
-            };
-        };
-        responses: {
-            /** @description OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
-            200: {
-                headers: {
-                    /** @description Contains the cookie used in subsequent authenticated requests. */
-                    "Set-Cookie"?: string;
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "user": {
-                     *         "id": "0123456789abcdef01234567",
-                     *         "username": "my_username",
-                     *         "profileImage": {
-                     *           "width": 512,
-                     *           "height": 512,
-                     *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
-                     *             }
-                     *           ]
-                     *         }
-                     *       },
-                     *       "needs2FA": false
-                     *     } */
-                    "application/json": components["schemas"]["AuthLoginV2Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            /** @description Unauthenticated - The login attempt failed, either due to a bad username or password. */
-            401: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ErrorModel"];
-                };
-            };
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getCaptchaInfo: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "v2": {
-                     *         "variants": {
-                     *           "android": {
-                     *             "siteKey": "..."
-                     *           },
-                     *           "checkbox": {
-                     *             "siteKey": "..."
-                     *           },
-                     *           "invisible": {
-                     *             "siteKey": "..."
-                     *           }
-                     *         }
-                     *       },
-                     *       "v3": {
-                     *         "variants": {
-                     *           "invisible": {
-                     *             "siteKey": "..."
-                     *           }
-                     *         }
-                     *       }
-                     *     } */
-                    "application/json": components["schemas"]["GetCaptchaInfoResponse"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getDeliveryInfo: {
-        parameters: {
-            query: {
-                /** @description Used to determine which kind of retrieval method is requested for the video.
-                 *
-                 *     - VOD = stream a Video On Demand
-                 *     - AOD = stream Audio On Demand
-                 *     - Live = Livestream the content
-                 *     - Download = Download the content for the user to play later. */
-                type: "vod" | "aod" | "live" | "download";
-                /** @description The GUID of the attachment for a post, retrievable from the `videoAttachments` or `audioAttachments` object. Required when `type` is `vod`, `aod`, or `download`. Note: either this or `creator` must be supplied. */
-                guid?: string;
-                /** @description The GUID of the creator for a livestream, retrievable from `CreatorModelV2.id`. Required when `type` is `live`. Note: either this or `guid` must be supplied. Note: for `vod` and `download`, including this `creator` parameter *will* cause an error to be returned. */
-                creator?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "cdn": "https://cdn-vod-drm2.floatplane.com",
-                     *       "strategy": "cdn",
-                     *       "resource": {
-                     *         "uri": "/Videos/TViGzkuIic/{qualityLevels}.mp4/chunk.m3u8?token={qualityLevelParams.token}",
-                     *         "data": {
-                     *           "qualityLevels": [
-                     *             {
-                     *               "name": "360",
-                     *               "width": 640,
-                     *               "height": 360,
-                     *               "label": "360p",
-                     *               "order": 0
-                     *             },
-                     *             {
-                     *               "name": "480",
-                     *               "width": 854,
-                     *               "height": 480,
-                     *               "label": "480p",
-                     *               "order": 1
-                     *             },
-                     *             {
-                     *               "name": "720",
-                     *               "width": 1280,
-                     *               "height": 720,
-                     *               "label": "720p",
-                     *               "order": 2
-                     *             },
-                     *             {
-                     *               "name": "1080",
-                     *               "width": 2160,
-                     *               "height": 1080,
-                     *               "label": "1080p",
-                     *               "order": 4
-                     *             }
-                     *           ],
-                     *           "qualityLevelParams": {
-                     *             "360": {
-                     *               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNzb3VyY2VQYXRoIjoiL1ZpZGVvcy9UVmlHemt1SWljLzM2MC5tcDQvY2h1bmsubTN1OCIsInVzZXJJZCI6IjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2NyIsImlhdCI6MTYzMzc5NzMxMSwiZXhwIjoxNjMzODE4OTExfQ.uaLzZ4wSc0jrYbjkdhuF4_UY92iWQsq2efrWUutYUvQ"
-                     *             },
-                     *             "480": {
-                     *               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNzb3VyY2VQYXRoIjoiL1ZpZGVvcy9UVmlHemt1SWljLzQ4MC5tcDQvY2h1bmsubTN1OCIsInVzZXJJZCI6IjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2NyIsImlhdCI6MTYzMzc5NzMxMSwiZXhwIjoxNjMzODE4OTExfQ.O6PHCJKcLW7ohuKj6UcMa8QGoN-vZr6xTtfXsUMRki0"
-                     *             },
-                     *             "720": {
-                     *               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNzb3VyY2VQYXRoIjoiL1ZpZGVvcy9UVmlHemt1SWljLzcyMC5tcDQvY2h1bmsubTN1OCIsInVzZXJJZCI6IjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2NyIsImlhdCI6MTYzMzc5NzMxMSwiZXhwIjoxNjMzODE4OTExfQ.lbOTTBXBjA-i9gBzm8ydFQ8fa8q07Z2vaLsYMKUp4Ik"
-                     *             },
-                     *             "1080": {
-                     *               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNzb3VyY2VQYXRoIjoiL1ZpZGVvcy9UVmlHemt1SWljLzEwODAubXA0L2NodW5rLm0zdTgiLCJ1c2VySWQiOiIwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1NjciLCJpYXQiOjE2MzM3OTczMTEsImV4cCI6MTYzMzgxODkxMX0.E-bw_gnUzKUpYeL2l-kTmj5CbwmDb519ohjf5LlLyQg"
-                     *             }
-                     *           }
-                     *         }
-                     *       }
-                     *     } */
-                    "application/json": components["schemas"]["CdnDeliveryV2Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getDeliveryInfoV3: {
-        parameters: {
-            query: {
-                /** @description Used to determine the scenario in which to consume the media.
-                 *
-                 *     - `onDemand` = stream a Video/Audio On Demand
-                 *     - `download` = Download the content for the user to play later.
-                 *     - `live` = Livestream the content */
-                scenario: "onDemand" | "download" | "live";
-                /** @description The attachment or livestream identifier for the requested media. For video and audio, this would be from the `videoAttachments` or `audioAttachments` objects. For livestreams, this is the `liveStream.id` from the creator object. */
-                entityId: string;
-                /** @description Use `outputKind` to ensure the right vehicle is used for your client, e.g. `outputKind=hls.fmp4` is optimal for tvOS 10+. */
-                outputKind?: "hls.mpegts" | "hls.fmp4" | "dash.mpegts" | "dash.m4s" | "flat";
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CdnDeliveryV3Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    listConnections: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Returns the list of connected and available accounts. */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "key": "ltt",
-                     *         "name": "LinusTechTips",
-                     *         "enabled": true,
-                     *         "iconWhite": "/images/connections/ltt/white@2x.png",
-                     *         "connectedAccount": null,
-                     *         "connected": false,
-                     *         "isAccountProvider": false
-                     *       },
-                     *       {
-                     *         "key": "discord",
-                     *         "name": "Discord",
-                     *         "enabled": true,
-                     *         "iconWhite": "/images/connections/discord/white@2x.png",
-                     *         "connectedAccount": {
-                     *           "id": "9a8a4140fdd2b0c15b54333a",
-                     *           "remoteUserId": "012345678912345678",
-                     *           "remoteUserName": "my_username#2673",
-                     *           "data": {
-                     *             "canJoinGuilds": true
-                     *           }
-                     *         },
-                     *         "connected": true,
-                     *         "isAccountProvider": false
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["ConnectedAccountModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getInfo: {
-        parameters: {
-            query: {
-                /** @description The GUID identifer(s) of the creator(s) to be retrieved. */
-                creatorGUID: string[];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - The creators are found from their identifiers and returned in an array */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "59f94c0bdd241b70349eb72b",
-                     *         "owner": "59f94c0bdd241b70349eb723",
-                     *         "title": "LinusTechTips",
-                     *         "urlname": "linustechtips",
-                     *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *         "category": "59f94c0bdd241b70349eb727",
-                     *         "cover": {
-                     *           "width": 1990,
-                     *           "height": 519,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 1245,
-                     *               "height": 325,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "icon": {
-                     *           "width": 600,
-                     *           "height": 600,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "liveStream": {
-                     *           "id": "5c13f3c006f1be15e08e05c0",
-                     *           "title": "First Linux Stream",
-                     *           "description": "<p>chat on Twitch</p>",
-                     *           "thumbnail": {
-                     *             "width": 1200,
-                     *             "height": 675,
-                     *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 400,
-                     *                 "height": 225,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "owner": "59f94c0bdd241b70349eb72b",
-                     *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *           "offline": {
-                     *             "title": "Offline",
-                     *             "description": "We're offline for now – please check back later!",
-                     *             "thumbnail": {
-                     *               "width": 1920,
-                     *               "height": 1080,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 1200,
-                     *                   "height": 675,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                 }
-                     *               ]
-                     *             }
-                     *           }
-                     *         },
-                     *         "subscriptionPlans": null,
-                     *         "discoverable": true,
-                     *         "subscriberCountDisplay": "total",
-                     *         "incomeDisplay": false
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["CreatorModelV2"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getCreatorInfoByName: {
-        parameters: {
-            query: {
-                /** @description The string identifer(s) of the creator(s) to be retrieved. */
-                creatorURL: string[];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "59f94c0bdd241b70349eb72b",
-                     *         "owner": "59f94c0bdd241b70349eb723",
-                     *         "title": "LinusTechTips",
-                     *         "urlname": "linustechtips",
-                     *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *         "category": "59f94c0bdd241b70349eb727",
-                     *         "cover": {
-                     *           "width": 1990,
-                     *           "height": 519,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 1245,
-                     *               "height": 325,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "icon": {
-                     *           "width": 600,
-                     *           "height": 600,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "liveStream": {
-                     *           "id": "5c13f3c006f1be15e08e05c0",
-                     *           "title": "First Linux Stream",
-                     *           "description": "<p>chat on Twitch</p>",
-                     *           "thumbnail": {
-                     *             "width": 1200,
-                     *             "height": 675,
-                     *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 400,
-                     *                 "height": 225,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "owner": "59f94c0bdd241b70349eb72b",
-                     *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *           "offline": {
-                     *             "title": "Offline",
-                     *             "description": "We're offline for now – please check back later!",
-                     *             "thumbnail": {
-                     *               "width": 1920,
-                     *               "height": 1080,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 1200,
-                     *                   "height": 675,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                 }
-                     *               ]
-                     *             }
-                     *           }
-                     *         },
-                     *         "subscriptionPlans": null,
-                     *         "discoverable": true,
-                     *         "subscriberCountDisplay": "total",
-                     *         "incomeDisplay": false,
-                     *         "socialLinks": {
-                     *           "instagram": "https://www.instagram.com/linustech/",
-                     *           "twitter": "https://twitter.com/linustech",
-                     *           "website": "https://linustechtips.com",
-                     *           "facebook": "https://www.facebook.com/LinusTech",
-                     *           "youtube": "https://www.youtube.com/user/LinusTechTips"
-                     *         },
-                     *         "discordServers": [
-                     *           {
-                     *             "id": "5baa8838d9f3aa0a83acd429",
-                     *             "guildName": "LinusTechTips",
-                     *             "guildIcon": "a_528743a32b33b5eb227a8405d5593473",
-                     *             "inviteLink": "https://discord.gg/LTT",
-                     *             "inviteMode": "link"
-                     *           },
-                     *           {
-                     *             "id": "5e34cd9a9dbb744872192895",
-                     *             "guildName": "LTT Minecraft Network",
-                     *             "guildIcon": "4f7f812b49196b1646bdcdb84b948c84",
-                     *             "inviteLink": "https://discord.gg/VVpwBPXrMc",
-                     *             "inviteMode": "link"
-                     *           }
-                     *         ]
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["CreatorModelV2Extended"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getCreator: {
-        parameters: {
-            query: {
-                /** @description The GUID of the creator being searched. */
-                id: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Creator information returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "id": "59f94c0bdd241b70349eb72b",
-                     *       "owner": "59f94c0bdd241b70349eb723",
-                     *       "title": "LinusTechTips",
-                     *       "urlname": "linustechtips",
-                     *       "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *       "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *       "category": {
-                     *         "title": "Technology"
-                     *       },
-                     *       "cover": {
-                     *         "width": 1990,
-                     *         "height": 519,
-                     *         "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *         "childImages": [
-                     *           {
-                     *             "width": 1245,
-                     *             "height": 325,
-                     *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *           }
-                     *         ]
-                     *       },
-                     *       "icon": {
-                     *         "width": 600,
-                     *         "height": 600,
-                     *         "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *         "childImages": [
-                     *           {
-                     *             "width": 250,
-                     *             "height": 250,
-                     *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *           },
-                     *           {
-                     *             "width": 100,
-                     *             "height": 100,
-                     *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *           }
-                     *         ]
-                     *       },
-                     *       "liveStream": {
-                     *         "id": "5c13f3c006f1be15e08e05c0",
-                     *         "title": "First Linux Stream",
-                     *         "description": "<p>chat on Twitch</p>",
-                     *         "thumbnail": {
-                     *           "width": 1200,
-                     *           "height": 675,
-                     *           "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 400,
-                     *               "height": 225,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "owner": "59f94c0bdd241b70349eb72b",
-                     *         "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *         "offline": {
-                     *           "title": "Offline",
-                     *           "description": "We're offline for now – please check back later!",
-                     *           "thumbnail": {
-                     *             "width": 1920,
-                     *             "height": 1080,
-                     *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 400,
-                     *                 "height": 225,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *               },
-                     *               {
-                     *                 "width": 1200,
-                     *                 "height": 675,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *               }
-                     *             ]
-                     *           }
-                     *         }
-                     *       },
-                     *       "subscriptionPlans": [
-                     *         {
-                     *           "id": "5d48d0306825b5780db93d07",
-                     *           "title": "LTT Supporter (1080p)",
-                     *           "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *           "price": "5.00",
-                     *           "priceYearly": "50.00",
-                     *           "currency": "usd",
-                     *           "logo": null,
-                     *           "interval": "month",
-                     *           "featured": true,
-                     *           "allowGrandfatheredAccess": false,
-                     *           "discordServers": [],
-                     *           "discordRoles": []
-                     *         },
-                     *         {
-                     *           "id": "5e0ba6ac14e2590f760a0f0f",
-                     *           "title": "LTT Supporter Plus",
-                     *           "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *           "price": "10.00",
-                     *           "priceYearly": "100.00",
-                     *           "currency": "usd",
-                     *           "logo": null,
-                     *           "interval": "month",
-                     *           "featured": false,
-                     *           "allowGrandfatheredAccess": false,
-                     *           "discordServers": [],
-                     *           "discordRoles": []
-                     *         }
-                     *       ],
-                     *       "discoverable": true,
-                     *       "subscriberCountDisplay": "total",
-                     *       "incomeDisplay": false,
-                     *       "socialLinks": {
-                     *         "instagram": "https://www.instagram.com/linustech/",
-                     *         "website": "https://linustechtips.com",
-                     *         "facebook": "https://www.facebook.com/LinusTech",
-                     *         "youtube": "https://www.youtube.com/user/LinusTechTips",
-                     *         "twitter": "https://twitter.com/linustech"
-                     *       }
-                     *     } */
-                    "application/json": components["schemas"]["CreatorModelV3"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getCreators: {
-        parameters: {
-            query: {
-                /** @description Optional search string for finding particular creators on the platform. */
-                search: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Creators returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "59f94c0bdd241b70349eb72b",
-                     *         "owner": "59f94c0bdd241b70349eb723",
-                     *         "title": "LinusTechTips",
-                     *         "urlname": "linustechtips",
-                     *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *         "category": {
-                     *           "title": "Technology"
-                     *         },
-                     *         "cover": {
-                     *           "width": 1990,
-                     *           "height": 519,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 1245,
-                     *               "height": 325,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "icon": {
-                     *           "width": 600,
-                     *           "height": 600,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "liveStream": {
-                     *           "id": "5c13f3c006f1be15e08e05c0",
-                     *           "title": "First Linux Stream",
-                     *           "description": "<p>chat on Twitch</p>",
-                     *           "thumbnail": {
-                     *             "width": 1200,
-                     *             "height": 675,
-                     *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 400,
-                     *                 "height": 225,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "owner": "59f94c0bdd241b70349eb72b",
-                     *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *           "offline": {
-                     *             "title": "Offline",
-                     *             "description": "We're offline for now – please check back later!",
-                     *             "thumbnail": {
-                     *               "width": 1920,
-                     *               "height": 1080,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 1200,
-                     *                   "height": 675,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                 }
-                     *               ]
-                     *             }
-                     *           }
-                     *         },
-                     *         "subscriptionPlans": [
-                     *           {
-                     *             "id": "5d48d0306825b5780db93d07",
-                     *             "title": "LTT Supporter (1080p)",
-                     *             "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *             "price": "5.00",
-                     *             "priceYearly": "50.00",
-                     *             "currency": "usd",
-                     *             "logo": null,
-                     *             "interval": "month",
-                     *             "featured": true,
-                     *             "allowGrandfatheredAccess": false,
-                     *             "discordServers": [],
-                     *             "discordRoles": []
-                     *           },
-                     *           {
-                     *             "id": "5e0ba6ac14e2590f760a0f0f",
-                     *             "title": "LTT Supporter Plus",
-                     *             "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *             "price": "10.00",
-                     *             "priceYearly": "100.00",
-                     *             "currency": "usd",
-                     *             "logo": null,
-                     *             "interval": "month",
-                     *             "featured": false,
-                     *             "allowGrandfatheredAccess": false,
-                     *             "discordServers": [],
-                     *             "discordRoles": []
-                     *           }
-                     *         ],
-                     *         "discoverable": true,
-                     *         "subscriberCountDisplay": "total",
-                     *         "incomeDisplay": false,
-                     *         "socialLinks": {
-                     *           "instagram": "https://www.instagram.com/linustech/",
-                     *           "twitter": "https://twitter.com/linustech",
-                     *           "website": "https://linustechtips.com",
-                     *           "facebook": "https://www.facebook.com/LinusTech",
-                     *           "youtube": "https://www.youtube.com/user/LinusTechTips"
-                     *         }
-                     *       },
-                     *       {
-                     *         "id": "5ae0f8114336369a2c3619b6",
-                     *         "owner": "5ae0f8114336369a2c3619b4",
-                     *         "title": "TechDeals",
-                     *         "urlname": "tech_deals",
-                     *         "description": "Welcome to Tech Deals on Floatplane!  Having nothing to do with actual floatplanes since 2016, we are proud to be part of the launch of Floatplane!  We make videos about technology!",
-                     *         "about": "Welcome to Tech Deals on Floatplane!  Having nothing to do with actual floatplanes since 2016, we are proud to be part of the launch of Floatplane!  We make videos about technology!",
-                     *         "category": {
-                     *           "title": "Technology"
-                     *         },
-                     *         "cover": {
-                     *           "width": 1923,
-                     *           "height": 502,
-                     *           "path": "https://pbs.floatplane.com/cover_images/5ae0f8114336369a2c3619b6/264955378957772_1600880420171.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 1245,
-                     *               "height": 325,
-                     *               "path": "https://pbs.floatplane.com/cover_images/5ae0f8114336369a2c3619b6/264955378957772_1600880420171_1245x325.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "icon": {
-                     *           "width": 720,
-                     *           "height": 720,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/5ae0f8114336369a2c3619b6/223941270270735_1600882905853.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/5ae0f8114336369a2c3619b6/223941270270735_1600882905853_100x100.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/5ae0f8114336369a2c3619b6/223941270270735_1600882905853_250x250.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "liveStream": {
-                     *           "id": "5c3d7ec606f1be114ca1e59c",
-                     *           "title": "CES 2020 - Bonus Coverage for Floatplane Subs",
-                     *           "description": "Welcome to the Tech Deals stream – this should be fun!",
-                     *           "thumbnail": {
-                     *             "width": 1199,
-                     *             "height": 674,
-                     *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c3d7ec606f1be114ca1e59c/973032281888832_1560301350562.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 400,
-                     *                 "height": 225,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c3d7ec606f1be114ca1e59c/973032281888832_1560301350562_400x225.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "owner": "5ae0f8114336369a2c3619b6",
-                     *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.kdUMaxvL2eyW.m3u8",
-                     *           "offline": {
-                     *             "title": "We're offline at the moment. Please check back later!",
-                     *             "description": "We're offline at the moment. Please check back later!",
-                     *             "thumbnail": null
-                     *           }
-                     *         },
-                     *         "subscriptionPlans": [
-                     *           {
-                     *             "id": "5d506f2f7c7e6afa2ef1e246",
-                     *             "title": "1080p Plan - Videos on Demand + Live Streams",
-                     *             "description": "This plan gives you access to all published videos at up to 1080p detail.  You also get access to 1080p live streams exclusive to Floatplane.  This also grants you access to the private channels on the Tech Deals Discord, link your Floatplane account to Discord to be automatically upgraded.",
-                     *             "price": "5.00",
-                     *             "priceYearly": "50.00",
-                     *             "currency": "usd",
-                     *             "logo": null,
-                     *             "interval": "month",
-                     *             "featured": false,
-                     *             "allowGrandfatheredAccess": false,
-                     *             "discordServers": [],
-                     *             "discordRoles": []
-                     *           },
-                     *           {
-                     *             "id": "5e1710272aae3bc9cabdf505",
-                     *             "title": "4K - All Access Plan",
-                     *             "description": "This plan gives you access to all published videos at up to 4K detail.  You also get access to 1080p live streams exclusive to Floatplane.  This also grants you access to the private channels on the Tech Deals Discord, link your Floatplane account to Discord to be automatically upgraded.  BONUS - This plan allows you to download the videos in high quality for off-line viewing!  This is a great way to increase your level of support if you really love our content!",
-                     *             "price": "10.00",
-                     *             "priceYearly": "100.00",
-                     *             "currency": "usd",
-                     *             "logo": null,
-                     *             "interval": "month",
-                     *             "featured": false,
-                     *             "allowGrandfatheredAccess": false,
-                     *             "discordServers": [],
-                     *             "discordRoles": []
-                     *           }
-                     *         ],
-                     *         "discoverable": true,
-                     *         "subscriberCountDisplay": "all",
-                     *         "incomeDisplay": false,
-                     *         "socialLinks": {
-                     *           "youtube": "https://www.youtube.com/techdeals",
-                     *           "twitter": "https://twitter.com/TechDeals_16"
-                     *         }
-                     *       },
-                     *       {
-                     *         "id": "5d2fd26df33b8d14fc5ff48d",
-                     *         "owner": "5c4280ff4160af3309527f37",
-                     *         "title": "EposVox",
-                     *         "urlname": "eposvox",
-                     *         "description": "The ORIGINAL content creator and streaming focused tech education channel. EposVox, the Stream Professor, is here to give you how to videos, tutorials, tips and tricks, as well as gear reviews and benchmarks to get the most out of your tech experience. \nWhile content creation and streaming (especially with software like OBS Studio and XSplit) are primary focuses of content, ultimately the goal is to make technology easier and more fun to use. Education is number one, entertainment is sometimes given.\nThe analog tech nostalgia is just inherent to being a 90s kid.\n\n📬 Shipping: \nP.O. Box 459 \nJeffersonville, IN 47131",
-                     *         "about": "The ORIGINAL content creator and streaming focused tech education channel. EposVox, the Stream Professor, is here to give you how to videos, tutorials, tips and tricks, as well as gear reviews and benchmarks to get the most out of your tech experience. \nWhile content creation and streaming (especially with software like OBS Studio and XSplit) are primary focuses of content, ultimately the goal is to make technology easier and more fun to use. Education is number one, entertainment is sometimes given.\nThe analog tech nostalgia is just inherent to being a 90s kid.\n\n📬 Shipping: \nP.O. Box 459 \nJeffersonville, IN 47131",
-                     *         "category": {
-                     *           "title": "Technology"
-                     *         },
-                     *         "cover": {
-                     *           "width": 1992,
-                     *           "height": 520,
-                     *           "path": "https://pbs.floatplane.com/cover_images/5d2fd26df33b8d14fc5ff48d/879571788095471_1563437947857.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 1245,
-                     *               "height": 325,
-                     *               "path": "https://pbs.floatplane.com/cover_images/5d2fd26df33b8d14fc5ff48d/879571788095471_1563437947857_1245x325.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "icon": {
-                     *           "width": 720,
-                     *           "height": 720,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/5d2fd26df33b8d14fc5ff48d/136876584569877_1596766926335.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/5d2fd26df33b8d14fc5ff48d/136876584569877_1596766926335_100x100.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/5d2fd26df33b8d14fc5ff48d/136876584569877_1596766926335_250x250.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "liveStream": {
-                     *           "id": "5d2fd230f33b8d14fc5ff48c",
-                     *           "title": "EposVox Live Testing",
-                     *           "description": "Not much to see here... yet!",
-                     *           "thumbnail": null,
-                     *           "owner": "5d2fd26df33b8d14fc5ff48d",
-                     *           "streamPath": "/live_abr/eposvox",
-                     *           "offline": {
-                     *             "title": null,
-                     *             "description": "Not much to see here... yet!",
-                     *             "thumbnail": {
-                     *               "width": 1920,
-                     *               "height": 1080,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5d2fd230f33b8d14fc5ff48c/859602689851697_1563602860461.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 1200,
-                     *                   "height": 675,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5d2fd230f33b8d14fc5ff48c/859602689851697_1563602860461_1200x675.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5d2fd230f33b8d14fc5ff48c/859602689851697_1563602860461_400x225.jpeg"
-                     *                 }
-                     *               ]
-                     *             }
-                     *           }
-                     *         },
-                     *         "subscriptionPlans": [
-                     *           {
-                     *             "id": "5d32780027050d0c9a0b10aa",
-                     *             "title": "FLOATPLANE FLOATBOATS (1080p)",
-                     *             "description": "Primary Floatplane sub. Help me build the best tech education platform on the internet and keep diving into crazy nerdy details no one else covers. This tier gets you all of the currently-available video playback, downloads and live streaming.  BTS Vlogs & Early Access, too! All up to 1080p quality.\nVideos will be given as early access as much as a month (though usually just a week) before YouTube, when available.",
-                     *             "price": "5.00",
-                     *             "priceYearly": null,
-                     *             "currency": "usd",
-                     *             "logo": null,
-                     *             "interval": "month",
-                     *             "featured": false,
-                     *             "discordServers": [],
-                     *             "discordRoles": []
-                     *           },
-                     *           {
-                     *             "id": "5d48aaee6825b5780db93c80",
-                     *             "title": "Super Sub (4k)",
-                     *             "description": "You get... EVERYTHING! Future features will expand here, but for now, you get everything already available, and this is just here for those who want to support a little more :)",
-                     *             "price": "10.00",
-                     *             "priceYearly": null,
-                     *             "currency": "usd",
-                     *             "logo": null,
-                     *             "interval": "month",
-                     *             "featured": false,
-                     *             "discordServers": [],
-                     *             "discordRoles": []
-                     *           }
-                     *         ],
-                     *         "discoverable": true,
-                     *         "subscriberCountDisplay": "hide",
-                     *         "incomeDisplay": false,
-                     *         "socialLinks": {
-                     *           "youtube": "https://www.youtube.com/eposvox",
-                     *           "instagram": "https://www.instagram.com/eposvox/",
-                     *           "website": "https://eposvox.com",
-                     *           "facebook": "https://www.facebook.com/eposvoxofficial",
-                     *           "twitter": "https://twitter.com/eposvox"
-                     *         }
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["CreatorModelV3"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getCreatorByName: {
-        parameters: {
-            query: {
-                /** @description The `urlname`(s) of the creator(s) to be retrieved. See `CreatorModelV3`. */
-                creatorURL: string[];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "59f94c0bdd241b70349eb72b",
-                     *         "owner": "59f94c0bdd241b70349eb723",
-                     *         "title": "LinusTechTips",
-                     *         "urlname": "linustechtips",
-                     *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *         "category": {
-                     *           "id": "59f94c0bdd241b70349eb727",
-                     *           "title": "Technology"
-                     *         },
-                     *         "cover": {
-                     *           "width": 1990,
-                     *           "height": 519,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 1245,
-                     *               "height": 325,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "icon": {
-                     *           "width": 600,
-                     *           "height": 600,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "liveStream": {
-                     *           "id": "5c13f3c006f1be15e08e05c0",
-                     *           "title": "I Am Hard... [REDACTED] - WAN Show March 17, 2023",
-                     *           "description": "<p>Get a 15-day free trial for unlimited backup at<a href=\"https://www.backblaze.com/landing/podcast-wan.html\" rel=\"noopener noreferrer\" target=\"_blank\"> https://www.backblaze.com/landing/podcast-wan.html</a></p><p>Try Zoho One free for 30 days with no credit card required here:<a href=\"https://www.zoho.com/one/lp/linus.html\" rel=\"noopener noreferrer\" target=\"_blank\"> https://www.zoho.com/one/lp/linus.html</a></p><p>Save 15% with our offer code WANSHOW at <a href=\"https://vessi.com/WANSHOW\" rel=\"noopener noreferrer\" target=\"_blank\">https://vessi.com/WANSHOW</a></p><p><br></p><p>Podcast Download: TBD</p>",
-                     *           "thumbnail": {
-                     *             "width": 1920,
-                     *             "height": 1080,
-                     *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/754645543818842_1679099143677.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 400,
-                     *                 "height": 225,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/754645543818842_1679099143677_400x225.jpeg"
-                     *               },
-                     *               {
-                     *                 "width": 1200,
-                     *                 "height": 675,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/754645543818842_1679099143677_1200x675.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "owner": "59f94c0bdd241b70349eb72b",
-                     *           "channel": "63fe42c309e691e4e36de93d",
-                     *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *           "offline": {
-                     *             "title": "Offline",
-                     *             "description": "We're offline for now – please check back later!",
-                     *             "thumbnail": {
-                     *               "width": 1920,
-                     *               "height": 1080,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 1200,
-                     *                   "height": 675,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                 }
-                     *               ]
-                     *             }
-                     *           }
-                     *         },
-                     *         "subscriptionPlans": [
-                     *           {
-                     *             "id": "5d48d0306825b5780db93d07",
-                     *             "title": "LTT Supporter",
-                     *             "description": "- 2 Exclusives Per Week (Meet the Team, Extras, Behind the Scenes) \n- Exclusive livestreams\n- Save $10 by purchasing an annual subscription\n- Our gratitude for your support",
-                     *             "price": "5.00",
-                     *             "priceYearly": "50.00",
-                     *             "currency": "usd",
-                     *             "logo": null,
-                     *             "interval": "month",
-                     *             "featured": true,
-                     *             "allowGrandfatheredAccess": false,
-                     *             "discordServers": [],
-                     *             "discordRoles": []
-                     *           },
-                     *           {
-                     *             "id": "5e0ba6ac14e2590f760a0f0f",
-                     *             "title": "LTT Supporter Plus",
-                     *             "description": "- 4K Bitrate Streaming\n- 2 Exclusives Per Week (Meet the Team, Extras, Behind the Scenes) \n- Exclusive livestreams\n- Save $20 by purchasing an annual subscription\n- Our gratitude for your support",
-                     *             "price": "10.00",
-                     *             "priceYearly": "100.00",
-                     *             "currency": "usd",
-                     *             "logo": null,
-                     *             "interval": "month",
-                     *             "featured": true,
-                     *             "allowGrandfatheredAccess": false,
-                     *             "discordServers": [],
-                     *             "discordRoles": []
-                     *           }
-                     *         ],
-                     *         "discoverable": true,
-                     *         "subscriberCountDisplay": "total",
-                     *         "incomeDisplay": false,
-                     *         "defaultChannel": "63fe42c309e691e4e36de93d",
-                     *         "socialLinks": {
-                     *           "instagram": "https://www.instagram.com/linustech",
-                     *           "website": "https://linustechtips.com",
-                     *           "facebook": "https://www.facebook.com/LinusTech",
-                     *           "youtube": "https://www.youtube.com/user/LinusTechTips",
-                     *           "twitter": "https://twitter.com/linustech"
-                     *         },
-                     *         "channels": [
-                     *           {
-                     *             "id": "63fe42c309e691e4e36de93d",
-                     *             "creator": "59f94c0bdd241b70349eb72b",
-                     *             "title": "Linus Tech Tips",
-                     *             "urlname": "main",
-                     *             "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *             "order": 0,
-                     *             "cover": {
-                     *               "width": 1990,
-                     *               "height": 519,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 1245,
-                     *                   "height": 325,
-                     *                   "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "card": null,
-                     *             "icon": {
-                     *               "width": 600,
-                     *               "height": 600,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 250,
-                     *                   "height": 250,
-                     *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 100,
-                     *                   "height": 100,
-                     *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "socialLinks": {}
-                     *           },
-                     *           {
-                     *             "id": "6413534d88c13c181c3e2809",
-                     *             "creator": "59f94c0bdd241b70349eb72b",
-                     *             "title": "TechLinked",
-                     *             "urlname": "techlinked",
-                     *             "about": "News about tech + gaming culture, delivered thrice weekly.\n\nWe're also doing long-form video essays now, apparently. \n\nThe TalkLinked talk show/podcast will probably come back at some point, too!\n\nWriters: Riley Murdock, Jon Martin, James Strieb",
-                     *             "order": 2,
-                     *             "cover": {
-                     *               "width": 1080,
-                     *               "height": 282,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/231100243161134_1678988109632.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "card": null,
-                     *             "icon": {
-                     *               "width": 88,
-                     *               "height": 88,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/955526950207988_1678988110287.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "socialLinks": {}
-                     *           },
-                     *           {
-                     *             "id": "64135da7ce81077a8480c679",
-                     *             "creator": "59f94c0bdd241b70349eb72b",
-                     *             "title": "ShortCircuit",
-                     *             "urlname": "shortcircuit",
-                     *             "about": "What's in the box? Let's find out!\n\nOfficial channel under Linus Media Group.",
-                     *             "order": 3,
-                     *             "cover": {
-                     *               "width": 1084,
-                     *               "height": 283,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/745715133852622_1678990806332.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "card": null,
-                     *             "icon": {
-                     *               "width": 88,
-                     *               "height": 88,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/470304051261927_1678990806883.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "socialLinks": {}
-                     *           },
-                     *           {
-                     *             "id": "64135e27c773b27ff22c97eb",
-                     *             "creator": "59f94c0bdd241b70349eb72b",
-                     *             "title": "Techquickie",
-                     *             "urlname": "techquickie",
-                     *             "about": "Ever wanted to learn more about your favorite gadgets or a trending topic in tech? \n\nWith a mix of humor, cynicism, and insight, Techquickie brings you the answers to all your tech questions every Tuesday and Friday.",
-                     *             "order": 5,
-                     *             "cover": {
-                     *               "width": 1080,
-                     *               "height": 282,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/721553790654237_1678990887992.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "card": null,
-                     *             "icon": {
-                     *               "width": 88,
-                     *               "height": 88,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/666841640245092_1678990909616.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "socialLinks": {}
-                     *           },
-                     *           {
-                     *             "id": "64135e901ebaee42e258eb0b",
-                     *             "creator": "59f94c0bdd241b70349eb72b",
-                     *             "title": "Mac Address",
-                     *             "urlname": "macaddress",
-                     *             "about": "The exploration of all things Apple, from iPhones underwater to full iClouds in the sky. We want to be the channel that you come to first for an unexpected viewpoint about the devices you love.",
-                     *             "order": 4,
-                     *             "cover": {
-                     *               "width": 1080,
-                     *               "height": 282,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/254417940627493_1678990992632.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "card": null,
-                     *             "icon": {
-                     *               "width": 88,
-                     *               "height": 88,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/979475909700348_1678990993114.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "socialLinks": {}
-                     *           },
-                     *           {
-                     *             "id": "64135ed078d6262f717341b7",
-                     *             "creator": "59f94c0bdd241b70349eb72b",
-                     *             "title": "Channel Super Fun",
-                     *             "urlname": "channelsuperfun",
-                     *             "about": "Channel Super Fun is all about the name. Games, toys, and challenges. Expect to find them all here!",
-                     *             "order": 6,
-                     *             "cover": {
-                     *               "width": 1080,
-                     *               "height": 282,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/881886551214964_1678991123807.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "card": null,
-                     *             "icon": {
-                     *               "width": 88,
-                     *               "height": 88,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/317924815973639_1678991124672.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "socialLinks": {}
-                     *           },
-                     *           {
-                     *             "id": "64135f82fc76ab7f9fbdc876",
-                     *             "creator": "59f94c0bdd241b70349eb72b",
-                     *             "title": "They're Just Movies",
-                     *             "urlname": "tajm",
-                     *             "about": "Each week our small group of nerds sits down for a not-so-serious, SPOILER-FILLED, chat about the movies you love.\n\nFormerly known as Carpool Critics, we're part of Linus Media Group!",
-                     *             "order": 7,
-                     *             "cover": {
-                     *               "width": 1080,
-                     *               "height": 282,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/190277198232475_1678991235439.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "card": null,
-                     *             "icon": {
-                     *               "width": 88,
-                     *               "height": 88,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/570806971094170_1678991236419.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "socialLinks": {}
-                     *           },
-                     *           {
-                     *             "id": "6413623f5b12cca228a28e78",
-                     *             "creator": "59f94c0bdd241b70349eb72b",
-                     *             "title": "FP Exclusive",
-                     *             "urlname": "fpexclusive",
-                     *             "about": "wow... so empty",
-                     *             "order": 1,
-                     *             "cover": {
-                     *               "width": 1200,
-                     *               "height": 313,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/072932633007415_1678991935461.jpeg",
-                     *               "childImages": []
-                     *             },
-                     *             "card": null,
-                     *             "icon": {
-                     *               "width": 720,
-                     *               "height": 720,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 100,
-                     *                   "height": 100,
-                     *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484_100x100.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 250,
-                     *                   "height": 250,
-                     *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484_250x250.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "socialLinks": {}
-                     *           }
-                     *         ],
-                     *         "discordServers": [
-                     *           {
-                     *             "id": "5baa8838d9f3aa0a83acd429",
-                     *             "guildName": "Linus Tech Tips",
-                     *             "guildIcon": "803d5f745b30aba3edba719bac671660",
-                     *             "inviteLink": "https://discord.gg/LTT",
-                     *             "inviteMode": "link"
-                     *           },
-                     *           {
-                     *             "id": "5e34cd9a9dbb744872192895",
-                     *             "guildName": "LTT Minecraft Network",
-                     *             "guildIcon": "4f7f812b49196b1646bdcdb84b948c84",
-                     *             "inviteLink": "https://discord.gg/VVpwBPXrMc",
-                     *             "inviteMode": "link"
-                     *           }
-                     *         ]
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["CreatorModelV3"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    listCreatorChannelsV3: {
-        parameters: {
-            query: {
-                /** @description The ids of the creator(s) from which to search for channels. */
-                ids: string[];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "63fe42c309e691e4e36de93d",
-                     *         "creator": "59f94c0bdd241b70349eb72b",
-                     *         "title": "Linus Tech Tips",
-                     *         "urlname": "main",
-                     *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *         "order": 0,
-                     *         "cover": {
-                     *           "width": 1990,
-                     *           "height": 519,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 1245,
-                     *               "height": 325,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "card": {
-                     *           "width": 375,
-                     *           "height": 500,
-                     *           "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 300,
-                     *               "height": 400,
-                     *               "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "icon": {
-                     *           "width": 600,
-                     *           "height": 600,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "socialLinks": {}
-                     *       },
-                     *       {
-                     *         "id": "6413534d88c13c181c3e2809",
-                     *         "creator": "59f94c0bdd241b70349eb72b",
-                     *         "title": "TechLinked",
-                     *         "urlname": "techlinked",
-                     *         "about": "News about tech + gaming culture, delivered thrice weekly.\n\nWe're also doing long-form video essays now, apparently. \n\nThe TalkLinked talk show/podcast will probably come back at some point, too!\n\nWriters: Riley Murdock, Jon Martin, James Strieb",
-                     *         "order": 2,
-                     *         "cover": {
-                     *           "width": 1080,
-                     *           "height": 282,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/231100243161134_1678988109632.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "card": {
-                     *           "width": 66,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/953298867250186_1678988110714.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "icon": {
-                     *           "width": 88,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/955526950207988_1678988110287.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "socialLinks": {}
-                     *       },
-                     *       {
-                     *         "id": "64135da7ce81077a8480c679",
-                     *         "creator": "59f94c0bdd241b70349eb72b",
-                     *         "title": "ShortCircuit",
-                     *         "urlname": "shortcircuit",
-                     *         "about": "What's in the box? Let's find out!\n\nOfficial channel under Linus Media Group.",
-                     *         "order": 3,
-                     *         "cover": {
-                     *           "width": 1084,
-                     *           "height": 283,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/745715133852622_1678990806332.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "card": {
-                     *           "width": 66,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/939790311068913_1678990807440.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "icon": {
-                     *           "width": 88,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/470304051261927_1678990806883.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "socialLinks": {}
-                     *       },
-                     *       {
-                     *         "id": "64135e27c773b27ff22c97eb",
-                     *         "creator": "59f94c0bdd241b70349eb72b",
-                     *         "title": "Techquickie",
-                     *         "urlname": "techquickie",
-                     *         "about": "Ever wanted to learn more about your favorite gadgets or a trending topic in tech? \n\nWith a mix of humor, cynicism, and insight, Techquickie brings you the answers to all your tech questions every Tuesday and Friday.",
-                     *         "order": 5,
-                     *         "cover": {
-                     *           "width": 1080,
-                     *           "height": 282,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/721553790654237_1678990887992.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "card": {
-                     *           "width": 66,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/962826906389296_1678990910103.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "icon": {
-                     *           "width": 88,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/666841640245092_1678990909616.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "socialLinks": {}
-                     *       },
-                     *       {
-                     *         "id": "64135e901ebaee42e258eb0b",
-                     *         "creator": "59f94c0bdd241b70349eb72b",
-                     *         "title": "Mac Address",
-                     *         "urlname": "macaddress",
-                     *         "about": "The exploration of all things Apple, from iPhones underwater to full iClouds in the sky. We want to be the channel that you come to first for an unexpected viewpoint about the devices you love.",
-                     *         "order": 4,
-                     *         "cover": {
-                     *           "width": 1080,
-                     *           "height": 282,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/254417940627493_1678990992632.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "card": {
-                     *           "width": 66,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/493604923555386_1678990993708.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "icon": {
-                     *           "width": 88,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/979475909700348_1678990993114.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "socialLinks": {}
-                     *       },
-                     *       {
-                     *         "id": "64135ed078d6262f717341b7",
-                     *         "creator": "59f94c0bdd241b70349eb72b",
-                     *         "title": "Channel Super Fun",
-                     *         "urlname": "channelsuperfun",
-                     *         "about": "Channel Super Fun is all about the name. Games, toys, and challenges. Expect to find them all here!",
-                     *         "order": 6,
-                     *         "cover": {
-                     *           "width": 1080,
-                     *           "height": 282,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/881886551214964_1678991123807.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "card": {
-                     *           "width": 66,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/953601834319296_1678991125167.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "icon": {
-                     *           "width": 88,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/317924815973639_1678991124672.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "socialLinks": {}
-                     *       },
-                     *       {
-                     *         "id": "64135f82fc76ab7f9fbdc876",
-                     *         "creator": "59f94c0bdd241b70349eb72b",
-                     *         "title": "They're Just Movies",
-                     *         "urlname": "tajm",
-                     *         "about": "Each week our small group of nerds sits down for a not-so-serious, SPOILER-FILLED, chat about the movies you love.\n\nFormerly known as Carpool Critics, we're part of Linus Media Group!",
-                     *         "order": 7,
-                     *         "cover": {
-                     *           "width": 1080,
-                     *           "height": 282,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/190277198232475_1678991235439.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "card": {
-                     *           "width": 66,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/863827491957963_1678991237126.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "icon": {
-                     *           "width": 88,
-                     *           "height": 88,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/570806971094170_1678991236419.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "socialLinks": {}
-                     *       },
-                     *       {
-                     *         "id": "6413623f5b12cca228a28e78",
-                     *         "creator": "59f94c0bdd241b70349eb72b",
-                     *         "title": "FP Exclusive",
-                     *         "urlname": "fpexclusive",
-                     *         "about": "wow... so empty",
-                     *         "order": 1,
-                     *         "cover": {
-                     *           "width": 1200,
-                     *           "height": 313,
-                     *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/072932633007415_1678991935461.jpeg",
-                     *           "childImages": []
-                     *         },
-                     *         "card": {
-                     *           "width": 750,
-                     *           "height": 1000,
-                     *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/717727609968419_1678991937240.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 375,
-                     *               "height": 500,
-                     *               "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/717727609968419_1678991937240_375x500.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 300,
-                     *               "height": 400,
-                     *               "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/717727609968419_1678991937240_300x400.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "icon": {
-                     *           "width": 720,
-                     *           "height": 720,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484_100x100.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484_250x250.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "socialLinks": {}
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["ChannelModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getCreatorSubInfoPublic: {
-        parameters: {
-            query: {
-                /** @description The GUID for the creator being search. */
-                creatorId: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Information about the plans for the creator */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "totalSubscriberCount": 19256,
-                     *       "totalIncome": null,
-                     *       "plans": [
-                     *         {
-                     *           "discordRoles": [
-                     *             {
-                     *               "server": "5baa8838d9f3aa0a83acd429",
-                     *               "roleName": "Floatplane.com Pilot"
-                     *             },
-                     *             {
-                     *               "server": "5e34cd9a9dbb744872192895",
-                     *               "roleName": "Pilot"
-                     *             }
-                     *           ],
-                     *           "createdAt": "2019-08-06T00:56:16.180Z",
-                     *           "updatedAt": "2021-09-09T16:55:02.620Z",
-                     *           "id": "5d48d0306825b5780db93d07",
-                     *           "title": "LTT Supporter (1080p)",
-                     *           "enabled": true,
-                     *           "featured": true,
-                     *           "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *           "price": "5.00",
-                     *           "priceYearly": "50.00",
-                     *           "paymentID": 19,
-                     *           "currency": "usd",
-                     *           "trialPeriod": 0,
-                     *           "allowGrandfatheredAccess": false,
-                     *           "logo": null,
-                     *           "creator": "59f94c0bdd241b70349eb72b",
-                     *           "discordServers": [
-                     *             {
-                     *               "id": "5baa8838d9f3aa0a83acd429",
-                     *               "guildName": "LinusTechTips",
-                     *               "guildIcon": "a_528743a32b33b5eb227a8405d5593473",
-                     *               "inviteLink": "https://discord.gg/LTT",
-                     *               "inviteMode": "link"
-                     *             },
-                     *             {
-                     *               "id": "5e34cd9a9dbb744872192895",
-                     *               "guildName": "LTT Minecraft Network",
-                     *               "guildIcon": "4f7f812b49196b1646bdcdb84b948c84",
-                     *               "inviteLink": "https://discord.gg/VVpwBPXrMc",
-                     *               "inviteMode": "link"
-                     *             }
-                     *           ],
-                     *           "userIsSubscribed": true,
-                     *           "userIsGrandfathered": false,
-                     *           "enabledGlobal": true,
-                     *           "interval": "month"
-                     *         },
-                     *         {
-                     *           "discordRoles": [
-                     *             {
-                     *               "server": "5baa8838d9f3aa0a83acd429",
-                     *               "roleName": "Floatplane.com Pilot"
-                     *             },
-                     *             {
-                     *               "server": "5e34cd9a9dbb744872192895",
-                     *               "roleName": "Pilot"
-                     *             }
-                     *           ],
-                     *           "createdAt": "2019-12-31T19:51:08.009Z",
-                     *           "updatedAt": "2020-11-07T01:33:31.617Z",
-                     *           "id": "5e0ba6ac14e2590f760a0f0f",
-                     *           "title": "LTT Supporter Plus",
-                     *           "enabled": true,
-                     *           "featured": false,
-                     *           "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *           "price": "10.00",
-                     *           "priceYearly": "100.00",
-                     *           "paymentID": 66,
-                     *           "currency": "usd",
-                     *           "trialPeriod": 0,
-                     *           "allowGrandfatheredAccess": false,
-                     *           "logo": null,
-                     *           "creator": "59f94c0bdd241b70349eb72b",
-                     *           "discordServers": [
-                     *             {
-                     *               "id": "5baa8838d9f3aa0a83acd429",
-                     *               "guildName": "LinusTechTips",
-                     *               "guildIcon": "a_528743a32b33b5eb227a8405d5593473",
-                     *               "inviteLink": "https://discord.gg/LTT",
-                     *               "inviteMode": "link"
-                     *             },
-                     *             {
-                     *               "id": "5e34cd9a9dbb744872192895",
-                     *               "guildName": "LTT Minecraft Network",
-                     *               "guildIcon": "4f7f812b49196b1646bdcdb84b948c84",
-                     *               "inviteLink": "https://discord.gg/VVpwBPXrMc",
-                     *               "inviteMode": "link"
-                     *             }
-                     *           ],
-                     *           "userIsSubscribed": false,
-                     *           "userIsGrandfathered": false,
-                     *           "enabledGlobal": true,
-                     *           "interval": "month"
-                     *         }
-                     *       ]
-                     *     } */
-                    "application/json": components["schemas"]["PlanInfoV2Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getEdges: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "edges": [
-                     *         {
-                     *           "hostname": "edge01-na.floatplane.com",
-                     *           "queryPort": 8090,
-                     *           "bandwidth": 1000000000,
-                     *           "allowDownload": true,
-                     *           "allowStreaming": true,
-                     *           "datacenter": {
-                     *             "countryCode": "CA",
-                     *             "regionCode": "QC",
-                     *             "latitude": 45.3168,
-                     *             "longitude": -73.8659
-                     *           }
-                     *         },
-                     *         {
-                     *           "hostname": "edge02-na.floatplane.com",
-                     *           "queryPort": 8090,
-                     *           "bandwidth": 500000000,
-                     *           "allowDownload": true,
-                     *           "allowStreaming": true,
-                     *           "datacenter": {
-                     *             "countryCode": "CA",
-                     *             "regionCode": "QC",
-                     *             "latitude": 45.3168,
-                     *             "longitude": -73.8659
-                     *           }
-                     *         },
-                     *         {
-                     *           "hostname": "edge01-eu.floatplane.com",
-                     *           "queryPort": 8090,
-                     *           "bandwidth": 1000000000,
-                     *           "allowDownload": false,
-                     *           "allowStreaming": true,
-                     *           "datacenter": {
-                     *             "countryCode": "FR",
-                     *             "regionCode": "A",
-                     *             "latitude": 48.5873,
-                     *             "longitude": 7.79821
-                     *           }
-                     *         },
-                     *         {
-                     *           "hostname": "edge01-au.floatplane.com",
-                     *           "queryPort": 8090,
-                     *           "bandwidth": 250000000,
-                     *           "allowDownload": false,
-                     *           "allowStreaming": true,
-                     *           "datacenter": {
-                     *             "countryCode": "AU",
-                     *             "regionCode": "NSW",
-                     *             "latitude": -33.8401,
-                     *             "longitude": 151.209
-                     *           }
-                     *         },
-                     *         {
-                     *           "hostname": "edge1-na-south.floatplane.com",
-                     *           "queryPort": 0,
-                     *           "bandwidth": 1000000000,
-                     *           "allowDownload": false,
-                     *           "allowStreaming": true,
-                     *           "datacenter": {
-                     *             "countryCode": "US",
-                     *             "regionCode": "FL",
-                     *             "latitude": 25.8124,
-                     *             "longitude": -80.2401
-                     *           }
-                     *         },
-                     *         {
-                     *           "hostname": "edge1-na-sv.floatplane.com",
-                     *           "queryPort": 0,
-                     *           "bandwidth": 1000000000,
-                     *           "allowDownload": false,
-                     *           "allowStreaming": true,
-                     *           "datacenter": {
-                     *             "countryCode": "US",
-                     *             "regionCode": "CA",
-                     *             "latitude": 37.3387,
-                     *             "longitude": -121.8914
-                     *           }
-                     *         },
-                     *         {
-                     *           "hostname": "edge03-na.floatplane.com",
-                     *           "queryPort": 0,
-                     *           "bandwidth": 3000000000,
-                     *           "allowDownload": false,
-                     *           "allowStreaming": true,
-                     *           "datacenter": {
-                     *             "countryCode": "CA",
-                     *             "regionCode": "QC",
-                     *             "latitude": 45.3168,
-                     *             "longitude": -73.8659
-                     *           }
-                     *         }
-                     *       ],
-                     *       "client": {}
-                     *     } */
-                    "application/json": components["schemas"]["EdgesModel"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getFaqSections: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "faqs": [
-                     *           {
-                     *             "createdAt": "2019-10-03T18:45:49.157Z",
-                     *             "updatedAt": "2019-12-19T22:06:01.843Z",
-                     *             "id": "5d9641ddbced315cc7d9135f",
-                     *             "question": "How do you get the PewPew emote? ",
-                     *             "answer": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\">The PewPew emote was as an account reward for users who had succesfully set up a payment method on Floatplane.com before January 1st 2019.</span></p>",
-                     *             "status": "public",
-                     *             "link": "g-pewpew-emote",
-                     *             "order": 1,
-                     *             "faqSection": "5d9641d0b3e3285cfffe44a9"
-                     *           }
-                     *         ],
-                     *         "createdAt": "2019-10-03T18:45:36.840Z",
-                     *         "updatedAt": "2019-12-19T22:08:50.481Z",
-                     *         "id": "5d9641d0b3e3285cfffe44a9",
-                     *         "name": "General",
-                     *         "description": "For general questions about Floatplane",
-                     *         "status": "public",
-                     *         "order": 1
-                     *       },
-                     *       {
-                     *         "faqs": [
-                     *           {
-                     *             "createdAt": "2019-10-03T18:26:28.413Z",
-                     *             "updatedAt": "2020-01-28T03:23:15.918Z",
-                     *             "id": "5d963d54221c575ce366b7e7",
-                     *             "question": "Can you upgrade me to the LTT supporter (1080p) subscription? ",
-                     *             "answer": "<p>At this time there is no difference between the two channels in regards to features that are unlocked. The only difference between the two is the price.</p>",
-                     *             "status": "public",
-                     *             "link": "sub-u-payment",
-                     *             "order": 1,
-                     *             "faqSection": "5d8d1be612c2535c9dc067d1"
-                     *           }
-                     *         ],
-                     *         "createdAt": "2019-09-26T20:13:26.431Z",
-                     *         "updatedAt": "2020-01-28T03:24:33.443Z",
-                     *         "id": "5d8d1be612c2535c9dc067d1",
-                     *         "name": "Subscription and Payment ",
-                     *         "description": "Life isn't always about money but this section is. If you have a payment or subscription issue look here.  ",
-                     *         "status": "public",
-                     *         "order": 2
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["FaqSectionModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    listPaymentMethods: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": 54715,
-                     *         "payment_processor": 1,
-                     *         "default": true,
-                     *         "card": {
-                     *           "brand": "Visa",
-                     *           "last4": "1234",
-                     *           "exp_month": 11,
-                     *           "exp_year": 2028,
-                     *           "name": "Firstname Lastname"
-                     *         }
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["PaymentMethodModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    listAddresses: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": 44739,
-                     *         "customerName": "Firstname Lastname",
-                     *         "postalCode": "12345",
-                     *         "line1": "123 Main St",
-                     *         "city": "Metropolis",
-                     *         "region": "NY",
-                     *         "country": "US",
-                     *         "default": true
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["PaymentAddressModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    listInvoices: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "invoices": [
-                     *         {
-                     *           "id": 1234567,
-                     *           "amountDue": 50,
-                     *           "amountTax": 0,
-                     *           "attemptCount": 0,
-                     *           "currency": "usd",
-                     *           "date": "2020-11-19T16:23:33.000Z",
-                     *           "dateDue": null,
-                     *           "periodStart": "2020-09-25T07:35:04.273Z",
-                     *           "periodEnd": "2021-09-25T07:35:04.273Z",
-                     *           "nextPaymentAttempt": "2020-09-25T07:35:04.273Z",
-                     *           "paid": true,
-                     *           "forgiven": false,
-                     *           "refunded": false,
-                     *           "subscriptions": [
-                     *             {
-                     *               "id": 1234567,
-                     *               "subscription": 12345,
-                     *               "periodStart": "2020-09-25T07:35:04.273Z",
-                     *               "periodEnd": "2021-09-25T07:35:04.273Z",
-                     *               "value": 50,
-                     *               "amountSubtotal": 50,
-                     *               "amountTotal": 50,
-                     *               "amountTax": 0,
-                     *               "plan": {
-                     *                 "id": "5d48d0306825b5780db93d07",
-                     *                 "title": "LTT Supporter (1080p)",
-                     *                 "creator": {
-                     *                   "id": "59f94c0bdd241b70349eb72b",
-                     *                   "title": "LinusTechTips",
-                     *                   "urlname": "linustechtips",
-                     *                   "icon": {
-                     *                     "width": 600,
-                     *                     "height": 600,
-                     *                     "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *                     "childImages": [
-                     *                       {
-                     *                         "width": 250,
-                     *                         "height": 250,
-                     *                         "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *                       },
-                     *                       {
-                     *                         "width": 100,
-                     *                         "height": 100,
-                     *                         "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *                       }
-                     *                     ]
-                     *                   }
-                     *                 }
-                     *               }
-                     *             }
-                     *           ]
-                     *         }
-                     *       ]
-                     *     } */
-                    "application/json": components["schemas"]["PaymentInvoiceListV2Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    socketConnect: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {} */
-                    "application/json": unknown;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    disconnectSocket: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {} */
-                    "application/json": unknown;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    listUserSubscriptionsV3: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Subscriptions returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "startDate": "2020-09-25T07:35:04.273Z",
-                     *         "endDate": "2021-09-25T07:35:04.273Z",
-                     *         "paymentID": 12345,
-                     *         "interval": "year",
-                     *         "paymentCancelled": false,
-                     *         "plan": {
-                     *           "id": "5d48d0306825b5780db93d07",
-                     *           "title": "LTT Supporter (1080p)",
-                     *           "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *           "price": "5.00",
-                     *           "priceYearly": "50.00",
-                     *           "currency": "usd",
-                     *           "logo": null,
-                     *           "interval": "month",
-                     *           "featured": true,
-                     *           "allowGrandfatheredAccess": false,
-                     *           "discordServers": [],
-                     *           "discordRoles": []
-                     *         },
-                     *         "creator": "59f94c0bdd241b70349eb72b"
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["UserSubscriptionModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getUserInfo: {
-        parameters: {
-            query: {
-                /** @description The GUID identifer(s) of the user(s) to be retrieved. */
-                id: string[];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Results of the user search */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "users": [
-                     *         {
-                     *           "id": "59f94c0bdd241b70349eb723",
-                     *           "user": {
-                     *             "id": "59f94c0bdd241b70349eb723",
-                     *             "username": "Linus",
-                     *             "profileImage": {
-                     *               "width": 600,
-                     *               "height": 600,
-                     *               "path": "https://pbs.floatplane.com/profile_images/59f94c0bdd241b70349eb723/013264939123424_1535577174346.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 100,
-                     *                   "height": 100,
-                     *                   "path": "https://pbs.floatplane.com/profile_images/59f94c0bdd241b70349eb723/013264939123424_1535577174346_100x100.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 250,
-                     *                   "height": 250,
-                     *                   "path": "https://pbs.floatplane.com/profile_images/59f94c0bdd241b70349eb723/013264939123424_1535577174346_250x250.jpeg"
-                     *                 }
-                     *               ]
-                     *             }
-                     *           }
-                     *         }
-                     *       ]
-                     *     } */
-                    "application/json": components["schemas"]["UserInfoV2Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getUserInfoByName: {
-        parameters: {
-            query: {
-                /** @description The username(s) of the user(s) to be retrieved. */
-                username: string[];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Results of the user search */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "users": [
-                     *         {
-                     *           "id": "0123456789abcdef01234567",
-                     *           "user": {
-                     *             "id": "0123456789abcdef01234567",
-                     *             "username": "my_username",
-                     *             "profileImage": {
-                     *               "width": 512,
-                     *               "height": 512,
-                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 250,
-                     *                   "height": 250,
-                     *                   "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
-                     *                 },
-                     *                 {
-                     *                   "width": 100,
-                     *                   "height": 100,
-                     *                   "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "email": "testemail@example.com",
-                     *             "displayName": "Firstname Lastname"
-                     *           }
-                     *         }
-                     *       ]
-                     *     } */
-                    "application/json": components["schemas"]["UserNamedV2Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getSecurity: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Current security settings */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "twofactorEnabled": true,
-                     *       "twofactorBackupCodeEnabled": true
-                     *     } */
-                    "application/json": components["schemas"]["UserSecurityV2Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    userCreatorBanStatus: {
-        parameters: {
-            query: {
-                /** @description The GUID of the creator being queried. */
-                creator: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Whether the user is banned or not */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example false */
-                    "application/json": boolean;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getActivityFeedV3: {
-        parameters: {
-            query: {
-                /** @description The GUID of the user being queried. */
-                id: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Activity returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "activity": [
-                     *         {
-                     *           "time": "2021-10-09T08:12:51.290Z",
-                     *           "comment": "This is the text of the comment being posted",
-                     *           "postTitle": "TL: Facebook Does Not Care.",
-                     *           "postId": "j7KjCaKrtV",
-                     *           "creatorTitle": "LinusTechTips",
-                     *           "creatorUrl": "linustechtips"
-                     *         }
-                     *       ],
-                     *       "visibility": "public"
-                     *     } */
-                    "application/json": components["schemas"]["UserActivityV3Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getExternalLinksV3: {
-        parameters: {
-            query: {
-                /** @description The GUID of the user being searched. */
-                id: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - User links returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "twitch": {
-                     *         "url": "https://twitch.tv/myusername",
-                     *         "type": {
-                     *           "name": "twitch",
-                     *           "displayName": "Twitch",
-                     *           "hostName": "twitch.tv"
-                     *         }
-                     *       }
-                     *     } */
-                    "application/json": components["schemas"]["UserLinksV3Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getSelf: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Information returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "id": "0123456789abcdef01234567",
-                     *       "username": "my_username",
-                     *       "profileImage": {
-                     *         "width": 512,
-                     *         "height": 512,
-                     *         "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
-                     *         "childImages": [
-                     *           {
-                     *             "width": 250,
-                     *             "height": 250,
-                     *             "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
-                     *           },
-                     *           {
-                     *             "width": 100,
-                     *             "height": 100,
-                     *             "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
-                     *           }
-                     *         ]
-                     *       },
-                     *       "email": "testemail@example.com",
-                     *       "displayName": "Firstname Lastname",
-                     *       "creators": [],
-                     *       "scheduledDeletionDate": null
-                     *     } */
-                    "application/json": components["schemas"]["UserSelfV3Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getUserNotificationSettingsV3: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Notifications returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "creator": {
-                     *           "id": "59f94c0bdd241b70349eb72b",
-                     *           "owner": "59f94c0bdd241b70349eb723",
-                     *           "title": "LinusTechTips",
-                     *           "urlname": "linustechtips",
-                     *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *           "category": "59f94c0bdd241b70349eb727",
-                     *           "cover": null,
-                     *           "icon": {
-                     *             "width": 16,
-                     *             "height": 16,
-                     *             "path": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA1BMVEUfLTy/Rf//AAAAC0lEQVQI12MgEQAAADAAAWV61nwAAAAASUVORK5CYII="
-                     *           },
-                     *           "liveStream": null,
-                     *           "subscriptionPlans": null,
-                     *           "discoverable": true,
-                     *           "subscriberCountDisplay": "total",
-                     *           "incomeDisplay": false
-                     *         },
-                     *         "userNotificationSetting": {
-                     *           "createdAt": "2020-09-25T07:35:04.273Z",
-                     *           "updatedAt": "2021-10-07T14:16:56.561Z",
-                     *           "id": "abcdef0123456789abcdef01",
-                     *           "contentEmail": false,
-                     *           "contentFirebase": true,
-                     *           "creatorMessageEmail": false,
-                     *           "user": "0123456789abcdef01234567",
-                     *           "creator": "59f94c0bdd241b70349eb72b"
-                     *         }
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["UserNotificationModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    updateUserNotificationSettingsV3: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "creator": "59f94c0bdd241b70349eb72b",
-                 *       "property": "contentFirebase",
-                 *       "newValue": false
-                 *     } */
-                "application/json": components["schemas"]["UserNotificationUpdateV3PostRequest"];
-            };
-        };
-        responses: {
-            /** @description OK - Whether or not the update was successful */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example true */
-                    "application/json": boolean;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getComments: {
-        parameters: {
-            query: {
-                /** @description Which blog post to retrieve comments for. */
-                blogPost: string;
-                /** @description The maximum number of comments to return. This should be set to 20 by default. */
-                limit: number;
-                /** @description When loading more comments on a blog post, this is used to determine which which comments to skip. This is a GUID of the last comment from the previous call to `getComments`. */
-                fetchAfter?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - All comments returned for the query parameters */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "00c5ab7379e746b24a76634b",
-                     *         "blogPost": "Dw2ms0AgL8",
-                     *         "user": {
-                     *           "id": "ff0a479639c60f3a8cd18d8b",
-                     *           "username": "some_username",
-                     *           "profileImage": {
-                     *             "width": 512,
-                     *             "height": 512,
-                     *             "path": "https://pbs.floatplane.com/profile_images/default/user10.png",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 250,
-                     *                 "height": 250,
-                     *                 "path": "https://pbs.floatplane.com/profile_images/default/user10_250x250.png"
-                     *               },
-                     *               {
-                     *                 "width": 100,
-                     *                 "height": 100,
-                     *                 "path": "https://pbs.floatplane.com/profile_images/default/user10_100x100.png"
-                     *               }
-                     *             ]
-                     *           }
-                     *         },
-                     *         "text": "This is my comment text, I really like this video.",
-                     *         "replying": null,
-                     *         "postDate": "2021-10-09T14:58:34.829Z",
-                     *         "editDate": "2021-10-09T14:58:34.829Z",
-                     *         "likes": 0,
-                     *         "dislikes": 0,
-                     *         "score": 0,
-                     *         "interactionCounts": {
-                     *           "like": 0,
-                     *           "dislike": 0
-                     *         },
-                     *         "totalReplies": 0,
-                     *         "replies": [],
-                     *         "userInteraction": null
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["CommentModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    postComment: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "blogPost": "j7KjCaKrtV",
-                 *       "text": "This is the text of the comment being posted"
-                 *     } */
-                "application/json": components["schemas"]["CommentV3PostRequest"];
-            };
-        };
-        responses: {
-            /** @description OK - Commented posted successfully, returning comment details */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "id": "8d575af6834343b166d0562a",
-                     *       "blogPost": "j7KjCaKrtV",
-                     *       "user": {
-                     *         "id": "0123456789abcdef01234567",
-                     *         "username": "my_username",
-                     *         "profileImage": {
-                     *           "width": 512,
-                     *           "height": 512,
-                     *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
-                     *             }
-                     *           ]
-                     *         }
-                     *       },
-                     *       "text": "This is the text of the comment being posted",
-                     *       "replying": null,
-                     *       "postDate": "2021-10-09T08:12:51.290Z",
-                     *       "editDate": "2021-10-09T08:12:51.290Z",
-                     *       "likes": 0,
-                     *       "dislikes": 0,
-                     *       "score": 0,
-                     *       "interactionCounts": {
-                     *         "like": 0,
-                     *         "dislike": 0
-                     *       }
-                     *     } */
-                    "application/json": components["schemas"]["CommentV3PostResponse"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getCommentReplies: {
-        parameters: {
-            query: {
-                /** @description The identifer of the comment from which to retrieve replies. */
-                comment: string;
-                /** @description The identifer of the blog post the `comment` belongs to. */
-                blogPost: string;
-                /** @description How many replies to retrieve. */
-                limit: number;
-                /** @description The identifer of the last reply in the reply chain. */
-                rid: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "1234567890abcdef",
-                     *         "blogPost": "p3OSnFmsR3",
-                     *         "user": {
-                     *           "id": "abcdef1234567890",
-                     *           "username": "the_username",
-                     *           "profileImage": {
-                     *             "width": 225,
-                     *             "height": 225,
-                     *             "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 100,
-                     *                 "height": 100,
-                     *                 "path": "https://pbs.floatplane.com/profile_images/default/user12.png"
-                     *               }
-                     *             ]
-                     *           }
-                     *         },
-                     *         "text": "This is my reply text",
-                     *         "replying": "1234567890abcdef0",
-                     *         "postDate": "2021-12-17T06:57:33.152Z",
-                     *         "editDate": "2021-12-17T06:57:33.152Z",
-                     *         "likes": 0,
-                     *         "dislikes": 0,
-                     *         "score": 0,
-                     *         "interactionCounts": {
-                     *           "like": 0,
-                     *           "dislike": 0
-                     *         },
-                     *         "userInteraction": null
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["CommentModel"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    likeComment: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "comment": "6161935e24f43441325bb255",
-                 *       "blogPost": "j7KjCaKrtV"
-                 *     } */
-                "application/json": components["schemas"]["CommentLikeV3PostRequest"];
-            };
-        };
-        responses: {
-            /** @description OK - Comment successfully liked */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example like */
-                    "text/plain": string;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    dislikeComment: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "comment": "6161935e24f43441325bb255",
-                 *       "blogPost": "j7KjCaKrtV"
-                 *     } */
-                "application/json": components["schemas"]["CommentLikeV3PostRequest"];
-            };
-        };
-        responses: {
-            /** @description OK - Comment successfully disliked */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example dislike */
-                    "text/plain": string;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getCreatorBlogPosts: {
-        parameters: {
-            query: {
-                /** @description The GUID of the creator to retrieve posts from. */
-                id: string;
-                /** @description The id of a creator's specific channel from which to retrieve posts. */
-                channel?: string;
-                /** @description The maximum number of posts to return. */
-                limit?: number;
-                /** @description The number of posts to skip. Usually a multiple of `limit`, to get the next "page" of results. */
-                fetchAfter?: number;
-                /** @description Search filter to look for specific posts. */
-                search?: string;
-                /** @description An array of tags to search against, possibly in addition to `search`. */
-                tags?: string[];
-                /** @description If true, include blog posts with video attachments. */
-                hasVideo?: boolean;
-                /** @description If true, include blog posts with audio attachments. */
-                hasAudio?: boolean;
-                /** @description If true, include blog posts with picture attachments. */
-                hasPicture?: boolean;
-                /** @description If true, only include blog posts that are text-only. Text-only posts are ones without any attachments, such as video, audio, picture, and gallery.
-                 *
-                 *     This filter and `hasVideo`, `hasAudio`, and `hasPicture` should be mutually exclusive. That is, if `hasText` is true then the other three should all be false. Conversely, if any of the other three are true, then `hasText` should be false. Otherwise, the filter would produce no results. */
-                hasText?: boolean;
-                /** @description `DESC` = Newest First. `ASC` = Oldest First. */
-                sort?: "ASC" | "DESC";
-                /** @description Include video posts where the duration of the video is at minimum `fromDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
-                fromDuration?: number;
-                /** @description Include video posts where the duration of the video is at maximum `toDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
-                toDuration?: number;
-                /**
-                 * @description Include posts where the publication date is on or after this filter date.
-                 * @example 2022-07-24T07:00:00.001Z
-                 */
-                fromDate?: string;
-                /**
-                 * @description Include posts where the publication date is on or before this filter date.
-                 * @example 2022-07-24T07:00:00.001Z
-                 */
-                toDate?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Creator posted returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "Dw2ms0AgL8",
-                     *         "guid": "Dw2ms0AgL8",
-                     *         "title": "Livestream VOD – October 9, 2021 @ 07:18 – First Linux Stream",
-                     *         "text": "<p>chat on Twitch</p>",
-                     *         "type": "blogPost",
-                     *         "tags": [
-                     *           "test"
-                     *         ],
-                     *         "attachmentOrder": [
-                     *           "TViGzkuIic"
-                     *         ],
-                     *         "metadata": {
-                     *           "hasVideo": true,
-                     *           "videoCount": 1,
-                     *           "videoDuration": 5689,
-                     *           "hasAudio": false,
-                     *           "audioCount": 0,
-                     *           "audioDuration": 0,
-                     *           "hasPicture": false,
-                     *           "pictureCount": 0,
-                     *           "hasGallery": false,
-                     *           "galleryCount": 0,
-                     *           "isFeatured": false
-                     *         },
-                     *         "releaseDate": "2021-10-09T09:29:00.039Z",
-                     *         "likes": 41,
-                     *         "dislikes": 0,
-                     *         "score": 41,
-                     *         "comments": 28,
-                     *         "creator": {
-                     *           "id": "59f94c0bdd241b70349eb72b",
-                     *           "owner": {
-                     *             "id": "59f94c0bdd241b70349eb723",
-                     *             "username": "Linus"
-                     *           },
-                     *           "title": "LinusTechTips",
-                     *           "urlname": "linustechtips",
-                     *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *           "category": {
-                     *             "title": "Technology"
-                     *           },
-                     *           "cover": {
-                     *             "width": 1990,
-                     *             "height": 519,
-                     *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 1245,
-                     *                 "height": 325,
-                     *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "icon": {
-                     *             "width": 600,
-                     *             "height": 600,
-                     *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 250,
-                     *                 "height": 250,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *               },
-                     *               {
-                     *                 "width": 100,
-                     *                 "height": 100,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "liveStream": {
-                     *             "id": "5c13f3c006f1be15e08e05c0",
-                     *             "title": "First Linux Stream",
-                     *             "description": "<p>chat on Twitch</p>",
-                     *             "thumbnail": {
-                     *               "width": 1200,
-                     *               "height": 675,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "owner": "59f94c0bdd241b70349eb72b",
-                     *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *             "offline": {
-                     *               "title": "Offline",
-                     *               "description": "We're offline for now – please check back later!",
-                     *               "thumbnail": {
-                     *                 "width": 1920,
-                     *                 "height": 1080,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *                 "childImages": [
-                     *                   {
-                     *                     "width": 400,
-                     *                     "height": 225,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                   },
-                     *                   {
-                     *                     "width": 1200,
-                     *                     "height": 675,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                   }
-                     *                 ]
-                     *               }
-                     *             }
-                     *           },
-                     *           "subscriptionPlans": [
-                     *             {
-                     *               "id": "5d48d0306825b5780db93d07",
-                     *               "title": "LTT Supporter (1080p)",
-                     *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *               "price": "5.00",
-                     *               "priceYearly": "50.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": true,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             },
-                     *             {
-                     *               "id": "5e0ba6ac14e2590f760a0f0f",
-                     *               "title": "LTT Supporter Plus",
-                     *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *               "price": "10.00",
-                     *               "priceYearly": "100.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": false,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             }
-                     *           ],
-                     *           "discoverable": true,
-                     *           "subscriberCountDisplay": "total",
-                     *           "incomeDisplay": false,
-                     *           "card": {
-                     *             "width": 375,
-                     *             "height": 500,
-                     *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 300,
-                     *                 "height": 400,
-                     *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
-                     *               }
-                     *             ]
-                     *           }
-                     *         },
-                     *         "wasReleasedSilently": true,
-                     *         "thumbnail": {
-                     *           "width": 1200,
-                     *           "height": 675,
-                     *           "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 400,
-                     *               "height": 225,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "isAccessible": true,
-                     *         "videoAttachments": [
-                     *           "TViGzkuIic"
-                     *         ],
-                     *         "audioAttachments": [],
-                     *         "pictureAttachments": [],
-                     *         "galleryAttachments": []
-                     *       },
-                     *       {
-                     *         "id": "ge4gLGfXnz",
-                     *         "guid": "ge4gLGfXnz",
-                     *         "title": "Livestream VOD – October 8, 2021 @ 20:26 – I Have MORE to Say About Steam Deck - WAN Show October 8, 2021",
-                     *         "text": "<p>Honey automatically applies the best coupon codes to save you money at </p><p>different online checkouts, try it now at <a href=\"https://www.joinhoney.com/linus\">https://www.joinhoney.com/linus</a></p><p><br /></p><p>Buy a Seasonic Ultra Titanium PSU</p><p>On Amazon: <a href=\"https://geni.us/q4lnefC\">https://geni.us/q4lnefC</a></p><p>On NewEgg: <a href=\"https://lmg.gg/8KV3S\">https://lmg.gg/8KV3S</a></p><p><br /></p><p>Visit <a href=\"https://www.squarespace.com/WAN\">https://www.squarespace.com/WAN</a> and use offer code WAN for 10% off</p><p><br /></p><p>Podcast Download: TBD</p><p><br /></p><p>Check out our other Podcasts:</p><p>Carpool Critics Movie Podcast: <a href=\"https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA\">https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA</a></p><p><br /></p><p>Timestamps TBD</p>",
-                     *         "type": "blogPost",
-                     *         "attachmentOrder": [
-                     *           "psqoN3CgMH",
-                     *           "KijsTQP8Rr"
-                     *         ],
-                     *         "metadata": {
-                     *           "hasVideo": true,
-                     *           "videoCount": 2,
-                     *           "videoDuration": 9506,
-                     *           "hasAudio": false,
-                     *           "audioCount": 0,
-                     *           "audioDuration": 0,
-                     *           "hasPicture": false,
-                     *           "pictureCount": 0,
-                     *           "hasGallery": false,
-                     *           "galleryCount": 0,
-                     *           "isFeatured": false
-                     *         },
-                     *         "releaseDate": "2021-10-09T09:28:00.015Z",
-                     *         "likes": 43,
-                     *         "dislikes": 3,
-                     *         "score": 40,
-                     *         "comments": 24,
-                     *         "creator": {
-                     *           "id": "59f94c0bdd241b70349eb72b",
-                     *           "owner": {
-                     *             "id": "59f94c0bdd241b70349eb723",
-                     *             "username": "Linus"
-                     *           },
-                     *           "title": "LinusTechTips",
-                     *           "urlname": "linustechtips",
-                     *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *           "category": {
-                     *             "title": "Technology"
-                     *           },
-                     *           "cover": {
-                     *             "width": 1990,
-                     *             "height": 519,
-                     *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 1245,
-                     *                 "height": 325,
-                     *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "icon": {
-                     *             "width": 600,
-                     *             "height": 600,
-                     *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 250,
-                     *                 "height": 250,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *               },
-                     *               {
-                     *                 "width": 100,
-                     *                 "height": 100,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "liveStream": {
-                     *             "id": "5c13f3c006f1be15e08e05c0",
-                     *             "title": "First Linux Stream",
-                     *             "description": "<p>chat on Twitch</p>",
-                     *             "thumbnail": {
-                     *               "width": 1200,
-                     *               "height": 675,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "owner": "59f94c0bdd241b70349eb72b",
-                     *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *             "offline": {
-                     *               "title": "Offline",
-                     *               "description": "We're offline for now – please check back later!",
-                     *               "thumbnail": {
-                     *                 "width": 1920,
-                     *                 "height": 1080,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *                 "childImages": [
-                     *                   {
-                     *                     "width": 400,
-                     *                     "height": 225,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                   },
-                     *                   {
-                     *                     "width": 1200,
-                     *                     "height": 675,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                   }
-                     *                 ]
-                     *               }
-                     *             }
-                     *           },
-                     *           "subscriptionPlans": [
-                     *             {
-                     *               "id": "5d48d0306825b5780db93d07",
-                     *               "title": "LTT Supporter (1080p)",
-                     *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *               "price": "5.00",
-                     *               "priceYearly": "50.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": true,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             },
-                     *             {
-                     *               "id": "5e0ba6ac14e2590f760a0f0f",
-                     *               "title": "LTT Supporter Plus",
-                     *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *               "price": "10.00",
-                     *               "priceYearly": "100.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": false,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             }
-                     *           ],
-                     *           "discoverable": true,
-                     *           "subscriberCountDisplay": "total",
-                     *           "incomeDisplay": false,
-                     *           "card": {
-                     *             "width": 375,
-                     *             "height": 500,
-                     *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 300,
-                     *                 "height": 400,
-                     *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
-                     *               }
-                     *             ]
-                     *           }
-                     *         },
-                     *         "wasReleasedSilently": false,
-                     *         "thumbnail": {
-                     *           "width": 640,
-                     *           "height": 360,
-                     *           "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 400,
-                     *               "height": 225,
-                     *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979_400x225.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "isAccessible": true,
-                     *         "videoAttachments": [
-                     *           "KijsTQP8Rr",
-                     *           "psqoN3CgMH"
-                     *         ],
-                     *         "audioAttachments": [],
-                     *         "pictureAttachments": [],
-                     *         "galleryAttachments": []
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["BlogPostModelV3"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getMultiCreatorBlogPosts: {
-        parameters: {
-            query: {
-                /** @description The GUID(s) of the creator(s) to retrieve posts from. */
-                ids: string[];
-                /** @description The maximum number of posts to retrieve. */
-                limit: number;
-                /** @description For pagination, this is used to determine which posts to skip. There should be one `fetchAfter` object for each creator in `ids`. The `moreFetchable` in the request, and all of the data, comes from the `ContentCreatorListV3Response`. */
-                fetchAfter?: components["schemas"]["ContentCreatorListLastItems"][];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Posts returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "blogPosts": [
-                     *         {
-                     *           "id": "Dw2ms0AgL8",
-                     *           "guid": "Dw2ms0AgL8",
-                     *           "title": "Livestream VOD – October 9, 2021 @ 07:18 – First Linux Stream",
-                     *           "text": "<p>chat on Twitch</p>",
-                     *           "type": "blogPost",
-                     *           "attachmentOrder": [
-                     *             "TViGzkuIic"
-                     *           ],
-                     *           "metadata": {
-                     *             "hasVideo": true,
-                     *             "videoCount": 1,
-                     *             "videoDuration": 5689,
-                     *             "hasAudio": false,
-                     *             "audioCount": 0,
-                     *             "audioDuration": 0,
-                     *             "hasPicture": false,
-                     *             "pictureCount": 0,
-                     *             "hasGallery": false,
-                     *             "galleryCount": 0,
-                     *             "isFeatured": false
-                     *           },
-                     *           "releaseDate": "2021-10-09T09:29:00.039Z",
-                     *           "likes": 40,
-                     *           "dislikes": 0,
-                     *           "score": 40,
-                     *           "comments": 28,
-                     *           "creator": {
-                     *             "id": "59f94c0bdd241b70349eb72b",
-                     *             "owner": {
-                     *               "id": "59f94c0bdd241b70349eb723",
-                     *               "username": "Linus"
-                     *             },
-                     *             "title": "LinusTechTips",
-                     *             "urlname": "linustechtips",
-                     *             "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *             "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *             "category": {
-                     *               "title": "Technology"
-                     *             },
-                     *             "cover": {
-                     *               "width": 1990,
-                     *               "height": 519,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 1245,
-                     *                   "height": 325,
-                     *                   "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "icon": {
-                     *               "width": 600,
-                     *               "height": 600,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 250,
-                     *                   "height": 250,
-                     *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 100,
-                     *                   "height": 100,
-                     *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "liveStream": {
-                     *               "id": "5c13f3c006f1be15e08e05c0",
-                     *               "title": "First Linux Stream",
-                     *               "description": "<p>chat on Twitch</p>",
-                     *               "thumbnail": {
-                     *                 "width": 1200,
-                     *                 "height": 675,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *                 "childImages": [
-                     *                   {
-                     *                     "width": 400,
-                     *                     "height": 225,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *                   }
-                     *                 ]
-                     *               },
-                     *               "owner": "59f94c0bdd241b70349eb72b",
-                     *               "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *               "offline": {
-                     *                 "title": "Offline",
-                     *                 "description": "We're offline for now – please check back later!",
-                     *                 "thumbnail": {
-                     *                   "width": 1920,
-                     *                   "height": 1080,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *                   "childImages": [
-                     *                     {
-                     *                       "width": 400,
-                     *                       "height": 225,
-                     *                       "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                     },
-                     *                     {
-                     *                       "width": 1200,
-                     *                       "height": 675,
-                     *                       "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                     }
-                     *                   ]
-                     *                 }
-                     *               }
-                     *             },
-                     *             "subscriptionPlans": [
-                     *               {
-                     *                 "id": "5d48d0306825b5780db93d07",
-                     *                 "title": "LTT Supporter (1080p)",
-                     *                 "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *                 "price": "5.00",
-                     *                 "priceYearly": "50.00",
-                     *                 "currency": "usd",
-                     *                 "logo": null,
-                     *                 "interval": "month",
-                     *                 "featured": true,
-                     *                 "allowGrandfatheredAccess": false,
-                     *                 "discordServers": [],
-                     *                 "discordRoles": []
-                     *               },
-                     *               {
-                     *                 "id": "5e0ba6ac14e2590f760a0f0f",
-                     *                 "title": "LTT Supporter Plus",
-                     *                 "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *                 "price": "10.00",
-                     *                 "priceYearly": "100.00",
-                     *                 "currency": "usd",
-                     *                 "logo": null,
-                     *                 "interval": "month",
-                     *                 "featured": false,
-                     *                 "allowGrandfatheredAccess": false,
-                     *                 "discordServers": [],
-                     *                 "discordRoles": []
-                     *               }
-                     *             ],
-                     *             "discoverable": true,
-                     *             "subscriberCountDisplay": "total",
-                     *             "incomeDisplay": false,
-                     *             "card": {
-                     *               "width": 375,
-                     *               "height": 500,
-                     *               "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 300,
-                     *                   "height": 400,
-                     *                   "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
-                     *                 }
-                     *               ]
-                     *             }
-                     *           },
-                     *           "wasReleasedSilently": true,
-                     *           "thumbnail": {
-                     *             "width": 1200,
-                     *             "height": 675,
-                     *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 400,
-                     *                 "height": 225,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "isAccessible": true,
-                     *           "videoAttachments": [
-                     *             "TViGzkuIic"
-                     *           ],
-                     *           "audioAttachments": [],
-                     *           "pictureAttachments": [],
-                     *           "galleryAttachments": []
-                     *         },
-                     *         {
-                     *           "id": "ge4gLGfXnz",
-                     *           "guid": "ge4gLGfXnz",
-                     *           "title": "Livestream VOD – October 8, 2021 @ 20:26 – I Have MORE to Say About Steam Deck - WAN Show October 8, 2021",
-                     *           "text": "<p>Honey automatically applies the best coupon codes to save you money at </p><p>different online checkouts, try it now at <a href=\"https://www.joinhoney.com/linus\">https://www.joinhoney.com/linus</a></p><p><br /></p><p>Buy a Seasonic Ultra Titanium PSU</p><p>On Amazon: <a href=\"https://geni.us/q4lnefC\">https://geni.us/q4lnefC</a></p><p>On NewEgg: <a href=\"https://lmg.gg/8KV3S\">https://lmg.gg/8KV3S</a></p><p><br /></p><p>Visit <a href=\"https://www.squarespace.com/WAN\">https://www.squarespace.com/WAN</a> and use offer code WAN for 10% off</p><p><br /></p><p>Podcast Download: TBD</p><p><br /></p><p>Check out our other Podcasts:</p><p>Carpool Critics Movie Podcast: <a href=\"https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA\">https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA</a></p><p><br /></p><p>Timestamps TBD</p>",
-                     *           "type": "blogPost",
-                     *           "attachmentOrder": [
-                     *             "psqoN3CgMH",
-                     *             "KijsTQP8Rr"
-                     *           ],
-                     *           "metadata": {
-                     *             "hasVideo": true,
-                     *             "videoCount": 2,
-                     *             "videoDuration": 9506,
-                     *             "hasAudio": false,
-                     *             "audioCount": 0,
-                     *             "audioDuration": 0,
-                     *             "hasPicture": false,
-                     *             "pictureCount": 0,
-                     *             "hasGallery": false,
-                     *             "galleryCount": 0,
-                     *             "isFeatured": false
-                     *           },
-                     *           "releaseDate": "2021-10-09T09:28:00.015Z",
-                     *           "likes": 43,
-                     *           "dislikes": 3,
-                     *           "score": 40,
-                     *           "comments": 24,
-                     *           "creator": {
-                     *             "id": "59f94c0bdd241b70349eb72b",
-                     *             "owner": {
-                     *               "id": "59f94c0bdd241b70349eb723",
-                     *               "username": "Linus"
-                     *             },
-                     *             "title": "LinusTechTips",
-                     *             "urlname": "linustechtips",
-                     *             "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *             "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *             "category": {
-                     *               "title": "Technology"
-                     *             },
-                     *             "cover": {
-                     *               "width": 1990,
-                     *               "height": 519,
-                     *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 1245,
-                     *                   "height": 325,
-                     *                   "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "icon": {
-                     *               "width": 600,
-                     *               "height": 600,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 250,
-                     *                   "height": 250,
-                     *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *                 },
-                     *                 {
-                     *                   "width": 100,
-                     *                   "height": 100,
-                     *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "liveStream": {
-                     *               "id": "5c13f3c006f1be15e08e05c0",
-                     *               "title": "First Linux Stream",
-                     *               "description": "<p>chat on Twitch</p>",
-                     *               "thumbnail": {
-                     *                 "width": 1200,
-                     *                 "height": 675,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *                 "childImages": [
-                     *                   {
-                     *                     "width": 400,
-                     *                     "height": 225,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *                   }
-                     *                 ]
-                     *               },
-                     *               "owner": "59f94c0bdd241b70349eb72b",
-                     *               "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *               "offline": {
-                     *                 "title": "Offline",
-                     *                 "description": "We're offline for now – please check back later!",
-                     *                 "thumbnail": {
-                     *                   "width": 1920,
-                     *                   "height": 1080,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *                   "childImages": [
-                     *                     {
-                     *                       "width": 400,
-                     *                       "height": 225,
-                     *                       "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                     },
-                     *                     {
-                     *                       "width": 1200,
-                     *                       "height": 675,
-                     *                       "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                     }
-                     *                   ]
-                     *                 }
-                     *               }
-                     *             },
-                     *             "subscriptionPlans": [
-                     *               {
-                     *                 "id": "5d48d0306825b5780db93d07",
-                     *                 "title": "LTT Supporter (1080p)",
-                     *                 "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *                 "price": "5.00",
-                     *                 "priceYearly": "50.00",
-                     *                 "currency": "usd",
-                     *                 "logo": null,
-                     *                 "interval": "month",
-                     *                 "featured": true,
-                     *                 "allowGrandfatheredAccess": false,
-                     *                 "discordServers": [],
-                     *                 "discordRoles": []
-                     *               },
-                     *               {
-                     *                 "id": "5e0ba6ac14e2590f760a0f0f",
-                     *                 "title": "LTT Supporter Plus",
-                     *                 "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *                 "price": "10.00",
-                     *                 "priceYearly": "100.00",
-                     *                 "currency": "usd",
-                     *                 "logo": null,
-                     *                 "interval": "month",
-                     *                 "featured": false,
-                     *                 "allowGrandfatheredAccess": false,
-                     *                 "discordServers": [],
-                     *                 "discordRoles": []
-                     *               }
-                     *             ],
-                     *             "discoverable": true,
-                     *             "subscriberCountDisplay": "total",
-                     *             "incomeDisplay": false,
-                     *             "card": {
-                     *               "width": 375,
-                     *               "height": 500,
-                     *               "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 300,
-                     *                   "height": 400,
-                     *                   "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
-                     *                 }
-                     *               ]
-                     *             }
-                     *           },
-                     *           "wasReleasedSilently": false,
-                     *           "thumbnail": {
-                     *             "width": 640,
-                     *             "height": 360,
-                     *             "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 400,
-                     *                 "height": 225,
-                     *                 "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979_400x225.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "isAccessible": true,
-                     *           "videoAttachments": [
-                     *             "KijsTQP8Rr",
-                     *             "psqoN3CgMH"
-                     *           ],
-                     *           "audioAttachments": [],
-                     *           "pictureAttachments": [],
-                     *           "galleryAttachments": []
-                     *         }
-                     *       ],
-                     *       "lastElements": [
-                     *         {
-                     *           "creatorId": "59f94c0bdd241b70349eb72b",
-                     *           "blogPostId": "l2wH2gXLiW",
-                     *           "moreFetchable": true
-                     *         }
-                     *       ]
-                     *     } */
-                    "application/json": components["schemas"]["ContentCreatorListV3Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getContentTags: {
-        parameters: {
-            query: {
-                /** @description The creator(s) to search by. */
-                creatorIds: string[];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Creator tag information */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "battery": 1,
-                     *       "server": 1,
-                     *       "Airpods": 1,
-                     *       "storage": 1,
-                     *       "tjm": 1,
-                     *       "Apple": 1,
-                     *       "swap": 1,
-                     *       "memory": 1,
-                     *       "ltt": 1
-                     *     } */
-                    "application/json": {
-                        [key: string]: number;
-                    };
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getBlogPost: {
-        parameters: {
-            query: {
-                /** @description The ID of the post to be retrieved. */
-                id: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Detailed post information */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "id": "Dw2ms0AgL8",
-                     *       "guid": "Dw2ms0AgL8",
-                     *       "title": "Livestream VOD – October 9, 2021 @ 07:18 – First Linux Stream",
-                     *       "text": "<p>chat on Twitch</p>",
-                     *       "type": "blogPost",
-                     *       "tags": [
-                     *         "test"
-                     *       ],
-                     *       "attachmentOrder": [
-                     *         "TViGzkuIic"
-                     *       ],
-                     *       "metadata": {
-                     *         "hasVideo": true,
-                     *         "videoCount": 1,
-                     *         "videoDuration": 5689,
-                     *         "hasAudio": false,
-                     *         "audioCount": 0,
-                     *         "audioDuration": 0,
-                     *         "hasPicture": false,
-                     *         "pictureCount": 0,
-                     *         "hasGallery": false,
-                     *         "galleryCount": 0,
-                     *         "isFeatured": false
-                     *       },
-                     *       "releaseDate": "2021-10-09T09:29:00.039Z",
-                     *       "likes": 41,
-                     *       "dislikes": 0,
-                     *       "score": 41,
-                     *       "comments": 28,
-                     *       "creator": {
-                     *         "id": "59f94c0bdd241b70349eb72b",
-                     *         "owner": "59f94c0bdd241b70349eb723",
-                     *         "title": "LinusTechTips",
-                     *         "urlname": "linustechtips",
-                     *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *         "category": "59f94c0bdd241b70349eb727",
-                     *         "cover": null,
-                     *         "icon": {
-                     *           "width": 600,
-                     *           "height": 600,
-                     *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 250,
-                     *               "height": 250,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 100,
-                     *               "height": 100,
-                     *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "liveStream": null,
-                     *         "subscriptionPlans": null,
-                     *         "discoverable": true,
-                     *         "subscriberCountDisplay": "total",
-                     *         "incomeDisplay": false
-                     *       },
-                     *       "wasReleasedSilently": true,
-                     *       "thumbnail": {
-                     *         "width": 1200,
-                     *         "height": 675,
-                     *         "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *         "childImages": [
-                     *           {
-                     *             "width": 400,
-                     *             "height": 225,
-                     *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *           }
-                     *         ]
-                     *       },
-                     *       "isAccessible": true,
-                     *       "userInteraction": [],
-                     *       "videoAttachments": [
-                     *         {
-                     *           "id": "TViGzkuIic",
-                     *           "guid": "TViGzkuIic",
-                     *           "title": "October 9, 2021 @ 07:18 – First Linux Stream",
-                     *           "type": "video",
-                     *           "description": "",
-                     *           "releaseDate": null,
-                     *           "duration": 5689,
-                     *           "creator": "59f94c0bdd241b70349eb72b",
-                     *           "likes": 0,
-                     *           "dislikes": 0,
-                     *           "score": 0,
-                     *           "isProcessing": false,
-                     *           "primaryBlogPost": "Dw2ms0AgL8",
-                     *           "thumbnail": {
-                     *             "width": 1920,
-                     *             "height": 1080,
-                     *             "path": "https://pbs.floatplane.com/content_thumbnails/TViGzkuIic/324783659287024_1633769709593.jpeg",
-                     *             "childImages": []
-                     *           },
-                     *           "isAccessible": true
-                     *         }
-                     *       ],
-                     *       "audioAttachments": [
-                     *         {
-                     *           "id": "iGssjNGPSD",
-                     *           "guid": "iGssjNGPSD",
-                     *           "title": "Robocop FP.mp3",
-                     *           "type": "audio",
-                     *           "description": "",
-                     *           "duration": 4165,
-                     *           "waveform": {
-                     *             "dataSetLength": 3,
-                     *             "highestValue": 71,
-                     *             "lowestValue": 50,
-                     *             "data": [
-                     *               71,
-                     *               50,
-                     *               69
-                     *             ]
-                     *           },
-                     *           "creator": "59f94c0bdd241b70349eb72b",
-                     *           "likes": 0,
-                     *           "dislikes": 0,
-                     *           "score": 0,
-                     *           "isProcessing": false,
-                     *           "primaryBlogPost": "jVU2y9PlnG",
-                     *           "isAccessible": true
-                     *         }
-                     *       ],
-                     *       "pictureAttachments": [],
-                     *       "galleryAttachments": []
-                     *     } */
-                    "application/json": components["schemas"]["ContentPostV3Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getRelatedBlogPosts: {
-        parameters: {
-            query: {
-                /** @description The ID of the originating post. */
-                id: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Related post details */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "ge4gLGfXnz",
-                     *         "guid": "ge4gLGfXnz",
-                     *         "title": "Livestream VOD – October 8, 2021 @ 20:26 – I Have MORE to Say About Steam Deck - WAN Show October 8, 2021",
-                     *         "text": "<p>Honey automatically applies the best coupon codes to save you money at </p><p>different online checkouts, try it now at <a href=\"https://www.joinhoney.com/linus\">https://www.joinhoney.com/linus</a></p><p><br /></p><p>Buy a Seasonic Ultra Titanium PSU</p><p>On Amazon: <a href=\"https://geni.us/q4lnefC\">https://geni.us/q4lnefC</a></p><p>On NewEgg: <a href=\"https://lmg.gg/8KV3S\">https://lmg.gg/8KV3S</a></p><p><br /></p><p>Visit <a href=\"https://www.squarespace.com/WAN\">https://www.squarespace.com/WAN</a> and use offer code WAN for 10% off</p><p><br /></p><p>Podcast Download: TBD</p><p><br /></p><p>Check out our other Podcasts:</p><p>Carpool Critics Movie Podcast: <a href=\"https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA\">https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA</a></p><p><br /></p><p>Timestamps TBD</p>",
-                     *         "type": "blogPost",
-                     *         "tags": [
-                     *           "test"
-                     *         ],
-                     *         "attachmentOrder": [
-                     *           "psqoN3CgMH",
-                     *           "KijsTQP8Rr"
-                     *         ],
-                     *         "metadata": {
-                     *           "hasVideo": true,
-                     *           "videoCount": 2,
-                     *           "videoDuration": 9506,
-                     *           "hasAudio": false,
-                     *           "audioCount": 0,
-                     *           "audioDuration": 0,
-                     *           "hasPicture": false,
-                     *           "pictureCount": 0,
-                     *           "hasGallery": false,
-                     *           "galleryCount": 0,
-                     *           "isFeatured": false
-                     *         },
-                     *         "releaseDate": "2021-10-09T09:28:00.015Z",
-                     *         "likes": 43,
-                     *         "dislikes": 3,
-                     *         "score": 40,
-                     *         "comments": 24,
-                     *         "creator": {
-                     *           "id": "59f94c0bdd241b70349eb72b",
-                     *           "owner": {
-                     *             "id": "59f94c0bdd241b70349eb723",
-                     *             "username": "Linus"
-                     *           },
-                     *           "title": "LinusTechTips",
-                     *           "urlname": "linustechtips",
-                     *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *           "category": {
-                     *             "title": "Technology"
-                     *           },
-                     *           "cover": {
-                     *             "width": 1990,
-                     *             "height": 519,
-                     *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 1245,
-                     *                 "height": 325,
-                     *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "icon": {
-                     *             "width": 600,
-                     *             "height": 600,
-                     *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 250,
-                     *                 "height": 250,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *               },
-                     *               {
-                     *                 "width": 100,
-                     *                 "height": 100,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "liveStream": {
-                     *             "id": "5c13f3c006f1be15e08e05c0",
-                     *             "title": "First Linux Stream",
-                     *             "description": "<p>chat on Twitch</p>",
-                     *             "thumbnail": {
-                     *               "width": 1200,
-                     *               "height": 675,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "owner": "59f94c0bdd241b70349eb72b",
-                     *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *             "offline": {
-                     *               "title": "Offline",
-                     *               "description": "We're offline for now – please check back later!",
-                     *               "thumbnail": {
-                     *                 "width": 1920,
-                     *                 "height": 1080,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *                 "childImages": [
-                     *                   {
-                     *                     "width": 400,
-                     *                     "height": 225,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                   },
-                     *                   {
-                     *                     "width": 1200,
-                     *                     "height": 675,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                   }
-                     *                 ]
-                     *               }
-                     *             }
-                     *           },
-                     *           "subscriptionPlans": [
-                     *             {
-                     *               "id": "5d48d0306825b5780db93d07",
-                     *               "title": "LTT Supporter (1080p)",
-                     *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *               "price": "5.00",
-                     *               "priceYearly": "50.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": true,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             },
-                     *             {
-                     *               "id": "5e0ba6ac14e2590f760a0f0f",
-                     *               "title": "LTT Supporter Plus",
-                     *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *               "price": "10.00",
-                     *               "priceYearly": "100.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": false,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             }
-                     *           ],
-                     *           "discoverable": true,
-                     *           "subscriberCountDisplay": "total",
-                     *           "incomeDisplay": false,
-                     *           "card": {
-                     *             "width": 375,
-                     *             "height": 500,
-                     *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 300,
-                     *                 "height": 400,
-                     *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
-                     *               }
-                     *             ]
-                     *           }
-                     *         },
-                     *         "wasReleasedSilently": false,
-                     *         "thumbnail": {
-                     *           "width": 640,
-                     *           "height": 360,
-                     *           "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 400,
-                     *               "height": 225,
-                     *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979_400x225.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "isAccessible": true
-                     *       },
-                     *       {
-                     *         "id": "j7KjCaKrtV",
-                     *         "guid": "j7KjCaKrtV",
-                     *         "title": "TL: Facebook Does Not Care.",
-                     *         "text": "<p><strong>NEWS SOURCES:</strong></p><p><strong> </strong></p><p>MICRO-BOSS, WORD</p><p>Microsoft to make its devices more repairable following pressure</p><p><a href=\"https://linustechtips.com/topic/1379452-microsoft-agrees-to-independent-third-party-study-to-look-into-right-to-repair/\">https://linustechtips.com/topic/1379452-microsoft-agrees-to-independent-third-party-study-to-look-into-right-to-repair/</a></p><p><a href=\"https://grist.org/accountability/bowing-to-investors-microsoft-will-make-its-devices-easier-to-fix/\">https://grist.org/accountability/bowing-to-investors-microsoft-will-make-its-devices-easier-to-fix/</a></p><p><a href=\"https://www.asyousow.org/about-us#:~:text=As%20You%20Sow%20is%20the%20nation%E2%80%99s%20non-profit%20leader%20in%20shareholder%20advocacy\">https://www.asyousow.org/about-us#:~:text=As%20You%20Sow%20is%20the%20nation%E2%80%99s%20non-profit%20leader%20in%20shareholder%20advocacy</a>.</p><p>Louis is happy <a href=\"https://www.youtube.com/watch?v=TiMdvR99fBQ\">https://www.youtube.com/watch?v=TiMdvR99fBQ</a></p><p> </p><p>WHAT, THIS OLE’D THING?</p><p>Switch OLED launches <a href=\"https://arstechnica.com/gaming/2021/10/switch-oled-review-nintendos-nicest-most-nonessential-upgrade-yet/\">https://arstechnica.com/gaming/2021/10/switch-oled-review-nintendos-nicest-most-nonessential-upgrade-yet/</a></p><p><a href=\"https://www.youtube.com/watch?v=4mHq6Y7JSmg\">https://www.youtube.com/watch?v=4mHq6Y7JSmg</a></p><p>New Joy-Cons, but drift isn’t going away</p><p><a href=\"https://www.polygon.com/22688586/nintendo-switch-oled-joy-con-drift-controllers\">https://www.polygon.com/22688586/nintendo-switch-oled-joy-con-drift-controllers</a></p><p>screen protector <a href=\"https://www.nintendolife.com/news/2021/10/switch-oled-comes-with-a-screen-protector-installed-but-please-dont-remove-it-says-nintendo\">https://www.nintendolife.com/news/2021/10/switch-oled-comes-with-a-screen-protector-installed-but-please-dont-remove-it-says-nintendo</a></p><p> </p><p>SHAMEBOOK</p><p>Facebook has more outages</p><p><a href=\"https://www.engadget.com/facebook-and-instagram-are-down-for-the-second-time-this-week-193257623.html\">https://www.engadget.com/facebook-and-instagram-are-down-for-the-second-time-this-week-193257623.html</a></p><p><a href=\"https://twitter.com/Facebook/status/1446556732977778695\">https://twitter.com/Facebook/status/1446556732977778695</a></p><p>IG fixed <a href=\"https://twitter.com/InstagramComms/status/1446582114468597761\">https://twitter.com/InstagramComms/status/1446582114468597761</a></p><p>Unfollow everything developer banned <a href=\"https://www.theverge.com/2021/10/8/22716044/facebook-unfollow-everything-tool-louis-barclay-banned-for-life\">https://www.theverge.com/2021/10/8/22716044/facebook-unfollow-everything-tool-louis-barclay-banned-for-life</a></p><p><a href=\"https://slate.com/technology/2021/10/facebook-unfollow-everything-cease-desist.html\">https://slate.com/technology/2021/10/facebook-unfollow-everything-cease-desist.html</a></p><p><a href=\"https://louisbarclay.notion.site/Unfollow-Everything-cease-and-desist-letter-from-Facebook-ea219169421b457bb7ce010b7bf9ce1f\">https://louisbarclay.notion.site/Unfollow-Everything-cease-and-desist-letter-from-Facebook-ea219169421b457bb7ce010b7bf9ce1f</a></p><p> </p><p>QUICK BITS</p><p> </p><p>GET JEFF’D</p><p>Game backgrounds on Twitch replaced with Jeff Bezos</p><p><a href=\"https://twitter.com/AnEternalEnigma/status/1446421951883489281\">https://twitter.com/AnEternalEnigma/status/1446421951883489281</a></p><p>defaced <a href=\"https://www.cnet.com/tech/gaming/twitch-reportedly-defaced-with-pictures-of-jeff-bezos/\">https://www.cnet.com/tech/gaming/twitch-reportedly-defaced-with-pictures-of-jeff-bezos/</a></p><p> </p><p>ABOUT TO GET PADDLED</p><p>First In-App Purchasing alternative for iOS: Paddle</p><p><a href=\"https://twitter.com/PaddleHQ/status/1446050078301605890\">https://twitter.com/PaddleHQ/status/1446050078301605890</a></p><p><a href=\"https://paddle.com/platform/in-app-purchase/\">https://paddle.com/platform/in-app-purchase/</a></p><p>Sweeney</p><p><a href=\"https://twitter.com/TimSweeneyEpic/status/1446117510919585796\">https://twitter.com/TimSweeneyEpic/status/1446117510919585796</a></p><p> </p><p>STAY KINECTED</p><p>Sky Glass TV looks like a big iMac</p><p><a href=\"https://www.youtube.com/watch?v=GpGskL5PCKU\">https://www.youtube.com/watch?v=GpGskL5PCKU</a></p><p>Kinect motion controls <a href=\"https://www.theverge.com/2021/10/7/22714117/microsoft-kinect-is-back-sky-glass-tv-smart-camera-features\">https://www.theverge.com/2021/10/7/22714117/microsoft-kinect-is-back-sky-glass-tv-smart-camera-features</a> - full screen embedded video on this page and record</p><p><br /></p><p>UPGRADED TO CUMULONIMBUS</p><p>XCloud is now running Xbox Series X hardware</p><p><a href=\"https://www.kitguru.net/gaming/matthew-wilson/microsoft-has-upgraded-xcloud-to-xbox-series-x-hardware/\">https://www.kitguru.net/gaming/matthew-wilson/microsoft-has-upgraded-xcloud-to-xbox-series-x-hardware/</a></p><p><a href=\"https://www.eurogamer.net/articles/2021-10-07-xbox-cloud-gaming-now-runs-on-series-x-hardware\">https://www.eurogamer.net/articles/2021-10-07-xbox-cloud-gaming-now-runs-on-series-x-hardware</a></p><p> </p><p>NO PIXEL LEFT UN-LEAKED</p><p>Pixel 6 and 6 Pro teardowns leaked</p><p><a href=\"https://9to5google.com/2021/10/08/pixel-6-pro-teardown-leak/\">https://9to5google.com/2021/10/08/pixel-6-pro-teardown-leak/</a></p>",
-                     *         "type": "blogPost",
-                     *         "attachmentOrder": [
-                     *           "R3mVASdVGt"
-                     *         ],
-                     *         "metadata": {
-                     *           "hasVideo": true,
-                     *           "videoCount": 1,
-                     *           "videoDuration": 377,
-                     *           "hasAudio": false,
-                     *           "audioCount": 0,
-                     *           "audioDuration": 0,
-                     *           "hasPicture": false,
-                     *           "pictureCount": 0,
-                     *           "hasGallery": false,
-                     *           "galleryCount": 0,
-                     *           "isFeatured": false
-                     *         },
-                     *         "releaseDate": "2021-10-09T02:55:00.045Z",
-                     *         "likes": 101,
-                     *         "dislikes": 0,
-                     *         "score": 101,
-                     *         "comments": 19,
-                     *         "creator": {
-                     *           "id": "59f94c0bdd241b70349eb72b",
-                     *           "owner": {
-                     *             "id": "59f94c0bdd241b70349eb723",
-                     *             "username": "Linus"
-                     *           },
-                     *           "title": "LinusTechTips",
-                     *           "urlname": "linustechtips",
-                     *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *           "category": {
-                     *             "title": "Technology"
-                     *           },
-                     *           "cover": {
-                     *             "width": 1990,
-                     *             "height": 519,
-                     *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 1245,
-                     *                 "height": 325,
-                     *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "icon": {
-                     *             "width": 600,
-                     *             "height": 600,
-                     *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 250,
-                     *                 "height": 250,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *               },
-                     *               {
-                     *                 "width": 100,
-                     *                 "height": 100,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "liveStream": {
-                     *             "id": "5c13f3c006f1be15e08e05c0",
-                     *             "title": "First Linux Stream",
-                     *             "description": "<p>chat on Twitch</p>",
-                     *             "thumbnail": {
-                     *               "width": 1200,
-                     *               "height": 675,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "owner": "59f94c0bdd241b70349eb72b",
-                     *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *             "offline": {
-                     *               "title": "Offline",
-                     *               "description": "We're offline for now – please check back later!",
-                     *               "thumbnail": {
-                     *                 "width": 1920,
-                     *                 "height": 1080,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *                 "childImages": [
-                     *                   {
-                     *                     "width": 400,
-                     *                     "height": 225,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                   },
-                     *                   {
-                     *                     "width": 1200,
-                     *                     "height": 675,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                   }
-                     *                 ]
-                     *               }
-                     *             }
-                     *           },
-                     *           "subscriptionPlans": [
-                     *             {
-                     *               "id": "5d48d0306825b5780db93d07",
-                     *               "title": "LTT Supporter (1080p)",
-                     *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *               "price": "5.00",
-                     *               "priceYearly": "50.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": true,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             },
-                     *             {
-                     *               "id": "5e0ba6ac14e2590f760a0f0f",
-                     *               "title": "LTT Supporter Plus",
-                     *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *               "price": "10.00",
-                     *               "priceYearly": "100.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": false,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             }
-                     *           ],
-                     *           "discoverable": true,
-                     *           "subscriberCountDisplay": "total",
-                     *           "incomeDisplay": false,
-                     *           "card": {
-                     *             "width": 375,
-                     *             "height": 500,
-                     *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 300,
-                     *                 "height": 400,
-                     *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
-                     *               }
-                     *             ]
-                     *           }
-                     *         },
-                     *         "wasReleasedSilently": false,
-                     *         "thumbnail": {
-                     *           "width": 1920,
-                     *           "height": 1080,
-                     *           "path": "https://pbs.floatplane.com/blogPost_thumbnails/j7KjCaKrtV/726584368653303_1633741254596.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 1200,
-                     *               "height": 675,
-                     *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/j7KjCaKrtV/726584368653303_1633741254596_1200x675.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 400,
-                     *               "height": 225,
-                     *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/j7KjCaKrtV/726584368653303_1633741254596_400x225.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "isAccessible": true
-                     *       },
-                     *       {
-                     *         "id": "VkxlNv3k8j",
-                     *         "guid": "VkxlNv3k8j",
-                     *         "title": "TQ: Has USB-C WON Against Apple?",
-                     *         "text": "<p>Learn about the proposed USB-C mandate in the EU.</p>",
-                     *         "type": "blogPost",
-                     *         "attachmentOrder": [
-                     *           "7OWQQsxYYN"
-                     *         ],
-                     *         "metadata": {
-                     *           "hasVideo": true,
-                     *           "videoCount": 1,
-                     *           "videoDuration": 293,
-                     *           "hasAudio": false,
-                     *           "audioCount": 0,
-                     *           "audioDuration": 0,
-                     *           "hasPicture": false,
-                     *           "pictureCount": 0,
-                     *           "hasGallery": false,
-                     *           "galleryCount": 0,
-                     *           "isFeatured": false
-                     *         },
-                     *         "releaseDate": "2021-10-08T23:31:00.037Z",
-                     *         "likes": 106,
-                     *         "dislikes": 0,
-                     *         "score": 106,
-                     *         "comments": 15,
-                     *         "creator": {
-                     *           "id": "59f94c0bdd241b70349eb72b",
-                     *           "owner": {
-                     *             "id": "59f94c0bdd241b70349eb723",
-                     *             "username": "Linus"
-                     *           },
-                     *           "title": "LinusTechTips",
-                     *           "urlname": "linustechtips",
-                     *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
-                     *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
-                     *           "category": {
-                     *             "title": "Technology"
-                     *           },
-                     *           "cover": {
-                     *             "width": 1990,
-                     *             "height": 519,
-                     *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 1245,
-                     *                 "height": 325,
-                     *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "icon": {
-                     *             "width": 600,
-                     *             "height": 600,
-                     *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 250,
-                     *                 "height": 250,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
-                     *               },
-                     *               {
-                     *                 "width": 100,
-                     *                 "height": 100,
-                     *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
-                     *               }
-                     *             ]
-                     *           },
-                     *           "liveStream": {
-                     *             "id": "5c13f3c006f1be15e08e05c0",
-                     *             "title": "First Linux Stream",
-                     *             "description": "<p>chat on Twitch</p>",
-                     *             "thumbnail": {
-                     *               "width": 1200,
-                     *               "height": 675,
-                     *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
-                     *               "childImages": [
-                     *                 {
-                     *                   "width": 400,
-                     *                   "height": 225,
-                     *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
-                     *                 }
-                     *               ]
-                     *             },
-                     *             "owner": "59f94c0bdd241b70349eb72b",
-                     *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
-                     *             "offline": {
-                     *               "title": "Offline",
-                     *               "description": "We're offline for now – please check back later!",
-                     *               "thumbnail": {
-                     *                 "width": 1920,
-                     *                 "height": 1080,
-                     *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
-                     *                 "childImages": [
-                     *                   {
-                     *                     "width": 400,
-                     *                     "height": 225,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
-                     *                   },
-                     *                   {
-                     *                     "width": 1200,
-                     *                     "height": 675,
-                     *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
-                     *                   }
-                     *                 ]
-                     *               }
-                     *             }
-                     *           },
-                     *           "subscriptionPlans": [
-                     *             {
-                     *               "id": "5d48d0306825b5780db93d07",
-                     *               "title": "LTT Supporter (1080p)",
-                     *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
-                     *               "price": "5.00",
-                     *               "priceYearly": "50.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": true,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             },
-                     *             {
-                     *               "id": "5e0ba6ac14e2590f760a0f0f",
-                     *               "title": "LTT Supporter Plus",
-                     *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
-                     *               "price": "10.00",
-                     *               "priceYearly": "100.00",
-                     *               "currency": "usd",
-                     *               "logo": null,
-                     *               "interval": "month",
-                     *               "featured": false,
-                     *               "allowGrandfatheredAccess": false,
-                     *               "discordServers": [],
-                     *               "discordRoles": []
-                     *             }
-                     *           ],
-                     *           "discoverable": true,
-                     *           "subscriberCountDisplay": "total",
-                     *           "incomeDisplay": false,
-                     *           "card": {
-                     *             "width": 375,
-                     *             "height": 500,
-                     *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
-                     *             "childImages": [
-                     *               {
-                     *                 "width": 300,
-                     *                 "height": 400,
-                     *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
-                     *               }
-                     *             ]
-                     *           }
-                     *         },
-                     *         "wasReleasedSilently": false,
-                     *         "thumbnail": {
-                     *           "width": 1920,
-                     *           "height": 1080,
-                     *           "path": "https://pbs.floatplane.com/blogPost_thumbnails/VkxlNv3k8j/438666910492097_1633734872237.jpeg",
-                     *           "childImages": [
-                     *             {
-                     *               "width": 400,
-                     *               "height": 225,
-                     *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/VkxlNv3k8j/438666910492097_1633734872237_400x225.jpeg"
-                     *             },
-                     *             {
-                     *               "width": 1200,
-                     *               "height": 675,
-                     *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/VkxlNv3k8j/438666910492097_1633734872237_1200x675.jpeg"
-                     *             }
-                     *           ]
-                     *         },
-                     *         "isAccessible": true
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["BlogPostModelV3"][];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getVideoContent: {
-        parameters: {
-            query: {
-                /** @description The ID of the video attachment object, from the `BlogPostModelV3`. */
-                id: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK - Video details returned */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "id": "TViGzkuIic",
-                     *       "guid": "TViGzkuIic",
-                     *       "title": "October 9, 2021 @ 07:18 – First Linux Stream",
-                     *       "type": "video",
-                     *       "description": "",
-                     *       "releaseDate": null,
-                     *       "duration": 5689,
-                     *       "creator": "59f94c0bdd241b70349eb72b",
-                     *       "likes": 0,
-                     *       "dislikes": 0,
-                     *       "score": 0,
-                     *       "isProcessing": false,
-                     *       "primaryBlogPost": "Dw2ms0AgL8",
-                     *       "thumbnail": {
-                     *         "width": 1920,
-                     *         "height": 1080,
-                     *         "path": "https://pbs.floatplane.com/content_thumbnails/TViGzkuIic/324783659287024_1633769709593.jpeg",
-                     *         "childImages": []
-                     *       },
-                     *       "isAccessible": true,
-                     *       "blogPosts": [
-                     *         "Dw2ms0AgL8"
-                     *       ],
-                     *       "timelineSprite": {
-                     *         "width": 4960,
-                     *         "height": 2610,
-                     *         "path": "https://pbs.floatplane.com/timeline_sprite/TViGzkuIic/142493855372807_1633769996492.jpeg",
-                     *         "childImages": []
-                     *       },
-                     *       "userInteraction": [],
-                     *       "levels": [
-                     *         {
-                     *           "name": "360",
-                     *           "width": 640,
-                     *           "height": 360,
-                     *           "label": "360p",
-                     *           "order": 0
-                     *         },
-                     *         {
-                     *           "name": "480",
-                     *           "width": 854,
-                     *           "height": 480,
-                     *           "label": "480p",
-                     *           "order": 1
-                     *         },
-                     *         {
-                     *           "name": "720",
-                     *           "width": 1280,
-                     *           "height": 720,
-                     *           "label": "720p",
-                     *           "order": 2
-                     *         }
-                     *       ]
-                     *     } */
-                    "application/json": components["schemas"]["ContentVideoV3Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getPictureContent: {
-        parameters: {
-            query: {
-                /** @description The ID of the picture attachment object, from the `BlogPostModelV3`. */
-                id: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {
-                     *       "id": "ZWKdCy8TMN",
-                     *       "guid": "ZWKdCy8TMN",
-                     *       "title": "\"I hate costumes\" Jonathan",
-                     *       "type": "picture",
-                     *       "description": "",
-                     *       "likes": 1,
-                     *       "dislikes": 0,
-                     *       "score": 1,
-                     *       "isProcessing": false,
-                     *       "creator": "59f94c0bdd241b70349eb72b",
-                     *       "primaryBlogPost": "PGZBzzRWpD",
-                     *       "userInteraction": [],
-                     *       "thumbnail": {
-                     *         "width": 1200,
-                     *         "height": 675,
-                     *         "path": "https://pbs.floatplane.com/picture_thumbnails/ZWKdCy8TMN/239212458322156_1634845035660.jpeg",
-                     *         "childImages": []
-                     *       },
-                     *       "isAccessible": true,
-                     *       "imageFiles": [
-                     *         {
-                     *           "path": "https://pbs.floatplane.com/content_images/59f94c0bdd241b70349eb72b/465975275316873_1634845031494_1164x675.jpeg?AWSAccessKeyId=...&Expires=...&Signature=...",
-                     *           "width": 1164,
-                     *           "height": 675,
-                     *           "size": 165390
-                     *         }
-                     *       ]
-                     *     } */
-                    "application/json": components["schemas"]["ContentPictureV3Response"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    likeContent: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "contentType": "blogPost",
-                 *       "id": "T2gWkpaerq"
-                 *     } */
-                "application/json": components["schemas"]["ContentLikeV3Request"];
-            };
-        };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       "like"
-                     *     ] */
-                    "application/json": components["schemas"]["UserInteractionModel"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    dislikeContent: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "contentType": "blogPost",
-                 *       "id": "T2gWkpaerq"
-                 *     } */
-                "application/json": components["schemas"]["ContentLikeV3Request"];
-            };
-        };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       "dislike"
-                     *     ] */
-                    "application/json": components["schemas"]["UserInteractionModel"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    updateProgress: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "ids": [
-                 *         "mhhrOfndeF",
-                 *         "3qZrz5ugsa"
-                 *       ],
-                 *       "contentType": "blogPost"
-                 *     } */
-                "application/json": components["schemas"]["UpdateProgressRequest"];
-            };
-        };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example OK */
-                    "text/plain": string;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    getProgress: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "ids": [
-                 *         "mhhrOfndeF",
-                 *         "3qZrz5ugsa"
-                 *       ],
-                 *       "contentType": "blogPost"
-                 *     } */
-                "application/json": components["schemas"]["GetProgressRequest"];
-            };
-        };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [
-                     *       {
-                     *         "id": "3qZrz5ugsa",
-                     *         "progress": 0
-                     *       },
-                     *       {
-                     *         "id": "mhhrOfndeF",
-                     *         "progress": 100
-                     *       }
-                     *     ] */
-                    "application/json": components["schemas"]["GetProgressResponse"];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    joinLiveRoom: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {} */
-                    "application/json": unknown;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    leaveLiveRoom: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {} */
-                    "application/json": unknown;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    votePoll: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                /** @example {
-                 *       "pollId": "62c8c1dd968bc0899bbb4b92",
-                 *       "optionIndex": 1
-                 *     } */
-                "application/json": {
-                    /** @description The id of the poll to vote on. */
-                    pollId: string;
-                    /** @description The index of the options of the poll for which to vote. This should not be outside the bounds of the poll options. */
-                    optionIndex: number;
-                };
-            };
-        };
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example {} */
-                    "application/json": unknown;
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    redirectYTLatest: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                channelKey: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Found */
-            302: {
-                headers: {
-                    /** @description A YouTube URL for a video. */
-                    Location?: string;
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
-    listCreatorLoyaltyReward: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    /** @example [] */
-                    "application/json": Record<string, never>[];
-                };
-            };
-            400: components["responses"]["400BadRequest"];
-            401: components["responses"]["401Unauthenticated"];
-            403: components["responses"]["403Forbidden"];
-            404: components["responses"]["404NotFound"];
-            429: components["responses"]["429TooManyRequests"];
-            default: components["responses"]["Unexpected"];
-        };
-    };
+	login: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "username": "my_username",
+				 *       "password": "my_password",
+				 *       "captchaToken": "..."
+				 *     } */
+				"application/json": components["schemas"]["AuthLoginV2Request"];
+			};
+		};
+		responses: {
+			/** @description OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
+			200: {
+				headers: {
+					/** @description Contains the cookie used in subsequent authenticated requests. */
+					"Set-Cookie"?: string;
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "user": {
+					 *         "id": "0123456789abcdef01234567",
+					 *         "username": "my_username",
+					 *         "profileImage": {
+					 *           "width": 512,
+					 *           "height": 512,
+					 *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
+					 *             }
+					 *           ]
+					 *         }
+					 *       },
+					 *       "needs2FA": false
+					 *     } */
+					"application/json": components["schemas"]["AuthLoginV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			/** @description Unauthenticated - The login attempt failed, either due to a bad username or password. */
+			401: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					"application/json": components["schemas"]["ErrorModel"];
+				};
+			};
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	logout: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					/** @description Obtain a new authentication/authorization cookie after logging out. This new cookie will not be authenticated to perform subsequent requests. */
+					"Set-Cookie"?: string;
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example OK */
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	checkFor2faLogin: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "token": "123456"
+				 *     } */
+				"application/json": components["schemas"]["CheckFor2faLoginRequest"];
+			};
+		};
+		responses: {
+			/** @description OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
+			200: {
+				headers: {
+					/** @description Contains the cookie used in subsequent authenticated requests. */
+					"Set-Cookie"?: string;
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "user": {
+					 *         "id": "0123456789abcdef01234567",
+					 *         "username": "my_username",
+					 *         "profileImage": {
+					 *           "width": 512,
+					 *           "height": 512,
+					 *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
+					 *             }
+					 *           ]
+					 *         }
+					 *       },
+					 *       "needs2FA": false
+					 *     } */
+					"application/json": components["schemas"]["AuthLoginV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			/** @description Unauthenticated - The login attempt failed, either due to a bad username or password. */
+			401: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					"application/json": components["schemas"]["ErrorModel"];
+				};
+			};
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getCaptchaInfo: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "v2": {
+					 *         "variants": {
+					 *           "android": {
+					 *             "siteKey": "..."
+					 *           },
+					 *           "checkbox": {
+					 *             "siteKey": "..."
+					 *           },
+					 *           "invisible": {
+					 *             "siteKey": "..."
+					 *           }
+					 *         }
+					 *       },
+					 *       "v3": {
+					 *         "variants": {
+					 *           "invisible": {
+					 *             "siteKey": "..."
+					 *           }
+					 *         }
+					 *       }
+					 *     } */
+					"application/json": components["schemas"]["GetCaptchaInfoResponse"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getDeliveryInfo: {
+		parameters: {
+			query: {
+				/** @description Used to determine which kind of retrieval method is requested for the video.
+				 *
+				 *     - VOD = stream a Video On Demand
+				 *     - AOD = stream Audio On Demand
+				 *     - Live = Livestream the content
+				 *     - Download = Download the content for the user to play later. */
+				type: "vod" | "aod" | "live" | "download";
+				/** @description The GUID of the attachment for a post, retrievable from the `videoAttachments` or `audioAttachments` object. Required when `type` is `vod`, `aod`, or `download`. Note: either this or `creator` must be supplied. */
+				guid?: string;
+				/** @description The GUID of the creator for a livestream, retrievable from `CreatorModelV2.id`. Required when `type` is `live`. Note: either this or `guid` must be supplied. Note: for `vod` and `download`, including this `creator` parameter *will* cause an error to be returned. */
+				creator?: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "cdn": "https://cdn-vod-drm2.floatplane.com",
+					 *       "strategy": "cdn",
+					 *       "resource": {
+					 *         "uri": "/Videos/TViGzkuIic/{qualityLevels}.mp4/chunk.m3u8?token={qualityLevelParams.token}",
+					 *         "data": {
+					 *           "qualityLevels": [
+					 *             {
+					 *               "name": "360",
+					 *               "width": 640,
+					 *               "height": 360,
+					 *               "label": "360p",
+					 *               "order": 0
+					 *             },
+					 *             {
+					 *               "name": "480",
+					 *               "width": 854,
+					 *               "height": 480,
+					 *               "label": "480p",
+					 *               "order": 1
+					 *             },
+					 *             {
+					 *               "name": "720",
+					 *               "width": 1280,
+					 *               "height": 720,
+					 *               "label": "720p",
+					 *               "order": 2
+					 *             },
+					 *             {
+					 *               "name": "1080",
+					 *               "width": 2160,
+					 *               "height": 1080,
+					 *               "label": "1080p",
+					 *               "order": 4
+					 *             }
+					 *           ],
+					 *           "qualityLevelParams": {
+					 *             "360": {
+					 *               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNzb3VyY2VQYXRoIjoiL1ZpZGVvcy9UVmlHemt1SWljLzM2MC5tcDQvY2h1bmsubTN1OCIsInVzZXJJZCI6IjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2NyIsImlhdCI6MTYzMzc5NzMxMSwiZXhwIjoxNjMzODE4OTExfQ.uaLzZ4wSc0jrYbjkdhuF4_UY92iWQsq2efrWUutYUvQ"
+					 *             },
+					 *             "480": {
+					 *               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNzb3VyY2VQYXRoIjoiL1ZpZGVvcy9UVmlHemt1SWljLzQ4MC5tcDQvY2h1bmsubTN1OCIsInVzZXJJZCI6IjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2NyIsImlhdCI6MTYzMzc5NzMxMSwiZXhwIjoxNjMzODE4OTExfQ.O6PHCJKcLW7ohuKj6UcMa8QGoN-vZr6xTtfXsUMRki0"
+					 *             },
+					 *             "720": {
+					 *               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNzb3VyY2VQYXRoIjoiL1ZpZGVvcy9UVmlHemt1SWljLzcyMC5tcDQvY2h1bmsubTN1OCIsInVzZXJJZCI6IjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2NyIsImlhdCI6MTYzMzc5NzMxMSwiZXhwIjoxNjMzODE4OTExfQ.lbOTTBXBjA-i9gBzm8ydFQ8fa8q07Z2vaLsYMKUp4Ik"
+					 *             },
+					 *             "1080": {
+					 *               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNzb3VyY2VQYXRoIjoiL1ZpZGVvcy9UVmlHemt1SWljLzEwODAubXA0L2NodW5rLm0zdTgiLCJ1c2VySWQiOiIwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1NjciLCJpYXQiOjE2MzM3OTczMTEsImV4cCI6MTYzMzgxODkxMX0.E-bw_gnUzKUpYeL2l-kTmj5CbwmDb519ohjf5LlLyQg"
+					 *             }
+					 *           }
+					 *         }
+					 *       }
+					 *     } */
+					"application/json": components["schemas"]["CdnDeliveryV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getDeliveryInfoV3: {
+		parameters: {
+			query: {
+				/** @description Used to determine the scenario in which to consume the media.
+				 *
+				 *     - `onDemand` = stream a Video/Audio On Demand
+				 *     - `download` = Download the content for the user to play later.
+				 *     - `live` = Livestream the content */
+				scenario: "onDemand" | "download" | "live";
+				/** @description The attachment or livestream identifier for the requested media. For video and audio, this would be from the `videoAttachments` or `audioAttachments` objects. For livestreams, this is the `liveStream.id` from the creator object. */
+				entityId: string;
+				/** @description Use `outputKind` to ensure the right vehicle is used for your client, e.g. `outputKind=hls.fmp4` is optimal for tvOS 10+. */
+				outputKind?: "hls.mpegts" | "hls.fmp4" | "dash.mpegts" | "dash.m4s" | "flat";
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Information on how to stream or download the requested video from the CDN in various levels of quality. */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					"application/json": components["schemas"]["CdnDeliveryV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	listConnections: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Returns the list of connected and available accounts. */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "key": "ltt",
+					 *         "name": "LinusTechTips",
+					 *         "enabled": true,
+					 *         "iconWhite": "/images/connections/ltt/white@2x.png",
+					 *         "connectedAccount": null,
+					 *         "connected": false,
+					 *         "isAccountProvider": false
+					 *       },
+					 *       {
+					 *         "key": "discord",
+					 *         "name": "Discord",
+					 *         "enabled": true,
+					 *         "iconWhite": "/images/connections/discord/white@2x.png",
+					 *         "connectedAccount": {
+					 *           "id": "9a8a4140fdd2b0c15b54333a",
+					 *           "remoteUserId": "012345678912345678",
+					 *           "remoteUserName": "my_username#2673",
+					 *           "data": {
+					 *             "canJoinGuilds": true
+					 *           }
+					 *         },
+					 *         "connected": true,
+					 *         "isAccountProvider": false
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["ConnectedAccountModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getInfo: {
+		parameters: {
+			query: {
+				/** @description The GUID identifer(s) of the creator(s) to be retrieved. */
+				creatorGUID: string[];
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - The creators are found from their identifiers and returned in an array */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "59f94c0bdd241b70349eb72b",
+					 *         "owner": "59f94c0bdd241b70349eb723",
+					 *         "title": "LinusTechTips",
+					 *         "urlname": "linustechtips",
+					 *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *         "category": "59f94c0bdd241b70349eb727",
+					 *         "cover": {
+					 *           "width": 1990,
+					 *           "height": 519,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 1245,
+					 *               "height": 325,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "icon": {
+					 *           "width": 600,
+					 *           "height": 600,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "liveStream": {
+					 *           "id": "5c13f3c006f1be15e08e05c0",
+					 *           "title": "First Linux Stream",
+					 *           "description": "<p>chat on Twitch</p>",
+					 *           "thumbnail": {
+					 *             "width": 1200,
+					 *             "height": 675,
+					 *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 400,
+					 *                 "height": 225,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "owner": "59f94c0bdd241b70349eb72b",
+					 *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *           "offline": {
+					 *             "title": "Offline",
+					 *             "description": "We're offline for now – please check back later!",
+					 *             "thumbnail": {
+					 *               "width": 1920,
+					 *               "height": 1080,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 1200,
+					 *                   "height": 675,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                 }
+					 *               ]
+					 *             }
+					 *           }
+					 *         },
+					 *         "subscriptionPlans": null,
+					 *         "discoverable": true,
+					 *         "subscriberCountDisplay": "total",
+					 *         "incomeDisplay": false
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["CreatorModelV2"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getCreatorInfoByName: {
+		parameters: {
+			query: {
+				/** @description The string identifer(s) of the creator(s) to be retrieved. */
+				creatorURL: string[];
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "59f94c0bdd241b70349eb72b",
+					 *         "owner": "59f94c0bdd241b70349eb723",
+					 *         "title": "LinusTechTips",
+					 *         "urlname": "linustechtips",
+					 *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *         "category": "59f94c0bdd241b70349eb727",
+					 *         "cover": {
+					 *           "width": 1990,
+					 *           "height": 519,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 1245,
+					 *               "height": 325,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "icon": {
+					 *           "width": 600,
+					 *           "height": 600,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "liveStream": {
+					 *           "id": "5c13f3c006f1be15e08e05c0",
+					 *           "title": "First Linux Stream",
+					 *           "description": "<p>chat on Twitch</p>",
+					 *           "thumbnail": {
+					 *             "width": 1200,
+					 *             "height": 675,
+					 *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 400,
+					 *                 "height": 225,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "owner": "59f94c0bdd241b70349eb72b",
+					 *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *           "offline": {
+					 *             "title": "Offline",
+					 *             "description": "We're offline for now – please check back later!",
+					 *             "thumbnail": {
+					 *               "width": 1920,
+					 *               "height": 1080,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 1200,
+					 *                   "height": 675,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                 }
+					 *               ]
+					 *             }
+					 *           }
+					 *         },
+					 *         "subscriptionPlans": null,
+					 *         "discoverable": true,
+					 *         "subscriberCountDisplay": "total",
+					 *         "incomeDisplay": false,
+					 *         "socialLinks": {
+					 *           "instagram": "https://www.instagram.com/linustech/",
+					 *           "twitter": "https://twitter.com/linustech",
+					 *           "website": "https://linustechtips.com",
+					 *           "facebook": "https://www.facebook.com/LinusTech",
+					 *           "youtube": "https://www.youtube.com/user/LinusTechTips"
+					 *         },
+					 *         "discordServers": [
+					 *           {
+					 *             "id": "5baa8838d9f3aa0a83acd429",
+					 *             "guildName": "LinusTechTips",
+					 *             "guildIcon": "a_528743a32b33b5eb227a8405d5593473",
+					 *             "inviteLink": "https://discord.gg/LTT",
+					 *             "inviteMode": "link"
+					 *           },
+					 *           {
+					 *             "id": "5e34cd9a9dbb744872192895",
+					 *             "guildName": "LTT Minecraft Network",
+					 *             "guildIcon": "4f7f812b49196b1646bdcdb84b948c84",
+					 *             "inviteLink": "https://discord.gg/VVpwBPXrMc",
+					 *             "inviteMode": "link"
+					 *           }
+					 *         ]
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["CreatorModelV2Extended"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getCreator: {
+		parameters: {
+			query: {
+				/** @description The GUID of the creator being searched. */
+				id: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Creator information returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "id": "59f94c0bdd241b70349eb72b",
+					 *       "owner": "59f94c0bdd241b70349eb723",
+					 *       "title": "LinusTechTips",
+					 *       "urlname": "linustechtips",
+					 *       "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *       "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *       "category": {
+					 *         "title": "Technology"
+					 *       },
+					 *       "cover": {
+					 *         "width": 1990,
+					 *         "height": 519,
+					 *         "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *         "childImages": [
+					 *           {
+					 *             "width": 1245,
+					 *             "height": 325,
+					 *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *           }
+					 *         ]
+					 *       },
+					 *       "icon": {
+					 *         "width": 600,
+					 *         "height": 600,
+					 *         "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *         "childImages": [
+					 *           {
+					 *             "width": 250,
+					 *             "height": 250,
+					 *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *           },
+					 *           {
+					 *             "width": 100,
+					 *             "height": 100,
+					 *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *           }
+					 *         ]
+					 *       },
+					 *       "liveStream": {
+					 *         "id": "5c13f3c006f1be15e08e05c0",
+					 *         "title": "First Linux Stream",
+					 *         "description": "<p>chat on Twitch</p>",
+					 *         "thumbnail": {
+					 *           "width": 1200,
+					 *           "height": 675,
+					 *           "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 400,
+					 *               "height": 225,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "owner": "59f94c0bdd241b70349eb72b",
+					 *         "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *         "offline": {
+					 *           "title": "Offline",
+					 *           "description": "We're offline for now – please check back later!",
+					 *           "thumbnail": {
+					 *             "width": 1920,
+					 *             "height": 1080,
+					 *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 400,
+					 *                 "height": 225,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *               },
+					 *               {
+					 *                 "width": 1200,
+					 *                 "height": 675,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *               }
+					 *             ]
+					 *           }
+					 *         }
+					 *       },
+					 *       "subscriptionPlans": [
+					 *         {
+					 *           "id": "5d48d0306825b5780db93d07",
+					 *           "title": "LTT Supporter (1080p)",
+					 *           "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *           "price": "5.00",
+					 *           "priceYearly": "50.00",
+					 *           "currency": "usd",
+					 *           "logo": null,
+					 *           "interval": "month",
+					 *           "featured": true,
+					 *           "allowGrandfatheredAccess": false,
+					 *           "discordServers": [],
+					 *           "discordRoles": []
+					 *         },
+					 *         {
+					 *           "id": "5e0ba6ac14e2590f760a0f0f",
+					 *           "title": "LTT Supporter Plus",
+					 *           "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *           "price": "10.00",
+					 *           "priceYearly": "100.00",
+					 *           "currency": "usd",
+					 *           "logo": null,
+					 *           "interval": "month",
+					 *           "featured": false,
+					 *           "allowGrandfatheredAccess": false,
+					 *           "discordServers": [],
+					 *           "discordRoles": []
+					 *         }
+					 *       ],
+					 *       "discoverable": true,
+					 *       "subscriberCountDisplay": "total",
+					 *       "incomeDisplay": false,
+					 *       "socialLinks": {
+					 *         "instagram": "https://www.instagram.com/linustech/",
+					 *         "website": "https://linustechtips.com",
+					 *         "facebook": "https://www.facebook.com/LinusTech",
+					 *         "youtube": "https://www.youtube.com/user/LinusTechTips",
+					 *         "twitter": "https://twitter.com/linustech"
+					 *       }
+					 *     } */
+					"application/json": components["schemas"]["CreatorModelV3"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getCreators: {
+		parameters: {
+			query: {
+				/** @description Optional search string for finding particular creators on the platform. */
+				search: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Creators returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "59f94c0bdd241b70349eb72b",
+					 *         "owner": "59f94c0bdd241b70349eb723",
+					 *         "title": "LinusTechTips",
+					 *         "urlname": "linustechtips",
+					 *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *         "category": {
+					 *           "title": "Technology"
+					 *         },
+					 *         "cover": {
+					 *           "width": 1990,
+					 *           "height": 519,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 1245,
+					 *               "height": 325,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "icon": {
+					 *           "width": 600,
+					 *           "height": 600,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "liveStream": {
+					 *           "id": "5c13f3c006f1be15e08e05c0",
+					 *           "title": "First Linux Stream",
+					 *           "description": "<p>chat on Twitch</p>",
+					 *           "thumbnail": {
+					 *             "width": 1200,
+					 *             "height": 675,
+					 *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 400,
+					 *                 "height": 225,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "owner": "59f94c0bdd241b70349eb72b",
+					 *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *           "offline": {
+					 *             "title": "Offline",
+					 *             "description": "We're offline for now – please check back later!",
+					 *             "thumbnail": {
+					 *               "width": 1920,
+					 *               "height": 1080,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 1200,
+					 *                   "height": 675,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                 }
+					 *               ]
+					 *             }
+					 *           }
+					 *         },
+					 *         "subscriptionPlans": [
+					 *           {
+					 *             "id": "5d48d0306825b5780db93d07",
+					 *             "title": "LTT Supporter (1080p)",
+					 *             "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *             "price": "5.00",
+					 *             "priceYearly": "50.00",
+					 *             "currency": "usd",
+					 *             "logo": null,
+					 *             "interval": "month",
+					 *             "featured": true,
+					 *             "allowGrandfatheredAccess": false,
+					 *             "discordServers": [],
+					 *             "discordRoles": []
+					 *           },
+					 *           {
+					 *             "id": "5e0ba6ac14e2590f760a0f0f",
+					 *             "title": "LTT Supporter Plus",
+					 *             "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *             "price": "10.00",
+					 *             "priceYearly": "100.00",
+					 *             "currency": "usd",
+					 *             "logo": null,
+					 *             "interval": "month",
+					 *             "featured": false,
+					 *             "allowGrandfatheredAccess": false,
+					 *             "discordServers": [],
+					 *             "discordRoles": []
+					 *           }
+					 *         ],
+					 *         "discoverable": true,
+					 *         "subscriberCountDisplay": "total",
+					 *         "incomeDisplay": false,
+					 *         "socialLinks": {
+					 *           "instagram": "https://www.instagram.com/linustech/",
+					 *           "twitter": "https://twitter.com/linustech",
+					 *           "website": "https://linustechtips.com",
+					 *           "facebook": "https://www.facebook.com/LinusTech",
+					 *           "youtube": "https://www.youtube.com/user/LinusTechTips"
+					 *         }
+					 *       },
+					 *       {
+					 *         "id": "5ae0f8114336369a2c3619b6",
+					 *         "owner": "5ae0f8114336369a2c3619b4",
+					 *         "title": "TechDeals",
+					 *         "urlname": "tech_deals",
+					 *         "description": "Welcome to Tech Deals on Floatplane!  Having nothing to do with actual floatplanes since 2016, we are proud to be part of the launch of Floatplane!  We make videos about technology!",
+					 *         "about": "Welcome to Tech Deals on Floatplane!  Having nothing to do with actual floatplanes since 2016, we are proud to be part of the launch of Floatplane!  We make videos about technology!",
+					 *         "category": {
+					 *           "title": "Technology"
+					 *         },
+					 *         "cover": {
+					 *           "width": 1923,
+					 *           "height": 502,
+					 *           "path": "https://pbs.floatplane.com/cover_images/5ae0f8114336369a2c3619b6/264955378957772_1600880420171.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 1245,
+					 *               "height": 325,
+					 *               "path": "https://pbs.floatplane.com/cover_images/5ae0f8114336369a2c3619b6/264955378957772_1600880420171_1245x325.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "icon": {
+					 *           "width": 720,
+					 *           "height": 720,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/5ae0f8114336369a2c3619b6/223941270270735_1600882905853.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/5ae0f8114336369a2c3619b6/223941270270735_1600882905853_100x100.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/5ae0f8114336369a2c3619b6/223941270270735_1600882905853_250x250.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "liveStream": {
+					 *           "id": "5c3d7ec606f1be114ca1e59c",
+					 *           "title": "CES 2020 - Bonus Coverage for Floatplane Subs",
+					 *           "description": "Welcome to the Tech Deals stream – this should be fun!",
+					 *           "thumbnail": {
+					 *             "width": 1199,
+					 *             "height": 674,
+					 *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c3d7ec606f1be114ca1e59c/973032281888832_1560301350562.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 400,
+					 *                 "height": 225,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c3d7ec606f1be114ca1e59c/973032281888832_1560301350562_400x225.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "owner": "5ae0f8114336369a2c3619b6",
+					 *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.kdUMaxvL2eyW.m3u8",
+					 *           "offline": {
+					 *             "title": "We're offline at the moment. Please check back later!",
+					 *             "description": "We're offline at the moment. Please check back later!",
+					 *             "thumbnail": null
+					 *           }
+					 *         },
+					 *         "subscriptionPlans": [
+					 *           {
+					 *             "id": "5d506f2f7c7e6afa2ef1e246",
+					 *             "title": "1080p Plan - Videos on Demand + Live Streams",
+					 *             "description": "This plan gives you access to all published videos at up to 1080p detail.  You also get access to 1080p live streams exclusive to Floatplane.  This also grants you access to the private channels on the Tech Deals Discord, link your Floatplane account to Discord to be automatically upgraded.",
+					 *             "price": "5.00",
+					 *             "priceYearly": "50.00",
+					 *             "currency": "usd",
+					 *             "logo": null,
+					 *             "interval": "month",
+					 *             "featured": false,
+					 *             "allowGrandfatheredAccess": false,
+					 *             "discordServers": [],
+					 *             "discordRoles": []
+					 *           },
+					 *           {
+					 *             "id": "5e1710272aae3bc9cabdf505",
+					 *             "title": "4K - All Access Plan",
+					 *             "description": "This plan gives you access to all published videos at up to 4K detail.  You also get access to 1080p live streams exclusive to Floatplane.  This also grants you access to the private channels on the Tech Deals Discord, link your Floatplane account to Discord to be automatically upgraded.  BONUS - This plan allows you to download the videos in high quality for off-line viewing!  This is a great way to increase your level of support if you really love our content!",
+					 *             "price": "10.00",
+					 *             "priceYearly": "100.00",
+					 *             "currency": "usd",
+					 *             "logo": null,
+					 *             "interval": "month",
+					 *             "featured": false,
+					 *             "allowGrandfatheredAccess": false,
+					 *             "discordServers": [],
+					 *             "discordRoles": []
+					 *           }
+					 *         ],
+					 *         "discoverable": true,
+					 *         "subscriberCountDisplay": "all",
+					 *         "incomeDisplay": false,
+					 *         "socialLinks": {
+					 *           "youtube": "https://www.youtube.com/techdeals",
+					 *           "twitter": "https://twitter.com/TechDeals_16"
+					 *         }
+					 *       },
+					 *       {
+					 *         "id": "5d2fd26df33b8d14fc5ff48d",
+					 *         "owner": "5c4280ff4160af3309527f37",
+					 *         "title": "EposVox",
+					 *         "urlname": "eposvox",
+					 *         "description": "The ORIGINAL content creator and streaming focused tech education channel. EposVox, the Stream Professor, is here to give you how to videos, tutorials, tips and tricks, as well as gear reviews and benchmarks to get the most out of your tech experience. \nWhile content creation and streaming (especially with software like OBS Studio and XSplit) are primary focuses of content, ultimately the goal is to make technology easier and more fun to use. Education is number one, entertainment is sometimes given.\nThe analog tech nostalgia is just inherent to being a 90s kid.\n\n📬 Shipping: \nP.O. Box 459 \nJeffersonville, IN 47131",
+					 *         "about": "The ORIGINAL content creator and streaming focused tech education channel. EposVox, the Stream Professor, is here to give you how to videos, tutorials, tips and tricks, as well as gear reviews and benchmarks to get the most out of your tech experience. \nWhile content creation and streaming (especially with software like OBS Studio and XSplit) are primary focuses of content, ultimately the goal is to make technology easier and more fun to use. Education is number one, entertainment is sometimes given.\nThe analog tech nostalgia is just inherent to being a 90s kid.\n\n📬 Shipping: \nP.O. Box 459 \nJeffersonville, IN 47131",
+					 *         "category": {
+					 *           "title": "Technology"
+					 *         },
+					 *         "cover": {
+					 *           "width": 1992,
+					 *           "height": 520,
+					 *           "path": "https://pbs.floatplane.com/cover_images/5d2fd26df33b8d14fc5ff48d/879571788095471_1563437947857.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 1245,
+					 *               "height": 325,
+					 *               "path": "https://pbs.floatplane.com/cover_images/5d2fd26df33b8d14fc5ff48d/879571788095471_1563437947857_1245x325.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "icon": {
+					 *           "width": 720,
+					 *           "height": 720,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/5d2fd26df33b8d14fc5ff48d/136876584569877_1596766926335.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/5d2fd26df33b8d14fc5ff48d/136876584569877_1596766926335_100x100.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/5d2fd26df33b8d14fc5ff48d/136876584569877_1596766926335_250x250.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "liveStream": {
+					 *           "id": "5d2fd230f33b8d14fc5ff48c",
+					 *           "title": "EposVox Live Testing",
+					 *           "description": "Not much to see here... yet!",
+					 *           "thumbnail": null,
+					 *           "owner": "5d2fd26df33b8d14fc5ff48d",
+					 *           "streamPath": "/live_abr/eposvox",
+					 *           "offline": {
+					 *             "title": null,
+					 *             "description": "Not much to see here... yet!",
+					 *             "thumbnail": {
+					 *               "width": 1920,
+					 *               "height": 1080,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5d2fd230f33b8d14fc5ff48c/859602689851697_1563602860461.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 1200,
+					 *                   "height": 675,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5d2fd230f33b8d14fc5ff48c/859602689851697_1563602860461_1200x675.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5d2fd230f33b8d14fc5ff48c/859602689851697_1563602860461_400x225.jpeg"
+					 *                 }
+					 *               ]
+					 *             }
+					 *           }
+					 *         },
+					 *         "subscriptionPlans": [
+					 *           {
+					 *             "id": "5d32780027050d0c9a0b10aa",
+					 *             "title": "FLOATPLANE FLOATBOATS (1080p)",
+					 *             "description": "Primary Floatplane sub. Help me build the best tech education platform on the internet and keep diving into crazy nerdy details no one else covers. This tier gets you all of the currently-available video playback, downloads and live streaming.  BTS Vlogs & Early Access, too! All up to 1080p quality.\nVideos will be given as early access as much as a month (though usually just a week) before YouTube, when available.",
+					 *             "price": "5.00",
+					 *             "priceYearly": null,
+					 *             "currency": "usd",
+					 *             "logo": null,
+					 *             "interval": "month",
+					 *             "featured": false,
+					 *             "discordServers": [],
+					 *             "discordRoles": []
+					 *           },
+					 *           {
+					 *             "id": "5d48aaee6825b5780db93c80",
+					 *             "title": "Super Sub (4k)",
+					 *             "description": "You get... EVERYTHING! Future features will expand here, but for now, you get everything already available, and this is just here for those who want to support a little more :)",
+					 *             "price": "10.00",
+					 *             "priceYearly": null,
+					 *             "currency": "usd",
+					 *             "logo": null,
+					 *             "interval": "month",
+					 *             "featured": false,
+					 *             "discordServers": [],
+					 *             "discordRoles": []
+					 *           }
+					 *         ],
+					 *         "discoverable": true,
+					 *         "subscriberCountDisplay": "hide",
+					 *         "incomeDisplay": false,
+					 *         "socialLinks": {
+					 *           "youtube": "https://www.youtube.com/eposvox",
+					 *           "instagram": "https://www.instagram.com/eposvox/",
+					 *           "website": "https://eposvox.com",
+					 *           "facebook": "https://www.facebook.com/eposvoxofficial",
+					 *           "twitter": "https://twitter.com/eposvox"
+					 *         }
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["CreatorModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getCreatorByName: {
+		parameters: {
+			query: {
+				/** @description The `urlname`(s) of the creator(s) to be retrieved. See `CreatorModelV3`. */
+				creatorURL: string[];
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "59f94c0bdd241b70349eb72b",
+					 *         "owner": "59f94c0bdd241b70349eb723",
+					 *         "title": "LinusTechTips",
+					 *         "urlname": "linustechtips",
+					 *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *         "category": {
+					 *           "id": "59f94c0bdd241b70349eb727",
+					 *           "title": "Technology"
+					 *         },
+					 *         "cover": {
+					 *           "width": 1990,
+					 *           "height": 519,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 1245,
+					 *               "height": 325,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "icon": {
+					 *           "width": 600,
+					 *           "height": 600,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "liveStream": {
+					 *           "id": "5c13f3c006f1be15e08e05c0",
+					 *           "title": "I Am Hard... [REDACTED] - WAN Show March 17, 2023",
+					 *           "description": "<p>Get a 15-day free trial for unlimited backup at<a href=\"https://www.backblaze.com/landing/podcast-wan.html\" rel=\"noopener noreferrer\" target=\"_blank\"> https://www.backblaze.com/landing/podcast-wan.html</a></p><p>Try Zoho One free for 30 days with no credit card required here:<a href=\"https://www.zoho.com/one/lp/linus.html\" rel=\"noopener noreferrer\" target=\"_blank\"> https://www.zoho.com/one/lp/linus.html</a></p><p>Save 15% with our offer code WANSHOW at <a href=\"https://vessi.com/WANSHOW\" rel=\"noopener noreferrer\" target=\"_blank\">https://vessi.com/WANSHOW</a></p><p><br></p><p>Podcast Download: TBD</p>",
+					 *           "thumbnail": {
+					 *             "width": 1920,
+					 *             "height": 1080,
+					 *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/754645543818842_1679099143677.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 400,
+					 *                 "height": 225,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/754645543818842_1679099143677_400x225.jpeg"
+					 *               },
+					 *               {
+					 *                 "width": 1200,
+					 *                 "height": 675,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/754645543818842_1679099143677_1200x675.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "owner": "59f94c0bdd241b70349eb72b",
+					 *           "channel": "63fe42c309e691e4e36de93d",
+					 *           "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *           "offline": {
+					 *             "title": "Offline",
+					 *             "description": "We're offline for now – please check back later!",
+					 *             "thumbnail": {
+					 *               "width": 1920,
+					 *               "height": 1080,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 1200,
+					 *                   "height": 675,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                 }
+					 *               ]
+					 *             }
+					 *           }
+					 *         },
+					 *         "subscriptionPlans": [
+					 *           {
+					 *             "id": "5d48d0306825b5780db93d07",
+					 *             "title": "LTT Supporter",
+					 *             "description": "- 2 Exclusives Per Week (Meet the Team, Extras, Behind the Scenes) \n- Exclusive livestreams\n- Save $10 by purchasing an annual subscription\n- Our gratitude for your support",
+					 *             "price": "5.00",
+					 *             "priceYearly": "50.00",
+					 *             "currency": "usd",
+					 *             "logo": null,
+					 *             "interval": "month",
+					 *             "featured": true,
+					 *             "allowGrandfatheredAccess": false,
+					 *             "discordServers": [],
+					 *             "discordRoles": []
+					 *           },
+					 *           {
+					 *             "id": "5e0ba6ac14e2590f760a0f0f",
+					 *             "title": "LTT Supporter Plus",
+					 *             "description": "- 4K Bitrate Streaming\n- 2 Exclusives Per Week (Meet the Team, Extras, Behind the Scenes) \n- Exclusive livestreams\n- Save $20 by purchasing an annual subscription\n- Our gratitude for your support",
+					 *             "price": "10.00",
+					 *             "priceYearly": "100.00",
+					 *             "currency": "usd",
+					 *             "logo": null,
+					 *             "interval": "month",
+					 *             "featured": true,
+					 *             "allowGrandfatheredAccess": false,
+					 *             "discordServers": [],
+					 *             "discordRoles": []
+					 *           }
+					 *         ],
+					 *         "discoverable": true,
+					 *         "subscriberCountDisplay": "total",
+					 *         "incomeDisplay": false,
+					 *         "defaultChannel": "63fe42c309e691e4e36de93d",
+					 *         "socialLinks": {
+					 *           "instagram": "https://www.instagram.com/linustech",
+					 *           "website": "https://linustechtips.com",
+					 *           "facebook": "https://www.facebook.com/LinusTech",
+					 *           "youtube": "https://www.youtube.com/user/LinusTechTips",
+					 *           "twitter": "https://twitter.com/linustech"
+					 *         },
+					 *         "channels": [
+					 *           {
+					 *             "id": "63fe42c309e691e4e36de93d",
+					 *             "creator": "59f94c0bdd241b70349eb72b",
+					 *             "title": "Linus Tech Tips",
+					 *             "urlname": "main",
+					 *             "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *             "order": 0,
+					 *             "cover": {
+					 *               "width": 1990,
+					 *               "height": 519,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 1245,
+					 *                   "height": 325,
+					 *                   "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "card": null,
+					 *             "icon": {
+					 *               "width": 600,
+					 *               "height": 600,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 250,
+					 *                   "height": 250,
+					 *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 100,
+					 *                   "height": 100,
+					 *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "socialLinks": {}
+					 *           },
+					 *           {
+					 *             "id": "6413534d88c13c181c3e2809",
+					 *             "creator": "59f94c0bdd241b70349eb72b",
+					 *             "title": "TechLinked",
+					 *             "urlname": "techlinked",
+					 *             "about": "News about tech + gaming culture, delivered thrice weekly.\n\nWe're also doing long-form video essays now, apparently. \n\nThe TalkLinked talk show/podcast will probably come back at some point, too!\n\nWriters: Riley Murdock, Jon Martin, James Strieb",
+					 *             "order": 2,
+					 *             "cover": {
+					 *               "width": 1080,
+					 *               "height": 282,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/231100243161134_1678988109632.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "card": null,
+					 *             "icon": {
+					 *               "width": 88,
+					 *               "height": 88,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/955526950207988_1678988110287.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "socialLinks": {}
+					 *           },
+					 *           {
+					 *             "id": "64135da7ce81077a8480c679",
+					 *             "creator": "59f94c0bdd241b70349eb72b",
+					 *             "title": "ShortCircuit",
+					 *             "urlname": "shortcircuit",
+					 *             "about": "What's in the box? Let's find out!\n\nOfficial channel under Linus Media Group.",
+					 *             "order": 3,
+					 *             "cover": {
+					 *               "width": 1084,
+					 *               "height": 283,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/745715133852622_1678990806332.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "card": null,
+					 *             "icon": {
+					 *               "width": 88,
+					 *               "height": 88,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/470304051261927_1678990806883.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "socialLinks": {}
+					 *           },
+					 *           {
+					 *             "id": "64135e27c773b27ff22c97eb",
+					 *             "creator": "59f94c0bdd241b70349eb72b",
+					 *             "title": "Techquickie",
+					 *             "urlname": "techquickie",
+					 *             "about": "Ever wanted to learn more about your favorite gadgets or a trending topic in tech? \n\nWith a mix of humor, cynicism, and insight, Techquickie brings you the answers to all your tech questions every Tuesday and Friday.",
+					 *             "order": 5,
+					 *             "cover": {
+					 *               "width": 1080,
+					 *               "height": 282,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/721553790654237_1678990887992.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "card": null,
+					 *             "icon": {
+					 *               "width": 88,
+					 *               "height": 88,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/666841640245092_1678990909616.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "socialLinks": {}
+					 *           },
+					 *           {
+					 *             "id": "64135e901ebaee42e258eb0b",
+					 *             "creator": "59f94c0bdd241b70349eb72b",
+					 *             "title": "Mac Address",
+					 *             "urlname": "macaddress",
+					 *             "about": "The exploration of all things Apple, from iPhones underwater to full iClouds in the sky. We want to be the channel that you come to first for an unexpected viewpoint about the devices you love.",
+					 *             "order": 4,
+					 *             "cover": {
+					 *               "width": 1080,
+					 *               "height": 282,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/254417940627493_1678990992632.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "card": null,
+					 *             "icon": {
+					 *               "width": 88,
+					 *               "height": 88,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/979475909700348_1678990993114.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "socialLinks": {}
+					 *           },
+					 *           {
+					 *             "id": "64135ed078d6262f717341b7",
+					 *             "creator": "59f94c0bdd241b70349eb72b",
+					 *             "title": "Channel Super Fun",
+					 *             "urlname": "channelsuperfun",
+					 *             "about": "Channel Super Fun is all about the name. Games, toys, and challenges. Expect to find them all here!",
+					 *             "order": 6,
+					 *             "cover": {
+					 *               "width": 1080,
+					 *               "height": 282,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/881886551214964_1678991123807.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "card": null,
+					 *             "icon": {
+					 *               "width": 88,
+					 *               "height": 88,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/317924815973639_1678991124672.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "socialLinks": {}
+					 *           },
+					 *           {
+					 *             "id": "64135f82fc76ab7f9fbdc876",
+					 *             "creator": "59f94c0bdd241b70349eb72b",
+					 *             "title": "They're Just Movies",
+					 *             "urlname": "tajm",
+					 *             "about": "Each week our small group of nerds sits down for a not-so-serious, SPOILER-FILLED, chat about the movies you love.\n\nFormerly known as Carpool Critics, we're part of Linus Media Group!",
+					 *             "order": 7,
+					 *             "cover": {
+					 *               "width": 1080,
+					 *               "height": 282,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/190277198232475_1678991235439.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "card": null,
+					 *             "icon": {
+					 *               "width": 88,
+					 *               "height": 88,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/570806971094170_1678991236419.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "socialLinks": {}
+					 *           },
+					 *           {
+					 *             "id": "6413623f5b12cca228a28e78",
+					 *             "creator": "59f94c0bdd241b70349eb72b",
+					 *             "title": "FP Exclusive",
+					 *             "urlname": "fpexclusive",
+					 *             "about": "wow... so empty",
+					 *             "order": 1,
+					 *             "cover": {
+					 *               "width": 1200,
+					 *               "height": 313,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/072932633007415_1678991935461.jpeg",
+					 *               "childImages": []
+					 *             },
+					 *             "card": null,
+					 *             "icon": {
+					 *               "width": 720,
+					 *               "height": 720,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 100,
+					 *                   "height": 100,
+					 *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484_100x100.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 250,
+					 *                   "height": 250,
+					 *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484_250x250.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "socialLinks": {}
+					 *           }
+					 *         ],
+					 *         "discordServers": [
+					 *           {
+					 *             "id": "5baa8838d9f3aa0a83acd429",
+					 *             "guildName": "Linus Tech Tips",
+					 *             "guildIcon": "803d5f745b30aba3edba719bac671660",
+					 *             "inviteLink": "https://discord.gg/LTT",
+					 *             "inviteMode": "link"
+					 *           },
+					 *           {
+					 *             "id": "5e34cd9a9dbb744872192895",
+					 *             "guildName": "LTT Minecraft Network",
+					 *             "guildIcon": "4f7f812b49196b1646bdcdb84b948c84",
+					 *             "inviteLink": "https://discord.gg/VVpwBPXrMc",
+					 *             "inviteMode": "link"
+					 *           }
+					 *         ]
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["CreatorModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	listCreatorChannelsV3: {
+		parameters: {
+			query: {
+				/** @description The ids of the creator(s) from which to search for channels. */
+				ids: string[];
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "63fe42c309e691e4e36de93d",
+					 *         "creator": "59f94c0bdd241b70349eb72b",
+					 *         "title": "Linus Tech Tips",
+					 *         "urlname": "main",
+					 *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *         "order": 0,
+					 *         "cover": {
+					 *           "width": 1990,
+					 *           "height": 519,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 1245,
+					 *               "height": 325,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "card": {
+					 *           "width": 375,
+					 *           "height": 500,
+					 *           "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 300,
+					 *               "height": 400,
+					 *               "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "icon": {
+					 *           "width": 600,
+					 *           "height": 600,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "socialLinks": {}
+					 *       },
+					 *       {
+					 *         "id": "6413534d88c13c181c3e2809",
+					 *         "creator": "59f94c0bdd241b70349eb72b",
+					 *         "title": "TechLinked",
+					 *         "urlname": "techlinked",
+					 *         "about": "News about tech + gaming culture, delivered thrice weekly.\n\nWe're also doing long-form video essays now, apparently. \n\nThe TalkLinked talk show/podcast will probably come back at some point, too!\n\nWriters: Riley Murdock, Jon Martin, James Strieb",
+					 *         "order": 2,
+					 *         "cover": {
+					 *           "width": 1080,
+					 *           "height": 282,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/231100243161134_1678988109632.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "card": {
+					 *           "width": 66,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/953298867250186_1678988110714.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "icon": {
+					 *           "width": 88,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413534d88c13c181c3e2809/955526950207988_1678988110287.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "socialLinks": {}
+					 *       },
+					 *       {
+					 *         "id": "64135da7ce81077a8480c679",
+					 *         "creator": "59f94c0bdd241b70349eb72b",
+					 *         "title": "ShortCircuit",
+					 *         "urlname": "shortcircuit",
+					 *         "about": "What's in the box? Let's find out!\n\nOfficial channel under Linus Media Group.",
+					 *         "order": 3,
+					 *         "cover": {
+					 *           "width": 1084,
+					 *           "height": 283,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/745715133852622_1678990806332.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "card": {
+					 *           "width": 66,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/939790311068913_1678990807440.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "icon": {
+					 *           "width": 88,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135da7ce81077a8480c679/470304051261927_1678990806883.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "socialLinks": {}
+					 *       },
+					 *       {
+					 *         "id": "64135e27c773b27ff22c97eb",
+					 *         "creator": "59f94c0bdd241b70349eb72b",
+					 *         "title": "Techquickie",
+					 *         "urlname": "techquickie",
+					 *         "about": "Ever wanted to learn more about your favorite gadgets or a trending topic in tech? \n\nWith a mix of humor, cynicism, and insight, Techquickie brings you the answers to all your tech questions every Tuesday and Friday.",
+					 *         "order": 5,
+					 *         "cover": {
+					 *           "width": 1080,
+					 *           "height": 282,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/721553790654237_1678990887992.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "card": {
+					 *           "width": 66,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/962826906389296_1678990910103.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "icon": {
+					 *           "width": 88,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135e27c773b27ff22c97eb/666841640245092_1678990909616.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "socialLinks": {}
+					 *       },
+					 *       {
+					 *         "id": "64135e901ebaee42e258eb0b",
+					 *         "creator": "59f94c0bdd241b70349eb72b",
+					 *         "title": "Mac Address",
+					 *         "urlname": "macaddress",
+					 *         "about": "The exploration of all things Apple, from iPhones underwater to full iClouds in the sky. We want to be the channel that you come to first for an unexpected viewpoint about the devices you love.",
+					 *         "order": 4,
+					 *         "cover": {
+					 *           "width": 1080,
+					 *           "height": 282,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/254417940627493_1678990992632.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "card": {
+					 *           "width": 66,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/493604923555386_1678990993708.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "icon": {
+					 *           "width": 88,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135e901ebaee42e258eb0b/979475909700348_1678990993114.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "socialLinks": {}
+					 *       },
+					 *       {
+					 *         "id": "64135ed078d6262f717341b7",
+					 *         "creator": "59f94c0bdd241b70349eb72b",
+					 *         "title": "Channel Super Fun",
+					 *         "urlname": "channelsuperfun",
+					 *         "about": "Channel Super Fun is all about the name. Games, toys, and challenges. Expect to find them all here!",
+					 *         "order": 6,
+					 *         "cover": {
+					 *           "width": 1080,
+					 *           "height": 282,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/881886551214964_1678991123807.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "card": {
+					 *           "width": 66,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/953601834319296_1678991125167.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "icon": {
+					 *           "width": 88,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135ed078d6262f717341b7/317924815973639_1678991124672.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "socialLinks": {}
+					 *       },
+					 *       {
+					 *         "id": "64135f82fc76ab7f9fbdc876",
+					 *         "creator": "59f94c0bdd241b70349eb72b",
+					 *         "title": "They're Just Movies",
+					 *         "urlname": "tajm",
+					 *         "about": "Each week our small group of nerds sits down for a not-so-serious, SPOILER-FILLED, chat about the movies you love.\n\nFormerly known as Carpool Critics, we're part of Linus Media Group!",
+					 *         "order": 7,
+					 *         "cover": {
+					 *           "width": 1080,
+					 *           "height": 282,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/190277198232475_1678991235439.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "card": {
+					 *           "width": 66,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/863827491957963_1678991237126.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "icon": {
+					 *           "width": 88,
+					 *           "height": 88,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/64135f82fc76ab7f9fbdc876/570806971094170_1678991236419.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "socialLinks": {}
+					 *       },
+					 *       {
+					 *         "id": "6413623f5b12cca228a28e78",
+					 *         "creator": "59f94c0bdd241b70349eb72b",
+					 *         "title": "FP Exclusive",
+					 *         "urlname": "fpexclusive",
+					 *         "about": "wow... so empty",
+					 *         "order": 1,
+					 *         "cover": {
+					 *           "width": 1200,
+					 *           "height": 313,
+					 *           "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/072932633007415_1678991935461.jpeg",
+					 *           "childImages": []
+					 *         },
+					 *         "card": {
+					 *           "width": 750,
+					 *           "height": 1000,
+					 *           "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/717727609968419_1678991937240.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 375,
+					 *               "height": 500,
+					 *               "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/717727609968419_1678991937240_375x500.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 300,
+					 *               "height": 400,
+					 *               "path": "https://pbs.floatplane.com/creator_cards/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/717727609968419_1678991937240_300x400.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "icon": {
+					 *           "width": 720,
+					 *           "height": 720,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484_100x100.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/6413623f5b12cca228a28e78/069457536750544_1678991936484_250x250.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "socialLinks": {}
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["ChannelModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getCreatorSubInfoPublic: {
+		parameters: {
+			query: {
+				/** @description The GUID for the creator being search. */
+				creatorId: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Information about the plans for the creator */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "totalSubscriberCount": 19256,
+					 *       "totalIncome": null,
+					 *       "plans": [
+					 *         {
+					 *           "discordRoles": [
+					 *             {
+					 *               "server": "5baa8838d9f3aa0a83acd429",
+					 *               "roleName": "Floatplane.com Pilot"
+					 *             },
+					 *             {
+					 *               "server": "5e34cd9a9dbb744872192895",
+					 *               "roleName": "Pilot"
+					 *             }
+					 *           ],
+					 *           "createdAt": "2019-08-06T00:56:16.180Z",
+					 *           "updatedAt": "2021-09-09T16:55:02.620Z",
+					 *           "id": "5d48d0306825b5780db93d07",
+					 *           "title": "LTT Supporter (1080p)",
+					 *           "enabled": true,
+					 *           "featured": true,
+					 *           "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *           "price": "5.00",
+					 *           "priceYearly": "50.00",
+					 *           "paymentID": 19,
+					 *           "currency": "usd",
+					 *           "trialPeriod": 0,
+					 *           "allowGrandfatheredAccess": false,
+					 *           "logo": null,
+					 *           "creator": "59f94c0bdd241b70349eb72b",
+					 *           "discordServers": [
+					 *             {
+					 *               "id": "5baa8838d9f3aa0a83acd429",
+					 *               "guildName": "LinusTechTips",
+					 *               "guildIcon": "a_528743a32b33b5eb227a8405d5593473",
+					 *               "inviteLink": "https://discord.gg/LTT",
+					 *               "inviteMode": "link"
+					 *             },
+					 *             {
+					 *               "id": "5e34cd9a9dbb744872192895",
+					 *               "guildName": "LTT Minecraft Network",
+					 *               "guildIcon": "4f7f812b49196b1646bdcdb84b948c84",
+					 *               "inviteLink": "https://discord.gg/VVpwBPXrMc",
+					 *               "inviteMode": "link"
+					 *             }
+					 *           ],
+					 *           "userIsSubscribed": true,
+					 *           "userIsGrandfathered": false,
+					 *           "enabledGlobal": true,
+					 *           "interval": "month"
+					 *         },
+					 *         {
+					 *           "discordRoles": [
+					 *             {
+					 *               "server": "5baa8838d9f3aa0a83acd429",
+					 *               "roleName": "Floatplane.com Pilot"
+					 *             },
+					 *             {
+					 *               "server": "5e34cd9a9dbb744872192895",
+					 *               "roleName": "Pilot"
+					 *             }
+					 *           ],
+					 *           "createdAt": "2019-12-31T19:51:08.009Z",
+					 *           "updatedAt": "2020-11-07T01:33:31.617Z",
+					 *           "id": "5e0ba6ac14e2590f760a0f0f",
+					 *           "title": "LTT Supporter Plus",
+					 *           "enabled": true,
+					 *           "featured": false,
+					 *           "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *           "price": "10.00",
+					 *           "priceYearly": "100.00",
+					 *           "paymentID": 66,
+					 *           "currency": "usd",
+					 *           "trialPeriod": 0,
+					 *           "allowGrandfatheredAccess": false,
+					 *           "logo": null,
+					 *           "creator": "59f94c0bdd241b70349eb72b",
+					 *           "discordServers": [
+					 *             {
+					 *               "id": "5baa8838d9f3aa0a83acd429",
+					 *               "guildName": "LinusTechTips",
+					 *               "guildIcon": "a_528743a32b33b5eb227a8405d5593473",
+					 *               "inviteLink": "https://discord.gg/LTT",
+					 *               "inviteMode": "link"
+					 *             },
+					 *             {
+					 *               "id": "5e34cd9a9dbb744872192895",
+					 *               "guildName": "LTT Minecraft Network",
+					 *               "guildIcon": "4f7f812b49196b1646bdcdb84b948c84",
+					 *               "inviteLink": "https://discord.gg/VVpwBPXrMc",
+					 *               "inviteMode": "link"
+					 *             }
+					 *           ],
+					 *           "userIsSubscribed": false,
+					 *           "userIsGrandfathered": false,
+					 *           "enabledGlobal": true,
+					 *           "interval": "month"
+					 *         }
+					 *       ]
+					 *     } */
+					"application/json": components["schemas"]["PlanInfoV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getEdges: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "edges": [
+					 *         {
+					 *           "hostname": "edge01-na.floatplane.com",
+					 *           "queryPort": 8090,
+					 *           "bandwidth": 1000000000,
+					 *           "allowDownload": true,
+					 *           "allowStreaming": true,
+					 *           "datacenter": {
+					 *             "countryCode": "CA",
+					 *             "regionCode": "QC",
+					 *             "latitude": 45.3168,
+					 *             "longitude": -73.8659
+					 *           }
+					 *         },
+					 *         {
+					 *           "hostname": "edge02-na.floatplane.com",
+					 *           "queryPort": 8090,
+					 *           "bandwidth": 500000000,
+					 *           "allowDownload": true,
+					 *           "allowStreaming": true,
+					 *           "datacenter": {
+					 *             "countryCode": "CA",
+					 *             "regionCode": "QC",
+					 *             "latitude": 45.3168,
+					 *             "longitude": -73.8659
+					 *           }
+					 *         },
+					 *         {
+					 *           "hostname": "edge01-eu.floatplane.com",
+					 *           "queryPort": 8090,
+					 *           "bandwidth": 1000000000,
+					 *           "allowDownload": false,
+					 *           "allowStreaming": true,
+					 *           "datacenter": {
+					 *             "countryCode": "FR",
+					 *             "regionCode": "A",
+					 *             "latitude": 48.5873,
+					 *             "longitude": 7.79821
+					 *           }
+					 *         },
+					 *         {
+					 *           "hostname": "edge01-au.floatplane.com",
+					 *           "queryPort": 8090,
+					 *           "bandwidth": 250000000,
+					 *           "allowDownload": false,
+					 *           "allowStreaming": true,
+					 *           "datacenter": {
+					 *             "countryCode": "AU",
+					 *             "regionCode": "NSW",
+					 *             "latitude": -33.8401,
+					 *             "longitude": 151.209
+					 *           }
+					 *         },
+					 *         {
+					 *           "hostname": "edge1-na-south.floatplane.com",
+					 *           "queryPort": 0,
+					 *           "bandwidth": 1000000000,
+					 *           "allowDownload": false,
+					 *           "allowStreaming": true,
+					 *           "datacenter": {
+					 *             "countryCode": "US",
+					 *             "regionCode": "FL",
+					 *             "latitude": 25.8124,
+					 *             "longitude": -80.2401
+					 *           }
+					 *         },
+					 *         {
+					 *           "hostname": "edge1-na-sv.floatplane.com",
+					 *           "queryPort": 0,
+					 *           "bandwidth": 1000000000,
+					 *           "allowDownload": false,
+					 *           "allowStreaming": true,
+					 *           "datacenter": {
+					 *             "countryCode": "US",
+					 *             "regionCode": "CA",
+					 *             "latitude": 37.3387,
+					 *             "longitude": -121.8914
+					 *           }
+					 *         },
+					 *         {
+					 *           "hostname": "edge03-na.floatplane.com",
+					 *           "queryPort": 0,
+					 *           "bandwidth": 3000000000,
+					 *           "allowDownload": false,
+					 *           "allowStreaming": true,
+					 *           "datacenter": {
+					 *             "countryCode": "CA",
+					 *             "regionCode": "QC",
+					 *             "latitude": 45.3168,
+					 *             "longitude": -73.8659
+					 *           }
+					 *         }
+					 *       ],
+					 *       "client": {}
+					 *     } */
+					"application/json": components["schemas"]["EdgesModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getFaqSections: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "faqs": [
+					 *           {
+					 *             "createdAt": "2019-10-03T18:45:49.157Z",
+					 *             "updatedAt": "2019-12-19T22:06:01.843Z",
+					 *             "id": "5d9641ddbced315cc7d9135f",
+					 *             "question": "How do you get the PewPew emote? ",
+					 *             "answer": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\">The PewPew emote was as an account reward for users who had succesfully set up a payment method on Floatplane.com before January 1st 2019.</span></p>",
+					 *             "status": "public",
+					 *             "link": "g-pewpew-emote",
+					 *             "order": 1,
+					 *             "faqSection": "5d9641d0b3e3285cfffe44a9"
+					 *           }
+					 *         ],
+					 *         "createdAt": "2019-10-03T18:45:36.840Z",
+					 *         "updatedAt": "2019-12-19T22:08:50.481Z",
+					 *         "id": "5d9641d0b3e3285cfffe44a9",
+					 *         "name": "General",
+					 *         "description": "For general questions about Floatplane",
+					 *         "status": "public",
+					 *         "order": 1
+					 *       },
+					 *       {
+					 *         "faqs": [
+					 *           {
+					 *             "createdAt": "2019-10-03T18:26:28.413Z",
+					 *             "updatedAt": "2020-01-28T03:23:15.918Z",
+					 *             "id": "5d963d54221c575ce366b7e7",
+					 *             "question": "Can you upgrade me to the LTT supporter (1080p) subscription? ",
+					 *             "answer": "<p>At this time there is no difference between the two channels in regards to features that are unlocked. The only difference between the two is the price.</p>",
+					 *             "status": "public",
+					 *             "link": "sub-u-payment",
+					 *             "order": 1,
+					 *             "faqSection": "5d8d1be612c2535c9dc067d1"
+					 *           }
+					 *         ],
+					 *         "createdAt": "2019-09-26T20:13:26.431Z",
+					 *         "updatedAt": "2020-01-28T03:24:33.443Z",
+					 *         "id": "5d8d1be612c2535c9dc067d1",
+					 *         "name": "Subscription and Payment ",
+					 *         "description": "Life isn't always about money but this section is. If you have a payment or subscription issue look here.  ",
+					 *         "status": "public",
+					 *         "order": 2
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["FaqSectionModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	listPaymentMethods: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": 54715,
+					 *         "payment_processor": 1,
+					 *         "default": true,
+					 *         "card": {
+					 *           "brand": "Visa",
+					 *           "last4": "1234",
+					 *           "exp_month": 11,
+					 *           "exp_year": 2028,
+					 *           "name": "Firstname Lastname"
+					 *         }
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["PaymentMethodModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	listAddresses: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": 44739,
+					 *         "customerName": "Firstname Lastname",
+					 *         "postalCode": "12345",
+					 *         "line1": "123 Main St",
+					 *         "city": "Metropolis",
+					 *         "region": "NY",
+					 *         "country": "US",
+					 *         "default": true
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["PaymentAddressModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	listInvoices: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "invoices": [
+					 *         {
+					 *           "id": 1234567,
+					 *           "amountDue": 50,
+					 *           "amountTax": 0,
+					 *           "attemptCount": 0,
+					 *           "currency": "usd",
+					 *           "date": "2020-11-19T16:23:33.000Z",
+					 *           "dateDue": null,
+					 *           "periodStart": "2020-09-25T07:35:04.273Z",
+					 *           "periodEnd": "2021-09-25T07:35:04.273Z",
+					 *           "nextPaymentAttempt": "2020-09-25T07:35:04.273Z",
+					 *           "paid": true,
+					 *           "forgiven": false,
+					 *           "refunded": false,
+					 *           "subscriptions": [
+					 *             {
+					 *               "id": 1234567,
+					 *               "subscription": 12345,
+					 *               "periodStart": "2020-09-25T07:35:04.273Z",
+					 *               "periodEnd": "2021-09-25T07:35:04.273Z",
+					 *               "value": 50,
+					 *               "amountSubtotal": 50,
+					 *               "amountTotal": 50,
+					 *               "amountTax": 0,
+					 *               "plan": {
+					 *                 "id": "5d48d0306825b5780db93d07",
+					 *                 "title": "LTT Supporter (1080p)",
+					 *                 "creator": {
+					 *                   "id": "59f94c0bdd241b70349eb72b",
+					 *                   "title": "LinusTechTips",
+					 *                   "urlname": "linustechtips",
+					 *                   "icon": {
+					 *                     "width": 600,
+					 *                     "height": 600,
+					 *                     "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *                     "childImages": [
+					 *                       {
+					 *                         "width": 250,
+					 *                         "height": 250,
+					 *                         "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *                       },
+					 *                       {
+					 *                         "width": 100,
+					 *                         "height": 100,
+					 *                         "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *                       }
+					 *                     ]
+					 *                   }
+					 *                 }
+					 *               }
+					 *             }
+					 *           ]
+					 *         }
+					 *       ]
+					 *     } */
+					"application/json": components["schemas"]["PaymentInvoiceListV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	socketConnect: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {} */
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	disconnectSocket: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {} */
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	listUserSubscriptionsV3: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Subscriptions returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "startDate": "2020-09-25T07:35:04.273Z",
+					 *         "endDate": "2021-09-25T07:35:04.273Z",
+					 *         "paymentID": 12345,
+					 *         "interval": "year",
+					 *         "paymentCancelled": false,
+					 *         "plan": {
+					 *           "id": "5d48d0306825b5780db93d07",
+					 *           "title": "LTT Supporter (1080p)",
+					 *           "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *           "price": "5.00",
+					 *           "priceYearly": "50.00",
+					 *           "currency": "usd",
+					 *           "logo": null,
+					 *           "interval": "month",
+					 *           "featured": true,
+					 *           "allowGrandfatheredAccess": false,
+					 *           "discordServers": [],
+					 *           "discordRoles": []
+					 *         },
+					 *         "creator": "59f94c0bdd241b70349eb72b"
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["UserSubscriptionModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getUserInfo: {
+		parameters: {
+			query: {
+				/** @description The GUID identifer(s) of the user(s) to be retrieved. */
+				id: string[];
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Results of the user search */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "users": [
+					 *         {
+					 *           "id": "59f94c0bdd241b70349eb723",
+					 *           "user": {
+					 *             "id": "59f94c0bdd241b70349eb723",
+					 *             "username": "Linus",
+					 *             "profileImage": {
+					 *               "width": 600,
+					 *               "height": 600,
+					 *               "path": "https://pbs.floatplane.com/profile_images/59f94c0bdd241b70349eb723/013264939123424_1535577174346.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 100,
+					 *                   "height": 100,
+					 *                   "path": "https://pbs.floatplane.com/profile_images/59f94c0bdd241b70349eb723/013264939123424_1535577174346_100x100.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 250,
+					 *                   "height": 250,
+					 *                   "path": "https://pbs.floatplane.com/profile_images/59f94c0bdd241b70349eb723/013264939123424_1535577174346_250x250.jpeg"
+					 *                 }
+					 *               ]
+					 *             }
+					 *           }
+					 *         }
+					 *       ]
+					 *     } */
+					"application/json": components["schemas"]["UserInfoV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getUserInfoByName: {
+		parameters: {
+			query: {
+				/** @description The username(s) of the user(s) to be retrieved. */
+				username: string[];
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Results of the user search */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "users": [
+					 *         {
+					 *           "id": "0123456789abcdef01234567",
+					 *           "user": {
+					 *             "id": "0123456789abcdef01234567",
+					 *             "username": "my_username",
+					 *             "profileImage": {
+					 *               "width": 512,
+					 *               "height": 512,
+					 *               "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 250,
+					 *                   "height": 250,
+					 *                   "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
+					 *                 },
+					 *                 {
+					 *                   "width": 100,
+					 *                   "height": 100,
+					 *                   "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "email": "testemail@example.com",
+					 *             "displayName": "Firstname Lastname"
+					 *           }
+					 *         }
+					 *       ]
+					 *     } */
+					"application/json": components["schemas"]["UserNamedV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getSecurity: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Current security settings */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "twofactorEnabled": true,
+					 *       "twofactorBackupCodeEnabled": true
+					 *     } */
+					"application/json": components["schemas"]["UserSecurityV2Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	userCreatorBanStatus: {
+		parameters: {
+			query: {
+				/** @description The GUID of the creator being queried. */
+				creator: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Whether the user is banned or not */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example false */
+					"application/json": boolean;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getActivityFeedV3: {
+		parameters: {
+			query: {
+				/** @description The GUID of the user being queried. */
+				id: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Activity returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "activity": [
+					 *         {
+					 *           "time": "2021-10-09T08:12:51.290Z",
+					 *           "comment": "This is the text of the comment being posted",
+					 *           "postTitle": "TL: Facebook Does Not Care.",
+					 *           "postId": "j7KjCaKrtV",
+					 *           "creatorTitle": "LinusTechTips",
+					 *           "creatorUrl": "linustechtips"
+					 *         }
+					 *       ],
+					 *       "visibility": "public"
+					 *     } */
+					"application/json": components["schemas"]["UserActivityV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getExternalLinksV3: {
+		parameters: {
+			query: {
+				/** @description The GUID of the user being searched. */
+				id: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - User links returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "twitch": {
+					 *         "url": "https://twitch.tv/myusername",
+					 *         "type": {
+					 *           "name": "twitch",
+					 *           "displayName": "Twitch",
+					 *           "hostName": "twitch.tv"
+					 *         }
+					 *       }
+					 *     } */
+					"application/json": components["schemas"]["UserLinksV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getSelf: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Information returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "id": "0123456789abcdef01234567",
+					 *       "username": "my_username",
+					 *       "profileImage": {
+					 *         "width": 512,
+					 *         "height": 512,
+					 *         "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+					 *         "childImages": [
+					 *           {
+					 *             "width": 250,
+					 *             "height": 250,
+					 *             "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
+					 *           },
+					 *           {
+					 *             "width": 100,
+					 *             "height": 100,
+					 *             "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
+					 *           }
+					 *         ]
+					 *       },
+					 *       "email": "testemail@example.com",
+					 *       "displayName": "Firstname Lastname",
+					 *       "creators": [],
+					 *       "scheduledDeletionDate": null
+					 *     } */
+					"application/json": components["schemas"]["UserSelfV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getUserNotificationSettingsV3: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Notifications returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "creator": {
+					 *           "id": "59f94c0bdd241b70349eb72b",
+					 *           "owner": "59f94c0bdd241b70349eb723",
+					 *           "title": "LinusTechTips",
+					 *           "urlname": "linustechtips",
+					 *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *           "category": "59f94c0bdd241b70349eb727",
+					 *           "cover": null,
+					 *           "icon": {
+					 *             "width": 16,
+					 *             "height": 16,
+					 *             "path": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA1BMVEUfLTy/Rf//AAAAC0lEQVQI12MgEQAAADAAAWV61nwAAAAASUVORK5CYII="
+					 *           },
+					 *           "liveStream": null,
+					 *           "subscriptionPlans": null,
+					 *           "discoverable": true,
+					 *           "subscriberCountDisplay": "total",
+					 *           "incomeDisplay": false
+					 *         },
+					 *         "userNotificationSetting": {
+					 *           "createdAt": "2020-09-25T07:35:04.273Z",
+					 *           "updatedAt": "2021-10-07T14:16:56.561Z",
+					 *           "id": "abcdef0123456789abcdef01",
+					 *           "contentEmail": false,
+					 *           "contentFirebase": true,
+					 *           "creatorMessageEmail": false,
+					 *           "user": "0123456789abcdef01234567",
+					 *           "creator": "59f94c0bdd241b70349eb72b"
+					 *         }
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["UserNotificationModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	updateUserNotificationSettingsV3: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "creator": "59f94c0bdd241b70349eb72b",
+				 *       "property": "contentFirebase",
+				 *       "newValue": false
+				 *     } */
+				"application/json": components["schemas"]["UserNotificationUpdateV3PostRequest"];
+			};
+		};
+		responses: {
+			/** @description OK - Whether or not the update was successful */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example true */
+					"application/json": boolean;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getComments: {
+		parameters: {
+			query: {
+				/** @description Which blog post to retrieve comments for. */
+				blogPost: string;
+				/** @description The maximum number of comments to return. This should be set to 20 by default. */
+				limit: number;
+				/** @description When loading more comments on a blog post, this is used to determine which which comments to skip. This is a GUID of the last comment from the previous call to `getComments`. */
+				fetchAfter?: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - All comments returned for the query parameters */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "00c5ab7379e746b24a76634b",
+					 *         "blogPost": "Dw2ms0AgL8",
+					 *         "user": {
+					 *           "id": "ff0a479639c60f3a8cd18d8b",
+					 *           "username": "some_username",
+					 *           "profileImage": {
+					 *             "width": 512,
+					 *             "height": 512,
+					 *             "path": "https://pbs.floatplane.com/profile_images/default/user10.png",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 250,
+					 *                 "height": 250,
+					 *                 "path": "https://pbs.floatplane.com/profile_images/default/user10_250x250.png"
+					 *               },
+					 *               {
+					 *                 "width": 100,
+					 *                 "height": 100,
+					 *                 "path": "https://pbs.floatplane.com/profile_images/default/user10_100x100.png"
+					 *               }
+					 *             ]
+					 *           }
+					 *         },
+					 *         "text": "This is my comment text, I really like this video.",
+					 *         "replying": null,
+					 *         "postDate": "2021-10-09T14:58:34.829Z",
+					 *         "editDate": "2021-10-09T14:58:34.829Z",
+					 *         "likes": 0,
+					 *         "dislikes": 0,
+					 *         "score": 0,
+					 *         "interactionCounts": {
+					 *           "like": 0,
+					 *           "dislike": 0
+					 *         },
+					 *         "totalReplies": 0,
+					 *         "replies": [],
+					 *         "userInteraction": null
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["CommentModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	postComment: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "blogPost": "j7KjCaKrtV",
+				 *       "text": "This is the text of the comment being posted"
+				 *     } */
+				"application/json": components["schemas"]["CommentV3PostRequest"];
+			};
+		};
+		responses: {
+			/** @description OK - Commented posted successfully, returning comment details */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "id": "8d575af6834343b166d0562a",
+					 *       "blogPost": "j7KjCaKrtV",
+					 *       "user": {
+					 *         "id": "0123456789abcdef01234567",
+					 *         "username": "my_username",
+					 *         "profileImage": {
+					 *           "width": 512,
+					 *           "height": 512,
+					 *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
+					 *             }
+					 *           ]
+					 *         }
+					 *       },
+					 *       "text": "This is the text of the comment being posted",
+					 *       "replying": null,
+					 *       "postDate": "2021-10-09T08:12:51.290Z",
+					 *       "editDate": "2021-10-09T08:12:51.290Z",
+					 *       "likes": 0,
+					 *       "dislikes": 0,
+					 *       "score": 0,
+					 *       "interactionCounts": {
+					 *         "like": 0,
+					 *         "dislike": 0
+					 *       }
+					 *     } */
+					"application/json": components["schemas"]["CommentV3PostResponse"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getCommentReplies: {
+		parameters: {
+			query: {
+				/** @description The identifer of the comment from which to retrieve replies. */
+				comment: string;
+				/** @description The identifer of the blog post the `comment` belongs to. */
+				blogPost: string;
+				/** @description How many replies to retrieve. */
+				limit: number;
+				/** @description The identifer of the last reply in the reply chain. */
+				rid: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "1234567890abcdef",
+					 *         "blogPost": "p3OSnFmsR3",
+					 *         "user": {
+					 *           "id": "abcdef1234567890",
+					 *           "username": "the_username",
+					 *           "profileImage": {
+					 *             "width": 225,
+					 *             "height": 225,
+					 *             "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 100,
+					 *                 "height": 100,
+					 *                 "path": "https://pbs.floatplane.com/profile_images/default/user12.png"
+					 *               }
+					 *             ]
+					 *           }
+					 *         },
+					 *         "text": "This is my reply text",
+					 *         "replying": "1234567890abcdef0",
+					 *         "postDate": "2021-12-17T06:57:33.152Z",
+					 *         "editDate": "2021-12-17T06:57:33.152Z",
+					 *         "likes": 0,
+					 *         "dislikes": 0,
+					 *         "score": 0,
+					 *         "interactionCounts": {
+					 *           "like": 0,
+					 *           "dislike": 0
+					 *         },
+					 *         "userInteraction": null
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["CommentModel"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	likeComment: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "comment": "6161935e24f43441325bb255",
+				 *       "blogPost": "j7KjCaKrtV"
+				 *     } */
+				"application/json": components["schemas"]["CommentLikeV3PostRequest"];
+			};
+		};
+		responses: {
+			/** @description OK - Comment successfully liked */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example like */
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	dislikeComment: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "comment": "6161935e24f43441325bb255",
+				 *       "blogPost": "j7KjCaKrtV"
+				 *     } */
+				"application/json": components["schemas"]["CommentLikeV3PostRequest"];
+			};
+		};
+		responses: {
+			/** @description OK - Comment successfully disliked */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example dislike */
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getCreatorBlogPosts: {
+		parameters: {
+			query: {
+				/** @description The GUID of the creator to retrieve posts from. */
+				id: string;
+				/** @description The id of a creator's specific channel from which to retrieve posts. */
+				channel?: string;
+				/** @description The maximum number of posts to return. */
+				limit?: number;
+				/** @description The number of posts to skip. Usually a multiple of `limit`, to get the next "page" of results. */
+				fetchAfter?: number;
+				/** @description Search filter to look for specific posts. */
+				search?: string;
+				/** @description An array of tags to search against, possibly in addition to `search`. */
+				tags?: string[];
+				/** @description If true, include blog posts with video attachments. */
+				hasVideo?: boolean;
+				/** @description If true, include blog posts with audio attachments. */
+				hasAudio?: boolean;
+				/** @description If true, include blog posts with picture attachments. */
+				hasPicture?: boolean;
+				/** @description If true, only include blog posts that are text-only. Text-only posts are ones without any attachments, such as video, audio, picture, and gallery.
+				 *
+				 *     This filter and `hasVideo`, `hasAudio`, and `hasPicture` should be mutually exclusive. That is, if `hasText` is true then the other three should all be false. Conversely, if any of the other three are true, then `hasText` should be false. Otherwise, the filter would produce no results. */
+				hasText?: boolean;
+				/** @description `DESC` = Newest First. `ASC` = Oldest First. */
+				sort?: "ASC" | "DESC";
+				/** @description Include video posts where the duration of the video is at minimum `fromDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
+				fromDuration?: number;
+				/** @description Include video posts where the duration of the video is at maximum `toDuration` seconds long. Usually in multiples of 60 seconds. Implies `hasVideo=true`. */
+				toDuration?: number;
+				/**
+				 * @description Include posts where the publication date is on or after this filter date.
+				 * @example 2022-07-24T07:00:00.001Z
+				 */
+				fromDate?: string;
+				/**
+				 * @description Include posts where the publication date is on or before this filter date.
+				 * @example 2022-07-24T07:00:00.001Z
+				 */
+				toDate?: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Creator posted returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "Dw2ms0AgL8",
+					 *         "guid": "Dw2ms0AgL8",
+					 *         "title": "Livestream VOD – October 9, 2021 @ 07:18 – First Linux Stream",
+					 *         "text": "<p>chat on Twitch</p>",
+					 *         "type": "blogPost",
+					 *         "tags": [
+					 *           "test"
+					 *         ],
+					 *         "attachmentOrder": [
+					 *           "TViGzkuIic"
+					 *         ],
+					 *         "metadata": {
+					 *           "hasVideo": true,
+					 *           "videoCount": 1,
+					 *           "videoDuration": 5689,
+					 *           "hasAudio": false,
+					 *           "audioCount": 0,
+					 *           "audioDuration": 0,
+					 *           "hasPicture": false,
+					 *           "pictureCount": 0,
+					 *           "hasGallery": false,
+					 *           "galleryCount": 0,
+					 *           "isFeatured": false
+					 *         },
+					 *         "releaseDate": "2021-10-09T09:29:00.039Z",
+					 *         "likes": 41,
+					 *         "dislikes": 0,
+					 *         "score": 41,
+					 *         "comments": 28,
+					 *         "creator": {
+					 *           "id": "59f94c0bdd241b70349eb72b",
+					 *           "owner": {
+					 *             "id": "59f94c0bdd241b70349eb723",
+					 *             "username": "Linus"
+					 *           },
+					 *           "title": "LinusTechTips",
+					 *           "urlname": "linustechtips",
+					 *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *           "category": {
+					 *             "title": "Technology"
+					 *           },
+					 *           "cover": {
+					 *             "width": 1990,
+					 *             "height": 519,
+					 *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 1245,
+					 *                 "height": 325,
+					 *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "icon": {
+					 *             "width": 600,
+					 *             "height": 600,
+					 *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 250,
+					 *                 "height": 250,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *               },
+					 *               {
+					 *                 "width": 100,
+					 *                 "height": 100,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "liveStream": {
+					 *             "id": "5c13f3c006f1be15e08e05c0",
+					 *             "title": "First Linux Stream",
+					 *             "description": "<p>chat on Twitch</p>",
+					 *             "thumbnail": {
+					 *               "width": 1200,
+					 *               "height": 675,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "owner": "59f94c0bdd241b70349eb72b",
+					 *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *             "offline": {
+					 *               "title": "Offline",
+					 *               "description": "We're offline for now – please check back later!",
+					 *               "thumbnail": {
+					 *                 "width": 1920,
+					 *                 "height": 1080,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *                 "childImages": [
+					 *                   {
+					 *                     "width": 400,
+					 *                     "height": 225,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                   },
+					 *                   {
+					 *                     "width": 1200,
+					 *                     "height": 675,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                   }
+					 *                 ]
+					 *               }
+					 *             }
+					 *           },
+					 *           "subscriptionPlans": [
+					 *             {
+					 *               "id": "5d48d0306825b5780db93d07",
+					 *               "title": "LTT Supporter (1080p)",
+					 *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *               "price": "5.00",
+					 *               "priceYearly": "50.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": true,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             },
+					 *             {
+					 *               "id": "5e0ba6ac14e2590f760a0f0f",
+					 *               "title": "LTT Supporter Plus",
+					 *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *               "price": "10.00",
+					 *               "priceYearly": "100.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": false,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             }
+					 *           ],
+					 *           "discoverable": true,
+					 *           "subscriberCountDisplay": "total",
+					 *           "incomeDisplay": false,
+					 *           "card": {
+					 *             "width": 375,
+					 *             "height": 500,
+					 *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 300,
+					 *                 "height": 400,
+					 *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
+					 *               }
+					 *             ]
+					 *           }
+					 *         },
+					 *         "wasReleasedSilently": true,
+					 *         "thumbnail": {
+					 *           "width": 1200,
+					 *           "height": 675,
+					 *           "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 400,
+					 *               "height": 225,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "isAccessible": true,
+					 *         "videoAttachments": [
+					 *           "TViGzkuIic"
+					 *         ],
+					 *         "audioAttachments": [],
+					 *         "pictureAttachments": [],
+					 *         "galleryAttachments": []
+					 *       },
+					 *       {
+					 *         "id": "ge4gLGfXnz",
+					 *         "guid": "ge4gLGfXnz",
+					 *         "title": "Livestream VOD – October 8, 2021 @ 20:26 – I Have MORE to Say About Steam Deck - WAN Show October 8, 2021",
+					 *         "text": "<p>Honey automatically applies the best coupon codes to save you money at </p><p>different online checkouts, try it now at <a href=\"https://www.joinhoney.com/linus\">https://www.joinhoney.com/linus</a></p><p><br /></p><p>Buy a Seasonic Ultra Titanium PSU</p><p>On Amazon: <a href=\"https://geni.us/q4lnefC\">https://geni.us/q4lnefC</a></p><p>On NewEgg: <a href=\"https://lmg.gg/8KV3S\">https://lmg.gg/8KV3S</a></p><p><br /></p><p>Visit <a href=\"https://www.squarespace.com/WAN\">https://www.squarespace.com/WAN</a> and use offer code WAN for 10% off</p><p><br /></p><p>Podcast Download: TBD</p><p><br /></p><p>Check out our other Podcasts:</p><p>Carpool Critics Movie Podcast: <a href=\"https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA\">https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA</a></p><p><br /></p><p>Timestamps TBD</p>",
+					 *         "type": "blogPost",
+					 *         "attachmentOrder": [
+					 *           "psqoN3CgMH",
+					 *           "KijsTQP8Rr"
+					 *         ],
+					 *         "metadata": {
+					 *           "hasVideo": true,
+					 *           "videoCount": 2,
+					 *           "videoDuration": 9506,
+					 *           "hasAudio": false,
+					 *           "audioCount": 0,
+					 *           "audioDuration": 0,
+					 *           "hasPicture": false,
+					 *           "pictureCount": 0,
+					 *           "hasGallery": false,
+					 *           "galleryCount": 0,
+					 *           "isFeatured": false
+					 *         },
+					 *         "releaseDate": "2021-10-09T09:28:00.015Z",
+					 *         "likes": 43,
+					 *         "dislikes": 3,
+					 *         "score": 40,
+					 *         "comments": 24,
+					 *         "creator": {
+					 *           "id": "59f94c0bdd241b70349eb72b",
+					 *           "owner": {
+					 *             "id": "59f94c0bdd241b70349eb723",
+					 *             "username": "Linus"
+					 *           },
+					 *           "title": "LinusTechTips",
+					 *           "urlname": "linustechtips",
+					 *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *           "category": {
+					 *             "title": "Technology"
+					 *           },
+					 *           "cover": {
+					 *             "width": 1990,
+					 *             "height": 519,
+					 *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 1245,
+					 *                 "height": 325,
+					 *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "icon": {
+					 *             "width": 600,
+					 *             "height": 600,
+					 *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 250,
+					 *                 "height": 250,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *               },
+					 *               {
+					 *                 "width": 100,
+					 *                 "height": 100,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "liveStream": {
+					 *             "id": "5c13f3c006f1be15e08e05c0",
+					 *             "title": "First Linux Stream",
+					 *             "description": "<p>chat on Twitch</p>",
+					 *             "thumbnail": {
+					 *               "width": 1200,
+					 *               "height": 675,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "owner": "59f94c0bdd241b70349eb72b",
+					 *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *             "offline": {
+					 *               "title": "Offline",
+					 *               "description": "We're offline for now – please check back later!",
+					 *               "thumbnail": {
+					 *                 "width": 1920,
+					 *                 "height": 1080,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *                 "childImages": [
+					 *                   {
+					 *                     "width": 400,
+					 *                     "height": 225,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                   },
+					 *                   {
+					 *                     "width": 1200,
+					 *                     "height": 675,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                   }
+					 *                 ]
+					 *               }
+					 *             }
+					 *           },
+					 *           "subscriptionPlans": [
+					 *             {
+					 *               "id": "5d48d0306825b5780db93d07",
+					 *               "title": "LTT Supporter (1080p)",
+					 *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *               "price": "5.00",
+					 *               "priceYearly": "50.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": true,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             },
+					 *             {
+					 *               "id": "5e0ba6ac14e2590f760a0f0f",
+					 *               "title": "LTT Supporter Plus",
+					 *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *               "price": "10.00",
+					 *               "priceYearly": "100.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": false,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             }
+					 *           ],
+					 *           "discoverable": true,
+					 *           "subscriberCountDisplay": "total",
+					 *           "incomeDisplay": false,
+					 *           "card": {
+					 *             "width": 375,
+					 *             "height": 500,
+					 *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 300,
+					 *                 "height": 400,
+					 *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
+					 *               }
+					 *             ]
+					 *           }
+					 *         },
+					 *         "wasReleasedSilently": false,
+					 *         "thumbnail": {
+					 *           "width": 640,
+					 *           "height": 360,
+					 *           "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 400,
+					 *               "height": 225,
+					 *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979_400x225.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "isAccessible": true,
+					 *         "videoAttachments": [
+					 *           "KijsTQP8Rr",
+					 *           "psqoN3CgMH"
+					 *         ],
+					 *         "audioAttachments": [],
+					 *         "pictureAttachments": [],
+					 *         "galleryAttachments": []
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["BlogPostModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getMultiCreatorBlogPosts: {
+		parameters: {
+			query: {
+				/** @description The GUID(s) of the creator(s) to retrieve posts from. */
+				ids: string[];
+				/** @description The maximum number of posts to retrieve. */
+				limit: number;
+				/** @description For pagination, this is used to determine which posts to skip. There should be one `fetchAfter` object for each creator in `ids`. The `moreFetchable` in the request, and all of the data, comes from the `ContentCreatorListV3Response`. */
+				fetchAfter?: components["schemas"]["ContentCreatorListLastItems"][];
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Posts returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "blogPosts": [
+					 *         {
+					 *           "id": "Dw2ms0AgL8",
+					 *           "guid": "Dw2ms0AgL8",
+					 *           "title": "Livestream VOD – October 9, 2021 @ 07:18 – First Linux Stream",
+					 *           "text": "<p>chat on Twitch</p>",
+					 *           "type": "blogPost",
+					 *           "attachmentOrder": [
+					 *             "TViGzkuIic"
+					 *           ],
+					 *           "metadata": {
+					 *             "hasVideo": true,
+					 *             "videoCount": 1,
+					 *             "videoDuration": 5689,
+					 *             "hasAudio": false,
+					 *             "audioCount": 0,
+					 *             "audioDuration": 0,
+					 *             "hasPicture": false,
+					 *             "pictureCount": 0,
+					 *             "hasGallery": false,
+					 *             "galleryCount": 0,
+					 *             "isFeatured": false
+					 *           },
+					 *           "releaseDate": "2021-10-09T09:29:00.039Z",
+					 *           "likes": 40,
+					 *           "dislikes": 0,
+					 *           "score": 40,
+					 *           "comments": 28,
+					 *           "creator": {
+					 *             "id": "59f94c0bdd241b70349eb72b",
+					 *             "owner": {
+					 *               "id": "59f94c0bdd241b70349eb723",
+					 *               "username": "Linus"
+					 *             },
+					 *             "title": "LinusTechTips",
+					 *             "urlname": "linustechtips",
+					 *             "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *             "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *             "category": {
+					 *               "title": "Technology"
+					 *             },
+					 *             "cover": {
+					 *               "width": 1990,
+					 *               "height": 519,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 1245,
+					 *                   "height": 325,
+					 *                   "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "icon": {
+					 *               "width": 600,
+					 *               "height": 600,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 250,
+					 *                   "height": 250,
+					 *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 100,
+					 *                   "height": 100,
+					 *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "liveStream": {
+					 *               "id": "5c13f3c006f1be15e08e05c0",
+					 *               "title": "First Linux Stream",
+					 *               "description": "<p>chat on Twitch</p>",
+					 *               "thumbnail": {
+					 *                 "width": 1200,
+					 *                 "height": 675,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *                 "childImages": [
+					 *                   {
+					 *                     "width": 400,
+					 *                     "height": 225,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *                   }
+					 *                 ]
+					 *               },
+					 *               "owner": "59f94c0bdd241b70349eb72b",
+					 *               "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *               "offline": {
+					 *                 "title": "Offline",
+					 *                 "description": "We're offline for now – please check back later!",
+					 *                 "thumbnail": {
+					 *                   "width": 1920,
+					 *                   "height": 1080,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *                   "childImages": [
+					 *                     {
+					 *                       "width": 400,
+					 *                       "height": 225,
+					 *                       "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                     },
+					 *                     {
+					 *                       "width": 1200,
+					 *                       "height": 675,
+					 *                       "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                     }
+					 *                   ]
+					 *                 }
+					 *               }
+					 *             },
+					 *             "subscriptionPlans": [
+					 *               {
+					 *                 "id": "5d48d0306825b5780db93d07",
+					 *                 "title": "LTT Supporter (1080p)",
+					 *                 "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *                 "price": "5.00",
+					 *                 "priceYearly": "50.00",
+					 *                 "currency": "usd",
+					 *                 "logo": null,
+					 *                 "interval": "month",
+					 *                 "featured": true,
+					 *                 "allowGrandfatheredAccess": false,
+					 *                 "discordServers": [],
+					 *                 "discordRoles": []
+					 *               },
+					 *               {
+					 *                 "id": "5e0ba6ac14e2590f760a0f0f",
+					 *                 "title": "LTT Supporter Plus",
+					 *                 "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *                 "price": "10.00",
+					 *                 "priceYearly": "100.00",
+					 *                 "currency": "usd",
+					 *                 "logo": null,
+					 *                 "interval": "month",
+					 *                 "featured": false,
+					 *                 "allowGrandfatheredAccess": false,
+					 *                 "discordServers": [],
+					 *                 "discordRoles": []
+					 *               }
+					 *             ],
+					 *             "discoverable": true,
+					 *             "subscriberCountDisplay": "total",
+					 *             "incomeDisplay": false,
+					 *             "card": {
+					 *               "width": 375,
+					 *               "height": 500,
+					 *               "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 300,
+					 *                   "height": 400,
+					 *                   "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
+					 *                 }
+					 *               ]
+					 *             }
+					 *           },
+					 *           "wasReleasedSilently": true,
+					 *           "thumbnail": {
+					 *             "width": 1200,
+					 *             "height": 675,
+					 *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 400,
+					 *                 "height": 225,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "isAccessible": true,
+					 *           "videoAttachments": [
+					 *             "TViGzkuIic"
+					 *           ],
+					 *           "audioAttachments": [],
+					 *           "pictureAttachments": [],
+					 *           "galleryAttachments": []
+					 *         },
+					 *         {
+					 *           "id": "ge4gLGfXnz",
+					 *           "guid": "ge4gLGfXnz",
+					 *           "title": "Livestream VOD – October 8, 2021 @ 20:26 – I Have MORE to Say About Steam Deck - WAN Show October 8, 2021",
+					 *           "text": "<p>Honey automatically applies the best coupon codes to save you money at </p><p>different online checkouts, try it now at <a href=\"https://www.joinhoney.com/linus\">https://www.joinhoney.com/linus</a></p><p><br /></p><p>Buy a Seasonic Ultra Titanium PSU</p><p>On Amazon: <a href=\"https://geni.us/q4lnefC\">https://geni.us/q4lnefC</a></p><p>On NewEgg: <a href=\"https://lmg.gg/8KV3S\">https://lmg.gg/8KV3S</a></p><p><br /></p><p>Visit <a href=\"https://www.squarespace.com/WAN\">https://www.squarespace.com/WAN</a> and use offer code WAN for 10% off</p><p><br /></p><p>Podcast Download: TBD</p><p><br /></p><p>Check out our other Podcasts:</p><p>Carpool Critics Movie Podcast: <a href=\"https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA\">https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA</a></p><p><br /></p><p>Timestamps TBD</p>",
+					 *           "type": "blogPost",
+					 *           "attachmentOrder": [
+					 *             "psqoN3CgMH",
+					 *             "KijsTQP8Rr"
+					 *           ],
+					 *           "metadata": {
+					 *             "hasVideo": true,
+					 *             "videoCount": 2,
+					 *             "videoDuration": 9506,
+					 *             "hasAudio": false,
+					 *             "audioCount": 0,
+					 *             "audioDuration": 0,
+					 *             "hasPicture": false,
+					 *             "pictureCount": 0,
+					 *             "hasGallery": false,
+					 *             "galleryCount": 0,
+					 *             "isFeatured": false
+					 *           },
+					 *           "releaseDate": "2021-10-09T09:28:00.015Z",
+					 *           "likes": 43,
+					 *           "dislikes": 3,
+					 *           "score": 40,
+					 *           "comments": 24,
+					 *           "creator": {
+					 *             "id": "59f94c0bdd241b70349eb72b",
+					 *             "owner": {
+					 *               "id": "59f94c0bdd241b70349eb723",
+					 *               "username": "Linus"
+					 *             },
+					 *             "title": "LinusTechTips",
+					 *             "urlname": "linustechtips",
+					 *             "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *             "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *             "category": {
+					 *               "title": "Technology"
+					 *             },
+					 *             "cover": {
+					 *               "width": 1990,
+					 *               "height": 519,
+					 *               "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 1245,
+					 *                   "height": 325,
+					 *                   "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "icon": {
+					 *               "width": 600,
+					 *               "height": 600,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 250,
+					 *                   "height": 250,
+					 *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *                 },
+					 *                 {
+					 *                   "width": 100,
+					 *                   "height": 100,
+					 *                   "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "liveStream": {
+					 *               "id": "5c13f3c006f1be15e08e05c0",
+					 *               "title": "First Linux Stream",
+					 *               "description": "<p>chat on Twitch</p>",
+					 *               "thumbnail": {
+					 *                 "width": 1200,
+					 *                 "height": 675,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *                 "childImages": [
+					 *                   {
+					 *                     "width": 400,
+					 *                     "height": 225,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *                   }
+					 *                 ]
+					 *               },
+					 *               "owner": "59f94c0bdd241b70349eb72b",
+					 *               "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *               "offline": {
+					 *                 "title": "Offline",
+					 *                 "description": "We're offline for now – please check back later!",
+					 *                 "thumbnail": {
+					 *                   "width": 1920,
+					 *                   "height": 1080,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *                   "childImages": [
+					 *                     {
+					 *                       "width": 400,
+					 *                       "height": 225,
+					 *                       "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                     },
+					 *                     {
+					 *                       "width": 1200,
+					 *                       "height": 675,
+					 *                       "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                     }
+					 *                   ]
+					 *                 }
+					 *               }
+					 *             },
+					 *             "subscriptionPlans": [
+					 *               {
+					 *                 "id": "5d48d0306825b5780db93d07",
+					 *                 "title": "LTT Supporter (1080p)",
+					 *                 "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *                 "price": "5.00",
+					 *                 "priceYearly": "50.00",
+					 *                 "currency": "usd",
+					 *                 "logo": null,
+					 *                 "interval": "month",
+					 *                 "featured": true,
+					 *                 "allowGrandfatheredAccess": false,
+					 *                 "discordServers": [],
+					 *                 "discordRoles": []
+					 *               },
+					 *               {
+					 *                 "id": "5e0ba6ac14e2590f760a0f0f",
+					 *                 "title": "LTT Supporter Plus",
+					 *                 "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *                 "price": "10.00",
+					 *                 "priceYearly": "100.00",
+					 *                 "currency": "usd",
+					 *                 "logo": null,
+					 *                 "interval": "month",
+					 *                 "featured": false,
+					 *                 "allowGrandfatheredAccess": false,
+					 *                 "discordServers": [],
+					 *                 "discordRoles": []
+					 *               }
+					 *             ],
+					 *             "discoverable": true,
+					 *             "subscriberCountDisplay": "total",
+					 *             "incomeDisplay": false,
+					 *             "card": {
+					 *               "width": 375,
+					 *               "height": 500,
+					 *               "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 300,
+					 *                   "height": 400,
+					 *                   "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
+					 *                 }
+					 *               ]
+					 *             }
+					 *           },
+					 *           "wasReleasedSilently": false,
+					 *           "thumbnail": {
+					 *             "width": 640,
+					 *             "height": 360,
+					 *             "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 400,
+					 *                 "height": 225,
+					 *                 "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979_400x225.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "isAccessible": true,
+					 *           "videoAttachments": [
+					 *             "KijsTQP8Rr",
+					 *             "psqoN3CgMH"
+					 *           ],
+					 *           "audioAttachments": [],
+					 *           "pictureAttachments": [],
+					 *           "galleryAttachments": []
+					 *         }
+					 *       ],
+					 *       "lastElements": [
+					 *         {
+					 *           "creatorId": "59f94c0bdd241b70349eb72b",
+					 *           "blogPostId": "l2wH2gXLiW",
+					 *           "moreFetchable": true
+					 *         }
+					 *       ]
+					 *     } */
+					"application/json": components["schemas"]["ContentCreatorListV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getContentTags: {
+		parameters: {
+			query: {
+				/** @description The creator(s) to search by. */
+				creatorIds: string[];
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Creator tag information */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "battery": 1,
+					 *       "server": 1,
+					 *       "Airpods": 1,
+					 *       "storage": 1,
+					 *       "tjm": 1,
+					 *       "Apple": 1,
+					 *       "swap": 1,
+					 *       "memory": 1,
+					 *       "ltt": 1
+					 *     } */
+					"application/json": {
+						[key: string]: number;
+					};
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getBlogPost: {
+		parameters: {
+			query: {
+				/** @description The ID of the post to be retrieved. */
+				id: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Detailed post information */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "id": "Dw2ms0AgL8",
+					 *       "guid": "Dw2ms0AgL8",
+					 *       "title": "Livestream VOD – October 9, 2021 @ 07:18 – First Linux Stream",
+					 *       "text": "<p>chat on Twitch</p>",
+					 *       "type": "blogPost",
+					 *       "tags": [
+					 *         "test"
+					 *       ],
+					 *       "attachmentOrder": [
+					 *         "TViGzkuIic"
+					 *       ],
+					 *       "metadata": {
+					 *         "hasVideo": true,
+					 *         "videoCount": 1,
+					 *         "videoDuration": 5689,
+					 *         "hasAudio": false,
+					 *         "audioCount": 0,
+					 *         "audioDuration": 0,
+					 *         "hasPicture": false,
+					 *         "pictureCount": 0,
+					 *         "hasGallery": false,
+					 *         "galleryCount": 0,
+					 *         "isFeatured": false
+					 *       },
+					 *       "releaseDate": "2021-10-09T09:29:00.039Z",
+					 *       "likes": 41,
+					 *       "dislikes": 0,
+					 *       "score": 41,
+					 *       "comments": 28,
+					 *       "creator": {
+					 *         "id": "59f94c0bdd241b70349eb72b",
+					 *         "owner": "59f94c0bdd241b70349eb723",
+					 *         "title": "LinusTechTips",
+					 *         "urlname": "linustechtips",
+					 *         "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *         "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *         "category": "59f94c0bdd241b70349eb727",
+					 *         "cover": null,
+					 *         "icon": {
+					 *           "width": 600,
+					 *           "height": 600,
+					 *           "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 250,
+					 *               "height": 250,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 100,
+					 *               "height": 100,
+					 *               "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "liveStream": null,
+					 *         "subscriptionPlans": null,
+					 *         "discoverable": true,
+					 *         "subscriberCountDisplay": "total",
+					 *         "incomeDisplay": false
+					 *       },
+					 *       "wasReleasedSilently": true,
+					 *       "thumbnail": {
+					 *         "width": 1200,
+					 *         "height": 675,
+					 *         "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *         "childImages": [
+					 *           {
+					 *             "width": 400,
+					 *             "height": 225,
+					 *             "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *           }
+					 *         ]
+					 *       },
+					 *       "isAccessible": true,
+					 *       "userInteraction": [],
+					 *       "videoAttachments": [
+					 *         {
+					 *           "id": "TViGzkuIic",
+					 *           "guid": "TViGzkuIic",
+					 *           "title": "October 9, 2021 @ 07:18 – First Linux Stream",
+					 *           "type": "video",
+					 *           "description": "",
+					 *           "releaseDate": null,
+					 *           "duration": 5689,
+					 *           "creator": "59f94c0bdd241b70349eb72b",
+					 *           "likes": 0,
+					 *           "dislikes": 0,
+					 *           "score": 0,
+					 *           "isProcessing": false,
+					 *           "primaryBlogPost": "Dw2ms0AgL8",
+					 *           "thumbnail": {
+					 *             "width": 1920,
+					 *             "height": 1080,
+					 *             "path": "https://pbs.floatplane.com/content_thumbnails/TViGzkuIic/324783659287024_1633769709593.jpeg",
+					 *             "childImages": []
+					 *           },
+					 *           "isAccessible": true
+					 *         }
+					 *       ],
+					 *       "audioAttachments": [
+					 *         {
+					 *           "id": "iGssjNGPSD",
+					 *           "guid": "iGssjNGPSD",
+					 *           "title": "Robocop FP.mp3",
+					 *           "type": "audio",
+					 *           "description": "",
+					 *           "duration": 4165,
+					 *           "waveform": {
+					 *             "dataSetLength": 3,
+					 *             "highestValue": 71,
+					 *             "lowestValue": 50,
+					 *             "data": [
+					 *               71,
+					 *               50,
+					 *               69
+					 *             ]
+					 *           },
+					 *           "creator": "59f94c0bdd241b70349eb72b",
+					 *           "likes": 0,
+					 *           "dislikes": 0,
+					 *           "score": 0,
+					 *           "isProcessing": false,
+					 *           "primaryBlogPost": "jVU2y9PlnG",
+					 *           "isAccessible": true
+					 *         }
+					 *       ],
+					 *       "pictureAttachments": [],
+					 *       "galleryAttachments": []
+					 *     } */
+					"application/json": components["schemas"]["ContentPostV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getRelatedBlogPosts: {
+		parameters: {
+			query: {
+				/** @description The ID of the originating post. */
+				id: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Related post details */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "ge4gLGfXnz",
+					 *         "guid": "ge4gLGfXnz",
+					 *         "title": "Livestream VOD – October 8, 2021 @ 20:26 – I Have MORE to Say About Steam Deck - WAN Show October 8, 2021",
+					 *         "text": "<p>Honey automatically applies the best coupon codes to save you money at </p><p>different online checkouts, try it now at <a href=\"https://www.joinhoney.com/linus\">https://www.joinhoney.com/linus</a></p><p><br /></p><p>Buy a Seasonic Ultra Titanium PSU</p><p>On Amazon: <a href=\"https://geni.us/q4lnefC\">https://geni.us/q4lnefC</a></p><p>On NewEgg: <a href=\"https://lmg.gg/8KV3S\">https://lmg.gg/8KV3S</a></p><p><br /></p><p>Visit <a href=\"https://www.squarespace.com/WAN\">https://www.squarespace.com/WAN</a> and use offer code WAN for 10% off</p><p><br /></p><p>Podcast Download: TBD</p><p><br /></p><p>Check out our other Podcasts:</p><p>Carpool Critics Movie Podcast: <a href=\"https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA\">https://www.youtube.com/channel/UCt-oJR5teQIjOAxCmIQvcgA</a></p><p><br /></p><p>Timestamps TBD</p>",
+					 *         "type": "blogPost",
+					 *         "tags": [
+					 *           "test"
+					 *         ],
+					 *         "attachmentOrder": [
+					 *           "psqoN3CgMH",
+					 *           "KijsTQP8Rr"
+					 *         ],
+					 *         "metadata": {
+					 *           "hasVideo": true,
+					 *           "videoCount": 2,
+					 *           "videoDuration": 9506,
+					 *           "hasAudio": false,
+					 *           "audioCount": 0,
+					 *           "audioDuration": 0,
+					 *           "hasPicture": false,
+					 *           "pictureCount": 0,
+					 *           "hasGallery": false,
+					 *           "galleryCount": 0,
+					 *           "isFeatured": false
+					 *         },
+					 *         "releaseDate": "2021-10-09T09:28:00.015Z",
+					 *         "likes": 43,
+					 *         "dislikes": 3,
+					 *         "score": 40,
+					 *         "comments": 24,
+					 *         "creator": {
+					 *           "id": "59f94c0bdd241b70349eb72b",
+					 *           "owner": {
+					 *             "id": "59f94c0bdd241b70349eb723",
+					 *             "username": "Linus"
+					 *           },
+					 *           "title": "LinusTechTips",
+					 *           "urlname": "linustechtips",
+					 *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *           "category": {
+					 *             "title": "Technology"
+					 *           },
+					 *           "cover": {
+					 *             "width": 1990,
+					 *             "height": 519,
+					 *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 1245,
+					 *                 "height": 325,
+					 *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "icon": {
+					 *             "width": 600,
+					 *             "height": 600,
+					 *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 250,
+					 *                 "height": 250,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *               },
+					 *               {
+					 *                 "width": 100,
+					 *                 "height": 100,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "liveStream": {
+					 *             "id": "5c13f3c006f1be15e08e05c0",
+					 *             "title": "First Linux Stream",
+					 *             "description": "<p>chat on Twitch</p>",
+					 *             "thumbnail": {
+					 *               "width": 1200,
+					 *               "height": 675,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "owner": "59f94c0bdd241b70349eb72b",
+					 *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *             "offline": {
+					 *               "title": "Offline",
+					 *               "description": "We're offline for now – please check back later!",
+					 *               "thumbnail": {
+					 *                 "width": 1920,
+					 *                 "height": 1080,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *                 "childImages": [
+					 *                   {
+					 *                     "width": 400,
+					 *                     "height": 225,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                   },
+					 *                   {
+					 *                     "width": 1200,
+					 *                     "height": 675,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                   }
+					 *                 ]
+					 *               }
+					 *             }
+					 *           },
+					 *           "subscriptionPlans": [
+					 *             {
+					 *               "id": "5d48d0306825b5780db93d07",
+					 *               "title": "LTT Supporter (1080p)",
+					 *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *               "price": "5.00",
+					 *               "priceYearly": "50.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": true,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             },
+					 *             {
+					 *               "id": "5e0ba6ac14e2590f760a0f0f",
+					 *               "title": "LTT Supporter Plus",
+					 *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *               "price": "10.00",
+					 *               "priceYearly": "100.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": false,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             }
+					 *           ],
+					 *           "discoverable": true,
+					 *           "subscriberCountDisplay": "total",
+					 *           "incomeDisplay": false,
+					 *           "card": {
+					 *             "width": 375,
+					 *             "height": 500,
+					 *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 300,
+					 *                 "height": 400,
+					 *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
+					 *               }
+					 *             ]
+					 *           }
+					 *         },
+					 *         "wasReleasedSilently": false,
+					 *         "thumbnail": {
+					 *           "width": 640,
+					 *           "height": 360,
+					 *           "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 400,
+					 *               "height": 225,
+					 *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/ge4gLGfXnz/564833356017787_1633771544979_400x225.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "isAccessible": true
+					 *       },
+					 *       {
+					 *         "id": "j7KjCaKrtV",
+					 *         "guid": "j7KjCaKrtV",
+					 *         "title": "TL: Facebook Does Not Care.",
+					 *         "text": "<p><strong>NEWS SOURCES:</strong></p><p><strong> </strong></p><p>MICRO-BOSS, WORD</p><p>Microsoft to make its devices more repairable following pressure</p><p><a href=\"https://linustechtips.com/topic/1379452-microsoft-agrees-to-independent-third-party-study-to-look-into-right-to-repair/\">https://linustechtips.com/topic/1379452-microsoft-agrees-to-independent-third-party-study-to-look-into-right-to-repair/</a></p><p><a href=\"https://grist.org/accountability/bowing-to-investors-microsoft-will-make-its-devices-easier-to-fix/\">https://grist.org/accountability/bowing-to-investors-microsoft-will-make-its-devices-easier-to-fix/</a></p><p><a href=\"https://www.asyousow.org/about-us#:~:text=As%20You%20Sow%20is%20the%20nation%E2%80%99s%20non-profit%20leader%20in%20shareholder%20advocacy\">https://www.asyousow.org/about-us#:~:text=As%20You%20Sow%20is%20the%20nation%E2%80%99s%20non-profit%20leader%20in%20shareholder%20advocacy</a>.</p><p>Louis is happy <a href=\"https://www.youtube.com/watch?v=TiMdvR99fBQ\">https://www.youtube.com/watch?v=TiMdvR99fBQ</a></p><p> </p><p>WHAT, THIS OLE’D THING?</p><p>Switch OLED launches <a href=\"https://arstechnica.com/gaming/2021/10/switch-oled-review-nintendos-nicest-most-nonessential-upgrade-yet/\">https://arstechnica.com/gaming/2021/10/switch-oled-review-nintendos-nicest-most-nonessential-upgrade-yet/</a></p><p><a href=\"https://www.youtube.com/watch?v=4mHq6Y7JSmg\">https://www.youtube.com/watch?v=4mHq6Y7JSmg</a></p><p>New Joy-Cons, but drift isn’t going away</p><p><a href=\"https://www.polygon.com/22688586/nintendo-switch-oled-joy-con-drift-controllers\">https://www.polygon.com/22688586/nintendo-switch-oled-joy-con-drift-controllers</a></p><p>screen protector <a href=\"https://www.nintendolife.com/news/2021/10/switch-oled-comes-with-a-screen-protector-installed-but-please-dont-remove-it-says-nintendo\">https://www.nintendolife.com/news/2021/10/switch-oled-comes-with-a-screen-protector-installed-but-please-dont-remove-it-says-nintendo</a></p><p> </p><p>SHAMEBOOK</p><p>Facebook has more outages</p><p><a href=\"https://www.engadget.com/facebook-and-instagram-are-down-for-the-second-time-this-week-193257623.html\">https://www.engadget.com/facebook-and-instagram-are-down-for-the-second-time-this-week-193257623.html</a></p><p><a href=\"https://twitter.com/Facebook/status/1446556732977778695\">https://twitter.com/Facebook/status/1446556732977778695</a></p><p>IG fixed <a href=\"https://twitter.com/InstagramComms/status/1446582114468597761\">https://twitter.com/InstagramComms/status/1446582114468597761</a></p><p>Unfollow everything developer banned <a href=\"https://www.theverge.com/2021/10/8/22716044/facebook-unfollow-everything-tool-louis-barclay-banned-for-life\">https://www.theverge.com/2021/10/8/22716044/facebook-unfollow-everything-tool-louis-barclay-banned-for-life</a></p><p><a href=\"https://slate.com/technology/2021/10/facebook-unfollow-everything-cease-desist.html\">https://slate.com/technology/2021/10/facebook-unfollow-everything-cease-desist.html</a></p><p><a href=\"https://louisbarclay.notion.site/Unfollow-Everything-cease-and-desist-letter-from-Facebook-ea219169421b457bb7ce010b7bf9ce1f\">https://louisbarclay.notion.site/Unfollow-Everything-cease-and-desist-letter-from-Facebook-ea219169421b457bb7ce010b7bf9ce1f</a></p><p> </p><p>QUICK BITS</p><p> </p><p>GET JEFF’D</p><p>Game backgrounds on Twitch replaced with Jeff Bezos</p><p><a href=\"https://twitter.com/AnEternalEnigma/status/1446421951883489281\">https://twitter.com/AnEternalEnigma/status/1446421951883489281</a></p><p>defaced <a href=\"https://www.cnet.com/tech/gaming/twitch-reportedly-defaced-with-pictures-of-jeff-bezos/\">https://www.cnet.com/tech/gaming/twitch-reportedly-defaced-with-pictures-of-jeff-bezos/</a></p><p> </p><p>ABOUT TO GET PADDLED</p><p>First In-App Purchasing alternative for iOS: Paddle</p><p><a href=\"https://twitter.com/PaddleHQ/status/1446050078301605890\">https://twitter.com/PaddleHQ/status/1446050078301605890</a></p><p><a href=\"https://paddle.com/platform/in-app-purchase/\">https://paddle.com/platform/in-app-purchase/</a></p><p>Sweeney</p><p><a href=\"https://twitter.com/TimSweeneyEpic/status/1446117510919585796\">https://twitter.com/TimSweeneyEpic/status/1446117510919585796</a></p><p> </p><p>STAY KINECTED</p><p>Sky Glass TV looks like a big iMac</p><p><a href=\"https://www.youtube.com/watch?v=GpGskL5PCKU\">https://www.youtube.com/watch?v=GpGskL5PCKU</a></p><p>Kinect motion controls <a href=\"https://www.theverge.com/2021/10/7/22714117/microsoft-kinect-is-back-sky-glass-tv-smart-camera-features\">https://www.theverge.com/2021/10/7/22714117/microsoft-kinect-is-back-sky-glass-tv-smart-camera-features</a> - full screen embedded video on this page and record</p><p><br /></p><p>UPGRADED TO CUMULONIMBUS</p><p>XCloud is now running Xbox Series X hardware</p><p><a href=\"https://www.kitguru.net/gaming/matthew-wilson/microsoft-has-upgraded-xcloud-to-xbox-series-x-hardware/\">https://www.kitguru.net/gaming/matthew-wilson/microsoft-has-upgraded-xcloud-to-xbox-series-x-hardware/</a></p><p><a href=\"https://www.eurogamer.net/articles/2021-10-07-xbox-cloud-gaming-now-runs-on-series-x-hardware\">https://www.eurogamer.net/articles/2021-10-07-xbox-cloud-gaming-now-runs-on-series-x-hardware</a></p><p> </p><p>NO PIXEL LEFT UN-LEAKED</p><p>Pixel 6 and 6 Pro teardowns leaked</p><p><a href=\"https://9to5google.com/2021/10/08/pixel-6-pro-teardown-leak/\">https://9to5google.com/2021/10/08/pixel-6-pro-teardown-leak/</a></p>",
+					 *         "type": "blogPost",
+					 *         "attachmentOrder": [
+					 *           "R3mVASdVGt"
+					 *         ],
+					 *         "metadata": {
+					 *           "hasVideo": true,
+					 *           "videoCount": 1,
+					 *           "videoDuration": 377,
+					 *           "hasAudio": false,
+					 *           "audioCount": 0,
+					 *           "audioDuration": 0,
+					 *           "hasPicture": false,
+					 *           "pictureCount": 0,
+					 *           "hasGallery": false,
+					 *           "galleryCount": 0,
+					 *           "isFeatured": false
+					 *         },
+					 *         "releaseDate": "2021-10-09T02:55:00.045Z",
+					 *         "likes": 101,
+					 *         "dislikes": 0,
+					 *         "score": 101,
+					 *         "comments": 19,
+					 *         "creator": {
+					 *           "id": "59f94c0bdd241b70349eb72b",
+					 *           "owner": {
+					 *             "id": "59f94c0bdd241b70349eb723",
+					 *             "username": "Linus"
+					 *           },
+					 *           "title": "LinusTechTips",
+					 *           "urlname": "linustechtips",
+					 *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *           "category": {
+					 *             "title": "Technology"
+					 *           },
+					 *           "cover": {
+					 *             "width": 1990,
+					 *             "height": 519,
+					 *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 1245,
+					 *                 "height": 325,
+					 *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "icon": {
+					 *             "width": 600,
+					 *             "height": 600,
+					 *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 250,
+					 *                 "height": 250,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *               },
+					 *               {
+					 *                 "width": 100,
+					 *                 "height": 100,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "liveStream": {
+					 *             "id": "5c13f3c006f1be15e08e05c0",
+					 *             "title": "First Linux Stream",
+					 *             "description": "<p>chat on Twitch</p>",
+					 *             "thumbnail": {
+					 *               "width": 1200,
+					 *               "height": 675,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "owner": "59f94c0bdd241b70349eb72b",
+					 *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *             "offline": {
+					 *               "title": "Offline",
+					 *               "description": "We're offline for now – please check back later!",
+					 *               "thumbnail": {
+					 *                 "width": 1920,
+					 *                 "height": 1080,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *                 "childImages": [
+					 *                   {
+					 *                     "width": 400,
+					 *                     "height": 225,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                   },
+					 *                   {
+					 *                     "width": 1200,
+					 *                     "height": 675,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                   }
+					 *                 ]
+					 *               }
+					 *             }
+					 *           },
+					 *           "subscriptionPlans": [
+					 *             {
+					 *               "id": "5d48d0306825b5780db93d07",
+					 *               "title": "LTT Supporter (1080p)",
+					 *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *               "price": "5.00",
+					 *               "priceYearly": "50.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": true,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             },
+					 *             {
+					 *               "id": "5e0ba6ac14e2590f760a0f0f",
+					 *               "title": "LTT Supporter Plus",
+					 *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *               "price": "10.00",
+					 *               "priceYearly": "100.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": false,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             }
+					 *           ],
+					 *           "discoverable": true,
+					 *           "subscriberCountDisplay": "total",
+					 *           "incomeDisplay": false,
+					 *           "card": {
+					 *             "width": 375,
+					 *             "height": 500,
+					 *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 300,
+					 *                 "height": 400,
+					 *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
+					 *               }
+					 *             ]
+					 *           }
+					 *         },
+					 *         "wasReleasedSilently": false,
+					 *         "thumbnail": {
+					 *           "width": 1920,
+					 *           "height": 1080,
+					 *           "path": "https://pbs.floatplane.com/blogPost_thumbnails/j7KjCaKrtV/726584368653303_1633741254596.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 1200,
+					 *               "height": 675,
+					 *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/j7KjCaKrtV/726584368653303_1633741254596_1200x675.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 400,
+					 *               "height": 225,
+					 *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/j7KjCaKrtV/726584368653303_1633741254596_400x225.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "isAccessible": true
+					 *       },
+					 *       {
+					 *         "id": "VkxlNv3k8j",
+					 *         "guid": "VkxlNv3k8j",
+					 *         "title": "TQ: Has USB-C WON Against Apple?",
+					 *         "text": "<p>Learn about the proposed USB-C mandate in the EU.</p>",
+					 *         "type": "blogPost",
+					 *         "attachmentOrder": [
+					 *           "7OWQQsxYYN"
+					 *         ],
+					 *         "metadata": {
+					 *           "hasVideo": true,
+					 *           "videoCount": 1,
+					 *           "videoDuration": 293,
+					 *           "hasAudio": false,
+					 *           "audioCount": 0,
+					 *           "audioDuration": 0,
+					 *           "hasPicture": false,
+					 *           "pictureCount": 0,
+					 *           "hasGallery": false,
+					 *           "galleryCount": 0,
+					 *           "isFeatured": false
+					 *         },
+					 *         "releaseDate": "2021-10-08T23:31:00.037Z",
+					 *         "likes": 106,
+					 *         "dislikes": 0,
+					 *         "score": 106,
+					 *         "comments": 15,
+					 *         "creator": {
+					 *           "id": "59f94c0bdd241b70349eb72b",
+					 *           "owner": {
+					 *             "id": "59f94c0bdd241b70349eb723",
+					 *             "username": "Linus"
+					 *           },
+					 *           "title": "LinusTechTips",
+					 *           "urlname": "linustechtips",
+					 *           "description": "We make entertaining videos about technology, including tech reviews, showcases and other content.",
+					 *           "about": "# We're LinusTechTips\nWe make videos and stuff, cool eh?",
+					 *           "category": {
+					 *             "title": "Technology"
+					 *           },
+					 *           "cover": {
+					 *             "width": 1990,
+					 *             "height": 519,
+					 *             "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 1245,
+					 *                 "height": 325,
+					 *                 "path": "https://pbs.floatplane.com/cover_images/59f94c0bdd241b70349eb72b/696951209272749_1521668313867_1245x325.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "icon": {
+					 *             "width": 600,
+					 *             "height": 600,
+					 *             "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 250,
+					 *                 "height": 250,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_250x250.jpeg"
+					 *               },
+					 *               {
+					 *                 "width": 100,
+					 *                 "height": 100,
+					 *                 "path": "https://pbs.floatplane.com/creator_icons/59f94c0bdd241b70349eb72b/770551996990709_1551249357205_100x100.jpeg"
+					 *               }
+					 *             ]
+					 *           },
+					 *           "liveStream": {
+					 *             "id": "5c13f3c006f1be15e08e05c0",
+					 *             "title": "First Linux Stream",
+					 *             "description": "<p>chat on Twitch</p>",
+					 *             "thumbnail": {
+					 *               "width": 1200,
+					 *               "height": 675,
+					 *               "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412.jpeg",
+					 *               "childImages": [
+					 *                 {
+					 *                   "width": 400,
+					 *                   "height": 225,
+					 *                   "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/084281881402899_1633761128412_400x225.jpeg"
+					 *                 }
+					 *               ]
+					 *             },
+					 *             "owner": "59f94c0bdd241b70349eb72b",
+					 *             "streamPath": "/api/video/v1/us-east-1.758417551536.channel.yKkxur4ukc0B.m3u8",
+					 *             "offline": {
+					 *               "title": "Offline",
+					 *               "description": "We're offline for now – please check back later!",
+					 *               "thumbnail": {
+					 *                 "width": 1920,
+					 *                 "height": 1080,
+					 *                 "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026.jpeg",
+					 *                 "childImages": [
+					 *                   {
+					 *                     "width": 400,
+					 *                     "height": 225,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_400x225.jpeg"
+					 *                   },
+					 *                   {
+					 *                     "width": 1200,
+					 *                     "height": 675,
+					 *                     "path": "https://pbs.floatplane.com/stream_thumbnails/5c13f3c006f1be15e08e05c0/894654974252956_1549059179026_1200x675.jpeg"
+					 *                   }
+					 *                 ]
+					 *               }
+					 *             }
+					 *           },
+					 *           "subscriptionPlans": [
+					 *             {
+					 *               "id": "5d48d0306825b5780db93d07",
+					 *               "title": "LTT Supporter (1080p)",
+					 *               "description": "Includes:\n- Early access (when possible)\n- Live Streaming\n- Behind-the-scenes, cutting room floor & exclusives\n\nNOTE: Tech Quickie and TechLinked are included for now, but will move to their own Floatplane pages in the future",
+					 *               "price": "5.00",
+					 *               "priceYearly": "50.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": true,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             },
+					 *             {
+					 *               "id": "5e0ba6ac14e2590f760a0f0f",
+					 *               "title": "LTT Supporter Plus",
+					 *               "description": "You are the real MVP. \n\nYour support helps us continue to build out our team, drive up production values, run experiments that might lose money for a long time (*cough* LTX *cough*) and otherwise be the best content creators we can be.\n\nThis tier includes all the perks of the previous ones, but at floatplane's glorious high bitrate 4K!",
+					 *               "price": "10.00",
+					 *               "priceYearly": "100.00",
+					 *               "currency": "usd",
+					 *               "logo": null,
+					 *               "interval": "month",
+					 *               "featured": false,
+					 *               "allowGrandfatheredAccess": false,
+					 *               "discordServers": [],
+					 *               "discordRoles": []
+					 *             }
+					 *           ],
+					 *           "discoverable": true,
+					 *           "subscriberCountDisplay": "total",
+					 *           "incomeDisplay": false,
+					 *           "card": {
+					 *             "width": 375,
+					 *             "height": 500,
+					 *             "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871.jpeg",
+					 *             "childImages": [
+					 *               {
+					 *                 "width": 300,
+					 *                 "height": 400,
+					 *                 "path": "https://pbs.floatplane.com/creator_card/59f94c0bdd241b70349eb72b/281467946609369_1551250329871_300x400.jpeg"
+					 *               }
+					 *             ]
+					 *           }
+					 *         },
+					 *         "wasReleasedSilently": false,
+					 *         "thumbnail": {
+					 *           "width": 1920,
+					 *           "height": 1080,
+					 *           "path": "https://pbs.floatplane.com/blogPost_thumbnails/VkxlNv3k8j/438666910492097_1633734872237.jpeg",
+					 *           "childImages": [
+					 *             {
+					 *               "width": 400,
+					 *               "height": 225,
+					 *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/VkxlNv3k8j/438666910492097_1633734872237_400x225.jpeg"
+					 *             },
+					 *             {
+					 *               "width": 1200,
+					 *               "height": 675,
+					 *               "path": "https://pbs.floatplane.com/blogPost_thumbnails/VkxlNv3k8j/438666910492097_1633734872237_1200x675.jpeg"
+					 *             }
+					 *           ]
+					 *         },
+					 *         "isAccessible": true
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["BlogPostModelV3"][];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getVideoContent: {
+		parameters: {
+			query: {
+				/** @description The ID of the video attachment object, from the `BlogPostModelV3`. */
+				id: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK - Video details returned */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "id": "TViGzkuIic",
+					 *       "guid": "TViGzkuIic",
+					 *       "title": "October 9, 2021 @ 07:18 – First Linux Stream",
+					 *       "type": "video",
+					 *       "description": "",
+					 *       "releaseDate": null,
+					 *       "duration": 5689,
+					 *       "creator": "59f94c0bdd241b70349eb72b",
+					 *       "likes": 0,
+					 *       "dislikes": 0,
+					 *       "score": 0,
+					 *       "isProcessing": false,
+					 *       "primaryBlogPost": "Dw2ms0AgL8",
+					 *       "thumbnail": {
+					 *         "width": 1920,
+					 *         "height": 1080,
+					 *         "path": "https://pbs.floatplane.com/content_thumbnails/TViGzkuIic/324783659287024_1633769709593.jpeg",
+					 *         "childImages": []
+					 *       },
+					 *       "isAccessible": true,
+					 *       "blogPosts": [
+					 *         "Dw2ms0AgL8"
+					 *       ],
+					 *       "timelineSprite": {
+					 *         "width": 4960,
+					 *         "height": 2610,
+					 *         "path": "https://pbs.floatplane.com/timeline_sprite/TViGzkuIic/142493855372807_1633769996492.jpeg",
+					 *         "childImages": []
+					 *       },
+					 *       "userInteraction": [],
+					 *       "levels": [
+					 *         {
+					 *           "name": "360",
+					 *           "width": 640,
+					 *           "height": 360,
+					 *           "label": "360p",
+					 *           "order": 0
+					 *         },
+					 *         {
+					 *           "name": "480",
+					 *           "width": 854,
+					 *           "height": 480,
+					 *           "label": "480p",
+					 *           "order": 1
+					 *         },
+					 *         {
+					 *           "name": "720",
+					 *           "width": 1280,
+					 *           "height": 720,
+					 *           "label": "720p",
+					 *           "order": 2
+					 *         }
+					 *       ]
+					 *     } */
+					"application/json": components["schemas"]["ContentVideoV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getPictureContent: {
+		parameters: {
+			query: {
+				/** @description The ID of the picture attachment object, from the `BlogPostModelV3`. */
+				id: string;
+			};
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {
+					 *       "id": "ZWKdCy8TMN",
+					 *       "guid": "ZWKdCy8TMN",
+					 *       "title": "\"I hate costumes\" Jonathan",
+					 *       "type": "picture",
+					 *       "description": "",
+					 *       "likes": 1,
+					 *       "dislikes": 0,
+					 *       "score": 1,
+					 *       "isProcessing": false,
+					 *       "creator": "59f94c0bdd241b70349eb72b",
+					 *       "primaryBlogPost": "PGZBzzRWpD",
+					 *       "userInteraction": [],
+					 *       "thumbnail": {
+					 *         "width": 1200,
+					 *         "height": 675,
+					 *         "path": "https://pbs.floatplane.com/picture_thumbnails/ZWKdCy8TMN/239212458322156_1634845035660.jpeg",
+					 *         "childImages": []
+					 *       },
+					 *       "isAccessible": true,
+					 *       "imageFiles": [
+					 *         {
+					 *           "path": "https://pbs.floatplane.com/content_images/59f94c0bdd241b70349eb72b/465975275316873_1634845031494_1164x675.jpeg?AWSAccessKeyId=...&Expires=...&Signature=...",
+					 *           "width": 1164,
+					 *           "height": 675,
+					 *           "size": 165390
+					 *         }
+					 *       ]
+					 *     } */
+					"application/json": components["schemas"]["ContentPictureV3Response"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	likeContent: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "contentType": "blogPost",
+				 *       "id": "T2gWkpaerq"
+				 *     } */
+				"application/json": components["schemas"]["ContentLikeV3Request"];
+			};
+		};
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       "like"
+					 *     ] */
+					"application/json": components["schemas"]["UserInteractionModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	dislikeContent: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "contentType": "blogPost",
+				 *       "id": "T2gWkpaerq"
+				 *     } */
+				"application/json": components["schemas"]["ContentLikeV3Request"];
+			};
+		};
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       "dislike"
+					 *     ] */
+					"application/json": components["schemas"]["UserInteractionModel"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	updateProgress: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "ids": [
+				 *         "mhhrOfndeF",
+				 *         "3qZrz5ugsa"
+				 *       ],
+				 *       "contentType": "blogPost"
+				 *     } */
+				"application/json": components["schemas"]["UpdateProgressRequest"];
+			};
+		};
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example OK */
+					"text/plain": string;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	getProgress: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "ids": [
+				 *         "mhhrOfndeF",
+				 *         "3qZrz5ugsa"
+				 *       ],
+				 *       "contentType": "blogPost"
+				 *     } */
+				"application/json": components["schemas"]["GetProgressRequest"];
+			};
+		};
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [
+					 *       {
+					 *         "id": "3qZrz5ugsa",
+					 *         "progress": 0
+					 *       },
+					 *       {
+					 *         "id": "mhhrOfndeF",
+					 *         "progress": 100
+					 *       }
+					 *     ] */
+					"application/json": components["schemas"]["GetProgressResponse"];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	joinLiveRoom: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {} */
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	leaveLiveRoom: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {} */
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	votePoll: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody: {
+			content: {
+				/** @example {
+				 *       "pollId": "62c8c1dd968bc0899bbb4b92",
+				 *       "optionIndex": 1
+				 *     } */
+				"application/json": {
+					/** @description The id of the poll to vote on. */
+					pollId: string;
+					/** @description The index of the options of the poll for which to vote. This should not be outside the bounds of the poll options. */
+					optionIndex: number;
+				};
+			};
+		};
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example {} */
+					"application/json": unknown;
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	redirectYTLatest: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path: {
+				channelKey: string;
+			};
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description Found */
+			302: {
+				headers: {
+					/** @description A YouTube URL for a video. */
+					Location?: string;
+					[name: string]: unknown;
+				};
+				content?: never;
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
+	listCreatorLoyaltyReward: {
+		parameters: {
+			query?: never;
+			header?: never;
+			path?: never;
+			cookie?: never;
+		};
+		requestBody?: never;
+		responses: {
+			/** @description OK */
+			200: {
+				headers: {
+					[name: string]: unknown;
+				};
+				content: {
+					/** @example [] */
+					"application/json": Record<string, never>[];
+				};
+			};
+			400: components["responses"]["400BadRequest"];
+			401: components["responses"]["401Unauthenticated"];
+			403: components["responses"]["403Forbidden"];
+			404: components["responses"]["404NotFound"];
+			429: components["responses"]["429TooManyRequests"];
+			default: components["responses"]["Unexpected"];
+		};
+	};
 }
 export enum ApiPaths {
-    login = "/api/v2/auth/login",
-    logout = "/api/v2/auth/logout",
-    checkFor2faLogin = "/api/v2/auth/checkFor2faLogin",
-    getCaptchaInfo = "/api/v3/auth/captcha/info",
-    getDeliveryInfo = "/api/v2/cdn/delivery",
-    getDeliveryInfoV3 = "/api/v3/delivery/info",
-    listConnections = "/api/v2/connect/list",
-    getInfo = "/api/v2/creator/info",
-    getCreatorInfoByName = "/api/v2/creator/named",
-    getCreator = "/api/v3/creator/info",
-    getCreators = "/api/v3/creator/list",
-    getCreatorByName = "/api/v3/creator/named",
-    listCreatorChannelsV3 = "/api/v3/creator/channels/list",
-    getCreatorSubInfoPublic = "/api/v2/plan/info",
-    getEdges = "/api/v2/edges",
-    getFaqSections = "/api/v2/faq/list",
-    listPaymentMethods = "/api/v2/payment/method/list",
-    listAddresses = "/api/v2/payment/address/list",
-    listInvoices = "/api/v2/payment/invoice/list",
-    socketConnect = "/api/v3/socket/connect",
-    disconnectSocket = "/api/v3/socket/disconnect",
-    listUserSubscriptionsV3 = "/api/v3/user/subscriptions",
-    getUserInfo = "/api/v2/user/info",
-    getUserInfoByName = "/api/v2/user/named",
-    getSecurity = "/api/v2/user/security",
-    userCreatorBanStatus = "/api/v2/user/ban/status",
-    getActivityFeedV3 = "/api/v3/user/activity",
-    getExternalLinksV3 = "/api/v3/user/links",
-    getSelf = "/api/v3/user/self",
-    getUserNotificationSettingsV3 = "/api/v3/user/notification/list",
-    updateUserNotificationSettingsV3 = "/api/v3/user/notification/update",
-    postComment = "/api/v3/comment",
-    getComments = "/api/v3/comment",
-    getCommentReplies = "/api/v3/comment/replies",
-    likeComment = "/api/v3/comment/like",
-    dislikeComment = "/api/v3/comment/dislike",
-    getCreatorBlogPosts = "/api/v3/content/creator",
-    getMultiCreatorBlogPosts = "/api/v3/content/creator/list",
-    getContentTags = "/api/v3/content/tags",
-    getBlogPost = "/api/v3/content/post",
-    getRelatedBlogPosts = "/api/v3/content/related",
-    getVideoContent = "/api/v3/content/video",
-    getPictureContent = "/api/v3/content/picture",
-    likeContent = "/api/v3/content/like",
-    dislikeContent = "/api/v3/content/dislike",
-    updateProgress = "/api/v3/content/progress",
-    getProgress = "/api/v3/content/get/progress",
-    joinLiveRoom = "/api/v3/poll/live/joinroom",
-    leaveLiveRoom = "/api/v3/poll/live/leaveLiveRoom",
-    votePoll = "/api/v3/poll/votePoll",
-    redirectYTLatest = "/api/v3/redirect-yt-latest/{channelKey}",
-    listCreatorLoyaltyReward = "/api/v3/user/loyaltyreward/list"
+	login = "/api/v2/auth/login",
+	logout = "/api/v2/auth/logout",
+	checkFor2faLogin = "/api/v2/auth/checkFor2faLogin",
+	getCaptchaInfo = "/api/v3/auth/captcha/info",
+	getDeliveryInfo = "/api/v2/cdn/delivery",
+	getDeliveryInfoV3 = "/api/v3/delivery/info",
+	listConnections = "/api/v2/connect/list",
+	getInfo = "/api/v2/creator/info",
+	getCreatorInfoByName = "/api/v2/creator/named",
+	getCreator = "/api/v3/creator/info",
+	getCreators = "/api/v3/creator/list",
+	getCreatorByName = "/api/v3/creator/named",
+	listCreatorChannelsV3 = "/api/v3/creator/channels/list",
+	getCreatorSubInfoPublic = "/api/v2/plan/info",
+	getEdges = "/api/v2/edges",
+	getFaqSections = "/api/v2/faq/list",
+	listPaymentMethods = "/api/v2/payment/method/list",
+	listAddresses = "/api/v2/payment/address/list",
+	listInvoices = "/api/v2/payment/invoice/list",
+	socketConnect = "/api/v3/socket/connect",
+	disconnectSocket = "/api/v3/socket/disconnect",
+	listUserSubscriptionsV3 = "/api/v3/user/subscriptions",
+	getUserInfo = "/api/v2/user/info",
+	getUserInfoByName = "/api/v2/user/named",
+	getSecurity = "/api/v2/user/security",
+	userCreatorBanStatus = "/api/v2/user/ban/status",
+	getActivityFeedV3 = "/api/v3/user/activity",
+	getExternalLinksV3 = "/api/v3/user/links",
+	getSelf = "/api/v3/user/self",
+	getUserNotificationSettingsV3 = "/api/v3/user/notification/list",
+	updateUserNotificationSettingsV3 = "/api/v3/user/notification/update",
+	postComment = "/api/v3/comment",
+	getComments = "/api/v3/comment",
+	getCommentReplies = "/api/v3/comment/replies",
+	likeComment = "/api/v3/comment/like",
+	dislikeComment = "/api/v3/comment/dislike",
+	getCreatorBlogPosts = "/api/v3/content/creator",
+	getMultiCreatorBlogPosts = "/api/v3/content/creator/list",
+	getContentTags = "/api/v3/content/tags",
+	getBlogPost = "/api/v3/content/post",
+	getRelatedBlogPosts = "/api/v3/content/related",
+	getVideoContent = "/api/v3/content/video",
+	getPictureContent = "/api/v3/content/picture",
+	likeContent = "/api/v3/content/like",
+	dislikeContent = "/api/v3/content/dislike",
+	updateProgress = "/api/v3/content/progress",
+	getProgress = "/api/v3/content/get/progress",
+	joinLiveRoom = "/api/v3/poll/live/joinroom",
+	leaveLiveRoom = "/api/v3/poll/live/leaveLiveRoom",
+	votePoll = "/api/v3/poll/votePoll",
+	redirectYTLatest = "/api/v3/redirect-yt-latest/{channelKey}",
+	listCreatorLoyaltyReward = "/api/v3/user/loyaltyreward/list",
 }
