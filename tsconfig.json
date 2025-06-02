@@ -3,11 +3,11 @@
 		"target": "ESNext",
 		"module": "Preserve",
 		"moduleResolution": "bundler",
-		"jsx": "react",
-		"noEmit": true,
 		"strict": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
-		"types": ["node"]
+		"types": ["node"],
+		"rootDir": "src",
+		"outDir": "dist"
 	}
 }
