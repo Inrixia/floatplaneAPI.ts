@@ -7,16 +7,13 @@ import { Auth } from "./auth.js";
 import { CDN } from "./cdn.js";
 import { Creator } from "./creator.js";
 import { User } from "./user.js";
+import * as client from "openid-client";
 
 import type { LoginSuccess } from "./auth.js";
 import { Content } from "./content.js";
+import { TokenEndpointResponse } from "openid-client";
+import { isDate } from "util/types";
 
-export type LoginOptions = {
-	username: string;
-	password: string;
-	captchaToken?: string;
-	token?: string;
-};
 
 export const version = "4.6.0";
 
@@ -35,23 +32,59 @@ export class Floatplane {
 	public creator: Creator;
 	public cdn: CDN;
 	public content: Content;
-	constructor(cookieJar?: CookieJar, userAgent?: string) {
-		cookieJar ??= new CookieJar();
+	private settings: { baseUrl: string, auth: { tokenSet?: TokenEndpointResponse & {expires_at?: Date}, clientSettings: { server: string, clientId: string, clientSecret?: string } } };
+	private oauthConfig: client.Configuration | undefined;
+
+	constructor(authConfig: { tokenSet?: TokenEndpointResponse & {expires_at?: Date}, clientSettings: { server: string, clientId: string, clientSecret?: string } }, userAgent?: string, baseUrl: string = "https://www.floatplane.com") {
+		this.settings = {
+			baseUrl,
+			auth: authConfig,
+		};
+		
 		if (userAgent !== undefined) headers["User-Agent"] = userAgent;
 		this.got = got.extend({
-			// Sets the global requestMethod to be used, this maintains headers
-			cookieJar,
 			headers,
 			retry: {
 				limit: 5, // Maximum number of retries
 			},
+			hooks: {
+				beforeRequest: [
+					async (options) => {
+						if (!this.settings.auth?.tokenSet) {
+							await this.login();
+						}
+						else {
+							const expires = this.expiresIn(this.settings.auth.tokenSet);
+							if (expires === undefined || expires < 60) {
+								const refreshToken = this.settings.auth.tokenSet.refresh_token;
+								if (!refreshToken) {
+									// Corrupted?
+									this.settings.auth.tokenSet = undefined;
+									throw new Error("No refresh token available to refresh OAuth token!");
+								}
+								if (!this.oauthConfig) {
+									throw new Error("No OAuth configuration available to refresh token!");
+								}
+								const refreshedTokenSet = await client.refreshTokenGrant(this.oauthConfig, refreshToken);
+								if (refreshedTokenSet.access_token === undefined) throw new Error("No access token received when refreshing token!");
+								this.settings.auth.tokenSet = refreshedTokenSet;
+								console.info("Refreshed Floatplane OAuth token.");
+							}
+						}
+
+						if (this.settings.auth?.tokenSet?.access_token) {
+							options.headers.authorization = `Bearer ${this.settings.auth.tokenSet.access_token}`;
+						}
+					},
+				],
+			},
 		});
-		this.auth = new Auth(this.got);
-		this.user = new User(this.got);
-		this.api = new Api(this.got);
-		this.creator = new Creator(this.got);
-		this.cdn = new CDN(this.got);
-		this.content = new Content(this.got);
+		this.auth = new Auth(this.got, baseUrl);
+		this.user = new User(this.got, baseUrl);
+		this.api = new Api(this.got, baseUrl);
+		this.creator = new Creator(this.got, baseUrl);
+		this.cdn = new CDN(this.got, baseUrl);
+		this.content = new Content(this.got, baseUrl);
 	}
 
 	public extend(...params: Parameters<typeof got.extend>) {
@@ -64,33 +97,48 @@ export class Floatplane {
 		this.content.got = this.got;
 	}
 
+	expiresIn(tokenSet: TokenEndpointResponse & {expires_at?: Date} | undefined): number | undefined {
+		if (tokenSet && tokenSet.expires_at && isDate(tokenSet.expires_at)) {
+			const exp = tokenSet.expires_at;
+			if (exp) {
+				const now = new Date();
+				if (exp > now) {
+					return Math.floor((exp.getTime() - now.getTime()) / 1000);
+				}
+				return 0;
+			}
+		}
+		return undefined;
+	}
+
 	/**
 	 * Login to floatplane so future requests are authenticated
-	 * @param {LoginOptions} options Login options
-	 * @param {string} options.username Username
-	 * @param {string} options.password Password
-	 * @param {string} options.captchaToken Recaptcha token (single use). Not required
-	 * @param {string} options.token 2 Factor Authentication token (single use)
-	 * @returns {Promise<LoginSuccess>} User object.
-	 *
-	 * @example
-	 * // captchaToken is not required for login.
-	 * // Get a single use captchaToken by going to floatplane.com/login and running
-	 * grecaptcha.execute('6LfwnJ0aAAAAANTkEF2M1LfdKx2OpWAxPtiHISqr', { action:'login' }).then(console.log)
-	 * // in console.
+	 * @returns {Promise<User>} User object.
 	 */
-	login = async (options: LoginOptions): Promise<LoginSuccess> => {
-		if (typeof options.username !== "string") throw new Error("Username must be a string!");
-		if (typeof options.password !== "string") throw new Error("Password must be a string!");
-		if (typeof options.captchaToken !== "string" && options.captchaToken !== undefined) throw new Error("Recaptcha Token must be a string or undefined!");
+	login = async (fn?: (response: client.DeviceAuthorizationResponse) => any): Promise<any> => {
+		const scope = "openid profile email offline_access";
 
-		let result = await this.auth.login(options.username, options.password, options.captchaToken);
-
-		if (result.needs2FA === true) {
-			if (typeof options.token !== "string") throw new Error("2FA Token must be a string!");
-			result = await this.auth.factor(options.token);
+		if (this.oauthConfig === undefined) {
+			this.oauthConfig = await client.discovery(new URL(this.settings.auth.clientSettings?.server), this.settings.auth!.clientSettings?.clientId, this.settings.auth!.clientSettings?.clientSecret);
 		}
-		return result;
+
+		if (!this.settings.auth?.tokenSet) {
+			const response = await client.initiateDeviceAuthorization(this.oauthConfig, { scope });
+			if (fn) {
+				await fn(response);
+			}
+			else {
+				console.log("Complete login using this verification URL: ", response.verification_uri_complete);
+			}
+			const tokenSet = await client.pollDeviceAuthorizationGrant(this.oauthConfig, response);
+
+			if (tokenSet.access_token === undefined) throw new Error("No access token received from device authorization flow!");
+
+			this.settings.auth!.tokenSet = tokenSet;
+			this.settings.auth.tokenSet.expires_at = tokenSet.expires_in ? new Date(Date.now() + tokenSet.expires_in * 1000) : undefined;
+		}
+
+		return await this.user.self();
 	};
 
 	/**

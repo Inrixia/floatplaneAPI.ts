@@ -6,6 +6,7 @@
 	"dependencies": {
 		"cross-env": "^7.0.3",
 		"got": "^14.4.7",
+		"openid-client": "^6.8.1",
 		"tough-cookie": "^5.1.2"
 	},
 	"devDependencies": {
