@@ -112,10 +112,10 @@ export class Floatplane {
 	}
 
 	/**
-	 * Login to floatplane so future requests are authenticated
+	 * Login to floatplane so future requests are authenticated using the Device flow
 	 * @returns {Promise<User>} User object.
 	 */
-	login = async (fn?: (response: client.DeviceAuthorizationResponse) => any): Promise<any> => {
+	deviceLogin = async (fn?: (response: client.DeviceAuthorizationResponse) => any): Promise<any> => {
 		const scope = "openid profile email offline_access";
 
 		if (this.oauthConfig === undefined) {
