@@ -125,7 +125,7 @@ export class Floatplane {
 		if (!this.settings.auth?.tokenSet) {
 			const response = await client.initiateDeviceAuthorization(this.oauthConfig, { scope });
 			if (fn) {
-				await fn(response);
+				fn(response);
 			}
 			else {
 				console.log("Complete login using this verification URL: ", response.verification_uri_complete);
