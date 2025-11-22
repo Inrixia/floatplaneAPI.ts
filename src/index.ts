@@ -1,7 +1,5 @@
 import got from "got";
 
-import { CookieJar } from "tough-cookie";
-
 import { Api } from "./api.js";
 import { Auth } from "./auth.js";
 import { CDN } from "./cdn.js";
@@ -32,10 +30,20 @@ export class Floatplane {
 	public creator: Creator;
 	public cdn: CDN;
 	public content: Content;
-	private settings: { baseUrl: string, auth: { tokenSet?: TokenEndpointResponse & {expires_at?: Date}, clientSettings: { server: string, clientId: string, clientSecret?: string } } };
+	private settings: { baseUrl: string, auth: { tokenSet: TokenEndpointResponse & {expires_at?: Date} | null, tokenSetHook?: (tokenSet: TokenEndpointResponse & {expires_at?: Date}) => void, clientSettings: { server: string, clientId: string, clientSecret?: string } } };
+	private get tokenSet() {
+		return this.settings.auth.tokenSet;
+	}
+	private set tokenSet(value: TokenEndpointResponse & {expires_at?: Date} | null) {
+		if (this.settings.auth.tokenSetHook && value !== null) {
+			this.settings.auth.tokenSetHook(value);
+		}
+		
+		this.settings.auth.tokenSet = value;
+	}
 	private oauthConfig: client.Configuration | undefined;
 
-	constructor(authConfig: { tokenSet?: TokenEndpointResponse & {expires_at?: Date}, clientSettings: { server: string, clientId: string, clientSecret?: string } }, userAgent?: string, baseUrl: string = "https://www.floatplane.com") {
+	constructor(authConfig: { tokenSet: TokenEndpointResponse & {expires_at?: Date} | null, tokenSetHook?: (tokenSet: TokenEndpointResponse & {expires_at?: Date}) => void, clientSettings: { server: string, clientId: string, clientSecret?: string } }, userAgent?: string, baseUrl: string = "https://www.floatplane.com") {
 		this.settings = {
 			baseUrl,
 			auth: authConfig,
@@ -50,16 +58,16 @@ export class Floatplane {
 			hooks: {
 				beforeRequest: [
 					async (options) => {
-						if (!this.settings.auth?.tokenSet) {
+						if (!this.tokenSet) {
 							await this.login();
 						}
 						else {
-							const expires = this.expiresIn(this.settings.auth.tokenSet);
+							const expires = this.expiresIn(this.tokenSet);
 							if (expires === undefined || expires < 60) {
-								const refreshToken = this.settings.auth.tokenSet.refresh_token;
+								const refreshToken = this.tokenSet.refresh_token;
 								if (!refreshToken) {
 									// Corrupted?
-									this.settings.auth.tokenSet = undefined;
+									this.tokenSet = null;
 									throw new Error("No refresh token available to refresh OAuth token!");
 								}
 								if (!this.oauthConfig) {
@@ -67,13 +75,13 @@ export class Floatplane {
 								}
 								const refreshedTokenSet = await client.refreshTokenGrant(this.oauthConfig, refreshToken);
 								if (refreshedTokenSet.access_token === undefined) throw new Error("No access token received when refreshing token!");
-								this.settings.auth.tokenSet = refreshedTokenSet;
+								this.tokenSet = refreshedTokenSet;
 								console.info("Refreshed Floatplane OAuth token.");
 							}
 						}
 
-						if (this.settings.auth?.tokenSet?.access_token) {
-							options.headers.authorization = `Bearer ${this.settings.auth.tokenSet.access_token}`;
+						if (this.tokenSet?.access_token) {
+							options.headers.authorization = `Bearer ${this.tokenSet.access_token}`;
 						}
 					},
 				],
@@ -111,6 +119,11 @@ export class Floatplane {
 		return undefined;
 	}
 
+	private login = async (): Promise<undefined> => {
+		await this.deviceLogin();
+		return;
+	}
+
 	/**
 	 * Login to floatplane so future requests are authenticated using the Device flow
 	 * @returns {Promise<User>} User object.
@@ -122,7 +135,7 @@ export class Floatplane {
 			this.oauthConfig = await client.discovery(new URL(this.settings.auth.clientSettings?.server), this.settings.auth!.clientSettings?.clientId, this.settings.auth!.clientSettings?.clientSecret);
 		}
 
-		if (!this.settings.auth?.tokenSet) {
+		if (!this.tokenSet) {
 			const response = await client.initiateDeviceAuthorization(this.oauthConfig, { scope });
 			if (fn) {
 				fn(response);
@@ -134,8 +147,8 @@ export class Floatplane {
 
 			if (tokenSet.access_token === undefined) throw new Error("No access token received from device authorization flow!");
 
-			this.settings.auth!.tokenSet = tokenSet;
-			this.settings.auth.tokenSet.expires_at = tokenSet.expires_in ? new Date(Date.now() + tokenSet.expires_in * 1000) : undefined;
+			this.tokenSet = tokenSet;
+			this.tokenSet.expires_at = tokenSet.expires_in ? new Date(Date.now() + tokenSet.expires_in * 1000) : undefined;
 		}
 
 		return await this.user.self();
