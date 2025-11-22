@@ -30,20 +30,27 @@ export class Floatplane {
 	public creator: Creator;
 	public cdn: CDN;
 	public content: Content;
-	private settings: { baseUrl: string, auth: { tokenSet: TokenEndpointResponse & {expires_at?: Date} | null, tokenSetHook?: (tokenSet: TokenEndpointResponse & {expires_at?: Date}) => void, clientSettings: { server: string, clientId: string, clientSecret?: string } } };
+	private settings: { baseUrl: string, auth: { tokenSet: TokenEndpointResponse & {expires_at?: Date | string} | null, tokenSetHook?: (tokenSet: TokenEndpointResponse & {expires_at?: Date}) => void, clientSettings: { server: string, clientId: string, clientSecret?: string } } };
 	private get tokenSet() {
 		return this.settings.auth.tokenSet;
 	}
-	private set tokenSet(value: TokenEndpointResponse & {expires_at?: Date} | null) {
+	private set tokenSet(value: TokenEndpointResponse & {expires_at?: Date | string} | null) {
+		if (value !== null && value.expires_in){
+			value.expires_at = new Date(Date.now() + value.expires_in * 1000);
+		}
+
 		if (this.settings.auth.tokenSetHook && value !== null) {
-			this.settings.auth.tokenSetHook(value);
+			if (typeof value.expires_at === "string") {
+				value.expires_at = new Date(value.expires_at);
+			}
+			this.settings.auth.tokenSetHook(value as TokenEndpointResponse & { expires_at?: Date });
 		}
 		
 		this.settings.auth.tokenSet = value;
 	}
 	private oauthConfig: client.Configuration | undefined;
 
-	constructor(authConfig: { tokenSet: TokenEndpointResponse & {expires_at?: Date} | null, tokenSetHook?: (tokenSet: TokenEndpointResponse & {expires_at?: Date}) => void, clientSettings: { server: string, clientId: string, clientSecret?: string } }, userAgent?: string, baseUrl: string = "https://www.floatplane.com") {
+	constructor(authConfig: { tokenSet: TokenEndpointResponse & {expires_at?: Date | string} | null, tokenSetHook?: (tokenSet: TokenEndpointResponse & {expires_at?: Date | string}) => void, clientSettings: { server: string, clientId: string, clientSecret?: string } }, userAgent?: string, baseUrl: string = "https://www.floatplane.com") {
 		this.settings = {
 			baseUrl,
 			auth: authConfig,
@@ -76,7 +83,7 @@ export class Floatplane {
 								const refreshedTokenSet = await client.refreshTokenGrant(this.oauthConfig, refreshToken);
 								if (refreshedTokenSet.access_token === undefined) throw new Error("No access token received when refreshing token!");
 								this.tokenSet = refreshedTokenSet;
-								console.info("Refreshed Floatplane OAuth token.");
+								console.log("Refreshed Floatplane OAuth token.");
 							}
 						}
 
@@ -105,9 +112,12 @@ export class Floatplane {
 		this.content.got = this.got;
 	}
 
-	expiresIn(tokenSet: TokenEndpointResponse & {expires_at?: Date} | undefined): number | undefined {
-		if (tokenSet && tokenSet.expires_at && isDate(tokenSet.expires_at)) {
-			const exp = tokenSet.expires_at;
+	expiresIn(tokenSet: TokenEndpointResponse & {expires_at?: Date | string} | undefined): number | undefined {
+		let exp = tokenSet?.expires_at
+		if (typeof exp === "string") {
+				exp = new Date(tokenSet?.expires_at as string);
+		}
+		if (tokenSet && exp && isDate(exp)) {
 			if (exp) {
 				const now = new Date();
 				if (exp > now) {
@@ -148,7 +158,6 @@ export class Floatplane {
 			if (tokenSet.access_token === undefined) throw new Error("No access token received from device authorization flow!");
 
 			this.tokenSet = tokenSet;
-			this.tokenSet.expires_at = tokenSet.expires_in ? new Date(Date.now() + tokenSet.expires_in * 1000) : undefined;
 		}
 
 		return await this.user.self();
