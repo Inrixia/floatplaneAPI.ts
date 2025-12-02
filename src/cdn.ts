@@ -22,7 +22,7 @@ export class CDN extends Core {
 	 * @returns A promise that resolves to a `DeliveryResponse` object.
 	 */
 	delivery(scenario: QueryParams["scenario"], entityId: string, outputKind?: QueryParams["outputKind"]): Promise<DeliveryResponse> {
-		const url = new URL(this.BaseUrl + ApiPaths.getDeliveryInfoV3);
+		const url = new URL(this.baseUrl + ApiPaths.getDeliveryInfoV3);
 
 		url.searchParams.set("scenario", scenario);
 		url.searchParams.set("entityId", entityId);

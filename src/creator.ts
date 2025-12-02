@@ -29,7 +29,7 @@ export class Creator extends Core {
 	 *	Fetch blogPosts from a creator.
 	 */
 	blogPosts = (creatorGUID: BlogPostQueryParams["id"], options?: OptionalOnly<BlogPostQueryParams>): Promise<BlogPost[]> => {
-		const url = new URL(this.BaseUrl + ApiPaths.getCreatorBlogPosts);
+		const url = new URL(this.baseUrl + ApiPaths.getCreatorBlogPosts);
 		url.searchParams.append("id", creatorGUID);
 		if (options !== undefined) {
 			const { limit, fetchAfter, search, tags, hasVideo, hasAudio, hasPicture, hasText, sort, fromDuration, toDuration, fromDate, toDate, channel } = options;
@@ -67,8 +67,8 @@ export class Creator extends Core {
 	};
 
 	info = (creatorGUID: CreatorQueryParams["creatorGUID"]): Promise<CreatorInfo[]> =>
-		this.got(`${this.BaseUrl}${ApiPaths.getInfo}?creatorGUID=${creatorGUID}`).json();
+		this.got(`${this.baseUrl}${ApiPaths.getInfo}?creatorGUID=${creatorGUID}`).json();
 
 	channels = (creatorGUID: CreatorChannelsQueryParams["ids"]): Promise<CreatorChannel[]> =>
-		this.got(`${this.BaseUrl}${ApiPaths.listCreatorChannelsV3}?ids=${creatorGUID}`).json();
+		this.got(`${this.baseUrl}${ApiPaths.listCreatorChannelsV3}?ids=${creatorGUID}`).json();
 }

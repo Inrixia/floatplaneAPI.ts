@@ -8,10 +8,10 @@ export class User extends Core {
 	/**
 	 * Fetch subscriptions for the logged in user.
 	 */
-	subscriptions = (): Promise<UserSubscription[]> => this.got(this.BaseUrl + ApiPaths.listUserSubscriptionsV3).json<UserSubscription[]>();
+	subscriptions = (): Promise<UserSubscription[]> => this.got(this.baseUrl + ApiPaths.listUserSubscriptionsV3).json<UserSubscription[]>();
 
 	/**
 	 * Fetch information about the logged in user.
 	 */
-	self = (): Promise<Self> => this.got(this.BaseUrl + ApiPaths.getSelf).json<Self>();
+	self = (): Promise<Self> => this.got(this.baseUrl + ApiPaths.getSelf).json<Self>();
 }

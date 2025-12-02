@@ -2,7 +2,6 @@ import got from "got";
 
 import * as client from "openid-client";
 import { Api } from "./api.js";
-import { Auth } from "./auth.js";
 import { CDN } from "./cdn.js";
 import { Creator } from "./creator.js";
 import { User } from "./user.js";
@@ -10,8 +9,9 @@ import { User } from "./user.js";
 import { TokenEndpointResponse } from "openid-client";
 import { isDate } from "util/types";
 import { Content } from "./content.js";
+import { Core } from "./Core.js";
 
-export const version = "5.1.1";
+export const version = "5.2.0";
 
 export type AuthToken = TokenEndpointResponse & { expires_at?: Date };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
@@ -32,7 +32,6 @@ export type FloatplaneSettings = {
 export class Floatplane {
 	public got: typeof got;
 
-	public auth: Auth;
 	public user: User;
 	public api: Api;
 	public creator: Creator;
@@ -47,6 +46,8 @@ export class Floatplane {
 	constructor({ authConfig, baseUrl, userAgent }: FloatplaneSettings) {
 		this.authConfig = authConfig;
 
+		baseUrl ??= Core.BaseUrl;
+
 		const headers = {
 			"User-Agent": userAgent ?? this.userAgent,
 			accept: "application/json",
@@ -60,17 +61,15 @@ export class Floatplane {
 			},
 			hooks: {
 				beforeRequest: [
-					async (options) => {
+					async ({ headers, url, prefixUrl }) => {
+						if (!new URL(url ?? prefixUrl).href.startsWith(baseUrl)) return;
 						if (!this.authToken) await this.login();
-
-						if (this.authToken?.access_token) {
-							options.headers.authorization = `Bearer ${this.authToken.access_token}`;
-						}
+						if (this.authToken?.access_token) headers.authorization = `Bearer ${this.authToken.access_token}`;
 					},
 				],
 			},
 		});
-		this.auth = new Auth(this.got, baseUrl);
+
 		this.user = new User(this.got, baseUrl);
 		this.api = new Api(this.got, baseUrl);
 		this.creator = new Creator(this.got, baseUrl);
@@ -80,7 +79,6 @@ export class Floatplane {
 
 	public extend(...params: Parameters<typeof got.extend>) {
 		this.got = this.got.extend(...params);
-		this.auth.got = this.got;
 		this.user.got = this.got;
 		this.api.got = this.got;
 		this.creator.got = this.got;

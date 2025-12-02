@@ -8,5 +8,5 @@ export class Api extends Core {
 	/**
 	 * Fetch edges from the floatplane api
 	 */
-	edges = (): Promise<EdgesResponse> => this.got(this.BaseUrl + ApiPaths.getEdges).json();
+	edges = (): Promise<EdgesResponse> => this.got(this.baseUrl + ApiPaths.getEdges).json();
 }

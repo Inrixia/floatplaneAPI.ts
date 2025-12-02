@@ -12,10 +12,10 @@ export class Content extends Core {
 	/**
 	 * A specific post from the floatplane api by id
 	 */
-	post = (id: PostParams["id"]): Promise<ContentPost> => this.got(`${this.BaseUrl}${ApiPaths.getBlogPost}/?id=${id}`).json();
+	post = (id: PostParams["id"]): Promise<ContentPost> => this.got(`${this.baseUrl}${ApiPaths.getBlogPost}/?id=${id}`).json();
 
 	/**
 	 * A specific video attachment from the floatplane api by id
 	 */
-	video = (id: VideoParams["id"]): Promise<VideoContent> => this.got(`${this.BaseUrl}${ApiPaths.getVideoContent}/?id=${id}`).json();
+	video = (id: VideoParams["id"]): Promise<VideoContent> => this.got(`${this.baseUrl}${ApiPaths.getVideoContent}/?id=${id}`).json();
 }
