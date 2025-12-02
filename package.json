@@ -21,7 +21,7 @@
 	},
 	"scripts": {
 		"build": "rimraf dist && tsc",
-		"prepare": "npm run build",
+		"prepare": "pnpm run build && node ./dist/sanity.js",
 		"fetchSchema": "openapi-typescript https://jamamp.github.io/FloatplaneAPIDocs/floatplane-openapi-specification-trimmed.json --make-paths-enum --output ./src/lib/apiSchema.ts"
 	},
 	"exports": {
