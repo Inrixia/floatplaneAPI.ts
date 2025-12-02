@@ -11,7 +11,7 @@ import { TokenEndpointResponse } from "openid-client";
 import { isDate } from "util/types";
 import { Content } from "./content.js";
 
-export const version = "4.6.0";
+export const version = "5.0.0";
 
 type AuthToken = TokenEndpointResponse & { expires_at?: Date };
 type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
@@ -39,11 +39,9 @@ export class Floatplane {
 	private oauthConfig?: client.Configuration;
 	public readonly authConfig: AuthConfig;
 
-	public readonly baseUrl: string = "https://floatplane.com";
 	public readonly userAgent: string = `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`;
 
 	constructor({ authConfig, baseUrl, userAgent }: FloatplaneSettings) {
-		this.baseUrl = baseUrl ?? this.baseUrl;
 		this.authConfig = authConfig;
 
 		const headers = {
