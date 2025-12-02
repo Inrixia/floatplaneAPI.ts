@@ -2,7 +2,8 @@ import { Floatplane, version } from "./index.js";
 
 const fApi = new Floatplane({ 
 	authConfig: {
-		clientSettings: { server: "https://auth.floatplane.com/realms/floatplane-pp", clientId: "floatplane-downloader" },
+		serverUrl: "https://auth.floatplane.com/realms/floatplane-pp", 
+		clientId: "floatplane-downloader",
 		onDeviceCode: ({ verification_uri_complete  }) => console.log(`Go to ${verification_uri_complete} to complete login...`)
 	},
 	baseUrl: "https://pp.floatplane.com"

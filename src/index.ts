@@ -11,7 +11,7 @@ import { TokenEndpointResponse } from "openid-client";
 import { isDate } from "util/types";
 import { Content } from "./content.js";
 
-export const version = "5.0.2";
+export const version = "5.1.0";
 
 export type AuthToken = TokenEndpointResponse & { expires_at?: Date };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
@@ -20,7 +20,9 @@ export type AuthConfig = {
 	authToken?: AuthToken;
 	onAuthToken?: OnAuthToken;
 	onDeviceCode: OnDeviceCode;
-	clientSettings: { server: string; clientId: string; clientSecret?: string };
+	clientId: string;
+	clientSecret?: string;
+	serverUrl?: string;
 };
 export type FloatplaneSettings = {
 	authConfig: AuthConfig;
@@ -135,9 +137,9 @@ export class Floatplane {
 
 		if (this.oauthConfig === undefined) {
 			this.oauthConfig = await client.discovery(
-				new URL(this.authConfig.clientSettings?.server),
-				this.authConfig.clientSettings?.clientId,
-				this.authConfig.clientSettings?.clientSecret
+				new URL(this.authConfig.serverUrl ?? "https://auth.floatplane.com/realms/floatplane"),
+				this.authConfig.clientId,
+				this.authConfig.clientSecret
 			);
 		}
 
