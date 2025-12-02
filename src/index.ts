@@ -13,15 +13,16 @@ import { Content } from "./content.js";
 
 export const version = "5.0.0";
 
-type AuthToken = TokenEndpointResponse & { expires_at?: Date };
-type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
-type AuthConfig = {
+export type AuthToken = TokenEndpointResponse & { expires_at?: Date };
+export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
+export type OnAuthToken = (authToken: AuthToken) => void;
+export type AuthConfig = {
 	authToken?: AuthToken;
-	onAuthToken?: (authToken: AuthToken) => void;
+	onAuthToken?: OnAuthToken;
 	onDeviceCode: OnDeviceCode;
 	clientSettings: { server: string; clientId: string; clientSecret?: string };
 };
-type FloatplaneSettings = {
+export type FloatplaneSettings = {
 	authConfig: AuthConfig;
 	userAgent?: string;
 	baseUrl: string;
