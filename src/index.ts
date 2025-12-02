@@ -133,18 +133,14 @@ export class Floatplane {
 	 * @returns {Promise<User>} User object.
 	 */
 	deviceLogin = async (onDeviceCode = this.authConfig.onDeviceCode) => {
-		const scope = "openid profile email offline_access";
-
-		if (this.oauthConfig === undefined) {
-			this.oauthConfig = await client.discovery(
-				new URL(this.authConfig.serverUrl ?? "https://auth.floatplane.com/realms/floatplane"),
-				this.authConfig.clientId,
-				this.authConfig.clientSecret
-			);
-		}
+		this.oauthConfig ??= await client.discovery(
+			new URL(this.authConfig.serverUrl ?? "https://auth.floatplane.com/realms/floatplane"),
+			this.authConfig.clientId,
+			this.authConfig.clientSecret
+		);
 
 		if (!this.authToken) {
-			const response = await client.initiateDeviceAuthorization(this.oauthConfig, { scope });
+			const response = await client.initiateDeviceAuthorization(this.oauthConfig, { scope: "openid profile email offline_access" });
 			await onDeviceCode(response);
 
 			const authToken = await client.pollDeviceAuthorizationGrant(this.oauthConfig, response);
