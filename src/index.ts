@@ -11,7 +11,7 @@ import { TokenEndpointResponse } from "openid-client";
 import { isDate } from "util/types";
 import { Content } from "./content.js";
 
-export const version = "5.0.0";
+export const version = "5.0.1";
 
 export type AuthToken = TokenEndpointResponse & { expires_at?: Date };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
