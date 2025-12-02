@@ -11,7 +11,7 @@ import { TokenEndpointResponse } from "openid-client";
 import { isDate } from "util/types";
 import { Content } from "./content.js";
 
-export const version = "5.1.0";
+export const version = "5.1.1";
 
 export type AuthToken = TokenEndpointResponse & { expires_at?: Date };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
@@ -150,6 +150,8 @@ export class Floatplane {
 			this.authToken = authToken;
 			this.authToken.expires_at = authToken.expires_in ? new Date(Date.now() + authToken.expires_in * 1000) : undefined;
 		}
+
+		await this.refreshAuthToken();
 
 		return this.user.self();
 	};
