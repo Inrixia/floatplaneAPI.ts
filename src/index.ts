@@ -1,26 +1,31 @@
 import got from "got";
 
+import * as client from "openid-client";
 import { Api } from "./api.js";
 import { Auth } from "./auth.js";
 import { CDN } from "./cdn.js";
 import { Creator } from "./creator.js";
 import { User } from "./user.js";
-import * as client from "openid-client";
 
-import type { LoginSuccess } from "./auth.js";
-import { Content } from "./content.js";
 import { TokenEndpointResponse } from "openid-client";
 import { isDate } from "util/types";
-
+import { Content } from "./content.js";
 
 export const version = "4.6.0";
 
-export const headers = {
-	"User-Agent": `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`,
-	accept: "application/json",
-	connection: "keep-alive",
+type AuthToken = TokenEndpointResponse & { expires_at?: Date };
+type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
+type AuthConfig = {
+	authToken?: AuthToken;
+	onAuthToken?: (authToken: AuthToken) => void;
+	onDeviceCode: OnDeviceCode;
+	clientSettings: { server: string; clientId: string; clientSecret?: string };
 };
-
+type FloatplaneSettings = {
+	authConfig: AuthConfig;
+	userAgent?: string;
+	baseUrl: string;
+};
 export class Floatplane {
 	public got: typeof got;
 
@@ -30,26 +35,23 @@ export class Floatplane {
 	public creator: Creator;
 	public cdn: CDN;
 	public content: Content;
-	private settings: { baseUrl: string, auth: { tokenSet: TokenEndpointResponse & {expires_at?: Date} | null, tokenSetHook?: (tokenSet: TokenEndpointResponse & {expires_at?: Date}) => void, clientSettings: { server: string, clientId: string, clientSecret?: string } } };
-	private get tokenSet() {
-		return this.settings.auth.tokenSet;
-	}
-	private set tokenSet(value: TokenEndpointResponse & {expires_at?: Date} | null) {
-		if (this.settings.auth.tokenSetHook && value !== null) {
-			this.settings.auth.tokenSetHook(value);
-		}
-		
-		this.settings.auth.tokenSet = value;
-	}
-	private oauthConfig: client.Configuration | undefined;
 
-	constructor(authConfig: { tokenSet: TokenEndpointResponse & {expires_at?: Date} | null, tokenSetHook?: (tokenSet: TokenEndpointResponse & {expires_at?: Date}) => void, clientSettings: { server: string, clientId: string, clientSecret?: string } }, userAgent?: string, baseUrl: string = "https://www.floatplane.com") {
-		this.settings = {
-			baseUrl,
-			auth: authConfig,
+	private oauthConfig?: client.Configuration;
+	public readonly authConfig: AuthConfig;
+
+	public readonly baseUrl: string = "https://floatplane.com";
+	public readonly userAgent: string = `FloatplaneAPI/${version} (Inrix, +https://github.com/Inrixia/floatplaneAPI.ts), CFNetwork`;
+
+	constructor({ authConfig, baseUrl, userAgent }: FloatplaneSettings) {
+		this.baseUrl = baseUrl ?? this.baseUrl;
+		this.authConfig = authConfig;
+
+		const headers = {
+			"User-Agent": userAgent ?? this.userAgent,
+			accept: "application/json",
+			connection: "keep-alive",
 		};
-		
-		if (userAgent !== undefined) headers["User-Agent"] = userAgent;
+
 		this.got = got.extend({
 			headers,
 			retry: {
@@ -58,30 +60,10 @@ export class Floatplane {
 			hooks: {
 				beforeRequest: [
 					async (options) => {
-						if (!this.tokenSet) {
-							await this.login();
-						}
-						else {
-							const expires = this.expiresIn(this.tokenSet);
-							if (expires === undefined || expires < 60) {
-								const refreshToken = this.tokenSet.refresh_token;
-								if (!refreshToken) {
-									// Corrupted?
-									this.tokenSet = null;
-									throw new Error("No refresh token available to refresh OAuth token!");
-								}
-								if (!this.oauthConfig) {
-									throw new Error("No OAuth configuration available to refresh token!");
-								}
-								const refreshedTokenSet = await client.refreshTokenGrant(this.oauthConfig, refreshToken);
-								if (refreshedTokenSet.access_token === undefined) throw new Error("No access token received when refreshing token!");
-								this.tokenSet = refreshedTokenSet;
-								console.info("Refreshed Floatplane OAuth token.");
-							}
-						}
+						if (!this.authToken) await this.login();
 
-						if (this.tokenSet?.access_token) {
-							options.headers.authorization = `Bearer ${this.tokenSet.access_token}`;
+						if (this.authToken?.access_token) {
+							options.headers.authorization = `Bearer ${this.authToken.access_token}`;
 						}
 					},
 				],
@@ -105,54 +87,77 @@ export class Floatplane {
 		this.content.got = this.got;
 	}
 
-	expiresIn(tokenSet: TokenEndpointResponse & {expires_at?: Date} | undefined): number | undefined {
-		if (tokenSet && tokenSet.expires_at && isDate(tokenSet.expires_at)) {
+	private get authToken() {
+		return this.authConfig.authToken;
+	}
+	private set authToken(value: AuthToken | null | undefined) {
+		if (this.authConfig.onAuthToken && value) this.authConfig.onAuthToken(value);
+		this.authConfig.authToken = value ?? undefined;
+	}
+
+	expiresIn(tokenSet?: AuthToken): number | undefined {
+		if (tokenSet?.expires_at && isDate(tokenSet.expires_at)) {
 			const exp = tokenSet.expires_at;
 			if (exp) {
 				const now = new Date();
-				if (exp > now) {
-					return Math.floor((exp.getTime() - now.getTime()) / 1000);
-				}
+				if (exp > now) return Math.floor((exp.getTime() - now.getTime()) / 1000);
 				return 0;
 			}
 		}
 		return undefined;
 	}
 
-	private login = async (): Promise<undefined> => {
-		await this.deviceLogin();
-		return;
+	async refreshAuthToken(): Promise<unknown> {
+		if (!this.authToken) return this.login();
+
+		const expires = this.expiresIn(this.authToken);
+		if (!expires || expires < 60) {
+			const refreshToken = this.authToken.refresh_token;
+			if (!refreshToken) {
+				console.warn("[floatplane.api] - No refresh token available to refresh OAuth token! Falling back to login...");
+				// Corrupted?
+				this.authToken = null;
+				return this.login();
+			}
+			if (!this.oauthConfig) throw new Error("No OAuth configuration available to refresh token!");
+			const refreshedTokenSet = await client.refreshTokenGrant(this.oauthConfig, refreshToken);
+
+			if (refreshedTokenSet.access_token === undefined) throw new Error("No access token received when refreshing token!");
+			this.authToken = refreshedTokenSet;
+		}
 	}
 
 	/**
 	 * Login to floatplane so future requests are authenticated using the Device flow
 	 * @returns {Promise<User>} User object.
 	 */
-	deviceLogin = async (fn?: (response: client.DeviceAuthorizationResponse) => any): Promise<any> => {
+	deviceLogin = async (onDeviceCode = this.authConfig.onDeviceCode) => {
 		const scope = "openid profile email offline_access";
 
 		if (this.oauthConfig === undefined) {
-			this.oauthConfig = await client.discovery(new URL(this.settings.auth.clientSettings?.server), this.settings.auth!.clientSettings?.clientId, this.settings.auth!.clientSettings?.clientSecret);
+			this.oauthConfig = await client.discovery(
+				new URL(this.authConfig.clientSettings?.server),
+				this.authConfig.clientSettings?.clientId,
+				this.authConfig.clientSettings?.clientSecret
+			);
 		}
 
-		if (!this.tokenSet) {
+		if (!this.authToken) {
 			const response = await client.initiateDeviceAuthorization(this.oauthConfig, { scope });
-			if (fn) {
-				fn(response);
-			}
-			else {
-				console.log("Complete login using this verification URL: ", response.verification_uri_complete);
-			}
-			const tokenSet = await client.pollDeviceAuthorizationGrant(this.oauthConfig, response);
+			await onDeviceCode(response);
 
-			if (tokenSet.access_token === undefined) throw new Error("No access token received from device authorization flow!");
+			const authToken = await client.pollDeviceAuthorizationGrant(this.oauthConfig, response);
 
-			this.tokenSet = tokenSet;
-			this.tokenSet.expires_at = tokenSet.expires_in ? new Date(Date.now() + tokenSet.expires_in * 1000) : undefined;
+			if (authToken.access_token === undefined) throw new Error("No access token received from device authorization flow!");
+
+			this.authToken = authToken;
+			this.authToken.expires_at = authToken.expires_in ? new Date(Date.now() + authToken.expires_in * 1000) : undefined;
 		}
 
-		return await this.user.self();
+		return this.user.self();
 	};
+
+	private login = this.deviceLogin;
 
 	/**
 	 * Returns true if authenticated or Error if not.
