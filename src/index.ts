@@ -11,7 +11,7 @@ import { TokenEndpointResponse } from "openid-client";
 import { isDate } from "util/types";
 import { Content } from "./content.js";
 
-export const version = "5.0.1";
+export const version = "5.0.2";
 
 export type AuthToken = TokenEndpointResponse & { expires_at?: Date };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
@@ -25,7 +25,7 @@ export type AuthConfig = {
 export type FloatplaneSettings = {
 	authConfig: AuthConfig;
 	userAgent?: string;
-	baseUrl: string;
+	baseUrl?: string;
 };
 export class Floatplane {
 	public got: typeof got;
