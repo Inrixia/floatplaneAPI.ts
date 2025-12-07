@@ -11,7 +11,7 @@ import { isDate } from "util/types";
 import { Content } from "./content.js";
 import { Core } from "./Core.js";
 
-export const version = "5.2.0";
+export const version = "5.2.1";
 
 export type AuthToken = TokenEndpointResponse & { expires_at?: Date };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
