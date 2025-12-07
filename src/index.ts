@@ -63,7 +63,7 @@ export class Floatplane {
 				beforeRequest: [
 					async ({ headers, url, prefixUrl }) => {
 						if (!new URL(url ?? prefixUrl).href.startsWith(baseUrl)) return;
-						if (!this.authToken) await this.login();
+						await this.refreshAuthToken();
 						if (this.authToken?.access_token) headers.authorization = `Bearer ${this.authToken.access_token}`;
 					},
 				],
