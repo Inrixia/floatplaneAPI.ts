@@ -6,14 +6,14 @@ import { CDN } from "./cdn.js";
 import { Creator } from "./creator.js";
 import { User } from "./user.js";
 
+import { asyncDebounce } from "@inrixia/helpers";
 import { TokenEndpointResponse } from "openid-client";
-import { isDate } from "util/types";
 import { Content } from "./content.js";
 import { Core } from "./Core.js";
 
 export const version = "5.2.1";
 
-export type AuthToken = TokenEndpointResponse & { expires_at?: Date };
+export type AuthToken = TokenEndpointResponse & { expiresEpoch?: number };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
 export type OnAuthToken = (authToken: AuthToken) => void;
 export type AuthConfig = {
@@ -89,42 +89,44 @@ export class Floatplane {
 	private get authToken() {
 		return this.authConfig.authToken;
 	}
-	private set authToken(value: AuthToken | null | undefined) {
-		if (this.authConfig.onAuthToken && value) this.authConfig.onAuthToken(value);
-		this.authConfig.authToken = value ?? undefined;
+	private set authToken(authToken: AuthToken | null | undefined) {
+		if (authToken) authToken.expiresEpoch = Date.now() + (authToken?.expires_in ?? 30) * 1000;
+		this.authConfig.authToken = authToken ?? undefined;
+		if (this.authConfig.onAuthToken && authToken) this.authConfig.onAuthToken(authToken);
 	}
 
-	expiresIn(tokenSet?: AuthToken): number | undefined {
-		if (tokenSet?.expires_at && isDate(tokenSet.expires_at)) {
-			const exp = tokenSet.expires_at;
-			if (exp) {
-				const now = new Date();
-				if (exp > now) return Math.floor((exp.getTime() - now.getTime()) / 1000);
-				return 0;
-			}
-		}
-		return undefined;
+	/**
+	 * Time untl token expiry in ms
+	 */
+	expiresIn(tokenSet?: AuthToken): number {
+		const expiresEpoch = tokenSet?.expiresEpoch;
+		if (!expiresEpoch) return -1;
+
+		return Math.max(expiresEpoch - Date.now(), 0);
 	}
 
-	async refreshAuthToken(): Promise<unknown> {
+	tokenExpired() {
+		return this.expiresIn() < 60000;
+	}
+
+	public refreshAuthToken = asyncDebounce(async () => {
 		if (!this.authToken) return this.login();
 
-		const expires = this.expiresIn(this.authToken);
-		if (!expires || expires < 60) {
+		if (this.tokenExpired()) {
 			const refreshToken = this.authToken.refresh_token;
-			if (!refreshToken) {
-				console.warn("[floatplane.api] - No refresh token available to refresh OAuth token! Falling back to login...");
-				// Corrupted?
-				this.authToken = null;
-				return this.login();
-			}
-			if (!this.oauthConfig) throw new Error("No OAuth configuration available to refresh token!");
+			if (!refreshToken) throw new Error("No refresh token available to refresh OAuth token!");
+
+			this.oauthConfig ??= await client.discovery(
+				new URL(this.authConfig.serverUrl ?? "https://auth.floatplane.com/realms/floatplane"),
+				this.authConfig.clientId,
+				this.authConfig.clientSecret
+			);
 			const refreshedTokenSet = await client.refreshTokenGrant(this.oauthConfig, refreshToken);
 
 			if (refreshedTokenSet.access_token === undefined) throw new Error("No access token received when refreshing token!");
 			this.authToken = refreshedTokenSet;
 		}
-	}
+	});
 
 	/**
 	 * Login to floatplane so future requests are authenticated using the Device flow
@@ -146,10 +148,7 @@ export class Floatplane {
 			if (authToken.access_token === undefined) throw new Error("No access token received from device authorization flow!");
 
 			this.authToken = authToken;
-			this.authToken.expires_at = authToken.expires_in ? new Date(Date.now() + authToken.expires_in * 1000) : undefined;
 		}
-
-		await this.refreshAuthToken();
 
 		return this.user.self();
 	};
