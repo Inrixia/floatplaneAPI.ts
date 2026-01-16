@@ -19,8 +19,8 @@ importers:
         version: 6.8.1
     devDependencies:
       '@inrixia/helpers':
-        specifier: ^3.21.1
-        version: 3.21.1
+        specifier: ^3.21.2
+        version: 3.21.2
       '@types/node':
         specifier: ^25.0.9
         version: 25.0.9
@@ -113,8 +113,8 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
-  '@inrixia/helpers@3.21.1':
-    resolution: {integrity: sha512-yk3WNaqGjgd7bpqVMnV9NpMP8pn2080/+EJ/LLUCNFZrWP9CPYuvZE6Oe4lxtYjoPoy1Dpz3DQOcD0s1P3mCEQ==}
+  '@inrixia/helpers@3.21.2':
+    resolution: {integrity: sha512-fNkC8dvvOoR9rODNL8Wia6Bzo7wLJz3GAzaLvGWrqKeunSGNwwmVBSFoM7ux6pA0H506GlnHaKJ5iC/r3dEz0Q==}
 
   '@isaacs/balanced-match@4.0.1':
     resolution: {integrity: sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ==}
@@ -911,7 +911,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@inrixia/helpers@3.21.1':
+  '@inrixia/helpers@3.21.2':
     dependencies:
       dequal: 2.0.3
 

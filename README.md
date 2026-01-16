@@ -10,7 +10,7 @@ Features/Endpoints are added as needed so if something is missing please make a 
 
 ### Types & Docs
 
-This library uses & collaborates with the **[Floatplane API Specification](https://github.com/Jman012/FloatplaneAPI)** which has full **[documentation](https://jman012.github.io/FloatplaneAPIDocs/)** for most Floatplane endpoints including ones this library has not yet implemented.
+This library uses & collaborates with the **[Floatplane API Specification](https://github.com/Jman012/FloatplaneAPI)** which has full **[documentation](https://jamamp.github.io/FloatplaneAPIDocs/)** for most Floatplane endpoints including ones this library has not yet implemented.
 
 ### Example Usage
 
