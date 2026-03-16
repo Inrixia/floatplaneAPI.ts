@@ -6,10 +6,10 @@
 	"dependencies": {
 		"cross-env": "^10.1.0",
 		"got": "^14.6.6",
-		"openid-client": "^6.8.1"
+		"openid-client": "^6.8.1",
+		"@inrixia/helpers": "^3.21.2"
 	},
 	"devDependencies": {
-		"@inrixia/helpers": "^3.21.2",
 		"@types/node": "^25.0.9",
 		"@types/tough-cookie": "^4.0.5",
 		"@types/tough-cookie-file-store": "^2.0.4",
