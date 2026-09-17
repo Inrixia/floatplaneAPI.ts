@@ -10,7 +10,7 @@ import { TokenEndpointResponse } from "openid-client";
 import { Content } from "./content.js";
 import { Core } from "./Core.js";
 
-export const version = "5.2.6";
+export const version = "5.2.7";
 
 export type AuthToken = TokenEndpointResponse & { expiresEpoch?: number };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;
@@ -98,7 +98,6 @@ export class Floatplane {
 	 * Time untl token expiry in ms
 	 */
 	public authTokenExpiresIn(authToken: AuthToken | null | undefined = this.authToken): number {
-		console.log(authToken);
 		const expiresEpoch = authToken?.expiresEpoch;
 		if (!expiresEpoch) return -1;
 
