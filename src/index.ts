@@ -6,7 +6,6 @@ import { CDN } from "./cdn.js";
 import { Creator } from "./creator.js";
 import { User } from "./user.js";
 
-import { asyncDebounce } from "@inrixia/helpers";
 import { TokenEndpointResponse } from "openid-client";
 import { Content } from "./content.js";
 import { Core } from "./Core.js";
@@ -98,21 +97,18 @@ export class Floatplane {
 	/**
 	 * Time untl token expiry in ms
 	 */
-	expiresIn(tokenSet?: AuthToken): number {
-		const expiresEpoch = tokenSet?.expiresEpoch;
+	public authTokenExpiresIn(authToken: AuthToken | null | undefined = this.authToken): number {
+		console.log(authToken);
+		const expiresEpoch = authToken?.expiresEpoch;
 		if (!expiresEpoch) return -1;
 
 		return Math.max(expiresEpoch - Date.now(), 0);
 	}
 
-	tokenExpired() {
-		return this.expiresIn() < 60000;
-	}
-
-	public refreshAuthToken = asyncDebounce(async () => {
+	public refreshAuthToken = async () => {
 		if (!this.authToken) return this.login();
 
-		if (this.tokenExpired()) {
+		if (this.authTokenExpiresIn() < 60000) {
 			const refreshToken = this.authToken.refresh_token;
 			if (!refreshToken) throw new Error("No refresh token available to refresh OAuth token!");
 
@@ -126,7 +122,7 @@ export class Floatplane {
 			if (refreshedTokenSet.access_token === undefined) throw new Error("No access token received when refreshing token!");
 			this.authToken = refreshedTokenSet;
 		}
-	}, true);
+	};
 
 	/**
 	 * Login to floatplane so future requests are authenticated using the Device flow
