@@ -119,14 +119,14 @@ export class Floatplane {
 			this.oauthConfig ??= await client.discovery(
 				new URL(this.authConfig.serverUrl ?? "https://auth.floatplane.com/realms/floatplane"),
 				this.authConfig.clientId,
-				this.authConfig.clientSecret
+				this.authConfig.clientSecret,
 			);
 			const refreshedTokenSet = await client.refreshTokenGrant(this.oauthConfig, refreshToken);
 
 			if (refreshedTokenSet.access_token === undefined) throw new Error("No access token received when refreshing token!");
 			this.authToken = refreshedTokenSet;
 		}
-	});
+	}, true);
 
 	/**
 	 * Login to floatplane so future requests are authenticated using the Device flow
@@ -136,7 +136,7 @@ export class Floatplane {
 		this.oauthConfig ??= await client.discovery(
 			new URL(this.authConfig.serverUrl ?? "https://auth.floatplane.com/realms/floatplane"),
 			this.authConfig.clientId,
-			this.authConfig.clientSecret
+			this.authConfig.clientSecret,
 		);
 
 		if (!this.authToken) {
