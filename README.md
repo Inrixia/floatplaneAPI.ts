@@ -15,17 +15,28 @@ This library uses & collaborates with the **[Floatplane API Specification](https
 ### Example Usage
 
 ```ts
-import { Floatplane } from "./index.js";
+import { Floatplane, type AuthToken, OnDeviceCode } from 'floatplane';
 
-const floatplane = new Floatplane(); // Create a new API instance.
+class AuthTokenStore {
+    authToken?: AuthToken;
+}
 
-// login -> User object
-const { user } = await floatplane.login({
-	username: "yourUsername",
-	password: "yourPassword",
-	token: "yourTokenIfYouUse2Factor",
+const onDeviceCode: OnDeviceCode = async ({ verification_uri_complete, verification_uri }) => {
+    const verifyUri = verification_uri_complete ?? verification_uri;
+    console.log(`Please login to Floatplane via ${verifyUri}`);
+};
+
+const authTokenStore = new AuthTokenStore();
+
+const floatplane = new Floatplane({
+	authConfig: {
+		clientId: "example-client",	// Has to be registered on FloatPlane
+		authToken: authTokenStore.authToken,
+		onAuthToken: (authToken) => {authTokenStore.authToken = authToken},
+		onDeviceCode,
+	},
+	userAgent: `ExampleApp`, // Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/User-Agent
 });
-console.log(user);
 
 // Fetch User subscriptions
 const subs = await floatplane.user.subscriptions();
@@ -38,6 +49,8 @@ for await (const video of floatplane.creator.blogPostsIterable(subs[0].creator, 
 	console.log(video);
 }
 ```
+
+Take a look at https://github.com/Inrixia/Floatplane-Downloader/blob/055e21e42c0af89a68cdf2f58a195cc81ad07ddf/src/lib/helpers/index.ts#L49-L58 for a reference implementation.
 
 Individual classes can also be imported seperately:
 
