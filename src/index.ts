@@ -10,7 +10,7 @@ import { TokenEndpointResponse } from "openid-client";
 import { Content } from "./content.js";
 import { Core } from "./Core.js";
 
-export const version = "5.2.7";
+export const version = "5.2.8";
 
 export type AuthToken = TokenEndpointResponse & { expiresEpoch?: number };
 export type OnDeviceCode = (response: client.DeviceAuthorizationResponse) => any;

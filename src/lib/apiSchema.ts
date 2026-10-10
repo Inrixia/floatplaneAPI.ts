@@ -64,6 +64,66 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v3/auth/login": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Login
+         * @description Login to Floatplane with the provided username and password, retrieving the authentication/authorization cookie from the response for subsequent requests.
+         */
+        post: operations["loginV3"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v3/auth/logout": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Logout
+         * @description Log out of Floatplane, invalidating the authentication/authorization cookie.
+         */
+        post: operations["logoutV3"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v3/auth/checkFor2faLogin": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Check For 2FA Login
+         * @description Complete the login process if a two-factor authentication token is required from the beginning of the login process.
+         */
+        post: operations["checkFor2faLoginV3"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v3/auth/captcha/info": {
         parameters: {
             query?: never;
@@ -565,6 +625,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v3/status": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get Status
+         * @description Retrieve more detailed information about the user and status, including their name and email.
+         */
+        get: operations["getStatus"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v3/user/notification/list": {
         parameters: {
             query?: never;
@@ -1031,6 +1111,18 @@ export interface components {
             /** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
             needs2FA: boolean;
         };
+        AuthLoginV3Request: {
+            username: string;
+            password: string;
+            /** @description The Google Recaptcha v2/v3 token to verify the request. On web browsers, this is required. For mobile or TV applications, this is not required only if the User-Agent indicates so (e.g., if the User-Agent contains "CFNetwork" in its value). Otherwise, the application would have to supply a valid captcha token, which can be difficult to obtain dynamically in some scenarios. In this case, this should be undefined (no key), not null. */
+            captchaToken?: string;
+        };
+        AuthLoginV3Response: {
+            /** @description Identifying information about the new-logged-in user upon success. May be undefined when `needs2FA` is `true`. */
+            user?: components["schemas"]["UserModel"];
+            /** @description If true, the user has not yet been authenticated, and will need to submit the 2FA token to complete authentication. */
+            needs2FA: boolean;
+        };
         CheckFor2faLoginRequest: {
             /** @description The two-factor authentication token that the user inputs to complete the login process. */
             token: string;
@@ -1461,6 +1553,9 @@ export interface components {
             property: "contentEmail" | "contentFirebase";
             newValue: boolean;
         };
+        UserStatusV3Response: {
+            selfUser?: components["schemas"]["UserSelfV3Response"];
+        };
         UserSelfV3Response: {
             id: string;
             username: string;
@@ -1664,7 +1759,6 @@ export interface components {
             priceYearly?: string | null;
             currency: string;
             logo: string | null;
-            interval: string;
             featured: boolean;
             allowGrandfatheredAccess?: boolean | null;
             discordServers: components["schemas"]["DiscordServerModel"][];
@@ -2251,6 +2345,179 @@ export interface operations {
                      *     }
                      */
                     "application/json": components["schemas"]["AuthLoginV2Response"];
+                };
+            };
+            400: components["responses"]["400BadRequest"];
+            /** @description Unauthenticated - The login attempt failed, either due to a bad username or password. */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorModel"];
+                };
+            };
+            403: components["responses"]["403Forbidden"];
+            404: components["responses"]["404NotFound"];
+            429: components["responses"]["429TooManyRequests"];
+            default: components["responses"]["Unexpected"];
+        };
+    };
+    loginV3: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                /**
+                 * @example {
+                 *       "username": "my_username",
+                 *       "password": "my_password",
+                 *       "captchaToken": "..."
+                 *     }
+                 */
+                "application/json": components["schemas"]["AuthLoginV3Request"];
+            };
+        };
+        responses: {
+            /** @description OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
+            200: {
+                headers: {
+                    /** @description Contains the cookie used in subsequent authenticated requests. */
+                    "Set-Cookie"?: string;
+                    [name: string]: unknown;
+                };
+                content: {
+                    /**
+                     * @example {
+                     *       "user": {
+                     *         "id": "0123456789abcdef01234567",
+                     *         "username": "my_username",
+                     *         "profileImage": {
+                     *           "width": 512,
+                     *           "height": 512,
+                     *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+                     *           "childImages": [
+                     *             {
+                     *               "width": 250,
+                     *               "height": 250,
+                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
+                     *             },
+                     *             {
+                     *               "width": 100,
+                     *               "height": 100,
+                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
+                     *             }
+                     *           ]
+                     *         }
+                     *       },
+                     *       "needs2FA": false
+                     *     }
+                     */
+                    "application/json": components["schemas"]["AuthLoginV3Response"];
+                };
+            };
+            400: components["responses"]["400BadRequest"];
+            /** @description Unauthenticated - The login attempt failed, either due to a bad username or password. */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorModel"];
+                };
+            };
+            403: components["responses"]["403Forbidden"];
+            404: components["responses"]["404NotFound"];
+            429: components["responses"]["429TooManyRequests"];
+            default: components["responses"]["Unexpected"];
+        };
+    };
+    logoutV3: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    /** @description Obtain a new authentication/authorization cookie after logging out. This new cookie will not be authenticated to perform subsequent requests. */
+                    "Set-Cookie"?: string;
+                    [name: string]: unknown;
+                };
+                content: {
+                    /** @example OK */
+                    "text/plain": string;
+                };
+            };
+            400: components["responses"]["400BadRequest"];
+            401: components["responses"]["401Unauthenticated"];
+            403: components["responses"]["403Forbidden"];
+            404: components["responses"]["404NotFound"];
+            429: components["responses"]["429TooManyRequests"];
+            default: components["responses"]["Unexpected"];
+        };
+    };
+    checkFor2faLoginV3: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                /**
+                 * @example {
+                 *       "token": "123456"
+                 *     }
+                 */
+                "application/json": components["schemas"]["CheckFor2faLoginRequest"];
+            };
+        };
+        responses: {
+            /** @description OK - Returns the header and information about the logged-in user, including the id, username, and profile image. */
+            200: {
+                headers: {
+                    /** @description Contains the cookie used in subsequent authenticated requests. */
+                    "Set-Cookie"?: string;
+                    [name: string]: unknown;
+                };
+                content: {
+                    /**
+                     * @example {
+                     *       "user": {
+                     *         "id": "0123456789abcdef01234567",
+                     *         "username": "my_username",
+                     *         "profileImage": {
+                     *           "width": 512,
+                     *           "height": 512,
+                     *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+                     *           "childImages": [
+                     *             {
+                     *               "width": 250,
+                     *               "height": 250,
+                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
+                     *             },
+                     *             {
+                     *               "width": 100,
+                     *               "height": 100,
+                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
+                     *             }
+                     *           ]
+                     *         }
+                     *       },
+                     *       "needs2FA": false
+                     *     }
+                     */
+                    "application/json": components["schemas"]["AuthLoginV3Response"];
                 };
             };
             400: components["responses"]["400BadRequest"];
@@ -4531,7 +4798,6 @@ export interface operations {
                      *           "priceYearly": "50.00",
                      *           "currency": "usd",
                      *           "logo": null,
-                     *           "interval": "month",
                      *           "featured": true,
                      *           "allowGrandfatheredAccess": false,
                      *           "discordServers": [],
@@ -4821,6 +5087,66 @@ export interface operations {
                      *     }
                      */
                     "application/json": components["schemas"]["UserSelfV3Response"];
+                };
+            };
+            400: components["responses"]["400BadRequest"];
+            401: components["responses"]["401Unauthenticated"];
+            403: components["responses"]["403Forbidden"];
+            404: components["responses"]["404NotFound"];
+            429: components["responses"]["429TooManyRequests"];
+            default: components["responses"]["Unexpected"];
+        };
+    };
+    getStatus: {
+        parameters: {
+            query: {
+                /** @description Platform requesting the status. */
+                platform: "android" | "ios" | "web";
+                /** @description Version of the app requesting the status. */
+                version: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK - Information returned */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    /**
+                     * @example {
+                     *       "selfUser": {
+                     *         "id": "0123456789abcdef01234567",
+                     *         "username": "my_username",
+                     *         "profileImage": {
+                     *           "width": 512,
+                     *           "height": 512,
+                     *           "path": "https://pbs.floatplane.com/profile_images/default/user12.png",
+                     *           "childImages": [
+                     *             {
+                     *               "width": 250,
+                     *               "height": 250,
+                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_250x250.png"
+                     *             },
+                     *             {
+                     *               "width": 100,
+                     *               "height": 100,
+                     *               "path": "https://pbs.floatplane.com/profile_images/default/user12_100x100.png"
+                     *             }
+                     *           ]
+                     *         },
+                     *         "email": "testemail@example.com",
+                     *         "displayName": "Firstname Lastname",
+                     *         "creators": [],
+                     *         "scheduledDeletionDate": null
+                     *       }
+                     *     }
+                     */
+                    "application/json": components["schemas"]["UserStatusV3Response"];
                 };
             };
             400: components["responses"]["400BadRequest"];
@@ -7302,6 +7628,9 @@ export enum ApiPaths {
     login = "/api/v2/auth/login",
     logout = "/api/v2/auth/logout",
     checkFor2faLogin = "/api/v2/auth/checkFor2faLogin",
+    loginV3 = "/api/v3/auth/login",
+    logoutV3 = "/api/v3/auth/logout",
+    checkFor2faLoginV3 = "/api/v3/auth/checkFor2faLogin",
     getCaptchaInfo = "/api/v3/auth/captcha/info",
     getDeliveryInfo = "/api/v2/cdn/delivery",
     getDeliveryInfoV3 = "/api/v3/delivery/info",
@@ -7327,6 +7656,7 @@ export enum ApiPaths {
     userCreatorBanStatus = "/api/v2/user/ban/status",
     getActivityFeedV3 = "/api/v3/user/activity",
     getSelf = "/api/v3/user/self",
+    getStatus = "/api/v3/status",
     getUserNotificationSettingsV3 = "/api/v3/user/notification/list",
     updateUserNotificationSettingsV3 = "/api/v3/user/notification/update",
     postComment = "/api/v3/comment",
